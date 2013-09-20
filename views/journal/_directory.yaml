@@ -1,12 +1,12 @@
----
--
+--- 
+- 
   ? !ruby/symbol date
   : 2013-09-20
   ? !ruby/symbol excerpt
-  : "New blog going live later today."
+  : "Learning to program with Ruby and Sinatra."
   ? !ruby/symbol slug
-  : /journal/Sample-Page
+  : /journal/A-Dance-With-Sinatra
   ? !ruby/symbol tags
   : general
   ? !ruby/symbol title
-  : "Good things coming."
+  : "A Dance With Sinatra"

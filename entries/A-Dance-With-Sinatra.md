@@ -1,0 +1,137 @@
+title: A Dance With Sinatra
+excerpt: Learning to program with Ruby and Sinatra.
+date: 2013-09-20
+tags: general
+---
+
+I've never been great at keeping a blog. Any space I've made for writing in the past has been as Shedbot, the moniker I've used for my photo/design work the past few years. I would always tread lightly posting on behalf a business, even my own. When speaking on behalf of a business you're always conscious of offending that exec who perhaps would've given you that big contract if he didn't see you talking about [ManBearPig](http://www.youtube.com/watch?v=xf69EEL3WBk) all the time.
+
+### A Blog App
+
+I've been wanting to write my own blogging app since seeing [this post](http://sam.roon.io/new-blog) by [Sam Soffes'](http://twitter.com/soffes) about one of his 6000 blog iterations earlier this year. He wrote a Sinatra app that uses a GitHub repo of markdown files as posts and caches them in Redis. I really liked the idea of using static markdown files as a post archive; no messy databases or clunky web interface to get in the way of actually writing. I built something similar.
+
+## The Build
+
+This was my first adventure in programming, so the build took a while. Though I had studied some Ruby previously, there's no substitute for diving in and getting your hands dirty. I found a handful of repos on Github that performed similar actions, so I cloned a handful locally and referenced them throughout the build. While Sam's blog was the original inspiration, his Redis integration was an added level of complexity that I wasn't ready for. Here's a quick overview of my my app, starting with a sample markdown file:
+
+```
+# A-Dance-With-Sinatra.md
+title: A Dance With Sinatra
+excerpt: Learning to program with Ruby and Sinatra.
+date: 2013-09-20
+tags: general
+--
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, iusto, laboriosam, minus eaque dolorem temporibus natus sapiente quo ab recusandae quas molestias magnam aliquam vero dolor harum unde? Sunt, debitis.
+```
+
+In the Rakefile, line 5 iterates through each of the .md files in the entries directory, and 6 splits off each post's metadata above `--`. The metadata is then ordered by reverse date and written to `_directory.yaml`.
+
+```ruby
+# Rakefile
+namespace :journal do
+  task :reload do
+    a = []
+    Dir["entries/*.md"].each do |file|
+      entry = File.read(file).split("--\n")
+      meta = Psych.load(entry[0])
+      a.push({
+        title: meta['title'],
+        excerpt: meta['excerpt'],
+        date: meta['date'],
+        tags: meta['tags'],
+        slug: "/journal/" << File.basename(file, ".md"),
+      })
+      puts "#{a.count} posts indexed."
+    end
+    File.open("views/journal/_directory.yaml", 'w') {
+      |file| file.write a.sort_by{|a| a[:date]}.reverse.ya2yaml
+    }
+  end
+end
+```
+
+Now, when the user requests a URL from /journal, Sinatra checks to see if the corresponding file exists in /entries. If so, it'll load up the entry's structure according to haml template `journal/entry.haml`, and parse the actual post content along with the metadata.
+
+```ruby
+# Application.rb
+get "/journal/:entry/?" do
+  file = "entries/#{params[:entry]}.md"
+  if File.exist?(file)
+    @entries = load_directory('journal')
+    parse('/journal/entry', file)
+  else
+    404
+  end
+end
+
+helpers do
+	def parse(template, file)
+  	entry = File.read(file).split("---\n")
+	  @meta = Psych.load(entry[0])
+  	@text = entry[1]
+	  haml template.to_sym
+	end
+	def load_directory(dir)
+	  Psych.load(File.open("views/#{dir}/_directory.yaml"))
+	end
+end
+```
+
+The markdown rendering is handled by [Redcarpet](https://github.com/vmg/redcarpet) with [SmartyPants](http://daringfireball.net/projects/smartypants/) enabled for smart quotes and all that good stuff. [Pygments.rb](https://github.com/tmm1/pygments.rb) is used for code highlighting.
+
+```ruby
+# Application.rb
+class BetterRender < Redcarpet::Render::HTML
+  include Redcarpet::Render::SmartyPants
+  def block_code(code, lang)
+    if lang
+      Pygments.highlight(code, lexer: lang.to_sym, options: {linespans: 'line'})
+    else
+      "<div class='highlight ki'><pre>#{code}</pre></div>"
+    end
+  end
+end
+ 
+def redcarpet(text)
+	markdown = Redcarpet::Markdown.new(BetterRender, fenced_code_blocks: true)
+	markdown.render(text)
+end
+```
+
+## Design & Typography
+The sans-serif body type is [Whitney](http://www.typography.com/fonts/whitney/overview/) and the headline serif [Mercury Text](http://www.typography.com/fonts/mercury-text/overview/). Both typefaces are designed by HF&J and served by Cloud.typography. Careful attention was paid to typographical hierarchy, with all font sizes pulled directly from the [modular scale](http://modularscale.com/scale/?px1=20&px2=&ra1=1.333&ra2=0) (a perfect fourth).
+
+I designed a custom pygments stylesheet to ensure code highlighting in the browser would precisely mimic my local environment in Sublime Text 3. The colour scheme is based on the [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) theme by [Chris Kempson](https://twitter.com/chriskempson). The monospace font used in the code views is [Source Code Pro](http://blogs.adobe.com/typblography/2012/09/source-code-pro.html) by Adobe.
+
+## Hosting & Deployment
+The app is hosted on [Heroku](https://www.heroku.com/) and deployed via Git. 
+
+In order to begin a post as quickly as possible, I wrote a helper function for [fish shell](http://fishshell.com/) that creates a markdown file with proper formatting and cd's into my app directory.
+
+```bash
+#	Blog Kickstart - Fish Shells
+function blog # $title $tags
+  set date (date '+%Y-%m-%d')
+  set filename (echo $argv[1] | tr -s ' ' | tr ' ' '-')
+  set gitdir ~/documents/Journal/
+  set var_count (count $argv)
+  cd $gitdir
+    if test $var_count = 2
+  		echo title: $argv[1]\nexcerpt: \ndate: $date\ntags: $argv[2]\n---\n\n >entries/$filename.md
+    else
+   		echo title: $argv[1]\nexcerpt: \ndate: $date\ntags: general\n---\n\n >entries/$filename.md
+   	end
+  open entries/$filename.md
+end
+```
+
+# Closing
+This has been a lot of fun to build, and I have a lot to do on it still. It's endearing releasing something before it's polished; I feel more inspired to continue work on it instead of  feeling utterly and completely sick of it.
+
+Let me know your thoughts on [Twitter](http://twitter.com/shedbot), or send me an [email](bradcerasani@gmail.com).
+
+Thanks for reading.
+
+View source on [Github](https://github.com/bcerasani/bradcerasani.me).
+
+

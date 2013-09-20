@@ -7,20 +7,20 @@ require 'chronic'
 require 'psych'
 
 get '/' do
-  @entries = load_structure('journal')
+  @entries = load_directory('journal')
   haml :'/index'
 end
 
 get "/journal/?" do
-  @entries = load_structure('journal')
+  @entries = load_directory('journal')
   haml :'/index'
 end
 
 get "/journal/:entry/?" do
   file = "entries/#{params[:entry]}.md"
   if File.exist?(file)
-    @entries = load_structure('journal')
-    load_into_haml('/journal/entry', file)
+    @entries = load_directory('journal')
+    parse('/journal/entry', file)
   else
     404
   end
@@ -33,18 +33,22 @@ end
 class BetterRender < Redcarpet::Render::HTML
   include Redcarpet::Render::SmartyPants
   def block_code(code, lang)
-    Pygments.highlight(code, lexer: lang.to_sym, options: {linespans: 'line'})
+    if lang
+      Pygments.highlight(code, lexer: lang.to_sym, options: {linespans: 'line'})
+    else
+      "<div class='highlight ki'><pre>#{code}</pre></div>"
+    end
   end
 end
 
 helpers do
-  def load_into_haml(template, file)
-    article = File.read(file).split("---\n")
-    @meta = Psych.load(article[0])
-    @text = article[1]
+  def parse(template, file)
+    entry = File.read(file).split("---\n")
+    @meta = Psych.load(entry[0])
+    @text = entry[1]
     haml template.to_sym
   end
-  def load_structure(dir)
+  def load_directory(dir)
     Psych.load(File.open("views/#{dir}/_directory.yaml"))
   end
   def active(a)

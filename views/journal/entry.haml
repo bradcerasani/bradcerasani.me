@@ -3,7 +3,8 @@
 %section
 
 	%article
-		%h1= @meta['title']
-		%span.meta= date @meta['date']
+		%header
+			%h1= @meta['title']
+			%span.meta= date @meta['date']
 		~ redcarpet(@text)
 

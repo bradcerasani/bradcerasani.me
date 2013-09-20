@@ -4,8 +4,6 @@ gem 'haml'
 gem 'redcarpet'
 gem 'pygments.rb'
 gem 'chronic'
-require 'yaml'
-require 'ya2yaml'
 
 get '/' do
   @entries = load_structure('journal')
@@ -25,36 +23,6 @@ get "/journal/:entry/?" do
   else
     404
   end
-end
-
-get "/update" do
-  unless File.exists?('tmp/repo')
-    puts 'Cloning posts...'
-    `git clone https://github.com/bcerasani/journal.git tmp/repo`
-  else
-    puts 'Updating posts...'
-    'cd tmp/repo && git pull'
-  end
-
-  a = []
-  Dir["tmp/repo/entries/*.md"].each do |f|
-    entry = File.read(f).split("---\n")
-    meta = YAML::load(entry[0])
-    # matches = f.match(/\/(\d{4})-(\d{2})-(\d{2})-([\w\-]+)\.md$/)
-    # key = matches[4]
-    # puts "#{key}"
-    a.push({
-      title: meta['title'],
-      excerpt: meta['excerpt'],
-      date: meta['date'],
-      tags: meta['tags'],
-      # slug: "/journal/" << key,
-      slug: "/journal/" << File.basename(f, ".md"),
-    })
-  end
-  File.open("views/journal/_directory.yaml", 'w') {
-    |f| f.write a.sort_by{|a| a[:date]}.reverse.ya2yaml
-  }
 end
 
 error 404 do

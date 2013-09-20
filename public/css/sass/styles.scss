@@ -142,14 +142,8 @@ footer {
 	font-family: $secondary;
 	color: $gray;
 	background: $dark;
-	span.canada {
-		font-size: 1.333em;
-		display: inline-block;
-		width: 2em;
-		height: 1em;
-		background: url("assets/canadian-flag.svg");
-		background-size: 2em, 1em;
-		background-repeat: no-repeat;
+	span {
+
 	}
 }
 

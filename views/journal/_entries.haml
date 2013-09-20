@@ -1,0 +1,7 @@
+%nav
+	%ul
+		- @entries.each do |a|
+			%li{class: selected_class_for(a)}
+				%a{href: a[:slug]}
+					%h1= a[:title]
+					%span= a[:excerpt]

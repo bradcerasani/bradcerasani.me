@@ -27,13 +27,13 @@ get "/journal/:entry/?" do
 end
 
 error 404 do
-  haml :'/pages/notfound', layout: false
+  haml :'/pages/notfound'
 end
 
 class BetterRender < Redcarpet::Render::HTML
   include Redcarpet::Render::SmartyPants
-  def block_code(code, language)
-    Pygments.highlight(code, lexer: language.to_sym, options: {linespans: 'line'})
+  def block_code(code, lang)
+    Pygments.highlight(code, lexer: lang.to_sym, options: {linespans: 'line'})
   end
 end
 
@@ -46,10 +46,6 @@ helpers do
   end
   def load_structure(dir)
     Psych.load(File.open("views/#{dir}/_directory.yaml"))
-  end
-  def nav_item(name)
-    selected = (request.path.index(name.downcase) == 1) ? "active" : ''
-    "<li class='#{selected}'><a href='/#{name.downcase}'>#{name}</a></li>"
   end
   def active(a)
     "active" if request.path_info != [a[:slug]]

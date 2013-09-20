@@ -93,9 +93,9 @@ nav ul {
 			}
 			span {
 				display: block;
-				margin: 1.5em 0 0 0;
+				margin: 1em 0 0 0;
 				color: $gray;
-				font-family: $secondary;
+				font-family: $primary;
 				line-height: 1.5em;
 			}
 		}
@@ -117,7 +117,16 @@ article {
 }
 
 footer {
-	color: $light;
-	background: $accent;
+	font-family: $secondary;
+	color: $gray;
+	span.canada {
+		font-size: 1.333em;
+		display: inline-block;
+		width: 2em;
+		height: 1em;
+		background: url("assets/canadian-flag.svg");
+		background-size: 2em, 1em;
+		background-repeat: no-repeat;
+	}
 }
 

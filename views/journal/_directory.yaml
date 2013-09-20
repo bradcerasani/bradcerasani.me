@@ -1,12 +1,12 @@
 --- 
 - 
   ? !ruby/symbol date
-  : 2013-08-19
+  : 2013-09-20
   ? !ruby/symbol excerpt
-  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+  : "New blog going live later today."
   ? !ruby/symbol slug
   : /journal/Sample-Page
   ? !ruby/symbol tags
   : general
   ? !ruby/symbol title
-  : "It's Working"
+  : "Good things coming."

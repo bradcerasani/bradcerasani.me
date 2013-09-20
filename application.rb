@@ -16,7 +16,7 @@ get "/journal/?" do
 end
 
 get "/journal/:entry/?" do
-  file = "tmp/repo/entries/#{params[:entry]}.md"
+  file = "entries/#{params[:entry]}.md"
   puts "file"
   if File.exist?(file)
     @entries = load_structure('journal')

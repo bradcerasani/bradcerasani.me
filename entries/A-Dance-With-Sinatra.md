@@ -123,12 +123,10 @@ function blog # $title $tags
 end
 ```
 
-# Closing
+## Closing
 This has been a lot of fun to build, and I have a lot to do on it still. It's endearing releasing something before it's polished; I feel more inspired to continue work on it instead of  feeling utterly and completely sick of it.
 
-Let me know your thoughts on [Twitter](http://twitter.com/shedbot), or send me an [email](bradcerasani@gmail.com).
-
-Thanks for reading.
+Let me know your thoughts on [Twitter](http://twitter.com/shedbot).
 
 View source on [Github](https://github.com/bcerasani/bradcerasani.me).
 

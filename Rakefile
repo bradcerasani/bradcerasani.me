@@ -1,5 +1,8 @@
 require 'yaml'
 require 'ya2yaml'
+$LOAD_PATH.unshift 'lib'
+
+require 'application'
 
 namespace :site do
   task :deploy do

@@ -11,3 +11,8 @@ gem 'guard'
 gem 'rack-rewrite'
 gem 'chronic'
 gem 'rake'
+
+group :development do
+  # Reloading in development
+  gem 'shotgun'
+end

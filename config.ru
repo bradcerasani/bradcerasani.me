@@ -1,12 +1,13 @@
 require 'rubygems'
-require 'bundler'
 require 'rack/rewrite'
+require 'bundler'
+Bundler.require
+
+$LOAD_PATH.unshift 'lib'
 
 use Rack::Rewrite do
   r301 '/is-money-and-wants-to-show-it/', '/'
 end
-
-Bundler.require
 
 require './application'
 run Sinatra::Application

@@ -24,6 +24,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    psych (2.0.1)
     pygments.rb (0.5.2)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -57,6 +58,7 @@ DEPENDENCIES
   chronic
   guard
   haml
+  psych
   pygments.rb
   rack-rewrite
   rake

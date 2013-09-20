@@ -1,9 +1,10 @@
-gem 'sinatra'
-gem 'tilt'
-gem 'haml'
-gem 'redcarpet'
-gem 'pygments.rb'
-gem 'chronic'
+require 'sinatra'
+require 'tilt'
+require 'haml'
+require 'redcarpet'
+require 'pygments.rb'
+require 'chronic'
+require 'psych'
 
 get '/' do
   @entries = load_structure('journal')
@@ -17,7 +18,6 @@ end
 
 get "/journal/:entry/?" do
   file = "entries/#{params[:entry]}.md"
-  puts "file"
   if File.exist?(file)
     @entries = load_structure('journal')
     load_into_haml('/journal/entry', file)
@@ -40,19 +40,19 @@ end
 helpers do
   def load_into_haml(template, file)
     article = File.read(file).split("---\n")
-    @meta = YAML::load(article[0])
+    @meta = Psych.load(article[0])
     @text = article[1]
     haml template.to_sym
   end
   def load_structure(dir)
-    YAML::load(File.open("views/#{dir}/_directory.yaml"))
+    Psych.load(File.open("views/#{dir}/_directory.yaml"))
   end
   def nav_item(name)
-    selected = (request.path.index(name.downcase) == 1) ? 'selected' : ''
+    selected = (request.path.index(name.downcase) == 1) ? "active" : ''
     "<li class='#{selected}'><a href='/#{name.downcase}'>#{name}</a></li>"
   end
-  def selected_class_for(a)
-    "selected" if request.path_info[a[:slug]]
+  def active(a)
+    "active" if request.path_info != [a[:slug]]
   end
   def date(date)
     datestring = Chronic.parse(date).to_s

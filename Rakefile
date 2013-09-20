@@ -4,7 +4,6 @@ require 'ya2yaml'
 namespace :site do
   task :deploy do
     system 'rake site:rebuild'
-    system 'git push heroku'
   end
   task :rebuild do
     unless File.exists?('tmp/repo')

@@ -17,6 +17,7 @@ end
 
 get "/journal/:entry/?" do
   file = "tmp/repo/entries/#{params[:entry]}.md"
+  puts "file"
   if File.exist?(file)
     @entries = load_structure('journal')
     load_into_haml('/journal/entry', file)

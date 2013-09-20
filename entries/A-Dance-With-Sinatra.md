@@ -6,8 +6,6 @@ tags: general
 
 I've never been great at keeping a blog. Any space I've made for writing in the past has been as Shedbot, the moniker I've used for my photo/design work the past few years. I would always tread lightly posting on behalf a business, even my own. When speaking on behalf of a business you're always conscious of offending that exec who perhaps would've given you that big contract if he didn't see you talking about [ManBearPig](http://www.youtube.com/watch?v=xf69EEL3WBk) all the time.
 
-### A Blog App
-
 I've been wanting to write my own blogging app since seeing [this post](http://sam.roon.io/new-blog) by [Sam Soffes'](http://twitter.com/soffes) about one of his 6000 blog iterations earlier this year. He wrote a Sinatra app that uses a GitHub repo of markdown files as posts and caches them in Redis. I really liked the idea of using static markdown files as a post archive; no messy databases or clunky web interface to get in the way of actually writing. I built something similar.
 
 ## The Build

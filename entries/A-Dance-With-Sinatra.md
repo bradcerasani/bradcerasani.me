@@ -89,7 +89,7 @@ class BetterRender < Redcarpet::Render::HTML
     end
   end
 end
- 
+
 def redcarpet(text)
 	markdown = Redcarpet::Markdown.new(BetterRender, fenced_code_blocks: true)
 	markdown.render(text)
@@ -102,12 +102,12 @@ The sans-serif body type is [Whitney](http://www.typography.com/fonts/whitney/ov
 I designed a custom pygments stylesheet to ensure code highlighting in the browser would precisely mimic my local environment in Sublime Text 3. The colour scheme is based on the [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) theme by [Chris Kempson](https://twitter.com/chriskempson). The monospace font used in the code views is [Source Code Pro](http://blogs.adobe.com/typblography/2012/09/source-code-pro.html) by Adobe.
 
 ## Hosting & Deployment
-The app is hosted on [Heroku](https://www.heroku.com/) and deployed via Git. 
+The app is hosted on [Heroku](https://www.heroku.com/) and deployed via Git.
 
 In order to begin a post as quickly as possible, I wrote a helper function for [fish shell](http://fishshell.com/) that creates a markdown file with proper formatting and cd's into my app directory.
 
 ```bash
-#	Blog Kickstart - Fish Shells
+#	Blog Kickstart - Fish Shell
 function blog # $title $tags
   set date (date '+%Y-%m-%d')
   set filename (echo $argv[1] | tr -s ' ' | tr ' ' '-')

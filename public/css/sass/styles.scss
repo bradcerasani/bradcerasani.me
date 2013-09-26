@@ -6,10 +6,9 @@
 $primary: 'Whitney SSm A', 'Whitney SSm B';
 $secondary: 'Mercury SSm A', 'Mercury SSm B';
 
-$base: 20px;
-$giga: modular-scale($base, 6, 1.333);
+$base: 16px;
+
 $alpha: modular-scale($base, 4, 1.333);
-$beta: modular-scale($base, 3, 1.333);
 $gamma: modular-scale($base, 2, 1.333);
 $delta: modular-scale($base, 1, 1.333);
 $epsilon: modular-scale($base, -1, 1.333);
@@ -17,7 +16,6 @@ $milli: modular-scale($base, -3, 1.333);
 $micro: modular-scale($base, -5, 1.333);
 
 $accent: #3F6D75;
-$space: 1.5em;
 $light: #A2BDC1;
 $gray: #75898C;
 $dark-gray: #404040;
@@ -25,7 +23,7 @@ $light-gray: darken(#d7ddde, 10%);
 $dark: #243D42;
 $background: #FAFAFA;
 
-$pad: $delta;
+$pad: $gamma;
 
 @import "pygments";
 
@@ -49,7 +47,7 @@ body {
 	color: $dark-gray;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 20px;
+	font-size: $base;
 	font-family: $primary;
 	line-height: $gamma;
 	-webkit-font-smoothing: antialiased;
@@ -174,7 +172,7 @@ nav ul {
 }
 
 section {
-	padding: 0 0 0 0;
+	padding: 0 1em;
 	@include outer-container;
 }
 
@@ -188,16 +186,13 @@ footer {
 	padding: 0;
 	color: $light-gray;
 	background: $dark;
-	span.left {
+	span {
 		font-size: $epsilon;
 		font-weight: 500;
 		@include span-columns(2);
-	}
-	span.right {
-		text-align: right;
-		font-size: $epsilon;
-		font-weight: 500;
-		@include span-columns(2);
+		&.right {
+			text-align: right;
+		}
 	}
 }
 

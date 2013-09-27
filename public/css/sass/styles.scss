@@ -6,7 +6,7 @@
 $primary: 'Whitney SSm A', 'Whitney SSm B';
 $secondary: 'Mercury SSm A', 'Mercury SSm B';
 
-$base: 16px;
+$base: 20px;
 
 $alpha: modular-scale($base, 4, 1.333);
 $gamma: modular-scale($base, 2, 1.333);
@@ -172,8 +172,11 @@ nav ul {
 }
 
 section {
-	padding: 0 $pad;
+	padding: 0 1em;
 	@include outer-container;
+	@include media($tablet) {
+		padding: 0;
+	}
 }
 
 article {

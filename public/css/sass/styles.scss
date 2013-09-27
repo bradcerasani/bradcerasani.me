@@ -172,7 +172,7 @@ nav ul {
 }
 
 section {
-	padding: 0 1em;
+	padding: 0 $pad;
 	@include outer-container;
 }
 

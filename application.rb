@@ -8,7 +8,7 @@ require 'psych'
 
 get '/' do
   @entries = load_directory('journal')
-  haml :'/index'
+  haml :'/index', :layout => false
 end
 
 get "/journal/?" do

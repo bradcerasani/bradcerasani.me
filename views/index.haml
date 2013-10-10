@@ -2,6 +2,9 @@
 %html
 	= haml :"/layouts/_head"
 	%body
-		= haml :"/layouts/_header"
-		%section
-			= haml :"journal/_entries"
+		#wrapper
+			= haml :"/layouts/_header"
+			%section
+				= haml :"journal/_entries"
+		= haml :"/layouts/_footer"
+		= haml :"/layouts/_scripts"

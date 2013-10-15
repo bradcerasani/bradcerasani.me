@@ -12,12 +12,12 @@ $pg_comment: #969896;
 
 .highlight {
   position: relative;
-	margin-bottom: $pad;
-	padding: $base 0 $base 1.5em;
-  border-left: $epsilon solid darken($pg_background, 0%);
+	margin-bottom: 1.5rem;
+	padding: 1rem 0 1rem 2rem;
+  border-left: 1rem solid darken($pg_background, 0%);
 	background: $pg_background;
 	&.ki {
-		padding-right: $base;
+		padding-right: 1rem;
 		pre {
 			white-space: pre-wrap;
 		}
@@ -34,7 +34,7 @@ $pg_comment: #969896;
 
 code {
 	display: inline-block;
-	padding: 0 $milli;
+	padding: 0 $default;
 	background: $pg_background;
 	color: $pg_foreground;
 	font-weight: 500;

@@ -2,123 +2,214 @@
 @import "bourbon/bourbon";
 @import "grid-settings";
 @import "neat/neat";
+@import "../symbolset/ss-social-circle";
 
-$primary: 'Whitney SSm A', 'Whitney SSm B';
-$secondary: 'Mercury SSm A', 'Mercury SSm B';
+$whitney: 'Whitney SSm A', 'Whitney SSm B';
+$sentinel: 'Sentinel SSm A', 'Sentinel SSm B';
 
 $base: 20px;
 
 $alpha: modular-scale($base, 4, 1.333);
 $gamma: modular-scale($base, 2, 1.333);
 $delta: modular-scale($base, 1, 1.333);
+$default: modular-scale($base, 0, 1.333);
 $epsilon: modular-scale($base, -1, 1.333);
-$milli: modular-scale($base, -3, 1.333);
-$micro: modular-scale($base, -5, 1.333);
 
-$accent: #3F6D75;
-$light: #A2BDC1;
-$gray: #75898C;
-$dark-gray: #404040;
-$light-gray: darken(#d7ddde, 10%);
-$dark: #243D42;
-$background: #FAFAFA;
+$dark-gray: #202020;
+$gray: #404040;
+$light-gray: #535353;
+$lighter-gray: #DFDFDF;
+$accent: #3BA7BB;
+$light: #fafafa;
+
+$twitter: #00aced;
+$linkedin: #007bb6;
+$instagram: #517fa4;
+$dribbble: #ea4c89;
+$rdio: #008FD5 ;
+$github: #171515;
+$gmail: #DD4B39;
 
 $pad: $gamma;
 
 @import "pygments";
 
 ::selection {
-	color: $dark;
-	background: rgba($light, 0.8);
+	background: rgba($accent, 0.8);
+	color: $light;
 }
 
 ::-moz-selection {
-	color: $dark;
-	background: rgba($light, 0.8);
-}
-
-html, body {
-	height: 100%;
+	background: rgba($accent, 0.8);
+	color: $light;
 }
 
 body {
-	border-top: $milli solid $accent;
-	background: $background;
-	color: $dark-gray;
-	font-weight: 400;
-	font-style: normal;
+	background: $light;
+	color: $gray;
 	font-size: $base;
-	font-family: $primary;
-	line-height: $gamma;
-	-webkit-font-smoothing: antialiased;
-	@include media($tablet) {
+	font-family: $whitney;
+	line-height: 2;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
 
+$icon-size: $delta;
+$icon-pad: 20px;
+$overlap: 2px;
+
+@mixin social-circle($icon, $color, $background) {
+	@include transition(all 0.18s ease);
+	position: relative;
+	display: block;
+	width: $icon-size + $icon-pad;
+	height: $icon-size + $icon-pad;
+	border-radius: 50%;
+	background: $color;
+	box-shadow: inset 0 0 0 1px $color,
+							inset 0 0 0 ($icon-pad/2 + $overlap) $background;
+	&:before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: (-$icon-size/2) 0 0 (-$icon-size/2);
+		color: $background;
+		content: $icon;
+		font-size: $icon-size;
+		font-family: "SSSocialCircle";
+		line-height: 1.25;
 	}
-	@include media($desktop) {
-		// font-size: 22px;
+	&:hover {
+		background: lighten($color, 10%);
+		box-shadow: inset 0 0 0 1px lighten($color, 10%),
+								inset 0 0 0 ($icon-pad/2 + $overlap) $background;
 	}
 }
 
-#wrapper {
-  min-height: 100%;
-  margin-bottom: -5em;
-  &:after {
-  	content: "";
-  	display: block;
-  }
+ul.social {
+	display: block;
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		@include span-columns(1 of 12);
+		.twitter {
+			@include social-circle("", $twitter, $dark-gray)
+		}
+		.instagram {
+			@include social-circle("", $instagram, $dark-gray)
+		}
+		.github {
+			@include social-circle("", $light, $dark-gray)
+		}
+		.dribbble {
+			@include social-circle("", $dribbble, $dark-gray)
+		}
+		.linkedin {
+			@include social-circle("", $linkedin, $dark-gray)
+		}
+		.rdio {
+			@include social-circle("", $rdio, $dark-gray)
+		}
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+.title {
+	position: relative;
+	display: block;
+	padding: 1rem 0;
+	color: $light;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: $default;
+	line-height: 1;
+}
+
+hr {
+	margin: 0 auto;
+	height: 1px;
+	border: none;
+	background: $light-gray;
 }
 
 header {
-	padding: $alpha 0;
+	padding: 0 0;
 	position: relative;
+	font-size: $default;
+	overflow: auto;
 }
 
-footer, #wrapper:after {
-	height: 5em;
-	line-height: 5em;
+.hero {
+	margin: 0 0 0 0;
+	padding: 2rem 0;
+	letter-spacing: -0.03em;
+	font-weight: 300;
+	font-size: $gamma;
+	font-family: $sentinel;
+	p {
+		line-height: 1.5;
+		margin: 0;
+		padding: 0;
+	}
 }
 
 h1 {
-	margin: 0 0 0 0;
+	margin: 0 0 1rem 0;
 	padding: 0;
-	letter-spacing: -0.05em;
+	letter-spacing: -0.06em;
+	font-weight: 700;
 	font-size: $alpha;
-	font-family: $secondary;
-	line-height: 1.25em;
-}
-
-span.meta {
-	color: $light-gray;
-	// font-size: $epsilon;
-	margin: 0;
-	bottom: 0;
-	display: block;
-	position: absolute;
+	line-height: 1.25;
 }
 
 h2 {
+	margin: 0 0 0 0;
+	padding: 1rem 0 0 0;
 	letter-spacing: -0.05em;
 	font-weight: 700;
 	font-size: $gamma;
-	line-height: 1.5em;
-	margin: 0 0 $pad 0;
+	line-height: 1.5;
 }
 
 h3 {
 	color: $accent;
 	font-weight: 500;
+	font-size: $default;
 	line-height: 1em;
-	font-size: $pad;
+}
+
+h4 {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: 400;
+	font-size: $default;
+	line-height: 1;
 }
 
 p {
-	margin: 0 0 $pad 0;
+	margin: 0 0 1.5rem 0;
+	padding: 0;
+	line-height: 1.8;
+	&.small {
+		margin: 2rem 0 0 0;
+		color: $lighter-gray;
+		letter-spacing: 0;
+		font-size: $delta;
+		font-family: $whitney;
+		line-height: 1.5;
+	}
 }
 
 blockquote {
 	display: block;
 	margin: $pad 0 $pad ($pad * -1);
-	box-shadow: inset $micro 0 0 $accent;
+	box-shadow: inset 1px 0 0 $accent;
 	padding: 0 0 0 $pad;
 	font-weight: 400;
 	font-style: italic;
@@ -130,10 +221,9 @@ blockquote {
 a {
 	color: $accent;
 	text-decoration: none;
-	font-weight: 500;
 	@include transition-duration(0.2s);
 	&:hover {
-		color: $light;
+		color: lighten($accent, 10%);
 	}
 }
 
@@ -142,70 +232,98 @@ em {
 	font-weight: 500;
 }
 
-nav ul {
+ul.posts {
 	display: block;
-	margin: 0;
+	margin: 1rem 0 0 0;
 	padding: 0;
 	li {
 		display: block;
-		margin: 1em 0;
-		padding: 1em 0;
-		border-top: 1px solid $light-gray;
+		margin: 0;
+		padding: 2em 0;
 		list-style: none;
-		font-family: $secondary;
-		&:last-of-type {
-			border-bottom: 1px solid $light-gray;
+		overflow: auto;
+		border-bottom: 1px solid $lighter-gray;
+		@include transition(all 0.2s ease);
+		&:first-of-type {
+			border-top: 1px solid $lighter-gray;
+		}
+		.date {
+			@include span-columns(2 of 12);
+			font-size: $epsilon;
+			color: $light-gray;
+			// background: rgba(pink, 0.5);
 		}
 		a {
-			h1 {
-				font-size: $gamma !important;
+			@include span-columns(10 of 12);
+			@include omega;
+			line-height: 1.25;
+			font-size: $gamma !important;
+			font-weight: bold;
+			letter-spacing: -0.05em;
+			font-weight: 700;
+			color: $light-gray;
+			// background: rgba(orange, 0.5);
+			&:hover {
+				color: $accent;
 			}
-			span {
-				display: block;
-				margin: 1em 0 0 0;
-				color: $gray;
-				font-family: $primary;
-				line-height: 1.5em;
-			}
+		}
+		span.excerpt {
+			@include span-columns(10 of 12);
+			@include shift(2);
+			color: $light-gray;
+			font-family: $whitney;
+			// background: rgba(yellow, 0.5);
 		}
 	}
 }
 
 section {
-	padding: 0 1em;
+	padding: 6rem 0 0 0;
+}
+
+.container {
+	overflow: auto;
 	@include outer-container;
-	@include media($tablet) {
-		padding: 0;
-	}
 }
 
 article {
-	margin: 0 0 10em 0;
-	padding: 0 0 $pad 0;
-	border-bottom: 1px solid $light-gray;
+	margin: 4rem 0 4rem 0;
+}
+
+.dark {
+	padding: 4rem 0 6rem 0;
+	background: $dark-gray;
+	color: $light;
+	&.small {
+		padding: 0 0;
+	}
 }
 
 footer {
-	padding: 0;
-	color: $light-gray;
-	background: $dark;
-	span {
+	padding: 2em 0 6em 0;
+	line-height: 1.1;
+	.left {
+		@include span-columns(6 of 12);
 		font-size: $epsilon;
-		font-weight: 500;
-		@include span-columns(2);
-		&.right {
-			text-align: right;
+	}
+	.right {
+		@include span-columns(6 of 12);
+		font-size: $epsilon;
+		text-align: right;
+		a {
+			color: $light-gray;
+			text-decoration: underline;
+			&:hover {
+				color: $accent;
+			}
 		}
 	}
 }
 
-#blur {
-	height: 100%;
-	-webkit-filter: blur(6px) contrast(0.4) brightness(1.4);
-	-moz-filter: blur(6px) contrast(0.4) brightness(1.4);
-	-o-filter: blur(6px) contrast(0.4) brightness(1.4);
-	-ms-filter: blur(6px) contrast(0.4) brightness(1.4);
-	transition: all 0.5s ease-in-out;
-	-webkit-transform: translate3d(0,0,0);
-	clip: rect(inherit);
+.flag {
+	background: url(../images/canadian-flag.svg) no-repeat;
+	background-size: contain;
+	width: 2rem;
+	height: 1rem;
+	display: block;
 }

@@ -4,7 +4,7 @@ date: 2013-09-20
 tags: general
 ---
 
-I've never been great at keeping a blog. Any space I've made for writing in the past has been as Shedbot, the moniker I've used for my photo/design work the past few years. I would always tread lightly posting on behalf a business, even my own. When speaking on behalf of a business you're always conscious of offending that exec who perhaps would've given you that big contract if he didn't see you talking about [ManBearPig](http://www.youtube.com/watch?v=xf69EEL3WBk) all the time.
+I've never been great at keeping a blog. Any space I've made for writing in the past has been as Shedbot, the moniker I've used for my photo/design work the past few years. I would always tread lightly posting on behalf a business, even my own. When speaking on behalf of a business you're always conscious of offending that exec who perhaps would've given you that big contract if he didn't see you talking about [ManBearPig](http://www.youtube.com/watch?v=xf69EEL3WBk) that one time.
 
 I've been wanting to write my own blogging app since seeing [this post](http://sam.roon.io/new-blog) by [Sam Soffes'](http://twitter.com/soffes) about one of his 6000 blog iterations earlier this year. He wrote a Sinatra app that uses a GitHub repo of markdown files as posts and caches them in Redis. I really liked the idea of using static markdown files as a post archive; no messy databases or clunky web interface to get in the way of actually writing. I built something similar.
 
@@ -97,9 +97,11 @@ end
 ```
 
 ## Design & Typography
-The sans-serif body type is [Whitney](http://www.typography.com/fonts/whitney/overview/) and the headline serif [Mercury Text](http://www.typography.com/fonts/mercury-text/overview/). Both typefaces are designed by HF&J and served by Cloud.typography. Careful attention was paid to typographical hierarchy, with all font sizes pulled directly from the [modular scale](http://modularscale.com/scale/?px1=20&px2=&ra1=1.333&ra2=0) (a perfect fourth).
+The sans-serif body type is [Whitney](http://www.typography.com/fonts/whitney/overview/) and the headline slab [Sentinel](http://www.typography.com/fonts/sentinel/overview). Both typefaces are designed by HF&J and served by Cloud.typography. Typesetting follows the [modular scale](http://modularscale.com/scale/?px1=20&px2=&ra1=1.333&ra2=0).
 
 I designed a custom pygments stylesheet to ensure code highlighting in the browser would precisely mimic my local environment in Sublime Text 3. The colour scheme is based on the [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) theme by [Chris Kempson](https://twitter.com/chriskempson). The monospace font used in the code views is [Source Code Pro](http://blogs.adobe.com/typblography/2012/09/source-code-pro.html) by Adobe.
+
+The accent colour, [#3BA7BB](#) is the colour of Cartman's hat from South Park.
 
 ## Hosting & Deployment
 The app is hosted on [Heroku](https://www.heroku.com/) and deployed via Git.

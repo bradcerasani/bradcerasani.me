@@ -2,11 +2,45 @@
 %html
 	= haml :"/layouts/_head"
 	%body
-		= haml :"/layouts/_header"
+		%header.dark
+			%div.container
+				.title
+					Brad Cerasani
+				%div.hero
+					%p I'm a web designer and developer based in Winnipeg, Canada. I specialize in responsive, future- friendly front-end development.
+					%p.small In some circles I may also be known as a musician, audio engineer, commercial photographer, and/or hockey coach.
+				%ul.social
+					%li
+						%a(href="http://twitter.com/shedbot" class="twitter")
+					%li
+						%a(href="http://instagram.com/bradcerasani" class="instagram")
+					%li
+						%a(href="http://github.com/bcerasani" class="github")
+					%li
+						%a(href="http://dribbble.com/bcerasani" class="dribbble")
+					%li
+						%a(href="http://ca.linkedin.com/in/bradcerasani" class="linkedin")
+					%li
+						%a(href="http://rdio.com/people/bcerasani" class="rdio")
 		%section
 			%div.container
 				%h4 Journal
 				= haml :"journal/_entries"
+				%h4 Elsewhere
+				%ul.elsewhere
+					%li
+						%span.date
+							16 October, 2013
+						%a(href="http://www.hermanmiller.com/lifework/the-innovative-studio-of-web-designer-developer-brad-cerasani/" class="hm")
+							Herman Miller Lifework
+						%span.excerpt
+							The Innovative Studio of Web Designer & Developer Brad Cerasani
+					%li
+						%span.date
+							16 October, 2013
+						%a(href="http://www.ononesoftware.com/blog/2011/03/02/dslr-camera-remote-in-las-vegas/" class="onone")
+							onOne Software
+						%span.excerpt
+							DSLR Camera Remote in Las Vegas
 	= haml :"/layouts/_footer"
 	= haml :"/layouts/_scripts"
-

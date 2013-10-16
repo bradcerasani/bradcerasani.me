@@ -56,7 +56,7 @@ helpers do
   end
   def date(date)
     datestring = Chronic.parse(date).to_s
-    Date.parse(datestring).strftime('%e %B')
+    Date.parse(datestring).strftime('%e %B, %Y')
   end
   def redcarpet(text)
     markdown = Redcarpet::Markdown.new(BetterRender, fenced_code_blocks: true)

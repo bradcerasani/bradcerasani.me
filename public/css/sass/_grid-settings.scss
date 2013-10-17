@@ -10,4 +10,4 @@ $visual-grid-color: orange;
 // Define your breakpoints
 $mobile: new-breakpoint(min-width 320px 6);
 $tablet: new-breakpoint(min-width 569px 8);
-$desktop: new-breakpoint(min-width 1025px 12);
+$desktop: new-breakpoint(min-width 960px 12);

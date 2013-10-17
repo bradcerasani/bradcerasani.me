@@ -30,7 +30,7 @@ $epsilon: 0.75rem;
 $dark-gray: #202020;
 $gray: #404040;
 $light-gray: #535353;
-$lighter-gray: lighten(#DFDFDF, 5%);
+$lighter-gray: #ECECEC;
 $light: #fafafa;
 $accent: #3BA7BB;
 
@@ -70,7 +70,7 @@ $overlap: 0.13rem;
 		font-family: "SSSocialCircle";
 		line-height: 1.25;
 	}
-	&:hover {
+	&:hover, &:active {
 		background: adjust-color($color, $lightness: 10%, $saturation: 50%);
 		box-shadow: 0 0 0 2px adjust-color($color, $lightness: 10%, $saturation: 50%),
 								inset 0 0 0 ($icon-pad/2 + $overlap) $dark-gray;
@@ -82,7 +82,7 @@ $overlap: 0.13rem;
 
 @mixin ext-link($color) {
 	color: $color;
-	@include media($tablet) {
+	@include media($desktop) {
 		color: inherit;
 
 		&:before {
@@ -90,7 +90,7 @@ $overlap: 0.13rem;
 		}
 	}
 
-	&:hover {
+	&:hover, &:active {
 		color: $color;
 	}
 }
@@ -100,6 +100,9 @@ $overlap: 0.13rem;
 html {
 	font-size: 16px;
 	@include media($tablet) {
+		font-size: 18px;
+	}
+	@include media($desktop) {
 		font-size: 20px;
 	}
 }
@@ -178,7 +181,7 @@ a {
 	@include transition-duration(0.2s);
 	color: $accent;
 	text-decoration: none;
-	&:hover {
+	&:hover, &:active {
 		color: lighten($accent, 10%);
 	}
 }
@@ -210,9 +213,12 @@ section {
 }
 
 article {
-	margin: 4rem 0 0 0;
+	margin: 2rem 0 0 0;
 	padding: 0 0 2rem 0;
 	border-bottom: 1px solid $lighter-gray;
+	@include media($tablet) {
+		margin: 4rem 0 0 0;
+	}
 }
 
 footer {
@@ -230,10 +236,7 @@ footer {
 
 .container {
 	@include outer-container;
-	padding: 0 1rem;
-	@include media($tablet) {
-		padding: 0 2rem;
-	}
+	padding: 0 0.5rem;
 	@include media($desktop) {
 		padding: 0;
 	}
@@ -365,7 +368,7 @@ ul.articles {
 		}
 		.date {
 			display: block;
-			color: $light-gray;
+			color: darken($lighter-gray, 25%);
 			font-size: $epsilon;
 			@include media($tablet) {
 				line-height: 2.5;
@@ -376,7 +379,6 @@ ul.articles {
 		}
 		a {
 			display: block;
-			color: $light-gray;
 			letter-spacing: -0.05rem;
 			font-weight: bold;
 			font-weight: 600;
@@ -384,8 +386,9 @@ ul.articles {
 			@include media($desktop) {
 				@include span-columns(9 of 12);
 				@include omega;
+				color: $light-gray;
 			}
-			&:hover {
+			&:hover, &:active {
 				color: $accent;
 			}
 		}
@@ -411,7 +414,7 @@ ul.elsewhere {
 			letter-spacing: -0.05rem;
 			font-weight: 400;
 			font-size: $delta;
-			@include media($tablet) {
+			@include media($desktop) {
 				padding: 0 0 0 1.5rem;
 				&:before {
 					position: absolute;

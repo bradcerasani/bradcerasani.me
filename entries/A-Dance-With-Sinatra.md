@@ -1,6 +1,6 @@
 title: A Dance With Sinatra
 excerpt: Adventures in programming with Ruby and Sinatra.
-date: 2013-10-15
+date: 2013-09-20
 tags: general
 ---
 

@@ -21,7 +21,7 @@
 $whitney: 'Whitney SSm A', 'Whitney SSm B';
 $sentinel: 'Sentinel SSm A', 'Sentinel SSm B';
 
-$alpha: 2.369rem;
+$beta: 2.369rem;
 $gamma: 1.777rem;
 $delta: 1.333rem;
 $default: 1rem;
@@ -124,7 +124,7 @@ h1 {
 	padding: 0;
 	letter-spacing: -0.08rem;
 	font-weight: 700;
-	font-size: $alpha;
+	font-size: $beta;
 	line-height: 1.25;
 }
 

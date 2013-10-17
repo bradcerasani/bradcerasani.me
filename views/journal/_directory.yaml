@@ -1,9 +1,9 @@
 --- 
 - 
   ? !ruby/symbol date
-  : 2013-09-20
+  : 2013-10-15
   ? !ruby/symbol excerpt
-  : "Learning to program with Ruby and Sinatra."
+  : "Adventures in programming with Ruby and Sinatra."
   ? !ruby/symbol slug
   : /journal/A-Dance-With-Sinatra
   ? !ruby/symbol tags

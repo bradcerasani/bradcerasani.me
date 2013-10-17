@@ -1,6 +1,6 @@
 title: A Dance With Sinatra
-excerpt: Learning to program with Ruby and Sinatra.
-date: 2013-09-20
+excerpt: Adventures in programming with Ruby and Sinatra.
+date: 2013-10-15
 tags: general
 ---
 
@@ -15,7 +15,7 @@ This was my first adventure in programming, so the build took a while. Though I 
 ```
 # A-Dance-With-Sinatra.md
 title: A Dance With Sinatra
-excerpt: Learning to program with Ruby and Sinatra.
+excerpt: Adventures in programming with Ruby and Sinatra.
 date: 2013-09-20
 tags: general
 --

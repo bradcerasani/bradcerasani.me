@@ -236,7 +236,7 @@ footer {
 
 .container {
 	@include outer-container;
-	padding: 0 0.5rem;
+	padding: 0 1rem;
 	@include media($desktop) {
 		padding: 0;
 	}
@@ -368,7 +368,6 @@ ul.articles {
 		}
 		.date {
 			display: block;
-			color: darken($lighter-gray, 25%);
 			font-size: $epsilon;
 			@include media($tablet) {
 				line-height: 2.5;

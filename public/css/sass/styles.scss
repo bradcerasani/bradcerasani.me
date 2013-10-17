@@ -196,14 +196,14 @@ hr {
 
 header {
 	position: relative;
-	padding: 2rem 0 2rem 0;
+	padding: 1.5rem 0 1.5rem 0;
 	@include media($tablet) {
 		padding: 3rem 0 4rem 0;
 	}
 }
 
 section {
-	padding: 2rem 0 0 0;
+	padding: 1.5rem 0 0 0;
 	@include media($tablet) {
 		padding: 4rem 0 0 0;
 	}
@@ -216,7 +216,7 @@ article {
 }
 
 footer {
-	padding: 2rem 0;
+	padding: 1.5rem 0;
 	font-size: $epsilon;
 	line-height: 1.1;
 	@include media($tablet) {
@@ -279,7 +279,7 @@ footer {
 
 .hero {
 	margin: 0 0 0 0;
-	padding: 2rem 0;
+	padding: 1.5rem 0;
 	@include media($tablet) {
 		padding: 2rem 0;
 	}
@@ -344,7 +344,7 @@ ul.social {
 
 ul.articles {
 	display: block;
-	margin: 2rem 0 2rem 0;
+	margin: 1.5rem 0 1.5rem 0;
 	padding: 0;
 	@include media($tablet) {
 		margin: 1rem 0 4rem 0;

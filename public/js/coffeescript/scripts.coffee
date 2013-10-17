@@ -1,1 +1,1 @@
-$("body a[href^='http://']").attr "target", "_blank"
+$("body a[href^='http://'], body a[href^='https://']v").attr "target", "_blank"

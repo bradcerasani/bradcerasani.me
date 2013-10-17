@@ -196,7 +196,7 @@ hr {
 
 header {
 	position: relative;
-	padding: 2rem 0 3rem 0;
+	padding: 1rem 0 2rem 0;
 	@include media($tablet) {
 		padding: 3rem 0 4rem 0;
 	}
@@ -284,7 +284,7 @@ footer {
 		margin: 0 0 1rem 0;
 		letter-spacing: -0.05rem;
 		font-weight: 300;
-		font-size: $gamma;
+		font-size: $delta;
 		font-family: $sentinel;
 		line-height: 1.45;
 		@include media($tablet) {
@@ -294,7 +294,7 @@ footer {
 			margin: 0;
 			color: $lighter-gray;
 			letter-spacing: 0;
-			font-size: $delta;
+			font-size: $default;
 			font-family: $whitney;
 			@include media($tablet) {
 				font-size: $delta;
@@ -354,9 +354,12 @@ ul.articles {
 		display: block;
 		overflow: auto;
 		margin: 0;
-		padding: 2rem 0;
+		padding: 1.5rem 0;
 		border-bottom: 1px solid $lighter-gray;
 		list-style: none;
+		@include media($desktop) {
+			padding: 2rem 0;
+		}
 		&:first-of-type {
 			border-top: 1px solid $lighter-gray;
 		}
@@ -391,6 +394,7 @@ ul.articles {
 			color: $light-gray;
 			font-family: $whitney;
 			line-height: 1.5;
+			font-size: $epsilon;
 			@include media($desktop) {
 				@include span-columns(9 of 12);
 				@include shift(3);
@@ -432,7 +436,6 @@ ul.elsewhere {
 		.excerpt {
 			letter-spacing: 0.01rem;
 			font-style: italic;
-			font-size: $epsilon;
 		}
 	}
 }

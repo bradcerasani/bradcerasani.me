@@ -107,7 +107,7 @@ html {
 body {
 	background: $light;
 	color: $gray;
-	text-align: center;
+	// text-align: center;
 	font-family: $whitney;
 	line-height: 1.5;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -196,7 +196,7 @@ hr {
 
 header {
 	position: relative;
-	padding: 1rem 0 1rem 0;
+	padding: 2rem 0 2rem 0;
 	@include media($tablet) {
 		padding: 3rem 0 4rem 0;
 	}
@@ -279,7 +279,10 @@ footer {
 
 .hero {
 	margin: 0 0 0 0;
-	padding: 1rem 0;
+	padding: 2rem 0;
+	@include media($tablet) {
+		padding: 2rem 0;
+	}
 	p {
 		margin: 0 0 1rem 0;
 		letter-spacing: -0.05rem;
@@ -300,9 +303,6 @@ footer {
 				font-size: $delta;
 			}
 		}
-	}
-	@include media($tablet) {
-		padding: 2rem 0;
 	}
 }
 
@@ -344,7 +344,7 @@ ul.social {
 
 ul.articles {
 	display: block;
-	margin: 1rem 0 2rem 0;
+	margin: 2rem 0 2rem 0;
 	padding: 0;
 	@include media($tablet) {
 		margin: 1rem 0 4rem 0;

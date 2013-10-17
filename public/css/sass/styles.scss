@@ -196,7 +196,7 @@ hr {
 
 header {
 	position: relative;
-	padding: 1rem 0 2rem 0;
+	padding: 1rem 0 1rem 0;
 	@include media($tablet) {
 		padding: 3rem 0 4rem 0;
 	}
@@ -269,8 +269,8 @@ footer {
 
 .title {
 	padding: 1rem 0;
-	border-top: 1px solid $light-gray;
-	border-bottom: 1px solid $light-gray;
+	border-top: 1px solid darken($lighter-gray, 0%);
+	border-bottom: 1px solid darken($lighter-gray, 0%);
 	color: $light;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
@@ -377,10 +377,10 @@ ul.articles {
 		a {
 			display: block;
 			color: $light-gray;
-			letter-spacing: -0.1rem;
+			letter-spacing: -0.05rem;
 			font-weight: bold;
 			font-weight: 600;
-			font-size: $gamma;
+			font-size: $delta;
 			@include media($desktop) {
 				@include span-columns(9 of 12);
 				@include omega;
@@ -408,7 +408,7 @@ ul.elsewhere {
 	margin-bottom: 0;
 	li {
 		a {
-			letter-spacing: -0.04rem;
+			letter-spacing: -0.05rem;
 			font-weight: 400;
 			font-size: $delta;
 			@include media($tablet) {

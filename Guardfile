@@ -9,5 +9,5 @@ guard 'coffeescript', :input => 'public/js/coffeescript', :output => 'public/js'
 # end
 
 guard 'livereload' do
-  watch(%r{.+\.(css|html|js|haml)$})
+  watch(%r{.+\.(css|html|js|haml|md)$})
 end

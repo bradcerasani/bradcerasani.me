@@ -34,12 +34,15 @@ $pg_comment: #969896;
 
 code {
 	display: inline-block;
-	padding: 0 $default;
+	margin: 0;
+	padding: 0 0.5rem;
 	background: $pg_background;
 	color: $pg_foreground;
+	vertical-align: middle;
 	font-weight: 500;
 	font-size: $epsilon;
 	font-family: "source-code-pro", "source code pro", "menlo", $monospace;
+	line-height: 1.8;
 	&::selection {
   	color: inherit;
 		background: rgba(white, 0.15);
@@ -118,7 +121,7 @@ code {
 	.nx { color: $pg_yellow } 					/* Name.Other */
 	.py { color: $pg_foreground } 			/* Name.Property */
 	.nt { color: $pg_purple } 					/* Name.Tag */
-	.nv { color: $pg_foreground } 			/* Name.Variable */
+	.nv { color: $pg_orange } 			/* Name.Variable */
 	.ow { color: $pg_aqua } 						/* Operator.Word */
 	.w 	{ color: $pg_foreground } 			/* Text.Whitespace */
 	.mf { color: $pg_orange } 					/* Literal.Number.Hex */

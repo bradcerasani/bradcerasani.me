@@ -1,5 +1,5 @@
 title: Creative Styling of :Visited Links
-excerpt: Using a CSS pseudo class to add a check mark to visited links.
+excerpt: Using a CSS pseudo element to add a check mark to visited links.
 date: 2013-10-18
 tags: css
 ---

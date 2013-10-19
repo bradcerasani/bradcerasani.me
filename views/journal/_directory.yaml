@@ -3,7 +3,7 @@
   ? !ruby/symbol date
   : 2013-10-18
   ? !ruby/symbol excerpt
-  : "Excerpt derka :vistited :visited."
+  : "Using a CSS pseudo element to add a check mark to visited links."
   ? !ruby/symbol slug
   : /journal/Creative-Styling-of-Visited-Links
   ? !ruby/symbol tags

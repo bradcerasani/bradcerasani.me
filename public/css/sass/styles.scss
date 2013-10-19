@@ -175,11 +175,13 @@ strong {
 
 blockquote {
 	display: block;
-	margin: 1rem 0 1rem -1rem;
+	margin: 1rem 0 1rem 0;
 	padding: 0 0 0 1rem;
 	box-shadow: inset 0.2rem 0 0 $accent;
-	font-weight: 400;
 	font-style: italic;
+	@include media($tablet) {
+		margin: 1rem 0 1rem -1rem;
+	}
 	p {
 		color: $light-gray;
 	}

@@ -10,28 +10,6 @@ $pg_blue: #81A2BE;
 $pg_purple: #B294BB;
 $pg_comment: #969896;
 
-.highlight {
-  position: relative;
-	margin-bottom: 1.5rem;
-	padding: 1rem 0 1rem 2rem;
-  border-left: 1rem solid darken($pg_background, 0%);
-	background: $pg_background;
-	&.ki {
-		padding-right: 1rem;
-		pre {
-			white-space: pre-wrap;
-		}
-	}
-  ::selection {
-  	color: inherit;
-		background: rgba(white, 0.15);
-	}
-	::-moz-selection {
-		color: inherit;
-		background: rgba(white, 0.15);
-	}
-}
-
 code {
 	margin: 0;
 	padding: 0 0.5rem;
@@ -50,11 +28,36 @@ code {
 	}
 }
 
+.highlight {
+  position: relative;
+	margin-bottom: 1.5rem;
+	padding: 1rem 0 1rem 1.5rem;
+  border-left: 0.5rem solid $pg_background;
+	background: $pg_background;
+	@include media($tablet) {
+		padding: 1rem 0 1rem 2rem;
+  	border-left: 1rem solid $pg_background;
+	}
+	&.ki {
+		padding-right: 1rem;
+		pre {
+			white-space: pre-wrap;
+		}
+	}
+  ::selection {
+  	color: inherit;
+		background: rgba(white, 0.15);
+	}
+	::-moz-selection {
+		color: inherit;
+		background: rgba(white, 0.15);
+	}
+}
+
 .highlight code, .highlight pre {
 	font-weight: 500;
-	font-size: 0.75em;
+	font-size: $epsilon;
 	font-family: "source-code-pro", "source code pro", "menlo", $monospace;
-	line-height: 1.5em;
 }
 
 .highlight pre {
@@ -66,7 +69,6 @@ code {
 
 .highlight pre > span {
   display: block;
-	line-height: 1.5em;
 	&:before {
     position: absolute;
     left: 0;

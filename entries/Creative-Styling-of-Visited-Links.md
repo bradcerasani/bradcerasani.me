@@ -34,7 +34,7 @@ First, we'll create a link and give it some styling.
 $accent: #3BA7BB;
 
 a.demo {
-		position: relative;
+	position: relative;
 	display: inline-block;
 	padding: 0.75rem 3rem;
 	border: 2px solid $accent;
@@ -60,7 +60,7 @@ Pseudo elements in CSS are **awesome**. [Chris Coyier](http://css-tricks.com/pse
 
 We'll use a CSS pseudo element to help style the `:visited` state of our link. While pseudo elements have the same CSS property restrictions as the `<a>` tag, with absolute positioning and some basic colour tricks we can essentially hide a `:visited` style in our link right from the start.
 
-Let's add a check mark using pseudo element `:after`. I'm using a check mark from [icomoon](http://icomoon.io/), but if you aren't familiar with icon fonts, grab a character from [here](http://copypastecharacter.com/) and insert it on line 18 between the double quotes.
+Let's add a check mark using pseudo element `:after`. I'm using a check mark from [icomoon](http://icomoon.io/), but if you aren't familiar with icon fonts, grab a character from [here](http://copypastecharacter.com/) and insert it on line 19 between the double quotes.
 
 ```scss
 $accent: #3BA7BB;
@@ -133,7 +133,7 @@ a.demo {
 
 Give it a try:
 
-<a href="http://youtu.be/G7RgN9ijwE4" class="demo step-two step-three">AWESOME</a>
+<a href="http://bit.ly/16m376q" class="demo step-two step-three">AWESOME</a>
 
 Pretty cool, eh?
 

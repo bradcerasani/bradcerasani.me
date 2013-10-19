@@ -428,6 +428,7 @@ ul.articles {
 		}
 		a {
 			display: block;
+			color: $light-gray;
 			letter-spacing: -0.05rem;
 			font-weight: bold;
 			font-weight: 600;
@@ -435,7 +436,6 @@ ul.articles {
 			@include media($desktop) {
 				@include span-columns(9 of 12);
 				@include omega;
-				color: $light-gray;
 			}
 			&:hover, &:active {
 				color: $accent;

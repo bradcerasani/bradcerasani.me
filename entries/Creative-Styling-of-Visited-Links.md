@@ -138,6 +138,6 @@ Pretty cool, eh?
 
 ## Wrap-Up
 
-We've managed to provide an interesting visual style for visited links without sacrificing user privacy or relying on Javascript. The only limitations with this method are style based; this technique lends itself well to modern flat web design.
+With pure CSS we've created an interesting visual style for visited links without sacrificing user privacy or relying on Javascript. Kickass!
 
 

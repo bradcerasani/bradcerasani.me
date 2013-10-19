@@ -24,7 +24,7 @@ Boring, eh? Not to worry, we can work with this.
 
 First, we'll create a link and give it some styling.
 
-*I'm using SCSS/Sass instead of vanilla CSS. If you want to learn Sass, [start here](http://sass-lang.com/guide).*
+*I'm using SCSS/Sass instead of vanilla CSS. If you are unfamiliar with Sass, [start here](http://sass-lang.com/guide).*
 
 ```html
 <a href="#!" class="demo">AWESOME</a>
@@ -34,13 +34,14 @@ First, we'll create a link and give it some styling.
 $accent: #3BA7BB;
 
 a.demo {
-	position: relative;
+		position: relative;
 	display: inline-block;
 	padding: 0.75rem 3rem;
 	border: 2px solid $accent;
 	border-radius: 3px;
 	background: $accent;
 	color: white;
+	text-decoration: none;
 	font-weight: 500;
 	line-height: 1;
 }
@@ -57,11 +58,9 @@ Pseudo elements in CSS are **awesome**. [Chris Coyier](http://css-tricks.com/pse
 
 >  For every element on the page, you get two more free ones that you can do just about anything another HTML element could do.
 
-We'll use a CSS pseudo element to help style the `:visited` state of our link. While pseudo elements have the same CSS property restrictions as the main element, with absolute positioning and some basic colour tricks we can essentially hide a `:visited` style in our link from the start.
+We'll use a CSS pseudo element to help style the `:visited` state of our link. While pseudo elements have the same CSS property restrictions as the `<a>` tag, with absolute positioning and some basic colour tricks we can essentially hide a `:visited` style in our link right from the start.
 
-Let's add a check mark using pseudo element `:after` and an icon from [icomoon](http://icomoon.io/).
-
-*If you aren't familiar with icon fonts, grab a character from [here](http://copypastecharacter.com/) and use it for the content value on line 18 between the double quotes.*
+Let's add a check mark using pseudo element `:after`. I'm using a check mark from [icomoon](http://icomoon.io/), but if you aren't familiar with icon fonts, grab a character from [here](http://copypastecharacter.com/) and insert it on line 18 between the double quotes.
 
 ```scss
 $accent: #3BA7BB;
@@ -74,6 +73,7 @@ a.demo {
 	border-radius: 3px;
 	background: $accent;
 	color: white;
+	text-decoration: none;
 	font-weight: 500;
 	line-height: 1;
 	&:after {
@@ -93,7 +93,7 @@ Result:
 
 ## Building Functionality
 
-While we can't technically 'add' the check mark to only `:visited` links, we can hide it in a link's natural state by changing its colour to match the background.
+While we can't technically 'add' the check mark strictly to `:visited` links, we can hide it in a link's natural state by changing its colour to match the background.
 
 Now we can style the `:visited` state to provide some visual contrast and show off the check mark and border, both of which were disguised originally.
 
@@ -108,6 +108,7 @@ a.demo {
 	border-radius: 3px;
 	background: $accent;
 	color: white;
+	text-decoration: none;
 	font-weight: 500;
 	line-height: 1;
 	&:after {

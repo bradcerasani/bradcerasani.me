@@ -130,6 +130,4 @@ This has been a lot of fun to build, and I have a lot to do on it still. It's en
 
 Let me know your thoughts on [Twitter](http://twitter.com/shedbot).
 
-View source on [Github](https://github.com/bcerasani/bradcerasani.me).
-
 

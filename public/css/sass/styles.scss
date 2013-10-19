@@ -236,7 +236,7 @@ article {
 	margin: 2rem 0 0 0;
 	padding: 0 0 0 0;
 	@include media($tablet) {
-		margin: 4rem 0 0 0;
+		margin: 3rem 0 0 0;
 	}
 }
 
@@ -290,9 +290,12 @@ footer {
 }
 
 .thin {
-	padding: 0.5rem 0;
+	padding: 0rem 0;
 	.title {
 		border: none;
+	}
+	@include media($tablet) {
+		padding: 0.5rem 0;
 	}
 }
 

@@ -11,10 +11,6 @@ $pg_purple: #B294BB;
 $pg_comment: #969896;
 
 .highlight {
-	@extend .animated;
-	@extend .fadeIn;
-	@include animation-delay(0.6s);
-	@include animation-duration(0.4s);
   position: relative;
 	margin-bottom: 1.5rem;
 	padding: 1rem 0 1rem 2rem;

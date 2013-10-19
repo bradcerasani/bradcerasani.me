@@ -1,5 +1,8 @@
 - @title = @meta['title']
+
 %article
-	%h1= @meta['title']
-	~ redcarpet(@text)
+	%div.container
+		%h1= @meta['title']
+		~ redcarpet(@text)
+		%hr
 

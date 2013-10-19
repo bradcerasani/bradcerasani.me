@@ -1,4 +1,4 @@
-$pg_background: #1D1F21;
+$pg_background: #202020;
 $pg_foreground: #C5C8C6;
 $pg_numbers: #717373;
 $pg_red: #f2777a;
@@ -11,6 +11,10 @@ $pg_purple: #B294BB;
 $pg_comment: #969896;
 
 .highlight {
+	@extend .animated;
+	@extend .fadeIn;
+	@include animation-delay(0.6s);
+	@include animation-duration(0.4s);
   position: relative;
 	margin-bottom: 1.5rem;
 	padding: 1rem 0 1rem 2rem;
@@ -33,16 +37,13 @@ $pg_comment: #969896;
 }
 
 code {
-	display: inline-block;
 	margin: 0;
 	padding: 0 0.5rem;
-	background: $pg_background;
-	color: $pg_foreground;
+	background: $lighter-gray;
 	vertical-align: middle;
 	font-weight: 500;
 	font-size: $epsilon;
 	font-family: "source-code-pro", "source code pro", "menlo", $monospace;
-	line-height: 1.8;
 	&::selection {
   	color: inherit;
 		background: rgba(white, 0.15);
@@ -52,7 +53,6 @@ code {
 		background: rgba(white, 0.15);
 	}
 }
-
 
 .highlight code, .highlight pre {
 	font-weight: 500;

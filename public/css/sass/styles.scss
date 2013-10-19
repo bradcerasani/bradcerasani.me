@@ -4,6 +4,7 @@
 @import "neat/neat";
 @import "icons";
 @import "symbolset";
+@import "animate";
 
 /* ------------------------------------------------ *\
 
@@ -201,10 +202,10 @@ ul {
 }
 
 hr {
-	margin: 0 auto;
+	margin: 4rem auto 0 auto;
 	height: 1px;
 	border: none;
-	background: $light-gray;
+	background: $lighter-gray;
 }
 
 img {
@@ -220,6 +221,9 @@ header {
 }
 
 section {
+	@extend .animated;
+	@extend .fadeInUp;
+	@include animation-delay(0.6s);
 	padding: 1.5rem 0 0 0;
 	@include media($tablet) {
 		padding: 4rem 0 0 0;
@@ -227,9 +231,10 @@ section {
 }
 
 article {
+	@extend .animated;
+	@extend .fadeIn;
 	margin: 2rem 0 0 0;
-	padding: 0 0 2rem 0;
-	border-bottom: 1px solid $lighter-gray;
+	padding: 0 0 0 0;
 	@include media($tablet) {
 		margin: 4rem 0 0 0;
 	}
@@ -284,17 +289,42 @@ footer {
 	color: $light;
 }
 
+.thin {
+	padding: 0.5rem 0;
+	.title {
+		border: none;
+	}
+}
+
 .title {
 	padding: 1rem 0;
-	border-top: 1px solid darken($lighter-gray, 0%);
-	border-bottom: 1px solid darken($lighter-gray, 0%);
+	border-top: 1px solid $lighter-gray;
+	border-bottom: 1px solid $lighter-gray;
 	color: $light;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
 	line-height: 1;
 }
 
+a.home {
+	display: block;
+	i {
+		@include transition-duration(0.2s);
+		float: right;
+		color: $light-gray;
+	}
+	&:hover {
+		color: $lighter-gray;
+		i {
+			color: $lighter-gray;
+		}
+	}
+}
+
 .hero {
+	@extend .animated;
+	@extend .fadeIn;
+	@include animation-delay(0.2s);
 	margin: 0 0 0 0;
 	padding: 1.5rem 0;
 	@include media($tablet) {
@@ -324,6 +354,9 @@ footer {
 }
 
 ul.social {
+	@extend .animated;
+	@extend .fadeIn;
+	@include animation-delay(0.2s);
 	display: block;
 	overflow: auto;
 	margin: 0;
@@ -460,12 +493,16 @@ ul.elsewhere {
 	position: relative;
 	color: $twitter;
 	padding: 0 0 0 1rem;
+	font-weight: 400;
 	&:before {
 		position: absolute;
 		left: 0;
 		content: "\e606";
 		font-family: icomoon;
 		}
+	&:hover {
+		color: adjust-color($twitter, $lightness: 10%, $saturation: 50%);
+	}
 }
 
 .flag {

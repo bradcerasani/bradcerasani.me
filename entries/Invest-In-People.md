@@ -1,5 +1,5 @@
-title: Invest In People
-excerpt: Def Jam Recordings and recreating Verne Ho’s sketch notes on the web.
+title: Invest in People
+excerpt: Thoughts on inspiring people and recreating sketch notes on the web.
 date: 2013-11-20
 tags: general
 ---
@@ -14,4 +14,4 @@ It’s this mentality that helped Def Jam Recordings become the most ubiquitous 
 
 I recently came across [a post](http://blog.verneho.com/post/35460914051/invest-in-people-based-on-my-original-post) by [Verne Ho](https://twitter.com/verneho) about the importance of surrounding yourself with good people, and it reminded me of the Russell Simmons quote I’ve held closely for years. I loved Verne’s sketch notes on the subject, and they inspired my attempt to recreate them as closely as possible on the web.
 
-Check out what I came up with [here](http://bcerasani.github.io/Invest-in-People/), or fork the source on [GitHub](https://github.com/bcerasani/Invest-in-People).
+1. Check out what I came up with [here](http://bcerasani.github.io/Invest-in-People/), or fork the source on [GitHub](https://github.com/bcerasani/Invest-in-People).

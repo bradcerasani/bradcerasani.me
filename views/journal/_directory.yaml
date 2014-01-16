@@ -1,6 +1,17 @@
 --- 
 - 
   ? !ruby/symbol date
+  : 2013-11-20
+  ? !ruby/symbol excerpt
+  : "Def Jam Recordings and recreating Verne Ho’s sketch notes on the web."
+  ? !ruby/symbol slug
+  : /journal/Invest-In-People
+  ? !ruby/symbol tags
+  : general
+  ? !ruby/symbol title
+  : "Invest In People"
+- 
+  ? !ruby/symbol date
   : 2013-10-18
   ? !ruby/symbol excerpt
   : "Using CSS pseudo elements to check mark visited links."

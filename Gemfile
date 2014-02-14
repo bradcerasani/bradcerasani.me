@@ -14,5 +14,8 @@ gem 'psych'
 
 group :development do
   gem 'guard'
+  gem 'guard-sass'
+  gem 'guard-coffeescript'
+  gem 'guard-livereload'
   gem 'shotgun'
 end

@@ -484,9 +484,6 @@ ul.elsewhere {
 			&.hm {
 				@include ext-link(#FF3301);
 			}
-			&.onone {
-				@include ext-link(#0069AA);
-			}
 			@include media($tablet) {
 				padding: 0;
 			}

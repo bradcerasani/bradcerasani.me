@@ -1,0 +1,19 @@
+/**
+ * Components > Logo
+ *
+ * @define Logo
+ *
+ */
+
+:root {
+  --Logo-height: 3rem;
+}
+
+.Logo {
+  background-image: url("/images/brad-cerasani.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: var(--Logo-height);
+  width: calc(var(--Logo-height) * (200 / 30)); /* display height x (logo width / height) */
+}

@@ -1,7 +1,0 @@
-%ul.articles
-	- @entries.each do |a|
-		%li{class: active(a)}
-			%span.date= date a[:date]
-			%a{href: a[:slug]}
-				= a[:title]
-			%span.excerpt= a[:excerpt]

@@ -21,16 +21,16 @@ const imagemin = require('gulp-imagemin');
 const paths = {
   html: {
     all: './src/**/*.html',
-    output: './dist',
+    output: './public',
   },
   styles: {
     all: './src/assets/styles/**/*.css',
     input: './src/assets/styles/main.css',
-    output: './dist/styles',
+    output: './public/styles',
   },
   images: {
     all: './src/assets/images/**/*',
-    output: './dist/images',
+    output: './public/images',
   },
 };
 
@@ -44,7 +44,7 @@ function serve() {
     notify: false,
     open: false,
     server: {
-      baseDir: './dist',
+      baseDir: './public',
     },
   });
 }

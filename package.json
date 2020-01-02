@@ -1,46 +1,48 @@
 {
   "name": "bradcerasani.me",
-  "version": "3.0.0",
-  "description": "Personal website of Brad Cerasani",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": true,
+  "description": "The personal site of Brad Cerasani",
+  "version": "0.1.0",
+  "author": "Brad Cerasani <bradcerasani@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/bradcerasani/bradcerasani.me/issues"
   },
-  "repository": "bradcerasani/bradcerasani.me",
-  "author": {
-    "name": "Brad Cerasani",
-    "email": "bradcerasani@gmail.com",
-    "url": "bradcerasani.me"
+  "dependencies": {
+    "gatsby": "^2.18.12",
+    "gatsby-image": "^2.2.34",
+    "gatsby-plugin-feed": "^2.3.23",
+    "gatsby-plugin-google-analytics": "^2.1.29",
+    "gatsby-plugin-manifest": "^2.2.31",
+    "gatsby-plugin-react-helmet": "^3.1.16",
+    "gatsby-plugin-sharp": "^2.3.5",
+    "gatsby-remark-copy-linked-files": "^2.1.31",
+    "gatsby-remark-images": "^3.1.35",
+    "gatsby-remark-prismjs": "^3.3.25",
+    "gatsby-remark-responsive-iframe": "^2.2.28",
+    "gatsby-remark-smartypants": "^2.1.17",
+    "gatsby-source-filesystem": "^2.1.40",
+    "gatsby-transformer-remark": "^2.6.39",
+    "gatsby-transformer-sharp": "^2.3.7",
+    "prismjs": "^1.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   },
   "license": "MIT",
-  "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "babel-core": "^6.7.6",
-    "babel-eslint": "^6.0.2",
-    "browser-sync": "^2.12.3",
-    "eslint": "^2.6.0",
-    "eslint-config-airbnb": "^7.0.0",
-    "eslint-plugin-react": "^4.2.3",
-    "gulp": "gulpjs/gulp#4.0",
-    "gulp-changed": "^1.3.0",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-postcss": "^6.1.0",
-    "gulp-size": "^2.1.0",
-    "normalize.css": "^4.1.1",
-    "postcss-calc": "^5.2.1",
-    "postcss-custom-media": "^5.0.1",
-    "postcss-custom-properties": "^5.0.0",
-    "postcss-discard-comments": "^2.0.4",
-    "postcss-import": "^8.1.0",
-    "postcss-remove-root": "0.0.2",
-    "postcss-reporter": "^1.3.3",
-    "stylelint": "^5.2.1",
-    "stylelint-config-usoniancss": "^1.0.1"
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradcerasani/bradcerasani.me.git"
   },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": [
-      "airbnb"
-    ]
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   }
 }

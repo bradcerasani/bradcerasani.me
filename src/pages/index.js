@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+
+const Container = styled.div`
+  border-bottom: 4px solid firebrick;
+`;
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,7 +19,9 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
+        <Container>
+          <Bio />
+        </Container>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (

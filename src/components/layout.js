@@ -15,6 +15,17 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
   }
 
+  section {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    color: hsla(0, 0%, 20%, 1);
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 24px;
+  }
 `;
 
 const H1 = styled.div`
@@ -29,11 +40,12 @@ const H1 = styled.div`
   color: hsl(0, 0%, 40%);
   color: HSLA(26, 32%, 20%, 1);
   color: HSLA(43, 19%, 28%, 1);
+  color: hsla(0, 0%, 36%, 1);
   /* text-shadow: -2px 2px 0 HSLA(28, 21%, 55%, 0.5); */
 `;
 
 const Header = styled.div`
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   margin-top: 80px;
 `;
 
@@ -87,17 +99,6 @@ const NavItem = styled(Link)`
   }
 `;
 
-const Section = styled.section`
-  font-size: 20px;
-  line-height: 1.5;
-  margin: 0;
-
-  p {
-    margin: 0;
-    margin-bottom: 24px;
-  }
-`;
-
 class Layout extends React.Component {
   render() {
     const { title, children } = this.props;
@@ -137,36 +138,7 @@ class Layout extends React.Component {
               </Nav>
             </Aside>
           </Header>
-
-          <Section>
-            <img src="/static/assets/brad-cerasani.jpg" alt="" />
-            <p style={{ fontSize: '24px' }}>
-              I've been designing and implemeting software for over a decade,
-              with clients that include Apple, Twitter, and the American Music
-              Awards.
-            </p>
-
-            <p>
-              In 2014, I joined the design team at Black Pixel; a mobile-focused
-              digital products agency whose software is used by over 100 million
-              people daily. In 2016, I formally transitioned into the
-              engineering group, where a new Web Services Team was created under
-              my lead. In the years that followed, I grew this team from three
-              to more than twenty highly-engaged developers across a wide
-              variety of projects and technologies.
-            </p>
-
-            <p>
-              Black Pixel was acquired by Hypergiant in late 2018, where I am
-              presently the Director of Web Development.
-            </p>
-
-            <p>
-              Offline, like working with my hands, collecting twentieth-century
-              furniture and objects, and playing hockey or soccer.
-            </p>
-          </Section>
-          {/* <main>{children}</main> */}
+          <main>{children}</main>
           {/* <footer>© {new Date().getFullYear()}</footer> */}
         </div>
       </Fragment>

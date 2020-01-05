@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const Container = styled.div`
-  border-bottom: 4px solid firebrick;
+  display: none;
 `;
 
 class BlogIndex extends React.Component {

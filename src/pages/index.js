@@ -60,8 +60,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: {}, fields: { slug: { eq: "/" } }) {
-      html
+    markdownRemark(id: {}, fields: { slug: { eq: "/bio/" } }) {
       frontmatter {
         excerpt
       }

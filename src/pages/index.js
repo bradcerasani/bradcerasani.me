@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import SEO from '../components/organisms/seo';
 
 class BlogIndex extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class BlogIndex extends React.Component {
 
         <section
           dangerouslySetInnerHTML={{
-            __html: data.markdownRemark.html,
+            __html: data.markdownRemark.frontmatter.excerpt,
           }}
         />
 
@@ -62,6 +62,9 @@ export const pageQuery = graphql`
     }
     markdownRemark(id: {}, fields: { slug: { eq: "/" } }) {
       html
+      frontmatter {
+        excerpt
+      }
     }
     allMarkdownRemark(
       filter: { frontmatter: { date: { ne: null } } }

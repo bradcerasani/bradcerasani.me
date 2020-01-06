@@ -8,6 +8,21 @@ export const Nav = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   margin-bottom: 8px;
+  position: relative;
+`;
+
+export const NavImage = styled.img`
+  display: block;
+  position: absolute;
+  width: 200px;
+  /* height: 200px; */
+  right: -200px;
+  bottom: 0;
+  z-index: -2;
+  margin-right: -16px;
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 `;
 
 export const NavItem = styled(Link)`
@@ -17,24 +32,33 @@ export const NavItem = styled(Link)`
   color: hsla(0, 0%, 40%, 1);
   color: HSLA(43, 19%, 28%, 1);
   color: HSLA(43, 10%, 59%, 1);
+  color: hsla(0, 0%, 60%, 1);
   margin-top: 12px;
   border-radius: 8px;
-  position: relative;
+  padding-right: 16px;
+  margin-right: -16px;
 
   &:first-of-type {
-    /* color: orange; */
-    color: HSLA(199, 85%, 29%, 1);
-    color: HSLA(214, 86%, 42%, 1);
-    color: HSLA(43, 19%, 28%, 1);
+    color: black;
 
     &::after {
       position: absolute;
-      content: '◝';
-      font-size: 32px;
-      /* top: -2px; */
-      bottom: -17px;
+      content: '~';
       right: -24px;
-      /* color: black; */
+      z-index: 1;
+    }
+
+    &:hover::after {
+      content: '🏠';
+      right: -32px;
+    }
+  }
+
+  &:hover {
+    ${NavImage} {
+      opacity: 1;
+      transition-duration: 0ms;
+      z-index: 0;
     }
   }
 `;

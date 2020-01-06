@@ -16,11 +16,22 @@ export const GlobalStyle = createGlobalStyle`
   section {
     color: hsla(0, 0%, 20%, 1);
     font-size: 20px;
-    line-height: 1.5;
+    line-height: 1.4;
+    margin-bottom: 64px;
   }
 
   p {
     margin-bottom: 24px;
     margin-top: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-color: hsla(0,0%,36%,1);
+
+    &:hover {
+      color: black;
+      text-decoration-color: black;
+    }
   }
 `;

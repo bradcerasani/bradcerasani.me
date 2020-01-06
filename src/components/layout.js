@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import { GlobalStyle } from './global.css';
 import { H1, Byline } from './atoms/headings';
-import { Nav, NavItem } from './molecules/nav';
+import { Nav, NavItem, NavImage } from './molecules/nav';
 import { Header, Aside } from './layout.css';
 
 class Layout extends React.Component {
@@ -40,8 +40,15 @@ class Layout extends React.Component {
                 Design & <br /> <span>Engineering</span>
               </Byline>
               <Nav>
-                <NavItem>About</NavItem>
-                <NavItem>Writing</NavItem>
+                <NavItem>Index</NavItem>
+                <NavItem>
+                  About
+                  <NavImage src="/images/puppo.jpg" />
+                </NavItem>
+                <NavItem>
+                  Writing
+                  <NavImage src="/images/writing.gif" />
+                </NavItem>
               </Nav>
             </Aside>
           </Header>

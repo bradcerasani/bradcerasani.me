@@ -1,5 +1,5 @@
 ---
-excerpt: I've been designing and implemeting software for over a decade, with clients that include Apple, Twitter, and the American Music Awards.
+excerpt: I’ve been designing and implemeting software for over a decade, with clients that include Apple, Twitter, and the American Music Awards.
 ---
 
 I've been designing and implemeting software for over a decade, with clients that include Apple, Twitter, and the American Music Awards.

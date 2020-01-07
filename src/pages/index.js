@@ -22,7 +22,7 @@ const StyledImg = styled.img`
   transition-duration: 800ms;
   transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition-property: border-radius, transform;
-  transform: scale(1.2) translateY(16px);
+  transform: scale(1) translateY(0);
 `;
 
 const StyledImgContainer = styled.div`
@@ -39,7 +39,8 @@ const StyledImgContainer = styled.div`
   transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition-property: transform;
   /* background-color: red; */
-  transform: scale(0.9) rotate(0deg);
+
+  transform: scale(1) rotate(0);
 `;
 
 const StyledSection = styled.section`
@@ -86,11 +87,11 @@ const StyledSection = styled.section`
       cursor: pointer;
 
       ${StyledImg} {
-        transform: scale(1) translateY(0);
+        transform: scale(1.2) translateY(16px);
       }
 
       ${StyledImgContainer} {
-        transform: scale(1) rotate(0);
+        transform: scale(0.9) rotate(-4deg);
       }
     }
   }
@@ -100,7 +101,6 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
-    const posts = data.allMarkdownRemark.edges;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -115,7 +115,7 @@ class BlogIndex extends React.Component {
             style={{ marginBottom: '8px' }}
           />
 
-          <a href="">More about me</a>
+          <Link to={'/about'}>More about me</Link>
         </section>
 
         {/* Writing */}
@@ -123,50 +123,29 @@ class BlogIndex extends React.Component {
           <H4>LATEST WRITING</H4>
 
           <article style={{ position: 'relative' }}>
-            <StyledImgContainer>
-              <StyledImg src="/images/kitchen.jpg" />
-            </StyledImgContainer>
-            <h3 style={{ marginBottom: '0' }}>
-              <a href="">Invest in People</a>
-            </h3>
+            <Link
+              style={{ textDecoration: 'none' }}
+              to={data.allMarkdownRemark.edges[0].node.fields.slug}
+            >
+              <StyledImgContainer>
+                <StyledImg src="/images/kitchen.jpg" />
+              </StyledImgContainer>
+              <h3 style={{ marginBottom: '0' }}>
+                {data.allMarkdownRemark.edges[0].node.frontmatter.title}
+              </h3>
 
-            <date>November, 2013</date>
+              <date>
+                {data.allMarkdownRemark.edges[0].node.frontmatter.date}
+              </date>
 
-            <p>
-              Thoughts on inspiring people and recreating sketch notes on the
-              web.
-            </p>
+              <p>
+                {data.allMarkdownRemark.edges[0].node.frontmatter.description}
+              </p>
+            </Link>
           </article>
 
-          <a href="">More writing</a>
+          <Link to={'/writing'}>More writing</Link>
         </StyledSection>
-
-        {/* {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          return (
-            <article key={node.fields.slug} style={{ marginBottom: `32px` }}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: `4px`,
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
-            </article>
-          );
-        })} */}
       </Layout>
     );
   }
@@ -181,14 +160,15 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: {}, fields: { slug: { eq: "/bio/" } }) {
+    markdownRemark(id: {}, fields: { slug: { eq: "/about/" } }) {
       frontmatter {
         excerpt
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { date: { ne: null } } }
+      filter: { fields: { slug: { glob: "/writing/*" } } }
       sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1
     ) {
       edges {
         node {

@@ -40,14 +40,20 @@ class Layout extends React.Component {
                 Design & <br /> <span>Engineering</span>
               </Byline>
               <Nav>
-                <NavItem>Index</NavItem>
-                <NavItem>
+                <NavItem to={'/'} activeClassName="is-active">
+                  Index
+                </NavItem>
+                <NavItem to={'/about'} activeClassName="is-active">
                   About
                   <NavImage src="/images/puppo.jpg" />
                 </NavItem>
-                <NavItem>
+                <NavItem
+                  to={'/writing'}
+                  activeClassName="is-active"
+                  partiallyActive={true}
+                >
                   Writing
-                  <NavImage src="/images/writing.gif" />
+                  <NavImage src="/images/writing-kramer.gif" />
                 </NavItem>
               </Nav>
             </Aside>

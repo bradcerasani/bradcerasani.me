@@ -38,19 +38,23 @@ export const NavItem = styled(Link)`
   padding-right: 16px;
   margin-right: -16px;
 
-  &:first-of-type {
+  &::after {
+    position: absolute;
+    content: '';
+    right: -24px;
+    z-index: 1;
+  }
+
+  &:first-of-type:hover::after {
+    content: '🏠';
+    right: -32px;
+  }
+
+  &.is-active {
     color: black;
 
     &::after {
-      position: absolute;
       content: '~';
-      right: -24px;
-      z-index: 1;
-    }
-
-    &:hover::after {
-      content: '🏠';
-      right: -32px;
     }
   }
 

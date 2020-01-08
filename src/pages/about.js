@@ -8,9 +8,15 @@ class NotFoundPage extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
+    const backgroundColor = this.props.data.markdownRemark.frontmatter
+      .backgroundColor;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout
+        location={this.props.location}
+        title={siteTitle}
+        backgroundColor={backgroundColor}
+      >
         <SEO title={siteTitle} description="TODO" />
         <section>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -33,6 +39,9 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: "/about/" } }) {
       id
       html
+      frontmatter {
+        backgroundColor
+      }
     }
   }
 `;

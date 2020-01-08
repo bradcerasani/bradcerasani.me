@@ -5,12 +5,13 @@ export const GlobalStyle = createGlobalStyle`
   ${modernNormalize}
 
   body {
-    ${'' /* background-color: #fafafa; */}
-    ${'' /* background-color: #EBEBE8; */}
-    ${'' /* background-color: #CDBDA5; */}
-    ${'' /* background-color: #e5dccf; */}
-    background-color: HSLA(35, 10%, 86%, 1.00);
+    background-color: hsl(35, 10%, 86%);
+    background-color: ${(props) =>
+      props.backgroundColor || 'hsl(35, 10%, 86%)'};
     text-rendering: optimizeLegibility;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 400ms;
   }
 
   section {
@@ -33,5 +34,10 @@ export const GlobalStyle = createGlobalStyle`
       color: black;
       text-decoration-color: black;
     }
+  }
+
+  pre,
+  code {
+    font-size: 16px !important;
   }
 `;

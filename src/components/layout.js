@@ -8,11 +8,11 @@ import { Header, Aside } from './layout.css';
 
 class Layout extends React.Component {
   render() {
-    const { title, children } = this.props;
+    const { title, children, backgroundColor } = this.props;
 
     return (
       <Fragment>
-        <GlobalStyle />
+        <GlobalStyle backgroundColor={backgroundColor} />
         <div
           style={{
             marginLeft: `auto`,

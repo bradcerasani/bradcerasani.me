@@ -12,7 +12,7 @@ export const H1 = styled.div`
 `;
 
 export const Byline = styled.div`
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Canela, Georgia, 'Times New Roman', Times, serif;
   font-size: 64px;
   font-weight: 700;
 `;

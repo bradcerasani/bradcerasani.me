@@ -1,9 +1,23 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import Bio from '../components/molecules/bio';
 import Layout from '../components/layout';
 import SEO from '../components/organisms/seo';
+
+const MarkdownBody = styled.div``;
+
+const BlogPost = styled.div`
+  h1 {
+    font-weight: 500;
+    font-size: 52px;
+    font-family: Canela;
+  }
+
+  p {
+  }
+`;
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -12,49 +26,30 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout
+        location={this.props.location}
+        title={siteTitle}
+        backgroundColor="#fafafa"
+      >
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
         <article>
-          <header>
-            <h1
-              style={{
-                marginTop: `64px`,
-                marginBottom: `0`,
-              }}
-            >
-              {post.frontmatter.title}
-            </h1>
-            <p
-              style={{
-                display: `block`,
-                marginTop: `0`,
-                marginBottom: `32px`,
-              }}
-            >
-              <small>{post.frontmatter.date}</small>
-            </p>
-          </header>
-          <section
-            style={{
-              fontFamily: `Georgia,serif`,
-            }}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-          <hr
-            style={{
-              marginBottom: `32px`,
-              marginTop: `32px`,
-            }}
-          />
-          <footer>
-            <Bio />
-          </footer>
+          <BlogPost>
+            <header>
+              <h1>{post.frontmatter.title}</h1>
+              {/* <small>{post.frontmatter.date}</small> */}
+            </header>
+            <section>
+              <MarkdownBody dangerouslySetInnerHTML={{ __html: post.html }} />
+            </section>
+          </BlogPost>
+
+          {/* <Bio /> */}
         </article>
 
-        <nav>
+        {/* <nav>
           <ul
             style={{
               display: `flex`,
@@ -79,7 +74,7 @@ class BlogPostTemplate extends React.Component {
               )}
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </Layout>
     );
   }

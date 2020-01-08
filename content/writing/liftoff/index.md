@@ -6,6 +6,8 @@ date: '2012-12-06T12:00:00.000Z'
 
 Shedbot 2.0 reflects a sharper focus on building for the web. The old website has been refined into a single page responsive layout with a small, select portfolio of web projects. The new site is lightweight, and progressively enhances for high pixel density "retina" displays with resolutions up to an absurd 5120 x 2880.
 
+![Moon over Kenora, Ontario – 10" f4.7 Newtonian, Canon 7D](./moon.jpg)
+
 Load weight on mobile is 316K, 375K for mobile retina, 960K at largest non-retina breakpoint, and a respectable 1511K for widescreen retina.
 
 The blog features responsive, full width images that are dynamically downloaded in 1 of 5 sizes depending on the user's screen resolution. Type is FF Tisa Web Pro and Proxima Nova, served by Typekit.

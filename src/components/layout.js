@@ -8,7 +8,12 @@ import { Header, Aside } from './layout.css';
 
 class Layout extends React.Component {
   render() {
-    const { title, children, backgroundColor } = this.props;
+    const {
+      title,
+      headline = 'Design & Engineering',
+      children,
+      backgroundColor,
+    } = this.props;
 
     return (
       <Fragment>
@@ -36,9 +41,7 @@ class Layout extends React.Component {
             </H1>
 
             <Aside>
-              <Byline>
-                Design & <br /> <span>Engineering</span>
-              </Byline>
+              <Byline>{headline}</Byline>
               <Nav>
                 <NavItem to={'/'} activeClassName="is-active">
                   Index

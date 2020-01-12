@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import Bio from '../components/molecules/bio';
 import Layout from '../components/layout';
 import SEO from '../components/organisms/seo';
 
@@ -10,12 +9,74 @@ const MarkdownBody = styled.div``;
 
 const BlogPost = styled.div`
   h1 {
+  }
+
+  h2 {
+    font-size: 2rem;
     font-weight: 500;
-    font-size: 52px;
-    font-family: Canela;
+    letter-spacing: -0.5px;
+    padding-top: 1rem;
   }
 
   p {
+    line-height: 1.5;
+  }
+
+  blockquote {
+    border-left: 4px solid currentColor;
+    display: block;
+    margin-left: 0;
+    padding-bottom: 0.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    position: relative;
+
+    p {
+      font-size: 24px;
+      font-style: italic;
+      line-height: 1.25;
+      margin-bottom: 0;
+    }
+  }
+
+  pre {
+    margin-bottom: 1.5rem;
+  }
+
+  hr {
+    background-color: currentColor;
+    border: none;
+    height: 4px;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .footnotes {
+    font-size: 16px;
+  }
+
+  .footnotes ol {
+    padding: 0;
+    margin: 0;
+  }
+
+  .footnotes ol li {
+    margin-bottom: 1rem;
+  }
+
+  .footnotes p {
+    display: inline;
+  }
+
+  .footnote-backref {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+  }
+
+  .footnote-ref {
+    text-decoration: none;
   }
 `;
 
@@ -29,6 +90,7 @@ class BlogPostTemplate extends React.Component {
       <Layout
         location={this.props.location}
         title={siteTitle}
+        headline={post.frontmatter.title}
         backgroundColor="#fafafa"
       >
         <SEO
@@ -37,19 +99,13 @@ class BlogPostTemplate extends React.Component {
         />
         <article>
           <BlogPost>
-            <header>
-              <h1>{post.frontmatter.title}</h1>
-              {/* <small>{post.frontmatter.date}</small> */}
-            </header>
             <section>
               <MarkdownBody dangerouslySetInnerHTML={{ __html: post.html }} />
             </section>
           </BlogPost>
-
-          {/* <Bio /> */}
         </article>
 
-        {/* <nav>
+        <nav>
           <ul
             style={{
               display: `flex`,
@@ -74,7 +130,7 @@ class BlogPostTemplate extends React.Component {
               )}
             </li>
           </ul>
-        </nav> */}
+        </nav>
       </Layout>
     );
   }

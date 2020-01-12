@@ -7,7 +7,7 @@ export const Nav = styled.div`
   align-items: flex-end;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 8px;
+  margin-bottom: 14px; /* optically align to byline baseline */
   position: relative;
 `;
 

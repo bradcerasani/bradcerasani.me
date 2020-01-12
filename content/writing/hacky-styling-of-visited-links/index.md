@@ -1,5 +1,5 @@
 ---
-title: Hacky Styling of :Visited Links
+title: Hacky Styling of :visited Links
 description: Using CSS pseudo elements to check mark visited links.
 date: '2013-10-18T12:00:00.000Z'
 ---
@@ -12,10 +12,10 @@ Here's what properties we're currently allowed to use for `:visited` elements:
 
 ```css
 a:visited {
-  outline-color: /* value */ ;
-  border-color: /* value */ ;
-  background-color: /* value */ ;
-  color: /* value */ ;
+  outline-color: ;
+  border-color: ;
+  background-color: ;
+  color: ;
 }
 ```
 

@@ -1,8 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import throttle from 'lodash.throttle';
 
 import Layout from '../components/layout';
 import SEO from '../components/organisms/seo';
+
+const StyledBio = styled.div`
+  p:first-of-type {
+    font-size: 24px;
+  }
+`;
+
+const StyledBackground = styled.div`
+  animation-delay: 400ms;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
+  background-image: url('/images/brad-cerasani-office-wide.jpg');
+  background-position: center bottom;
+  background-size: cover;
+  display: block;
+  height: 62.5vw;
+  position: relative;
+  width: 100vw;
+  z-index: -1;
+
+  &::after {
+    background-image: linear-gradient(
+      180deg,
+      hsla(35, 30%, 86%, 1) 0%,
+      hsla(35, 30%, 86%, 0.6) 50%,
+      hsla(35, 30%, 86%, 0.2) 100%
+    );
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+`;
 
 function AboutPage(props) {
   const post = props.data.markdownRemark;
@@ -10,16 +50,20 @@ function AboutPage(props) {
   const backgroundColor = props.data.markdownRemark.frontmatter.backgroundColor;
 
   return (
-    <Layout
-      location={props.location}
-      title={siteTitle}
-      backgroundColor={backgroundColor}
-    >
-      <SEO title={siteTitle} description="TODO" />
-      <section>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </section>
-    </Layout>
+    <Fragment>
+      <Layout
+        location={props.location}
+        title={siteTitle}
+        backgroundColor={backgroundColor}
+      >
+        <SEO title={siteTitle} description="TODO" />
+
+        <section style={{ marginBottom: '0' }}>
+          <StyledBio dangerouslySetInnerHTML={{ __html: post.html }} />
+        </section>
+      </Layout>
+      <StyledBackground />
+    </Fragment>
   );
 }
 

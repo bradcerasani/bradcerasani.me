@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     transition-property: background-color;
     transition-timing-function: ease-in-out;
     transition-duration: 400ms;
+    font-size: 20px;
   }
 
   section {
@@ -22,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
     margin-top: 0;
   }
 
@@ -34,10 +35,5 @@ export const GlobalStyle = createGlobalStyle`
       color: black;
       text-decoration-color: black;
     }
-  }
-
-  pre,
-  code {
-    font-size: 16px !important;
   }
 `;

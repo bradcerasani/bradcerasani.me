@@ -1,7 +1,7 @@
 ---
 title: A Dance With Sinatra
 description: Adventures in programming with Ruby and Sinatra.
-date: '2013-09-20T12:00:00.000Z'
+date: '2013-09-20'
 ---
 
 I've never been great at keeping a blog. Any space I've made for writing in the past has been as Shedbot, the moniker I've used for my photo/design work the past few years. I would always tread lightly posting on behalf a business, even my own. When speaking on behalf of a business you're always conscious of offending that exec who perhaps would've given you that big contract if he didn't see you talking about [ManBearPig](http://www.youtube.com/watch?v=xf69EEL3WBk) that one time.

@@ -1,7 +1,7 @@
 ---
 title: Invest in People
 description: Thoughts on inspiring people and recreating sketch notes on the web.
-date: '2013-11-20T12:00:00.000Z'
+date: '2013-11-20'
 ---
 
 In 1984 a 20 year-old philosophy student named Rick Rubin and a 26 year-old hip-hop promoter named Russell Simmons founded a record label called Def Jam Recordings. Def Jam went on to pioneer the hip-hop revolution of the late 80’s, and today is home to artists like Frank Ocean, Kanye West, Rick Ross, and Rihanna.

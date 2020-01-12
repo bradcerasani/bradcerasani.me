@@ -1,7 +1,7 @@
 ---
 title: Hacky Styling of :visited Links
 description: Using CSS pseudo elements to check mark visited links.
-date: '2013-10-18T12:00:00.000Z'
+date: '2013-10-18'
 ---
 
 In HTML, `<a>` tags have 4 CSS pseudo classes that are used to style hyperlinks in different states: `:link` `:visited` `:hover` and `:active`

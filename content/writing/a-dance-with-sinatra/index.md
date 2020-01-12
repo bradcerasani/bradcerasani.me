@@ -12,14 +12,15 @@ I've been wanting to write my own blogging app since seeing [this post](http://s
 
 This was my first adventure in programming, so the build took a while. Though I had studied some Ruby previously, there's no substitute for diving in and getting your hands dirty. I found a handful of repos on Github that performed similar actions, so I cloned a handful locally and referenced them throughout the build. While Sam's blog was the original inspiration, his Redis integration was an added level of complexity that I wasn't ready for. Here's a quick overview of my my app, starting with a sample markdown file:
 
-```
+```yaml
 # A-Dance-With-Sinatra.md
+
 title: A Dance With Sinatra
 excerpt: Adventures in programming with Ruby and Sinatra.
 date: 2013-09-20
 tags: general
 --
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, iusto, laboriosam, minus eaque dolorem temporibus natus sapiente quo ab recusandae quas molestias magnam aliquam vero dolor harum unde? Sunt, debitis.
+Lorem ipsum dolor...
 ```
 
 In the Rakefile, line 5 iterates through each of the .md files in the entries directory, and 6 splits off each post's metadata above `--`. The metadata is then ordered by reverse date and written to `_directory.yaml`.

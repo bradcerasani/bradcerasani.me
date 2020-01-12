@@ -1,1 +1,1 @@
-import 'prismjs/themes/prism-tomorrow.css';
+import './static/css/prism-theme.css';

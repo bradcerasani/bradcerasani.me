@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
@@ -15,6 +15,7 @@ const MarkdownBody = styled.div`
 
   p {
     line-height: 1.5;
+    font-family: 'Tiempos Text', sans-serif;
   }
 
   blockquote {
@@ -28,7 +29,7 @@ const MarkdownBody = styled.div`
     position: relative;
 
     p {
-      font-size: 28px;
+      font-size: 24px;
       line-height: 1.25;
       margin-bottom: 0;
     }
@@ -74,30 +75,28 @@ const MarkdownBody = styled.div`
   }
 `;
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
+function BlogPostTemplate(props) {
+  const post = props.data.markdownRemark;
+  const siteTitle = props.data.site.siteMetadata.title;
 
-    return (
-      <Layout
-        location={this.props.location}
-        title={siteTitle}
-        headline={post.frontmatter.title}
-        backgroundColor="#fafafa"
-      >
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <article>
-          <section>
-            <MarkdownBody dangerouslySetInnerHTML={{ __html: post.html }} />
-          </section>
-        </article>
-      </Layout>
-    );
-  }
+  return (
+    <Layout
+      location={props.location}
+      title={siteTitle}
+      headline={post.frontmatter.title}
+      backgroundColor="hsl(0, 0%, 98%)"
+    >
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <article>
+        <section>
+          <MarkdownBody dangerouslySetInnerHTML={{ __html: post.html }} />
+        </section>
+      </article>
+    </Layout>
+  );
 }
 
 export default BlogPostTemplate;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
@@ -15,31 +15,41 @@ const PostItem = styled.h3`
   }
 `;
 
-class WritingPage extends React.Component {
-  render() {
-    const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
-    const posts = data.allMarkdownRemark.edges;
+const Box = styled.div`
+  width: 200px;
+  height: 200px;
+  background-color: firebrick;
+  position: absolute;
+  z-index: 0;
+`;
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          const slug = node.fields.slug;
+function WritingPage(props) {
+  const { data } = props;
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
 
-          return (
-            <article key={node.fields.slug} style={{ marginBottom: `32px` }}>
-              <header>
-                <PostItem>
-                  <Link to={slug}>{title}</Link>
-                </PostItem>
-              </header>
-            </article>
-          );
-        })}
-      </Layout>
-    );
-  }
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <SEO title="Brad Cerasani: Writing" />
+
+      <Box id="box" />
+
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug;
+        const slug = node.fields.slug;
+
+        return (
+          <article key={node.fields.slug} style={{ marginBottom: `32px` }}>
+            <header>
+              <PostItem>
+                <Link to={slug}>{title}</Link>
+              </PostItem>
+            </header>
+          </article>
+        );
+      })}
+    </Layout>
+  );
 }
 
 export default WritingPage;

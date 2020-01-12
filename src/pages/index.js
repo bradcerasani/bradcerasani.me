@@ -97,58 +97,54 @@ const StyledSection = styled.section`
   }
 `;
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
+function BlogIndex(props) {
+  const { data } = props;
+  const siteTitle = data.site.siteMetadata.title;
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <SEO title="Brad Cerasani: Design & Engineering" />
 
-        {/* Intro */}
-        <section>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.markdownRemark.frontmatter.excerpt,
-            }}
-            style={{ marginBottom: '8px' }}
-          />
+      {/* Intro */}
+      <section>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.markdownRemark.frontmatter.excerpt,
+          }}
+          style={{ marginBottom: '8px' }}
+        />
 
-          <Link to={'/about'}>More about me</Link>
-        </section>
+        <Link to={'/about'}>More about me</Link>
+      </section>
 
-        {/* Writing */}
-        <StyledSection>
-          <H4>LATEST WRITING</H4>
+      {/* Writing */}
+      <StyledSection>
+        <H4>LATEST WRITING</H4>
 
-          <article style={{ position: 'relative' }}>
-            <Link
-              style={{ textDecoration: 'none' }}
-              to={data.allMarkdownRemark.edges[0].node.fields.slug}
-            >
-              <StyledImgContainer>
-                <StyledImg src="/images/kitchen.jpg" />
-              </StyledImgContainer>
-              <h3 style={{ marginBottom: '0' }}>
-                {data.allMarkdownRemark.edges[0].node.frontmatter.title}
-              </h3>
+        <article style={{ position: 'relative' }}>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to={data.allMarkdownRemark.edges[0].node.fields.slug}
+          >
+            <StyledImgContainer>
+              <StyledImg src="/images/kitchen.jpg" />
+            </StyledImgContainer>
+            <h3 style={{ marginBottom: '0' }}>
+              {data.allMarkdownRemark.edges[0].node.frontmatter.title}
+            </h3>
 
-              <date>
-                {data.allMarkdownRemark.edges[0].node.frontmatter.date}
-              </date>
+            <date>{data.allMarkdownRemark.edges[0].node.frontmatter.date}</date>
 
-              <p>
-                {data.allMarkdownRemark.edges[0].node.frontmatter.description}
-              </p>
-            </Link>
-          </article>
+            <p>
+              {data.allMarkdownRemark.edges[0].node.frontmatter.description}
+            </p>
+          </Link>
+        </article>
 
-          <Link to={'/writing'}>More writing</Link>
-        </StyledSection>
-      </Layout>
-    );
-  }
+        <Link to={'/writing'}>More writing</Link>
+      </StyledSection>
+    </Layout>
+  );
 }
 
 export default BlogIndex;

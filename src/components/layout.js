@@ -6,67 +6,65 @@ import { H1, Byline } from './atoms/headings';
 import { Nav, NavItem, NavImage } from './molecules/nav';
 import { Header, Aside } from './layout.css';
 
-class Layout extends React.Component {
-  render() {
-    const {
-      title,
-      headline = 'Design & Engineering',
-      children,
-      backgroundColor,
-    } = this.props;
+function Layout(props) {
+  const {
+    title,
+    headline = 'Design & Engineering',
+    children,
+    backgroundColor,
+  } = props;
 
-    return (
-      <Fragment>
-        <GlobalStyle backgroundColor={backgroundColor} />
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: '720px',
-            padding: `32px`,
-          }}
-        >
-          <Header>
-            <H1>
-              <Link
-                style={{
-                  boxShadow: `none`,
-                  textDecoration: `none`,
-                  color: `inherit`,
-                }}
-                to={`/`}
+  return (
+    <Fragment>
+      <GlobalStyle backgroundColor={backgroundColor} />
+      <div
+        style={{
+          marginLeft: `auto`,
+          marginRight: `auto`,
+          maxWidth: '720px',
+          padding: `32px`,
+        }}
+      >
+        <Header>
+          <H1>
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                color: `inherit`,
+              }}
+              to={`/`}
+            >
+              {title}
+            </Link>
+          </H1>
+
+          <Aside>
+            <Byline>{headline}</Byline>
+            <Nav>
+              <NavItem to={'/'} activeClassName="is-active">
+                Index
+              </NavItem>
+              <NavItem to={'/about'} activeClassName="is-active">
+                About
+                <NavImage src="/images/puppo.jpg" />
+              </NavItem>
+              <NavItem
+                to={'/writing'}
+                activeClassName="is-active"
+                partiallyActive={true}
               >
-                {title}
-              </Link>
-            </H1>
-
-            <Aside>
-              <Byline>{headline}</Byline>
-              <Nav>
-                <NavItem to={'/'} activeClassName="is-active">
-                  Index
-                </NavItem>
-                <NavItem to={'/about'} activeClassName="is-active">
-                  About
-                  <NavImage src="/images/puppo.jpg" />
-                </NavItem>
-                <NavItem
-                  to={'/writing'}
-                  activeClassName="is-active"
-                  partiallyActive={true}
-                >
-                  Writing
-                  <NavImage src="/images/writing-kramer.gif" />
-                </NavItem>
-              </Nav>
-            </Aside>
-          </Header>
-          <main>{children}</main>
-          {/* <footer>© {new Date().getFullYear()}</footer> */}
-        </div>
-      </Fragment>
-    );
-  }
+                Writing
+                <NavImage src="/images/writing-kramer.gif" />
+              </NavItem>
+            </Nav>
+          </Aside>
+        </Header>
+        <main>{children}</main>
+        {/* <footer>© {new Date().getFullYear()}</footer> */}
+      </div>
+    </Fragment>
+  );
 }
 
 export default Layout;

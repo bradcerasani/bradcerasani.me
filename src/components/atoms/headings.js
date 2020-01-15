@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const H1 = styled.div`
   color: hsla(0, 0%, 36%, 1);
   font-family: Karbon, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 2px;
   line-height: 1;

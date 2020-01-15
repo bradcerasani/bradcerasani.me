@@ -36,4 +36,14 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration-color: black;
     }
   }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+}
 `;

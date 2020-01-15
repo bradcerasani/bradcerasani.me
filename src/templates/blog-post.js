@@ -15,7 +15,6 @@ const MarkdownBody = styled.div`
 
   p {
     line-height: 1.5;
-    font-family: 'Tiempos Text', sans-serif;
   }
 
   blockquote {
@@ -23,13 +22,13 @@ const MarkdownBody = styled.div`
     display: block;
     margin-left: 0;
     padding-bottom: 0.75rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 0.5rem;
     position: relative;
 
     p {
-      font-size: 24px;
+      font-size: 28px;
       line-height: 1.25;
       margin-bottom: 0;
     }

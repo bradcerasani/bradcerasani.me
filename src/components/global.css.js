@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     transition-timing-function: ease-in-out;
     transition-duration: 400ms;
     font-size: 20px;
+    font-family: 'Untitled Sans', 'Scto Grotesk A';
   }
 
   section {
@@ -45,5 +46,5 @@ export const GlobalStyle = createGlobalStyle`
     to {
       opacity: 1;
     }
-}
+  }
 `;

@@ -1,15 +1,9 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-
-const StyledBio = styled.div`
-  p:first-of-type {
-    font-size: 24px;
-  }
-`;
 
 const StyledBackground = styled.div`
   animation-delay: 400ms;
@@ -58,7 +52,7 @@ function AboutPage(props) {
         <SEO title={siteTitle} description="TODO" />
 
         <section style={{ marginBottom: '0' }}>
-          <StyledBio dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </section>
       </Layout>
       <StyledBackground />

@@ -1,10 +1,9 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import throttle from 'lodash.throttle';
 
 import Layout from '../components/layout';
-import SEO from '../components/organisms/seo';
+import SEO from '../components/seo';
 
 const StyledBio = styled.div`
   p:first-of-type {

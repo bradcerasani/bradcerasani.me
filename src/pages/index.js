@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-import SEO from '../components/organisms/seo';
+import SEO from '../components/seo';
 
 const H4 = styled.h4`
   color: orange;
@@ -46,12 +46,10 @@ const StyledImgContainer = styled.div`
 const StyledSection = styled.section`
   h3 {
     margin-top: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
     font-size: 36px;
-    letter-spacing: -1px;
+
     line-height: 1.25;
-    text-shadow: 0px 2px 16px white;
 
     a {
       text-decoration: none;
@@ -91,7 +89,7 @@ const StyledSection = styled.section`
       }
 
       ${StyledImgContainer} {
-        transform: scale(0.9) rotate(-4deg);
+        transform: scale(0.9);
       }
     }
   }

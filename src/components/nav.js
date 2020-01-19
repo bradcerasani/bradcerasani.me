@@ -7,8 +7,10 @@ export const Nav = styled.div`
   align-items: flex-end;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 14px; /* optically align to byline baseline */
+  margin-bottom: 1rem; /* optically align to byline baseline */
   position: relative;
+  /* opacity: 0.5; */
+  /* display: none; */
 `;
 
 export const NavImage = styled.img`
@@ -28,7 +30,7 @@ export const NavImage = styled.img`
 export const NavItem = styled(Link)`
   display: block;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   color: hsla(0, 0%, 40%, 1);
   color: HSLA(43, 19%, 28%, 1);
   color: HSLA(43, 10%, 59%, 1);

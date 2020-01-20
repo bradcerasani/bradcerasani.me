@@ -38,10 +38,10 @@ export const NavItem = styled(Link)`
     z-index: 1;
   }
 
-  &:first-of-type:hover::after {
+  /* &:first-of-type:hover::after {
     content: '🏠';
     right: -30px;
-  }
+  } */
 
   &.is-active {
     color: black;

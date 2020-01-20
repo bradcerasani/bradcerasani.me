@@ -6,29 +6,30 @@ import { Nav, NavItem, NavImage } from './nav';
 
 export const StyledHeader = styled.div`
   margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 `;
 
 export const HeroContainer = styled.div`
   display: flex;
   margin-top: 4rem;
+  min-height: 164px;
 `;
 
 const links = [
   {
     to: '/',
-    label: 'Index',
-    imageSrc: null,
+    label: 'Home',
+    imageSrc: '/images/nav/home.gif',
   },
   {
     to: '/about',
     label: 'About',
-    imageSrc: '/images/puppo.jpg',
+    imageSrc: '/images/nav/about.jpg',
   },
   {
     to: '/writing',
     label: 'Writing',
-    imageSrc: '/images/writing-kramer.gif',
+    imageSrc: '/images/nav/writing.gif',
   },
 ];
 

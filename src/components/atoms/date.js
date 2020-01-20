@@ -1,16 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const verticalOrientation = css`
+  margin-left: -2rem;
+  position: absolute;
+  transform-origin: 100%;
+  transform: rotate(-90deg) translateY(-8ch);
+`;
 
 export const Date = styled.div`
   color: hsl(0, 0%, 20%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-family: Karbon;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-left: -8rem;
-  position: absolute;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
-  top: 15.5rem;
-  transform: rotate(-90deg);
+  transform: translateZ();
+
+  ${(props) => props.orientation === 'vertical' && verticalOrientation}
 `;

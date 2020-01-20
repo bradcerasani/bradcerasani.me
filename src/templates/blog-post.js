@@ -8,6 +8,7 @@ import { StyledMarkdown } from '../components/markdown';
 function BlogPostTemplate(props) {
   const post = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata.title;
+  const date = post.frontmatter.date;
 
   return (
     <Layout
@@ -15,6 +16,7 @@ function BlogPostTemplate(props) {
       title={siteTitle}
       headline={post.frontmatter.title}
       backgroundColor="hsl(0, 0%, 98%)"
+      date={date}
     >
       <SEO
         title={post.frontmatter.title}
@@ -44,7 +46,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMM YYYY")
         description
       }
     }

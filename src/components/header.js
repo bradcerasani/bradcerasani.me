@@ -41,8 +41,10 @@ function Header(props) {
       <Logo to={`/`}>{title}</Logo>
 
       <HeroContainer>
-        {date && <Date>{date}</Date>}
-        <Headline>{headline}</Headline>
+        <Headline>
+          {date && <Date orientation="vertical">{date}</Date>}
+          {headline}
+        </Headline>
 
         <Nav>
           {links.map(({ to, label, imageSrc }) => (

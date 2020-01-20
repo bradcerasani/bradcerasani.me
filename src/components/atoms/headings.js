@@ -6,6 +6,7 @@ export const Headline = styled.div`
   font-size: 72px;
   font-weight: 700;
   margin-left: -4rem;
+  position: relative;
 `;
 
 export const H4 = styled.h4`

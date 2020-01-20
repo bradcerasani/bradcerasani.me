@@ -23,7 +23,7 @@ export const NavImage = styled.img`
 `;
 
 export const NavItem = styled(Link)`
-  color: hsla(0, 0%, 60%, 1);
+  color: hsl(0, 0%, 0%, 0.4);
   display: block;
   font-size: 20px;
   margin-right: -16px;

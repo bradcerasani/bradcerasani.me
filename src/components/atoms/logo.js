@@ -9,10 +9,10 @@ export const Logo = styled(Link)`
   letter-spacing: 2px;
   line-height: 1;
   margin: 0;
-  text-transform: uppercase;
   text-decoration: none;
+  text-transform: uppercase;
 
   &:hover {
-    color: hsla(0, 0%, 36%, 1);
+    color: hsl(0, 0%, 36%, 1);
   }
 `;

@@ -23,9 +23,9 @@ const StyledBackground = styled.div`
   &::after {
     background-image: linear-gradient(
       180deg,
-      hsla(35, 30%, 86%, 1) 0%,
-      hsla(35, 30%, 86%, 0.6) 50%,
-      hsla(35, 30%, 86%, 0.2) 100%
+      hsl(35, 30%, 86%, 1) 0%,
+      hsl(35, 30%, 86%, 0.6) 50%,
+      hsl(35, 30%, 86%, 0.2) 100%
     );
     content: '';
     display: block;

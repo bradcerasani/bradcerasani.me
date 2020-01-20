@@ -5,19 +5,18 @@ export const GlobalStyle = createGlobalStyle`
   ${modernNormalize}
 
   body {
-    background-color: hsl(35, 10%, 86%);
     background-color: ${(props) =>
       props.backgroundColor || 'hsl(35, 10%, 86%)'};
+    font-family: 'Untitled Sans', 'Scto Grotesk A', sans-serif;
+    font-size: 20px;
     text-rendering: optimizeLegibility;
+    transition-duration: 400ms;
     transition-property: background-color;
     transition-timing-function: ease-in-out;
-    transition-duration: 400ms;
-    font-size: 20px;
-    font-family: 'Untitled Sans', 'Scto Grotesk A';
   }
 
   section {
-    color: hsla(0, 0%, 20%, 1);
+    color: hsl(0, 0%, 20%);
     font-size: 20px;
     line-height: 1.4;
     margin-bottom: 64px;
@@ -30,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     color: inherit;
-    text-decoration-color: hsla(0,0%,36%,1);
+    text-decoration-color: hsl(0, 0%, 36%);
 
     &:hover {
       color: black;

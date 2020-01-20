@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledMarkdown = styled.div`
-  font-family: 'Untitled Sans', 'Scto Grotesk A';
+  font-family: 'Untitled Sans', 'Scto Grotesk A', sans-serif;
   font-size: 18px;
 
   h2 {
-    font-family: Canela;
+    font-family: Canela, serif;
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -45,7 +45,7 @@ export const StyledMarkdown = styled.div`
     }
 
     p {
-      background-color: HSLA(48, 64%, 94%, 1);
+      background-color: hsl(48, 64%, 94%);
       display: inline;
       font-size: 22px;
       font-style: italic;
@@ -72,8 +72,6 @@ export const StyledMarkdown = styled.div`
     margin-bottom: 2.5rem;
     margin-top: 2.5rem;
   }
-
-  /* footnotes */
 
   .footnotes {
     font-size: 16px;

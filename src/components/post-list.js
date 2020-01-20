@@ -13,10 +13,10 @@ export const PostItemImage = styled.img`
 export const PostItem = styled.h3`
   font-size: 32px;
   font-weight: 400;
+  letter-spacing: -0.5px;
   line-height: 1.25;
   margin-bottom: 0;
   margin-top: 0;
-  letter-spacing: -0.5px;
   padding-bottom: 1.25rem;
   padding-top: 1.25rem;
   position: relative;

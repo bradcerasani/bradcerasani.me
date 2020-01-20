@@ -2,30 +2,18 @@ import React, { Fragment } from 'react';
 
 import { GlobalStyle } from './global.css';
 import Header from './header';
+import Container from './container';
 
 function Layout(props) {
-  const {
-    title,
-    headline = 'Design & Engineering',
-    children,
-    backgroundColor,
-  } = props;
+  const { children, backgroundColor } = props;
 
   return (
     <Fragment>
       <GlobalStyle backgroundColor={backgroundColor} />
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: '700px',
-          padding: `32px`,
-        }}
-      >
+      <Container>
         <Header {...props} />
         <main>{children}</main>
-        {/* <footer>© {new Date().getFullYear()}</footer> */}
-      </div>
+      </Container>
     </Fragment>
   );
 }

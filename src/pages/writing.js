@@ -28,13 +28,11 @@ function WritingPage(props) {
 
             return (
               <article key={node.fields.slug}>
-                <header>
-                  <PostItem>
-                    <PostItemDate>{date}</PostItemDate>
-                    <Link to={slug}>{title}</Link>
-                    {image && <PostItemImage src={image} />}
-                  </PostItem>
-                </header>
+                <PostItem>
+                  <PostItemDate>{date}</PostItemDate>
+                  <Link to={slug}>{title}</Link>
+                  {image && <PostItemImage src={image} />}
+                </PostItem>
               </article>
             );
           })}

@@ -7,3 +7,11 @@ export const Headline = styled.div`
   font-weight: 700;
   margin-left: -4rem;
 `;
+
+export const H4 = styled.h4`
+  color: hsl(0, 0%, 30%);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+`;

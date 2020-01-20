@@ -16,21 +16,20 @@ export const PostItemDate = styled.div`
   font-weight: 600;
   letter-spacing: 0.5px;
   pointer-events: none;
-  position: absolute;
   text-transform: uppercase;
-  top: -1rem;
 `;
 
 export const PostItem = styled.h3`
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 400;
-  letter-spacing: -0.5px;
   line-height: 1.25;
   margin-bottom: 0;
   margin-top: 0;
-  padding-bottom: 2.5rem;
+  letter-spacing: -0.5px;
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;
   position: relative;
-  transition-duration: 120ms;
+  transition-duration: 400ms;
   transition-property: color;
   transition-timing-function: ease-out;
 
@@ -42,6 +41,7 @@ export const PostItem = styled.h3`
   &:hover {
     color: black;
     cursor: pointer;
+    transition-duration: 80ms;
 
     ${PostItemImage} {
       display: block;

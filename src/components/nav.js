@@ -2,54 +2,45 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 export const Nav = styled.div`
-  flex-grow: 1;
-  display: flex;
   align-items: flex-end;
+  display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: flex-end;
   margin-bottom: 1rem; /* optically align to byline baseline */
   position: relative;
-  /* opacity: 0.5; */
-  /* display: none; */
 `;
 
 export const NavImage = styled.img`
-  display: block;
-  position: absolute;
-  width: 200px;
-  /* height: 200px; */
-  right: -200px;
   bottom: 0;
-  z-index: -2;
+  display: block;
   margin-right: -16px;
   opacity: 0;
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  position: absolute;
+  right: -200px;
+  width: 200px;
+  z-index: -2;
 `;
 
 export const NavItem = styled(Link)`
-  display: block;
-  text-decoration: none;
-  font-size: 20px;
-  color: hsla(0, 0%, 40%, 1);
-  color: HSLA(43, 19%, 28%, 1);
-  color: HSLA(43, 10%, 59%, 1);
   color: hsla(0, 0%, 60%, 1);
-  margin-top: 12px;
-  border-radius: 8px;
-  padding-right: 16px;
+  display: block;
+  font-size: 20px;
   margin-right: -16px;
+  margin-top: 12px;
+  padding-right: 16px;
+  text-decoration: none;
 
   &::after {
-    position: absolute;
     content: '';
-    right: -24px;
+    position: absolute;
+    right: -21px; /* straddle image edge */
     z-index: 1;
   }
 
   &:first-of-type:hover::after {
     content: '🏠';
-    right: -32px;
+    right: -30px;
   }
 
   &.is-active {
@@ -63,7 +54,6 @@ export const NavItem = styled(Link)`
   &:hover {
     ${NavImage} {
       opacity: 1;
-      transition-duration: 0ms;
       z-index: 0;
     }
   }

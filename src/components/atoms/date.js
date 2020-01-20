@@ -8,13 +8,12 @@ const verticalOrientation = css`
 `;
 
 export const Date = styled.div`
-  color: hsl(0, 0%, 20%);
+  color: inherit;
   font-family: Karbon;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  transform: translateZ();
 
   ${(props) => props.orientation === 'vertical' && verticalOrientation}
 `;

@@ -10,15 +10,6 @@ export const PostItemImage = styled.img`
   z-index: -1;
 `;
 
-export const PostItemDate = styled.div`
-  font-family: Karbon;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  pointer-events: none;
-  text-transform: uppercase;
-`;
-
 export const PostItem = styled.h3`
   font-size: 32px;
   font-weight: 400;

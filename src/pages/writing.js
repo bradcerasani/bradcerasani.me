@@ -3,12 +3,8 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import {
-  PostList,
-  PostItem,
-  PostItemDate,
-  PostItemImage,
-} from '../components/post-list';
+import { Date } from '../components/atoms';
+import { PostList, PostItem, PostItemImage } from '../components/post-list';
 
 function WritingPage(props) {
   const { data } = props;
@@ -29,7 +25,7 @@ function WritingPage(props) {
             return (
               <article key={node.fields.slug}>
                 <PostItem>
-                  <PostItemDate>{date}</PostItemDate>
+                  <Date>{date}</Date>
                   <Link to={slug}>{title}</Link>
                   {image && <PostItemImage src={image} />}
                 </PostItem>

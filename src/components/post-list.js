@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 export const PostItemImage = styled.img`
   display: none;
@@ -10,7 +11,8 @@ export const PostItemImage = styled.img`
   z-index: -1;
 `;
 
-export const PostItem = styled.h3`
+export const PostItem = styled(Link)`
+  display: block;
   font-size: 32px;
   font-weight: 400;
   letter-spacing: -0.5px;
@@ -20,13 +22,13 @@ export const PostItem = styled.h3`
   padding-bottom: 1.25rem;
   padding-top: 1.25rem;
   position: relative;
+  text-decoration: none;
   transition-duration: 400ms;
   transition-property: color;
   transition-timing-function: ease-out;
 
-  a {
-    display: block;
-    text-decoration: none;
+  h3 {
+    margin: 0;
   }
 
   &:hover {

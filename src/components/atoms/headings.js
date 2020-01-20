@@ -9,6 +9,13 @@ export const Headline = styled.div`
   position: relative;
 `;
 
+export const H3 = styled.h3`
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+`;
+
 export const H4 = styled.h4`
   color: hsl(0, 0%, 30%);
   font-size: 16px;

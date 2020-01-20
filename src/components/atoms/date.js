@@ -13,8 +13,8 @@ export const Date = styled.div`
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
-  pointer-events: none;
   text-transform: uppercase;
 
+  /* stylelint-disable-next-line */
   ${(props) => props.orientation === 'vertical' && verticalOrientation}
 `;

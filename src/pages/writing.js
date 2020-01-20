@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { Date } from '../components/atoms';
+import { H3, Date } from '../components/atoms';
 import { PostList, PostItem, PostItemImage } from '../components/post-list';
 
 function WritingPage(props) {
@@ -24,9 +24,9 @@ function WritingPage(props) {
 
             return (
               <article key={node.fields.slug}>
-                <PostItem>
+                <PostItem to={slug}>
                   <Date>{date}</Date>
-                  <Link to={slug}>{title}</Link>
+                  <H3>{title}</H3>
                   {image && <PostItemImage src={image} />}
                 </PostItem>
               </article>

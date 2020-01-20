@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { H4, Date } from '../components/atoms';
+import { H3, H4, Date } from '../components/atoms';
 import { PostList, PostItem, PostItemImage } from '../components/post-list';
 
 function Home(props) {
@@ -37,9 +37,9 @@ function Home(props) {
 
           return (
             <article key={node.fields.slug}>
-              <PostItem>
+              <PostItem to={slug}>
                 <Date>{date}</Date>
-                <Link to={slug}>{title}</Link>
+                <H3>{title}</H3>
                 {image && <PostItemImage src={image} />}
               </PostItem>
             </article>

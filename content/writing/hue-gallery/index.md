@@ -5,6 +5,8 @@ image: /images/hue-gallery.gif
 date: '2016-12-01'
 ---
 
+<Note> Hello world </Note>
+
 In 2008, the number of internet-connected things exceeded Earth’s human population. By 2020, that number is expected to eclipse 50 billion. As processors, sensors, and wireless radios become smaller and more accessible, use cases for these devices are flourishing.
 
 At home, the Internet of Things (IoT) is finding its place in the lives of everyday people. Good IoT devices for the home share many similarities with good websites: they’re built for a purpose, progressively enhance with better connectivity, and bring delight to the user.

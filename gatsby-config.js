@@ -17,22 +17,33 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: require.resolve(`./src/components/layout.js`),
+        },
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 700,
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-          },
+          `gatsby-remark-responsive-iframe`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-widows`,
         ],
+      },
+    },
+    // Duplicate plugin declaration to clear doubled images
+    // https://github.com/gatsbyjs/gatsby/issues/15486
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 700,
       },
     },
     `gatsby-transformer-sharp`,
@@ -43,7 +54,6 @@ module.exports = {
         trackingId: `UA-5977667-28`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

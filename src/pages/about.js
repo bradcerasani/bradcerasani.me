@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
@@ -38,9 +39,11 @@ const StyledBackground = styled.div`
 `;
 
 function AboutPage(props) {
-  const post = props.data.markdownRemark;
+  const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
-  const backgroundColor = props.data.markdownRemark.frontmatter.backgroundColor;
+  const backgroundColor = props.data.mdx.frontmatter.backgroundColor;
+
+  console.log('this is post', post);
 
   return (
     <Fragment>
@@ -52,7 +55,7 @@ function AboutPage(props) {
         <SEO title={siteTitle} description="TODO" />
 
         <section style={{ marginBottom: '0' }}>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <MDXRenderer>{post.body}</MDXRenderer>
         </section>
       </Layout>
       <StyledBackground />
@@ -70,9 +73,9 @@ export const pageQuery = graphql`
       }
     }
     # TODO: add dynamic filename-based(?) content lookup
-    markdownRemark(fields: { slug: { eq: "/about/" } }) {
+    mdx(fields: { slug: { eq: "/about/" } }) {
       id
-      html
+      body
       frontmatter {
         backgroundColor
       }

@@ -9,7 +9,7 @@ import { PostList, PostItem, PostItemImage } from '../components/post-list';
 function WritingPage(props) {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMarkdownRemark.edges;
+  const posts = data.allMdx.edges;
 
   return (
     <Fragment>
@@ -47,9 +47,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { slug: { glob: "/writing/*" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {
         node {

@@ -9,7 +9,7 @@ import { PostList, PostItem, PostItemImage } from '../components/post-list';
 function Home(props) {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMarkdownRemark.edges;
+  const posts = data.allMdx.edges;
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -18,7 +18,7 @@ function Home(props) {
       <section>
         <div
           dangerouslySetInnerHTML={{
-            __html: data.markdownRemark.frontmatter.excerpt,
+            __html: data.mdx.frontmatter.excerpt,
           }}
           style={{ marginBottom: '8px' }}
         />
@@ -59,14 +59,14 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: {}, fields: { slug: { eq: "/about/" } }) {
+    mdx(fields: { slug: { eq: "/about/" } }) {
       frontmatter {
         excerpt
       }
     }
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { slug: { glob: "/writing/*" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {
         node {

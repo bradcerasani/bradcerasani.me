@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 export const Note = styled.div`
   background-color: hsl(48, 64%, 94%);
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  border-color: currentColor;
+  border-style: double;
+  border-width: 6px;
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  padding: 1.5rem;
 `;

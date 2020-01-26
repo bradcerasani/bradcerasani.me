@@ -5,7 +5,7 @@ image: /images/hue-gallery.gif
 date: '2016-12-01'
 ---
 
-<Note> Hello world </Note>
+<Note>This article was originally published in the Dec. 2016 issue of net magazine.</Note>
 
 In 2008, the number of internet-connected things exceeded Earth’s human population. By 2020, that number is expected to eclipse 50 billion. As processors, sensors, and wireless radios become smaller and more accessible, use cases for these devices are flourishing.
 
@@ -17,7 +17,8 @@ As a developer, having an API for your lights creates some interesting opportuni
 
 For immersive photo browsing, we built a client-side web app that extracts an image’s colour palette and sends it to the Philips Hue API. As an image scrolls into view in the app, the user’s environment responds to that image, enhancing the overall viewing experience.
 
-In this tutorial, we’ll show you how to create the client-side app, work with the Philips Hue API, and build a web-based IoT experience.
+In this tutorial, we’ll show you how to create the client-side app, work with
+the Philips Hue API, and build a web-based IoT experience.
 
 //START, BOXOUT 1: ZigBee vs. Bluetooth
 ZigBee is a wireless protocol commonly used for mesh networks with simple data requirements. In a mesh network, nodes are interconnected and each acts as a wireless transceiver and repeater. ZigBee supports tens of thousands of nodes per network and consumes very little power, but it can only transfer simple packets of data.

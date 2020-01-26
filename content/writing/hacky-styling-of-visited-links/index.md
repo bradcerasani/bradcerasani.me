@@ -4,6 +4,8 @@ description: Using CSS pseudo elements to check mark visited links.
 date: '2013-10-18'
 ---
 
+import { DemoButton } from './demo-button';
+
 In HTML, `<a>` tags have 4 CSS pseudo classes that are used to style hyperlinks in different states: `:link` `:visited` `:hover` and `:active`
 
 We used to be able to style these pseudo classes with whatever CSS we wanted, but in early 2010 a [privacy vulnerability](http://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/) forced browsers to restrict what CSS properties were allowed for the `:visited` class.
@@ -28,7 +30,7 @@ First, we'll create a link and give it some styling.
 _I'm using SCSS/Sass instead of vanilla CSS. If you are unfamiliar with Sass, [start here](http://sass-lang.com/guide)._
 
 ```html
-<a href="#!" class="demo">AWESOME</a>
+<a href="#!" class="demo">Click Me</a>
 ```
 
 ```scss
@@ -50,7 +52,7 @@ a.demo {
 
 Result:
 
-<a href="#!" class="demo">AWESOME</a>
+<DemoButton>AWESOME</DemoButton>
 
 Cool! Let's design a `:visited` style.
 
@@ -91,7 +93,7 @@ a.demo {
 
 Result:
 
-<a href="#!" class="demo step-two">AWESOME</a>
+<DemoButton stepTwo>AWESOME</DemoButton>
 
 ## Building Functionality
 
@@ -135,7 +137,14 @@ a.demo {
 
 Give it a try:
 
-<a href="http://bit.ly/16m376q" class="demo step-two step-three">AWESOME</a>
+<DemoButton
+href="http://bit.ly/16m376q"
+target="\_blank"
+rel="noopener noreferrer"
+stepTwo
+stepThree>
+AWESOME
+</DemoButton>
 
 Pretty cool, eh?
 

@@ -5,7 +5,7 @@ export const Note = styled.div`
   border-color: currentColor;
   border-style: double;
   border-width: 6px;
-  font-size: 16px;
+  font-size: 15px;
   font-style: italic;
   margin-bottom: 3rem;
   margin-top: 3rem;

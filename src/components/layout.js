@@ -6,9 +6,11 @@ import Header from './header';
 import Container from './container';
 
 import { Note } from './atoms';
+import Image from './image';
 
 const components = {
   Note,
+  PostImage: Image, // Image appears to be a reserved word
 };
 
 function Layout(props) {

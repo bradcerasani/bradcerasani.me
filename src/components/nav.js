@@ -23,7 +23,7 @@ export const NavImage = styled.img`
 `;
 
 export const NavItem = styled(Link)`
-  color: hsl(0, 0%, 0%, 0.4);
+  color: hsl(0, 0%, 20%);
   display: block;
   font-size: 20px;
   margin-right: -16px;
@@ -40,6 +40,7 @@ export const NavItem = styled(Link)`
 
   &.is-active {
     color: black;
+    text-decoration: underline;
 
     &::after {
       content: '~';

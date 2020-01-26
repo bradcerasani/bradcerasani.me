@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { H3, H4, Date } from '../components/atoms';
+import { H3, Date } from '../components/atoms';
 import { PostList, PostItem, PostItemImage } from '../components/post-list';
 
 function Home(props) {
@@ -25,8 +25,6 @@ function Home(props) {
 
         <Link to={'/about'}>More about me</Link>
       </section>
-
-      <H4>Writing</H4>
 
       <PostList>
         {posts.map(({ node }) => {

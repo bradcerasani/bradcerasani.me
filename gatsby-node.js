@@ -1,4 +1,5 @@
 const path = require(`path`);
+const fs = require('fs-extra');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateWebpackConfig = ({ actions }) => {
@@ -67,6 +68,22 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    });
+  }
+
+  // Move content images into /public for ingestion by Imgix
+  if (node.internal.mediaType && node.internal.mediaType.includes('image')) {
+    const destination = path.join(
+      process.cwd(),
+      'public',
+      'images',
+      node.relativePath
+    );
+
+    fs.copy(node.absolutePath, destination, (err) => {
+      if (err) {
+        console.error('Error copying file', err);
+      }
     });
   }
 };

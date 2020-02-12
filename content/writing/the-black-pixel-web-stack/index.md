@@ -1,6 +1,7 @@
 ---
 title: The Black Pixel Web Stack
 description: What's Now and What's Next
+image: /images/writing/the-black-pixel-web-stack/cover.png
 date: '2016-06-08'
 ---
 
@@ -20,9 +21,11 @@ Suddenly the programming language once treated as a toy had proper module suppor
 
 Today, modern browsers and the latest version of Node are [nearing 100-percent compatibility](http://kangax.github.io/compat-table/es6/) with this latest version of JavaScript. The language is more ubiquitous than ever before, and new use cases for it emerge every day.
 
-> Benjamin Coe: Senior Systems Analyst – npm, Inc.
+<!-- Copied from Twitter embed w/o script -->
+<blockquote><p lang="en" dir="ltr"><a href="https://twitter.com/CollinEstes">@CollinEstes</a> I heard a rumor that NASA uses Node.js for space-suits. I&#39;m curious, do you use the npm ecosystem to develop these apps?</p> &mdash; Benjamin Coe (<a href="https://twitter.com/BenjaminCoe/status/738764829746286592">@BenjaminCoe</a>) </blockquote>
 
-> Collin Estes: Director of Software Engineering — MRI Technologies / NASA
+<!-- Copied from Twitter embed w/o script -->
+<blockquote><p lang="en" dir="ltr"><a href="https://twitter.com/BenjaminCoe">@BenjaminCoe</a> You heard correctly, and yes we do.</p> &mdash; Collin Estes (<a href="https://twitter.com/collinestes/status/738765249407504384">@CollinEstes</a>)</blockquote>
 
 However, the rising popularity of JavaScript also brings a certain amount of “[JavaScript fatigue](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4),” especially when six years of language development land in a single release as happened with ES2015 last year. Fortunately steps are being taken to ensure [future releases of ECMAScript/JS](http://www.2ality.com/2015/11/tc39-process.html) are smaller and more frequent, and there are many [roundup-style newsletters](http://javascriptweekly.com/) and [websites](http://www.echojs.com/) that help filter signal through the noise of the bustling ecosystem that is modern-day JS development.
 

@@ -1,17 +1,20 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+import { Date } from '../components/atoms/date';
+
 export const PostItemImage = styled.img`
-  display: none;
-  opacity: 0.8;
+  cursor: pointer;
+  opacity: 0;
   position: absolute;
   right: -200px;
   top: 0;
   width: 400px;
-  z-index: -1;
+  z-index: 1;
 `;
 
 export const PostItem = styled(Link)`
+  cursor: pointer;
   display: block;
   font-size: 32px;
   font-weight: 400;
@@ -21,28 +24,37 @@ export const PostItem = styled(Link)`
   margin-top: 0;
   padding-bottom: 1.25rem;
   padding-top: 1.25rem;
-  position: relative;
   text-decoration: none;
   transition-duration: 400ms;
   transition-property: color;
   transition-timing-function: ease-out;
 
+  ${Date} {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   h3 {
     margin: 0;
   }
 
-  &:hover {
+  &:hover,
+  &.hover {
     color: black;
-    cursor: pointer;
     transition-duration: 80ms;
 
+    ${Date} {
+      opacity: 1;
+    }
+
     ${PostItemImage} {
-      display: block;
+      opacity: 0.9;
     }
   }
 `;
 
 export const PostList = styled.div`
+  position: relative;
   &:hover ${PostItem}:not(:hover) {
     color: rgba(0, 0, 0, 0.2);
   }

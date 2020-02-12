@@ -1,6 +1,7 @@
 ---
 title: A Dance With Sinatra
 description: Adventures in programming with Ruby and Sinatra.
+image: /images/writing/a-dance-with-sinatra/cover.jpg
 date: '2013-09-20'
 ---
 

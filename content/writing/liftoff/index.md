@@ -1,12 +1,13 @@
 ---
 title: Liftoff
 description: Shedbot 2.0 reflects a sharper focus on building for the web.
+image: /images/writing/liftoff/cover.jpg
 date: '2012-12-06'
 ---
 
 Shedbot 2.0 reflects a sharper focus on building for the web. The old website has been refined into a single page responsive layout with a small, select portfolio of web projects. The new site is lightweight, and progressively enhances for high pixel density "retina" displays with resolutions up to an absurd 5120 x 2880.
 
-![Moon over Kenora, Ontario – 10" f4.7 Newtonian, Canon 7D](./moon.jpg)
+<PostImage src="liftoff/moon.jpg" alt="Alt text" caption="Moon over Kenora, Ontario – 10&quot; f4.7 Newtonian telescope, Canon 7D" size="full" />
 
 Load weight on mobile is 316K, 375K for mobile retina, 960K at largest non-retina breakpoint, and a respectable 1511K for widescreen retina.
 

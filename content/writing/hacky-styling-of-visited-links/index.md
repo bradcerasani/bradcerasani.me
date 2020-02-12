@@ -1,6 +1,7 @@
 ---
 title: Hacky Styling of :visited Links
 description: Using CSS pseudo elements to check mark visited links.
+image: /images/writing/hacky-styling-of-visited-links/cover.jpg
 date: '2013-10-18'
 ---
 
@@ -41,7 +42,7 @@ a.demo {
   display: inline-block;
   padding: 0.75rem 3rem;
   border: 2px solid $accent;
-  border-radius: 3px;
+  border-radius: 4px;
   background: $accent;
   color: white;
   text-decoration: none;
@@ -52,7 +53,7 @@ a.demo {
 
 Result:
 
-<DemoButton>AWESOME</DemoButton>
+<DemoButton>Button</DemoButton>
 
 Cool! Let's design a `:visited` style.
 
@@ -74,7 +75,7 @@ a.demo {
   display: inline-block;
   padding: 0.75rem 3rem;
   border: 2px solid $accent;
-  border-radius: 3px;
+  border-radius: 4px;
   background: $accent;
   color: white;
   text-decoration: none;
@@ -93,7 +94,7 @@ a.demo {
 
 Result:
 
-<DemoButton stepTwo>AWESOME</DemoButton>
+<DemoButton stepTwo>Button</DemoButton>
 
 ## Building Functionality
 
@@ -109,7 +110,7 @@ a.demo {
   display: inline-block;
   padding: 0.75rem 3rem;
   border: 2px solid $accent;
-  border-radius: 3px;
+  border-radius: 4px;
   background: $accent;
   color: white;
   text-decoration: none;
@@ -143,7 +144,7 @@ target="\_blank"
 rel="noopener noreferrer"
 stepTwo
 stepThree>
-AWESOME
+Button
 </DemoButton>
 
 Pretty cool, eh?

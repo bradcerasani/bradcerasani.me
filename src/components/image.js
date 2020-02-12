@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import Imgix from 'react-imgix';
+import styled, { css } from 'styled-components';
 
-const Img = styled.img`
+const Img = styled(Imgix)`
   display: block;
   margin-bottom: 0.75rem;
 `;
@@ -20,30 +21,42 @@ const Figure = styled.figure`
 
   ${(props) =>
     props.size === 'large' &&
-    `
-    ${Img} {
-      margin-left: -200px;
-      margin-right: -200px;
-      width: calc(100% + 400px);
-    }
-  `}
+    css`
+      ${Img} {
+        margin-left: -200px;
+        margin-right: -200px;
+        width: calc(100% + 400px);
+      }
+    `}
 
   ${(props) =>
-    props.size === 'fullbleed' &&
-    `
-    ${Img} {
-      margin-left: calc((100vw - 636px) / -2);
-      margin-right: calc((100vw - 636px) / -2);
-      width: 100vw;
-      min-width: 100%;
-    }
-  `}
+    props.size === 'full' &&
+    css`
+      ${Img} {
+        margin-left: calc((100vw - 636px) / -2);
+        margin-right: calc((100vw - 636px) / -2);
+        width: 100vw;
+        min-width: 100%;
+      }
+    `}
 `;
 
-const Image = ({ src, caption, size }) => {
+export const Image = ({ src, caption, size, alt }, props) => {
+  // TODO: Refactor assumption that image component is only used within /writing/*
+  const url =
+    process.env.NODE_ENV === 'development'
+      ? `/images/writing/${src}`
+      : `https://bradcerasani.imgix.net/images/writing/${src}`;
+
   return (
     <Figure size={size}>
-      <Img src={src} />
+      <Img
+        src={url}
+        htmlAttributes={{
+          alt,
+          loading: 'lazy',
+        }}
+      />
       <Caption>{caption}</Caption>
     </Figure>
   );

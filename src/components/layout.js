@@ -6,7 +6,7 @@ import Header from './header';
 import Container from './container';
 
 import { Note } from './atoms';
-import Image from './image';
+import { Image } from './image';
 
 const components = {
   Note,

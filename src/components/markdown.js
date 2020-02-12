@@ -8,6 +8,7 @@ export const StyledMarkdown = styled.div`
     font-family: Canela, serif;
     font-size: 2.5rem;
     font-weight: 600;
+    line-height: 1.1;
     margin-bottom: 0.5rem;
     margin-top: 0;
     padding-top: 1rem;

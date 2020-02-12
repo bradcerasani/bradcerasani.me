@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const DemoButton = styled.a`
   background: #3ba7bb;
+  border-radius: 4px;
   border: 2px solid #3ba7bb;
-  border-radius: 3px;
   color: white;
+  cursor: default;
   cursor: pointer;
   display: inline-block;
   font-weight: 500;
@@ -13,7 +14,6 @@ export const DemoButton = styled.a`
   padding: 0.75rem 3rem;
   position: relative;
   text-decoration: none;
-  text-transform: uppercase;
 
   &:hover {
     color: white;
@@ -21,33 +21,36 @@ export const DemoButton = styled.a`
 
   ${(props) =>
     props.stepTwo &&
-    `
-    &::after {
-      content: '✔';
-      font-family: Arial, Helvetica, sans-serif;
-      height: 1rem;
-      position: absolute;
-      right: 1rem;
-      width: 1rem;
-      top: 0.75rem;
-    }
-  `};
+    css`
+      &::after {
+        content: '✓';
+        font-family: Arial, Helvetica, sans-serif;
+        height: 1rem;
+        position: absolute;
+        right: 1rem;
+        width: 1rem;
+        top: 0.75rem;
+        font-size: 20px;
+      }
+    `};
 
   ${(props) =>
     props.stepThree &&
-    `
-    &::after {
-      color: #3ba7bb;
-    }
+    css`
+      cursor: pointer !important;
 
-    &:visited {
-      background: #fafafa;
-      border-color: #535353;
-      color: #535353;
-
-      &:after {
-        color: #49b749;
+      &::after {
+        color: #3ba7bb;
       }
-    }
-  `}
+
+      &:visited {
+        background: white;
+        border-color: #535353;
+        color: #535353;
+
+        &:after {
+          color: #49b749;
+        }
+      }
+    `}
 `;

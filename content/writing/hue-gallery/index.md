@@ -40,8 +40,8 @@ We only want one image showing in the viewport at a time, so let’s wrap our im
 
 ```html
 <!-- index.html -->
-<div class="“ImageContainer”">
-  <img src="https://images.unsplash.com/photo-1234…”>
+<div class="ImageContainer">
+  <img src="https://images.unsplash.com/photo-1234…" />
 </div>
 ```
 

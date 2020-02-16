@@ -1,3 +1,16 @@
+:root {
+  --backgroundColor: hsl(0, 0%, 10%);
+  --color: #f7f7f7;
+  --cyan: #64edff;
+  --green: #67ffb8;
+  --grey: #85a19f;
+  --blue: #028BE8;
+  --pink: #ff55b5;
+  --purple: #bd93f9;
+  --red: #f84e3b;
+  --yellow: #faec8f;
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
   -moz-hyphens: none;
@@ -6,8 +19,7 @@ pre[class*='language-'] {
   -o-tab-size: 4;
   -webkit-hyphens: none;
   background: none;
-  color: hsl(245, 28%, 17%);
-  font-family: Consolas, Menlo, Monaco, source-code-pro, 'Courier New',
+  font-family: 'Jetbrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Courier New',
     monospace;
   font-size: 14px;
   hyphens: none;
@@ -22,13 +34,19 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  background-color: hsl(0, 0%, 96%);
-  border-radius: 4px;
+  background-color: var(--backgroundColor);
+  border-radius: 8px;
+  color: var(--color);
   margin-bottom: 2rem;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
   overflow: auto;
   padding: 1.5rem;
+}
+
+pre *::selection {
+  background-color: hsl(0, 0%, 60%);
+  text-shadow: 0 0 4px var(--backgroundColor), 0 0 6px currentColor;
 }
 
 /* Inline code */
@@ -39,69 +57,6 @@ pre[class*='language-'] {
   font-size: inherit;
   font-weight: inherit;
   white-space: normal;
-}
-
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: hsl(300, 2%, 64%);
-}
-
-.token.punctuation {
-  color: hsl(0, 0%, 15%);
-}
-
-.token.tag,
-.token.namespace,
-.token.deleted {
-  color: hsl(12, 52%, 49%);
-}
-
-.token.function-name {
-  color: hsl(227, 40%, 48%);
-}
-
-.token.boolean,
-.token.number,
-.token.function {
-  color: hsl(11, 63%, 52%);
-}
-
-.token.attr-name,
-.token.property,
-.token.class-name,
-.token.constant,
-.token.symbol {
-  color: hsl(206, 53%, 51%);
-}
-
-.token.alternation,
-.token.group,
-.token.attr-value,
-.token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
-  color: hsl(227, 40%, 48%);
-}
-
-.token.charset,
-.token.quantifier,
-.token.string,
-.token.char,
-.token.regex,
-.token.variable {
-  font-style: normal;
-  color: hsl(12, 52%, 49%);
-}
-
-.token.operator,
-.token.entity,
-.token.url {
-  color: hsl(65, 23%, 48%);
 }
 
 .token.important,
@@ -117,5 +72,78 @@ pre[class*='language-'] {
 }
 
 .token.datetime.number {
-  color: hsl(245, 28%, 17%);
+  color: var(--color);
 }
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--grey);
+  font-style: italic;
+}
+
+.token.namespace,
+.token.deleted {
+  color: var(--red);
+}
+
+.token.tag,
+.token.punctuation,
+.token.function-name {
+  color: var(--purple);
+}
+
+.token.selector,
+.token.attr-name,
+.token.function {
+  color: var(--cyan);
+}
+
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: var(--yellow);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.alternation,
+.token.group,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: var(--pink);
+}
+
+.token.property,
+.token.charset,
+.token.quantifier,
+.token.string,
+.token.char,
+.token.regex,
+.token.variable,
+.token.attr-value {
+  font-style: normal;
+  color: var(--green);
+}
+
+.token.boolean,
+.token.number {
+  color: var(--blue);
+}
+
+/* Custom rules (see gatsby-config.js) */
+
+.token.js_keyword {
+  color: var(--yellow);
+}
+
+.token.js_period {
+  color: var(--pink);
+}
+
+

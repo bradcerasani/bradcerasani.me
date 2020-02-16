@@ -31,7 +31,29 @@ module.exports = {
             },
           },
           `gatsby-remark-responsive-iframe`,
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              languageExtensions: [
+                {
+                  extend: 'js',
+                  insertBefore: {
+                    function: {
+                      js_keyword: /(document)/,
+                    },
+                  },
+                },
+                {
+                  extend: 'js',
+                  insertBefore: {
+                    function: {
+                      js_period: /(\.)/,
+                    },
+                  },
+                },
+              ],
+            },
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-widows`,

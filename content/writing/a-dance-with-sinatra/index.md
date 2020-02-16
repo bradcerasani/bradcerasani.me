@@ -7,11 +7,11 @@ date: '2013-09-20'
 
 I've never been great at keeping a blog. Any space I've made for writing in the past has been as Shedbot, the moniker I've used for my photo/design work the past few years. I would always tread lightly posting on behalf a business, even my own. When speaking on behalf of a business you're always conscious of offending that exec who perhaps would've given you that big contract if he didn't see you talking about [ManBearPig](http://www.youtube.com/watch?v=xf69EEL3WBk) that one time.
 
-I've been wanting to write my own blogging app since seeing [this post](http://sam.roon.io/new-blog) by [Sam Soffes'](http://twitter.com/soffes) about one of his 6000 blog iterations earlier this year. He wrote a Sinatra app that uses a GitHub repo of markdown files as posts and caches them in Redis. I really liked the idea of using static markdown files as a post archive; no messy databases or clunky web interface to get in the way of actually writing. I built something similar.
+I've been wanting to write my own blogging app since seeing [this post](http://sam.roon.io/new-blog) by [Sam Soffes'](http://twitter.com/soffes) about one of his many blog iterations earlier this year. He wrote a Sinatra app that uses a GitHub repo of markdown files as posts and caches them in Redis. I really liked the idea of using static markdown files as a post archive; no messy databases or clunky web interface to get in the way of actually writing. I built something similar.
 
 ## The Build
 
-This was my first adventure in programming, so the build took a while. Though I had studied some Ruby previously, there's no substitute for diving in and getting your hands dirty. I found a handful of repos on Github that performed similar actions, so I cloned a handful locally and referenced them throughout the build. While Sam's blog was the original inspiration, his Redis integration was an added level of complexity that I wasn't ready for. Here's a quick overview of my my app, starting with a sample markdown file:
+This was my first adventure in server-side programming, so the build took a while. Though I had studied some Ruby previously, there's no substitute for diving in and getting your hands dirty. I found a handful of repos on Github that performed similar actions, so I cloned a handful locally and referenced them throughout the build. While Sam's blog was the original inspiration, his Redis integration was an added level of complexity that I wasn't ready for. Here's a quick overview of my my app, starting with a sample markdown file:
 
 ```yaml
 # A-Dance-With-Sinatra.md
@@ -104,7 +104,7 @@ The sans-serif body type is [Whitney](http://www.typography.com/fonts/whitney/ov
 
 I designed a custom pygments stylesheet to ensure code highlighting in the browser would precisely mimic my local environment in Sublime Text 3. The colour scheme is based on the [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) theme by [Chris Kempson](https://twitter.com/chriskempson). The monospace font used in the code views is [Source Code Pro](http://blogs.adobe.com/typblography/2012/09/source-code-pro.html) by Adobe.
 
-The accent colour, [#3BA7BB](#) is the colour of Cartman's hat from South Park.
+The accent colour, #3BA7BB is the colour of Cartman's hat from South Park.
 
 ## Hosting & Deployment
 

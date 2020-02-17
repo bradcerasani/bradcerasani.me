@@ -7,11 +7,13 @@ date: '2013-10-18'
 
 import { DemoButton } from './demo-button';
 
-In HTML, `<a>` tags have 4 CSS pseudo classes that are used to style hyperlinks in different states: `:link` `:visited` `:hover` and `:active`
+<Note>This post outlines a method to 'hide' a glyph on an anchor tag using a pseudo-element in order to expand the boundaries of what :visited styles typically allow.</Note>
 
-We used to be able to style these pseudo classes with whatever CSS we wanted, but in early 2010 a [privacy vulnerability](http://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/) forced browsers to restrict what CSS properties were allowed for the `:visited` class.
+In HTML, `<a>` tags have 4 CSS pseudo classes that are used to style hyperlinks in different states: `:link` `:visited` `:hover` and `:active`.
 
-Here's what properties we're currently allowed to use for `:visited` elements:
+We used to be able to style these states with whatever CSS we wanted, but in early 2010 a [privacy vulnerability](http://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/) forced browsers to restrict what properties were allowed to be used with the `:visited` selector.
+
+Here's what we're left with:
 
 ```css
 a:visited {
@@ -26,110 +28,114 @@ Boring, eh? Not to worry, we can work with this.
 
 ## Basic Link Styling
 
-First, we'll create a link and give it some styling.
-
-_I'm using SCSS/Sass instead of vanilla CSS. If you are unfamiliar with Sass, [start here](http://sass-lang.com/guide)._
+First, we'll create a link and give it some styling. Note: I'm using Sass here instead of vanilla CSS[^1].
 
 ```html
-<a href="#!" class="demo">Click Me</a>
+<!-- HTML -->
+<a href="#!" class="demo">Link</a>
 ```
 
 ```scss
-$accent: #3ba7bb;
+// Sass
+$buttonColor: #3ba7bb;
 
 a.demo {
-  position: relative;
-  display: inline-block;
-  padding: 0.75rem 3rem;
-  border: 2px solid $accent;
+  background: $buttonColor;
   border-radius: 4px;
-  background: $accent;
+  border: 2px solid $buttonColor;
   color: white;
-  text-decoration: none;
+  display: inline-block;
   font-weight: 500;
   line-height: 1;
+  padding: 0.75rem 3rem;
+  position: relative;
+  text-decoration: none;
 }
 ```
 
 Result:
 
-<DemoButton>Button</DemoButton>
+<DemoButton>Link</DemoButton>
 
 Cool! Let's design a `:visited` style.
 
 ## CSS Pseudo Elements
 
-Pseudo elements in CSS are **awesome**. [Chris Coyier](http://css-tricks.com/pseudo-element-roundup/) sums it up best:
+Pseudo elements in CSS are great. [Chris Coyier](http://css-tricks.com/pseudo-element-roundup/) describes them well:
 
 > For every element on the page, you get two more free ones that you can do just about anything another HTML element could do.
 
 We'll use a CSS pseudo element to help style the `:visited` state of our link. While pseudo elements have the same CSS property restrictions as the `<a>` tag, with absolute positioning and some basic colour tricks we can essentially hide a `:visited` style in our link right from the start.
 
-Let's add a check mark using pseudo element `:after`. I'm using a check mark from [icomoon](http://icomoon.io/), but if you aren't familiar with icon fonts, grab a character from [here](http://copypastecharacter.com/) and insert it on line 19 between the double quotes.
+Let's add a check mark using the pseudo element `::after`.
 
 ```scss
-$accent: #3ba7bb;
+$buttonColor: #3ba7bb;
+$textColor: white;
 
 a.demo {
-  position: relative;
-  display: inline-block;
-  padding: 0.75rem 3rem;
-  border: 2px solid $accent;
+  background-color: $buttonColor;
   border-radius: 4px;
-  background: $accent;
-  color: white;
-  text-decoration: none;
+  border: 2px solid $buttonColor;
+  color: $textColor;
+  display: inline-block;
   font-weight: 500;
   line-height: 1;
-  &:after {
+  padding: 0.75rem 3rem;
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: '✓';
+    height: 1rem;
     position: absolute;
     right: 1.5rem;
     width: 1rem;
-    height: 1rem;
-    content: '\e602';
-    font-family: icomoon;
   }
 }
 ```
 
 Result:
 
-<DemoButton stepTwo>Button</DemoButton>
+<DemoButton stepTwo>Link</DemoButton>
 
-## Building Functionality
+## Completing Functionality
 
-While we can't technically 'add' the check mark strictly to `:visited` links, we can hide it in a link's natural state by changing its colour to match the background.
+While we can't technically 'add' the check mark strictly to `:visited` links, we can hide it in the link's default state by changing it to the same colour as the background.
 
 Now we can style the `:visited` state to provide some visual contrast and show off the check mark and border, both of which were disguised originally.
 
 ```scss
-$accent: #3ba7bb;
+$buttonColor: #3ba7bb;
+$textColor: white;
 
 a.demo {
-  position: relative;
-  display: inline-block;
-  padding: 0.75rem 3rem;
-  border: 2px solid $accent;
+  background-color: $buttonColor;
   border-radius: 4px;
-  background: $accent;
-  color: white;
-  text-decoration: none;
+  border: 2px solid $buttonColor;
+  color: $textColor;
+  display: inline-block;
   font-weight: 500;
   line-height: 1;
-  &:after {
+  padding: 0.75rem 3rem;
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    color: $buttonColor;
+    content: '✓';
+    height: 1rem;
     position: absolute;
     right: 1.5rem;
     width: 1rem;
-    height: 1rem;
-    color: $accent;
-    content: '\e602';
-    font-family: icomoon;
   }
+
   &:visited {
-    border-color: #333333;
-    background-color: #fafafa;
-    color: #333333;
-    &:after {
+    background-color: #fff;
+    border-color: currentColor;
+    color: #333;
+
+    &::after {
       color: #49b749;
     }
   }
@@ -144,11 +150,11 @@ target="\_blank"
 rel="noopener noreferrer"
 stepTwo
 stepThree>
-Button
+Click Me
 </DemoButton>
-
-Pretty cool, eh?
 
 ## Wrap-Up
 
-With pure CSS we've created an interesting visual style for visited links without sacrificing user privacy or relying on Javascript. Kickass!
+With pure CSS we've created an interesting visual style for visited links without sacrificing user privacy.
+
+[^1]: 2020 – Sass is not required, and this could be done with [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) or some other means that wasn't available or practical in 2013. The demo link that appears inline in this article uses the same technique described but is implemented in React with [styled-components](https://styled-components.com/) and integrated into the post using [MDX](https://github.com/mdx-js/mdx).

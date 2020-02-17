@@ -4,6 +4,11 @@ import modernNormalize from 'modern-normalize';
 export const GlobalStyle = createGlobalStyle`
   ${modernNormalize}
 
+  html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: ${(props) =>
       props.backgroundColor || 'hsl(35, 10%, 86%)'};

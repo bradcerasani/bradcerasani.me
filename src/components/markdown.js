@@ -67,9 +67,12 @@ export const StyledMarkdown = styled.div`
   }
 
   hr {
-    background-color: currentColor;
-    border: none;
-    height: 4px;
+    background-color: transparent;
+    border-bottom: 2px solid currentColor;
+    border-left: none;
+    border-right: none;
+    border-top: 2px solid currentColor;
+    height: 6px;
     margin-bottom: 2.5rem;
     margin-top: 2.5rem;
   }
@@ -78,8 +81,15 @@ export const StyledMarkdown = styled.div`
     font-size: 16px;
   }
 
+  .footnotes hr {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
   .footnotes ol li {
     margin-bottom: 1rem;
+    position: relative;
+    color: hsl(0, 0%, 40%);
   }
 
   .footnotes p {
@@ -90,6 +100,9 @@ export const StyledMarkdown = styled.div`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-decoration: none;
+    margin-left: -2.5rem;
+    top: 4px;
+    position: absolute;
   }
 
   .footnote-ref {

@@ -5,7 +5,7 @@ image: /images/writing/a-dance-with-sinatra/cover.jpg
 date: '2013-09-20'
 ---
 
-I've never been great at keeping a blog. Any space I've made for writing in the past has been as Shedbot, the moniker I've used for my photo/design work the past few years. I would always tread lightly posting on behalf a business, even my own. When speaking on behalf of a business you're always conscious of offending that exec who perhaps would've given you that big contract if he didn't see you talking about [ManBearPig](http://www.youtube.com/watch?v=xf69EEL3WBk) that one time.
+I've never been great at keeping a blog[^1]. Any space I've made for writing in the past has been as Shedbot, the moniker I've used for my photo/design work the past few years. I would always tread lightly posting on behalf a business, even my own. When speaking on behalf of a business you're always conscious of offending that exec who perhaps would've given you that big contract if he didn't see you talking about [ManBearPig](http://www.youtube.com/watch?v=xf69EEL3WBk) that one time.
 
 I've been wanting to write my own blogging app since seeing [this post](http://sam.roon.io/new-blog) by [Sam Soffes'](http://twitter.com/soffes) about one of his many blog iterations earlier this year. He wrote a Sinatra app that uses a GitHub repo of markdown files as posts and caches them in Redis. I really liked the idea of using static markdown files as a post archive; no messy databases or clunky web interface to get in the way of actually writing. I built something similar.
 
@@ -134,3 +134,7 @@ end
 This has been a lot of fun to build, and I have a lot to do on it still. It's endearing releasing something before it's polished; I feel more inspired to continue work on it instead of feeling utterly and completely sick of it.
 
 Let me know your thoughts on [Twitter](http://twitter.com/bradcerasani).
+
+<Note>Check out this iteration of the site in the archives <a href="https://2013.bradcerasani.me">here</a>.</Note>
+
+[^1]: 2020 update: still terrible

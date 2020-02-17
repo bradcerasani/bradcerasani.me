@@ -37,6 +37,11 @@ const Figure = styled.figure`
         margin-right: calc((100vw - 636px) / -2);
         width: 100vw;
         min-width: 100%;
+        margin-top: 3rem;
+      }
+
+      ${Caption} {
+        margin-bottom: 3rem;
       }
     `}
 `;

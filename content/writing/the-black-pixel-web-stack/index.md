@@ -5,6 +5,8 @@ image: /images/writing/the-black-pixel-web-stack/cover.png
 date: '2016-06-08'
 ---
 
+<Note>This article was originally published on <a href="https://medium.com/bpxl-craft" target="_blank" rel="noopener noreferrer">BPXL Craft</a>.</Note>
+
 Every day there’s a shiny new framework or library that seemingly everyone is talking about. While it can be tempting to adopt the flavour of the month, being too liberal with technology choices often leads to churn and frustration, the opposite of productivity. As developers, we’re constantly learning, so avoiding new technology is not the answer. But we need to approach these decisions with pragmatism.
 
 Here are some of the tried, tested, and true language choices and frameworks that we at Black Pixel keep coming back to to get work done.

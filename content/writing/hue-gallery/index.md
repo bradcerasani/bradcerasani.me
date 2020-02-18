@@ -9,33 +9,36 @@ import { Swatches } from './swatches';
 
 <Note>This article was originally published in the Dec. 2016 issue of <a href="https://www.creativebloq.com/net-magazine" target="_blank" rel="noopener noreferrer">net magazine</a>. Philips released the official <a href="https://www.theverge.com/2018/5/31/17412314/philips-hue-sync-windows-mac-review" target="_blank" rel="noopener noreferrer">Hue Sync App</a> a few years later, which mimics the functionality described below.</Note>
 
-<Video vimeoId="392018140" size="large" caption="Hue Gallery in action">  
-  <Annotation time="0.01"><span>🎹</span></Annotation>
-  <Annotation time="3">pretending I'm Casey Neistat...</Annotation>
-  <Annotation time="8.3">&nbsp;</Annotation>
-  <Annotation time="9.9">custom controller for Ikea sit-stand desk </Annotation>
-  <Annotation time="13.5">&nbsp;</Annotation>
-  <Annotation time="13.8">it's controlled by a Raspberry Pi and uses an ultrasonic sensor to measure height</Annotation>
-  <Annotation time="18.5">&nbsp;</Annotation>
-  <Annotation time="22.5"><span style={{transform: 'rotate(-15deg)'}}>😑</span> forgot to straighten this shot</Annotation>
-  <Annotation time="29">&nbsp;</Annotation>
-  <Annotation time="32"><span>🙄</span> yep 30 seconds after sitting down – check it out</Annotation>
-  <Annotation time="36.8">&nbsp;</Annotation>
-  <Annotation time="42.1"><span>🌳</span></Annotation>
-  <Annotation time="47.5">&nbsp;</Annotation>
-  <Annotation time="50.7"><span>🪁</span></Annotation>
-  <Annotation time="52.4">this clip is reversed</Annotation>
-  <Annotation time="57.3">&nbsp;</Annotation>  
-  <Annotation time="64.3"><span>☀️</span> should've used a smaller aperture or aimed that potlight away</Annotation>  
-  <Annotation time="67.2">sitting in a different spot here</Annotation>
-  <Annotation time="70.6">&nbsp;</Annotation>
-  <Annotation time="75.7"><span>☠️</span> RIP this plant</Annotation>
-  <Annotation time="78.3"><span>🐍</span> the one in the corner is still alive though</Annotation>  
-  <Annotation time="84"><span>🎹</span></Annotation>
-  <Annotation time="88.8">&nbsp;</Annotation>  
-  <Annotation time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</Annotation>  
-  <Annotation time="97.3">&nbsp;</Annotation>  
-  <Annotation time="103.5">Hue Gallery in action</Annotation>  
+<Video vimeoId="392018140" size="large" caption="Hue Gallery in action">
+  <AN time="0.01"><span>🎹</span></AN>
+  <AN time="3">pretending I'm Casey Neistat...</AN>
+  <AN time="8.3" />
+  <AN time="9.9">custom controller for Ikea sit-stand desk </AN>
+  <AN time="13.5" />
+  <AN time="13.8">it's controlled by a Raspberry Pi and uses an ultrasonic sensor to measure height</AN>
+  <AN time="18.5" />
+  <AN time="22.5">
+    <span style={{ transform: 'rotate(-10deg)' }}>😑</span> should've
+    straightened this shot
+  </AN>
+  <AN time="29" />
+  <AN time="32"><span>🙄</span> yep 30 seconds after sitting down – check it out</AN>
+  <AN time="36.8" />
+  <AN time="42.1"><span>🌳</span></AN>
+  <AN time="47.5" />
+  <AN time="50.7"><span>🪁</span></AN>
+  <AN time="52.4">this clip is reversed</AN>
+  <AN time="57.3" />
+  <AN time="64.3"><span>☀️</span> should've used a smaller aperture or aimed that potlight away</AN>
+  <AN time="67.2">sitting in a different spot here</AN>
+  <AN time="70.6" />
+  <AN time="75.7"><span>☠️</span> RIP this plant</AN>
+  <AN time="78.3"><span>🐍</span> the one in the corner is still alive though</AN>
+  <AN time="84"><span>🎹</span></AN>
+  <AN time="88.8" />
+  <AN time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</AN>
+  <AN time="97.3" />
+  <AN time="103.5">Hue Gallery in action</AN>
 </Video>
 
 In 2008, the number of internet-connected things exceeded Earth’s human population. By 2020, that number is expected to eclipse 50 billion. As processors, sensors, and wireless radios become smaller and more accessible, use cases for these devices are flourishing.

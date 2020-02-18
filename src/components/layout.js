@@ -7,13 +7,12 @@ import Container from './container';
 
 import { Note } from './atoms';
 import { Image } from './image';
-import { Video, VideoAnnotation } from './video';
+import { Video } from './molecules/video';
 
 const components = {
   Note,
   PostImage: Image, // Image appears to be a reserved word
   Video,
-  VideoAnnotation,
 };
 
 function Layout(props) {

@@ -7,13 +7,42 @@ date: '2016-12-01'
 
 import { Swatches } from './swatches';
 
-<Note>This article was originally published in the Dec. 2016 issue of net magazine.</Note>
+<Note>This article was originally published in the Dec. 2016 issue of <a href="https://www.creativebloq.com/net-magazine" target="_blank" rel="noopener noreferrer">net magazine</a>. Philips released the official <a href="https://www.theverge.com/2018/5/31/17412314/philips-hue-sync-windows-mac-review" target="_blank" rel="noopener noreferrer">Hue Sync App</a> a few years later, which mimics the functionality described below.</Note>
+
+<Video vimeoId="392018140" size="large" caption="Hue Gallery in action">  
+  <Annotation time="0.01"><span>🎹</span></Annotation>
+  <Annotation time="3">pretending I'm Casey Neistat...</Annotation>
+  <Annotation time="8.3">&nbsp;</Annotation>
+  <Annotation time="9.9">custom controller for Ikea sit-stand desk </Annotation>
+  <Annotation time="13.5">&nbsp;</Annotation>
+  <Annotation time="13.8">it's controlled by a Raspberry Pi and uses an ultrasonic sensor to measure height</Annotation>
+  <Annotation time="18.5">&nbsp;</Annotation>
+  <Annotation time="22.5"><span style={{transform: 'rotate(-15deg)'}}>😑</span> forgot to straighten this shot</Annotation>
+  <Annotation time="29">&nbsp;</Annotation>
+  <Annotation time="32"><span>🙄</span> yep 30 seconds after sitting down – check it out</Annotation>
+  <Annotation time="36.8">&nbsp;</Annotation>
+  <Annotation time="42.1"><span>🌳</span></Annotation>
+  <Annotation time="47.5">&nbsp;</Annotation>
+  <Annotation time="50.7"><span>🪁</span></Annotation>
+  <Annotation time="52.4">this clip is reversed</Annotation>
+  <Annotation time="57.3">&nbsp;</Annotation>  
+  <Annotation time="64.3"><span>☀️</span> should've used a smaller aperture or aimed that potlight away</Annotation>  
+  <Annotation time="67.2">sitting in a different spot here</Annotation>
+  <Annotation time="70.6">&nbsp;</Annotation>
+  <Annotation time="75.7"><span>☠️</span> RIP this plant</Annotation>
+  <Annotation time="78.3"><span>🐍</span> the one in the corner is still alive though</Annotation>  
+  <Annotation time="84"><span>🎹</span></Annotation>
+  <Annotation time="88.8">&nbsp;</Annotation>  
+  <Annotation time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</Annotation>  
+  <Annotation time="97.3">&nbsp;</Annotation>  
+  <Annotation time="103.5">Hue Gallery in action</Annotation>  
+</Video>
 
 In 2008, the number of internet-connected things exceeded Earth’s human population. By 2020, that number is expected to eclipse 50 billion. As processors, sensors, and wireless radios become smaller and more accessible, use cases for these devices are flourishing.
 
 At home, the Internet of Things (IoT) is finding its place in the lives of everyday people. Good IoT devices for the home share many similarities with good websites: they’re built for a purpose, progressively enhance with better connectivity, and bring delight to the user.
 
-One such example is the Philips Hue wireless lighting system. On the surface, Hue light bulbs look and function like any other bulb, but they can also be controlled wirelessly with the Philips Hue app or API. Each bulb contains three different types of LED for a variety of white and colour combinations as well as a ZigBee module for wireless communication. A Hue Bridge connects to a home’s internet router and provides a RESTful API for apps to interface with the lights.
+One such example is the Philips Hue wireless lighting system. On the surface, Hue light bulbs look and function like any other bulb, but they can also be controlled wirelessly with the Philips Hue app or API. Each bulb contains three different types of LED for a variety of white and colour combinations as well as a ZigBee[^1] module for wireless communication. A Hue Bridge connects to a home’s internet router and provides a RESTful API for apps to interface with the lights.
 
 As a developer, having an API for your lights creates some interesting opportunities. I’ve written apps to make my lights flash green when the latest iPhone was in stock at the local Apple store, and flash red when my favourite hockey team scored in the NHL playoffs. These apps were utilitarian and disposable in nature, but at Black Pixel I worked with my team to come up with a more captivating experience for Hue.
 
@@ -22,15 +51,9 @@ For immersive photo browsing, we built a client-side web app that extracts an im
 In this tutorial, we’ll show you how to create the client-side app, work with
 the Philips Hue API, and build a web-based IoT experience.
 
-## ZigBee vs. Bluetooth
-
-ZigBee is a wireless protocol commonly used for mesh networks with simple data requirements. In a mesh network, nodes are interconnected and each acts as a wireless transceiver and repeater. ZigBee supports tens of thousands of nodes per network and consumes very little power, but it can only transfer simple packets of data.
-
-Bluetooth is primarily used for point-to-point networking where one device sends data to another. Bluetooth can handle more complex data, like file transfers or streaming audio, but it uses more energy and only supports a maximum of seven simultaneous connections.
-
 ## Getting Started
 
-1. Let’s start by kicking off a new project. At Black Pixel, we have an open-source web starter kit (github.com/bpxl-labs/web-starter) that provides a solid foundation for building modern websites. That’s what we’ll use here.
+1. Let’s start by kicking off a new project. At Black Pixel, we have an open-source [web starter kit](https://github.com/bpxl-labs/hue-gallery) that provides a solid foundation for building modern websites. That’s what we’ll use here.
 
 Once the starter kit’s dependencies are installed with `npm install`, start the local development server with `npm start`.
 
@@ -240,4 +263,4 @@ function setLightColor(id, xy) {
 }
 ```
 
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/qOEEHlKU1Fw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+[^1]: [ZigBee](https://en.wikipedia.org/wiki/Zigbee) is a wireless protocol commonly used for mesh networks with simple data requirements. In a mesh network, nodes are interconnected and each acts as a wireless transceiver and repeater. ZigBee supports tens of thousands of nodes per network and consumes very little power, but it can only transfer simple packets of data.

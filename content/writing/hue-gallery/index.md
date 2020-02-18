@@ -15,19 +15,19 @@ import { Swatches } from './swatches';
   <AN time="8.3" />
   <AN time="9.9">custom controller for Ikea sit-stand desk </AN>
   <AN time="13.5" />
-  <AN time="13.8">it's controlled by a Raspberry Pi and uses an ultrasonic sensor to measure height</AN>
+  <AN time="13.8">it uses a Raspberry Pi, relays, and an ultrasonic sensor to measure height</AN>
   <AN time="18.5" />
   <AN time="22.5">
     <span style={{ transform: 'rotate(-10deg)' }}>😑</span> should've
     straightened this shot
   </AN>
   <AN time="29" />
-  <AN time="32"><span>🙄</span> yep 30 seconds after sitting down – check it out</AN>
+  <AN time="32"><span>🙄</span> yep 30 seconds after sitting down</AN>
   <AN time="36.8" />
   <AN time="42.1"><span>🌳</span></AN>
   <AN time="47.5" />
   <AN time="50.7"><span>🪁</span></AN>
-  <AN time="52.4">this clip is reversed</AN>
+  <AN time="52.4"><span>🌠</span> this clip is reversed</AN>
   <AN time="57.3" />
   <AN time="64.3"><span>☀️</span> should've used a smaller aperture or aimed that potlight away</AN>
   <AN time="67.2">sitting in a different spot here</AN>

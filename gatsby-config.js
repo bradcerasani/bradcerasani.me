@@ -54,12 +54,6 @@ module.exports = {
               ],
             },
           },
-          {
-            resolve: `gatsby-remark-footnotes`,
-            options: {
-              footnoteBackRefInnerTextStartPosition: 'front',
-            },
-          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-widows`,

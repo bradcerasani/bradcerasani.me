@@ -82,14 +82,14 @@ export const StyledMarkdown = styled.div`
   }
 
   .footnotes hr {
-    margin-top: 4rem;
     margin-bottom: 4rem;
+    margin-top: 4rem;
   }
 
   .footnotes ol li {
+    color: hsl(0, 0%, 40%);
     margin-bottom: 1rem;
     position: relative;
-    color: hsl(0, 0%, 40%);
   }
 
   .footnotes p {
@@ -99,10 +99,10 @@ export const StyledMarkdown = styled.div`
   .footnote-backref {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-decoration: none;
     margin-left: -2.5rem;
-    top: 4px;
     position: absolute;
+    text-decoration: none;
+    top: 4px;
   }
 
   .footnote-ref {

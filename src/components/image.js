@@ -62,9 +62,7 @@ export const Image = ({ src, caption, size, alt }, props) => {
           loading: 'lazy',
         }}
       />
-      <Caption>{caption}</Caption>
+      {caption && <Caption>{caption}</Caption>}
     </Figure>
   );
 };
-
-export default Image;

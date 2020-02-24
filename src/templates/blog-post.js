@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Head from '../components/head';
 import { StyledMarkdown } from '../components/markdown';
 
 function BlogPostTemplate(props) {
@@ -19,7 +19,7 @@ function BlogPostTemplate(props) {
       backgroundColor="hsl(0, 0%, 98%)"
       date={date}
     >
-      <SEO
+      <Head
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />

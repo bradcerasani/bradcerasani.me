@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 20px;
     text-rendering: optimizeLegibility;
     transition-duration: 400ms;
-    transition-property: background-color;
+    transition-property: background-color, color;
     transition-timing-function: ease-in-out;
   }
 
@@ -40,6 +40,10 @@ export const GlobalStyle = createGlobalStyle`
       color: black;
       text-decoration-color: black;
     }
+  }
+
+  video {
+    margin-bottom: 1rem;
   }
 
   @keyframes fadeIn {

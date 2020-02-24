@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Head from '../components/head';
 import { H3, Date } from '../components/atoms';
 import { PostList, PostItem, PostItemImage } from '../components/post-list';
 
@@ -13,7 +13,7 @@ function Home(props) {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO title="Brad Cerasani: Design & Engineering" />
+      <Head title="Brad Cerasani: Design & Engineering" />
 
       <section>
         <div

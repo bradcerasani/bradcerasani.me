@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Head from '../components/head';
 
 const StyledBackground = styled.div`
   animation-delay: 400ms;
@@ -52,7 +52,7 @@ function AboutPage(props) {
         title={siteTitle}
         backgroundColor={backgroundColor}
       >
-        <SEO title={siteTitle} description="TODO" />
+        <Head title={siteTitle} description="TODO" />
 
         <section style={{ marginBottom: '0' }}>
           <MDXRenderer>{post.body}</MDXRenderer>

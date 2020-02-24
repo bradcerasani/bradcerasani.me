@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Head from '../components/head';
 import { H3, Date } from '../components/atoms';
 import { PostList, PostItem, PostItemImage } from '../components/post-list';
 
@@ -14,7 +14,7 @@ function WritingPage(props) {
   return (
     <Fragment>
       <Layout location={props.location} title={siteTitle}>
-        <SEO title="Brad Cerasani: Writing" />
+        <Head title="Brad Cerasani: Writing" />
         <PostList>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;

@@ -14,7 +14,7 @@ function PageNotFound(props) {
         <style>
           {`
           body {
-            background-color: #0000A1;
+            background-color: #0000A1 !important;
             color: #fafafa;
             position: relative;
             text-shadow: 0 0 0.5em #060B76;

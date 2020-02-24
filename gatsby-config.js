@@ -91,6 +91,68 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-remove-trailing-slashes`,
+    {
+      resolve: `gatsby-plugin-feed-mdx`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url:
+                    site.siteMetadata.siteUrl +
+                    '/writing' +
+                    edge.node.fields.slug,
+                  guid:
+                    site.siteMetadata.siteUrl +
+                    '/writing' +
+                    edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allMdx(
+                  filter: { fields: { slug: { glob: "/writing/*" } } }
+                  sort: { fields: frontmatter___date, order: DESC }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        description
+                        image
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: "Brad Cerasani's RSS Feed",
+            match: '^/writing/',
+          },
+        ],
+      },
+    },
   ],
 };

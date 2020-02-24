@@ -11,6 +11,8 @@ function Head({ title, description, image, url, children }) {
             title
             description
             author
+            siteUrl
+            image
             social {
               twitter
             }
@@ -21,7 +23,7 @@ function Head({ title, description, image, url, children }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaImage = image || site.Metadata.image;
+  const metaImage = image || site.siteMetadata.image;
   const metaAuthor = site.siteMetadata.author;
   const metaUrl = url || site.siteMetadata.siteUrl;
   const metaTwitter = site.siteMetadata.social.twitter;

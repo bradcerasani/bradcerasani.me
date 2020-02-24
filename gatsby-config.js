@@ -4,6 +4,7 @@ module.exports = {
     author: `Brad Cerasani`,
     description: `Brad Cerasani: Design & Engineering`,
     siteUrl: `https://bradcerasani.me`,
+    image: `https://bradcerasani.me/images/brad-cerasani-office-wide.jpg`,
     social: {
       twitter: `bradcerasani`,
     },

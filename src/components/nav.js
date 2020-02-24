@@ -23,7 +23,6 @@ export const NavImage = styled.img`
 `;
 
 export const NavItem = styled(Link)`
-  color: hsl(0, 0%, 20%);
   display: block;
   font-size: 20px;
   margin-right: -16px;
@@ -36,6 +35,10 @@ export const NavItem = styled(Link)`
     position: absolute;
     right: -21px; /* straddle image edge */
     z-index: 1;
+  }
+
+  &:hover {
+    color: inherit;
   }
 
   &.is-active {

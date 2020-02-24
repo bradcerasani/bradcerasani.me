@@ -43,8 +43,6 @@ function AboutPage(props) {
   const siteTitle = props.data.site.siteMetadata.title;
   const backgroundColor = props.data.mdx.frontmatter.backgroundColor;
 
-  console.log('this is post', post);
-
   return (
     <Fragment>
       <Layout
@@ -52,7 +50,10 @@ function AboutPage(props) {
         title={siteTitle}
         backgroundColor={backgroundColor}
       >
-        <Head title={siteTitle} description="TODO" />
+        <Head
+          title="About"
+          description="About Brad Cerasani; Design & Engineering."
+        />
 
         <section style={{ marginBottom: '0' }}>
           <MDXRenderer>{post.body}</MDXRenderer>
@@ -78,6 +79,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         backgroundColor
+        excerpt
       }
     }
   }

@@ -22,6 +22,7 @@ function BlogPostTemplate(props) {
       <Head
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={post.frontmatter.image}
       />
       <article>
         <section>
@@ -51,6 +52,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMM YYYY")
         description
+        image
       }
     }
   }

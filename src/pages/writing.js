@@ -14,7 +14,7 @@ function WritingPage(props) {
   return (
     <Fragment>
       <Layout location={props.location} title={siteTitle}>
-        <Head title="Brad Cerasani: Writing" />
+        <Head title="Writing" />
         <PostList>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;

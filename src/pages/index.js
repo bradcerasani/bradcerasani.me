@@ -13,7 +13,7 @@ function Home(props) {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <Head title="Brad Cerasani: Design & Engineering" />
+      <Head title="Design & Engineering" />
 
       <section>
         <div

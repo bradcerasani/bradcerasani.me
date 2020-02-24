@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function Head({ description, lang, meta, title, children }) {
+function Head({ title, description, image, url, children }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -12,6 +11,9 @@ function Head({ description, lang, meta, title, children }) {
             title
             description
             author
+            social {
+              twitter
+            }
           }
         }
       }
@@ -19,65 +21,30 @@ function Head({ description, lang, meta, title, children }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const metaImage = image || site.Metadata.image;
+  const metaAuthor = site.siteMetadata.author;
+  const metaUrl = url || site.siteMetadata.siteUrl;
+  const metaTwitter = site.siteMetadata.social.twitter;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    >
+    <Helmet title={title} titleTemplate={`%s | ${site.siteMetadata.title}`}>
+      <link rel="canonical" href="https://bradcerasani.me" />
+
+      <meta property="og:title" content={metaAuthor} />
+      <meta property="og:type" content="website" />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:url" content={metaUrl} />
+      <meta property="og:image" content={metaImage} />
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content={metaTwitter} />
+      <meta name="twitter:title" content={metaAuthor} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:url" content={metaUrl} />
+      <meta name="twitter:image" content={metaImage} />
       {children}
     </Helmet>
   );
 }
-
-Head.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-};
-
-Head.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-};
 
 export default Head;

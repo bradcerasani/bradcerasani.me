@@ -7,38 +7,43 @@ date: '2016-12-01'
 
 import { Swatches } from './swatches';
 
-<Note>This article was originally published in the Dec. 2016 issue of <a href="https://www.creativebloq.com/net-magazine" target="_blank" rel="noopener noreferrer">net magazine</a>. Philips released the official <a href="https://www.theverge.com/2018/5/31/17412314/philips-hue-sync-windows-mac-review" target="_blank" rel="noopener noreferrer">Hue Sync App</a> a few years later, which mimics the functionality described below.</Note>
+<Note>This article was originally published in the December 2016 issue of <a href="https://www.creativebloq.com/net-magazine" target="_blank" rel="noopener noreferrer">net magazine</a>. Philips released the <a href="https://www.theverge.com/2018/5/31/17412314/philips-hue-sync-windows-mac-review" target="_blank" rel="noopener noreferrer">Hue Sync App</a> a few years later, which is an official way of achieving a similar effect to that described below.</Note>
 
-<Video vimeoId="392018140" size="large" caption="Hue Gallery in action">
+<Video vimeoId="392018140" size="large" caption="Finished result: Hue Gallery in action">
   <AN time="0.01"><span>🎹</span></AN>
-  <AN time="3">pretending I'm Casey Neistat...</AN>
+  <AN time="3" />
+  <AN time="4">wishing I were Casey Neistat...</AN>
   <AN time="8.3" />
   <AN time="9.9">custom controller for Ikea sit-stand desk </AN>
   <AN time="13.5" />
-  <AN time="13.8">it uses a Raspberry Pi, relays, and an ultrasonic sensor to measure height</AN>
+  <AN time="14">it measures height using an ultrasonic sensor and Raspberry Pi</AN>
   <AN time="18.5" />
   <AN time="22.5">
-    <span style={{ transform: 'rotate(-10deg)' }}>😑</span> should've
+    <span style={{ transform: 'rotate(-10deg)' }}>☕️</span> should've
     straightened this shot
   </AN>
   <AN time="29" />
-  <AN time="32"><span>🙄</span> yep 30 seconds after sitting down</AN>
+  <AN time="32"><span>🙄</span> (30 seconds after sitting down)</AN>
   <AN time="36.8" />
   <AN time="42.1"><span>🌳</span></AN>
   <AN time="47.5" />
   <AN time="50.7"><span>🪁</span></AN>
-  <AN time="52.4"><span>🌠</span> this clip is reversed</AN>
+  <AN time="52.4" />
+  <AN time="52.8"><span>🌠</span> this clip is reversed</AN>
   <AN time="57.3" />
-  <AN time="64.3"><span>☀️</span> should've used a smaller aperture or aimed that potlight away</AN>
-  <AN time="67.2">sitting in a different spot here</AN>
+  <AN time="64.3"><span>☀️</span> should've used a larger aperture to prevent that starburst</AN>
+  <AN time="67.2" />
+  <AN time="67.7">sitting in a different spot here #continuity</AN>
   <AN time="70.6" />
   <AN time="75.7"><span>☠️</span> RIP this plant</AN>
-  <AN time="78.3"><span>🐍</span> the one in the corner is still alive though</AN>
+  <AN time="78.3" />
+  <AN time="79"><span>🐍</span> the one in the corner is still alive though</AN>
+  <AN time="82" />
   <AN time="84"><span>🎹</span></AN>
   <AN time="88.8" />
   <AN time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</AN>
   <AN time="97.3" />
-  <AN time="103.5">Hue Gallery in action</AN>
+  <AN time="97.8"><a href="https://github.com/bpxl-labs/hue-gallery" target="_blank" rel="noopener noreferrer">github.com/bpxl-labs/hue-gallery</a></AN>  
 </Video>
 
 In 2008, the number of internet-connected things exceeded Earth’s human population. By 2020, that number is expected to eclipse 50 billion. As processors, sensors, and wireless radios become smaller and more accessible, use cases for these devices are flourishing.
@@ -47,7 +52,7 @@ At home, the Internet of Things (IoT) is finding its place in the lives of every
 
 One such example is the Philips Hue wireless lighting system. On the surface, Hue light bulbs look and function like any other bulb, but they can also be controlled wirelessly with the Philips Hue app or API. Each bulb contains three different types of LED for a variety of white and colour combinations as well as a ZigBee[^1] module for wireless communication. A Hue Bridge connects to a home’s internet router and provides a RESTful API for apps to interface with the lights.
 
-As a developer, having an API for your lights creates some interesting opportunities. I’ve written apps to make my lights flash green when the latest iPhone was in stock at the local Apple store, and flash red when my favourite hockey team scored in the NHL playoffs. These apps were utilitarian and disposable in nature, but at Black Pixel I worked with my team to come up with a more captivating experience for Hue.
+As a developer, having an API for your lights creates some interesting opportunities. I’ve written apps to make my lights flash green when the latest iPhone was in stock at the local Apple store, and flash red when my favourite hockey team scored in the NHL playoffs. These apps were utilitarian and disposable in nature, but at Black Pixel I worked with my team[^2] to come up with a more captivating experience for Hue.
 
 For immersive photo browsing, we built a client-side web app that extracts an image’s colour palette and sends it to the Philips Hue API. As an image scrolls into view in the app, the user’s environment responds to that image, enhancing the overall viewing experience.
 
@@ -60,7 +65,7 @@ the Philips Hue API, and build a web-based IoT experience.
 
 Once the starter kit’s dependencies are installed with `npm install`, start the local development server with `npm start`.
 
-2. Next we’ll build a basic scrolling image gallery. Select a handful of colourful images from Unsplash (unsplash.com) and add them to `src/views/index.html`. If you’re feeling adventurous, you could hook into the Unsplash API (github.com/unsplash/unsplash-source-js) and programatically fetch images. For now, we’ll assume you’re doing this manually.
+2. Next we’ll build a basic scrolling image gallery. Select a handful of colourful images from [Unsplash](https://unsplash.com/) and add them to `src/views/index.html`. If you’re feeling adventurous, you could hook into the [Unsplash API](https://unsplash.com/documentation) and programatically fetch images. For now, we’ll assume you’re doing this manually.
 
 We only want one image showing in the viewport at a time, so let’s wrap our images in container elements and give each container a height of `100vh`. While we’re at it, let’s use flexbox to vertically and horizontally center the images within their containers.
 
@@ -81,7 +86,7 @@ We only want one image showing in the viewport at a time, so let’s wrap our im
 }
 ```
 
-3. To extract the colour palette from our images, we’ll use a JavaScript library called Color Thief (lokeshdhakar.com/projects/color-thief/). Color Thief works by copying an image to a `<canvas>` element, so its raw pixel data can be accessed by JavaScript. The library then extracts the image’s RGB pixel values, quantizes them based on an algorithm from the Leptonica Library (leptonica.com), and returns an array of RGB arrays.
+3. To extract the colour palette from our images, we’ll use a JavaScript library called [Color Thief](https://github.com/lokesh/color-thief). Color Thief works by copying an image to a `<canvas>` element, so its raw pixel data can be accessed by JavaScript. The library then extracts the image’s RGB pixel values, quantizes them based on an algorithm from the [Leptonica Library](http://www.leptonica.org/), and returns an array of RGB arrays.
 
 Basic Color Thief usage looks something like this:
 
@@ -146,6 +151,24 @@ While Color Thief’s modified median cut algorithm does an accurate job extract
 
 To improve the extracted palette, we’ll first have Color Thief to return more colours than we need for our calls to the Hue API. In the `colorThief.getPalette()` method, the second parameter controls the number of colours returned. We’ll ask for ten, and work on culling the final count down to three.
 
+<PostImage src="hue-gallery/buildings.jpg" size="large" />
+
+<Swatches
+colors={[
+'#e7dbd6',
+'#d5752f',
+'#392b27',
+'#a59fa2',
+'#857c7d',
+'#fbc04b',
+'#873f28',
+'#6b6365',
+'#5e514f',
+'#50474a',
+]}
+caption="Palette before – darker and less saturated colours aren't particularly interesting"
+/>
+
 The colour properties we’re most interested in weighing here are lightness and saturation, so we’ll run the RGB values through a `rgbToHsl()` function so they’re easier to work with. With the resulting hue, saturation, and lightness values, we can get to work refining our palette.
 
 The first step in refining our colour palette is the elimination of dark tones, as we’re not looking for a roundabout way of turning our lights off. We’ll reduce the dark tones by way of lodash’s `filter()` method, removing any colour with a lightness value less than twenty percent from our array.
@@ -164,27 +187,9 @@ Lastly, we’ll convert the colour values back to RGB and return the top 3 items
 
 <PostImage src="hue-gallery/buildings.jpg" size="large" />
 
-<Swatches
-colors={[
-'#e7dbd6',
-'#d5752f',
-'#392b27',
-'#a59fa2',
-'#857c7d',
-'#fbc04b',
-'#873f28',
-'#6b6365',
-'#5e514f',
-'#50474a',
-]}
-caption="Palette Before – greys and taupes won't translate to light well"
-/>
+<Swatches colors={['#fbc04b', '#d5752f', '#873f28']} caption="Palette After"/>
 
-<PostImage src="hue-gallery/buildings.jpg" size="large" />
-
-<Swatches colors={['#fbc04b', '#d5752f', '#873f28', '#e7dbd6' ]} caption="Palette After"/>
-
-5. We’ve already enlisted CSS’ `vh` units to ensure only one image is fully in the viewport at a time, but which image is it? To determine if an image is visible, let’s write an `isVisible()` function that tests an element’s location in the viewport against the window’s `innerHeight`. We’ll use the native `getBoundingClientRect()` method to return a DOMRect object for each element and a destructuring assignment (developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to pull `bottom` and `top` values out of that object.
+5. We’ve already enlisted CSS’ `vh` units to ensure only one image is fully in the viewport at a time, but which image is it? To determine if an image is visible, let’s write an `isVisible()` function that tests an element’s location in the viewport against the window’s `innerHeight`. We’ll use the native `getBoundingClientRect()` method to return a DOMRect object for each element and a [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to pull `bottom` and `top` values out of that object.
 
 ```js
 function isVisible(element) {
@@ -206,9 +211,9 @@ function getVisibleImage() {
 window.addEventListener('scroll', throttle(getVisibleImage, 150), false);
 ```
 
-7. Now that the stage is set, let’s work on the Philips Hue integration. Philips doesn’t have an officially supported JavaScript SDK, so we’ll interface with the API directly using a promise-based HTTP client called axios (github.com/mzabriskie/axios).
+7. Now that the stage is set, let’s work on the Philips Hue integration. Philips doesn’t have an officially supported JavaScript SDK, so we’ll interface with the API directly using a promise-based HTTP client called [axios](https://github.com/axios/axios).
 
-The first request we’ll make is a `get` to meethue.com/api/nupnp to retrieve our bridge’s IP address. If there isn’t a bridge connected to your local network, this request will return an empty array. If there is a bridge, this request will return its `id` and `internalipaddress`. Let’s store the value of `internalipaddress` in `localStorage` as `hue_ip`.
+The first request we’ll make is a `get` to `meethue.com/api/nupnp` to retrieve our bridge’s IP address. If there isn’t a bridge connected to your local network, this request will return an empty array. If there is a bridge, this request will return its `id` and `internalipaddress`. Let’s store the value of `internalipaddress` in `localStorage` as `hue_ip`.
 
 Next, we need to create a user account on our bridge so we can actually use the API. To do this, we’ll make a `post` request to `http://${ip}/api`, with a payload of `{ "devicetype": "hue-gallery#my-device" }`. This request requires the link button on the bridge to be pressed in the last 30 seconds to authorize the user creation. On success, it’ll return a random username string that we’ll store in `localStorage` as `hue_username`.
 
@@ -246,7 +251,7 @@ function buildRoomsDropdown(rooms) {
 
 9. Now it’s time to put the pieces together. Start by updating the `getVisibleImage()` function we wrote earlier to lookup an image’s palette from our `colorCache`. We’ll pass the resulting array of RGB arrays to a new function called `setRoomColor()`.
 
-`setRoomColor()` takes the array of RGB values and converts it to CIE xy coordinates (wikipedia.org/wiki/CIE_1931_color_space), in order to communicate with the Hue API. This function also reaches into `localStorage` to determine which group is selected, and the light IDs that are associated with that group. From there, `setRoomColor()` counts the number of lights in the group and distributes the colour palette accordingly. If the group contains three lights or less, each light receives one colour in the palette. If there are more than three lights in a group, half of the lights will receive the most dominant colour in the palette, and the other half will split the remaining colours.
+`setRoomColor()` takes the array of RGB values and converts it to [CIE xy coordinates](https://en.wikipedia.org/wiki/CIE_1931_color_space), in order to communicate with the Hue API. This function also reaches into `localStorage` to determine which group is selected, and the light IDs that are associated with that group. From there, `setRoomColor()` counts the number of lights in the group and distributes the colour palette accordingly. If the group contains three lights or less, each light receives one colour in the palette. If there are more than three lights in a group, half of the lights will receive the most dominant colour in the palette, and the other half will split the remaining colours.
 
 10. As `setRoomColor()` determines the best distribution of colours and lights, it pushes `setLightColor()` function calls into an `apiCalls` array. The Hue API doesn’t currently support changing the colour of multiple lights at once, unless you’re changing all the lights in a group the same value. We’re looking to apply a palette of colours to a group of lights, so this bit of extra work is necessary.
 
@@ -267,3 +272,4 @@ function setLightColor(id, xy) {
 ```
 
 [^1]: [ZigBee](https://en.wikipedia.org/wiki/Zigbee) is a wireless protocol commonly used for mesh networks with simple data requirements. In a mesh network, nodes are interconnected and each acts as a wireless transceiver and repeater. ZigBee supports tens of thousands of nodes per network and consumes very little power, but it can only transfer simple packets of data.
+[^2]: Thank you [Brandon Pierce](https://twitter.com/BrandonJPierce), [Rebekah Wolf](https://twitter.com/rebekahwolf), and Tim Hetland for their help with this article.

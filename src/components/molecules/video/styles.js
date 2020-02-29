@@ -9,6 +9,21 @@ export const FluidWrapper = styled.div`
   position: relative;
   width: 100%;
 
+  &::after {
+    background-image: url('/images/loading.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 240px 240px;
+    content: '';
+    font-size: 64px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
   iframe {
     height: 100%;
     left: 0;
@@ -21,6 +36,7 @@ export const FluidWrapper = styled.div`
     transition-timing-function: ease-in-out;
     width: 100%;
     will-change: opacity;
+    z-index: 1;
   }
 
   /* stylelint-disable-next-line */

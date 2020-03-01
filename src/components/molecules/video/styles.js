@@ -10,13 +10,12 @@ export const FluidWrapper = styled.div`
   width: 100%;
 
   &::after {
-    background-image: url('/images/loading.gif');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 240px 240px;
-    content: '';
-    font-size: 64px;
+    align-items: center;
+    content: '⏳';
+    display: flex;
+    font-size: 48px;
     height: 100%;
+    justify-content: center;
     left: 0;
     position: absolute;
     top: 0;

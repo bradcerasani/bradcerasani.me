@@ -187,7 +187,7 @@ Lastly, we’ll convert the colour values back to RGB and return the top 3 items
 
 <PostImage src="hue-gallery/buildings.jpg" size="large" />
 
-<Swatches colors={['#fbc04b', '#d5752f', '#873f28']} caption="Palette After"/>
+<Swatches colors={['#fbc04b', '#d5752f', '#873f28']} caption="Palette after"/>
 
 5. We’ve already enlisted CSS’ `vh` units to ensure only one image is fully in the viewport at a time, but which image is it? To determine if an image is visible, let’s write an `isVisible()` function that tests an element’s location in the viewport against the window’s `innerHeight`. We’ll use the native `getBoundingClientRect()` method to return a DOMRect object for each element and a [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to pull `bottom` and `top` values out of that object.
 
@@ -272,4 +272,4 @@ function setLightColor(id, xy) {
 ```
 
 [^1]: [ZigBee](https://en.wikipedia.org/wiki/Zigbee) is a wireless protocol commonly used for mesh networks with simple data requirements. In a mesh network, nodes are interconnected and each acts as a wireless transceiver and repeater. ZigBee supports tens of thousands of nodes per network and consumes very little power, but it can only transfer simple packets of data.
-[^2]: Thank you [Brandon Pierce](https://twitter.com/BrandonJPierce), [Rebekah Wolf](https://twitter.com/rebekahwolf), and Tim Hetland for their help with this article.
+[^2]: Thank you [Brandon Pierce](https://twitter.com/BrandonJPierce), [Rebekah Wolf](https://twitter.com/rebekahwolf), and Tim Hetland for their help.

@@ -12,11 +12,11 @@ import { Swatches } from './swatches';
 <Video vimeoId="392018140" size="large" caption="Finished result: Hue Gallery in action">
   <AN time="0.01"><span>🎹</span></AN>
   <AN time="3" />
-  <AN time="4">wishing I were Casey Neistat...</AN>
+  <AN time="4">peak Casey Neistat influence...</AN>
   <AN time="8.3" />
   <AN time="9.9">custom controller for Ikea sit-stand desk </AN>
   <AN time="13.5" />
-  <AN time="14">it measures height using an ultrasonic sensor and Raspberry Pi</AN>
+  <AN time="14">it's made up of an ultrasonic sensor, Raspberry Pi, and some relays</AN>
   <AN time="18.5" />
   <AN time="22.5">
     <span style={{ transform: 'rotate(-10deg)' }}>☕️</span> should've
@@ -33,7 +33,7 @@ import { Swatches } from './swatches';
   <AN time="57.3" />
   <AN time="64.3"><span>☀️</span> should've used a larger aperture to prevent that starburst</AN>
   <AN time="67.2" />
-  <AN time="67.7">sitting in a different spot here #continuity</AN>
+  <AN time="67.7">sitting in a different spot here</AN>
   <AN time="70.6" />
   <AN time="75.7"><span>☠️</span> RIP this plant</AN>
   <AN time="78.3" />
@@ -43,7 +43,7 @@ import { Swatches } from './swatches';
   <AN time="88.8" />
   <AN time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</AN>
   <AN time="97.3" />
-  <AN time="97.8"><a href="https://github.com/bpxl-labs/hue-gallery" target="_blank" rel="noopener noreferrer">github.com/bpxl-labs/hue-gallery</a></AN>  
+  <AN time="97.9"><a href="https://github.com/bpxl-labs/hue-gallery" target="_blank" rel="noopener noreferrer">github.com/bpxl-labs/hue-gallery</a></AN>  
 </Video>
 
 In 2008, the number of internet-connected things exceeded Earth’s human population. By 2020, that number is expected to eclipse 50 billion. As processors, sensors, and wireless radios become smaller and more accessible, use cases for these devices are flourishing.

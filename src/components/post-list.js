@@ -30,11 +30,11 @@ export const PostItem = styled(Link)`
   transition-timing-function: ease-out;
 
   ${Date} {
-    opacity: 0;
     pointer-events: none;
   }
 
   h3 {
+    font-size: 36px;
     margin: 0;
   }
 

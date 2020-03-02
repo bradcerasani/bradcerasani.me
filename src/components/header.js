@@ -22,12 +22,12 @@ const links = [
     imageSrc: '/images/nav/home.gif',
   },
   {
-    to: '/about',
+    to: '/about/',
     label: 'About',
     imageSrc: '/images/nav/about.jpg',
   },
   {
-    to: '/writing',
+    to: '/writing/',
     label: 'Writing',
     imageSrc: '/images/nav/writing.gif',
   },

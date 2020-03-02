@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
-import { GlobalStyle } from './global.css';
+import { GlobalStyle } from './global';
 import Header from './header';
 import Container from './container';
 

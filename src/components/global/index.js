@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import modernNormalize from 'modern-normalize';
+import { modernNormalize } from './modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
   ${modernNormalize}

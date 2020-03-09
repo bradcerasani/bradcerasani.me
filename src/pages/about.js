@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 import Draggable from 'react-draggable';
+import { delay } from 'lodash';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
@@ -17,6 +18,7 @@ const StyledBackground = styled.div`
   background-position: center bottom;
   background-size: cover;
   display: block;
+  display: none;
   height: 62.5vw;
   position: relative;
   width: 100vw;
@@ -86,6 +88,7 @@ const StyledImage = styled.div`
   height: 480px;
   margin: 2px;
   opacity: 0;
+  pointer-events: auto;
   position: absolute;
   visibility: hidden;
   width: 480px;
@@ -101,7 +104,7 @@ const StyledImage = styled.div`
   }
 
   &::after {
-    background-image: url('/images/exit.gif');
+    background-image: url('/images/static.gif');
     background-size: cover;
     content: '';
     height: 100%;
@@ -109,11 +112,15 @@ const StyledImage = styled.div`
     opacity: 0;
     position: absolute;
     top: 0;
-    transition-duration: 800ms;
-    transition-property: opacity;
-    transition-timing-function: ease-in-out;
     width: 100%;
     z-index: 6;
+  }
+
+  &[data-leaving='true'] {
+    &::after {
+      box-shadow: 0 0 0 4px #7d7d7d;
+      opacity: 1;
+    }
   }
 
   img {
@@ -125,6 +132,15 @@ const StyledImage = styled.div`
 
 const Camera = styled.div`
   position: relative;
+`;
+
+const ImageContainer = styled.div`
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `;
 
 function AboutPage(props) {
@@ -162,11 +178,11 @@ function AboutPage(props) {
   ];
 
   function handleClick() {
-    setPhotoCount(photoCount + 1);
-
-    if (photoCount >= images.length) {
+    if (photoCount === images.length) {
       return;
     }
+
+    setPhotoCount(photoCount + 1);
 
     const element = document.querySelector(`[data-image='${photoCount}']`);
 
@@ -174,16 +190,27 @@ function AboutPage(props) {
     element.style.visibility = 'visible';
   }
 
-  useEffect(() => {
-    var browserWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
+  function cleanUp() {
+    const elements = document.querySelectorAll(`[data-image]`);
 
-    var browserHeight =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight;
+    elements.forEach((element, index) => {
+      element.setAttribute('data-leaving', true);
+
+      delay(() => {
+        setPhotoCount(0);
+        element.style.opacity = '0';
+        element.style.visibility = 'hidden';
+        element.setAttribute('data-leaving', false);
+      }, 1000);
+    });
+  }
+
+  useEffect(() => {
+    const browserWidth =
+      window.innerWidth || document.documentElement.clientWidth;
+    const browserHeight = document.body.scrollHeight;
+
+    console.log('the browser height is', browserHeight);
 
     let flip = false;
 
@@ -232,7 +259,7 @@ function AboutPage(props) {
           description="About Brad Cerasani; Design & Engineering."
         />
 
-        <div>
+        <ImageContainer>
           {images.map((image, index) => (
             <Draggable key={index}>
               <StyledImage data-image={index}>
@@ -240,16 +267,19 @@ function AboutPage(props) {
               </StyledImage>
             </Draggable>
           ))}
-        </div>
+        </ImageContainer>
 
-        <section
-          id="js-mdx-body"
-          style={{ position: 'relative', pointerEvents: 'none' }}
-        >
+        <section id="js-mdx-body">
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
 
-        <section>
+        <div
+          style={{
+            position: 'relative',
+            zIndex: '10',
+            marginTop: '-2.5rem',
+          }}
+        >
           <button
             style={{
               appearance: 'none',
@@ -261,9 +291,25 @@ function AboutPage(props) {
             }}
             onClick={() => handleClick()}
           >
-            <Camera>📷</Camera>
+            <Camera one>{photoCount === images.length ? '🤷🏻‍♀️' : '📷'}</Camera>
           </button>
-        </section>
+          &nbsp;
+          {photoCount >= 1 && (
+            <button
+              style={{
+                appearance: 'none',
+                fontSize: '36px',
+                backgroundColor: 'transparent',
+                outline: 'none',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+              onClick={() => cleanUp()}
+            >
+              <Camera>🗑</Camera>
+            </button>
+          )}
+        </div>
 
         <AboutWrapper>
           <h6>Older versions of this site</h6>

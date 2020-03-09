@@ -34,7 +34,7 @@ export const NavItem = styled(Link)`
     content: '';
     position: absolute;
     right: -21px; /* straddle image edge */
-    z-index: 1;
+    z-index: 0;
   }
 
   &:hover {

@@ -85,13 +85,13 @@ const AboutWrapper = styled.div`
 const StyledImage = styled.div`
   cursor: grab;
   display: block;
-  height: 480px;
+  height: calc((100vw - 636px) / 3);
   margin: 2px;
   opacity: 0;
   pointer-events: auto;
   position: absolute;
   visibility: hidden;
-  width: 480px;
+  width: calc((100vw - 636px) / 3);
   z-index: 5;
 
   &:active {
@@ -99,8 +99,8 @@ const StyledImage = styled.div`
   }
 
   &:nth-of-type(3n) {
-    height: 360px;
-    width: 360px;
+    height: calc((100vw - 636px) / 4);
+    width: calc((100vw - 636px) / 4);
   }
 
   &::after {
@@ -182,7 +182,8 @@ function AboutPage(props) {
     console.log('re-render');
     const browserWidth =
       window.innerWidth || document.documentElement.clientWidth;
-    const browserHeight = document.body.scrollHeight;
+    const browserHeight =
+      window.innerHeight || document.documentElement.clientHeight;
 
     let flip = false;
 
@@ -255,7 +256,7 @@ function AboutPage(props) {
           <button
             style={{
               appearance: 'none',
-              fontSize: '42px',
+              fontSize: '36px',
               backgroundColor: 'transparent',
               outline: 'none',
               border: 'none',
@@ -263,7 +264,19 @@ function AboutPage(props) {
             }}
             onClick={() => handleClick()}
           >
-            <Camera one>{photoCount === images.length ? '🤷🏻‍♀️' : '📷'}</Camera>
+            <Camera one>
+              {photoCount === images.length ? '🤷🏻‍♀️' : '📷'}
+              <span
+                style={{
+                  fontSize: '20px',
+                  paddingLeft: '8px',
+                  display: 'inline-block',
+                  verticalAlign: 'middle',
+                }}
+              >
+                ?
+              </span>
+            </Camera>
           </button>
           &nbsp;
           {photoCount >= 1 && (
@@ -394,7 +407,7 @@ export const pageQuery = graphql`
       }
     }
 
-    allInstaNode(sort: { fields: timestamp, order: ASC }) {
+    allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 10) {
       edges {
         node {
           timestamp

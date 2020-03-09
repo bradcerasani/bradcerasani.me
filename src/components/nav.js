@@ -9,6 +9,7 @@ export const Nav = styled.div`
   justify-content: flex-end;
   margin-bottom: 1rem; /* optically align to byline baseline */
   position: relative;
+  z-index: 10;
 `;
 
 export const NavImage = styled.img`

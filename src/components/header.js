@@ -7,6 +7,8 @@ import { Nav, NavItem, NavImage } from './nav';
 export const StyledHeader = styled.div`
   margin-bottom: 4rem;
   margin-top: 2rem;
+  position: relative;
+  z-index: 10;
 `;
 
 export const HeroContainer = styled.div`

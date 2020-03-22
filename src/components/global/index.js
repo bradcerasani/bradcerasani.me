@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { modernNormalize } from './modern-normalize';
 
+import { font } from '../settings';
+
 export const GlobalStyle = createGlobalStyle`
   ${modernNormalize}
 
@@ -12,8 +14,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${(props) =>
       props.backgroundColor || 'hsl(35, 10%, 86%)'};
-    font-family: 'Untitled Sans', 'Scto Grotesk A', sans-serif;
-    font-size: 20px;
+    font-family: ${font.family.body};
+    font-size: ${font.size.body};
     text-rendering: optimizeLegibility;
     transition-duration: 400ms;
     transition-property: background-color, color;
@@ -53,6 +55,18 @@ export const GlobalStyle = createGlobalStyle`
 
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0) skewY(10deg);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
   }
 `;

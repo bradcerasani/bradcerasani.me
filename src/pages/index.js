@@ -23,7 +23,7 @@ function Home(props) {
           style={{ marginBottom: '8px' }}
         />
 
-        <Link to={'/about'}>More about me</Link>
+        <Link to={'/about/'}>More about me</Link>
       </section>
 
       <PostList>

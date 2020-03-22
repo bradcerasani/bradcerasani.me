@@ -178,7 +178,6 @@ function AboutPage(props) {
   }
 
   useEffect(() => {
-    console.log('re-render');
     const browserWidth =
       window.innerWidth || document.documentElement.clientWidth;
     const browserHeight =
@@ -217,7 +216,7 @@ function AboutPage(props) {
         element.style.top = `${browserHeight / 2 - element.offsetHeight / 2}px`;
       }
     });
-  });
+  }, [images]);
 
   return (
     <Fragment>

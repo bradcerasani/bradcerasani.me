@@ -133,6 +133,12 @@ export const NavItem = styled(Link)`
 
     ${CAText} /* stylelint-disable-line */
 
+    &:hover,
+    &:active {
+      color: inherit;
+      text-decoration-color: inherit;
+    }
+
     /* TODO: Update styled-components and employ shouldForwardProp to avoid this nonsense */
     ${(props) =>
       props['data-visibility'] === 'true' &&

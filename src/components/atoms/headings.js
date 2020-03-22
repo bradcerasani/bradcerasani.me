@@ -1,12 +1,19 @@
 import styled from 'styled-components';
 
+import { breakpoint, font } from '../settings';
+
 export const Headline = styled.div`
   align-self: flex-end;
-  font-family: Canela, Georgia, 'Times New Roman', Times, serif;
-  font-size: 72px;
+  font-family: ${font.family.serif};
+  font-size: 3rem;
   font-weight: 700;
-  margin-left: -4rem;
   position: relative;
+  text-shadow: none;
+
+  @media (min-width: ${breakpoint.sm}) {
+    font-size: 4.5rem;
+    margin-left: -4rem;
+  }
 `;
 
 export const H3 = styled.h3`

@@ -114,7 +114,7 @@ export const NavItem = styled(Link)`
   display: block;
   margin-bottom: 0.5rem;
 
-  &[aria-current] {
+  &.is-active {
     &::after {
       content: '~';
       margin-left: 1rem;
@@ -156,8 +156,7 @@ export const NavItem = styled(Link)`
     padding-right: 0.5rem;
     text-decoration: none;
 
-    &[aria-current] {
-      color: ${color.black};
+    &.is-active {
       text-decoration: underline;
     }
 

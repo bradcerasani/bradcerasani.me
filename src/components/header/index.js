@@ -60,6 +60,7 @@ function Header(props) {
                 // TODO: data-visibility => isVisible now that the latest
                 // version of styled-components supports shouldForwardProp
                 // https://github.com/styled-components/styled-components/pull/3006
+                activeClassName="is-active"
                 data-visibility={overlayTransitioned.toString()}
                 key={to}
                 partiallyActive={to.includes('writing')}

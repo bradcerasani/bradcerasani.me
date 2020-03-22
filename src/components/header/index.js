@@ -57,7 +57,10 @@ function Header(props) {
           <Fragment>
             {links.map(({ to, label, imageSrc }, index) => (
               <NavItem
-                isVisible={overlayTransitioned}
+                // TODO: data-visibility => isVisible now that the latest
+                // version of styled-components supports shouldForwardProp
+                // https://github.com/styled-components/styled-components/pull/3006
+                data-visibility={overlayTransitioned.toString()}
                 key={to}
                 partiallyActive={to.includes('writing')}
                 style={{ animationDelay: `calc(${100 * index}ms)` }}

@@ -133,9 +133,9 @@ export const NavItem = styled(Link)`
 
     ${CAText} /* stylelint-disable-line */
 
-    /* isVisible on NavItem is true when Nav has finished transitioning */
-    ${({ isVisible }) =>
-      isVisible &&
+    /* TODO: Update styled-components and employ shouldForwardProp to avoid this nonsense */
+    ${(props) =>
+      props['data-visibility'] === 'true' &&
       css`
         visibility: visible;
         animation-duration: 800ms;
@@ -143,7 +143,7 @@ export const NavItem = styled(Link)`
         animation-name: fadeInUp;
         animation-timing-function: ease-in-out;
       `}
-  }
+    }
 
   @media (min-width: ${breakpoint.sm}) {
     font-size: 1.25rem;

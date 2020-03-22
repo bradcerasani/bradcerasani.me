@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 import Draggable from 'react-draggable';
-import { delay, shuffle } from 'lodash';
+import { delay } from 'lodash';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
@@ -217,7 +217,7 @@ function AboutPage(props) {
         element.style.top = `${browserHeight / 2 - element.offsetHeight / 2}px`;
       }
     });
-  }, []);
+  });
 
   return (
     <Fragment>
@@ -235,7 +235,7 @@ function AboutPage(props) {
           {images.map((image, index) => (
             <Draggable key={index}>
               <StyledImage data-image={index}>
-                <img src={image.node.preview} />
+                <img src={image.node.preview} alt="IG" />
               </StyledImage>
             </Draggable>
           ))}
@@ -375,7 +375,11 @@ function AboutPage(props) {
               </a>
             </li>
             <li>
-              <a href="mailto:bradcerasani@gmail.com" target="_blank">
+              <a
+                href="mailto:bradcerasani@gmail.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Email
               </a>
             </li>

@@ -11,6 +11,7 @@ export const PostItemImage = styled.img`
   top: 0;
   width: 400px;
   z-index: 1;
+  display: none;
 `;
 
 export const PostItem = styled(Link)`

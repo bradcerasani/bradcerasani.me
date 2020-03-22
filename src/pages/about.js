@@ -104,7 +104,7 @@ const StyledImage = styled.div`
   }
 
   &::after {
-    background-image: url('/images/static.gif');
+    background-image: url('/images/exit.gif');
     background-size: cover;
     content: '';
     height: 100%;
@@ -118,7 +118,6 @@ const StyledImage = styled.div`
 
   &[data-leaving='true'] {
     &::after {
-      box-shadow: 0 0 0 2px #7d7d7d;
       opacity: 1;
     }
   }
@@ -174,7 +173,7 @@ function AboutPage(props) {
         element.style.opacity = '0';
         element.style.visibility = 'hidden';
         element.setAttribute('data-leaving', false);
-      }, 1000);
+      }, 3500);
     });
   }
 

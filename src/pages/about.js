@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Draggable from 'react-draggable';
 import { delay } from 'lodash';
 
+import { font } from '../components/settings';
+
 import Layout from '../components/layout';
 import Head from '../components/head';
 
@@ -43,8 +45,7 @@ const StyledBackground = styled.div`
 
 const AboutWrapper = styled.div`
   h6 {
-    font-family: Karbon, sans-serif;
-    font-size: 16px;
+    font-family: ${font.family.sansSerif};
     font-weight: 600;
     letter-spacing: 0.1em;
     margin-bottom: 0.75rem;
@@ -241,6 +242,18 @@ function AboutPage(props) {
         </ImageContainer>
 
         <section id="js-mdx-body">
+          <div
+            style={{
+              fontSize: '36px',
+              filter: 'grayscale(1)',
+              marginLeft: '-3.5rem',
+              marginBottom: '-1rem',
+              opacity: '0.5',
+              position: 'absolute',
+            }}
+          >
+            👋
+          </div>
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
 

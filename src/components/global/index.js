@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
   ${modernNormalize}
 
   html, body {
+    font-family: ${font.family.body};
+    font-size: ${font.size.body};
     height: 100%;
     scroll-behavior: smooth;
   }
@@ -14,8 +16,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${(props) =>
       props.backgroundColor || 'hsl(35, 10%, 86%)'};
-    font-family: ${font.family.body};
-    font-size: ${font.size.body};
     text-rendering: optimizeLegibility;
     transition-duration: 400ms;
     transition-property: background-color, color;

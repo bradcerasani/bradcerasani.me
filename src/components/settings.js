@@ -8,10 +8,10 @@ export const breakpoint = {
 export const font = {
   family: {
     serif: `Canela, Georgia, 'Times New Roman', Times, serif`,
-    sansSerif: `'Untitled Sans', 'Scto Grotesk A', sans-serif`,
+    sansSerif: `'Untitled Sans Test', 'Scto Grotesk A', sans-serif`,
   },
   size: {
-    body: '16px',
+    body: '18px',
   },
 };
 

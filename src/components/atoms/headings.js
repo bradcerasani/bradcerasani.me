@@ -6,12 +6,12 @@ export const Headline = styled.div`
   align-self: flex-end;
   font-family: ${font.family.serif};
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 600;
   position: relative;
   text-shadow: none;
 
   @media (min-width: ${breakpoint.sm}) {
-    font-size: 4.5rem;
+    font-size: 4rem;
     margin-left: -4rem;
   }
 `;

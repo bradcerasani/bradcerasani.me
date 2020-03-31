@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { font } from '../settings';
+
 const verticalOrientation = css`
   margin-left: -2rem;
   position: absolute;
@@ -9,10 +11,10 @@ const verticalOrientation = css`
 
 export const Date = styled.div`
   color: inherit;
-  font-family: 'Karbon', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+  font-family: ${font.family.sansSerif};
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 
   /* stylelint-disable-next-line */

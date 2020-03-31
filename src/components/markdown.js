@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledMarkdown = styled.div`
-  font-family: 'Untitled Sans', 'Scto Grotesk A', sans-serif;
-  font-size: 18px;
-
   h2 {
     font-family: Canela, serif;
     font-size: 2.5rem;
@@ -78,7 +75,7 @@ export const StyledMarkdown = styled.div`
   }
 
   .footnotes {
-    font-size: 16px;
+    font-size: 0.9rem;
     margin-bottom: 10rem;
   }
 
@@ -89,7 +86,7 @@ export const StyledMarkdown = styled.div`
 
   .footnotes ol li {
     color: hsl(0, 0%, 40%);
-    line-height: 22px;
+    line-height: 1.5;
     margin-bottom: 1rem;
     position: relative;
   }

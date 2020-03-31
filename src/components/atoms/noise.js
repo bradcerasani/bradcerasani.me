@@ -28,7 +28,7 @@ export const Noise = css`
       transform: translate(0%, 15%);
     }
     80% {
-      transform: translate(3%, 35%);
+      transform: translate(3%, 25%);
     }
     90% {
       transform: translate(-10%, 10%);

@@ -8,6 +8,7 @@ import {
   RandomImage,
   RandomImageContainer,
 } from '../components/molecules/random-image';
+import { Grid, GridItem } from '../components/molecules/grid';
 import Layout from '../components/layout';
 import Head from '../components/head';
 
@@ -97,8 +98,8 @@ function AboutPage(props) {
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
 
-        <div style={{ display: 'flex' }}>
-          <div style={{ width: '30%' }}>
+        <Grid>
+          <GridItem width={{ sm: '30%' }}>
             <h6>Elsewhere</h6>
             <ul>
               {['Instagram', 'Twitter', 'GitHub'].map((link) => (
@@ -113,9 +114,9 @@ function AboutPage(props) {
                 </li>
               ))}
             </ul>
-          </div>
+          </GridItem>
 
-          <div style={{ width: '30%' }}>
+          <GridItem width={{ sm: '30%' }}>
             <h6>Site Archives</h6>
             <ul>
               {['2014', '2013', '2012', '2011', '2010'].map((year) => (
@@ -130,11 +131,9 @@ function AboutPage(props) {
                 </li>
               ))}
             </ul>
-          </div>
+          </GridItem>
 
-          <div
-            style={{ width: '40%', paddingLeft: '4px', paddingRight: '4px' }}
-          >
+          <GridItem width={{ sm: '40%' }}>
             <h6>Photos</h6>
             <input
               style={{ width: '100%', paddingLeft: '0', paddingRight: '0' }}
@@ -142,8 +141,8 @@ function AboutPage(props) {
               onChange={(e) => handleChange(e)}
               defaultValue="0"
             />
-          </div>
-        </div>
+          </GridItem>
+        </Grid>
       </Layout>
       <BackgroundImage />
     </Fragment>

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
-import { breakpoint } from '../settings';
+import { breakpoints } from '../settings';
 import { Date, Headline, Logo } from '../atoms';
 import { Nav, NavItem, NavImage, NavMenuIcon, NavInvertWrapper } from '../nav';
 
@@ -24,7 +24,7 @@ function Header(props) {
 
     // Ensure Nav is hidden when viewport is larger than sm breakpoint
     function handleResize() {
-      if (window.innerWidth > parseInt(breakpoint.sm)) {
+      if (window.innerWidth > parseInt(breakpoints.sm)) {
         setVisibility(false);
         setOverlayTransitioned(false);
       }

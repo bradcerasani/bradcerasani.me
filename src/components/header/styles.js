@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import { breakpoint } from '../settings';
+import { breakpoints } from '../settings';
 
 export const StyledHeader = styled.div`
   margin-bottom: 4rem;
   margin-top: 4rem;
 
-  @media (min-width: ${breakpoint.md}) {
+  @media (min-width: ${breakpoints.md}) {
     margin-top: 5rem;
   }
 `;

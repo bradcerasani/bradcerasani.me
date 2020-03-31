@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { modernNormalize } from './modern-normalize';
 
-import { font, breakpoint } from '../settings';
+import { font, breakpoints } from '../settings';
 import { Noise } from '../atoms/noise';
 
 export const GlobalStyle = createGlobalStyle`
@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     scroll-behavior: smooth;
 
-    @media (min-width: ${breakpoint.md}) {
+    @media (min-width: ${breakpoints.md}) {
       font-size: 20px;
     }
   }

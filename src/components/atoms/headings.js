@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoint, font } from '../settings';
+import { breakpoints, font } from '../settings';
 
 export const Headline = styled.div`
   align-self: flex-end;
@@ -10,7 +10,7 @@ export const Headline = styled.div`
   position: relative;
   text-shadow: none;
 
-  @media (min-width: ${breakpoint.sm}) {
+  @media (min-width: ${breakpoints.sm}) {
     font-size: 4rem;
     margin-left: -4rem;
   }

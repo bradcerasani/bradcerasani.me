@@ -77,8 +77,8 @@ export const Nav = styled.div`
       css`
         color: ${color.white};
         opacity: 1;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         transform: translate(0, 0);
         pointer-events: auto;
       `}
@@ -90,7 +90,7 @@ export const Nav = styled.div`
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end;
-    margin-bottom: 1rem; /* optically align to baseline of byline */
+    margin-bottom: 0.5rem; /* optically align to baseline of byline */
     position: relative;
   }
 `;
@@ -119,7 +119,6 @@ export const NavItem = styled(Link)`
       content: '~';
       margin-left: 1rem;
       position: absolute;
-      z-index: 5;
     }
   }
 
@@ -152,17 +151,18 @@ export const NavItem = styled(Link)`
     }
 
   @media (min-width: ${breakpoint.sm}) {
-    font-size: 1.25rem;
     padding-right: 0.5rem;
     text-decoration: none;
 
     &.is-active {
-      text-decoration: underline;
+      &::after {
+        margin-left: 8px;
+      }
     }
 
     &:hover {
       ${NavImage} {
-        opacity: 1;
+        opacity: 0.8;
         z-index: 0;
       }
     }

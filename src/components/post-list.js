@@ -1,62 +1,76 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
-import { Date } from '../components/atoms/date';
+import { font } from './settings';
 
 export const PostItemImage = styled.img`
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  right: -200px;
+  right: -8rem;
   top: 0;
+  transition-duration: 400ms;
+  transition-timing-function: ease-out;
   width: 400px;
-  z-index: 1;
-  display: none;
+  z-index: 0;
 `;
 
 export const PostItem = styled(Link)`
   cursor: pointer;
   display: block;
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: -0.5px;
+  font-size: 1.5rem;
+  font-weight: 700;
   line-height: 1.25;
   margin-bottom: 0;
   margin-top: 0;
-  padding-bottom: 1.25rem;
-  padding-top: 1.25rem;
+  padding-bottom: 1.75rem;
   text-decoration: none;
-  transition-duration: 400ms;
   transition-property: color;
-  transition-timing-function: ease-out;
-
-  ${Date} {
-    pointer-events: none;
-  }
+  transition-timing-function: ease-in;
+  z-index: 1;
 
   h3 {
-    font-size: 36px;
+    color: RGB(178, 176, 174);
+    display: inline-block;
+    font-family: ${font.family.sansSerif};
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: -0.025em;
     margin: 0;
+    position: relative;
+    transition-duration: 400ms;
+    transition-property: color;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
   }
 
   &:hover,
-  &.hover {
-    color: black;
-    transition-duration: 80ms;
+  &.js-hover {
+    transition-duration: 100ms;
 
-    ${Date} {
-      opacity: 1;
+    h3 {
+      color: black;
     }
 
     ${PostItemImage} {
-      opacity: 0.9;
+      opacity: 1;
+      transition-delay: 200ms;
+      transition-duration: 200ms;
     }
   }
 `;
 
 export const PostList = styled.div`
+  margin-left: -4rem;
   position: relative;
-  &:hover ${PostItem}:not(:hover) {
-    color: rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    ${PostItem} {
+      h3,
+      ${PostItemImage} {
+        transition-delay: 0ms;
+        transition-duration: 0ms;
+      }
+    }
   }
 `;

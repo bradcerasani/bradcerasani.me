@@ -34,6 +34,13 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 1.25;
+  }
+
   h6 {
     font-family: ${font.family.serif};
     font-size: 1.15rem;

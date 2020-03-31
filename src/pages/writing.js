@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
-import { H3, Date } from '../components/atoms';
+import { Date } from '../components/atoms';
 import { PostList, PostItem, PostItemImage } from '../components/post-list';
 
 function WritingPage(props) {
@@ -26,7 +26,7 @@ function WritingPage(props) {
               <article key={node.fields.slug}>
                 <PostItem to={slug}>
                   <Date>{date}</Date>
-                  <H3>{title}</H3>
+                  <h3>{title}</h3>
                   {image && <PostItemImage src={image} />}
                 </PostItem>
               </article>

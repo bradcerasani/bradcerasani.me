@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
-import { Date } from '../components/atoms';
 import { PostList, PostItem, PostItemImage } from '../components/post-list';
 
 function WritingPage(props) {
@@ -19,13 +18,11 @@ function WritingPage(props) {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
             const slug = node.fields.slug;
-            const date = node.frontmatter.date;
             const image = node.frontmatter.image;
 
             return (
               <article key={node.fields.slug}>
                 <PostItem to={slug}>
-                  <Date>{date}</Date>
                   <h3>{title}</h3>
                   {image && <PostItemImage src={image} />}
                 </PostItem>

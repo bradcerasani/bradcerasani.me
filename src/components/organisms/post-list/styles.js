@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { font } from './settings';
+import { font } from '../../settings';
 
-export const PostItemImage = styled.img`
+export const StyledPostItemImage = styled.img`
   cursor: pointer;
   opacity: 0;
   position: absolute;
@@ -15,7 +15,7 @@ export const PostItemImage = styled.img`
   z-index: 0;
 `;
 
-export const PostItem = styled(Link)`
+export const StyledPostItem = styled(Link)`
   cursor: pointer;
   display: block;
   font-size: 1.5rem;
@@ -52,7 +52,7 @@ export const PostItem = styled(Link)`
       color: black;
     }
 
-    ${PostItemImage} {
+    ${StyledPostItemImage} {
       opacity: 1;
       transition-delay: 200ms;
       transition-duration: 200ms;
@@ -60,14 +60,14 @@ export const PostItem = styled(Link)`
   }
 `;
 
-export const PostList = styled.div`
+export const StyledPostList = styled.div`
   margin-left: -4rem;
   position: relative;
 
   &:hover {
-    ${PostItem} {
+    ${StyledPostItem} {
       h3,
-      ${PostItemImage} {
+      ${StyledPostItemImage} {
         transition-delay: 0ms;
         transition-duration: 0ms;
       }

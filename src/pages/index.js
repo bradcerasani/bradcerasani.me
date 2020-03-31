@@ -1,48 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
-import { PostList, PostItem, PostItemImage } from '../components/post-list';
-
-function useInterval(callback, delay) {
-  const savedCallback = useRef();
-
-  useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
-
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-
-    if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-}
+import PostList from '../components/organisms/post-list';
 
 function Home(props) {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMdx.edges;
-  const [activePost, setActivePost] = useState(0);
-  const [isRunning, setIsRunning] = useState(true);
-  const interval = 2000;
-
-  useInterval(
-    () => {
-      // Reset activePost when through list of posts
-      if (activePost === posts.length - 1) {
-        setActivePost(0);
-      } else {
-        setActivePost(activePost + 1);
-      }
-    },
-    isRunning ? interval : null
-  );
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -74,30 +39,7 @@ function Home(props) {
         </Link>
       </section>
 
-      <PostList
-        onMouseEnter={() => setIsRunning(false)}
-        onMouseLeave={() => setIsRunning(true)}
-      >
-        {posts.map(({ node }, index) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          const slug = node.fields.slug;
-          const date = node.frontmatter.date;
-          const image = node.frontmatter.image;
-
-          return (
-            <article key={node.fields.slug}>
-              <PostItem
-                to={slug}
-                className={activePost === index ? 'js-hover' : undefined}
-                onMouseEnter={() => setActivePost(index)}
-              >
-                <h3>{title}</h3>
-                {image && <PostItemImage src={image} />}
-              </PostItem>
-            </article>
-          );
-        })}
-      </PostList>
+      <PostList posts={data.allMdx.edges} />
     </Layout>
   );
 }

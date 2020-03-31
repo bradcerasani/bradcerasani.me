@@ -3,33 +3,18 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
-import { PostList, PostItem, PostItemImage } from '../components/post-list';
+import PostList from '../components/organisms/post-list';
 
 function WritingPage(props) {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMdx.edges;
 
   return (
     <Fragment>
       <Layout location={props.location} title={siteTitle}>
         <Head title="Writing" />
-        <PostList>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug;
-            const slug = node.fields.slug;
-            const image = node.frontmatter.image;
 
-            return (
-              <article key={node.fields.slug}>
-                <PostItem to={slug}>
-                  <h3>{title}</h3>
-                  {image && <PostItemImage src={image} />}
-                </PostItem>
-              </article>
-            );
-          })}
-        </PostList>
+        <PostList posts={data.allMdx.edges} />
       </Layout>
     </Fragment>
   );

@@ -21,7 +21,7 @@ pre[class*='language-'] {
   background: none;
   font-family: 'Jetbrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Courier New',
     monospace;
-  font-size: 14px;
+  font-size: 0.8rem;
   hyphens: none;
   line-height: 1.5;
   tab-size: 4;

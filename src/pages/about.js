@@ -1,180 +1,32 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import styled from 'styled-components';
 import Draggable from 'react-draggable';
-import { delay } from 'lodash';
 
-import { font } from '../components/settings';
-
+import { BackgroundImage } from '../components/atoms';
+import {
+  RandomImage,
+  RandomImageContainer,
+} from '../components/molecules/random-image';
 import Layout from '../components/layout';
 import Head from '../components/head';
-
-const StyledBackground = styled.div`
-  animation-delay: 400ms;
-  animation-duration: 800ms;
-  animation-fill-mode: both;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in-out;
-  background-image: url('/images/brad-cerasani-office-wide.jpg');
-  background-position: center bottom;
-  background-size: cover;
-  display: block;
-  display: none;
-  height: 62.5vw;
-  position: relative;
-  width: 100vw;
-  z-index: -1;
-
-  &::after {
-    background-image: linear-gradient(
-      180deg,
-      hsl(35, 30%, 86%, 1) 0%,
-      hsl(35, 30%, 86%, 0.6) 50%,
-      hsl(35, 30%, 86%, 0.2) 100%
-    );
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-`;
-
-const AboutWrapper = styled.div`
-  h6 {
-    font-family: ${font.family.sansSerif};
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.75rem;
-    text-transform: uppercase;
-  }
-
-  ul {
-    display: flex;
-    list-style-type: none;
-    margin-bottom: 1rem;
-    margin-left: 0;
-    margin-top: 0;
-    padding-left: 0;
-  }
-
-  li {
-    margin-bottom: 0.5rem;
-    margin-right: 2rem;
-
-    a {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    &::after {
-      content: '↟';
-      display: inline-block;
-      padding-left: 0.5rem;
-      transform: rotate(45deg);
-      transform-origin: 100%;
-    }
-  }
-`;
-
-const StyledImage = styled.div`
-  cursor: grab;
-  display: block;
-  height: calc((100vw - 636px) / 3);
-  margin: 2px;
-  opacity: 0;
-  pointer-events: auto;
-  position: absolute;
-  visibility: hidden;
-  width: calc((100vw - 636px) / 3);
-  z-index: 5;
-
-  &:active {
-    cursor: grabbing;
-  }
-
-  &:nth-of-type(3n) {
-    height: calc((100vw - 636px) / 4);
-    width: calc((100vw - 636px) / 4);
-  }
-
-  &::after {
-    background-image: url('/images/exit.gif');
-    background-size: cover;
-    content: '';
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 6;
-  }
-
-  &[data-leaving='true'] {
-    &::after {
-      opacity: 1;
-    }
-  }
-
-  img {
-    display: block;
-    user-select: none;
-    width: 100%;
-  }
-`;
-
-const Camera = styled.div`
-  position: relative;
-`;
-
-const ImageContainer = styled.div`
-  height: 100%;
-  left: 0;
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
-`;
 
 function AboutPage(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
   const backgroundColor = props.data.mdx.frontmatter.backgroundColor;
   const images = props.data.allInstaNode.edges;
-  const [photoCount, setPhotoCount] = useState(0);
 
-  function handleClick() {
-    if (photoCount === images.length) {
-      return;
-    }
-
-    setPhotoCount(photoCount + 1);
-
-    const element = document.querySelector(`[data-image='${photoCount}']`);
-
-    element.style.opacity = '1';
-    element.style.visibility = 'visible';
-  }
-
-  function cleanUp() {
+  function handleChange(event) {
+    const value = event.currentTarget.value;
+    const imageIndex = Math.floor(value / 10);
     const elements = document.querySelectorAll(`[data-image]`);
 
     elements.forEach((element, index) => {
-      element.setAttribute('data-leaving', true);
+      const isVisible = index <= imageIndex && value > 1;
 
-      delay(() => {
-        setPhotoCount(0);
-        element.style.opacity = '0';
-        element.style.visibility = 'hidden';
-        element.setAttribute('data-leaving', false);
-      }, 3500);
+      element.style.opacity = isVisible ? 1 : 0;
+      element.style.pointerEvents = isVisible ? 'auto' : 'none';
     });
   }
 
@@ -231,174 +83,69 @@ function AboutPage(props) {
           description="About Brad Cerasani; Design & Engineering."
         />
 
-        <ImageContainer>
+        <RandomImageContainer>
           {images.map((image, index) => (
             <Draggable key={index}>
-              <StyledImage data-image={index}>
+              <RandomImage data-image={index}>
                 <img src={image.node.preview} alt="IG" />
-              </StyledImage>
+              </RandomImage>
             </Draggable>
           ))}
-        </ImageContainer>
+        </RandomImageContainer>
 
         <section id="js-mdx-body">
-          <div
-            style={{
-              fontSize: '36px',
-              filter: 'grayscale(1)',
-              marginLeft: '-3.5rem',
-              marginBottom: '-1rem',
-              opacity: '0.5',
-              position: 'absolute',
-            }}
-          >
-            👋
-          </div>
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
 
-        <div
-          style={{
-            position: 'relative',
-            zIndex: '10',
-            marginTop: '-2.5rem',
-          }}
-        >
-          <button
-            style={{
-              appearance: 'none',
-              fontSize: '36px',
-              backgroundColor: 'transparent',
-              outline: 'none',
-              border: 'none',
-              cursor: 'pointer',
-            }}
-            onClick={() => handleClick()}
+        <div style={{ display: 'flex' }}>
+          <div style={{ width: '30%' }}>
+            <h6>Elsewhere</h6>
+            <ul>
+              {['Instagram', 'Twitter', 'GitHub'].map((link) => (
+                <li key={link}>
+                  <a
+                    href={`https://${link.toLowerCase()}.com/bradcerasani`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div style={{ width: '30%' }}>
+            <h6>Site Archives</h6>
+            <ul>
+              {['2014', '2013', '2012', '2011', '2010'].map((year) => (
+                <li key={year}>
+                  <a
+                    href={`https://${year}.bradcerasani.me`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {year}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div
+            style={{ width: '40%', paddingLeft: '4px', paddingRight: '4px' }}
           >
-            <Camera one>
-              {photoCount === images.length ? '🤷🏻‍♀️' : '📷'}
-              <span
-                style={{
-                  fontSize: '20px',
-                  paddingLeft: '8px',
-                  display: 'inline-block',
-                  verticalAlign: 'middle',
-                }}
-              >
-                ?
-              </span>
-            </Camera>
-          </button>
-          &nbsp;
-          {photoCount >= 1 && (
-            <button
-              style={{
-                appearance: 'none',
-                fontSize: '36px',
-                backgroundColor: 'transparent',
-                outline: 'none',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              onClick={() => cleanUp()}
-            >
-              <Camera>🗑</Camera>
-            </button>
-          )}
+            <h6>Photos</h6>
+            <input
+              style={{ width: '100%', paddingLeft: '0', paddingRight: '0' }}
+              type="range"
+              onChange={(e) => handleChange(e)}
+              defaultValue="0"
+            />
+          </div>
         </div>
-
-        <AboutWrapper>
-          <h6>Older versions of this site</h6>
-          <ul>
-            <li>
-              <a
-                href="https://2010.bradcerasani.me"
-                rel="noopener noreferrer"
-                target="blank"
-              >
-                2010
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://2011.bradcerasani.me"
-                rel="noopener noreferrer"
-                target="blank"
-              >
-                2011
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://2012.bradcerasani.me"
-                rel="noopener noreferrer"
-                target="blank"
-              >
-                2012
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://2013.bradcerasani.me"
-                rel="noopener noreferrer"
-                target="blank"
-              >
-                2013
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://2014.bradcerasani.me"
-                rel="noopener noreferrer"
-                target="blank"
-              >
-                2014
-              </a>
-            </li>
-          </ul>
-
-          <h6>Elsewhere</h6>
-          <ul>
-            <li>
-              <a
-                href="https://instagram.com/bradcerasani"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/bradcerasani"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/bradcerasani"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:bradcerasani@gmail.com"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Email
-              </a>
-            </li>
-          </ul>
-        </AboutWrapper>
       </Layout>
-      <StyledBackground />
+      <BackgroundImage />
     </Fragment>
   );
 }

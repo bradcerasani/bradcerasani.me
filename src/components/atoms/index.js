@@ -1,3 +1,4 @@
+export * from './background-image';
 export * from './chromatic-abberation';
 export * from './date';
 export * from './headings';

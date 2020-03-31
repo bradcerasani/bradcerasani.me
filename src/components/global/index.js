@@ -71,6 +71,34 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  ul {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    margin-right: 2rem;
+  }
+
+  a[target="_blank"] {
+    font-family: 'Untitled Sans'; /* TODO: Remove */
+    font-variant-numeric: tabular-nums;
+
+    &::after {
+      content: '↟';
+      display: inline-block;
+      padding-left: 8px;
+      position: relative;
+      transform: rotate(45deg);
+      transform-origin: 100%;
+      z-index: -1;
+    }
+  }
+
   video {
     margin-bottom: 1rem;
   }

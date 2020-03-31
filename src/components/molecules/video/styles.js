@@ -51,10 +51,10 @@ export const FluidWrapper = styled.div`
 // TODO: Atomize
 export const Caption = styled.figcaption`
   color: hsl(0, 0%, 40%);
-  font-size: 15px;
+  font-size: 0.9rem;
   font-style: italic;
   margin-bottom: 3rem;
-  min-height: 22px;
+  min-height: 1.5rem;
   text-align: center;
 
   /* Hack for larger emoji in video captions */

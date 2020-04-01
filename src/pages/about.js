@@ -5,10 +5,11 @@ import Draggable from 'react-draggable';
 
 import { BackgroundImage } from '../components/atoms';
 import {
+  Grid,
+  GridItem,
   RandomImage,
   RandomImageContainer,
-} from '../components/molecules/random-image';
-import { Grid, GridItem } from '../components/molecules/grid';
+} from '../components/molecules';
 import Layout from '../components/templates/layout';
 import Head from '../components/templates/head';
 
@@ -41,14 +42,11 @@ function AboutPage(props) {
 
     images.forEach((image, index) => {
       const element = document.querySelector(`[data-image='${index}']`);
-
       const body = document.getElementById('js-mdx-body');
 
       const gutterWidth = (browserWidth - body.offsetWidth) / 2;
-
       const xMax = gutterWidth - element.offsetWidth - 16;
       const yMax = browserHeight / 2 - element.offsetHeight;
-
       const x = Math.floor(Math.random() * xMax);
       const y = Math.floor(Math.random() * yMax);
 

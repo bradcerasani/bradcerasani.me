@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/templates/layout';
 import Head from '../components/templates/head';
-import { StyledMarkdown } from '../components/_global/markdown';
 
 function BlogPostTemplate(props) {
   const post = props.data.mdx;
@@ -24,11 +24,18 @@ function BlogPostTemplate(props) {
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.image}
       />
+
+      <style>
+        {css`
+          html {
+            scroll-behavior: smooth;
+          }
+        `}
+      </style>
+
       <article>
         <section>
-          <StyledMarkdown>
-            <MDXRenderer>{post.body}</MDXRenderer>
-          </StyledMarkdown>
+          <MDXRenderer>{post.body}</MDXRenderer>
         </section>
       </article>
     </Layout>

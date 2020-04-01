@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-const swatchDiameter = '32px';
+import { Caption } from '../../../src/components/atoms';
+
+const swatchDiameter = '2rem';
 
 export const SwatchContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  margin-top: -0.5rem;
 `;
 
 export const Swatch = styled.div`
@@ -15,16 +18,6 @@ export const Swatch = styled.div`
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   width: ${swatchDiameter};
-`;
-
-// TODO: Atomize w/caption from image component
-export const Caption = styled.div`
-  color: hsl(0, 0%, 40%);
-  font-size: 15px;
-  font-style: italic;
-  margin-bottom: 4rem;
-  margin-top: -1rem;
-  text-align: center;
 `;
 
 export const Swatches = ({ colors, caption }) => {
@@ -39,7 +32,7 @@ export const Swatches = ({ colors, caption }) => {
           <Swatch key={index} style={{ backgroundColor: color }} />
         ))}
       </SwatchContainer>
-      {caption && <Caption>{caption}</Caption>}
+      {caption && <Caption style={{ marginTop: '-1rem' }}>{caption}</Caption>}
     </Fragment>
   );
 };

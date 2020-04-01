@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 // stylelint-disable
 
-export const modernNormalize = css`
+const ModernNormalize = css`
   /*! modern-normalize v0.6.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
   /*
@@ -278,3 +278,5 @@ Remove the inheritance of text transform in Edge and Firefox.
     display: list-item;
   }
 `;
+
+export default ModernNormalize;

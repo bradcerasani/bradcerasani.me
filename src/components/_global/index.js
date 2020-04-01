@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { modernNormalize } from './modern-normalize';
 
-import { font, breakpoints } from '../settings';
+import { font, breakpoints } from '../theme';
 import { Noise } from '../atoms/noise';
 
 export const GlobalStyle = createGlobalStyle`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoints } from '../settings';
+import { breakpoints } from '../theme';
 
 function getResponsiveWidth(width) {
   let styles = ``;

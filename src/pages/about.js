@@ -9,8 +9,8 @@ import {
   RandomImageContainer,
 } from '../components/molecules/random-image';
 import { Grid, GridItem } from '../components/molecules/grid';
-import Layout from '../components/layout';
-import Head from '../components/head';
+import Layout from '../components/templates/layout';
+import Head from '../components/templates/head';
 
 function AboutPage(props) {
   const post = props.data.mdx;
@@ -102,6 +102,7 @@ function AboutPage(props) {
           <GridItem width={{ sm: '30%' }}>
             <h6>Elsewhere</h6>
             <ul>
+              {/* TODO: Pull from site settings? */}
               {['Instagram', 'Twitter', 'GitHub'].map((link) => (
                 <li key={link}>
                   <a

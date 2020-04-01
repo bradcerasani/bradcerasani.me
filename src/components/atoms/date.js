@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { font } from '../settings';
+import { font } from '../theme';
 
 const verticalOrientation = css`
   margin-left: -2rem;

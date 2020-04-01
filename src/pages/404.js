@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Noise } from '../components/atoms/noise';
-import Layout from '../components/layout';
-import Head from '../components/head';
+import Layout from '../components/templates/layout';
+import Head from '../components/templates/head';
 
 function PageNotFound(props) {
   const { data } = props;

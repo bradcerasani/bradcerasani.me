@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Layout from '../components/layout';
-import Head from '../components/head';
-import { StyledMarkdown } from '../components/markdown';
+import Layout from '../components/templates/layout';
+import Head from '../components/templates/head';
+import { StyledMarkdown } from '../components/_global/markdown';
 
 function BlogPostTemplate(props) {
   const post = props.data.mdx;

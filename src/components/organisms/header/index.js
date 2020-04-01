@@ -1,8 +1,14 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
-import { breakpoints } from '../settings';
-import { Date, Headline, Logo } from '../atoms';
-import { Nav, NavItem, NavImage, NavMenuIcon, NavInvertWrapper } from '../nav';
+import { breakpoints } from '../../theme';
+import { Date, Headline, Logo } from '../../atoms';
+import {
+  Nav,
+  NavItem,
+  NavImage,
+  NavMenuIcon,
+  NavInvertWrapper,
+} from '../../molecules/nav';
 
 import { links } from './links';
 import { StyledHeader, HeroContainer } from './styles';

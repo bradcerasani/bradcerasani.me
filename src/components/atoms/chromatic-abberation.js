@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { color } from '../settings';
+import { color } from '../theme';
 
 export const CASettings = css`
   --abberationOffset: 2px;

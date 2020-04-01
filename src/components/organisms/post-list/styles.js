@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { font } from '../../settings';
+import { font } from '../../theme';
 
 export const StyledPostItemImage = styled.img`
   cursor: pointer;

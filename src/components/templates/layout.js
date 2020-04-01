@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
-import { GlobalStyle } from './global';
-import Header from './header';
-import Container from './container';
+import { GlobalStyle } from '../_global';
+import Header from '../organisms/header';
 
-import { Note } from './atoms';
-import { Image } from './molecules/image';
-import { Video } from './molecules/video';
+import { Container, Note } from '../atoms';
+import { Image, Video } from '../molecules';
 
 const components = {
   Note,

@@ -1,6 +1,7 @@
 export * from './background-image';
 export * from './caption';
 export * from './chromatic-abberation';
+export * from './container';
 export * from './date';
 export * from './figure';
 export * from './fluid-wrapper';

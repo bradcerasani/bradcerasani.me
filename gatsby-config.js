@@ -22,13 +22,13 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: require.resolve(`./src/components/layout.js`),
+          default: require.resolve(`./src/components/templates/layout.js`),
         },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 700,
+              maxWidth: 720,
             },
           },
           `gatsby-remark-responsive-iframe`,

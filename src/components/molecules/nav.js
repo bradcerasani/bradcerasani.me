@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoints, color, font, transition } from './settings';
-import { Noise, CAText, CAFilter } from './atoms';
+import { breakpoints, color, font, transition } from '../theme';
+import { Noise, CAText, CAFilter } from '../atoms';
 
-import MenuIconSVG from './atoms/icons/menu.inline.svg';
+import MenuIconSVG from '../atoms/icons/menu.inline.svg';
 
 export const NavInvertWrapper = styled.div`
   display: contents;

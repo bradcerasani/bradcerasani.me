@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/layout';
-import Head from '../components/head';
+import Layout from '../components/templates/layout';
+import Head from '../components/templates/head';
 import PostList from '../components/organisms/post-list';
 
 function Home(props) {

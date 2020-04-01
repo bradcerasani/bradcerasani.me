@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoints, font } from '../settings';
+import { breakpoints, font } from '../theme';
 
 export const Headline = styled.div`
   align-self: flex-end;

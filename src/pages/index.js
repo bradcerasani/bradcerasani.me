@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/templates/layout';
 import Head from '../components/templates/head';
 import PostList from '../components/organisms/post-list';
+import Button from '../components/atoms/button';
 
 function Home(props) {
   const { data } = props;
@@ -21,22 +22,9 @@ function Home(props) {
           style={{ marginBottom: '1rem' }}
         />
 
-        <Link to={'/about/'} style={{ textDecoration: 'none' }}>
-          More about me{' '}
-          <span
-            style={{
-              bottom: '-6px',
-              display: 'inline-block',
-              height: '24px',
-              position: 'relative',
-              width: '24px',
-            }}
-          >
-            <svg viewBox="0 0 100 100">
-              <path d="M36.75 73.50L49.95 53.90L36.75 34.30L30.55 34.30L41.45 53.90L30.55 73.50ZM56.15 73.50L69.45 53.90L56.15 34.30L50.05 34.30L60.75 53.90L50.05 73.50Z"></path>
-            </svg>
-          </span>
-        </Link>
+        <Button to={'/about/'} type="link" theme="text">
+          More about me
+        </Button>
       </section>
 
       <PostList posts={data.allMdx.edges} />

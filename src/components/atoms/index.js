@@ -1,4 +1,5 @@
 export * from './background-image';
+export * from './button';
 export * from './caption';
 export * from './chromatic-abberation';
 export * from './container';

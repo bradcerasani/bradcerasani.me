@@ -90,7 +90,7 @@ export const Nav = styled.div`
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end;
-    margin-bottom: 0.5rem; /* optically align to baseline of byline */
+    margin-bottom: 0.7rem; /* optically align to baseline of byline */
     position: relative;
   }
 `;
@@ -101,6 +101,7 @@ export const NavImage = styled.img`
   @media (min-width: ${breakpoints.sm}) {
     bottom: 0;
     display: block;
+    margin-bottom: 0.375rem;
     margin-right: -1rem;
     opacity: 0;
     position: absolute;
@@ -112,7 +113,6 @@ export const NavImage = styled.img`
 
 export const NavItem = styled(Link)`
   display: block;
-  margin-bottom: 0.5rem;
 
   &.is-active {
     &::after {
@@ -128,6 +128,7 @@ export const NavItem = styled(Link)`
     font-size: 2.625rem;
     font-weight: 600;
     letter-spacing: 0.025em;
+    margin-bottom: 0.5rem;
     visibility: hidden;
 
     ${CAText} /* stylelint-disable-line */

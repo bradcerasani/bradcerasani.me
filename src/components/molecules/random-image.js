@@ -37,6 +37,7 @@ export const RandomImage = styled.div`
 
   img {
     display: block;
+    margin-bottom: 0;
     user-select: none;
     width: 100%;
   }

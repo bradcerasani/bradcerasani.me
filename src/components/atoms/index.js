@@ -5,7 +5,6 @@ export * from './container';
 export * from './date';
 export * from './figure';
 export * from './fluid-wrapper';
-export * from './headings';
 export * from './logo';
 export * from './noise';
 export * from './note';

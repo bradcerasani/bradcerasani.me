@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { breakpoints } from '../../theme';
 
 export const StyledHeader = styled.div`
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   margin-top: 4rem;
 
   @media (min-width: ${breakpoints.md}) {

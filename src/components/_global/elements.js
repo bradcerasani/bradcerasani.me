@@ -54,8 +54,7 @@ const Elements = css`
   }
 
   li {
-    margin-bottom: 0.5rem;
-    margin-right: 2rem;
+    margin-bottom: 0;
   }
 
   a {

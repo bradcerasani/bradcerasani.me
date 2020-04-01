@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
 import { breakpoints } from '../../theme';
-import { Date, Headline, Logo } from '../../atoms';
+import { Date, Logo } from '../../atoms';
 import {
   Nav,
   NavItem,
@@ -48,10 +48,10 @@ function Header(props) {
       </NavInvertWrapper>
 
       <HeroContainer>
-        <Headline>
+        <h1>
           {date && <Date orientation="vertical">{date}</Date>}
           {headline}
-        </Headline>
+        </h1>
 
         <Nav
           isVisible={isVisible}

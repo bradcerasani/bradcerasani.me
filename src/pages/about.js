@@ -84,16 +84,6 @@ function AboutPage(props) {
           description="About Brad Cerasani; Design & Engineering."
         />
 
-        <RandomImageContainer>
-          {images.map((image, index) => (
-            <Draggable key={index}>
-              <RandomImage data-image={index}>
-                <img src={image.node.preview} alt="IG" />
-              </RandomImage>
-            </Draggable>
-          ))}
-        </RandomImageContainer>
-
         <section id="js-mdx-body">
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
@@ -145,6 +135,15 @@ function AboutPage(props) {
           </GridItem>
         </Grid>
       </Layout>
+      <RandomImageContainer>
+        {images.map((image, index) => (
+          <Draggable key={index}>
+            <RandomImage data-image={index}>
+              <img src={image.node.preview} alt="IG" />
+            </RandomImage>
+          </Draggable>
+        ))}
+      </RandomImageContainer>
       <BackgroundImage />
     </Fragment>
   );

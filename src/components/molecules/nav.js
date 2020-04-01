@@ -16,8 +16,12 @@ export const NavInvertWrapper = styled.div`
     ${({ invert }) =>
       invert &&
       css`
-        color: ${color.white};
         ${CAText}
+        color: ${color.white};
+
+        a {
+          z-index: 8;
+        }
 
         svg {
           ${CAFilter}

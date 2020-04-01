@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Player from '@vimeo/player';
 
-import { Figure, Caption, FluidWrapper } from './styles';
+import { Caption, Figure, FluidWrapper } from '../atoms';
 
 function addCuePoints(player, annotations) {
   annotations.forEach(({ time, annotation }) => {
@@ -18,6 +18,7 @@ export const Video = ({ vimeoId, caption, size, children }) => {
   const targetElementId = `js-${vimeoId}`;
 
   useEffect(() => {
+    // TODO: pull color from settings
     const embedOptions = {
       byline: 0,
       color: '85a19f',
@@ -30,6 +31,7 @@ export const Video = ({ vimeoId, caption, size, children }) => {
 
     // Set up video annotations
     if (children) {
+      // TODO: Harden and/or consider converting to JSON
       const annotations = children
         .filter(({ props }) => props.mdxType === 'AN')
         .map(({ props }) => {

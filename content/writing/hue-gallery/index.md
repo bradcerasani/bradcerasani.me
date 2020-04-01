@@ -7,7 +7,11 @@ date: '2016-12-01'
 
 import { Swatches } from './swatches';
 
-<Note>This article was originally published in the December 2016 issue of <a href="https://www.creativebloq.com/net-magazine" target="_blank" rel="noopener noreferrer">net magazine</a>. Philips released the <a href="https://www.theverge.com/2018/5/31/17412314/philips-hue-sync-windows-mac-review" target="_blank" rel="noopener noreferrer">Hue Sync App</a> a few years later, which is an official way of achieving a similar effect to that described below.</Note>
+<Note>
+
+This article was originally published in the December 2016 issue of [net magazine](https://www.creativebloq.com/net-magazine). Philips released the [Hue Sync App](https://www.theverge.com/2018/5/31/17412314/philips-hue-sync-windows-mac-review) a few years later, which is an official way of achieving a similar effect to that described below.
+
+</Note>
 
 <Video vimeoId="392018140" size="large" caption="Finished result: Hue Gallery in action">
   <AN time="0.01"><span>🎹</span></AN>

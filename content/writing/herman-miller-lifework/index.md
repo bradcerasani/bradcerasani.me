@@ -5,7 +5,11 @@ image: /images/writing/herman-miller-lifework/hero.jpg
 date: '2013-05-08'
 ---
 
-<Note>This interview was originally conducted by <a href="https://twitter.com/amyfeezor">Amy Feezor</a> for <a href="https://hermanmiller.com">Herman Miller</a>'s now-defunct &ldquo;Lifework&rdquo; blog. Apartment Therapy also published the piece.</Note>
+<Note>
+
+This interview was originally conducted by [Amy Feezor](https://twitter.com/amyfeezor) for [Herman Miller](https://hermanmiller.com)'s now-defunct &ldquo;Lifework&rdquo; blog. Apartment Therapy also published the piece.
+
+</Note>
 
 <PostImage src="herman-miller-lifework/lifework-wide_3.jpg" size="large" />
 

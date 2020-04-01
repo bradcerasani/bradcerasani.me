@@ -5,7 +5,11 @@ image: /images/writing/liftoff/cover.jpg
 date: '2012-12-06'
 ---
 
-<Note>This post coincided with the launch of an updated portfolio site in 2012. Check it out in the archives <a href="https://2012.bradcerasani.me" target="_blank" rel="noopener noreferrer">here</a>, where you can also view this entry in its <a href="https://2012.bradcerasani.me/blog" target="_blank" rel="noopener noreferrer">original context</a>.</Note>
+<Note>
+
+This post coincided with the launch of an updated portfolio site in 2012. Check it out in the archives [here](https://2012.bradcerasani.me), where you can also view this entry in its [original context](https://2012.bradcerasani.me/blog).
+
+</Note>
 
 Shedbot 2.0 reflects a sharper focus on building for the web. The old website has been refined into a single page responsive layout with a small, select portfolio of web projects. The new site is lightweight, and progressively enhances for high pixel density "retina" displays with resolutions up to an absurd 5120 x 2880[^1].
 

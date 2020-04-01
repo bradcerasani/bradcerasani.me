@@ -7,7 +7,11 @@ date: '2013-10-18'
 
 import { DemoButton } from './demo-button';
 
-<Note>This post outlines a method to 'hide' a glyph on an anchor tag using a pseudo-element in order to expand the boundaries of what :visited styles typically allow.</Note>
+<Note>
+
+This post outlines a method to 'hide' a glyph on an anchor tag using a pseudo-element in order to expand the boundaries of what :visited styles typically allow.
+
+</Note>
 
 In HTML, `<a>` tags have 4 CSS pseudo classes that are used to style hyperlinks in different states: `:link` `:visited` `:hover` and `:active`.
 

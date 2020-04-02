@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const DemoButton = styled.a`
   background: #3ba7bb;
-  border-radius: 4px;
   border: 2px solid #3ba7bb;
+  border-radius: 4px;
   color: white;
   cursor: default;
   cursor: pointer;

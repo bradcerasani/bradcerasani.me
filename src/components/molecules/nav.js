@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoints, color, font, transition } from '../theme';
+import { breakpoint, color, font, transition } from '../theme';
 import { Noise, CAText, CAFilter } from '../atoms';
 
 import MenuIconSVG from '../atoms/icons/menu.inline.svg';
@@ -12,7 +12,7 @@ export const NavInvertWrapper = styled.div`
   transition-property: color, text-shadow, filter;
   transition-timing-function: ease-in-out;
 
-  @media (max-width: calc(${breakpoints.sm} - 1px)) {
+  @media (max-width: calc(${breakpoint.sm} - 1px)) {
     ${({ invert }) =>
       invert &&
       css`
@@ -40,7 +40,7 @@ export const NavMenuIcon = styled(MenuIconSVG)`
   z-index: 10;
 
   /* Nav is always visible at larger viewports, so we can hide the icon */
-  @media (min-width: ${breakpoints.sm}) {
+  @media (min-width: ${breakpoint.sm}) {
     display: none;
   }
 `;
@@ -50,7 +50,7 @@ export const Nav = styled.div`
   --initialInset: 1rem;
 
   /* Nav styles between viewports differ enough to warrant a max-width media query over overrides */
-  @media (max-width: calc(${breakpoints.sm} - 1px)) {
+  @media (max-width: calc(${breakpoint.sm} - 1px)) {
     background-color: ${color.black};
     display: flex;
     flex-direction: column;
@@ -88,7 +88,7 @@ export const Nav = styled.div`
       `}
   }
 
-  @media (min-width: ${breakpoints.sm}) {
+  @media (min-width: ${breakpoint.sm}) {
     align-items: flex-end;
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@ export const Nav = styled.div`
 export const NavImage = styled.img`
   display: none;
 
-  @media (min-width: ${breakpoints.sm}) {
+  @media (min-width: ${breakpoint.sm}) {
     bottom: 0;
     display: block;
     margin-bottom: 0.375rem;
@@ -127,7 +127,7 @@ export const NavItem = styled(Link)`
   }
 
   /* Similar to Nav, < sm styles differ enough to warrant max-width media query */
-  @media (max-width: calc(${breakpoints.sm} - 1px)) {
+  @media (max-width: calc(${breakpoint.sm} - 1px)) {
     font-family: ${font.family.serif};
     font-size: 2.625rem;
     font-weight: 600;
@@ -155,7 +155,7 @@ export const NavItem = styled(Link)`
       `}
     }
 
-  @media (min-width: ${breakpoints.sm}) {
+  @media (min-width: ${breakpoint.sm}) {
     padding-right: 0.5rem;
     text-decoration: none;
 

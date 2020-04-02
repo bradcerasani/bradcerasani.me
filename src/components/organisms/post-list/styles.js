@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { font } from '../../theme';
+import { color, font } from '../../theme';
 
 export const StyledPostItemImage = styled.img`
   cursor: pointer;
@@ -30,7 +30,7 @@ export const StyledPostItem = styled(Link)`
   z-index: 1;
 
   h3 {
-    color: RGB(178, 176, 174);
+    color: ${color.linen.dark};
     display: inline-block;
     font-family: ${font.family.sansSerif};
     font-size: 44px;
@@ -49,7 +49,7 @@ export const StyledPostItem = styled(Link)`
     transition-duration: 100ms;
 
     h3 {
-      color: black;
+      color: ${color.black};
     }
 
     ${StyledPostItemImage} {

@@ -1,4 +1,4 @@
-export const breakpoints = {
+export const breakpoint = {
   sm: '400px',
   md: '768px',
   lg: '1280px',
@@ -16,15 +16,26 @@ export const font = {
 };
 
 export const color = {
-  white: '#fafafa',
   black: '#1a1a1a',
+  white: '#fafafa',
+  highlight: 'hsl(48, 64%, 94%)',
+  grey: {
+    darker: 'hsl(0, 0%, 20%)',
+    dark: 'hsl(0, 0%, 30%)',
+    default: 'hsl(0, 0%, 40%)',
+  },
+  linen: {
+    dark: 'hsl(30, 3%, 69%)',
+    default: 'hsl(35, 10%, 85%)',
+  },
+
   red: {
-    default: 'rgb(214, 68, 90)',
-    translucent: 'rgb(214, 68, 90, 0.5)',
+    default: 'hsl(351, 64%, 55%)',
+    translucent: 'hsla(351, 64%, 55%, 0.5)',
   },
   cyan: {
-    default: 'rgb(117, 241, 257)',
-    translucent: 'rgb(117, 241, 257, 0.5)',
+    default: 'hsl(186, 100%, 73%)',
+    translucent: 'hsla(186, 100%, 73%, 0.5)',
   },
 };
 
@@ -33,3 +44,5 @@ export const transition = {
   default: '250ms',
   slow: '450ms',
 };
+
+export const maxWidth = '730px';

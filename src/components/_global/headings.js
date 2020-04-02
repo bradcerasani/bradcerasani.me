@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { font, breakpoints } from '../theme';
+import { breakpoint, color, font } from '../theme';
 
 const Headings = css`
   h1 {
@@ -13,7 +13,7 @@ const Headings = css`
     position: relative;
     text-shadow: none;
 
-    @media (min-width: ${breakpoints.sm}) {
+    @media (min-width: ${breakpoint.sm}) {
       font-size: 4rem;
       margin-left: -4rem;
     }
@@ -39,7 +39,7 @@ const Headings = css`
   }
 
   h4 {
-    color: hsl(0, 0%, 30%);
+    color: ${color.grey.dark};
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.05em;

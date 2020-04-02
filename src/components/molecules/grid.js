@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
-import { breakpoints } from '../theme';
+import { breakpoint } from '../theme';
 
 function getResponsiveWidth(width) {
   let styles = ``;
 
-  for (const breakpoint in width) {
+  for (const point in width) {
     // Ensure key passed to component is a supported breakpoint
-    if (breakpoints[breakpoint] !== undefined) {
+    if (breakpoint[point] !== undefined) {
       styles += `
-        @media (min-width: ${breakpoints[breakpoint]}) {
-          width: calc(${width[breakpoint]});
+        @media (min-width: ${breakpoint[point]}) {
+          width: calc(${width[point]});
         }
       `;
     } else {
       // eslint-disable-next-line no-console
-      console.warn(`'${width[breakpoint]}' is not supported by GridItem`);
+      console.warn(`'${width[point]}' is not supported by GridItem`);
     }
   }
 

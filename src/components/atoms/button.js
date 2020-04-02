@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+import { color } from '../theme';
+
 const ButtonLinkIcon = styled.span`
   bottom: -0.3rem;
   display: inline-block;
@@ -15,7 +17,7 @@ const ButtonLinkIcon = styled.span`
 `;
 
 const ButtonLink = styled(Link)`
-  color: black;
+  color: ${color.grey.darker};
   text-decoration: none;
 
   &:hover {
@@ -26,8 +28,6 @@ const ButtonLink = styled(Link)`
 `;
 
 function Button({ children, ...props }) {
-  // TODO: Do something with `type` and `theme`
-
   return (
     <ButtonLink {...props}>
       {children}

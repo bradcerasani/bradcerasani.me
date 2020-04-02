@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
+import { color } from '../components/theme';
+
 import Layout from '../components/templates/layout';
 import Head from '../components/templates/head';
 
@@ -16,7 +18,7 @@ function BlogPostTemplate(props) {
       location={props.location}
       title={siteTitle}
       headline={post.frontmatter.title}
-      backgroundColor="hsl(0, 0%, 98%)"
+      backgroundColor={color.white}
       date={date}
     >
       <Head

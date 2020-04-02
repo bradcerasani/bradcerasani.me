@@ -1,6 +1,6 @@
 :root {
-  --backgroundColor: hsl(0, 0%, 10%);
-  --color: #f7f7f7;
+  --backgroundColor: #1a1a1a;
+  --color: #f0f0f0;
   --cyan: #64edff;
   --green: #67ffb8;
   --grey: #85a19f;
@@ -45,17 +45,17 @@ pre[class*='language-'] {
 }
 
 pre *::selection {
-  background-color: hsl(0, 0%, 60%);
+  background-color: rgb(255, 255, 255, 0.05);
   text-shadow: 0 0 4px var(--backgroundColor), 0 0 6px currentColor;
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  background-color: hsl(0, 0%, 94%);
-  color: black;
-  font-family: inherit;
-  font-size: inherit;
+  background-color: var(--color);
+  border-radius: 2px;
+  font-size: 0.8375rem;
   font-weight: inherit;
+  padding: 4px 4px 2px;
   white-space: normal;
 }
 

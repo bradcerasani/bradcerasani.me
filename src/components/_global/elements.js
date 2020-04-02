@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { font, breakpoints, transition } from '../theme';
+import { breakpoint, color, font, transition } from '../theme';
 import { Noise } from '../atoms/noise';
 
 const Elements = css`
@@ -10,14 +10,14 @@ const Elements = css`
     font-size: ${font.size.body};
     height: 100%;
 
-    @media (min-width: ${breakpoints.md}) {
+    @media (min-width: ${breakpoint.md}) {
       font-size: 20px;
     }
   }
 
   body {
     background-color: ${(props) =>
-      props.backgroundColor || 'hsl(35, 10%, 86%)'};
+      props.backgroundColor || color.linen.default};
     line-height: 1.5;
     text-rendering: optimizeLegibility;
     transition-duration: ${transition.slow};
@@ -32,7 +32,7 @@ const Elements = css`
   }
 
   section {
-    color: hsl(0, 0%, 20%);
+    color: ${color.grey.darker};
     margin-bottom: 3rem;
   }
 
@@ -59,11 +59,11 @@ const Elements = css`
 
   a {
     color: inherit;
-    text-decoration-color: hsl(0, 0%, 36%);
+    text-decoration-color: ${color.grey.dark};
 
     &:hover {
-      color: black;
-      text-decoration-color: black;
+      color: ${color.black};
+      text-decoration-color: ${color.black};
     }
   }
 
@@ -120,7 +120,7 @@ const Elements = css`
     }
 
     p {
-      background-color: hsl(48, 64%, 94%);
+      background-color: ${color.highlight};
       display: inline;
       font-size: 22px;
       font-style: italic;

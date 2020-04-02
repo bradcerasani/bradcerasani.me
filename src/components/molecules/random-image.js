@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-// TODO: Remove 636px and use global container width
+import { maxWidth } from '../theme';
 
 export const RandomImage = styled.div`
   cursor: grab;
   display: block;
-  height: calc((100vw - 636px) / 3);
+  height: calc((100vw - ${maxWidth}) / 3);
   opacity: 0;
   pointer-events: auto;
   pointer-events: none;
@@ -13,7 +13,7 @@ export const RandomImage = styled.div`
   transition-duration: 90ms;
   transition-property: opacity;
   transition-timing-function: ease-in-out;
-  width: calc((100vw - 636px) / 3);
+  width: calc((100vw - ${maxWidth}) / 3);
   z-index: 5;
 
   &::after {
@@ -31,8 +31,8 @@ export const RandomImage = styled.div`
   }
 
   &:nth-of-type(3n) {
-    height: calc((100vw - 636px) / 4);
-    width: calc((100vw - 636px) / 4);
+    height: calc((100vw - ${maxWidth}) / 4);
+    width: calc((100vw - ${maxWidth}) / 4);
   }
 
   img {

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
+import { color } from '../theme';
+
 export const Note = styled.div`
-  background-color: hsl(48, 64%, 94%);
+  background-color: ${color.highlight};
   border-color: currentColor;
   border-style: double;
   border-width: 6px;

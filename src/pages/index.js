@@ -22,7 +22,7 @@ function Home(props) {
           style={{ marginBottom: '1rem' }}
         />
 
-        <Button to={'/about/'} type="link" theme="text">
+        <Button to={'/about/'} type="link">
           More about me
         </Button>
       </section>

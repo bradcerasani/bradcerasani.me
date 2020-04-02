@@ -1,9 +1,15 @@
 import { css } from 'styled-components';
 
+import { color } from '../theme';
+
 const Footnotes = css`
   .footnotes {
-    font-size: 0.9rem;
-    margin-bottom: 10rem;
+    font-size: 0.8rem;
+    margin-bottom: 4rem;
+  }
+
+  .footnote-ref {
+    text-decoration: none;
   }
 
   .footnotes hr {
@@ -12,7 +18,7 @@ const Footnotes = css`
   }
 
   .footnotes ol li {
-    color: hsl(0, 0%, 40%);
+    color: ${color.grey.default};
     line-height: 1.5;
     margin-bottom: 1rem;
     position: relative;
@@ -23,21 +29,13 @@ const Footnotes = css`
   }
 
   .footnote-backref {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 4px;
-    padding: 4px 3px 0px;
+    padding-left: 0.25rem;
     text-decoration: none;
     vertical-align: -1px;
 
     &:hover {
-      background-color: hsl(48, 64%, 94%);
-      color: black;
+      color: ${color.black};
     }
-  }
-
-  .footnote-ref {
-    text-decoration: none;
   }
 `;
 

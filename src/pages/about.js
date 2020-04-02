@@ -45,7 +45,7 @@ function AboutPage(props) {
       const body = document.getElementById('js-mdx-body');
 
       const gutterWidth = (browserWidth - body.offsetWidth) / 2;
-      const xMax = gutterWidth - element.offsetWidth - 16;
+      const xMax = gutterWidth - element.offsetWidth - 20;
       const yMax = browserHeight / 2 - element.offsetHeight;
       const x = Math.floor(Math.random() * xMax);
       const y = Math.floor(Math.random() * yMax);

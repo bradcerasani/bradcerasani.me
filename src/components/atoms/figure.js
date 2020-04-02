@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import { maxWidth } from '../theme';
 import { Caption } from './caption';
 
 export const Figure = styled.figure`
@@ -17,9 +18,8 @@ export const Figure = styled.figure`
 
       case 'full':
         return css`
-          /* TODO: Factor out explicit values */
-          margin-left: calc((100vw - 636px) / -2);
-          margin-right: calc((100vw - 636px) / -2);
+          margin-left: calc((100vw - ${maxWidth}) / -2);
+          margin-right: calc((100vw - ${maxWidth}) / -2);
           width: 100vw;
           min-width: 100%;
           margin-top: 3rem;

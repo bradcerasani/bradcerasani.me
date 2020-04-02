@@ -28,7 +28,7 @@ function PageNotFound(props) {
               animation-fill-mode: forwards;
               animation-name: fadeIn;
               background-color: black;
-              background-image: url('/images/xp.gif');
+              background-image: url('/images/gifs/xp.gif');
               background-position: center;
               background-repeat: no-repeat;
               background-size: contain;

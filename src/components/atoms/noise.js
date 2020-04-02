@@ -39,7 +39,7 @@ export const Noise = css`
   animation-iteration-count: infinite;
   animation-name: grain;
   animation-timing-function: steps(10);
-  background-image: url('/images/noise.png');
+  background-image: url('/images/textures/noise.png');
   background-repeat: repeat;
   content: '';
   display: block;

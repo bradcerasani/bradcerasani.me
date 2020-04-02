@@ -2,7 +2,7 @@ export const links = [
   {
     to: '/',
     label: 'Home',
-    imageSrc: '/images/nav/home-2.gif',
+    imageSrc: '/images/gifs/home.gif',
   },
   {
     to: '/about/',
@@ -12,6 +12,6 @@ export const links = [
   {
     to: '/writing/',
     label: 'Writing',
-    imageSrc: '/images/nav/writing-2.gif',
+    imageSrc: '/images/gifs/writing.gif',
   },
 ];

@@ -18,9 +18,6 @@ export const StyledPostItemImage = styled.img`
 export const StyledPostItem = styled(Link)`
   cursor: pointer;
   display: block;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.25;
   margin-bottom: 0;
   margin-top: 0;
   padding-bottom: 1.75rem;

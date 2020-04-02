@@ -58,7 +58,6 @@ export const StyledPostItem = styled(Link)`
 `;
 
 export const StyledPostList = styled.div`
-  margin-left: -4rem;
   position: relative;
 
   &:hover {

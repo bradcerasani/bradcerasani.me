@@ -4,9 +4,7 @@ import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { color } from '../components/theme';
-
-import Layout from '../components/templates/layout';
-import Head from '../components/templates/head';
+import { Head, Layout } from '../components/templates';
 
 function BlogPostTemplate(props) {
   const post = props.data.mdx;

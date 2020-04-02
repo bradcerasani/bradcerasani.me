@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
 import { GlobalStyle } from '../_global';
-import Header from '../organisms/header';
-
+import { Header } from '../organisms';
 import { Container, Note } from '../atoms';
 import { Image, Video } from '../molecules';
 
@@ -13,7 +12,7 @@ const components = {
   Video,
 };
 
-function Layout(props) {
+export const Layout = (props) => {
   const { children, backgroundColor } = props;
 
   return (
@@ -26,6 +25,4 @@ function Layout(props) {
       </Container>
     </Fragment>
   );
-}
-
-export default Layout;
+};

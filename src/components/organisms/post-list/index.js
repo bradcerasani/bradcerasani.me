@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import useInterval from '../../../hooks/use-interval';
 import { StyledPostList, StyledPostItem, StyledPostItemImage } from './styles';
 
-function PostList({ posts }) {
+export const PostList = ({ posts }) => {
   const [isRunning, setIsRunning] = useState(true);
   const [activePost, setActivePost] = useState(0);
   const interval = 2000;
@@ -41,6 +41,4 @@ function PostList({ posts }) {
       })}
     </StyledPostList>
   );
-}
-
-export default PostList;
+};

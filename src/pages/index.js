@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/templates/layout';
-import Head from '../components/templates/head';
-import PostList from '../components/organisms/post-list';
-import Button from '../components/atoms/button';
+import { Button } from '../components/atoms';
+import { PostList } from '../components/organisms';
+import { Head, Layout } from '../components/templates';
 
 function Home(props) {
   const { data } = props;

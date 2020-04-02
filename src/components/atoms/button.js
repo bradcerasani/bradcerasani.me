@@ -27,7 +27,7 @@ const ButtonLink = styled(Link)`
   }
 `;
 
-function Button({ children, ...props }) {
+export const Button = ({ children, ...props }) => {
   return (
     <ButtonLink {...props}>
       {children}
@@ -38,6 +38,4 @@ function Button({ children, ...props }) {
       </ButtonLinkIcon>
     </ButtonLink>
   );
-}
-
-export default Button;
+};

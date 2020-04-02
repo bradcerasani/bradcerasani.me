@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function Head({ title, description, image, url, children }) {
+export const Head = ({ title, description, image, url, children }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -48,6 +48,4 @@ function Head({ title, description, image, url, children }) {
       {children}
     </Helmet>
   );
-}
-
-export default Head;
+};

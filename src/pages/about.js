@@ -10,8 +10,7 @@ import {
   RandomImage,
   RandomImageContainer,
 } from '../components/molecules';
-import Layout from '../components/templates/layout';
-import Head from '../components/templates/head';
+import { Head, Layout } from '../components/templates';
 
 function AboutPage(props) {
   const post = props.data.mdx;

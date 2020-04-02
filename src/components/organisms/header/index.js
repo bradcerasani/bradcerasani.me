@@ -9,11 +9,10 @@ import {
   NavMenuIcon,
   NavInvertWrapper,
 } from '../../molecules/nav';
-
 import { links } from './links';
 import { StyledHeader, HeroContainer } from './styles';
 
-function Header(props) {
+export const Header = (props) => {
   const { title, date, headline = 'Design & Engineering' } = props;
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
@@ -82,6 +81,4 @@ function Header(props) {
       </HeroContainer>
     </StyledHeader>
   );
-}
-
-export default Header;
+};

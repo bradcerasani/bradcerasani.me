@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/templates/layout';
-import Head from '../components/templates/head';
-import PostList from '../components/organisms/post-list';
+import { PostList } from '../components/organisms';
+import { Head, Layout } from '../components/templates';
 
 function WritingPage(props) {
   const { data } = props;

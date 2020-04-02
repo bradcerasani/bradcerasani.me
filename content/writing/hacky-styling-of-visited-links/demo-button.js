@@ -8,7 +8,7 @@ export const DemoButton = styled.a`
   cursor: default;
   cursor: pointer;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   margin-bottom: 1.5rem;
   padding: 0.75rem 3rem;

@@ -1,7 +1,7 @@
 ---
 title: Herman Miller Lifework
 description: Originally published on Herman Miller Lifework
-image: /images/writing/herman-miller-lifework/hero.jpg
+image: /images/writing/herman-miller-lifework/hero-alt.jpg
 date: '2013-05-08'
 ---
 

@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Draggable from 'react-draggable';
 
 import { BackgroundImage } from '../components/atoms';
@@ -92,13 +93,13 @@ function AboutPage(props) {
               {/* TODO: Pull from site settings? */}
               {['Instagram', 'Twitter', 'GitHub'].map((link) => (
                 <li key={link}>
-                  <a
+                  <OutboundLink
                     href={`https://${link.toLowerCase()}.com/bradcerasani`}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     {link}
-                  </a>
+                  </OutboundLink>
                 </li>
               ))}
             </ul>
@@ -109,13 +110,13 @@ function AboutPage(props) {
             <ul>
               {['2014', '2013', '2012', '2011', '2010'].map((year) => (
                 <li key={year}>
-                  <a
+                  <OutboundLink
                     href={`https://${year}.bradcerasani.me`}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     {year}
-                  </a>
+                  </OutboundLink>
                 </li>
               ))}
             </ul>
@@ -124,6 +125,13 @@ function AboutPage(props) {
           <GridItem width={{ sm: '40%' }}>
             <h6>Photos</h6>
             <input
+              onMouseUp={(e) => {
+                e.preventDefault();
+                trackCustomEvent({
+                  category: 'Photos Slider',
+                  action: 'Click',
+                });
+              }}
               style={{ width: '100%', paddingLeft: '0', paddingRight: '0' }}
               type="range"
               onChange={(e) => handleChange(e)}

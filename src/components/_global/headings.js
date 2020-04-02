@@ -30,9 +30,9 @@ const Headings = css`
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 400;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.025em;
     line-height: 1.25;
     margin-bottom: 0.5rem;
     margin-top: 0;

@@ -20,7 +20,7 @@ export const StyledPostItem = styled(Link)`
   display: block;
   margin-bottom: 0;
   margin-top: 0;
-  padding-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
   text-decoration: none;
   transition-property: color;
   transition-timing-function: ease-in;
@@ -28,11 +28,6 @@ export const StyledPostItem = styled(Link)`
 
   h3 {
     color: ${color.linen.dark};
-    display: inline-block;
-    font-family: ${font.family.sansSerif};
-    font-size: 44px;
-    font-weight: 400;
-    letter-spacing: -0.025em;
     margin: 0;
     position: relative;
     transition-duration: 400ms;
@@ -51,13 +46,14 @@ export const StyledPostItem = styled(Link)`
 
     ${StyledPostItemImage} {
       opacity: 1;
-      transition-delay: 200ms;
+      transition-delay: 300ms;
       transition-duration: 200ms;
     }
   }
 `;
 
 export const StyledPostList = styled.div`
+  margin-left: -4rem;
   position: relative;
 
   &:hover {

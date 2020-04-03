@@ -150,7 +150,7 @@ export const NavItem = styled(Link)`
         visibility: visible;
         animation-duration: 800ms;
         animation-fill-mode: both;
-        animation-name: fadeInUp;
+        animation-name: fadeInUpSkew;
         animation-timing-function: ease-in-out;
       `}
     }

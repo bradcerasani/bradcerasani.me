@@ -9,6 +9,8 @@ export const font = {
   family: {
     serif: `Canela, Georgia, 'Times New Roman', Times, serif`,
     sansSerif: `'Untitled Sans Test', 'Untitled Sans', 'Scto Grotesk A', sans-serif`,
+    system: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
   },
   size: {
     body: '18px',

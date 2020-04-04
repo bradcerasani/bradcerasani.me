@@ -1,16 +1,10 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
-import Draggable from 'react-draggable';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import { BackgroundImage } from '../components/atoms';
-import {
-  Grid,
-  GridItem,
-  RandomImage,
-  RandomImageContainer,
-} from '../components/molecules';
+import { Grid, GridItem } from '../components/molecules';
+import { Gallery, GalleryController } from '../components/organisms';
 import { Head, Layout } from '../components/templates';
 
 function AboutPage(props) {
@@ -18,57 +12,6 @@ function AboutPage(props) {
   const siteTitle = props.data.site.siteMetadata.title;
   const backgroundColor = props.data.mdx.frontmatter.backgroundColor;
   const images = props.data.allInstaNode.edges;
-
-  function handleChange(event) {
-    const value = event.currentTarget.value;
-    const imageIndex = Math.floor(value / 10);
-    const elements = document.querySelectorAll(`[data-image]`);
-
-    elements.forEach((element, index) => {
-      const isVisible = index <= imageIndex && value > 1;
-
-      element.style.opacity = isVisible ? 1 : 0;
-      element.style.pointerEvents = isVisible ? 'auto' : 'none';
-    });
-  }
-
-  useEffect(() => {
-    const browserWidth =
-      window.innerWidth || document.documentElement.clientWidth;
-    const browserHeight =
-      window.innerHeight || document.documentElement.clientHeight;
-
-    let flip = false;
-
-    images.forEach((image, index) => {
-      const element = document.querySelector(`[data-image='${index}']`);
-      const body = document.getElementById('js-mdx-body');
-
-      const gutterWidth = (browserWidth - body.offsetWidth) / 2;
-      const xMax = gutterWidth - element.offsetWidth - 20;
-      const yMax = browserHeight / 2 - element.offsetHeight;
-      const x = Math.floor(Math.random() * xMax);
-      const y = Math.floor(Math.random() * yMax);
-
-      if ((index + 1) % 2 === 0) {
-        flip = !flip;
-        element.style.left = `calc(${x}px)`;
-      } else {
-        element.style.right = `calc(${x}px)`;
-      }
-
-      if (flip) {
-        element.style.top = `${y}px`;
-      } else {
-        element.style.bottom = `${y}px`;
-      }
-
-      if ((index + 1) % 5 === 0) {
-        element.style.bottom = 'auto';
-        element.style.top = `${browserHeight / 2 - element.offsetHeight / 2}px`;
-      }
-    });
-  }, [images]);
 
   return (
     <Fragment>
@@ -124,32 +67,11 @@ function AboutPage(props) {
 
           <GridItem width={{ sm: '40%' }}>
             <h6>Photos</h6>
-            <input
-              onMouseUp={(e) => {
-                e.preventDefault();
-                trackCustomEvent({
-                  category: 'Photos Slider',
-                  action: 'Click',
-                });
-              }}
-              style={{ width: '100%', paddingLeft: '0', paddingRight: '0' }}
-              type="range"
-              onChange={(e) => handleChange(e)}
-              defaultValue="0"
-            />
+            <GalleryController />
           </GridItem>
         </Grid>
       </Layout>
-      <RandomImageContainer>
-        {images.map((image, index) => (
-          <Draggable key={index}>
-            <RandomImage data-image={index}>
-              <img src={image.node.preview} alt="IG" />
-            </RandomImage>
-          </Draggable>
-        ))}
-      </RandomImageContainer>
-      <BackgroundImage />
+      <Gallery images={images} />
     </Fragment>
   );
 }

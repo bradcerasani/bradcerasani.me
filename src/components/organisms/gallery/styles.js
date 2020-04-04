@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 
-import { maxWidth } from '../theme';
+import { maxWidth } from '../../theme';
 
-export const RandomImage = styled.div`
+export const StyledGallery = styled.div`
+  display: contents;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+`;
+
+export const StyledGalleryImage = styled.div`
   cursor: grab;
   display: block;
   height: calc((100vw - ${maxWidth}) / 3);
   opacity: 0;
-  pointer-events: auto;
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   transition-duration: 90ms;
   transition-property: opacity;
   transition-timing-function: ease-in-out;
@@ -41,13 +49,4 @@ export const RandomImage = styled.div`
     user-select: none;
     width: 100%;
   }
-`;
-
-export const RandomImageContainer = styled.div`
-  height: 100%;
-  left: 0;
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
 `;

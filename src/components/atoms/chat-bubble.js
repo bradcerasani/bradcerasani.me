@@ -7,7 +7,7 @@ export const ChatBubble = styled.div`
   animation-fill-mode: both;
   animation-name: fadeInUp;
   animation-timing-function: ease-in-out;
-  background-color: #eee;
+  background-color: ${color.grey.lightest};
   border-radius: 1em;
   display: inline-block;
   font-family: ${font.family.system};
@@ -26,7 +26,7 @@ export const ChatBubble = styled.div`
   }
 
   &::before {
-    background-color: #eee;
+    background-color: ${color.grey.lightest};
     border-bottom-right-radius: 1em;
     height: 1em;
     left: -0.4em;
@@ -35,7 +35,7 @@ export const ChatBubble = styled.div`
   }
 
   &::after {
-    background-color: ${color.linen.default};
+    background-color: var(--backgroundColor);
     border-bottom-right-radius: 0.6em;
     height: 1em;
     left: -0.6em;

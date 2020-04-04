@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { maxWidth } from '../../theme';
+import { breakpoint } from '../../theme';
 
 export const StyledGallery = styled.div`
   display: contents;
@@ -12,12 +12,12 @@ export const StyledGallery = styled.div`
 `;
 
 export const StyledGalleryImage = styled.div`
-  --minDeviation: 10;
-  --maxDeviation: 40;
+  --minDeviation: 0;
+  --maxDeviation: 10;
 
-  --smallImage: 350px;
-  --mediumImage: 500px;
-  --largeImage: 600px;
+  --smallImage: 290px;
+  --mediumImage: 320px;
+  --largeImage: 360px;
 
   cursor: grab;
   display: block;
@@ -29,11 +29,29 @@ export const StyledGalleryImage = styled.div`
   transition-timing-function: ease-in-out;
   z-index: 5;
 
+  @media (min-width: ${breakpoint.md}) {
+    --minDeviation: 10;
+    --maxDeviation: 20;
+
+    --smallImage: 360px;
+    --mediumImage: 400px;
+    --largeImage: 440px;
+  }
+
+  @media (min-width: ${breakpoint.lg}) {
+    --minDeviation: 10;
+    --maxDeviation: 40;
+
+    --smallImage: 440px;
+    --mediumImage: 480px;
+    --largeImage: 540px;
+  }
+
   /* stylelint-disable-next-line */
   ${({ isForward }) =>
     isForward &&
     css`
-      z-index: 6;
+      /* z-index: 6; */
     `}
 
   /* Sizes */
@@ -78,12 +96,12 @@ export const StyledGalleryImage = styled.div`
 
   &:nth-of-type(6n + 5) {
     right: 0;
-    top: calc(50% - 200px);
+    top: calc(50% - calc(var(--mediumImage) / 2));
   }
 
   &:nth-of-type(6n + 6) {
     left: 0;
-    top: calc(50% - 200px);
+    top: calc(50% - calc(var(--mediumImage) / 2));
   }
 
   &::after {

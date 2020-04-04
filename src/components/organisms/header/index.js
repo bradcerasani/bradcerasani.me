@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { breakpoint } from '../../theme';
 import { Date, Logo } from '../../atoms';
@@ -59,7 +59,7 @@ export const Header = (props) => {
             setOverlayTransitioned(isVisible ? true : false)
           }
         >
-          <Fragment>
+          <>
             {links.map(({ to, label, imageSrc }, index) => (
               <NavItem
                 // TODO: data-visibility => isVisible now that the latest
@@ -76,7 +76,7 @@ export const Header = (props) => {
                 {imageSrc && <NavImage src={imageSrc} />}
               </NavItem>
             ))}
-          </Fragment>
+          </>
         </Nav>
       </HeroContainer>
     </StyledHeader>

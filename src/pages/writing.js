@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 
 import { PostList } from '../components/organisms';
@@ -9,13 +9,13 @@ function WritingPage(props) {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Fragment>
+    <>
       <Layout location={props.location} title={siteTitle}>
         <Head title="Writing" />
 
         <PostList posts={data.allMdx.edges} />
       </Layout>
-    </Fragment>
+    </>
   );
 }
 

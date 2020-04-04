@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Caption } from '../../../src/components/atoms';
@@ -26,13 +26,13 @@ export const Swatches = ({ colors, caption }) => {
   }
 
   return (
-    <Fragment>
+    <>
       <SwatchContainer>
         {colors.map((color, index) => (
           <Swatch key={index} style={{ backgroundColor: color }} />
         ))}
       </SwatchContainer>
       {caption && <Caption style={{ marginTop: '-1rem' }}>{caption}</Caption>}
-    </Fragment>
+    </>
   );
 };

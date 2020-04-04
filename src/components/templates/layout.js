@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
 import { GlobalStyle } from '../_global';
@@ -16,13 +16,13 @@ export const Layout = (props) => {
   const { children, backgroundColor } = props;
 
   return (
-    <Fragment>
+    <>
       <GlobalStyle backgroundColor={backgroundColor} />
       <Container>
         <Header {...props} />
         <MDXProvider components={components}>{children}</MDXProvider>
         <Footer />
       </Container>
-    </Fragment>
+    </>
   );
 };

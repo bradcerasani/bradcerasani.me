@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
@@ -14,7 +14,7 @@ function AboutPage(props) {
   const images = props.data.allInstaNode.edges;
 
   return (
-    <Fragment>
+    <>
       <Layout
         location={props.location}
         title={siteTitle}
@@ -72,7 +72,7 @@ function AboutPage(props) {
         </Grid>
       </Layout>
       <Gallery images={images} />
-    </Fragment>
+    </>
   );
 }
 

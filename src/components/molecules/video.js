@@ -43,7 +43,6 @@ export const Video = ({ vimeoId, caption, size, children }) => {
           return annotation;
         });
 
-      console.table(annotations);
       addCuePoints(player, annotations);
     }
 

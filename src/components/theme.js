@@ -22,7 +22,7 @@ export const color = {
   white: '#fafafa',
   highlight: 'hsl(48, 64%, 94%)',
   grey: {
-    darker: 'hsl(0, 0%, 20%)',
+    darker: 'hsl(0, 0%, 22.35%)',
     dark: 'hsl(0, 0%, 30%)',
     default: 'hsl(0, 0%, 40%)',
   },

@@ -1,25 +1,13 @@
 import styled, { css } from 'styled-components';
 
+import { color } from '../theme';
+
 export const FluidWrapper = styled.div`
-  background-color: #85a19f;
+  background-color: ${color.grey.darker};
   margin-bottom: 0.75rem;
   padding-bottom: 56.25%;
   position: relative;
   width: 100%;
-
-  &::after {
-    background-image: url('/images/gifs/loading.gif');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 480px 370px;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 0;
-  }
 
   iframe {
     height: 100%;

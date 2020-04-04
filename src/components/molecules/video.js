@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Player from '@vimeo/player';
 
-import { Caption, Figure, FluidWrapper } from '../atoms';
+import { Caption, Figure, FluidWrapper, Loading } from '../atoms';
 
 function addCuePoints(player, annotations) {
   annotations.forEach(({ time, annotation }) => {
@@ -59,6 +59,11 @@ export const Video = ({ vimeoId, caption, size, children }) => {
   return (
     <Figure size={size}>
       <FluidWrapper isLoaded={isLoaded}>
+        <Loading
+          src="/video/loading.mp4"
+          style={{ opacity: isLoaded ? '0' : 1 }}
+        />
+
         <div id={targetElementId} />
       </FluidWrapper>
 

@@ -1,54 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 
-import { StyledGallery, StyledGalleryImage } from './styles';
+import {
+  StyledGallery,
+  StyledGalleryImage,
+  StyledGalleryController,
+} from './styles';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 export const Gallery = ({ images }) => {
+  const [frontImage, setFrontImage] = useState(images.length);
+
   useEffect(() => {
-    const browserWidth =
-      window.innerWidth || document.documentElement.clientWidth;
-    const browserHeight =
-      window.innerHeight || document.documentElement.clientHeight;
+    const properties = ['top', 'right', 'bottom', 'left'];
 
-    let flip = false;
-
-    images.forEach((image, index) => {
+    for (let index = 0; index < images.length; index++) {
+      // TODO: Refactor to use refs
       const element = document.querySelector(`[data-image='${index}']`);
-      const body = document.getElementById('js-mdx-body');
+      const elementStyles = window.getComputedStyle(element);
+      const minDeviation = elementStyles.getPropertyValue('--minDeviation');
+      const maxDeviation = elementStyles.getPropertyValue('--maxDeviation');
+      const delta = parseInt(maxDeviation) - parseInt(minDeviation);
 
-      const gutterWidth = (browserWidth - body.offsetWidth) / 2;
-      const xMax = gutterWidth - element.offsetWidth - 20;
-      const yMax = browserHeight / 2 - element.offsetHeight;
-      const x = Math.floor(Math.random() * xMax);
-      const y = Math.floor(Math.random() * yMax);
+      properties.forEach((property) => {
+        const value = elementStyles.getPropertyValue(property);
 
-      if ((index + 1) % 2 === 0) {
-        flip = !flip;
-        element.style.left = `calc(${x}px)`;
-      } else {
-        element.style.right = `calc(${x}px)`;
-      }
+        if (parseInt(value) === 0) {
+          const deviation =
+            Math.floor(Math.random() * delta) + parseInt(minDeviation);
 
-      if (flip) {
-        element.style.top = `${y}px`;
-      } else {
-        element.style.bottom = `${y}px`;
-      }
-
-      if ((index + 1) % 5 === 0) {
-        element.style.bottom = 'auto';
-        element.style.top = `${browserHeight / 2 - element.offsetHeight / 2}px`;
-      }
-    });
+          element.style[property] = `${deviation}%`;
+        }
+      });
+    }
   }, [images]);
 
   return (
     <StyledGallery>
       {images.map((image, index) => (
-        <Draggable key={index}>
-          <StyledGalleryImage data-image={index}>
-            <img src={image.node.preview} alt="IG" />
+        <Draggable key={index} onStart={() => setFrontImage(index)}>
+          <StyledGalleryImage
+            data-image={index}
+            isForward={frontImage === index}
+          >
+            <img src={image.node.preview} alt={image.node.caption} />
           </StyledGalleryImage>
         </Draggable>
       ))}
@@ -56,10 +51,10 @@ export const Gallery = ({ images }) => {
   );
 };
 
-export const GalleryController = () => {
+export const GalleryController = ({ images }) => {
   function handleChange(event) {
     const value = event.currentTarget.value;
-    const imageIndex = Math.floor(value / 10);
+    const imageIndex = Math.floor(value / images.length);
     const elements = document.querySelectorAll(`[data-image]`);
 
     elements.forEach((element, index) => {
@@ -71,7 +66,7 @@ export const GalleryController = () => {
   }
 
   return (
-    <input
+    <StyledGalleryController
       onMouseUp={(e) => {
         e.preventDefault();
         trackCustomEvent({
@@ -79,7 +74,6 @@ export const GalleryController = () => {
           action: 'Click',
         });
       }}
-      style={{ width: '100%', paddingLeft: '0', paddingRight: '0' }}
       type="range"
       onChange={(e) => handleChange(e)}
       defaultValue="0"

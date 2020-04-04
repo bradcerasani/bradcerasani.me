@@ -67,7 +67,7 @@ function AboutPage(props) {
 
           <GridItem width={{ sm: '40%' }}>
             <h6>Photos</h6>
-            <GalleryController />
+            <GalleryController images={images} />
           </GridItem>
         </Grid>
       </Layout>
@@ -95,7 +95,7 @@ export const pageQuery = graphql`
       }
     }
 
-    allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 10) {
+    allInstaNode(sort: { fields: timestamp, order: ASC }, limit: 10, skip: 2) {
       edges {
         node {
           timestamp

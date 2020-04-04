@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import { font, color } from '../../theme';
 import { ChatBubble } from '../../atoms';
@@ -35,7 +36,19 @@ export const Footer = () => {
     <StyledFooter>
       <div>
         <span>RSS</span> •{' '}
-        <span onClick={() => setShowContact(!showContact)}>Say hey</span>
+        <span
+          onClick={(e) => {
+            e.preventDefault();
+            setShowContact(!showContact);
+            trackCustomEvent({
+              category: 'Interactive Elements',
+              label: 'Footer Contact - Say Hey',
+              action: 'Click',
+            });
+          }}
+        >
+          Say hey
+        </span>
         {showContact && <ChatBubble>brad cerasani at gmail dot com</ChatBubble>}
       </div>
     </StyledFooter>

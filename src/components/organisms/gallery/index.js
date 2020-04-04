@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import {
   StyledGallery,
   StyledGalleryImage,
   StyledGalleryController,
 } from './styles';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 export const Gallery = ({ images }) => {
   const [frontImage, setFrontImage] = useState(images.length);
@@ -70,7 +70,8 @@ export const GalleryController = ({ images }) => {
       onMouseUp={(e) => {
         e.preventDefault();
         trackCustomEvent({
-          category: 'Photos Slider',
+          category: 'Interactive Elements',
+          label: 'Photos Slider',
           action: 'Click',
         });
       }}

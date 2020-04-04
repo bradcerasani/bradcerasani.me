@@ -29,7 +29,7 @@ export const StyledGalleryImage = styled.div`
   transition-timing-function: ease-in-out;
   z-index: 5;
 
-  @media (min-width: ${breakpoint.md}) {
+  @media (min-width: ${breakpoint.lg}) {
     --minDeviation: 10;
     --maxDeviation: 20;
 
@@ -38,7 +38,7 @@ export const StyledGalleryImage = styled.div`
     --largeImage: 440px;
   }
 
-  @media (min-width: ${breakpoint.lg}) {
+  @media (min-width: ${breakpoint.xl}) {
     --minDeviation: 10;
     --maxDeviation: 40;
 

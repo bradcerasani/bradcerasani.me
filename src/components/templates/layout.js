@@ -13,11 +13,11 @@ const components = {
 };
 
 export const Layout = (props) => {
-  const { children, backgroundColor } = props;
+  const { children } = props;
 
   return (
     <>
-      <GlobalStyle backgroundColor={backgroundColor} />
+      <GlobalStyle />
       <Container>
         <Header {...props} />
         <MDXProvider components={components}>{children}</MDXProvider>

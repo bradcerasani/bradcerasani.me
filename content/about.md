@@ -1,6 +1,5 @@
 ---
 excerpt: I’ve been designing and implementing software for over a decade, with clients and collaborators that include Apple, Twitter, and the American Music Awards.
-backgroundColor: hsl(35, 30%, 86%);
 ---
 
 I’ve been designing and implementing software for over a decade, with clients and collaborators that include Apple, Twitter, and the American Music Awards.

@@ -2,7 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { css } from 'styled-components';
 
+import { color } from '../components/theme';
 import { Grid, GridItem } from '../components/molecules';
 import { Gallery, GalleryController } from '../components/organisms';
 import { Head, Layout } from '../components/templates';
@@ -10,20 +12,21 @@ import { Head, Layout } from '../components/templates';
 function AboutPage(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
-  const backgroundColor = props.data.mdx.frontmatter.backgroundColor;
   const images = props.data.allInstaNode.edges;
 
   return (
     <>
-      <Layout
-        location={props.location}
-        title={siteTitle}
-        backgroundColor={backgroundColor}
-      >
+      <Layout location={props.location} title={siteTitle}>
         <Head
           title="About"
           description="About Brad Cerasani; Design & Engineering."
         />
+
+        <style>{css`
+          :root {
+            --backgroundColor: ${color.linen.light};
+          }
+        `}</style>
 
         <section id="js-mdx-body">
           <MDXRenderer>{post.body}</MDXRenderer>
@@ -90,7 +93,6 @@ export const pageQuery = graphql`
       id
       body
       frontmatter {
-        backgroundColor
         excerpt
       }
     }

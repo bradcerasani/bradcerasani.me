@@ -1,5 +1,5 @@
 :root {
-  --backgroundColor: #1a1a1a;
+  --codeBackgroundColor: #1a1a1a;
   --color: #f0f0f0;
   --cyan: #64edff;
   --green: #67ffb8;
@@ -34,7 +34,7 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  background-color: var(--backgroundColor);
+  background-color: var(--codeBackgroundColor);
   border-radius: 8px;
   color: var(--color);
   margin-bottom: 2rem;
@@ -46,7 +46,7 @@ pre[class*='language-'] {
 
 pre *::selection {
   background-color: rgb(255, 255, 255, 0.05);
-  text-shadow: 0 0 4px var(--backgroundColor), 0 0 6px currentColor;
+  text-shadow: 0 0 4px var(--codeBackgroundColor), 0 0 6px currentColor;
 }
 
 /* Inline code */

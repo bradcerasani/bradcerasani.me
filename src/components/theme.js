@@ -18,17 +18,22 @@ export const font = {
 };
 
 export const color = {
-  black: '#1a1a1a',
-  white: '#fafafa',
+  black: 'hsl(0, 0%, 10%)',
+  white: 'hsl(0, 0%, 98%)',
   highlight: 'hsl(48, 64%, 94%)',
+
   grey: {
     darker: 'hsl(0, 0%, 22.35%)',
     dark: 'hsl(0, 0%, 30%)',
     default: 'hsl(0, 0%, 40%)',
+    light: 'hsl(0, 0%, 50%)',
+    lighter: 'hsl(0, 0%, 70%)',
+    lightest: 'hsl(0, 0%, 94%)',
   },
   linen: {
     dark: 'hsl(30, 3%, 69%)',
     default: 'hsl(35, 10%, 85%)',
+    light: 'hsl(35, 30%, 86%)',
   },
 
   red: {

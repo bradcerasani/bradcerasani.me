@@ -4,6 +4,10 @@ import { breakpoint, color, font, transition } from '../theme';
 import { Noise } from '../atoms/noise';
 
 const Elements = css`
+  :root {
+    --backgroundColor: ${color.linen.default};
+  }
+
   html,
   body {
     font-family: ${font.family.sansSerif};
@@ -16,8 +20,7 @@ const Elements = css`
   }
 
   body {
-    background-color: ${(props) =>
-      props.backgroundColor || color.linen.default};
+    background-color: var(--backgroundColor);
     line-height: 1.5;
     text-rendering: optimizeLegibility;
     transition-duration: ${transition.slow};

@@ -16,7 +16,6 @@ function BlogPostTemplate(props) {
       location={props.location}
       title={siteTitle}
       headline={post.frontmatter.title}
-      backgroundColor={color.white}
       date={date}
     >
       <Head
@@ -27,6 +26,10 @@ function BlogPostTemplate(props) {
 
       <style>
         {css`
+          :root {
+            --backgroundColor: ${color.white};
+          }
+
           html {
             scroll-behavior: smooth;
           }

@@ -7,8 +7,7 @@ import { ChatBubble } from '../../atoms';
 
 const StyledFooter = styled.footer`
   align-items: center;
-  border-top: 4px solid black;
-  color: ${color.grey.dark};
+  border-top: 4px solid currentColor;
   display: flex;
   font-family: ${font.family.serif};
   font-size: 1.125rem;

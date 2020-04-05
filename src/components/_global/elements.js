@@ -12,7 +12,7 @@ const Elements = css`
   body {
     font-family: ${font.family.sansSerif};
     font-size: ${font.size.body};
-    height: 100%;
+    min-height: 100%;
 
     @media (min-width: ${breakpoint.md}) {
       font-size: 20px;
@@ -88,8 +88,6 @@ const Elements = css`
   video {
     display: block;
     margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
   }
 

@@ -9,13 +9,13 @@ export const ChatBubble = styled.div`
   animation-timing-function: ease-in-out;
   background-color: ${color.grey.lightest};
   border-radius: 1em;
+  color: ${color.grey.darker};
   display: inline-block;
   font-family: ${font.family.system};
   font-size: 0.8rem;
   line-height: 1;
   margin-left: 1rem;
   padding: 0.4em 0.8em 0.4em 0.7em;
-  position: relative;
   position: absolute;
 
   &::before,

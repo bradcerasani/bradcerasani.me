@@ -7,7 +7,7 @@ export const StyledPostItemImage = styled.img`
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  right: -8rem;
+  right: -6rem;
   top: 0;
   transition-duration: 400ms;
   transition-timing-function: ease-out;
@@ -53,7 +53,6 @@ export const StyledPostItem = styled(Link)`
 `;
 
 export const StyledPostList = styled.div`
-  margin-left: -4rem;
   position: relative;
 
   &:hover {

@@ -14,5 +14,5 @@ export const StyledHeader = styled.div`
 export const HeroContainer = styled.div`
   display: flex;
   margin-top: 4rem;
-  min-height: 164px;
+  min-height: 9rem;
 `;

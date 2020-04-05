@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Head, Layout } from '../components/templates';
-import { FourOhFour } from '../components/organisms';
+import { FourOhFour, Theme, TigerBackground } from '../components/organisms';
 
 function PageNotFound(props) {
   const { data } = props;
@@ -16,6 +16,8 @@ function PageNotFound(props) {
     >
       <Head title="404: Page not found" />
 
+      <Theme />
+      <TigerBackground />
       <FourOhFour />
     </Layout>
   );

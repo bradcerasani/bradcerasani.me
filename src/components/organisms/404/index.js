@@ -4,22 +4,19 @@ import MutedIconSVG from '../../atoms/icons/muted.inline.svg';
 import UnmutedIconSVG from '../../atoms/icons/unmuted.inline.svg';
 import { Grid, GridItem } from '../../molecules';
 import {
-  Theme,
-  TigerBackground,
   Video,
   VideoContainer,
   VideoOverlay,
   VideoOverlayIcon,
 } from './styles';
 
+export { Theme, TigerBackground } from './styles';
+
 export const FourOhFour = () => {
   const [muted, setMuted] = useState(true);
 
   return (
     <>
-      <Theme />
-      <TigerBackground />
-
       <Grid style={{ marginBottom: '5rem', marginTop: '5rem' }} gutter="5rem">
         <GridItem width={{ sm: '50%' }}>
           <VideoContainer>
@@ -56,8 +53,8 @@ export const FourOhFour = () => {
           </h4>
 
           <p>
-            The page you requested was not found. A tiger may have gotten it or
-            it could be in Carole Baskin's septic tank.
+            The page you requested was not found. It could be in Carole Baskin's
+            septic tank.
           </p>
 
           {/* TODO: Refactor */}

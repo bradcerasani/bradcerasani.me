@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { breakpoint } from '../theme';
 
@@ -22,16 +22,25 @@ function getResponsiveWidth(width) {
   return styles;
 }
 
-export const Grid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-`;
-
 export const GridItem = styled.div`
   margin-bottom: 1.5rem;
   width: 100%;
 
   /* stylelint-disable-next-line */
   ${({ width }) => getResponsiveWidth(width)}
+`;
+
+export const Grid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  /* stylelint-disable-next-line */
+  ${({ gutter }) => css`
+    margin-left: calc(${gutter} * -1);
+
+    ${GridItem} {
+      padding-left: calc(${gutter});
+    }
+  `}
 `;

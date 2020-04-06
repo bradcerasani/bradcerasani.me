@@ -38,7 +38,7 @@ export const Footer = () => {
         <span
           onClick={(e) => {
             e.preventDefault();
-            setShowContact(!showContact);
+            setShowContact(true);
             trackCustomEvent({
               category: 'Interactive Elements',
               label: 'Footer Contact - Say Hey',

@@ -7,7 +7,7 @@ const Headings = css`
     align-self: flex-end;
     font-family: ${font.family.serif};
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.1;
     margin: 0;
     position: relative;
@@ -22,7 +22,7 @@ const Headings = css`
   h2 {
     font-family: ${font.family.serif};
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.1;
     margin-bottom: 0.5rem;
     margin-top: 0;
@@ -49,7 +49,7 @@ const Headings = css`
   h6 {
     font-family: ${font.family.serif};
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0;
     margin-bottom: 1rem;
     margin-top: 0;

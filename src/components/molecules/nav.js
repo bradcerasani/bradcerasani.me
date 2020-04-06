@@ -130,7 +130,7 @@ export const NavItem = styled(Link)`
   @media (max-width: calc(${breakpoint.sm} - 1px)) {
     font-family: ${font.family.serif};
     font-size: 2.625rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.025em;
     margin-bottom: 0.5rem;
     visibility: hidden;

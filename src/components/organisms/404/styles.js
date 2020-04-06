@@ -5,7 +5,6 @@ import { maxWidth } from '../../theme';
 export const Theme = createGlobalStyle`
   :root {
     --backgroundColor: #191609;
-    --colorShadow: #1e1d11;
   }
 
   body {
@@ -24,7 +23,7 @@ export const Theme = createGlobalStyle`
       position: absolute;
       top: 0;
       width: 100%;
-      z-index: -1;
+      z-index: -2;
     }
   }
 
@@ -34,13 +33,13 @@ export const Theme = createGlobalStyle`
 `;
 
 export const Loading = styled.div`
-  background-color: var(--colorShadow);
+  background-color: var(--backgroundColor);
   height: 100%;
   left: 0;
   pointer-events: none;
   position: fixed;
   top: 0;
-  transition-delay: 100ms;
+  transition-delay: 200ms;
   transition-duration: 600ms;
   transition-property: opacity;
   transition-timing-function: ease-in-out;
@@ -49,29 +48,18 @@ export const Loading = styled.div`
 `;
 
 export const TigerBackground = styled.div`
+  background-image: radial-gradient(
+    transparent calc(${maxWidth} / 2),
+    var(--backgroundColor)
+  );
   height: 100%;
   left: 0;
+  mix-blend-mode: multiply;
+  opacity: 1;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: -1;
-
-  /* Vignette */
-  &::after {
-    background-image: radial-gradient(
-      transparent calc(${maxWidth} / 2),
-      var(--colorShadow)
-    );
-    bottom: 0;
-    content: '';
-    height: 100%;
-    left: 0;
-    mix-blend-mode: multiply;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
 `;
 
 export const VideoContainer = styled.div`

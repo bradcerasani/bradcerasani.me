@@ -67,8 +67,7 @@ export const GalleryController = ({ images }) => {
 
   return (
     <StyledGalleryController
-      onMouseUp={(e) => {
-        e.preventDefault();
+      onMouseUp={() => {
         trackCustomEvent({
           category: 'Interactive Elements',
           label: 'Photos Slider',

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
-import { font, color } from '../../theme';
+import { font } from '../../theme';
 import { ChatBubble } from '../../atoms';
 
 const StyledFooter = styled.footer`
@@ -21,10 +21,6 @@ const StyledFooter = styled.footer`
     cursor: pointer;
     display: inline-block;
     user-select: none;
-
-    &:hover {
-      color: ${color.grey.darker};
-    }
   }
 `;
 

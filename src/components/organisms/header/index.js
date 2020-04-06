@@ -17,15 +17,15 @@ export const Header = (props) => {
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
 
-  // Lock scroll when Nav overlay is visible
-  document.body.style.overflow = isVisible ? 'hidden' : 'scroll';
-
   useEffect(() => {
     const isClient = typeof window === 'object';
 
     if (!isClient) {
       return false;
     }
+
+    // Lock scroll when Nav overlay is visible
+    document.body.style.overflow = isVisible ? 'hidden' : 'scroll';
 
     // Ensure Nav is hidden when viewport is larger than sm breakpoint
     function handleResize() {
@@ -37,7 +37,7 @@ export const Header = (props) => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [isVisible]);
 
   return (
     <StyledHeader>

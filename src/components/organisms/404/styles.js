@@ -8,6 +8,10 @@ export const Theme = createGlobalStyle`
   body {
     color: #8a694a;
   }
+
+  a:hover {
+    color: inherit;
+  }
 `;
 
 export const TigerBackground = styled.div`

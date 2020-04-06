@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -10,6 +10,10 @@ function BlogPostTemplate(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
   const date = post.frontmatter.date;
+
+  useEffect(() => {
+    document.body.style.scrollBehavior = 'smooth';
+  });
 
   return (
     <Layout
@@ -28,10 +32,6 @@ function BlogPostTemplate(props) {
         {css`
           :root {
             --backgroundColor: ${color.white};
-          }
-
-          html {
-            scroll-behavior: smooth;
           }
         `}
       </style>

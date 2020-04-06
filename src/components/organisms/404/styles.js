@@ -11,6 +11,11 @@ export const Theme = createGlobalStyle`
 `;
 
 export const TigerBackground = styled.div`
+  animation-delay: 400ms;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
   background-color: var(--backgroundColor);
   height: 100%;
   left: 0;

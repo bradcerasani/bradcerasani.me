@@ -4,10 +4,10 @@ import { breakpoint } from '../../theme';
 
 export const StyledHeader = styled.div`
   margin-bottom: 3.5rem;
-  margin-top: 4rem;
+  padding-top: 4rem;
 
   @media (min-width: ${breakpoint.md}) {
-    margin-top: 5rem;
+    padding-top: 5rem;
   }
 `;
 

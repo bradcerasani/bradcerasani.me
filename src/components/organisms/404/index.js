@@ -10,7 +10,7 @@ import {
   VideoOverlayIcon,
 } from './styles';
 
-export { Theme, TigerBackground } from './styles';
+export { Theme, TigerBackground, Loading } from './styles';
 
 export const FourOhFour = () => {
   const [muted, setMuted] = useState(true);

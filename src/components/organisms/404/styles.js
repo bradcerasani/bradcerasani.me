@@ -1,12 +1,31 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
+import { maxWidth } from '../../theme';
+
 export const Theme = createGlobalStyle`
   :root {
     --backgroundColor: #191609;
+    --colorShadow: #1e1d11;
   }
 
   body {
     color: #8a694a;
+    position: relative;
+
+    &::before {
+      background-image: url('/images/textures/tiger-pattern.jpg');
+      background-repeat: repeat;
+      background-size: 400px 400px;
+      content: '';
+      filter: contrast(0.5);
+      height: 100%;
+      left: 0;
+      opacity: 0.05;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
   }
 
   a:hover {
@@ -14,13 +33,22 @@ export const Theme = createGlobalStyle`
   }
 `;
 
+export const Loading = styled.div`
+  background-color: var(--colorShadow);
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition-delay: 100ms;
+  transition-duration: 600ms;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  z-index: 10;
+`;
+
 export const TigerBackground = styled.div`
-  animation-delay: 400ms;
-  animation-duration: 800ms;
-  animation-fill-mode: both;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in-out;
-  background-color: var(--backgroundColor);
   height: 100%;
   left: 0;
   position: fixed;
@@ -28,32 +56,21 @@ export const TigerBackground = styled.div`
   width: 100%;
   z-index: -1;
 
-  &::before,
+  /* Vignette */
   &::after {
+    background-image: radial-gradient(
+      transparent calc(${maxWidth} / 2),
+      var(--colorShadow)
+    );
     bottom: 0;
     content: '';
     height: 100%;
     left: 0;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
     position: absolute;
     top: 0;
     width: 100%;
-  }
-
-  /* Tiger pattern */
-  &::before {
-    background-attachment: fixed;
-    background-image: url('/images/textures/tiger-pattern.jpg');
-    background-repeat: repeat;
-    background-size: 400px 400px;
-    filter: contrast(0.5);
-    opacity: 0.08;
-  }
-
-  /* Vignette */
-  &::after {
-    background-image: radial-gradient(transparent, #1e1d11);
-    mix-blend-mode: multiply;
-    opacity: 0.8;
   }
 `;
 
@@ -66,7 +83,7 @@ export const VideoContainer = styled.div`
 
 export const Video = styled.video`
   background-color: var(--backgroundColor);
-  box-shadow: 0 4px 24px rgb(0, 0, 0, 0.25), 0 4px 64px rgb(0, 0, 0, 0.5);
+  box-shadow: 0 4px 24px rgb(0, 0, 0, 0.2), 0 4px 64px rgb(0, 0, 0, 0.4);
   height: 100%;
   left: 0;
   margin-bottom: 8rem;

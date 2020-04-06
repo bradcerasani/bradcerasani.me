@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 
 import { Head, Layout } from '../components/templates';
-import { FourOhFour, Theme, TigerBackground } from '../components/organisms';
+import {
+  FourOhFour,
+  Theme,
+  TigerBackground,
+  Loading,
+} from '../components/organisms';
 
 function PageNotFound(props) {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  });
 
   return (
     <Layout
@@ -15,6 +25,8 @@ function PageNotFound(props) {
       headline="Page Not Found"
     >
       <Head title="404: Page not found" />
+
+      <Loading style={{ opacity: isLoaded ? 0 : 1 }} />
 
       <Theme />
       <TigerBackground />

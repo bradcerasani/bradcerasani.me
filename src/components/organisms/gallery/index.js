@@ -38,7 +38,7 @@ export const Gallery = ({ images }) => {
   return (
     <StyledGallery>
       {images.map((image, index) => (
-        <Draggable key={index} onStart={() => setFrontImage(index)}>
+        <Draggable key={index} onStart={(e) => e.preventDefault()}>
           <StyledGalleryImage
             data-image={index}
             isForward={frontImage === index}

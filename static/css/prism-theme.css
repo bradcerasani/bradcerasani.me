@@ -19,9 +19,10 @@ pre[class*='language-'] {
   -o-tab-size: 4;
   -webkit-hyphens: none;
   background: none;
-  font-family: 'Jetbrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Courier New',
+  font-family: JBM, Consolas, Menlo, Monaco, source-code-pro, 'Courier New',
     monospace;
   font-size: 0.8rem;
+  font-weight: 400;
   hyphens: none;
   line-height: 1.5;
   tab-size: 4;
@@ -54,15 +55,10 @@ pre *::selection {
   background-color: var(--color);
   border-radius: 2px;
   font-size: 0.8375rem;
-  font-weight: inherit;
   padding: 4px 4px 2px;
   white-space: normal;
 }
 
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
 .token.italic {
   font-style: italic;
 }

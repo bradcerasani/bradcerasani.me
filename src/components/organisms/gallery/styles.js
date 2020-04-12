@@ -15,9 +15,9 @@ export const StyledGalleryImage = styled.div`
   --minDeviation: 0;
   --maxDeviation: 10;
 
-  --smallImage: 290px;
-  --mediumImage: 320px;
-  --largeImage: 360px;
+  --smallImage: 180px;
+  --mediumImage: 225px;
+  --largeImage: 250px;
 
   cursor: grab;
   display: block;
@@ -28,6 +28,15 @@ export const StyledGalleryImage = styled.div`
   transition-property: opacity;
   transition-timing-function: ease-in-out;
   z-index: 5;
+
+  @media (min-width: ${breakpoint.md}) {
+    --minDeviation: 0;
+    --maxDeviation: 10;
+
+    --smallImage: 290px;
+    --mediumImage: 320px;
+    --largeImage: 360px;
+  }
 
   @media (min-width: ${breakpoint.lg}) {
     --minDeviation: 10;
@@ -129,4 +138,11 @@ export const StyledGalleryController = styled.input`
   padding-left: 0;
   padding-right: 0;
   width: 100%;
+
+  @media (max-width: ${breakpoint.md}) {
+    &::-webkit-slider-thumb {
+      height: 1.75rem;
+      width: 1.75rem;
+    }
+  }
 `;

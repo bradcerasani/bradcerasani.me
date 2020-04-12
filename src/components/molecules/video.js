@@ -58,10 +58,7 @@ export const Video = ({ vimeoId, caption, size, children }) => {
   return (
     <Figure size={size}>
       <FluidWrapper isLoaded={isLoaded}>
-        <Loading
-          src="/video/loading.mp4"
-          style={{ opacity: isLoaded ? '0' : 1 }}
-        />
+        <Loading style={{ opacity: isLoaded ? '0' : 1 }} />
 
         <div id={targetElementId} />
       </FluidWrapper>

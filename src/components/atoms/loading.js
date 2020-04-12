@@ -24,7 +24,7 @@ const StyledVideo = styled.video`
   }
 `;
 
-export const Loading = ({ src, ...props }) => {
+export const Loading = ({ ...props }) => {
   return (
     <StyledVideo {...props} preload="auto" autoPlay loop muted playsInline>
       <source src="/video/loading.mp4" type="video/mp4" />

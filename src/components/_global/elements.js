@@ -27,11 +27,13 @@ const Elements = css`
     transition-property: background-color, color;
     transition-timing-function: ease-in-out;
 
+    /* TODO: remove?
     &::after {
       ${Noise}
       opacity: 0.2;
       z-index: 0;
     }
+    */
   }
 
   section {
@@ -46,8 +48,13 @@ const Elements = css`
 
   ol,
   ul {
+    list-style-position: inside;
     margin-left: 0;
     padding-left: 0;
+
+    @media (min-width: ${breakpoint.md}) {
+      list-style-position: outside;
+    }
   }
 
   ul {
@@ -76,7 +83,7 @@ const Elements = css`
     &::after {
       content: '↟';
       display: inline-block;
-      padding-left: 8px;
+      padding-left: 0.25rem;
       position: relative;
       transform: rotate(45deg);
       transform-origin: 100%;

@@ -4,6 +4,7 @@ import { color } from '../theme';
 
 export const FluidWrapper = styled.div`
   background-color: ${color.grey.darker};
+  background-color: HSL(290, 10%, 20%);
   margin-bottom: 0.75rem;
   padding-bottom: 56.25%;
   position: relative;

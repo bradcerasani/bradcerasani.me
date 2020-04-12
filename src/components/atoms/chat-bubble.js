@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { color, font } from '../theme';
+import { breakpoint, color, font } from '../theme';
 
 export const ChatBubble = styled.div`
   animation-duration: 400ms;
@@ -12,11 +12,12 @@ export const ChatBubble = styled.div`
   color: ${color.grey.darker};
   display: inline-block;
   font-family: ${font.family.system};
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   line-height: 1;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   padding: 0.4em 0.8em 0.4em 0.7em;
   position: absolute;
+  white-space: nowrap;
 
   &::before,
   &::after {
@@ -41,5 +42,9 @@ export const ChatBubble = styled.div`
     left: -0.6em;
     width: 0.6em;
     z-index: 0;
+  }
+
+  @media (min-width: ${breakpoint.md}) {
+    margin-left: 1rem;
   }
 `;

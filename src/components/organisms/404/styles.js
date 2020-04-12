@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-import { maxWidth } from '../../theme';
+import { breakpoint, maxWidth } from '../../theme';
 
 export const Theme = createGlobalStyle`
   :root {
@@ -65,8 +65,11 @@ export const TigerBackground = styled.div`
 export const VideoContainer = styled.div`
   padding-bottom: 100%;
   position: relative;
-  transform: rotate(-3deg) scale(1.2);
   width: 100%;
+
+  @media (min-width: ${breakpoint.md}) {
+    transform: rotate(-3deg) scale(1.2);
+  }
 `;
 
 export const Video = styled.video`

@@ -26,6 +26,7 @@ export const FourOhFour = () => {
               autoPlay
               loop
               playsInline
+              playsinline
               src="/video/404-tiger-king.mp4"
               type="video/mp4"
             />

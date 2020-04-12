@@ -13,14 +13,14 @@ export const font = {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
   },
   size: {
-    body: '18px',
+    body: '16px',
   },
 };
 
 export const color = {
   black: 'hsl(0, 0%, 10%)',
   white: 'hsl(0, 0%, 98%)',
-  highlight: 'hsl(48, 64%, 94%)',
+  highlight: 'hsl(48, 24%, 94%)',
 
   grey: {
     darker: 'hsl(0, 0%, 22.35%)',
@@ -31,7 +31,7 @@ export const color = {
     lightest: 'hsl(0, 0%, 94%)',
   },
   linen: {
-    dark: 'hsl(30, 3%, 69%)',
+    dark: 'hsl(35, 5%, 50%)',
     default: 'hsl(35, 10%, 85%)',
     light: 'hsl(35, 30%, 86%)',
   },

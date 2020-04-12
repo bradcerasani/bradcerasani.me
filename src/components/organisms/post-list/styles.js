@@ -1,18 +1,25 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { color } from '../../theme';
+import { breakpoint, color } from '../../theme';
 
 export const StyledPostItemImage = styled.img`
+  --width: 200px;
+
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  right: -6rem;
+  right: 0;
   top: 0;
   transition-duration: 400ms;
   transition-timing-function: ease-out;
-  width: 400px;
+  width: var(--width);
   z-index: 0;
+
+  @media (min-width: ${breakpoint.lg}) {
+    --width: 400px;
+    right: -6rem;
+  }
 `;
 
 export const StyledPostItem = styled(Link)`
@@ -36,7 +43,6 @@ export const StyledPostItem = styled(Link)`
     z-index: 1;
   }
 
-  &:hover,
   &.js-hover {
     transition-duration: 100ms;
 
@@ -45,9 +51,13 @@ export const StyledPostItem = styled(Link)`
     }
 
     ${StyledPostItemImage} {
-      opacity: 1;
+      opacity: 0.2;
       transition-delay: 300ms;
       transition-duration: 200ms;
+
+      @media (min-width: ${breakpoint.lg}) {
+        opacity: 1;
+      }
     }
   }
 `;

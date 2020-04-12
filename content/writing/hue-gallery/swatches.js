@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { breakpoint } from '../../../src/components/theme';
 import { Caption } from '../../../src/components/atoms';
-
-const swatchDiameter = '2rem';
 
 export const SwatchContainer = styled.div`
   display: flex;
@@ -13,11 +12,21 @@ export const SwatchContainer = styled.div`
 `;
 
 export const Swatch = styled.div`
-  border-radius: ${swatchDiameter};
-  height: ${swatchDiameter};
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  width: ${swatchDiameter};
+  --diameter: 1.5rem;
+  --margin: 0.25rem;
+
+  border-radius: var(--diameter);
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: var(--diameter);
+  margin-left: var(--margin);
+  margin-right: var(--margin);
+  width: var(--diameter);
+
+  @media (min-width: ${breakpoint.md}) {
+    --diameter: 2rem;
+    --margin: 0.5rem;
+  }
 `;
 
 export const Swatches = ({ colors, caption }) => {

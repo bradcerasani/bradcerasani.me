@@ -34,6 +34,9 @@ export const Footer = () => {
         <span
           onClick={(e) => {
             e.preventDefault();
+            if (showContact) {
+              return false;
+            }
             setShowContact(true);
             trackCustomEvent({
               category: 'Interactive Elements',
@@ -41,6 +44,7 @@ export const Footer = () => {
               action: 'Click',
             });
           }}
+          style={{ cursor: showContact ? 'auto' : 'pointer' }}
         >
           Say hey
         </span>

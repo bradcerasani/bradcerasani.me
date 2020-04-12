@@ -13,6 +13,8 @@ function getResponsiveWidth(width) {
           width: calc(${width[point]});
         }
       `;
+    } else if (point === 'base') {
+      styles += `width: calc(${width[point]});`;
     } else {
       // eslint-disable-next-line no-console
       console.warn(`'${width[point]}' is not supported by GridItem`);

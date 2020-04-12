@@ -33,9 +33,9 @@ function AboutPage(props) {
         </section>
 
         <Grid>
-          <GridItem width={{ sm: '30%' }}>
+          <GridItem width={{ base: '50%', sm: '30%' }}>
             <h6>Elsewhere</h6>
-            <ul>
+            <ul style={{ marginBottom: '0' }}>
               {/* TODO: Pull from site settings? */}
               {['Instagram', 'Twitter', 'GitHub'].map((link) => (
                 <li key={link}>
@@ -43,6 +43,7 @@ function AboutPage(props) {
                     href={`https://${link.toLowerCase()}.com/bradcerasani`}
                     rel="noopener noreferrer"
                     target="_blank"
+                    style={{ textDecoration: 'none' }}
                   >
                     {link}
                   </OutboundLink>
@@ -51,15 +52,16 @@ function AboutPage(props) {
             </ul>
           </GridItem>
 
-          <GridItem width={{ sm: '30%' }}>
+          <GridItem width={{ base: '50%', sm: '30%' }}>
             <h6>Site Archives</h6>
-            <ul>
+            <ul style={{ marginBottom: '0' }}>
               {['2014', '2013', '2012', '2011', '2010'].map((year) => (
                 <li key={year}>
                   <OutboundLink
                     href={`https://${year}.bradcerasani.me`}
                     rel="noopener noreferrer"
                     target="_blank"
+                    style={{ textDecoration: 'none' }}
                   >
                     {year}
                   </OutboundLink>

@@ -8,7 +8,7 @@ import MenuIconSVG from '../atoms/icons/menu.inline.svg';
 
 export const NavInvertWrapper = styled.div`
   display: contents;
-  transition-duration: ${transition.default};
+  transition-duration: 200ms;
   transition-property: color, text-shadow, filter;
   transition-timing-function: ease-in-out;
 
@@ -32,11 +32,11 @@ export const NavInvertWrapper = styled.div`
 
 export const NavMenuIcon = styled(MenuIconSVG)`
   fill: currentColor;
-  height: 10px;
-  margin-top: 4px; /* TODO: Remove once logo is SVG */
+  height: 12px;
+  margin-top: -1px;
   position: absolute;
-  right: 2rem;
-  top: 4rem;
+  right: 0;
+  top: 2rem;
   z-index: 10;
 
   /* Nav is always visible at larger viewports, so we can hide the icon */
@@ -47,32 +47,33 @@ export const NavMenuIcon = styled(MenuIconSVG)`
 
 // Nav is an overlay on small viewports, and a right-aligned stacked list on all others
 export const Nav = styled.div`
-  --initialInset: 1rem;
 
   /* Nav styles between viewports differ enough to warrant a max-width media query over overrides */
   @media (max-width: calc(${breakpoint.sm} - 1px)) {
     background-color: ${color.black};
     display: flex;
     flex-direction: column;
-    height: calc(100vh - var(--initialInset));
+    height: 100vh;
     justify-content: center;
     left: 0;
     opacity: 0;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-bottom: 6rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     pointer-events: none;
     position: fixed;
     top: 0;
-    transform: translate(calc(var(--initialInset) / 2), calc(var(--initialInset) / 2));
-    transition-duration: ${transition.default};
-    transition-property: background-color, color, transform, width, height, opacity;
+    transition-duration: 200ms;
+    transition-property: background-color, color, opacity;
     transition-timing-function: ease-in-out;
-    width: calc(100vw - var(--initialInset));
-    will-change: background-color, color, transform, width, height, opacity;
+    width: 100vw;
+    will-change: background-color, color, opacity;
     z-index: 5;
 
     &::after {
       ${Noise}
+
+      opacity: 0.2;
     }
 
     /* stylelint-disable-next-line */
@@ -81,9 +82,6 @@ export const Nav = styled.div`
       css`
         color: ${color.white};
         opacity: 1;
-        width: 100vw;
-        height: 100vh;
-        transform: translate(0, 0);
         pointer-events: auto;
       `}
   }
@@ -117,6 +115,7 @@ export const NavImage = styled.img`
 
 export const NavItem = styled(Link)`
   display: block;
+  text-decoration: none;
 
   &.is-active {
     &::after {
@@ -129,10 +128,10 @@ export const NavItem = styled(Link)`
   /* Similar to Nav, < sm styles differ enough to warrant max-width media query */
   @media (max-width: calc(${breakpoint.sm} - 1px)) {
     font-family: ${font.family.serif};
-    font-size: 2.625rem;
-    font-weight: 700;
-    letter-spacing: 0.025em;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.375;
     visibility: hidden;
 
     ${CAText} /* stylelint-disable-line */
@@ -148,7 +147,7 @@ export const NavItem = styled(Link)`
       props['data-visibility'] === 'true' &&
       css`
         visibility: visible;
-        animation-duration: 800ms;
+        animation-duration: 400ms;
         animation-fill-mode: both;
         animation-name: fadeInUpSkew;
         animation-timing-function: ease-in-out;
@@ -157,7 +156,6 @@ export const NavItem = styled(Link)`
 
   @media (min-width: ${breakpoint.sm}) {
     padding-right: 0.5rem;
-    text-decoration: none;
 
     &.is-active {
       &::after {

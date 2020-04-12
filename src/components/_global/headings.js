@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { breakpoint, color, font } from '../theme';
+import { breakpoint, font } from '../theme';
 
 const Headings = css`
   h1 {
@@ -48,11 +48,8 @@ const Headings = css`
   }
 
   h4 {
-    color: ${color.grey.dark};
     font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-weight: 500;
   }
 
   h6 {

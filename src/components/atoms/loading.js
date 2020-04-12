@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { breakpoint } from '../theme';
+
 const StyledVideo = styled.video`
+  --size: 150px;
+
   display: block;
-  height: 250px;
   left: 50%;
   pointer-events: none;
   position: absolute;
@@ -12,15 +15,19 @@ const StyledVideo = styled.video`
   transition-duration: 200ms;
   transition-property: opacity;
   transition-timing-function: ease-in-out;
-  width: 250px;
+  width: var(--size);
   will-change: opacity;
   z-index: 0;
+
+  @media (min-width: ${breakpoint.md}) {
+    --size: 250px;
+  }
 `;
 
 export const Loading = ({ src, ...props }) => {
   return (
-    <StyledVideo {...props} controls={false} autoPlay loop muted playsInline>
-      <source src={src} type="video/mp4" />
+    <StyledVideo {...props} preload="auto" autoPlay loop muted playsInline>
+      <source src="/video/loading.mp4" type="video/mp4" />
     </StyledVideo>
   );
 };

@@ -95,10 +95,10 @@ We only want one image showing in the viewport at a time, so let’s wrap our im
 Basic Color Thief usage looks something like this:
 
 ```js
-  const colorThief = new ColorThief();
-  const sourceImage = document.getElementById(‘myImage’);
-  colorThief.getPalette(sourceImage, 3);
-  // returns [[135, 206, 235], [0, 206, 209], [238, 59, 26]]
+const colorThief = new ColorThief();
+const sourceImage = document.getElementById(‘myImage’);
+colorThief.getPalette(sourceImage, 3);
+// returns [[135, 206, 235], [0, 206, 209], [238, 59, 26]]
 ```
 
 To run Color Thief on each image in our page, we’ll first build an array of image elements with `document.getElementsByTagName(‘img’)`. Now we can iterate over this array, calling `colorThief.getPalette()` on each item and writing the resulting RGB data to a `colorCache` object that’s keyed by a hash of the image`src`. We should also add an event listener to our `forEach` loop to make sure each image is loaded before we send it to Color Thief.

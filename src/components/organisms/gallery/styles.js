@@ -141,8 +141,8 @@ export const StyledGalleryController = styled.input`
 
   @media (max-width: ${breakpoint.md}) {
     &::-webkit-slider-thumb {
-      height: 1.75rem;
-      width: 1.75rem;
+      height: 2rem;
+      width: 2rem;
     }
   }
 `;

@@ -10,8 +10,7 @@ export const Note = styled.div`
   font-size: 0.9rem;
   font-style: italic;
   line-height: 1.5;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin-bottom: 2rem;
   padding: 1.5rem;
 
   p {
@@ -20,5 +19,7 @@ export const Note = styled.div`
 
   @media (min-width: ${breakpoint.md}) {
     font-size: 0.8rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
   }
 `;

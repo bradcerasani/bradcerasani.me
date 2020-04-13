@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Player from '@vimeo/player';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { breakpoint } from '../theme';
 import { Caption, Figure, FluidWrapper, Loading } from '../atoms';
 
+// On mobile some captions wrap to 2 lines, so we need an
+// explicit min-height to prevent reflow on caption change
+
 const VideoCaption = styled(Caption)`
-  min-height: 3rem;
+  transition-duration: 400ms;
+  transition-property: height, min-height;
+  transition-timing-function: ease-in-out;
+
+  /* stylelint-disable-next-line */
+  ${({ isPlaying }) =>
+    isPlaying &&
+    css`
+      min-height: 3rem;
+    `}
 
   @media (min-width: ${breakpoint.md}) {
     min-height: 1.5rem;
@@ -24,6 +36,7 @@ function addCuePoints(player, annotations) {
 
 export const Video = ({ vimeoId, caption, size, children }) => {
   const [isLoaded, setLoaded] = useState(false);
+  const [isPlaying, setPlaying] = useState(false);
   const [captionText, setCaption] = useState(caption);
   const targetElementId = `js-${vimeoId}`;
 
@@ -58,6 +71,7 @@ export const Video = ({ vimeoId, caption, size, children }) => {
 
     // Set up event listeners
     player.on('loaded', () => setLoaded(true));
+    player.on('playing', () => setPlaying(true));
     player.on('cuepoint', (event) => setCaption(event.data.annotation));
 
     return () => {
@@ -73,7 +87,10 @@ export const Video = ({ vimeoId, caption, size, children }) => {
         <div id={targetElementId} />
       </FluidWrapper>
 
-      <VideoCaption dangerouslySetInnerHTML={{ __html: captionText }} />
+      <VideoCaption
+        dangerouslySetInnerHTML={{ __html: captionText }}
+        isPlaying={isPlaying}
+      />
     </Figure>
   );
 };

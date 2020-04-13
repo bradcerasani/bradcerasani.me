@@ -9,7 +9,7 @@ export const Figure = styled.figure`
   margin-right: -1.5rem;
   margin-top: 0;
 
-  @media (min-width: ${breakpoint.lg}) {
+  @media (min-width: ${breakpoint.md}) {
     margin-left: 0;
     margin-right: 0;
 
@@ -17,10 +17,10 @@ export const Figure = styled.figure`
       switch (size) {
         case 'large':
           return css`
-            margin-left: -200px;
-            margin-right: -200px;
+            margin-left: -3rem;
+            margin-right: -3rem;
             margin-top: 3rem;
-            width: calc(100% + 400px);
+            width: calc(100% + 6rem);
           `;
 
         case 'full':
@@ -39,5 +39,16 @@ export const Figure = styled.figure`
         default:
       }
     }}
+  }
+
+  @media (min-width: ${breakpoint.lg}) {
+    ${({ size }) =>
+      size === 'large' &&
+      css`
+        margin-left: -10rem;
+        margin-right: -10rem;
+        margin-top: 3rem;
+        width: calc(100% + 20rem);
+      `}
   }
 `;

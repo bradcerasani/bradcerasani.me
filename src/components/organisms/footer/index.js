@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   font-size: 1.125rem;
   margin-top: 1.5rem;
   padding-bottom: 3rem;
-  padding-top: 3rem;
+  padding-top: 1.5rem;
   transition-duration: 400ms;
   transition-property: color;
   transition-timing-function: ease-in-out;
@@ -27,6 +27,7 @@ const StyledFooter = styled.footer`
 
   @media (min-width: ${breakpoint.lg}) {
     margin-top: 3rem;
+    padding-top: 3rem;
   }
 `;
 
@@ -39,6 +40,7 @@ export const Footer = () => {
         <a href="/rss.xml">RSS</a>
         &nbsp;•&nbsp;
         <a
+          href="#show-email"
           onClick={(e) => {
             e.preventDefault();
             if (!showContact) {

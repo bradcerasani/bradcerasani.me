@@ -6,7 +6,7 @@ const verticalOrientation = css`
   margin-top: -1.75rem;
   position: absolute;
 
-  @media (min-width: ${breakpoint.lg}) {
+  @media (min-width: ${breakpoint.md}) {
     margin-left: -2rem;
     margin-top: 0;
     transform: rotate(-90deg) translateY(-8ch);
@@ -25,7 +25,7 @@ export const Date = styled.div`
   /* stylelint-disable-next-line */
   ${(props) => props.orientation === 'vertical' && verticalOrientation}
 
-  @media(min-width: ${breakpoint.lg}) {
+  @media(min-width: ${breakpoint.md}) {
     font-size: 0.6rem;
   }
 `;

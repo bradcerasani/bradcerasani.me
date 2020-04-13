@@ -32,11 +32,13 @@ export const NavInvertWrapper = styled.div`
 
 export const NavMenuIcon = styled(MenuIconSVG)`
   fill: currentColor;
-  height: 12px;
-  margin-top: -1px;
+  height: calc(12px + 2rem);
+  margin-top: -2px;
+  padding: 1rem;
   position: absolute;
-  right: 0;
-  top: 2rem;
+  right: -1rem;
+  -webkit-tap-highlight-color: transparent;
+  top: 1rem;
   z-index: 10;
 
   /* Nav is always visible at larger viewports, so we can hide the icon */
@@ -73,7 +75,7 @@ export const Nav = styled.div`
     &::after {
       ${Noise}
 
-      opacity: 0.2;
+      opacity: 0.4;
     }
 
     /* stylelint-disable-next-line */
@@ -94,6 +96,7 @@ export const Nav = styled.div`
     justify-content: flex-end;
     margin-bottom: 0.7rem; /* optically align to baseline of byline */
     position: relative;
+    margin-right: -0.5rem;
   }
 `;
 
@@ -147,10 +150,10 @@ export const NavItem = styled(Link)`
       props['data-visibility'] === 'true' &&
       css`
         visibility: visible;
-        animation-duration: 400ms;
+        animation-duration: 800ms;
         animation-fill-mode: both;
-        animation-name: fadeInUpSkew;
-        animation-timing-function: ease-in-out;
+        animation-name: fadeInUp;
+        animation-timing-function: ease;
       `}
     }
 

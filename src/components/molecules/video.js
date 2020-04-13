@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Player from '@vimeo/player';
+import styled from 'styled-components';
 
+import { breakpoint } from '../theme';
 import { Caption, Figure, FluidWrapper, Loading } from '../atoms';
+
+const VideoCaption = styled(Caption)`
+  min-height: 3rem;
+
+  @media (min-width: ${breakpoint.md}) {
+    min-height: 1.5rem;
+  }
+`;
 
 function addCuePoints(player, annotations) {
   annotations.forEach(({ time, annotation }) => {
@@ -18,10 +28,10 @@ export const Video = ({ vimeoId, caption, size, children }) => {
   const targetElementId = `js-${vimeoId}`;
 
   useEffect(() => {
-    // TODO: pull color from settings
+    // TODO: pull color from settings or prop?
     const embedOptions = {
       byline: 0,
-      color: '85a19f',
+      color: '978eae',
       id: vimeoId,
       portrait: 0,
       title: 0,
@@ -63,7 +73,7 @@ export const Video = ({ vimeoId, caption, size, children }) => {
         <div id={targetElementId} />
       </FluidWrapper>
 
-      <Caption dangerouslySetInnerHTML={{ __html: captionText }} />
+      <VideoCaption dangerouslySetInnerHTML={{ __html: captionText }} />
     </Figure>
   );
 };

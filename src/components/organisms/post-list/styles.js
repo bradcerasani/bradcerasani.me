@@ -10,7 +10,7 @@ export const StyledPostItemImage = styled.img`
   opacity: 0;
   position: absolute;
   right: 0;
-  top: 0.5rem;
+  top: 0;
   transition-duration: 400ms;
   transition-timing-function: ease-out;
   width: var(--width);
@@ -18,14 +18,16 @@ export const StyledPostItemImage = styled.img`
 
   @media (min-width: ${breakpoint.lg}) {
     --width: 400px;
+
     right: -6rem;
+    top: 0.5rem;
   }
 `;
 
 export const StyledPostItem = styled(Link)`
   cursor: pointer;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   transition-property: color;
@@ -58,6 +60,10 @@ export const StyledPostItem = styled(Link)`
         opacity: 1;
       }
     }
+  }
+
+  @media (min-width: ${breakpoint.md}) {
+    margin-bottom: 2rem;
   }
 `;
 

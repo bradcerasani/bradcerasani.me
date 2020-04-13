@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { color } from '../theme';
+import { breakpoint, color } from '../theme';
 
 const StyledForm = styled.form`
   margin-bottom: 3rem;
@@ -14,12 +14,12 @@ const StyledForm = styled.form`
     appearance: none;
     background-color: transparent;
     border: none;
+    border-radius: 0;
     display: block;
     font-size: 0.75rem;
     height: var(--size);
-    line-height: var(--size);
-    margin-left: 0.5rem;
-    margin-top: -1px; /* align to baseline */
+    line-height: 1.25;
+    margin-top: 0.25rem;
     outline: none;
     padding: 0;
   }
@@ -45,8 +45,37 @@ const StyledForm = styled.form`
     background-repeat: no-repeat;
     background-size: 32px; /* fixed size for pixel sharpness */
     cursor: pointer;
+    margin-left: 0.5rem;
     -webkit-text-fill-color: transparent;
     width: var(--size);
+  }
+
+  @media (min-width: ${breakpoint.md}) {
+    input {
+      margin-top: -2px; /* align to baseline */
+    }
+
+    input[type='text'] {
+      margin-left: 0.5rem;
+    }
+  }
+`;
+
+const FormRow = styled.p`
+  display: flex;
+  flex-wrap: wrap;
+
+  span {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: ${breakpoint.md}) {
+    flex-wrap: nowrap;
+    margin-top: -0.75rem;
+
+    span {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -68,15 +97,12 @@ export const NewsletterSignup = ({ ...props }) => {
     >
       <input type="hidden" value="1" name="embed" />
 
-      <p>Infrequent writing about design, technology, and making things.</p>
+      {/* Widow killer... */}
+      <p style={{ letterSpacing: '-0.01em' }}>
+        Infrequent writing about design, technology, and making things.
+      </p>
 
-      <p
-        style={{
-          display: 'flex',
-          flexWrap: 'nowrap',
-          marginTop: '-0.75rem',
-        }}
-      >
+      <FormRow>
         <span>
           Stay in the loop via <a href="/rss.xml">RSS</a> or email:
         </span>
@@ -89,7 +115,7 @@ export const NewsletterSignup = ({ ...props }) => {
         />
 
         <input type="submit" value="Submit" />
-      </p>
+      </FormRow>
     </StyledForm>
   );
 };

@@ -20,6 +20,7 @@ const StyledFooter = styled.footer`
   span {
     cursor: pointer;
     display: inline-block;
+    -webkit-tap-highlight-color: transparent;
     user-select: none;
   }
 `;

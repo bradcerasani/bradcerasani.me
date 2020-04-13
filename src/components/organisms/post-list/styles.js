@@ -27,7 +27,7 @@ export const StyledPostItemImage = styled.img`
 export const StyledPostItem = styled(Link)`
   cursor: pointer;
   display: block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   transition-property: color;

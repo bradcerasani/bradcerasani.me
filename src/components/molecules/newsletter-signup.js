@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import { breakpoint, color } from '../theme';
 
-const StyledForm = styled.form`
-  margin-bottom: 3rem;
+/* These are probably one-off styles so they can live here for now... 🤙 */
 
-  /* These are probably one-off styles so they can live here for now... 🤙 */
+const StyledForm = styled.form`
+  margin-bottom: 2rem;
 
   input {
     --size: 36px;
@@ -51,6 +51,8 @@ const StyledForm = styled.form`
   }
 
   @media (min-width: ${breakpoint.md}) {
+    margin-bottom: 3rem;
+
     input {
       margin-top: -2px; /* align to baseline */
     }

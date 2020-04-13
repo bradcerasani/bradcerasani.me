@@ -7,7 +7,7 @@ import { Caption } from '../../../src/components/atoms';
 export const SwatchContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   margin-top: -0.5rem;
 `;
 
@@ -41,7 +41,9 @@ export const Swatches = ({ colors, caption }) => {
           <Swatch key={index} style={{ backgroundColor: color }} />
         ))}
       </SwatchContainer>
-      {caption && <Caption style={{ marginTop: '-1rem' }}>{caption}</Caption>}
+      {caption && (
+        <Caption style={{ marginTop: '-0.75rem' }}>{caption}</Caption>
+      )}
     </>
   );
 };

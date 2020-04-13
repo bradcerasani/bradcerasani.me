@@ -15,7 +15,7 @@ Every day there’s a shiny new framework or library that seemingly everyone is 
 
 Here are some of the tried, tested, and true language choices and frameworks that we at Black Pixel keep coming back to to get work done.
 
-### JavaScript
+#### JavaScript
 
 As the programming language of the web browser, JavaScript has always been popular, but it’s evolved to become really powerful too.
 
@@ -37,19 +37,19 @@ However, the rising popularity of JavaScript also brings a certain amount of “
 
 ## Frameworks and Libraries
 
-### React
+#### React
 
 [React](https://facebook.github.io/react/) is “a JavaScript library for building user interfaces.” Where Angular tried to solve the Model, View, and Controller components of traditional MVC application architecture, React focuses solely on the view layer. React introduced us to the virtual DOM, a tree of JavaScript objects that mimics the browser’s DOM. When state changes in a React application, it updates the virtual DOM first, then diffs the result with the browser’s DOM, and propagates these changes only to the elements that have changed instead of the entire view. This makes React super performant. And, since it only focuses on view logic, it’s easy to drop into existing applications without a complete rewrite.
 
-### Redux
+#### Redux
 
 [Redux](http://redux.js.org/) is “a predictable state container for JavaScript applications.” When React was first announced, Facebook’s engineers also announced something called Flux. Flux described a unidirectional application architecture well-suited for React apps but was more conceptual than tangible code or API. As such, many developers began working on their own Flux implementations for use with React. In June of 2015, developer Dan Abramov released Redux, a simple Flux-inspired state manager that borrows some patterns of immutability from [Elm](https://github.com/evancz/elm-architecture-tutorial). The simple API and excellent developer tooling of Redux helped it quickly become the de facto Flux implementation. While basic React applications can get by using its built-in state methods, passing state through component props gets unruly fast. That’s where a global state container like Redux saves the day.
 
-### Node
+#### Node
 
 As mentioned above, Node marries an event-based, asynchronous API with Chrome’s super fast V8 engine, and runs on the server. Using JavaScript for server-side development with Node allows developers to tap into the largest open-source module ecosystem in the world with npm. It also reduces the amount of context switching that’s necessary when bouncing between different parts of the application stack. With the modern-day proliferation of JavaScript, many companies employ Node middleware that sits between older, monolithic application code and newer, interactive client-side experiences. Node and pure JavaScript applications are also being used in greenfield projects where few technical constraints exist. When this is the case, our team leans on application frameworks like the Sinatra-inspired [Express](http://expressjs.com/) or batteries-included [Hapi](http://hapijs.com/) to be productive right away.
 
-### PostCSS
+#### PostCSS
 
 [PostCSS](http://postcss.org/) takes CSS source files and creates an abstract syntax tree (AST) of the contents it exposes via API. The rich plugin ecosystem of PostCSS allows developers to do almost anything imaginable to a CSS file’s contents. One of the most common uses for PostCSS is transpiling future CSS syntax to current-day syntax, so browsers can reliably interpret features like custom properties and the `var()` function for variable support. PostCSS is often referred to as some lofty technology that is _more_ proprietary than popular preprocessors like Sass, but this is far from the truth. PostCSS allows developers to write _less_ proprietary syntax. Bypassing Sass removes an enormous amount of abstraction between style input and output, resulting in better code. PostCSS forces you to think about what plugins you’d like to use to manipulate your code, instead of giving you more than you need.
 
@@ -57,13 +57,13 @@ As mentioned above, Node marries an event-based, asynchronous API with Chrome’
 
 ![6ix-lint.gif](./6ix-lint.gif)
 
-### JavaScript
+#### JavaScript
 
 When writing JavaScript, we follow the paradigms of [functional programming](https://drboolean.gitbooks.io/mostly-adequate-guide/content/). Functional programming is programming without [side effects](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>). It focuses on small, composable functions rather than object-oriented programming that relies heavily on classes and mutation.
 
 To lint our JavaScript, we use [ESlint](http://eslint.org/) with an adapted version of [Airbnb’s style guide](https://github.com/airbnb/javascript). This ensures consistent formatting and code style between developers and helps check code for unused variables, typos, and mutations.
 
-### CSS
+#### CSS
 
 When writing CSS we use [atomic, immutable classes](http://csswizardry.com/2015/03/immutable-css/) and [ITCSS](https://www.youtube.com/watch?v=1OKZOV-iLj4) architecture, with [SUITCSS](https://suitcss.github.io/)-inspired naming convention and [object/utility namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/). [UsonianCSS](https://github.com/bradcerasani/usoniancss) is a cumulation of these ideas and serves as our baseline CSS boilerplate on greenfield projects.
 

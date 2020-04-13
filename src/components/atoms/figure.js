@@ -19,6 +19,7 @@ export const Figure = styled.figure`
           return css`
             margin-left: -200px;
             margin-right: -200px;
+            margin-top: 3rem;
             width: calc(100% + 400px);
           `;
 
@@ -26,6 +27,7 @@ export const Figure = styled.figure`
           return css`
             margin-left: calc((100vw - ${maxWidth}) / -2);
             margin-right: calc((100vw - ${maxWidth}) / -2);
+            margin-top: 3rem;
             width: 100vw;
             min-width: 100%;
             margin-top: 3rem;

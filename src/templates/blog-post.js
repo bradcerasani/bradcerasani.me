@@ -12,7 +12,11 @@ function BlogPostTemplate(props) {
   const date = post.frontmatter.date;
 
   useEffect(() => {
-    document.body.style.scrollBehavior = 'smooth';
+    const isClient = typeof window === 'object';
+
+    if (isClient) {
+      document.body.style.scrollBehavior = 'smooth';
+    }
   });
 
   return (

@@ -8,7 +8,7 @@ const Footnotes = css`
     margin-bottom: 3rem;
 
     @media (min-width: ${breakpoint.md}) {
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
   }
 
@@ -21,8 +21,8 @@ const Footnotes = css`
     margin-top: 3rem;
 
     @media (min-width: ${breakpoint.md}) {
-      margin-bottom: 4rem;
-      margin-top: 4rem;
+      margin-bottom: 3rem;
+      margin-top: 3rem;
     }
   }
 

@@ -13,7 +13,7 @@ This interview was originally conducted by [Amy Feezor](https://twitter.com/amyf
 
 <PostImage src="herman-miller-lifework/lifework-wide_3.jpg" size="large" />
 
-#### Tell us about yourself and your work: what you’re passionate about, what inspires you, and where you’re going.
+##### Tell us about yourself and your work: what you’re passionate about, what inspires you, and where you’re going.
 
 I focus on responsive, future-friendly, front-end design and development. This means I design and code websites that flex and adapt to the device the user is viewing them on. Progressive enhancement ensures that users visiting a site from their phone on a congested mobile network aren’t forced to download the same site assets they would see on their 30″ display at the office. Future-friendly development means writing flexible, modular code structure that is mindful of what’s next in tech.
 
@@ -21,7 +21,7 @@ I’m inspired by quality craft, regardless of medium. It is endearing to witnes
 
 <PostImage src="herman-miller-lifework/lifework-wide_1.jpg" size="large" />
 
-#### Tell us about your space. What’s your aesthetic? What do you like or dislike?
+##### Tell us about your space. What’s your aesthetic? What do you like or dislike?
 
 My space is a bit of an audio playground, with instruments and recording gear and a life-size cardboard cutout of Raj Koothrappali from the TV show ”Big Bang Theory” (he’s camera shy). I have a flawless Fender Rhodes piano that was built in March of 1972, and will forever be the coolest thing I own.
 
@@ -41,7 +41,7 @@ My display sits on a 3″ roll of black duct tape, the underside of which is cov
 
 If I could change anything about my current setup, I definitely wouldn’t be working on a black glass desk. It is an incredible pain to keep clean. I’d like to try a sit-stand desk with a wood surface and motorized legs.
 
-#### You have both an Embody and an Aeron in your space. Why did you choose them, and how do they differ for you?
+##### You have both an Embody and an Aeron in your space. Why did you choose them, and how do they differ for you?
 
 I like them both, and they are very different. I typically start the work day in the Aeron because I love its forward tilt. It arches my back and keeps my body in attentive posture, which helps me kick-start productivity if I stayed up too late writing code or playing hockey. The Embody feels more relaxed to me, and I’m most comfortable in it slightly reclined. I usually tackle less intensive tasks in the Embody, like long-form reading or answering email. The Embody’s arm rests adjust closer to my body than the Aeron’s, which I find helpful in reducing shoulder strain.
 

@@ -94,16 +94,20 @@ export const Nav = styled.div`
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end;
-    margin-bottom: 0.7rem; /* optically align to baseline of byline */
+    margin-bottom: 0.45rem; /* optically align to baseline of byline */
     margin-right: -0.5rem;
     position: relative;
+  }
+
+  @media (min-width: ${breakpoint.lg}) {
+    margin-bottom: 0.7rem; /* optically align to baseline of byline */
   }
 `;
 
 export const NavImage = styled.img`
   display: none;
 
-  @media (min-width: ${breakpoint.sm}) {
+  @media (min-width: ${breakpoint.lg}) {
     bottom: 0;
     display: block;
     margin-bottom: 0.375rem;

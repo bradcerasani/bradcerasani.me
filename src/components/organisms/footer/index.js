@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
-import { font } from '../../theme';
+import { breakpoint, font } from '../../theme';
 import { ChatBubble } from '../../atoms';
 
 const StyledFooter = styled.footer`
@@ -12,16 +12,21 @@ const StyledFooter = styled.footer`
   font-family: ${font.family.serif};
   font-size: 1.125rem;
   margin-top: 1.5rem;
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
   padding-top: 3rem;
-  transition: color 400ms ease-in-out;
+  transition-duration: 400ms;
+  transition-property: color;
+  transition-timing-function: ease-in-out;
 
-  /* TODO: Convert to text link variant */
-  span {
-    cursor: pointer;
+  a {
     display: inline-block;
     -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
     user-select: none;
+  }
+
+  @media (min-width: ${breakpoint.lg}) {
+    margin-top: 3rem;
   }
 `;
 
@@ -31,24 +36,24 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <div>
-        <span>RSS</span> •{' '}
-        <span
+        <a href="/rss.xml">RSS</a>
+        &nbsp;•&nbsp;
+        <a
           onClick={(e) => {
             e.preventDefault();
-            if (showContact) {
-              return false;
+            if (!showContact) {
+              setShowContact(true);
+              trackCustomEvent({
+                category: 'Interactive Elements',
+                label: 'Footer Contact - Say Hey',
+                action: 'Click',
+              });
             }
-            setShowContact(true);
-            trackCustomEvent({
-              category: 'Interactive Elements',
-              label: 'Footer Contact - Say Hey',
-              action: 'Click',
-            });
           }}
           style={{ cursor: showContact ? 'auto' : 'pointer' }}
         >
           Say hey
-        </span>
+        </a>
         {showContact && <ChatBubble>brad cerasani at gmail dot com</ChatBubble>}
       </div>
     </StyledFooter>

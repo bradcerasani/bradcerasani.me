@@ -46,7 +46,7 @@ export const ChatBubble = styled.div`
 
   @media (min-width: ${breakpoint.md}) {
     font-size: 0.7rem;
-    margin-left: 1rem;
+    margin-left: 0.75rem;
     margin-top: 0.2rem;
   }
 `;

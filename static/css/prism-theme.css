@@ -38,7 +38,7 @@ pre[class*='language-'] {
   background-color: var(--codeBackgroundColor);
   border-radius: 0.5rem;
   color: var(--color);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   overflow: auto;
   padding: 0.625rem 0.75rem;
 }

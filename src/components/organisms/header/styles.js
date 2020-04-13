@@ -8,7 +8,7 @@ export const StyledHeader = styled.div`
   position: relative;
 
   @media (min-width: ${breakpoint.md}) {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
     padding-top: 5rem;
   }
 `;
@@ -18,7 +18,7 @@ export const HeroContainer = styled.div`
   margin-top: 5rem;
 
   @media (min-width: ${breakpoint.md}) {
-    margin-top: 4rem;
+    margin-top: 3rem;
     min-height: 9rem;
   }
 `;

@@ -50,6 +50,7 @@ const Elements = css`
   ul {
     list-style-position: inside;
     margin-left: 0;
+    margin-top: 0;
     padding-left: 0;
 
     @media (min-width: ${breakpoint.md}) {

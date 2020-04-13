@@ -16,7 +16,7 @@ function PageNotFound(props) {
 
   useEffect(() => {
     setIsLoaded(true);
-  });
+  }, [isLoaded]);
 
   return (
     <Layout

@@ -3,11 +3,8 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { breakpoint, maxWidth } from '../../theme';
 
 export const Theme = createGlobalStyle`
-  :root {
-    --backgroundColor: #191609;
-  }
-
   body {
+    background-color: #191609;
     color: #8a694a;
     position: relative;
 
@@ -17,8 +14,8 @@ export const Theme = createGlobalStyle`
       background-size: 400px 400px;
       content: '';
       filter: contrast(0.5);
-      height: 100%;
       left: 0;
+      min-height: 100%;
       opacity: 0.05;
       position: absolute;
       top: 0;
@@ -117,4 +114,18 @@ export const VideoOverlayIcon = styled.div`
     height: 1rem;
     width: 1rem;
   }
+`;
+
+export const MuteButton = styled.button`
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.5;
+  outline: none;
+  padding: 0;
+  text-transform: uppercase;
 `;

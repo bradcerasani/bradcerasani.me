@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
+import { breakpoint } from '../../theme';
 import MutedIconSVG from '../../atoms/icons/muted.inline.svg';
 import UnmutedIconSVG from '../../atoms/icons/unmuted.inline.svg';
 import { Grid, GridItem } from '../../molecules';
@@ -8,17 +10,25 @@ import {
   VideoContainer,
   VideoOverlay,
   VideoOverlayIcon,
+  MuteButton,
 } from './styles';
 
 export { Theme, TigerBackground, Loading } from './styles';
+
+const StyledGrid = styled(Grid)`
+  @media (min-width: ${breakpoint.md}) {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }
+`;
 
 export const FourOhFour = () => {
   const [muted, setMuted] = useState(true);
 
   return (
     <>
-      <Grid style={{ marginBottom: '5rem', marginTop: '5rem' }} gutter="5rem">
-        <GridItem width={{ sm: '50%' }}>
+      <StyledGrid style={{}} gutter="5rem">
+        <GridItem width={{ md: '50%' }}>
           <VideoContainer>
             <Video
               id="js-video"
@@ -38,41 +48,22 @@ export const FourOhFour = () => {
             </VideoOverlay>
           </VideoContainer>
         </GridItem>
-        <GridItem width={{ sm: '50%' }}>
-          {/* TODO: Refactor heading styles */}
-          <h4
-            style={{
-              color: 'inherit',
-              fontSize: '1.5rem',
-              marginBottom: '1.125rem',
-              textTransform: 'none',
-              fontFamily: 'Canela',
-              fontWeight: '500',
-            }}
-          >
-            Error 404
-          </h4>
 
-          <p>
+        <GridItem width={{ md: '50%' }}>
+          <h5 style={{ paddingTop: '1.5rem', marginBottom: '1rem' }}>
+            Error 404
+          </h5>
+
+          <p style={{ marginBottom: '1rem' }}>
             The page you requested was not found. It could be in Carole Baskin's
             septic tank.
           </p>
 
-          {/* TODO: Refactor */}
-          <span
-            style={{
-              fontSize: '0.75rem',
-              opacity: 0.5,
-              textTransform: 'uppercase',
-              fontWeight: '500',
-              cursor: 'pointer',
-            }}
-            onClick={() => setMuted(!muted)}
-          >
+          <MuteButton onClick={() => setMuted(!muted)}>
             Sound {muted ? 'off' : 'on'}
-          </span>
+          </MuteButton>
         </GridItem>
-      </Grid>
+      </StyledGrid>
     </>
   );
 };

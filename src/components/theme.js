@@ -38,11 +38,11 @@ export const color = {
 
   red: {
     default: 'hsl(351, 64%, 55%)',
-    translucent: 'hsla(351, 64%, 55%, 0.5)',
+    translucent: 'hsla(351, 64%, 55%, 0.25)',
   },
   cyan: {
     default: 'hsl(186, 100%, 73%)',
-    translucent: 'hsla(186, 100%, 73%, 0.5)',
+    translucent: 'hsla(186, 100%, 73%, 0.25)',
   },
 };
 
@@ -52,4 +52,4 @@ export const transition = {
   slow: '450ms',
 };
 
-export const maxWidth = '730px';
+export const maxWidth = '700px';

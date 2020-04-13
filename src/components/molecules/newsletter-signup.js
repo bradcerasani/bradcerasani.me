@@ -9,7 +9,7 @@ const StyledForm = styled.form`
   margin-bottom: 2rem;
 
   input {
-    --size: 36px;
+    --size: 32px;
 
     appearance: none;
     background-color: transparent;
@@ -54,7 +54,7 @@ const StyledForm = styled.form`
     margin-bottom: 3rem;
 
     input {
-      margin-top: -2px; /* align to baseline */
+      margin-top: 0;
     }
 
     input[type='text'] {
@@ -73,7 +73,7 @@ const FormRow = styled.p`
 
   @media (min-width: ${breakpoint.md}) {
     flex-wrap: nowrap;
-    margin-top: -0.75rem;
+    margin-top: -1rem;
 
     span {
       margin-bottom: 0;

@@ -14,24 +14,27 @@ const Headings = css`
     text-shadow: none;
 
     @media (min-width: ${breakpoint.sm}) {
-      font-size: 3.25rem;
+      font-size: 4rem;
+      line-height: 1.1;
     }
 
     @media (min-width: ${breakpoint.lg}) {
-      font-size: 4rem;
-      line-height: 1.1;
       margin-left: -4rem;
     }
   }
 
   h2 {
     font-family: ${font.family.serif};
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 0.5rem;
     margin-top: 0;
     padding-top: 1rem;
+
+    @media (min-width: ${breakpoint.md}) {
+      font-size: 2.25;
+    }
   }
 
   h3 {
@@ -59,6 +62,7 @@ const Headings = css`
     font-family: ${font.family.serif};
     font-size: 1.25rem;
     font-weight: 500;
+    line-height: 1.25;
     margin-bottom: 0.5rem;
     margin-top: 0;
     padding-top: 0.5rem;

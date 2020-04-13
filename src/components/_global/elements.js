@@ -1,7 +1,6 @@
 import { css } from 'styled-components';
 
 import { breakpoint, color, font, transition } from '../theme';
-import { Noise } from '../atoms/noise';
 
 const Elements = css`
   :root {
@@ -26,19 +25,15 @@ const Elements = css`
     transition-duration: ${transition.slow};
     transition-property: background-color, color;
     transition-timing-function: ease-in-out;
-
-    /* TODO: remove?
-    &::after {
-      ${Noise}
-      opacity: 0.2;
-      z-index: 0;
-    }
-    */
   }
 
   section {
     color: ${color.grey.darker};
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: ${breakpoint.md}) {
+      margin-bottom: 3rem;
+    }
   }
 
   p {
@@ -113,26 +108,34 @@ const Elements = css`
   blockquote {
     display: block;
     margin-left: 0;
-    padding-bottom: 0.75rem;
-    padding-right: 2rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2.5rem;
     padding-top: 0.5rem;
     position: relative;
     width: 80%;
 
     &::before {
       content: '“';
-      font-family: ${font.family.sansSerif};
-      font-size: 100px;
-      left: -60px;
+      font-family: ${font.family.serif};
+      font-size: 4rem;
+      left: 0;
       position: absolute;
-      top: -20px;
+      top: -1rem;
     }
 
     p {
-      background-color: ${color.highlight};
       display: inline;
-      font-size: 22px;
-      font-style: italic;
+      font-family: ${font.family.serif};
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+
+    @media (min-width: ${breakpoint.md}) {
+      padding-left: 0;
+
+      &::before {
+        left: -2.75rem;
+      }
     }
   }
 `;

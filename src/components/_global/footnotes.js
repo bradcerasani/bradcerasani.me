@@ -5,7 +5,6 @@ import { breakpoint, color } from '../theme';
 const Footnotes = css`
   .footnotes {
     font-size: 0.8rem;
-    margin-bottom: 3rem;
 
     @media (min-width: ${breakpoint.md}) {
       margin-bottom: 3rem;
@@ -17,8 +16,8 @@ const Footnotes = css`
   }
 
   .footnotes hr {
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 
     @media (min-width: ${breakpoint.md}) {
       margin-bottom: 3rem;
@@ -26,11 +25,19 @@ const Footnotes = css`
     }
   }
 
+  .footnotes ol {
+    margin-bottom: 0;
+  }
+
   .footnotes ol li {
     color: ${color.grey.default};
     line-height: 1.5;
     margin-bottom: 1rem;
     position: relative;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   .footnotes p {

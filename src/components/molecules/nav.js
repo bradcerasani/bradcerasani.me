@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoint, color, font, transition } from '../theme';
+import { breakpoint, color, font } from '../theme';
 import { Noise, CAText, CAFilter } from '../atoms';
 
 import MenuIconSVG from '../atoms/icons/menu.inline.svg';

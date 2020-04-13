@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Draggable from 'react-draggable';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
@@ -9,8 +9,6 @@ import {
 } from './styles';
 
 export const Gallery = ({ images }) => {
-  const [frontImage, setFrontImage] = useState(images.length);
-
   useEffect(() => {
     const properties = ['top', 'right', 'bottom', 'left'];
 
@@ -39,10 +37,7 @@ export const Gallery = ({ images }) => {
     <StyledGallery>
       {images.map((image, index) => (
         <Draggable key={index} onStart={(e) => e.preventDefault()}>
-          <StyledGalleryImage
-            data-image={index}
-            isForward={frontImage === index}
-          >
+          <StyledGalleryImage data-image={index}>
             <img src={image.node.preview} alt={image.node.caption} />
           </StyledGalleryImage>
         </Draggable>

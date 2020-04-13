@@ -1,1 +1,1 @@
-# Journal 3.0
+# bradcerasani.me 2020

@@ -1,3 +1,16 @@
 {
-  "extends": "stylelint-config-usoniancss"
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "order/properties-alphabetical-order": true,
+    "selector-type-no-unknown"
+  }
 }

@@ -10,7 +10,7 @@ export const StyledPostItemImage = styled.img`
   opacity: 0;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 0.5rem;
   transition-duration: 400ms;
   transition-timing-function: ease-out;
   width: var(--width);
@@ -25,9 +25,8 @@ export const StyledPostItemImage = styled.img`
 export const StyledPostItem = styled(Link)`
   cursor: pointer;
   display: block;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   transition-property: color;
   transition-timing-function: ease-in;

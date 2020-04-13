@@ -3,17 +3,17 @@ import React, { useState } from 'react';
 import useInterval from '../../../hooks/use-interval';
 import { StyledPostList, StyledPostItem, StyledPostItemImage } from './styles';
 
-export const PostList = ({ posts }) => {
+export const PostList = ({ posts, paused }) => {
   const [isRunning, setIsRunning] = useState(true);
   const [activePost, setActivePost] = useState(0);
-  const interval = 2000;
+  const interval = 3000;
 
   useInterval(
     () => {
       // Reset activePost when through list of posts, or increment activePost
       setActivePost(activePost === posts.length - 1 ? 0 : activePost + 1);
     },
-    isRunning ? interval : null
+    isRunning && !paused ? interval : null
   );
 
   return (

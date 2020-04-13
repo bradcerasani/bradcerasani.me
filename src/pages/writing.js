@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
+import { NewsletterSignup } from '../components/molecules';
 import { PostList } from '../components/organisms';
 import { Head, Layout } from '../components/templates';
 
 function WritingPage(props) {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
+  const [paused, setPaused] = useState(false);
 
   return (
     <>
       <Layout location={props.location} title={siteTitle}>
         <Head title="Writing" />
 
-        <PostList posts={data.allMdx.edges} />
+        <NewsletterSignup
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        />
+
+        <PostList posts={data.allMdx.edges} paused={paused} />
       </Layout>
     </>
   );

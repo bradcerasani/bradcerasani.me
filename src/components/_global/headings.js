@@ -57,7 +57,7 @@ const Headings = css`
     font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     margin-top: 0;
 
     @media (min-width: ${breakpoint.sm}) {

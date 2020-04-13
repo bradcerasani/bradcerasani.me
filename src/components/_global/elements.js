@@ -120,7 +120,7 @@ const Elements = css`
 
     &::before {
       content: '“';
-      font-family: ${font.family.serif};
+      font-family: ${font.family.sansSerif};
       font-size: 100px;
       left: -60px;
       position: absolute;

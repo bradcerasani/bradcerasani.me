@@ -95,8 +95,8 @@ export const Nav = styled.div`
     flex-grow: 1;
     justify-content: flex-end;
     margin-bottom: 0.7rem; /* optically align to baseline of byline */
-    position: relative;
     margin-right: -0.5rem;
+    position: relative;
   }
 `;
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
+import { css } from 'styled-components';
 
 import { NewsletterSignup } from '../components/molecules';
 import { PostList } from '../components/organisms';
@@ -14,6 +15,13 @@ function WritingPage(props) {
     <>
       <Layout location={props.location} title={siteTitle}>
         <Head title="Writing" />
+
+        <style>{css`
+          :root {
+            --backgroundColor: HSLA(39, 14%, 40%, 0.5);
+            /* --backgroundColor: #bbb7b1; */
+          }
+        `}</style>
 
         <NewsletterSignup
           onMouseEnter={() => setPaused(true)}

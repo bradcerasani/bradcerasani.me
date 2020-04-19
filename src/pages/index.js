@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { css } from 'styled-components';
 
 import { Button } from '../components/atoms';
 import { PostList } from '../components/organisms';
@@ -20,6 +21,13 @@ function Home(props) {
           }}
           style={{ marginBottom: '1rem' }}
         />
+
+        <style>{css`
+          :root {
+            --backgroundColor: HSLA(30, 32%, 40%, 0.5);
+            /* --backgroundColor: #b3a694; */
+          }
+        `}</style>
 
         <Button to={'/about/'} type="link">
           More about me

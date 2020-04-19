@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const FluidWrapper = styled.div`
-  background-color: HSL(290, 10%, 20%);
+  background-color: HSL(300, 10%, 40%);
   margin-bottom: 0.75rem;
   padding-bottom: 56.25%;
   position: relative;

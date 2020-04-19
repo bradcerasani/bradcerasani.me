@@ -9,7 +9,7 @@ const StyledForm = styled.form`
   margin-bottom: 2rem;
 
   input {
-    --size: 32px;
+    --size: 36px;
 
     appearance: none;
     background-color: transparent;
@@ -25,28 +25,65 @@ const StyledForm = styled.form`
   }
 
   input[type='text'] {
-    background-color: ${color.white};
-    border: 1px solid black;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 0%, 0.8);
     color: inherit;
     flex-grow: 1;
     flex-shrink: 0;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    transition-duration: 200ms;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: ease-in-out;
+
+    /* Default state */
+    &:not(:valid) {
+      background-color: hsl(0, 0%, 100%, 0.4);
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: hsl(0, 0%, 100%, 0.6);
+      }
+    }
 
     &::placeholder {
-      color: inherit;
+      color: ${color.grey.dark};
       font-style: italic;
+      transition-duration: 200ms;
+      transition-property: color;
+      transition-timing-function: ease-in-out;
+    }
+
+    /* stylelint-disable */
+    &:focus,
+    &:active {
+      background-color: white !important;
+      border-color: hsl(0, 0%, 0%, 0.8) !important;
+
+      &::placeholder {
+        color: inherit;
+      }
+    }
+    /* stylelint-enable */
+
+    /* Remove blue autocompelte background in webkit */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-color: hsl(0, 0%, 0%, 0.8);
+      box-shadow: 0 0 0px 2rem white inset !important;
     }
   }
 
   input[type='submit'] {
-    background-image: url('/images/icons/mail.png');
+    background-image: url('/images/icons/mail-36@2x.png');
     background-position: center 50%;
     background-repeat: no-repeat;
-    background-size: 32px; /* fixed size for pixel sharpness */
+    background-size: 36px;
     cursor: pointer;
-    margin-left: 0.5rem;
+    margin-left: 0.75rem;
     -webkit-text-fill-color: transparent;
+    text-indent: -10000px;
     width: var(--size);
   }
 
@@ -54,7 +91,7 @@ const StyledForm = styled.form`
     margin-bottom: 3rem;
 
     input {
-      margin-top: 0;
+      margin-top: -2px;
     }
 
     input[type='text'] {
@@ -110,10 +147,11 @@ export const NewsletterSignup = ({ ...props }) => {
         </span>
 
         <input
-          type="text"
-          name="email"
           id="tlemail"
+          name="email"
           placeholder="username@hostname.domain"
+          required
+          type="text"
         />
 
         <input type="submit" value="Submit" />

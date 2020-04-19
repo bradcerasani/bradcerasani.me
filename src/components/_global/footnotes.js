@@ -11,7 +11,12 @@ const Footnotes = css`
     }
   }
 
+  sup {
+    top: -0.7em;
+  }
+
   .footnote-ref {
+    font-size: 0.6rem;
     text-decoration: none;
   }
 

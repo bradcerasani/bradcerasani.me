@@ -6,4 +6,5 @@ export const Logo = styled(Link)`
   margin: 0;
   position: relative;
   text-decoration: none;
+  z-index: 5;
 `;

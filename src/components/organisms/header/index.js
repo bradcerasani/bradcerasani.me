@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { breakpoint } from '../../theme';
 import { Date, Logo } from '../../atoms';
+import { Nav, NavItem, NavImage } from '../nav/desktop';
 import {
-  Nav,
-  NavItem,
-  NavImage,
-  NavMenuIcon,
-  NavInvertWrapper,
-} from '../../molecules/nav';
+  MobileNavItem,
+  MobileNavMenu,
+  MobileNavOverlay,
+  MobileNavWrapper,
+} from '../nav/mobile';
 import { links } from './links';
 import { StyledHeader, HeroContainer } from './styles';
 
@@ -16,10 +17,12 @@ export const Header = (props) => {
   const { title, date, headline = 'Design & Engineering' } = props;
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
+  const [showSocial, setShowSocial] = useState(false);
 
   useEffect(() => {
     const isClient = typeof window === 'object';
 
+    // SSR will throw errors if attempting to access global window or document
     if (!isClient) {
       return false;
     }
@@ -40,45 +43,79 @@ export const Header = (props) => {
   }, [isVisible]);
 
   return (
-    <StyledHeader>
-      <NavInvertWrapper invert={isVisible}>
+    <>
+      <MobileNavOverlay
+        isVisible={isVisible}
+        onTransitionEnd={() => {
+          setOverlayTransitioned(isVisible ? true : false);
+          setShowSocial(false);
+        }}
+      >
+        <MobileNavWrapper>
+          {links.map(({ to, label }, index) => (
+            <MobileNavItem
+              // TODO: data-visibility => isVisible now that the latest
+              // version of styled-components supports shouldForwardProp
+              // https://github.com/styled-components/styled-components/pull/3006
+              activeClassName="is-active"
+              data-visibility={overlayTransitioned.toString()}
+              key={to}
+              onAnimationStart={() => setShowSocial(index === links.length - 1)}
+              partiallyActive={to.includes('writing')}
+              style={{ animationDelay: `calc(${150 * index}ms)` }}
+              to={to}
+            >
+              {label}
+            </MobileNavItem>
+          ))}
+
+          <ul>
+            {/* TODO: Pull from site settings? */}
+            {['Instagram', 'Twitter', 'GitHub'].map((link, index) => (
+              <li
+                // See above re: data-visibility
+                data-visibility={showSocial.toString()}
+                key={link}
+                style={{ animationDelay: `calc(${150 * (index + 1)}ms)` }}
+              >
+                <OutboundLink
+                  href={`https://${link.toLowerCase()}.com/bradcerasani`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {link}
+                </OutboundLink>
+              </li>
+            ))}
+          </ul>
+        </MobileNavWrapper>
+      </MobileNavOverlay>
+
+      <StyledHeader>
         <Logo to={`/`}>{title}</Logo>
-        <NavMenuIcon onClick={() => setVisibility(!isVisible)} />
-      </NavInvertWrapper>
+        <MobileNavMenu onClick={() => setVisibility(!isVisible)} />
 
-      <HeroContainer>
-        <h1>
-          {date && <Date orientation="vertical">{date}</Date>}
-          {headline}
-        </h1>
+        <HeroContainer>
+          <h1>
+            {date && <Date orientation="vertical">{date}</Date>}
+            {headline}
+          </h1>
 
-        <Nav
-          isVisible={isVisible}
-          onTransitionEnd={(event) =>
-            event.propertyName === 'opacity' &&
-            setOverlayTransitioned(isVisible ? true : false)
-          }
-        >
-          <>
-            {links.map(({ to, label, imageSrc }, index) => (
+          <Nav>
+            {links.map(({ to, label, imageSrc }) => (
               <NavItem
-                // TODO: data-visibility => isVisible now that the latest
-                // version of styled-components supports shouldForwardProp
-                // https://github.com/styled-components/styled-components/pull/3006
                 activeClassName="is-active"
-                data-visibility={overlayTransitioned.toString()}
                 key={to}
                 partiallyActive={to.includes('writing')}
-                style={{ animationDelay: `calc(${100 * index}ms)` }}
                 to={to}
               >
                 {label}
                 {imageSrc && <NavImage src={imageSrc} />}
               </NavItem>
             ))}
-          </>
-        </Nav>
-      </HeroContainer>
-    </StyledHeader>
+          </Nav>
+        </HeroContainer>
+      </StyledHeader>
+    </>
   );
 };

@@ -18,8 +18,15 @@ const Elements = css`
     }
   }
 
-  body {
+  html {
     background-color: var(--backgroundColor);
+    transition-duration: ${transition.slow};
+    transition-property: background-color, color;
+    transition-timing-function: ease-in-out;
+  }
+
+  body {
+    background-color: rgb(255, 255, 255, 0.4);
     line-height: 1.5;
     text-rendering: optimizeLegibility;
     transition-duration: ${transition.slow};
@@ -148,14 +155,6 @@ const Elements = css`
         left: -2.75rem;
       }
     }
-  }
-
-  #___gatsby {
-    background-color: rgb(255, 255, 255, 0.4);
-    min-height: 100vh;
-    transition-duration: ${transition.slow};
-    transition-property: background-color, color;
-    transition-timing-function: ease-in-out;
   }
 `;
 

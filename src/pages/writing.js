@@ -19,7 +19,7 @@ function WritingPage(props) {
         <style>{css`
           :root {
             --backgroundColor: HSLA(39, 14%, 40%, 0.5);
-            /* --backgroundColor: #bbb7b1; */
+            --computedBackgroundColor: HSLA(43, 8%, 82%, 1);
           }
         `}</style>
 

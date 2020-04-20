@@ -36,7 +36,7 @@ export const ChatBubble = styled.div`
   }
 
   &::after {
-    background-color: var(--backgroundColor);
+    background-color: var(--computedBackgroundColor);
     border-bottom-right-radius: 0.6em;
     height: 1em;
     left: -0.6em;

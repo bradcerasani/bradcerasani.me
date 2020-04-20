@@ -37,6 +37,10 @@ function BlogPostTemplate(props) {
           :root {
             --backgroundColor: ${color.white};
           }
+
+          body {
+            background-color: transparent;
+          }
         `}
       </style>
 

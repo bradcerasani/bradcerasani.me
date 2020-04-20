@@ -18,17 +18,37 @@ const Elements = css`
     }
   }
 
-  body {
+  html {
     background-color: var(--backgroundColor);
-    line-height: 1.5;
-    text-rendering: optimizeLegibility;
     transition-duration: ${transition.slow};
     transition-property: background-color, color;
     transition-timing-function: ease-in-out;
   }
 
+  body {
+    background-color: rgb(255, 255, 255, 0.4);
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    transition-duration: ${transition.slow};
+    transition-property: background-color, color;
+    transition-timing-function: ease-in-out;
+
+    @media (min-width: ${breakpoint.sm}) {
+      &::after {
+        background-color: currentColor;
+        content: '';
+        height: 4px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+      }
+    }
+  }
+
   section {
-    color: ${color.grey.darker};
+    color: ${color.black};
     margin-bottom: 1.5rem;
 
     @media (min-width: ${breakpoint.md}) {
@@ -77,13 +97,11 @@ const Elements = css`
     font-variant-numeric: tabular-nums;
 
     &::after {
-      content: '↟';
+      content: '↯';
       display: inline-block;
-      padding-left: 0.25rem;
+      opacity: 0.4;
       position: relative;
-      transform: rotate(45deg);
-      transform-origin: 100%;
-      z-index: -1;
+      transform: rotate(225deg) translateY(0.2rem) translateX(-0.2rem);
     }
   }
 

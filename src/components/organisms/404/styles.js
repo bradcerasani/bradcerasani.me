@@ -3,9 +3,15 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { breakpoint, maxWidth } from '../../theme';
 
 export const Theme = createGlobalStyle`
+  :root {
+    --backgroundColor: #191609;
+    --computedBackgroundColor: HSLA(50, 32%, 7%, 1.00);
+  }
+
   body {
-    background-color: #191609;
+    background-color: transparent;
     color: #8a694a;
+    min-height: 100vh;
     position: relative;
 
     &::before {
@@ -14,8 +20,8 @@ export const Theme = createGlobalStyle`
       background-size: 400px 400px;
       content: '';
       filter: contrast(0.5);
+      height: 100%;
       left: 0;
-      min-height: 100%;
       opacity: 0.05;
       position: absolute;
       top: 0;

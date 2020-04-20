@@ -135,14 +135,46 @@ export const StyledGalleryImage = styled.div`
 `;
 
 export const StyledGalleryController = styled.input`
+  --height: 1.75rem;
+  --trackHeight: 3px;
+  --trackColor: hsl(0, 0%, 0%, 0.2);
+
+  appearance: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  height: var(--height);
   padding-left: 0;
   padding-right: 0;
+  position: relative;
   width: 100%;
 
-  @media (max-width: ${breakpoint.md}) {
-    &::-webkit-slider-thumb {
-      height: 2rem;
-      width: 2rem;
-    }
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    background-color: var(--trackColor);
+    border-radius: calc(var(--trackHeight) / 2);
+    height: var(--trackHeight);
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    background-color: currentColor;
+    border-radius: 50%;
+    height: var(--height);
+    margin-top: calc(var(--trackHeight) / 2);
+    transform: translateY(-50%);
+    width: var(--height);
+  }
+
+  &::-ms-fill-lower,
+  &::-ms-fill-upper {
+    background-color: var(--trackColor);
+  }
+
+  @media (min-width: ${breakpoint.md}) {
+    --height: 0.8rem;
   }
 `;

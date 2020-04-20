@@ -4,7 +4,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { css } from 'styled-components';
 
-import { color } from '../components/theme';
 import { Grid, GridItem } from '../components/molecules';
 import { Gallery, GalleryController } from '../components/organisms';
 import { Head, Layout } from '../components/templates';
@@ -24,10 +23,10 @@ function AboutPage(props) {
 
         <style>{css`
           :root {
-            --backgroundColor: ${color.linen.light};
+            --backgroundColor: HSLA(33, 44%, 41%, 0.5);
+            --computedBackgroundColor: HSLA(35, 26%, 82%, 1);
           }
         `}</style>
-
         <section id="js-mdx-body">
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>

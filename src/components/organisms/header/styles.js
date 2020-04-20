@@ -4,7 +4,7 @@ import { breakpoint } from '../../theme';
 
 export const StyledHeader = styled.div`
   margin-bottom: 1.5rem;
-  padding-top: 1.5rem;
+  padding-top: 0.75rem;
   position: relative;
 
   @media (min-width: ${breakpoint.md}) {

@@ -2,19 +2,24 @@ import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
 import { breakpoint, font } from '../../theme';
-import MenuIconSVG from '../../atoms/icons/menu.inline.svg';
+import { Hamburger } from '../../atoms';
 
-export const MobileNavMenu = styled(MenuIconSVG)`
-  cursor: pointer;
-  fill: currentColor;
-  height: calc(12px + 2rem);
-  margin-top: -2px;
-  padding: 1rem;
-  position: absolute;
-  right: -1rem;
-  -webkit-tap-highlight-color: transparent;
-  top: 1rem;
-  z-index: 10;
+export const MobileNavMenuWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 5;
+
+  @media (min-width: ${breakpoint.sm}) {
+    display: contents;
+  }
+`;
+
+export const MobileNavMenu = styled(Hamburger)`
+  height: 4rem;
+  margin-right: -1.25rem;
+  width: 4rem;
 
   @media (min-width: ${breakpoint.sm}) {
     display: none;

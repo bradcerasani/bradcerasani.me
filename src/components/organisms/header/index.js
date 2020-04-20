@@ -7,6 +7,7 @@ import { Nav, NavItem, NavImage } from '../nav/desktop';
 import {
   MobileNavItem,
   MobileNavMenu,
+  MobileNavMenuWrapper,
   MobileNavOverlay,
   MobileNavWrapper,
 } from '../nav/mobile';
@@ -92,8 +93,13 @@ export const Header = (props) => {
       </MobileNavOverlay>
 
       <StyledHeader>
-        <Logo to={`/`}>{title}</Logo>
-        <MobileNavMenu onClick={() => setVisibility(!isVisible)} />
+        <MobileNavMenuWrapper>
+          <Logo to={`/`}>{title}</Logo>
+          <MobileNavMenu
+            onClick={() => setVisibility(!isVisible)}
+            isActive={isVisible}
+          />
+        </MobileNavMenuWrapper>
 
         <HeroContainer>
           <h1>

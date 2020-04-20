@@ -33,7 +33,7 @@ const Elements = css`
     transition-property: background-color, color;
     transition-timing-function: ease-in-out;
 
-    @media (min-width: ${breakpoint.md}) {
+    @media (min-width: ${breakpoint.sm}) {
       &::after {
         background-color: currentColor;
         content: '';

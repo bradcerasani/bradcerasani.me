@@ -135,7 +135,7 @@ export const StyledGalleryImage = styled.div`
 `;
 
 export const StyledGalleryController = styled.input`
-  --height: 1.25rem;
+  --height: 1.75rem;
   --trackHeight: 3px;
   --trackColor: hsl(0, 0%, 0%, 0.2);
 
@@ -163,7 +163,6 @@ export const StyledGalleryController = styled.input`
     appearance: none;
     background-color: currentColor;
     border-radius: 50%;
-    box-shadow: 0 0 0 var(--trackHeight) hsl(35, 26%, 82%);
     height: var(--height);
     margin-top: calc(var(--trackHeight) / 2);
     transform: translateY(-50%);

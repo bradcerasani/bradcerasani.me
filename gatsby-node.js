@@ -13,14 +13,12 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`);
+  const postDetail = path.resolve(`./src/templates/post-detail.js`);
+  const projectDetail = path.resolve(`./src/templates/project-detail.js`);
   const result = await graphql(
     `
       {
-        allMdx(
-          filter: { fields: { slug: { glob: "/writing/*" } } }
-          sort: { fields: frontmatter___date, order: DESC }
-        ) {
+        allMdx(sort: { fields: frontmatter___date, order: DESC }) {
           edges {
             node {
               fields {
@@ -44,12 +42,17 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMdx.edges;
 
   posts.forEach((post, index) => {
+    const isProject = post.node.fields.slug.includes('/projects/');
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
 
+    if (post.node.fields.slug.includes('/about/')) {
+      return;
+    }
+
     createPage({
       path: post.node.fields.slug,
-      component: blogPost,
+      component: isProject ? projectDetail : postDetail,
       context: {
         slug: post.node.fields.slug,
         previous,
@@ -71,12 +74,28 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 
-  // Move content images into /public for ingestion by Imgix
-  if (node.internal.mediaType && node.internal.mediaType.includes('image')) {
+  // Move post and project media into /public for consumption by Imgix
+  if (node.internal.mediaType) {
+    let directoryName = '';
+
+    switch (node.internal.mediaType) {
+      case 'image/gif':
+      case 'image/jpeg':
+      case 'image/png':
+        directoryName = 'images';
+        break;
+      case 'video/mp4':
+      case 'video/webm':
+        directoryName = 'video';
+        break;
+      default:
+        console.warn(`${node.internal.mediaType} is unknown`);
+    }
+
     const destination = path.join(
       process.cwd(),
       'public',
-      'images',
+      directoryName,
       node.relativePath
     );
 

@@ -1,15 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import styled from 'styled-components';
 
 import { color } from '../components/theme';
 import { Head, Layout } from '../components/templates';
+import { Image } from '../components/molecules';
 
-function BlogPostTemplate(props) {
+const Thing = styled.div`
+  animation-delay: 400ms;
+  animation-duration: 2000ms;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  animation-timing-function: ease-out;
+  filter: grayscale() brightness(0.6);
+  left: 0;
+  mask-image: linear-gradient(black 65%, transparent 95%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+`;
+
+function ProjectDetailTemplate(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
   const date = post.frontmatter.date;
+  const image = post.frontmatter.image;
 
   useEffect(() => {
     const isClient = typeof window === 'object';
@@ -24,25 +42,30 @@ function BlogPostTemplate(props) {
       location={props.location}
       title={siteTitle}
       headline={post.frontmatter.title}
-      date={date}
     >
+      <Thing>
+        <Image src={image} />
+      </Thing>
       <Head
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.image}
       />
 
-      <style>
-        {css`
-          :root {
-            --backgroundColor: ${color.white};
-          }
+      <style>{css`
+        :root {
+          --backgroundColor: HSLA(39, 14%, 40%, 0.5);
+          --backgroundColor: HSLA(39, 14%, 10%, 0.5);
+          --computedBackgroundColor: HSLA(43, 8%, 82%, 1);
+        }
 
-          body {
-            background-color: transparent;
-          }
-        `}
-      </style>
+        p:first-of-type {
+          margin-top: 8rem;
+          font-size: 1.25rem;
+          font-family: 'CNW';
+          font-weight: 500;
+        }
+      `}</style>
 
       <article>
         <section>
@@ -53,10 +76,10 @@ function BlogPostTemplate(props) {
   );
 }
 
-export default BlogPostTemplate;
+export default ProjectDetailTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query ProjectDetailBySlug($slug: String!) {
     site {
       siteMetadata {
         title

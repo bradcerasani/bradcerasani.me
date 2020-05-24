@@ -62,7 +62,7 @@ export const Header = (props) => {
               data-visibility={overlayTransitioned.toString()}
               key={to}
               onAnimationStart={() => setShowSocial(index === links.length - 1)}
-              partiallyActive={to.includes('writing')}
+              partiallyActive={to.includes(label.toLowerCase())}
               style={{ animationDelay: `calc(${150 * index}ms)` }}
               to={to}
             >
@@ -104,7 +104,7 @@ export const Header = (props) => {
         <HeroContainer>
           <h1>
             {date && <Date orientation="vertical">{date}</Date>}
-            {headline}
+            <span dangerouslySetInnerHTML={{ __html: headline }} />
           </h1>
 
           <Nav>
@@ -112,7 +112,7 @@ export const Header = (props) => {
               <NavItem
                 activeClassName="is-active"
                 key={to}
-                partiallyActive={to.includes('writing')}
+                partiallyActive={to.includes(label.toLowerCase())}
                 to={to}
               >
                 {label}

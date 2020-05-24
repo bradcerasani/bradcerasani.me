@@ -7,6 +7,7 @@ export * from './date';
 export * from './figure';
 export * from './fluid-wrapper';
 export * from './hamburger';
+export * from './intrinsic';
 export * from './loading';
 export * from './logo';
 export * from './noise';

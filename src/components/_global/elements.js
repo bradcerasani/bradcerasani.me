@@ -32,6 +32,7 @@ const Elements = css`
     transition-duration: ${transition.slow};
     transition-property: background-color, color;
     transition-timing-function: ease-in-out;
+    min-height: 100vh;
 
     @media (min-width: ${breakpoint.sm}) {
       &::after {

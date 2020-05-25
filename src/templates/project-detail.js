@@ -4,11 +4,10 @@ import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
-import { color } from '../components/theme';
 import { Head, Layout } from '../components/templates';
 import { Image } from '../components/molecules';
 
-const Thing = styled.div`
+const Hero = styled.div`
   animation-delay: 400ms;
   animation-duration: 2000ms;
   animation-fill-mode: both;
@@ -43,9 +42,10 @@ function ProjectDetailTemplate(props) {
       title={siteTitle}
       headline={post.frontmatter.title}
     >
-      <Thing>
+      <Hero>
         <Image src={image} />
-      </Thing>
+      </Hero>
+
       <Head
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

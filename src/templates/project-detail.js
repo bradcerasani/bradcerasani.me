@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -25,7 +25,6 @@ const Hero = styled.div`
 function ProjectDetailTemplate(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
-  const date = post.frontmatter.date;
   const image = post.frontmatter.image;
 
   useEffect(() => {

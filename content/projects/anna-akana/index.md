@@ -2,7 +2,7 @@
 title: AnnaAkana.com
 description: AnnaAkana desc
 date: '2014-01-01'
-image: /video/projects/anna-akana/hero.mp4
+image: /video/projects/anna-akana/anna-akana-website.mp4
 ---
 
 I worked with actor, writer, and director Anna Akana to build a new online home for a series of short films she released in 2014. The site holds details about the films, their cast and crew, and behind-the-scenes content.
@@ -15,8 +15,6 @@ Each short film added to the CMS has an accompanying hashtag on Instagram for be
 
 The design of the short-film list utilizes cinematic 2.4:1 video previews that loop a 10-15 second clips when hovered over. The short film detail pages are themeable from the CMS, and both header and detail sections fade to 10% opacity while the film is playing to help minimize distraction.
 
-<video autoPlay muted loop>
-  <source src="/video/projects/anna-akana/hero.mp4" />
-</video>
-
+<Video src="/video/projects/anna-akana/anna-akana-website.mp4" size="large" />
+  
 Anna has since gone on to appear in TV and film for Marvel/Disney, Netflix, Lionsgate, ABC, Comedy Central, YouTube Red, and others.

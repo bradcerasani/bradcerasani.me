@@ -4,12 +4,12 @@ import { MDXProvider } from '@mdx-js/react';
 import { GlobalStyle } from '../_global';
 import { Footer, Header } from '../organisms';
 import { Container, Note } from '../atoms';
-import { Image, Video } from '../molecules';
+import { Image, Vimeo } from '../molecules';
 
 const components = {
   Note,
   PostImage: Image, // Image appears to be a reserved word
-  Video,
+  Vimeo,
 };
 
 export const Layout = (props) => {

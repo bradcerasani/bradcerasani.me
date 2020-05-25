@@ -34,7 +34,7 @@ function addCuePoints(player, annotations) {
   });
 }
 
-export const Video = ({ vimeoId, caption, size, children }) => {
+export const Vimeo = ({ vimeoId, caption, size, children }) => {
   const [isLoaded, setLoaded] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
   const [captionText, setCaption] = useState(caption);

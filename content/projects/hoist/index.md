@@ -25,6 +25,6 @@ The three of us wrote, recorded, mixed, and designed two full-length albums in t
 
 While working on our last album, Brian was also working on a project for rock duo The Black Keys. Their album, Brothers, came out a few weeks after ours, and went on to be nominated for five Grammy awards, winning two. Our album, The Professional Life Characters, was only moderately less successful, selling < 500 copies and earning a (generous) 3.5/5 stars from a local newspaper.
 
-<Video vimeoId="414599550" size="large" autoPlay caption="You Can Have the Window Seat (2008) and The Professional Life Characters (2010)" />
+<Vimeo vimeoId="414599550" size="large" autoPlay caption="You Can Have the Window Seat (2008) and The Professional Life Characters (2010)" />
 
 Both mostly mediocre albums are streaming on [Spotify](https://open.spotify.com/artist/4x66JilCisubJIuWcIMJ8t) and [ Music](https://music.apple.com/us/artist/hoist/1503569449).

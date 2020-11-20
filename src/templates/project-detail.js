@@ -8,8 +8,8 @@ import { Head, Layout } from '../components/templates';
 import { Image } from '../components/molecules';
 
 const Hero = styled.div`
-  animation-delay: 400ms;
-  animation-duration: 2000ms;
+  animation-delay: 200ms;
+  animation-duration: 1000ms;
   animation-fill-mode: both;
   animation-name: fadeIn;
   animation-timing-function: ease-out;
@@ -86,7 +86,6 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 240)
       body
       frontmatter {
         title

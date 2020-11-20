@@ -109,7 +109,6 @@ const Elements = css`
   img,
   video {
     display: block;
-    margin-bottom: 1rem;
     width: 100%;
   }
 

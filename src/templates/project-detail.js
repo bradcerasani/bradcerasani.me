@@ -20,6 +20,10 @@ const Hero = styled.div`
   top: 0;
   width: 100%;
   z-index: -1;
+
+  figure {
+    margin: 0;
+  }
 `;
 
 function ProjectDetailTemplate(props) {
@@ -54,7 +58,6 @@ function ProjectDetailTemplate(props) {
       <style>{css`
         :root {
           --backgroundColor: HSLA(39, 14%, 40%, 0.5);
-          --backgroundColor: HSLA(39, 14%, 10%, 0.5);
           --computedBackgroundColor: HSLA(43, 8%, 82%, 1);
         }
 

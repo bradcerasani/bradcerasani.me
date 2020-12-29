@@ -12688,11 +12688,6 @@ react-hot-loader@^4.12.21:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-image-comparison-slider@^1.8.4:
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/react-image-comparison-slider/-/react-image-comparison-slider-1.8.4.tgz#c918db00253ac9dc607390f23ad98a8f7b4667f8"
-  integrity sha512-NdkQYt/AVMkeOhekLVaLy0mVW2438tDc8DzN40nhsvdz4s29vUnNwjjdEtF0UnDuMWenPVctNa3O0PR/FPXcoQ==
-
 react-imgix@^9.0.1:
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/react-imgix/-/react-imgix-9.0.2.tgz#85cf6eddc68c144e5b07111a9219df7bbd9b96c6"

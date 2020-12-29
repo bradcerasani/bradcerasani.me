@@ -14,11 +14,12 @@ We played dozens of shows over the years, from backyards to theatres–even one 
 
 <PostImage src="projects/hoist/3114.jpg" size="large" caption="Hoist live at The Park Theatre in Winnipeg c. 2006 – photo by JT Austin"/>
 
-<PostImage src="projects/hoist/3213.jpg" size="large" caption="We implanted a theremin into a pink plastic pig because idk – photo by JT Austin" />
+<PostImage src="projects/hoist/3213.jpg" size="large" caption="I played drums and occasionally a theremin disguised as a pink plastic pig – photo by JT Austin" />
 
 Throughout most of this time, I learned about recording and mixing audio by working at a music store. I sought feedback from sales reps and session musicians while building a small home studio in my parent’s basement.
 
 <PostImage src="projects/hoist/20.jpg" size="large" caption="Basement studio c. 2010" />
+
 <PostImage src="projects/hoist/10.jpg" size="large" caption="Workstation c. 2010" />
 
 The three of us wrote, recorded, mixed, and designed two full-length albums in the basement, learning about the process as we went. The only thing we didn’t do ourselves was mastering – the final step of audio post-production in which flattened mixes are levelled, equalized, and prepared for distribution. For this, we entrusted Brian Lucey at Magic Garden Mastering.

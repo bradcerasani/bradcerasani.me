@@ -7,6 +7,7 @@ export const Video = ({ caption, size, src, ...props }) => {
     <Figure size={size}>
       <FluidWrapper>
         <video
+          playsInline
           autoPlay
           muted
           loop

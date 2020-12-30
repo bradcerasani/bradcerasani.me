@@ -35,8 +35,7 @@ export const Image = ({ src, caption, size, alt, ...props }) => {
         sizes={sizes}
         src={url}
         htmlAttributes={{
-          alt,
-          loading: 'lazy',
+          alt: alt || caption,
         }}
       />
       {caption && <Caption>{caption}</Caption>}

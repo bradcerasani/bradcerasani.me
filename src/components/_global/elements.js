@@ -35,7 +35,7 @@ const Elements = css`
     min-height: 100vh;
 
     @media (min-width: ${breakpoint.sm}) {
-      &::after {
+      &::before {
         background-color: currentColor;
         content: '';
         height: 4px;

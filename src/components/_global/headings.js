@@ -13,6 +13,10 @@ const Headings = css`
     position: relative;
     text-shadow: none;
 
+    br {
+      display: none;
+    }
+
     @media (min-width: ${breakpoint.sm}) {
       font-size: 4rem;
       line-height: 1.1;
@@ -20,6 +24,10 @@ const Headings = css`
 
     @media (min-width: ${breakpoint.lg}) {
       margin-left: -4rem;
+
+      br {
+        display: block;
+      }
     }
   }
 

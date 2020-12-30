@@ -30,7 +30,10 @@ export const Head = ({ title, description, image, url, children }) => {
   const metaTwitter = site.siteMetadata.social.twitter;
 
   return (
-    <Helmet title={title} titleTemplate={`%s – ${site.siteMetadata.title}`}>
+    <Helmet
+      title={title.replace(/<[^>]*>?/gm, '')}
+      titleTemplate={`%s – ${site.siteMetadata.title}`}
+    >
       <link rel="canonical" href="https://bradcerasani.me" />
 
       <meta property="og:title" content={metaAuthor} />

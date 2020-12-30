@@ -9,12 +9,11 @@ const Img = styled(Imgix)`
   margin-bottom: 0.75rem;
 `;
 
-export const Image = ({ src, caption, size, alt }) => {
-  // TODO: Refactor assumption that image component is only used within /writing/*
+export const Image = ({ src, caption, size, alt, ...props }) => {
   const url =
     process.env.NODE_ENV === 'development'
-      ? `/images/writing/${src}`
-      : `https://bradcerasani.imgix.net/images/writing/${src}`;
+      ? `/images/${src}`
+      : `https://bradcerasani.imgix.net/images/${src}`;
 
   let sizes = '';
 
@@ -31,13 +30,12 @@ export const Image = ({ src, caption, size, alt }) => {
   }
 
   return (
-    <Figure size={size}>
+    <Figure size={size} {...props}>
       <Img
         sizes={sizes}
         src={url}
         htmlAttributes={{
-          alt,
-          loading: 'lazy',
+          alt: alt || caption,
         }}
       />
       {caption && <Caption>{caption}</Caption>}

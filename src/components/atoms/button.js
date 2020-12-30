@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { color } from '../theme';
-
 const ButtonLinkIcon = styled.span`
   display: inline-block;
   height: 1.25rem;

@@ -11,7 +11,7 @@ import { Head, Layout } from '../components/templates';
 function AboutPage(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
-  const images = props.data.allInstaNode.edges;
+  const images = props.data.allInstaNode.edges.reverse();
 
   return (
     <>
@@ -98,7 +98,7 @@ export const pageQuery = graphql`
       }
     }
 
-    allInstaNode(sort: { fields: timestamp, order: ASC }, limit: 10, skip: 2) {
+    allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 10) {
       edges {
         node {
           timestamp

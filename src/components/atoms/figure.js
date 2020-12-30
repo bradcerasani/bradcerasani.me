@@ -25,8 +25,8 @@ export const Figure = styled.figure`
 
         case 'full':
           return css`
-            margin-left: calc((100vw - ${maxWidth}) / -2);
-            margin-right: calc((100vw - ${maxWidth}) / -2);
+            margin-left: calc((100vw - ${maxWidth} + 3rem) / -2);
+            margin-right: calc((100vw - ${maxWidth} + 3rem) / -2);
             margin-top: 3rem;
             width: 100vw;
             min-width: 100%;

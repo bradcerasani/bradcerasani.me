@@ -32,9 +32,10 @@ const Elements = css`
     transition-duration: ${transition.slow};
     transition-property: background-color, color;
     transition-timing-function: ease-in-out;
+    min-height: 100vh;
 
     @media (min-width: ${breakpoint.sm}) {
-      &::after {
+      &::before {
         background-color: currentColor;
         content: '';
         height: 4px;
@@ -108,7 +109,6 @@ const Elements = css`
   img,
   video {
     display: block;
-    margin-bottom: 1rem;
     width: 100%;
   }
 

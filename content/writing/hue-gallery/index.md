@@ -13,42 +13,42 @@ This article was originally published in the December 2016 issue of [net magazin
 
 </Note>
 
-<Video vimeoId="392018140" size="large" caption="Finished result: Hue Gallery in action">
-  <AN time="0.01"><span>🎹</span></AN>
-  <AN time="3" />
-  <AN time="4">peak Casey Neistat influence...</AN>
-  <AN time="8.3" />
-  <AN time="9.9">custom controller for Ikea sit-stand desk </AN>
-  <AN time="13.5" />
-  <AN time="14">it's made up of an ultrasonic sensor, Raspberry Pi, and some relays</AN>
-  <AN time="18.5" />
-  <AN time="22.5">
-    <span style={{ transform: 'rotate(-10deg)' }}>☕️</span> should've
-    straightened this shot
-  </AN>
-  <AN time="29" />
-  <AN time="32"><span>🙄</span> (30 seconds after sitting down)</AN>
-  <AN time="36.8" />
-  <AN time="42.1"><span>🌳</span></AN>
-  <AN time="47.5" />
-  <AN time="50.7"><span>🪁</span></AN>
-  <AN time="52.4" />
-  <AN time="52.8"><span>🌠</span> this clip is reversed</AN>
-  <AN time="57.3" />
-  <AN time="64.3"><span>☀️</span> should've used a larger aperture to prevent that starburst</AN>
-  <AN time="67.2" />
-  <AN time="67.7">sitting in a different spot here</AN>
-  <AN time="70.6" />
-  <AN time="75.7"><span>☠️</span> RIP this plant</AN>
-  <AN time="78.3" />
-  <AN time="79"><span>🐍</span> the one in the corner is still alive though</AN>
-  <AN time="82" />
-  <AN time="84"><span>🎹</span></AN>
-  <AN time="88.8" />
-  <AN time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</AN>
-  <AN time="97.3" />
-  <AN time="97.9"><a href="https://github.com/bpxl-labs/hue-gallery" target="_blank" rel="noopener noreferrer">github.com/bpxl-labs/hue-gallery</a></AN>  
-</Video>
+<Vimeo vimeoId="392018140" size="large" caption="Finished result: Hue Gallery in action">
+<AN time="0.01"><span>🎹</span></AN>
+<AN time="3" />
+<AN time="4">peak Casey Neistat influence...</AN>
+<AN time="8.3" />
+<AN time="9.9">custom controller for Ikea sit-stand desk </AN>
+<AN time="13.5" />
+<AN time="14">it's made up of an ultrasonic sensor, Raspberry Pi, and some relays</AN>
+<AN time="18.5" />
+<AN time="22.5">
+<span style={{ transform: 'rotate(-10deg)' }}>☕️</span> should've
+straightened this shot
+</AN>
+<AN time="29" />
+<AN time="32"><span>🙄</span> (30 seconds after sitting down)</AN>
+<AN time="36.8" />
+<AN time="42.1"><span>🌳</span></AN>
+<AN time="47.5" />
+<AN time="50.7"><span>🪁</span></AN>
+<AN time="52.4" />
+<AN time="52.8"><span>🌠</span> this clip is reversed</AN>
+<AN time="57.3" />
+<AN time="64.3"><span>☀️</span> should've used a larger aperture to prevent that starburst</AN>
+<AN time="67.2" />
+<AN time="67.7">sitting in a different spot here</AN>
+<AN time="70.6" />
+<AN time="75.7"><span>☠️</span> RIP this plant</AN>
+<AN time="78.3" />
+<AN time="79"><span>🐍</span> the one in the corner is still alive though</AN>
+<AN time="82" />
+<AN time="84"><span>🎹</span></AN>
+<AN time="88.8" />
+<AN time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</AN>
+<AN time="97.3" />
+<AN time="97.9"><a href="https://github.com/bpxl-labs/hue-gallery" target="_blank" rel="noopener noreferrer">github.com/bpxl-labs/hue-gallery</a></AN>  
+</Vimeo>
 
 In 2008, the number of internet-connected things exceeded Earth’s human population. By 2020, that number is expected to eclipse 50 billion. As processors, sensors, and wireless radios become smaller and more accessible, use cases for these devices are flourishing.
 
@@ -145,7 +145,7 @@ function printSwatches(colors, img) {
 }
 ```
 
-<PostImage src="hue-gallery/limes.jpg" size="large" />
+<PostImage src="writing/hue-gallery/limes.jpg" size="large" />
 
 <Swatches colors={['#334c15', '#bdbb56', '#87ad46']} />
 
@@ -155,7 +155,7 @@ While Color Thief’s modified median cut algorithm does an accurate job extract
 
 To improve the extracted palette, we’ll first have Color Thief to return more colours than we need for our calls to the Hue API. In the `colorThief.getPalette()` method, the second parameter controls the number of colours returned. We’ll ask for ten, and work on culling the final count down to three.
 
-<PostImage src="hue-gallery/buildings.jpg" size="large" />
+<PostImage src="writing/hue-gallery/buildings.jpg" size="large" />
 
 <Swatches
 colors={[
@@ -189,7 +189,7 @@ sortBy(colors, (color) => -color[1]);
 
 Lastly, we’ll convert the colour values back to RGB and return the top 3 items for our new and improved palette.
 
-<PostImage src="hue-gallery/buildings.jpg" size="large" />
+<PostImage src="writing/hue-gallery/buildings.jpg" size="large" />
 
 <Swatches colors={['#fbc04b', '#d5752f', '#873f28']} caption="Palette after"/>
 

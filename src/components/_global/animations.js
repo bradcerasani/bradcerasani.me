@@ -2,12 +2,12 @@ import { css } from 'styled-components';
 
 const Animations = css`
   @keyframes fadeIn {
-    from {
+    0% {
       opacity: 0;
     }
 
-    to {
-      opacity: 1;
+    100% {
+      opacity: 0.5;
     }
   }
 

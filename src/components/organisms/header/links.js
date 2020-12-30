@@ -1,10 +1,5 @@
 export const links = [
   {
-    to: '/',
-    label: 'Home',
-    imageSrc: '/images/gifs/home.gif',
-  },
-  {
     to: '/about/',
     label: 'About',
     imageSrc: '/images/nav/about-80s.jpg',
@@ -13,5 +8,10 @@ export const links = [
     to: '/writing/',
     label: 'Writing',
     imageSrc: '/images/gifs/writing.gif',
+  },
+  {
+    to: '/projects/',
+    label: 'Projects',
+    imageSrc: '/images/gifs/home.gif',
   },
 ];

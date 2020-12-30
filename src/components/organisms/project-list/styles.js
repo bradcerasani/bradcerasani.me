@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoint, color, font, transition } from '../../theme';
+import { breakpoint } from '../../theme';
 
 export const StyledProjectList = styled.div``;
 

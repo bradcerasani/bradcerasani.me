@@ -51,6 +51,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
           ) : (
             <Img
               src={urlify(image1)}
+              sizes="400px"
               htmlAttributes={{
                 loading: 'lazy',
               }}
@@ -60,6 +61,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
         <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
           <Img
             src={urlify(image2)}
+            sizes="400px"
             htmlAttributes={{
               loading: 'lazy',
             }}
@@ -69,6 +71,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
         <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
           <Img
             src={urlify(image3)}
+            sizes="400px"
             htmlAttributes={{
               loading: 'lazy',
             }}

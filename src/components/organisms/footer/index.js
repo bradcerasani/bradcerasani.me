@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
-
 import { breakpoint, font } from '../../theme';
-import { ChatBubble } from '../../atoms';
+import { ChatBubble, Container } from '../../atoms';
 
 const StyledFooter = styled.footer`
-  align-items: center;
-  border-top: 4px solid currentColor;
-  display: flex;
+  border-top: 2px solid currentColor;
   font-family: ${font.family.serif};
   font-size: 1.125rem;
   margin-top: 1.5rem;
@@ -26,7 +23,7 @@ const StyledFooter = styled.footer`
   }
 
   @media (min-width: ${breakpoint.lg}) {
-    margin-top: 3rem;
+    margin-top: 5rem;
     padding-top: 3rem;
   }
 `;
@@ -36,7 +33,7 @@ export const Footer = () => {
 
   return (
     <StyledFooter>
-      <div>
+      <Container>
         <a href="/rss.xml">RSS</a>
         &nbsp;•&nbsp;
         <a
@@ -57,7 +54,7 @@ export const Footer = () => {
           Say hey
         </a>
         {showContact && <ChatBubble>brad cerasani at gmail dot com</ChatBubble>}
-      </div>
+      </Container>
     </StyledFooter>
   );
 };

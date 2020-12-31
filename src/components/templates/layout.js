@@ -32,8 +32,8 @@ export const Layout = (props) => {
       <Container>
         <Header {...props} />
         <MDXProvider components={components}>{children}</MDXProvider>
-        <Footer />
       </Container>
+      <Footer />
     </>
   );
 };

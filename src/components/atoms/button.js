@@ -14,7 +14,7 @@ const ButtonLinkIcon = styled.span`
 `;
 
 const ButtonLink = styled(Link)`
-  text-decoration: none;
+  text-underline-position: under;
 
   &:hover {
     ${ButtonLinkIcon} {

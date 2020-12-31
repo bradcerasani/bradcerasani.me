@@ -9,7 +9,7 @@ image: '/projects/hue-gallery/hero.jpg'
 
 My [coworker](https://brandonjpierce.com/) and I created a project that extracts an image’s colour palette, refines the selection by filtering dark and less saturated values, and sends the resulting values to the Philips Hue API when an image is scrolled into view. Philips Hue Sync (released 2018) is a better, realtime way of achieving the same effect at the OS level, and Philips Hue Play HDMI Sync Box (2019) is a standalone device that achieves this effect with existing media players.
 
-The original article is available in full [here](/writing/hue-gallery/), as well as an accompanying video my partner and I made of the effect in action. -->
+The original article is available in full [here](/projects/hue-gallery/), as well as an accompanying video my partner and I made of the effect in action. -->
 
 import { Swatches } from './swatches';
 
@@ -151,7 +151,7 @@ function printSwatches(colors, img) {
 }
 ```
 
-<PostImage src="writing/hue-gallery/limes.jpg" size="large" />
+<PostImage src="projects/hue-gallery/limes.jpg" size="large" />
 
 <Swatches colors={['#334c15', '#bdbb56', '#87ad46']} />
 
@@ -161,7 +161,7 @@ While Color Thief’s modified median cut algorithm does an accurate job extract
 
 To improve the extracted palette, we’ll first have Color Thief to return more colours than we need for our calls to the Hue API. In the `colorThief.getPalette()` method, the second parameter controls the number of colours returned. We’ll ask for ten, and work on culling the final count down to three.
 
-<PostImage src="writing/hue-gallery/buildings.jpg" size="large" />
+<PostImage src="projects/hue-gallery/buildings.jpg" size="large" />
 
 <Swatches
 colors={[
@@ -195,7 +195,7 @@ sortBy(colors, (color) => -color[1]);
 
 Lastly, we’ll convert the colour values back to RGB and return the top 3 items for our new and improved palette.
 
-<PostImage src="writing/hue-gallery/buildings.jpg" size="large" />
+<PostImage src="projects/hue-gallery/buildings.jpg" size="large" />
 
 <Swatches colors={['#fbc04b', '#d5752f', '#873f28']} caption="Palette after"/>
 

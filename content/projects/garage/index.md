@@ -2,7 +2,7 @@
 title: Garage Design/Build
 description: Garage Design/Build
 date: '2019-01-01'
-image: '/projects/garage/hero.jpg'
+image: '/video/projects/garage/garage-animation-slow.mp4'
 ---
 
 In the summer of 2019, I designed and built a garage.

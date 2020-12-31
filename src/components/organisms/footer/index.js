@@ -23,7 +23,7 @@ const StyledFooter = styled.footer`
   }
 
   @media (min-width: ${breakpoint.lg}) {
-    margin-top: 9rem;
+    margin-top: 6rem;
     padding-top: 3rem;
   }
 `;

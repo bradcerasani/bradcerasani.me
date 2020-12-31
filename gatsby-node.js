@@ -26,6 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                image
               }
             }
           }
@@ -39,27 +40,35 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMdx.edges;
+  const all = result.data.allMdx.edges;
+  const posts = all.filter((item) =>
+    item.node.fields.slug.includes('/writing/')
+  );
+  const projects = all.filter((item) =>
+    item.node.fields.slug.includes('/projects/')
+  );
 
-  posts.forEach((post, index) => {
-    const isProject = post.node.fields.slug.includes('/projects/');
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+  function createPagesAndPagination(pageList, component) {
+    pageList.forEach((page, index) => {
+      const previous =
+        index === pageList.length - 1 ? null : pageList[index + 1].node;
+      const next = index === 0 ? null : pageList[index - 1].node;
 
-    if (post.node.fields.slug.includes('/about/')) {
-      return;
-    }
-
-    createPage({
-      path: post.node.fields.slug,
-      component: isProject ? projectDetail : postDetail,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
-      },
+      createPage({
+        component,
+        path: page.node.fields.slug,
+        context: {
+          slug: page.node.fields.slug,
+          previous,
+          next,
+        },
+      });
     });
-  });
+  }
+
+  // Hackily create post and project pages separately so they have their own pagination
+  createPagesAndPagination(posts, postDetail);
+  createPagesAndPagination(projects, projectDetail);
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

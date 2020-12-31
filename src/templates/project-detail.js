@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import { Head, Layout } from '../components/templates';
 import { Image } from '../components/molecules';
+import { Button } from '../components/atoms';
 
 const Hero = styled.div`
   animation-delay: 200ms;
@@ -30,6 +31,8 @@ function ProjectDetailTemplate(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
   const image = post.frontmatter.image;
+  const previous = props.data.sitePage.context.previous;
+  const next = props.data.sitePage.context.next;
 
   return (
     <Layout
@@ -69,6 +72,35 @@ function ProjectDetailTemplate(props) {
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
       </article>
+
+      {/* TODO: Abstract and style like DF? Create util for stripping HTML or look to store at build time? */}
+      <section
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginTop: '6rem',
+        }}
+      >
+        <div>
+          {next && (
+            <>
+              <h6>Newer</h6>
+
+              <Button to={next.fields.slug} type="link">
+                {next.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+              </Button>
+            </>
+          )}
+        </div>
+        {previous && (
+          <div>
+            <h6>Older</h6>
+            <Button to={previous.fields.slug} type="link">
+              {previous.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+            </Button>
+          </div>
+        )}
+      </section>
     </Layout>
   );
 }
@@ -90,6 +122,26 @@ export const pageQuery = graphql`
         date(formatString: "MMM YYYY")
         description
         image
+      }
+    }
+    sitePage(context: { slug: { eq: $slug } }) {
+      context {
+        next {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+        previous {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
       }
     }
   }

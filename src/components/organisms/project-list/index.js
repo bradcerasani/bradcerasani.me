@@ -17,7 +17,6 @@ export const ProjectList = ({ projects }) => {
         const slug = node.fields.slug;
         const image = node.frontmatter.image;
         const date = node.frontmatter.daterange || node.frontmatter.date;
-        const tags = node.frontmatter.tags;
 
         return (
           <StyledProjectItem to={slug} key={node.fields.slug}>

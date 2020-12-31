@@ -10,7 +10,7 @@ export const links = [
     imageSrc: '/images/gifs/writing.gif',
   },
   {
-    to: '/projects/',
+    to: '/',
     label: 'Projects',
     imageSrc: '/images/gifs/home.gif',
   },

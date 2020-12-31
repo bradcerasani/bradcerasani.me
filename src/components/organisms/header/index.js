@@ -62,7 +62,10 @@ export const Header = (props) => {
               data-visibility={overlayTransitioned.toString()}
               key={to}
               onAnimationStart={() => setShowSocial(index === links.length - 1)}
-              partiallyActive={to.includes(label.toLowerCase())}
+              partiallyActive={
+                typeof window === 'object' &&
+                window.location.pathname.includes(label.toLowerCase())
+              }
               style={{ animationDelay: `calc(${150 * index}ms)` }}
               to={to}
             >
@@ -112,7 +115,11 @@ export const Header = (props) => {
               <NavItem
                 activeClassName="is-active"
                 key={to}
-                partiallyActive={to.includes(label.toLowerCase())}
+                partiallyActive={
+                  // TODO: Tidy
+                  typeof window === 'object' &&
+                  window.location.pathname.includes(label.toLowerCase())
+                }
                 to={to}
               >
                 {label}

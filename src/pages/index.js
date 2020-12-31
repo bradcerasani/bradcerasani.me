@@ -3,12 +3,13 @@ import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 
 import { Button } from '../components/atoms';
-import { PostList } from '../components/organisms';
 import { Head, Layout } from '../components/templates';
+import { ProjectList } from '../components/organisms';
 
 function Home(props) {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
+  const projects = data.allMdx.edges;
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -34,7 +35,11 @@ function Home(props) {
         </Button>
       </section>
 
-      <PostList posts={data.allMdx.edges} />
+      <section>
+        <h2 style={{ marginLeft: '-4rem' }}>Side Projects</h2>
+
+        <ProjectList projects={projects} />
+      </section>
     </Layout>
   );
 }
@@ -54,7 +59,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      filter: { fields: { slug: { glob: "/writing/*" } } }
+      filter: { fields: { slug: { glob: "/projects/*" } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {
@@ -63,10 +68,12 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMM YYYY")
-            title
+            date(formatString: "YYYY")
+            daterange
             description
             image
+            tags
+            title
           }
         }
       }

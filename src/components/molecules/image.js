@@ -9,30 +9,31 @@ const Img = styled(Imgix)`
   margin-bottom: 0.75rem;
 `;
 
-export const Image = ({ src, caption, size, alt, ...props }) => {
+export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
   const url =
     process.env.NODE_ENV === 'development'
       ? `/images/${src}`
       : `https://bradcerasani.imgix.net/images/${src}`;
 
-  let sizes = '';
+  // TODO: improve and add media queries
+  let sizesFallback = '';
 
   switch (size) {
     case 'large':
-      sizes = '800px';
+      sizesFallback = '800px';
       break;
     case 'full':
-      sizes = '100vw';
+      sizesFallback = '100vw';
       break;
     default:
       // TODO: Swap with container width
-      sizes = '700px';
+      sizesFallback = '700px';
   }
 
   return (
     <Figure size={size} {...props}>
       <Img
-        sizes={sizes}
+        sizes={sizes || sizesFallback}
         src={url}
         htmlAttributes={{
           alt: alt || caption,

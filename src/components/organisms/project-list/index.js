@@ -23,7 +23,7 @@ export const ProjectList = ({ projects }) => {
             <StyledProjectItemImageWrapper>
               <Intrinsic aspect="16 / 9">
                 {image.includes('.jpg') ? (
-                  <Image src={image} />
+                  <Image src={image} sizes="1040px" />
                 ) : (
                   <video autoPlay muted loop playsInline>
                     <source src={image} />

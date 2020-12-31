@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -31,14 +31,6 @@ function ProjectDetailTemplate(props) {
   const siteTitle = props.data.site.siteMetadata.title;
   const image = post.frontmatter.image;
 
-  useEffect(() => {
-    const isClient = typeof window === 'object';
-
-    if (isClient) {
-      document.body.style.scrollBehavior = 'smooth';
-    }
-  });
-
   return (
     <Layout
       location={props.location}
@@ -62,7 +54,7 @@ function ProjectDetailTemplate(props) {
         }
 
         p:first-of-type {
-          margin-top: 8rem;
+          margin-top: 16rem;
           font-size: 1.25rem;
           font-family: 'CNW';
           font-weight: 500;

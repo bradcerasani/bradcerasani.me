@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -10,14 +10,6 @@ function PostDetailTemplate(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
   const date = post.frontmatter.date;
-
-  useEffect(() => {
-    const isClient = typeof window === 'object';
-
-    if (isClient) {
-      document.body.style.scrollBehavior = 'smooth';
-    }
-  });
 
   return (
     <Layout

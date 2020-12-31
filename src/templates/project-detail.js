@@ -53,8 +53,11 @@ function ProjectDetailTemplate(props) {
           --computedBackgroundColor: HSLA(43, 8%, 82%, 1);
         }
 
+        article section {
+          margin-top: 12rem;
+        }
+
         p:first-of-type {
-          margin-top: 16rem;
           font-size: 1.25rem;
           font-family: 'CNW';
           font-weight: 500;

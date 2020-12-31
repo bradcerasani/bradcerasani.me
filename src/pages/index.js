@@ -36,7 +36,7 @@ function Home(props) {
       </section>
 
       <section>
-        <h2 style={{ marginLeft: '-4rem' }}>Side Projects</h2>
+        <h2>Side Projects</h2>
 
         <ProjectList projects={projects} />
       </section>

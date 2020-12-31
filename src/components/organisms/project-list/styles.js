@@ -3,12 +3,12 @@ import { Link } from 'gatsby';
 
 import { breakpoint } from '../../theme';
 
-export const StyledProjectList = styled.div``;
+export const StyledProjectList = styled.div`
+  margin-top: 3rem;
+`;
 
 export const StyledProjectItemImageWrapper = styled.div`
-  border: 6px double black;
   margin-bottom: 1.5rem;
-  padding: 0.75rem;
 
   figure {
     margin: 0 !important;
@@ -17,7 +17,6 @@ export const StyledProjectItemImageWrapper = styled.div`
   @media (min-width: ${breakpoint.md}) {
     margin-left: -4rem;
     margin-right: -4rem;
-    padding: 1.5rem;
   }
 
   @media (min-width: ${breakpoint.lg}) {
@@ -27,6 +26,9 @@ export const StyledProjectItemImageWrapper = styled.div`
 `;
 
 export const StyledProjectItemDetailsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+
   h3 {
     font-size: 1.25rem;
     position: relative;

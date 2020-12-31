@@ -14,6 +14,8 @@ export const Note = styled.div`
   padding: 1.5rem;
 
   p {
+    /* prevents :first-of-type treatment on project-detail */
+    font: inherit !important;
     margin-bottom: 0;
   }
 

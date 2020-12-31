@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { Intrinsic } from '../../atoms';
 import { Image } from '../../molecules';
+
 import {
   StyledProjectList,
   StyledProjectItem,
@@ -17,6 +17,7 @@ export const ProjectList = ({ projects }) => {
         const slug = node.fields.slug;
         const image = node.frontmatter.image;
         const date = node.frontmatter.daterange || node.frontmatter.date;
+        const tags = node.frontmatter.tags;
 
         return (
           <StyledProjectItem to={slug} key={node.fields.slug}>
@@ -25,7 +26,7 @@ export const ProjectList = ({ projects }) => {
                 {image.includes('.jpg') ? (
                   <Image src={image} />
                 ) : (
-                  <video autoPlay muted loop>
+                  <video autoPlay muted loop playsInline>
                     <source src={image} />
                   </video>
                 )}
@@ -33,8 +34,10 @@ export const ProjectList = ({ projects }) => {
             </StyledProjectItemImageWrapper>
 
             <StyledProjectItemDetailsWrapper>
-              <h3>{title}</h3>
-              <div>{date}</div>
+              <div>
+                <div>{date}</div>
+                <h3>{title}</h3>
+              </div>
             </StyledProjectItemDetailsWrapper>
           </StyledProjectItem>
         );

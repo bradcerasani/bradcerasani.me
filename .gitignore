@@ -1,3 +1,5 @@
+.devnotes
+
 # Logs
 logs
 *.log
@@ -38,4 +40,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+# Infra
 .now

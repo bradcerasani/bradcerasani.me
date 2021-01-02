@@ -3,4 +3,3 @@ export * from './footer';
 export * from './gallery';
 export * from './header';
 export * from './post-list';
-export * from './project-list';

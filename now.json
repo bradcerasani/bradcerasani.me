@@ -9,5 +9,15 @@
       "status": 404,
       "dest": "/404/"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/writing",
+      "destination": "/"
+    },
+    {
+      "source": "/projects",
+      "destination": "/"
+    }
   ]
 }

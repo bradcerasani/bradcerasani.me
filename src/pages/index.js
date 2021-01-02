@@ -3,17 +3,25 @@ import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 
 import { Button } from '../components/atoms';
+import { Timeline, TimelineItem } from '../components/molecules';
 import { Head, Layout } from '../components/templates';
 import { ProjectList } from '../components/organisms';
 
 function Home(props) {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
-  const projects = data.allMdx.edges;
+  const contents = data.allMdx.edges;
 
   return (
     <Layout location={props.location} title={siteTitle}>
       <Head title="Design & Engineering" />
+
+      <style>{css`
+        :root {
+          --backgroundColor: HSLA(30, 32%, 40%, 0.5);
+          --computedBackgroundColor: HSLA(32, 18%, 82%, 1);
+        }
+      `}</style>
 
       <section>
         <div
@@ -23,13 +31,6 @@ function Home(props) {
           style={{ marginBottom: '1rem' }}
         />
 
-        <style>{css`
-          :root {
-            --backgroundColor: HSLA(30, 32%, 40%, 0.5);
-            --computedBackgroundColor: HSLA(32, 18%, 82%, 1);
-          }
-        `}</style>
-
         <Button to={'/about/'} type="link">
           More about me
         </Button>
@@ -37,8 +38,11 @@ function Home(props) {
 
       <section>
         <h2>Side Projects</h2>
-
-        <ProjectList projects={projects} />
+        <Timeline>
+          {contents.map(({ node }) => (
+            <TimelineItem fields={node.fields} frontmatter={node.frontmatter} />
+          ))}
+        </Timeline>
       </section>
     </Layout>
   );
@@ -59,7 +63,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      filter: { fields: { slug: { glob: "/projects/*" } } }
+      filter: { fields: { slug: { ne: "/about/" } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {

@@ -7,7 +7,7 @@ date: '2012-12-06'
 
 <Note>
 
-This post coincided with the launch of an updated portfolio site in 2012. Check it out in the archives [here](https://2012.bradcerasani.me), where you can also view this entry in its [original context](https://2012.bradcerasani.me/blog).
+This post coincided with the launch of an updated portfolio site in 2012. The site is available in the archives [here](https://2012.bradcerasani.me), where you can also view this entry in its [original context](https://2012.bradcerasani.me/blog).
 
 </Note>
 

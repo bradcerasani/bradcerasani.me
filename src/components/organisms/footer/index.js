@@ -53,7 +53,7 @@ export const Footer = () => {
         >
           Say hey
         </a>
-        {showContact && <ChatBubble>brad cerasani at gmail dot com</ChatBubble>}
+        {showContact && <ChatBubble>bradcerasani@gmail.com</ChatBubble>}
       </Container>
     </StyledFooter>
   );

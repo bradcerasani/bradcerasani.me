@@ -1,6 +1,6 @@
 ---
 title: Hue Gallery
-description: Hue Gallery desc
+description: An article I wrote for the December 2016 issue of net magazine, detailing how to create an immersive media experience a few years before Hue Sync.
 date: '2016-01-01'
 image: '/projects/hue-gallery/hero.jpg'
 ---

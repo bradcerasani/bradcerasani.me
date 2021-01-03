@@ -1,6 +1,6 @@
 ---
 title: Hoist; <br /> The Band Years
-description: Hoist desc
+description: Fond memories of an intro to design and creative work.
 date: '2010-01-01'
 daterange: 2005–2010
 image: /projects/hoist/hero.jpg

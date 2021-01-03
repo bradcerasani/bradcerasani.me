@@ -1,6 +1,6 @@
 ---
 title: PiDesk
-description: PiDesk desc
+description: Hacking Ikea's sit-stand desk with a Raspberry Pi to support programatic control and realtime height feedback.
 date: '2015-01-01'
 image: '/projects/pi-desk/hero.jpg'
 ---

@@ -1,6 +1,6 @@
 ---
 title: Herman Miller Lifework
-description: Originally published on Herman Miller Lifework
+description: Herman Miller interviewed me for their (now-defunct) Lifework blog.
 image: /images/writing/herman-miller-lifework/hero-alt.jpg
 date: '2013-05-08'
 ---

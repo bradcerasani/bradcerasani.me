@@ -1,6 +1,6 @@
 ---
 title: Liftoff
-description: Shedbot 2.0 reflects a sharper focus on building for the web.
+description: Blog post accompanying a portfolio update that details adding future-looking support for 5k displays 2 years before they were commercially available.
 image: /images/writing/liftoff/cover.jpg
 date: '2012-12-06'
 ---

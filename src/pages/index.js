@@ -37,13 +37,14 @@ function Home(props) {
 
       <section>
         <h2>Side Projects &amp; Writing</h2>
-        <p>
-          The work outside of work; variations on themes of design, technology,
-          and making things both online and off.
-        </p>
+        <p>Variations on themes of design, technology, and making things.</p>
         <Timeline>
           {contents.map(({ node }) => (
-            <TimelineItem fields={node.fields} frontmatter={node.frontmatter} />
+            <TimelineItem
+              fields={node.fields}
+              frontmatter={node.frontmatter}
+              key={node.fields.slug}
+            />
           ))}
         </Timeline>
       </section>

@@ -5,7 +5,6 @@ import { css } from 'styled-components';
 import { Button } from '../components/atoms';
 import { Timeline, TimelineItem } from '../components/molecules';
 import { Head, Layout } from '../components/templates';
-import { ProjectList } from '../components/organisms';
 
 function Home(props) {
   const { data } = props;

@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 import React from 'react';
-import { Intrinsic } from '../../atoms';
-import { Image } from '../../molecules';
+import { Button, Intrinsic } from '../../atoms';
+import { Image, LayoutObject, LayoutItem } from '../../molecules';
 
 import {
   StyledTimelineItem,
   TimelineItemImageWrapper,
   TimelineItemDetailsWrapper,
+  TimelineItemNode,
 } from './styles';
 
 export const Timeline = styled.div`
@@ -17,6 +18,7 @@ export const Timeline = styled.div`
 export const TimelineItem = ({ fields, frontmatter }) => {
   const title = frontmatter.title.replace(/<[^>]*>?/gm, '');
   const slug = fields.slug;
+  const description = frontmatter.description;
   const image = frontmatter.image;
   const date = frontmatter.daterange || frontmatter.date;
 
@@ -39,10 +41,16 @@ export const TimelineItem = ({ fields, frontmatter }) => {
       )}
 
       <TimelineItemDetailsWrapper>
-        <div>
-          <div>{date}</div>
-          <h3>{title}</h3>
-        </div>
+        <TimelineItemNode>{date}</TimelineItemNode>
+        <LayoutObject>
+          <LayoutItem>
+            <h5>{title}</h5>
+          </LayoutItem>
+          <LayoutItem>
+            <p style={{ fontSize: '0.8rem' }}>{description}</p>
+            <Button to={'/about/'}>View project</Button>
+          </LayoutItem>
+        </LayoutObject>
       </TimelineItemDetailsWrapper>
     </StyledTimelineItem>
   );

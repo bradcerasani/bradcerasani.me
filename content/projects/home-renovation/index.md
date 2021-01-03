@@ -1,6 +1,6 @@
 ---
 title: Designing <br /> a Home
-description: Blending the old with the new in our 1920s home, and adventures in custom lighting.
+description: Blending the old with the new in the renovation of our 1920s home, adventures in custom lighting, and learning how to design in 3D.
 date: '2018-01-01'
 daterange: 2017–2018
 image: /projects/home-renovation/hero.jpg

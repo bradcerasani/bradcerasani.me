@@ -1,6 +1,6 @@
 ---
 title: Rêverie
-description: In-house (literally) design, development, and photography for a French-inspired bakery my wife opened just in time for the holidays.
+description: In-house (literally) design, development, and photography for a French-inspired bakery my wife and I opened during the 2020 holiday season.
 date: '2020-12-01'
 image: '/projects/reverie/0S7A1593.jpg'
 tags:

@@ -86,7 +86,7 @@ function ProjectDetailTemplate(props) {
             <>
               <h6>Newer</h6>
 
-              <Button to={next.fields.slug} type="link">
+              <Button to={next.fields.slug} variant="link">
                 {next.frontmatter.title.replace(/<[^>]*>?/gm, '')}
               </Button>
             </>
@@ -95,7 +95,7 @@ function ProjectDetailTemplate(props) {
         {previous && (
           <div>
             <h6>Older</h6>
-            <Button to={previous.fields.slug} type="link">
+            <Button to={previous.fields.slug} variant="link">
               {previous.frontmatter.title.replace(/<[^>]*>?/gm, '')}
             </Button>
           </div>

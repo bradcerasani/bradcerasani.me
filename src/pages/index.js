@@ -30,13 +30,13 @@ function Home(props) {
           style={{ marginBottom: '1rem' }}
         />
 
-        <Button to={'/about/'} type="link">
+        <Button to={'/about/'} variant="link">
           More about me
         </Button>
       </section>
 
       <section>
-        <h2>Side Projects</h2>
+        <h2>Writing &amp; Side Projects</h2>
         <Timeline>
           {contents.map(({ node }) => (
             <TimelineItem fields={node.fields} frontmatter={node.frontmatter} />

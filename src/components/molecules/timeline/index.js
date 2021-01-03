@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 import React from 'react';
 import { Button, Intrinsic } from '../../atoms';
-import { Image, LayoutObject, LayoutItem } from '../../molecules';
+import { Image } from '../../molecules';
 
 import {
   StyledTimelineItem,
-  TimelineItemImageWrapper,
   TimelineItemDetailsWrapper,
+  TimelineItemImageWrapper,
   TimelineItemNode,
+  TimelineItemTitle,
 } from './styles';
 
 export const Timeline = styled.div`
@@ -25,7 +26,7 @@ export const TimelineItem = ({ fields, frontmatter }) => {
   const isProject = slug.includes('/projects');
 
   return (
-    <StyledTimelineItem to={slug}>
+    <StyledTimelineItem>
       {isProject && (
         <TimelineItemImageWrapper>
           <Intrinsic aspect="16 / 9">
@@ -42,15 +43,17 @@ export const TimelineItem = ({ fields, frontmatter }) => {
 
       <TimelineItemDetailsWrapper>
         <TimelineItemNode>{date}</TimelineItemNode>
-        <LayoutObject>
-          <LayoutItem>
-            <h5>{title}</h5>
-          </LayoutItem>
-          <LayoutItem>
-            <p style={{ fontSize: '0.8rem' }}>{description}</p>
-            <Button to={'/about/'}>View project</Button>
-          </LayoutItem>
-        </LayoutObject>
+
+        <TimelineItemTitle to={slug}>
+          <h5 style={{ paddingTop: '0.75rem', display: 'inline-block' }}>
+            {title}
+          </h5>
+        </TimelineItemTitle>
+
+        <p style={{ fontSize: '0.8rem', marginBottom: '1.25rem' }}>
+          {description}
+        </p>
+        <Button to={slug}>{isProject ? 'View Project' : 'Read Post'}</Button>
       </TimelineItemDetailsWrapper>
     </StyledTimelineItem>
   );

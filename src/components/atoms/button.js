@@ -28,7 +28,7 @@ const StyledButton = styled(Link)`
       transform: translateX(0.5rem);
     }
 
-    color: hsl(32, 18%, 98%);
+    color: hsl(32, 18%, 92%);
   }
 
   /* TODO: Create proper variant lookup */
@@ -40,7 +40,6 @@ const StyledButton = styled(Link)`
       font-size: 1rem;
       text-decoration: underline;
       text-transform: none;
-      text-underline-position: under;
       padding: 0;
       line-height: inherit;
 

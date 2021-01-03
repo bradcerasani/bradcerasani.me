@@ -27,16 +27,14 @@ export const TimelineItemImageWrapper = styled.div`
 export const TimelineItemDetailsWrapper = styled.div`
   position: relative;
 
-  h3 {
-    font-size: 1.25rem;
-    position: relative;
-    text-decoration: none;
+  h5:hover {
+    text-decoration: underline;
   }
 
   @media (min-width: ${breakpoint.md}) {
     &::before,
     &::after {
-      background-color: currentColor;
+      background-color: hsl(0, 0%, 48%);
       content: '';
       left: 0;
       margin-left: -2.75rem;
@@ -46,12 +44,12 @@ export const TimelineItemDetailsWrapper = styled.div`
     }
 
     &::after {
-      bottom: -6rem;
-      height: calc(100% + 3rem);
+      bottom: -8rem;
+      height: calc(100% + 5rem);
     }
 
     &::before {
-      height: 1.5rem;
+      height: calc(1.5rem);
       top: -1.5rem;
     }
   }
@@ -74,17 +72,27 @@ export const TimelineItemNode = styled.div`
     text-align: center;
     top: 0;
     width: 3rem;
+    box-shadow: 0 0 0 0.25rem var(--computedBackgroundColor);
+    z-index: 1;
   }
 `;
 
-export const StyledTimelineItem = styled(Link)`
+export const TimelineItemTitle = styled(Link)`
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const StyledTimelineItem = styled.div`
   display: block;
   margin-bottom: 3rem;
   position: relative;
   text-decoration: none;
 
   @media (min-width: ${breakpoint.md}) {
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
   }
 
   &:last-of-type {

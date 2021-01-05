@@ -1,7 +1,6 @@
 ---
 title: Invest in People
 description: Thoughts on inspiring people and recreating sketch notes on the web.
-image: /images/writing/invest-in-people/cover.png
 date: '2013-11-20'
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: The Black Pixel Web Stack
 description: A post written shortly after the formalization of Black Pixel's Web Services team, evangelizing our preferred tools and technologies.
-image: /images/writing/the-black-pixel-web-stack/cover.png
 date: '2016-06-08'
 ---
 

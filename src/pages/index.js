@@ -74,12 +74,16 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
+            type
           }
           frontmatter {
+            cta
+            ctaUrl
             date(formatString: "YYYY")
             daterange
             description
             image
+            skipPage
             tags
             title
           }

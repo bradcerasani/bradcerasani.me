@@ -18,19 +18,22 @@ export const Timeline = styled.div`
 
 export const TimelineItem = ({ fields, frontmatter }) => {
   const title = frontmatter.title.replace(/<[^>]*>?/gm, '');
-  const slug = fields.slug;
   const description = frontmatter.description;
   const image = frontmatter.image;
   const date = frontmatter.daterange || frontmatter.date;
-
-  const isProject = slug.includes('/projects');
+  const cta =
+    frontmatter.cta ||
+    (fields.type === 'WRITING' ? 'Read Post' : 'View Project');
+  const url = frontmatter.ctaUrl || fields.slug;
 
   return (
     <StyledTimelineItem>
-      {isProject && (
-        <TimelineItemImageWrapper>
+      {image && (
+        <TimelineItemImageWrapper
+          size={fields.type === 'WRITING' ? 'default' : 'large'}
+        >
           <Intrinsic aspect="16 / 9">
-            {image.includes('.jpg') ? (
+            {image.includes('.jpg') || image.includes('.png') ? (
               <Image src={image} sizes="1040px" />
             ) : (
               <video autoPlay muted loop playsInline>
@@ -44,16 +47,24 @@ export const TimelineItem = ({ fields, frontmatter }) => {
       <TimelineItemDetailsWrapper>
         <TimelineItemNode>{date}</TimelineItemNode>
 
-        <TimelineItemTitle to={slug}>
+        <TimelineItemTitle to={url}>
           <h5 style={{ paddingTop: '0.75rem', display: 'inline-block' }}>
             {title}
           </h5>
         </TimelineItemTitle>
 
-        <p style={{ fontSize: '0.8rem', marginBottom: '1.25rem' }}>
-          {description}
-        </p>
-        <Button to={slug}>{isProject ? 'View Project' : 'Read Post'}</Button>
+        <p
+          style={{ fontSize: '0.8rem', marginBottom: '1.25rem' }}
+          dangerouslySetInnerHTML={{
+            __html: description,
+          }}
+        />
+
+        {!frontmatter.skipPage && (
+          <Button to={url} target={frontmatter.ctaUrl ? '_blank' : '_self'}>
+            {cta}
+          </Button>
+        )}
       </TimelineItemDetailsWrapper>
     </StyledTimelineItem>
   );

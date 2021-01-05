@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
 import { breakpoint } from '../../theme';
@@ -8,20 +8,44 @@ export const TimelineItemImageWrapper = styled.div`
   transition-duration: 200ms;
   transition-property: box-shadow, transform;
   transition-timing-function: ease-in-out;
+  position: relative;
 
   figure {
+    overflow: hidden;
     margin: 0 !important;
   }
 
   @media (min-width: ${breakpoint.md}) {
-    margin-left: -4rem;
-    margin-right: -4rem;
+    &::before {
+      background-color: hsl(0, 0%, 48%);
+      content: '';
+      left: 0;
+      margin-left: -2.75rem;
+      position: absolute;
+      width: 1px;
+      z-index: 0;
+      height: 100%;
+      top: 0;
+    }
   }
 
-  @media (min-width: ${breakpoint.lg}) {
-    margin-left: -10rem;
-    margin-right: -10rem;
-  }
+  ${({ size }) =>
+    size === 'large' &&
+    css`
+      @media (min-width: ${breakpoint.md}) {
+        margin-left: -4rem;
+        margin-right: -4rem;
+      }
+
+      @media (min-width: ${breakpoint.lg}) {
+        margin-left: -10rem;
+        margin-right: -10rem;
+      }
+
+      &::before {
+        display: none;
+      }
+    `}
 `;
 
 export const TimelineItemDetailsWrapper = styled.div`

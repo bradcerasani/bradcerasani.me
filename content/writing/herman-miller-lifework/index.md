@@ -1,8 +1,9 @@
 ---
 title: Herman Miller Lifework
 description: Herman Miller interviewed me for their Lifework blog.
-image: /images/writing/herman-miller-lifework/hero-alt.jpg
 date: '2013-05-08'
+image: /writing/herman-miller-lifework/lifework-cover.jpg
+cta: Read Interview
 ---
 
 <Note>

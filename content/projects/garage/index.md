@@ -2,10 +2,10 @@
 title: Garage Design/Build
 description: I spent several hundred hours on evenings and weekends designing and building a garage with some interesting details.
 date: '2019-01-01'
-image: '/video/projects/garage/garage-animation-slow.mp4'
+image: /video/projects/garage/garage-animation-slow.mp4
 ---
 
-In the summer of 2019, I designed and built a garage.
+<!-- In the summer of 2019, I designed and built a garage.
 
 > How hard can it be...
 
@@ -15,9 +15,11 @@ I thought, having never before framed or built any structure of consequence.
 
 > How hard can I make it...
 
-[Is how it felt.](https://twitter.com/bradcerasani/status/1327043753593417735)
+[Is how it felt.](https://twitter.com/bradcerasani/status/1327043753593417735) -->
 
-<PostImage src="projects/garage/hero.jpg" size="large" caption="The result, with custom-built (mostly) hidden one-piece garage door" />
+<PostImage src="projects/garage/hero.jpg" size="large" />
+
+<p></p>
 
 More on the build soon...
 

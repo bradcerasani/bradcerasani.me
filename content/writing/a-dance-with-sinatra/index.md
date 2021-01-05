@@ -1,7 +1,7 @@
 ---
 title: A Dance With Sinatra
 description: Writing a lightweight Markdown-based blogging engine in Ruby with Sinatra.
-image: /images/writing/a-dance-with-sinatra/cover.jpg
+image: /writing/a-dance-with-sinatra/sinatra-cover.jpg
 date: '2013-09-20'
 ---
 

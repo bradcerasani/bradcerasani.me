@@ -6,9 +6,11 @@ daterange: 2017–2018
 image: /projects/home-renovation/hero.jpg
 ---
 
-From 2017-2018, we renovated our home.
+From 2017-2018, we had our home renovated.
 
 A friend introduced me to SketchUp, and helped with some initial models of the space. Using these files as a starting point, I spent several months iterating on the design with increasing fidelity, repeating the process as constraints emerged through demolition. Our house is close to 100 years old, and any renovation—especially in an old house⁠—is bound for surprises.
+
+<PostImage src="/projects/home-renovation/IMG_0148.jpg" caption="Kitchen before"/>
 
 <ImageCompare
   size="large"
@@ -40,6 +42,8 @@ The design attempts to blend old with new, and mixes modern lines with natural m
 ## Lighting
 
 In continuing the mix of old and new, I integrated Danish lighting from the 1950s in the dining room, and custom-made modern linear lighting in the kitchen.
+
+<PostImage size="full" src="/projects/home-renovation/0S7A7658.jpg" />
 
 <PostImage size="large" src="/projects/home-renovation/0S7A7555.jpg" />
 

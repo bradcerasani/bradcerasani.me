@@ -8,7 +8,7 @@ image: /projects/home-renovation/hero.jpg
 
 From 2017-2018, we renovated our home.
 
-A friend introduced me to SketchUp, and helped with some initial models of the space. Using these files as a starting point, I spent several months iterating on the design with increasing fidelity, repeating the process again as constraints emerged through demolition. Our house is close to 100 years old, and any renovation—especially in an old house⁠—is bound for surprises.
+A friend introduced me to SketchUp, and helped with some initial models of the space. Using these files as a starting point, I spent several months iterating on the design with increasing fidelity, repeating the process as constraints emerged through demolition. Our house is close to 100 years old, and any renovation—especially in an old house⁠—is bound for surprises.
 
 <ImageCompare
   size="large"
@@ -27,7 +27,7 @@ Working in 3D allowed me to more carefully consider the spaces and sightlines th
   caption="Before/after from mid-demoliton to final"
 />
 
-The design attempts to blend old with new, by mixing modern lines with natural materials. I’ve never designed a space or physical thing like this before, but found the principals familiar to what I knew in software, and learned a lot about the process along the way.
+The design attempts to blend old with new, and mixes modern lines with natural materials. I’ve never designed a space before, but found the principles familiar to what I knew in software, and learned a lot about the process along the way.
 
 <PostImage size="full" src="/projects/home-renovation/0S7A7686.jpg" caption="Transition from dining room to kitchen" />
 
@@ -39,13 +39,13 @@ The design attempts to blend old with new, by mixing modern lines with natural m
 
 ## Lighting
 
-In continuing the mix of old and new, I integrated Danish lighting from the 1950s in the dining room, and modern linear lighting in the kitchen that I designed and built.
+In continuing the mix of old and new, I integrated Danish lighting from the 1950s in the dining room, and custom-made modern linear lighting in the kitchen.
 
 <PostImage size="large" src="/projects/home-renovation/0S7A7555.jpg" />
 
 The linear lights consist of flush-mount aluminum channels with diffusers, [five-channel LED strips](https://sowilodesign.com/) colour-matched to Philips Hue, dual PWM amplifiers (RGB and tunable white), Philips Hue LS+ controllers, and commercial power supplies.
 
-In order to achieve perfectly linear light, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW diode clusters. In testing several methods of mounting and diffusion, I found this approach to be best balance of heat dissipation and output.
+In order to achieve perfectly linear light, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW diode clusters. In testing several methods of mounting and diffusion, I found this approach to be the best balance of heat dissipation and output.
 
 <ThreeUp
   image1="/video/projects/home-renovation/light-assembly.mp4"
@@ -65,7 +65,7 @@ caption="Installation and initial power-up"
 
 In total I built five discrete lights; each addressable individually or by group from the Philips Hue app or any voice assistant. They work seamlessly with standard in-wall switches to match the rest of the house.
 
-In terms of brightness, at peak output the three fixtures in the kitchen are capable of around 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78 Philips Hue GU10s.
+In terms of brightness, at peak output the three fixtures in the kitchen are capable of roughly 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78 Philips Hue GU10s.
 
 <ThreeUp
 image1="/video/projects/home-renovation/controller-2.mp4"

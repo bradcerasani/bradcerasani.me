@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { breakpoint } from '../../theme';
+import { breakpoint } from 'src/components/theme';
 
 export const StyledGallery = styled.div`
   display: contents;

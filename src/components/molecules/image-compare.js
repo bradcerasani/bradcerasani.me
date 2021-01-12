@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Imgix from 'react-imgix';
 import { ReactCompareSlider } from 'react-compare-slider';
 
-import { Intrinsic, Figure, Caption } from '../atoms';
+import { Intrinsic, Figure, Caption } from 'src/components/atoms';
 
 const ImageSliderHandle = styled.div`
   --strokeWidth: 2px;

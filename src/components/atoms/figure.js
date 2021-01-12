@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { breakpoint, maxWidth } from '../theme';
+import { breakpoint, maxWidth } from 'src/components/theme';
 import { Caption } from './caption';
 
 export const Figure = styled.figure`

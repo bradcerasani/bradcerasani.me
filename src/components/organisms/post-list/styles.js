@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoint, color } from '../../theme';
+import { breakpoint, color } from 'src/components/theme';
 
 export const StyledPostItemImage = styled.img`
   --width: 200px;

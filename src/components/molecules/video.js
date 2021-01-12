@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Caption, Figure, FluidWrapper } from '../atoms';
+import { Caption, Figure, FluidWrapper } from 'src/components/atoms';
 
 export const Video = ({ caption, size, src, ...props }) => {
   return (

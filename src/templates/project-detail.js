@@ -4,9 +4,9 @@ import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
-import { Head, Layout } from '../components/templates';
-import { Image } from '../components/molecules';
-import { Button } from '../components/atoms';
+import { Head, Layout } from 'src/components/templates';
+import { Image } from 'src/components/molecules';
+import { Button } from 'src/components/atoms';
 
 const Hero = styled.div`
   animation-delay: 200ms;

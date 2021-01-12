@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
-import { breakpoint, font } from '../../theme';
-import { ChatBubble, Container } from '../../atoms';
+import { breakpoint, font } from 'src/components/theme';
+import { ChatBubble, Container } from 'src/components/atoms';
 
 const StyledFooter = styled.footer`
   border-top: 2px solid currentColor;

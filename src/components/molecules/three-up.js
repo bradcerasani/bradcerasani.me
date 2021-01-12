@@ -2,9 +2,9 @@ import React from 'react';
 import Imgix from 'react-imgix';
 import styled from 'styled-components';
 
-import { Figure, Caption } from '../atoms';
-import { LayoutObject, LayoutItem } from '../molecules';
-import { breakpoint } from '../theme';
+import { Figure, Caption } from 'src/components/atoms';
+import { LayoutObject, LayoutItem } from 'src/components/molecules';
+import { breakpoint } from 'src/components/theme';
 
 const Img = styled(Imgix)`
   display: block;

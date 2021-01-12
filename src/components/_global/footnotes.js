@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { breakpoint, color } from '../theme';
+import { breakpoint, color } from 'src/components/theme';
 
 const Footnotes = css`
   .footnotes {

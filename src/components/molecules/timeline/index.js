@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import React from 'react';
-import { Button, Intrinsic } from '../../atoms';
-import { Image } from '../../molecules';
+import { Button, Intrinsic } from 'src/components/atoms';
+import { Image } from 'src/components/molecules';
 
 import {
   StyledTimelineItem,

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 
-import { NewsletterSignup } from '../components/molecules';
-import { PostList } from '../components/organisms';
-import { Head, Layout } from '../components/templates';
+import { NewsletterSignup } from 'src/components/molecules';
+import { PostList } from 'src/components/organisms';
+import { Head, Layout } from 'src/components/templates';
 
 function WritingPage(props) {
   const { data } = props;

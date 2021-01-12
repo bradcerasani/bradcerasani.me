@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { color, breakpoint } from '../theme';
+import { color, breakpoint } from 'src/components/theme';
 
 export const Note = styled.div`
   background-color: ${color.highlight};

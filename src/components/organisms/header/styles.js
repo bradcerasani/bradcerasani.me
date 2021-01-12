@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoint } from '../../theme';
+import { breakpoint } from 'src/components/theme';
 
 export const StyledHeader = styled.div`
   margin-bottom: 1.5rem;

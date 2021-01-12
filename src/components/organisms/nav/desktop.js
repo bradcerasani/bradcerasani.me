@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoint } from '../../theme';
+import { breakpoint } from 'src/components/theme';
 
 export const Nav = styled.div`
   display: none;

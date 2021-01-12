@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { color } from '../components/theme';
-import { Head, Layout } from '../components/templates';
+import { color } from 'src/components/theme';
+import { Head, Layout } from 'src/components/templates';
 
 function PostDetailTemplate(props) {
   const post = props.data.mdx;

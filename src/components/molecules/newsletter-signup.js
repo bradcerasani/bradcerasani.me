@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoint, color } from '../theme';
+import { breakpoint, color } from 'src/components/theme';
 
 /* These are probably one-off styles so they can live here for now... 🤙 */
 

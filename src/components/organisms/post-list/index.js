@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import useInterval from '../../../hooks/use-interval';
+import useInterval from 'src/hooks/use-interval';
 import { StyledPostList, StyledPostItem, StyledPostItemImage } from './styles';
 
 export const PostList = ({ posts, paused }) => {

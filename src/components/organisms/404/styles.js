@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-import { breakpoint, maxWidth } from '../../theme';
+import { breakpoint, maxWidth } from 'src/components/theme';
 
 export const Theme = createGlobalStyle`
   :root {

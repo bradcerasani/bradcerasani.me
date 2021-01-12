@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoint } from '../../theme';
+import { breakpoint } from 'src/components/theme';
 
 export const TimelineItemImageWrapper = styled.div`
   margin-bottom: 1.5rem;

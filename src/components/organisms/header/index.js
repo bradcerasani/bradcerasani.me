@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import { breakpoint } from '../../theme';
-import { Date, Logo } from '../../atoms';
-import { Nav, NavItem, NavImage } from '../nav/desktop';
+import { breakpoint } from 'src/components/theme';
+import { Date, Logo } from 'src/components/atoms';
+import { Nav, NavItem, NavImage } from 'src/components/organisms/nav/desktop';
 import {
   MobileNavItem,
   MobileNavMenu,
   MobileNavMenuWrapper,
   MobileNavOverlay,
   MobileNavWrapper,
-} from '../nav/mobile';
+} from 'src/components/organisms/nav/mobile';
 import { links } from './links';
 import { StyledHeader, HeroContainer } from './styles';
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { breakpoint, font } from '../theme';
+import { breakpoint, font } from 'src/components/theme';
 
 const verticalOrientation = css`
   margin-top: -1.75rem;

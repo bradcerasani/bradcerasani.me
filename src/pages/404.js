@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 
-import { Head, Layout } from '../components/templates';
+import { Head, Layout } from 'src/components/templates';
 import {
   FourOhFour,
   Theme,
   TigerBackground,
   Loading,
-} from '../components/organisms';
+} from 'src/components/organisms';
 
 function PageNotFound(props) {
   const { data } = props;

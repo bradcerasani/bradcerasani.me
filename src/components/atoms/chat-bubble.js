@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoint, color, font } from '../theme';
+import { breakpoint, color, font } from 'src/components/theme';
 
 export const ChatBubble = styled.div`
   animation-duration: 400ms;

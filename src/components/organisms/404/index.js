@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { breakpoint } from '../../theme';
-import MutedIconSVG from '../../atoms/icons/muted.inline.svg';
-import UnmutedIconSVG from '../../atoms/icons/unmuted.inline.svg';
-import { Grid, GridItem } from '../../molecules';
+import { breakpoint } from 'src/components/theme';
+import MutedIconSVG from 'src/components/atoms/icons/muted.inline.svg';
+import UnmutedIconSVG from 'src/components/atoms/icons/unmuted.inline.svg';
+import { Grid, GridItem } from 'src/components/molecules';
 import {
   Video,
   VideoContainer,

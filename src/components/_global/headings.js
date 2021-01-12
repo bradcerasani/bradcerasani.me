@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { breakpoint, font } from '../theme';
+import { breakpoint, font } from 'src/components/theme';
 
 const Headings = css`
   h1 {

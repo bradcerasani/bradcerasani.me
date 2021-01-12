@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { color } from '../theme';
+import { color } from 'src/components/theme';
 
 export const Caption = styled.figcaption`
   color: ${color.grey.default};

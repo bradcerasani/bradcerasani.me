@@ -2,7 +2,7 @@ import React from 'react';
 import Imgix from 'react-imgix';
 import styled from 'styled-components';
 
-import { Figure, Caption } from '../atoms';
+import { Figure, Caption } from 'src/components/atoms';
 
 const Img = styled(Imgix)`
   display: block;

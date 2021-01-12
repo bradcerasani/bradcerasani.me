@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoint, font } from '../../theme';
-import { Hamburger } from '../../atoms';
+import { breakpoint, font } from 'src/components/theme';
+import { Hamburger } from 'src/components/atoms';
 
 export const MobileNavMenuWrapper = styled.div`
   align-items: center;

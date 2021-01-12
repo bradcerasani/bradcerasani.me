@@ -1,9 +1,9 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
-import { GlobalStyle } from '../_global';
-import { Footer, Header } from '../organisms';
-import { Container, Note } from '../atoms';
+import { GlobalStyle } from 'src/components/_global';
+import { Footer, Header } from 'src/components/organisms';
+import { Container, Note } from 'src/components/atoms';
 import {
   Image,
   ImageCompare,
@@ -11,7 +11,7 @@ import {
   Video,
   Vimeo,
   LayoutObject,
-} from '../molecules';
+} from 'src/components/molecules';
 
 const components = {
   Note,

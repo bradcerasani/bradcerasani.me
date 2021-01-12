@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { maxWidth } from '../theme';
+import { maxWidth } from 'src/components/theme';
 
 export const Container = styled.div`
   margin-left: auto;

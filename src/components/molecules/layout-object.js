@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { breakpoint as breakpoints } from '../theme';
+import { breakpoint as breakpoints } from 'src/components/theme';
 
 function getResponsiveWidth(width) {
   let styles = ``;

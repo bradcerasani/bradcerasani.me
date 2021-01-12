@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { breakpoint, color, font, transition } from '../theme';
+import { breakpoint, color, font, transition } from 'src/components/theme';
 
 const Elements = css`
   :root {

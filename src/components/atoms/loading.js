@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoint } from '../theme';
+import { breakpoint } from 'src/components/theme';
 
 const StyledVideo = styled.video`
   --size: 150px;

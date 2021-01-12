@@ -168,5 +168,8 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-root-import',
+    },
   ],
 };

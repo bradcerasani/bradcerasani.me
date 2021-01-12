@@ -83,7 +83,7 @@ caption="Corner detail and ZigBee controller prototype"
 
 Towards the back of the house, there is a bank of three full-height cabinets on the one wall. Behind the first door is a pantry, framed in baltic birch with adjustable shelves. The third door is more storage, mostly for cleaning and dog supplies. The centre door opens to a T-shaped powder room hidden behind the other cabinets.
 
-<PostImage size="large" src="/projects/home-renovation/0S7A7645.jpg" caption="Second handle on the left is the powder room. The lower level was previously an attached garage"/>
+<PostImage size="large" src="/projects/home-renovation/0S7A7645.jpg" caption="The second handle on the left is a powder room. The lower level was previously an attached garage"/>
 
 The powder room is painted a deep navy, in contrast to the otherwise bright house. A feature wall has floor-to-ceiling period appropriate wallpaper by William Morris, in a pattern called Golden Lily.
 

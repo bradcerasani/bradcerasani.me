@@ -5,11 +5,14 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { color } from 'src/components/theme';
 import { Head, Layout } from 'src/components/templates';
+import { Button } from 'src/components/atoms';
 
 function PostDetailTemplate(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
   const date = post.frontmatter.date;
+  const previous = props.data.sitePage.context.previous;
+  const next = props.data.sitePage.context.next;
 
   return (
     <Layout
@@ -37,6 +40,35 @@ function PostDetailTemplate(props) {
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
       </article>
+
+      {/* TODO: Abstract and style like DF? Create util for stripping HTML or look to store at build time? */}
+      <section
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginTop: '6rem',
+        }}
+      >
+        <div>
+          {next && (
+            <>
+              <h6>Newer</h6>
+
+              <Button to={next.fields.slug} variant="link">
+                {next.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+              </Button>
+            </>
+          )}
+        </div>
+        {previous && (
+          <div>
+            <h6>Older</h6>
+            <Button to={previous.fields.slug} variant="link">
+              {previous.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+            </Button>
+          </div>
+        )}
+      </section>
     </Layout>
   );
 }
@@ -59,6 +91,26 @@ export const pageQuery = graphql`
         date(formatString: "MMM YYYY")
         description
         image
+      }
+    }
+    sitePage(context: { slug: { eq: $slug } }) {
+      context {
+        next {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+        previous {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
       }
     }
   }

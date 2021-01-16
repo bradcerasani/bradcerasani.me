@@ -34,6 +34,9 @@ function addCuePoints(player, annotations) {
   });
 }
 
+// Blank component not technically necessary but eliminates build errors
+export const Annot = () => null;
+
 export const Vimeo = ({ vimeoId, caption, size, children }) => {
   const [isLoaded, setLoaded] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
@@ -56,7 +59,7 @@ export const Vimeo = ({ vimeoId, caption, size, children }) => {
     if (children) {
       // TODO: Harden and/or consider converting to JSON
       const annotations = children
-        .filter(({ props }) => props.mdxType === 'AN')
+        .filter(({ props }) => props.mdxType === 'Annot')
         .map(({ props }) => {
           const annotation = {
             time: props.time,

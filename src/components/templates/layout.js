@@ -5,27 +5,27 @@ import { GlobalStyle } from 'src/components/_global';
 import { Footer, Header } from 'src/components/organisms';
 import { Container, Note } from 'src/components/atoms';
 import {
+  Annot,
   Image,
   ImageCompare,
+  LayoutObject,
   ThreeUp,
   Video,
   Vimeo,
-  LayoutObject,
 } from 'src/components/molecules';
 
 const components = {
-  Note,
+  Annot,
   ImageCompare,
+  LayoutObject,
+  Note,
   PostImage: Image, // Image appears to be a reserved word
   ThreeUp,
   Video,
   Vimeo,
-  LayoutObject,
 };
 
-export const Layout = (props) => {
-  const { children } = props;
-
+export const Layout = ({ children, ...props }) => {
   return (
     <>
       <GlobalStyle />

@@ -20,40 +20,40 @@ This article was originally published in the December 2016 issue of [net magazin
 </Note>
 
 <Vimeo vimeoId="392018140" size="large" caption="Finished result: Hue Gallery in action">
-<AN time="0.01"><span>🎹</span></AN>
-<AN time="3" />
-<AN time="4">peak Casey Neistat influence...</AN>
-<AN time="8.3" />
-<AN time="9.9">custom controller for Ikea sit-stand desk </AN>
-<AN time="13.5" />
-<AN time="14">it's made up of an ultrasonic sensor, Raspberry Pi, and some relays</AN>
-<AN time="18.5" />
-<AN time="22.5">
+<Annot time="0.01"><span>🎹</span></Annot>
+<Annot time="3" />
+<Annot time="4">peak Casey Neistat influence...</Annot>
+<Annot time="8.3" />
+<Annot time="9.9">custom controller for Ikea sit-stand desk </Annot>
+<Annot time="13.5" />
+<Annot time="14">it's made up of an ultrasonic sensor, Raspberry Pi, and some relays</Annot>
+<Annot time="18.5" />
+<Annot time="22.5">
 <span style={{ transform: 'rotate(-10deg)' }}>☕️</span> should've
 straightened this shot
-</AN>
-<AN time="29" />
-<AN time="32"><span>🙄</span> (30 seconds after sitting down)</AN>
-<AN time="36.8" />
-<AN time="42.1"><span>🌳</span></AN>
-<AN time="47.5" />
-<AN time="50.7"><span>🪁</span></AN>
-<AN time="52.4" />
-<AN time="52.8"><span>🌠</span> this clip is reversed</AN>
-<AN time="57.3" />
-<AN time="64.3"><span>☀️</span> should've used a larger aperture to prevent that starburst</AN>
-<AN time="67.2" />
-<AN time="67.7">sitting in a different spot here</AN>
-<AN time="70.6" />
-<AN time="75.7"><span>☠️</span> RIP this plant</AN>
-<AN time="78.3" />
-<AN time="79"><span>🐍</span> the one in the corner is still alive though</AN>
-<AN time="82" />
-<AN time="84"><span>🎹</span></AN>
-<AN time="88.8" />
-<AN time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</AN>
-<AN time="97.3" />
-<AN time="97.9"><a href="https://github.com/bpxl-labs/hue-gallery" target="_blank" rel="noopener noreferrer">github.com/bpxl-labs/hue-gallery</a></AN>  
+</Annot>
+<Annot time="29" />
+<Annot time="32"><span>🙄</span> (30 seconds after sitting down)</Annot>
+<Annot time="36.8" />
+<Annot time="42.1"><span>🌳</span></Annot>
+<Annot time="47.5" />
+<Annot time="50.7"><span>🪁</span></Annot>
+<Annot time="52.4" />
+<Annot time="52.8"><span>🌠</span> this clip is reversed</Annot>
+<Annot time="57.3" />
+<Annot time="64.3"><span>☀️</span> should've used a larger aperture to prevent that starburst</Annot>
+<Annot time="67.2" />
+<Annot time="67.7">sitting in a different spot here</Annot>
+<Annot time="70.6" />
+<Annot time="75.7"><span>☠️</span> RIP this plant</Annot>
+<Annot time="78.3" />
+<Annot time="79"><span>🐍</span> the one in the corner is still alive though</Annot>
+<Annot time="82" />
+<Annot time="84"><span>🎹</span></Annot>
+<Annot time="88.8" />
+<Annot time="95.2">&ldquo;Your Eyes&rdquo; and &ldquo;Warm&rdquo;</Annot>
+<Annot time="97.3" />
+<Annot time="97.9"><a href="https://github.com/bpxl-labs/hue-gallery" target="_blank" rel="noopener noreferrer">github.com/bpxl-labs/hue-gallery</a></Annot>  
 </Vimeo>
 
 In 2008, the number of internet-connected things exceeded Earth’s human population. By 2020, that number is expected to eclipse 50 billion. As processors, sensors, and wireless radios become smaller and more accessible, use cases for these devices are flourishing.

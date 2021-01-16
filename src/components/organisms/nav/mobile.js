@@ -11,7 +11,7 @@ export const MobileNavMenuWrapper = styled.div`
   position: relative;
   z-index: 5;
 
-  @media (min-width: ${breakpoint.sm}) {
+  @media (min-width: ${breakpoint.md}) {
     display: contents;
   }
 `;
@@ -21,7 +21,7 @@ export const MobileNavMenu = styled(Hamburger)`
   margin-right: -1.25rem;
   width: 4rem;
 
-  @media (min-width: ${breakpoint.sm}) {
+  @media (min-width: ${breakpoint.md}) {
     display: none;
   }
 `;
@@ -102,7 +102,7 @@ export const MobileNavOverlay = styled.div`
       }
     `}
 
-  @media (min-width: ${breakpoint.sm}) {
+  @media (min-width: ${breakpoint.md}) {
     display: none;
   }
 `;

@@ -6,7 +6,7 @@ import { breakpoint } from 'src/components/theme';
 export const Nav = styled.div`
   display: none;
 
-  @media (min-width: ${breakpoint.sm}) {
+  @media (min-width: ${breakpoint.md}) {
     align-items: flex-end;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@ export const Nav = styled.div`
 
 export const NavImage = styled.img`
   bottom: 0;
-  display: block;
+  display: none;
   margin-bottom: 0.375rem;
   margin-right: -1rem;
   opacity: 0;
@@ -32,6 +32,10 @@ export const NavImage = styled.img`
   right: -10rem;
   width: 10rem;
   z-index: -2;
+
+  @media (min-width: ${breakpoint.lg}) {
+    display: block;
+  }
 `;
 
 export const NavItem = styled(Link)`

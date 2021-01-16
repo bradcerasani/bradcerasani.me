@@ -82,12 +82,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   // Move post and project media into /public for consumption by Imgix
-  if (node.internal.mediaType) {
+  if (node.internal.mediaType && (node.internal.mediaType.includes('image') || node.internal.mediaType.includes('video'))) {
     let directoryName = '';
 
     switch (node.internal.mediaType) {
       case 'image/gif':
       case 'image/jpeg':
+      case 'image/jpg':
       case 'image/png':
         directoryName = 'images';
         break;

@@ -3,20 +3,24 @@ const fs = require('fs-extra');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateWebpackConfig = ({ actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /lazysizes/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
+
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
   });
-};
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'build-html') {
-    config.loader('null', {
-      test: /lazysizes/,
-      loader: 'null-loader',
-    });
-  }
 };
 
 exports.createPages = async ({ graphql, actions }) => {

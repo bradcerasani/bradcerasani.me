@@ -21,7 +21,7 @@ export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
 
   switch (size) {
     case 'large':
-      sizesFallback = '800px';
+      sizesFallback = '1040px';
       break;
     case 'full':
       sizesFallback = '100vw';

@@ -1,7 +1,6 @@
 import React from 'react';
 import Imgix from 'react-imgix';
 import styled from 'styled-components';
-import 'lazysizes';
 
 import { Figure, Caption } from 'src/components/atoms';
 
@@ -13,8 +12,8 @@ const Img = styled(Imgix)`
 export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
   const url =
     process.env.NODE_ENV === 'development'
-      ? `/images/${src}`
-      : `https://bradcerasani.imgix.net/images/${src}`;
+      ? `/images${src}`
+      : `https://bradcerasani.imgix.net/images${src}`;
 
   // TODO: improve and add media queries
   let sizesFallback = '';
@@ -38,12 +37,13 @@ export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
         sizes={sizes || sizesFallback}
         src={url}
         attributeConfig={{
-          src: "data-src",
-          srcSet: "data-srcset",
-          sizes: "data-sizes",
+          src: 'data-src',
+          srcSet: 'data-srcset',
+          sizes: 'data-sizes',
         }}
         htmlAttributes={{
           alt: alt || caption,
+          src: `${url}?blur=100&w=400&auto=format`,
         }}
       />
       {caption && <Caption>{caption}</Caption>}

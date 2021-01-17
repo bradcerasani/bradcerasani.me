@@ -2,7 +2,20 @@ const path = require(`path`);
 const fs = require('fs-extra');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /lazysizes/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
+
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -82,7 +95,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   // Move post and project media into /public for consumption by Imgix
-  if (node.internal.mediaType && (node.internal.mediaType.includes('image') || node.internal.mediaType.includes('video'))) {
+  if (
+    node.internal.mediaType &&
+    (node.internal.mediaType.includes('image') ||
+      node.internal.mediaType.includes('video'))
+  ) {
     let directoryName = '';
 
     switch (node.internal.mediaType) {

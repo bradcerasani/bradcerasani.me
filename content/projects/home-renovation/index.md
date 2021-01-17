@@ -93,4 +93,4 @@ I had a friend sandblast the chrome bathroom fixtures to reveal the raw brass un
 
 When the powder room door opens, a ZigBee-enabled reed switch communicates with Home Assistant running on a Raspberry Pi to turn the lights on. If we're entertaining, the linear fixture outside the door can turn into an airplane-style occupancy indicator, turning red when occupied and green when available.
 
-<Video size="large" src="/video/projects/home-renovation/occupancy-demo.mp4" caption="Big stretch" />
+<Video size="large" src="/video/projects/home-renovation/occupancy-demo-color-corrected.mp4" caption="Big stretch" />

@@ -132,7 +132,15 @@ export const Header = (props) => {
                   to={to}
                 >
                   {label}
-                  {imageSrc && <NavImage src={url} sizes="200px" alt={label} />}
+                  {imageSrc && (
+                    <NavImage
+                      src={url}
+                      sizes="200px"
+                      htmlAttributes={{
+                        alt: label,
+                      }}
+                    />
+                  )}
                 </NavItem>
               );
             })}

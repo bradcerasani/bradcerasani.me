@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import { breakpoint } from 'src/settings';

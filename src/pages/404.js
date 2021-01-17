@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { Head, Layout } from 'src/components/templates';
 import {
   FourOhFour,
-  Theme,
+  FourOhFourTheme,
   TigerBackground,
   Loading,
 } from 'src/components/organisms';
@@ -28,7 +28,7 @@ function PageNotFound(props) {
 
       <Loading style={{ opacity: isLoaded ? 0 : 1 }} />
 
-      <Theme />
+      <FourOhFourTheme />
       <TigerBackground />
       <FourOhFour />
     </Layout>

@@ -1,8 +1,8 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-import { breakpoint, maxWidth } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 
-export const Theme = createGlobalStyle`
+export const FourOhFourTheme = createGlobalStyle`
   :root {
     --backgroundColor: #191609;
     --computedBackgroundColor: HSLA(50, 32%, 7%, 1.00);
@@ -52,7 +52,7 @@ export const Loading = styled.div`
 
 export const TigerBackground = styled.div`
   background-image: radial-gradient(
-    transparent calc(${maxWidth} / 2),
+    transparent calc(var(--maxWidth) / 2),
     var(--backgroundColor)
   );
   height: 100%;

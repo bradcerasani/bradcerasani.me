@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { breakpoint, color } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 
 export const StyledPostItemImage = styled.img`
   --width: 200px;
@@ -35,7 +35,7 @@ export const StyledPostItem = styled(Link)`
   z-index: 1;
 
   h3 {
-    color: ${color.linen.dark};
+    color: var(--colorLinen);
     margin: 0;
     position: relative;
     transition-duration: 400ms;
@@ -48,7 +48,7 @@ export const StyledPostItem = styled(Link)`
     transition-duration: 100ms;
 
     h3 {
-      color: ${color.black};
+      color: var(--colorBlack);
     }
 
     ${StyledPostItemImage} {

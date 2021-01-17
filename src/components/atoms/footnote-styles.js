@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { breakpoint, color } from 'src/components/theme';
+import { breakpoint} from 'src/settings';
 
 export const FootnoteStyles = createGlobalStyle`
   .footnotes {
@@ -35,7 +35,7 @@ export const FootnoteStyles = createGlobalStyle`
   }
 
   .footnotes ol li {
-    color: ${color.grey.default};
+    color: var(--colorGreyDefault);
     line-height: 1.5;
     margin-bottom: 1rem;
     position: relative;

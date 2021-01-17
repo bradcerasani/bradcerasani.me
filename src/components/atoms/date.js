@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { breakpoint, font } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 
 const verticalOrientation = css`
   margin-top: -1.75rem;
@@ -16,7 +16,7 @@ const verticalOrientation = css`
 
 export const Date = styled.div`
   color: inherit;
-  font-family: ${font.family.sansSerif};
+  font-family:var(--fontFamilySerif);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;

@@ -1,19 +1,17 @@
 import { css } from 'styled-components';
 
-import { color } from 'src/components/theme';
-
 export const CASettings = css`
-  --abberationOffset: 2px;
-  --abberationOffsetInv: calc(var(--abberationOffset) * -1);
+  --offset: 2px;
+  --offsetInv: calc(var(--offset) * -1);
 `;
 
 export const CAText = css`
   ${CASettings}
 
-  text-shadow: var(--abberationOffset) 0 var(--abberationOffset)
-      ${color.red.translucent},
-    var(--abberationOffsetInv) 0 var(--abberationOffset)
-      ${color.cyan.translucent};
+  text-shadow: var(--offset) 0 var(--offset)
+      var(--colorRedTranslucent),
+    var(--offsetInv) 0 var(--offset)
+      var(--colorCyanTranslucent);
 `;
 
 export const CAFilter = css`
@@ -21,10 +19,10 @@ export const CAFilter = css`
 
   /* stylelint-disable-next-line */
   filter: drop-shadow(
-      var(--abberationOffset) 0 var(--abberationOffset) ${color.red.translucent}
+      var(--offset) 0 var(--offset) var(--colorRedTranslucent)
     )
     drop-shadow(
-      var(--abberationOffsetInv) 0 var(--abberationOffset)
-        ${color.cyan.translucent}
+      var(--offsetInv) 0 var(--offset)
+        var(--colorCyanTranslucent)
     );
 `;

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
-import { breakpoint, font } from 'src/components/theme';
+
+import { breakpoint } from 'src/settings';
 import { ChatBubble, Container } from 'src/components/atoms';
 
 const StyledFooter = styled.footer`
   border-top: 2px solid currentColor;
-  font-family: ${font.family.serif};
+  font-family: var(--fontFamilySerif);
   font-size: 1.125rem;
   margin-top: 1.5rem;
   padding-bottom: 3rem;

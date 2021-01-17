@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoint, color } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 
 /* These are probably one-off styles so they can live here for now... 🤙 */
 
@@ -47,7 +47,7 @@ const StyledForm = styled.form`
     }
 
     &::placeholder {
-      color: ${color.grey.dark};
+      color: var(--colorGreyDark);
       font-style: italic;
       transition-duration: 200ms;
       transition-property: color;

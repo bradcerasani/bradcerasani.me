@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
-import { breakpoint, color, font } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 
 export const ChatBubble = styled.div`
   animation-duration: 400ms;
   animation-fill-mode: both;
   animation-name: fadeInUp;
   animation-timing-function: ease-in-out;
-  background-color: ${color.grey.lightest};
+  background-color: var(--colorGreyLightest);
   border-radius: 1em;
-  color: ${color.grey.darker};
+  color: var(--colorGreyDarker);
   display: inline-block;
-  font-family: ${font.family.system};
+  font-family: var(--fontFamilySystem);
   font-size: 0.875rem;
   line-height: 1;
   margin-left: 0.5rem;
@@ -27,7 +27,7 @@ export const ChatBubble = styled.div`
   }
 
   &::before {
-    background-color: ${color.grey.lightest};
+    background-color: var(--colorGreyLightest);
     border-bottom-right-radius: 1em;
     height: 1em;
     left: -0.4em;

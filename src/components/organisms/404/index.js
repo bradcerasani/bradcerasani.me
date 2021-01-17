@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { breakpoint } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 import MutedIconSVG from 'src/components/atoms/icons/muted.inline.svg';
 import UnmutedIconSVG from 'src/components/atoms/icons/unmuted.inline.svg';
 import { Grid, GridItem } from 'src/components/molecules';
@@ -13,7 +13,7 @@ import {
   MuteButton,
 } from './styles';
 
-export { Theme, TigerBackground, Loading } from './styles';
+export { FourOhFourTheme, TigerBackground, Loading } from './styles';
 
 const StyledGrid = styled(Grid)`
   @media (min-width: ${breakpoint.md}) {

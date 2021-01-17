@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoint } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 import { Caption } from 'src/components/atoms';
 
 export const SwatchContainer = styled.div`

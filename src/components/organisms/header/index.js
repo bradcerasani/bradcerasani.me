@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import { breakpoint } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 import { Date, Logo } from 'src/components/atoms';
 import { Nav, NavItem, NavImage } from 'src/components/organisms/nav/desktop';
 import {

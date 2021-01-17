@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { color } from 'src/components/theme';
 import { Button, FootnoteStyles, PrismThemeStyles } from 'src/components/atoms';
 import { Head, Layout } from 'src/components/templates';
 
@@ -33,7 +32,7 @@ function PostDetailTemplate(props) {
       <style>
         {css`
           :root {
-            --backgroundColor: ${color.white};
+            --backgroundColor: var(--colorWhite);
           }
         `}
       </style>

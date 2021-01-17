@@ -1,10 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { color } from 'src/components/theme';
-
 const StyledIntrinsic = styled.div`
-  background-color: ${color.linen.default};
+  background-color: var(--colorLinenDefault);
   position: relative;
   width: 100%;
 

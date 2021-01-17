@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { color, breakpoint } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 
 export const Note = styled.div`
-  background-color: ${color.highlight};
+  background-color: var(--colorHighlight);
   border-color: currentColor;
   border-style: double;
   border-width: 6px;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Figure, Caption } from 'src/components/atoms';
 import { LayoutObject, LayoutItem } from 'src/components/molecules';
-import { breakpoint } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 
 const Img = styled(Imgix)`
   display: block;

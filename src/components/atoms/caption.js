@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
-import { color } from 'src/components/theme';
-
 export const Caption = styled.figcaption`
-  color: ${color.grey.default};
+  color: var(--colorGreyDefault);
   font-size: 0.8rem;
   font-style: italic;
   margin-bottom: 1.5rem;

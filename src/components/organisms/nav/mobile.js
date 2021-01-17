@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
+import styled, { css } from 'styled-components';
 
-import { breakpoint, font } from 'src/components/theme';
+import { breakpoint } from 'src/settings';
 import { Hamburger } from 'src/components/atoms';
 
 export const MobileNavMenuWrapper = styled.div`
@@ -109,7 +109,7 @@ export const MobileNavOverlay = styled.div`
 
 export const MobileNavItem = styled(Link)`
   display: block;
-  font-family: ${font.family.serif};
+  font-family: var(--fontFamilySerif);
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.375;

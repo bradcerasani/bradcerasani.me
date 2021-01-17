@@ -1,3 +1,46 @@
+html,
+body {
+  font-family: USW, -apple-system, sans-serif;
+  font-size: 18px;
+  min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html, body {
+    font-size: 20px;
+  }
+}
+
+html {
+  background-color: var(--backgroundColor);
+  transition-duration: 600ms;
+  transition-property: background-color, color;
+  transition-timing-function: ease-in-out;
+}
+
+body {
+  background-color: rgb(255, 255, 255, 0.4);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  transition-duration: 600ms;
+  transition-property: background-color, color;
+  transition-timing-function: ease-in-out;
+  min-height: 100vh;
+}
+
+@media (min-width: 480px) {
+  body::before {
+    background-color: currentColor;
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+}
+
 h1 {
   align-self: flex-end;
   font-family: var(--fontFamilySerif);

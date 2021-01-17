@@ -28,8 +28,8 @@ function AboutPage(props) {
 
         <style>{css`
           :root {
-            --backgroundColor: HSLA(33, 44%, 41%, 0.5);
-            --computedBackgroundColor: HSLA(35, 26%, 82%, 1);
+            --backgroundColor: hsl(33, 44%, 41%, 0.5);
+            --computedBackgroundColor: hsl(35, 26%, 82%, 1);
           }
         `}</style>
         <section id="js-mdx-body">

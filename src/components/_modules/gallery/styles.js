@@ -130,7 +130,7 @@ export const StyledGalleryImage = styled.div`
 export const StyledGalleryController = styled.input`
   --height: 1.75rem;
   --trackHeight: 3px;
-  --trackColor: hsl(0, 0%, 0%, 0.2);
+  --trackColor: var(--colorLinenDark);
 
   appearance: none;
   background-color: transparent;

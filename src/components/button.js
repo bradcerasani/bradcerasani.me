@@ -14,9 +14,9 @@ const ButtonLinkIcon = styled.span`
 `;
 
 const StyledButton = styled(Link)`
-  background-color: hsl(0, 0%, 22%);
+  background-color: var(--colorGreyDarker);
   border-radius: 1rem;
-  color: hsl(32, 18%, 92%);
+  color: var(--colorLinenDefault);
   font-size: 0.7rem;
   line-height: 1.5;
   padding: 0.5rem 1.25rem;
@@ -28,7 +28,7 @@ const StyledButton = styled(Link)`
       transform: translateX(0.5rem);
     }
 
-    color: hsl(32, 18%, 92%);
+    color: var(--colorLinenDefault);
   }
 
   /* TODO: Create proper variant lookup */

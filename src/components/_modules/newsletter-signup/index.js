@@ -26,7 +26,7 @@ const StyledForm = styled.form`
 
   input[type='text'] {
     background-color: white;
-    border: 1px solid hsl(0, 0%, 0%, 0.8);
+    border: 1px solid var(--colorGreyDarker);
     color: inherit;
     flex-grow: 1;
     flex-shrink: 0;
@@ -38,12 +38,8 @@ const StyledForm = styled.form`
 
     /* Default state */
     &:not(:valid) {
-      background-color: hsl(0, 0%, 100%, 0.4);
+      background-color: var(--colorGreyLightest);
       border: 1px solid transparent;
-
-      &:hover {
-        background-color: hsl(0, 0%, 100%, 0.6);
-      }
     }
 
     &::placeholder {
@@ -58,7 +54,7 @@ const StyledForm = styled.form`
     &:focus,
     &:active {
       background-color: white !important;
-      border-color: hsl(0, 0%, 0%, 0.8) !important;
+      border-color: var(--colorGreyDarker) !important;
 
       &::placeholder {
         color: inherit;
@@ -70,7 +66,7 @@ const StyledForm = styled.form`
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
-      border-color: hsl(0, 0%, 0%, 0.8);
+      border-color: var(--colorGreyDarker);
       box-shadow: 0 0 0px 2rem white inset !important;
     }
   }

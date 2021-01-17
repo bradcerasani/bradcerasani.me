@@ -54,8 +54,8 @@ function ProjectDetailTemplate(props) {
       <style>
         {css`
           :root {
-            --backgroundColor: HSLA(39, 14%, 40%, 0.5);
-            --computedBackgroundColor: HSLA(43, 8%, 82%, 1);
+            --backgroundColor: hsl(39, 14%, 40%, 0.5);
+            --computedBackgroundColor: hsl(43, 8%, 82%, 1);
           }
 
           article section {

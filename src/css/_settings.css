@@ -17,19 +17,20 @@
   --colorGreyLighter: hsl(0, 0%, 70%);
   --colorGreyLightest: hsl(0, 0%, 94%);
 
-  --colorLinenDark: hsl(35, 5%, 50%);
+  --colorLinenDark: hsl(35, 10%, 60%);
   --colorLinenDefault: hsl(35, 10%, 85%);
   --colorLinenLight: hsl(35, 30%, 86%);
 
   --colorRedDefault: hsl(351, 64%, 55%);
-  --colorRedTranslucent: hsla(351, 64%, 55%, 0.25);
+  --colorRedTranslucent: hsl(351, 64%, 55%, 0.25);
 
   --colorCyanDefault: hsl(186, 100%, 73%);
-  --colorCyanTranslucent: hsla(186, 100%, 73%, 0.25);
+  --colorCyanTranslucent: hsl(186, 100%, 73%, 0.25);
 
   --fontFamilySerif: CNW, Georgia, 'Times New Roman', Times, serif;
   --fontFamilySansSerif: USW, -apple-system, sans-serif;
-  --fontFamilySystem: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --fontFamilySystem: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   --transitionSpeedFast: 200ms;
   --transitionSpeedDefault: 300ms;

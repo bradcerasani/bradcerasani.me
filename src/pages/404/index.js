@@ -9,8 +9,8 @@ import Layout from 'src/templates/layout';
 
 import { Head, Loading, Grid, GridItem } from 'src/components';
 import {
-  FourOhFourTheme,
   MuteButton,
+  Theme,
   TigerBackground,
   Video,
   VideoContainer,
@@ -34,12 +34,16 @@ function PageNotFound(props) {
   }, [isLoaded]);
 
   return (
-    <Layout location={props.location} title="404" headline="Page Not Found">
+    <Layout
+      location={props.location}
+      title="Brad Cerasani"
+      headline="Page Not Found"
+    >
       <Head title="404: Page not found" />
 
       <Loading style={{ opacity: isLoaded ? 0 : 1 }} />
 
-      <FourOhFourTheme />
+      <Theme />
       <TigerBackground />
 
       <StyledGrid style={{}} gutter="5rem">

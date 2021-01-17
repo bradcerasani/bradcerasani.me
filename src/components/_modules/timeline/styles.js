@@ -17,7 +17,7 @@ export const TimelineItemImageWrapper = styled.div`
 
   @media (min-width: ${breakpoint.md}) {
     &::before {
-      background-color: hsl(0, 0%, 48%);
+      background-color: var(--colorGreyLight);
       content: '';
       left: 0;
       margin-left: -2.75rem;
@@ -58,7 +58,7 @@ export const TimelineItemDetailsWrapper = styled.div`
   @media (min-width: ${breakpoint.md}) {
     &::before,
     &::after {
-      background-color: hsl(0, 0%, 48%);
+      background-color: var(--colorGreyLight);
       content: '';
       left: 0;
       margin-left: -2.75rem;

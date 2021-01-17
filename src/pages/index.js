@@ -16,8 +16,8 @@ function Home(props) {
 
       <style>{css`
         :root {
-          --backgroundColor: HSLA(30, 32%, 40%, 0.5);
-          --computedBackgroundColor: HSLA(32, 18%, 82%, 1);
+          --backgroundColor: hsl(30, 32%, 40%, 0.5);
+          --computedBackgroundColor: hsl(32, 18%, 82%, 1);
         }
       `}</style>
 

@@ -1,14 +1,34 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const PrismThemeStyles = createGlobalStyle`
 :root {
   --codeBackgroundColor: #1a1a1a;
-  --color: #f0f0f0;
-  --cyan: #64edff;
-  --green: #67ffb8;
-  --grey: #85a19f;
-  --blue: #028BE8;
-  --pink: #ff55b5;
-  --purple: #bd93f9;
-  --red: #f84e3b;
-  --yellow: #faec8f;
+  --codeColor: #f0f0f0;
+  --codeCyan: #64edff;
+  --codeGreen: #67ffb8;
+  --codeGrey: #85a19f;
+  --codeBlue: #028BE8;
+  --codePink: #ff55b5;
+  --codePurple: #bd93f9;
+  --codeRed: #f84e3b;
+  --codeYellow: #faec8f;
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'JBM';
+  font-weight: 400;
+  src: url('/fonts/JBM-Regular.woff2') format('woff2'),
+    url('/fonts/JBM-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'JBM';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/JBM-Italic.woff2') format('woff2'),
+    url('/fonts/JBM-Italic.woff') format('woff');
 }
 
 code[class*='language-'],
@@ -37,7 +57,7 @@ pre[class*='language-'] {
 pre[class*='language-'] {
   background-color: var(--codeBackgroundColor);
   border-radius: 0.5rem;
-  color: var(--color);
+  color: var(--codeColor);
   margin-bottom: 1.5rem;
   overflow: auto;
   padding: 0.625rem 0.75rem;
@@ -58,7 +78,7 @@ pre *::selection {
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  background-color: var(--color);
+  background-color: var(--codeColor);
   border-radius: 2px;
   font-size: 0.8375rem;
   padding: 4px 4px 2px;
@@ -74,7 +94,7 @@ pre *::selection {
 }
 
 .token.datetime.number {
-  color: var(--color);
+  color: var(--codeColor);
 }
 
 .token.comment,
@@ -82,31 +102,31 @@ pre *::selection {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--grey);
+  color: var(--codeGrey);
   font-style: italic;
 }
 
 .token.namespace,
 .token.deleted {
-  color: var(--red);
+  color: var(--codeRed);
 }
 
 .token.tag,
 .token.punctuation,
 .token.function-name {
-  color: var(--purple);
+  color: var(--codePurple);
 }
 
 .token.selector,
 .token.attr-name,
 .token.function {
-  color: var(--cyan);
+  color: var(--codeCyan);
 }
 
 .token.class-name,
 .token.constant,
 .token.symbol {
-  color: var(--yellow);
+  color: var(--codeYellow);
 }
 
 .token.operator,
@@ -118,7 +138,7 @@ pre *::selection {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: var(--pink);
+  color: var(--codePink);
 }
 
 .token.property,
@@ -130,22 +150,21 @@ pre *::selection {
 .token.variable,
 .token.attr-value {
   font-style: normal;
-  color: var(--green);
+  color: var(--codeGreen);
 }
 
 .token.boolean,
 .token.number {
-  color: var(--blue);
+  color: var(--codeBlue);
 }
 
 /* Custom rules (see gatsby-config.js) */
 
 .token.js_keyword {
-  color: var(--yellow);
+  color: var(--codeYellow);
 }
 
 .token.js_period {
-  color: var(--pink);
+  color: var(--codePink);
 }
-
-
+`

@@ -34,11 +34,18 @@ export const TimelineItem = ({ fields, frontmatter }) => {
         >
           <Intrinsic aspect="16 / 9">
             {image.includes('.jpg') || image.includes('.png') ? (
-              <Image src={image} sizes="1040px" />
+              <Image
+                src={image}
+                sizes="1040px"
+                className="lazyload"
+                attributeConfig={{
+                  src: "data-src",
+                  srcSet: "data-srcset",
+                  sizes: "data-sizes",
+                }}
+              />
             ) : (
-              <video autoPlay muted loop playsInline>
-                <source src={image} />
-              </video>
+              <video className="lazyload" preload="none" loop muted data-autoplay playsInline src={image} />
             )}
           </Intrinsic>
         </TimelineItemImageWrapper>

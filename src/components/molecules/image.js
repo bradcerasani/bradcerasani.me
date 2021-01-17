@@ -1,7 +1,6 @@
 import React from 'react';
 import Imgix from 'react-imgix';
 import styled from 'styled-components';
-import 'lazysizes';
 
 import { Figure, Caption } from 'src/components/atoms';
 

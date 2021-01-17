@@ -1,5 +1,7 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import 'lazysizes';
+import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 
 import { Container, Note } from 'src/components/atoms';
 import { Footer, Header } from 'src/components/organisms';

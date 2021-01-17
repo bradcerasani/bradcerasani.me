@@ -1,6 +1,7 @@
 import React from 'react';
 import Imgix from 'react-imgix';
 import styled from 'styled-components';
+import 'lazysizes';
 
 import { Figure, Caption } from 'src/components/atoms';
 
@@ -33,8 +34,14 @@ export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
   return (
     <Figure size={size} {...props}>
       <Img
+        className="lazyload"
         sizes={sizes || sizesFallback}
         src={url}
+        attributeConfig={{
+          src: "data-src",
+          srcSet: "data-srcset",
+          sizes: "data-sizes",
+        }}
         htmlAttributes={{
           alt: alt || caption,
         }}

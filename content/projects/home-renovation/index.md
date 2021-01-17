@@ -10,7 +10,7 @@ From 2017-2018, we had our home renovated.
 
 A friend introduced me to SketchUp, and helped with some initial models of the space. Using these files as a starting point, I spent several months iterating on the design with increasing fidelity, repeating the process as constraints emerged through demolition. Our house is close to 100 years old, and any renovation—especially in an old house⁠—is bound for surprises.
 
-<PostImage src="/projects/home-renovation/IMG_0148.jpg" caption="Kitchen before"/>
+<!-- <PostImage src="/projects/home-renovation/IMG_0148.jpg" caption="Kitchen before"/> -->
 
 <ImageCompare
   size="large"

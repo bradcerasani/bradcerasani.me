@@ -1,5 +1,16 @@
 {
   "version": 2,
+  "headers": [
+    {
+      "source": "/(fonts|images|video)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage"
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/writing",

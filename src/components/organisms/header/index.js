@@ -111,7 +111,13 @@ export const Header = (props) => {
           </h1>
 
           <Nav>
-            {links.map(({ to, label, imageSrc }) => (
+            {links.map(({ to, label, imageSrc }) => {
+              {/* TODO: DRY */}
+              const url = process.env.NODE_ENV === 'development'
+                ? `/images/${imageSrc}`
+                : `https://bradcerasani.imgix.net/images/${imageSrc}`
+
+              return (
               <NavItem
                 activeClassName="is-active"
                 key={to}
@@ -123,9 +129,9 @@ export const Header = (props) => {
                 to={to}
               >
                 {label}
-                {imageSrc && <NavImage src={imageSrc} />}
+                {imageSrc && <NavImage src={url} sizes="200px" />}
               </NavItem>
-            ))}
+            )})}
           </Nav>
         </HeroContainer>
       </StyledHeader>

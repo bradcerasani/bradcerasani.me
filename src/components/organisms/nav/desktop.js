@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+import Imgix from 'react-imgix';
 
 import { breakpoint } from 'src/settings';
 
@@ -22,7 +23,7 @@ export const Nav = styled.div`
   }
 `;
 
-export const NavImage = styled.img`
+export const NavImage = styled(Imgix)`
   bottom: 0;
   display: none;
   margin-bottom: 0.375rem;

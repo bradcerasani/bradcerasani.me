@@ -7,8 +7,9 @@ import { breakpoint } from 'src/settings';
 
 import Layout from 'src/templates/layout';
 
-import { Head, Loading, Grid, GridItem } from 'src/components';
+import { Head, Grid, GridItem } from 'src/components';
 import {
+  Loading,
   MuteButton,
   Theme,
   TigerBackground,

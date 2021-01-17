@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import { breakpoint } from 'src/settings';
@@ -135,3 +136,9 @@ export const MuteButton = styled.button`
   padding: 0;
   text-transform: uppercase;
 `;
+
+// "A page component must export a React component for it to be valid"
+// Hackily sidestep rule with dummy component export
+const dummyComponent = () => null;
+
+export default dummyComponent;

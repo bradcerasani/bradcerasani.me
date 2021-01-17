@@ -4,9 +4,10 @@ import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
-import { Button, FootnoteStyles, PrismThemeStyles } from 'src/components/atoms';
-import { Image } from 'src/components/molecules';
-import { Head, Layout } from 'src/components/templates';
+import Layout from 'src/templates/layout';
+import { Button, Head, Image } from 'src/components';
+import 'src/css/footnotes.css';
+import 'src/css/prism-theme.css';
 
 const Hero = styled.div`
   animation-delay: 200ms;
@@ -50,25 +51,24 @@ function ProjectDetailTemplate(props) {
         image={post.frontmatter.image}
       />
 
-      <FootnoteStyles />
-      <PrismThemeStyles />
+      <style>
+        {css`
+          :root {
+            --backgroundColor: HSLA(39, 14%, 40%, 0.5);
+            --computedBackgroundColor: HSLA(43, 8%, 82%, 1);
+          }
 
-      <style>{css`
-        :root {
-          --backgroundColor: HSLA(39, 14%, 40%, 0.5);
-          --computedBackgroundColor: HSLA(43, 8%, 82%, 1);
-        }
+          article section {
+            margin-top: 12rem;
+          }
 
-        article section {
-          margin-top: 12rem;
-        }
-
-        p:first-of-type {
-          font-size: 1.25rem;
-          font-family: 'CNW';
-          font-weight: 500;
-        }
-      `}</style>
+          p:first-of-type {
+            font-size: 1.25rem;
+            font-family: 'CNW';
+            font-weight: 500;
+          }
+        `}
+      </style>
 
       <article>
         <section>

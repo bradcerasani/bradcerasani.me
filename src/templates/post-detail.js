@@ -3,8 +3,10 @@ import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { Button, FootnoteStyles, PrismThemeStyles } from 'src/components/atoms';
-import { Head, Layout } from 'src/components/templates';
+import Layout from 'src/templates/layout';
+import { Button, Head } from 'src/components';
+import 'src/css/footnotes.css';
+import 'src/css/prism-theme.css';
 
 function PostDetailTemplate(props) {
   const post = props.data.mdx;
@@ -25,9 +27,6 @@ function PostDetailTemplate(props) {
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.image}
       />
-
-      <FootnoteStyles />
-      <PrismThemeStyles />
 
       <style>
         {css`

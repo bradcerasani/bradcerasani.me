@@ -2,9 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 
-import { Button } from 'src/components/atoms';
-import { Timeline, TimelineItem } from 'src/components/molecules';
-import { Head, Layout } from 'src/components/templates';
+import Layout from 'src/templates/layout';
+import { Button, Head, Timeline, TimelineItem } from 'src/components';
 
 function Home(props) {
   const { data } = props;

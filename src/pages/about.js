@@ -4,9 +4,14 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { css } from 'styled-components';
 
-import { Grid, GridItem } from 'src/components/molecules';
-import { Gallery, GalleryController } from 'src/components/organisms';
-import { Head, Layout } from 'src/components/templates';
+import Layout from 'src/templates/layout';
+import {
+  Gallery,
+  GalleryController,
+  Grid,
+  GridItem,
+  Head,
+} from 'src/components';
 
 function AboutPage(props) {
   const post = props.data.mdx;

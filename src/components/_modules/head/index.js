@@ -33,6 +33,9 @@ export const Head = ({ title, description, image, url, children }) => {
     <Helmet
       title={title.replace(/<[^>]*>?/gm, '')}
       titleTemplate={`%s – ${site.siteMetadata.title}`}
+      htmlAttributes={{
+        lang: 'en',
+      }}
     >
       <link rel="canonical" href="https://bradcerasani.me" />
 

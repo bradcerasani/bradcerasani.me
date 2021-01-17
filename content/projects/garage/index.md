@@ -17,7 +17,7 @@ I thought, having never before framed or built any structure of consequence.
 
 [Is how it felt.](https://twitter.com/bradcerasani/status/1327043753593417735) -->
 
-<PostImage src="projects/garage/hero.jpg" size="large" />
+<PostImage src="/projects/garage/hero.jpg" size="large" />
 
 <p></p>
 

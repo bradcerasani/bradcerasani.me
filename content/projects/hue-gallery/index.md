@@ -151,7 +151,7 @@ function printSwatches(colors, img) {
 }
 ```
 
-<PostImage src="projects/hue-gallery/limes.jpg" size="large" />
+<PostImage src="/projects/hue-gallery/limes.jpg" size="large" />
 
 <Swatches colors={['#334c15', '#bdbb56', '#87ad46']} />
 
@@ -161,7 +161,7 @@ While Color Thief’s modified median cut algorithm does an accurate job extract
 
 To improve the extracted palette, we’ll first have Color Thief to return more colours than we need for our calls to the Hue API. In the `colorThief.getPalette()` method, the second parameter controls the number of colours returned. We’ll ask for ten, and work on culling the final count down to three.
 
-<PostImage src="projects/hue-gallery/buildings.jpg" size="large" />
+<PostImage src="/projects/hue-gallery/buildings.jpg" size="large" />
 
 <Swatches
 colors={[
@@ -195,7 +195,7 @@ sortBy(colors, (color) => -color[1]);
 
 Lastly, we’ll convert the colour values back to RGB and return the top 3 items for our new and improved palette.
 
-<PostImage src="projects/hue-gallery/buildings.jpg" size="large" />
+<PostImage src="/projects/hue-gallery/buildings.jpg" size="large" />
 
 <Swatches colors={['#fbc04b', '#d5752f', '#873f28']} caption="Palette after"/>
 

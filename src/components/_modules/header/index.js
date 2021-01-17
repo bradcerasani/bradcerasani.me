@@ -132,7 +132,7 @@ export const Header = (props) => {
                   to={to}
                 >
                   {label}
-                  {imageSrc && <NavImage src={url} sizes="200px" />}
+                  {imageSrc && <NavImage src={url} sizes="200px" alt={label} />}
                 </NavItem>
               );
             })}

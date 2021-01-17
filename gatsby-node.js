@@ -10,6 +10,15 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'build-html') {
+    config.loader('null', {
+      test: /lazysizes/,
+      loader: 'null-loader',
+    });
+  }
+};
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -82,7 +91,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   // Move post and project media into /public for consumption by Imgix
-  if (node.internal.mediaType && (node.internal.mediaType.includes('image') || node.internal.mediaType.includes('video'))) {
+  if (
+    node.internal.mediaType &&
+    (node.internal.mediaType.includes('image') ||
+      node.internal.mediaType.includes('video'))
+  ) {
     let directoryName = '';
 
     switch (node.internal.mediaType) {

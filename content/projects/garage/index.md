@@ -2,7 +2,7 @@
 title: Garage Design/Build
 description: I spent several hundred hours on evenings and weekends designing and building a garage with some interesting details.
 date: '2019-01-01'
-image: /video/projects/garage/garage-animation-slow.mp4
+image: /video/projects/garage/garage-animation-slow-optimized.mp4
 ---
 
 <!-- In the summer of 2019, I designed and built a garage.

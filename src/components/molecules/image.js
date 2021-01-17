@@ -43,7 +43,7 @@ export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
         }}
         htmlAttributes={{
           alt: alt || caption,
-          src: `${url}?blur=200&px=16&auto=format`,
+          src: `${url}?blur=10&px=100&auto=format`,
         }}
       />
       {caption && <Caption>{caption}</Caption>}

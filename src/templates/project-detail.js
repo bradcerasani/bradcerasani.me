@@ -4,9 +4,9 @@ import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
-import { Head, Layout } from 'src/components/templates';
+import { Button, FootnoteStyles, PrismThemeStyles } from 'src/components/atoms';
 import { Image } from 'src/components/molecules';
-import { Button } from 'src/components/atoms';
+import { Head, Layout } from 'src/components/templates';
 
 const Hero = styled.div`
   animation-delay: 200ms;
@@ -49,6 +49,9 @@ function ProjectDetailTemplate(props) {
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.image}
       />
+
+      <FootnoteStyles />
+      <PrismThemeStyles />
 
       <style>{css`
         :root {

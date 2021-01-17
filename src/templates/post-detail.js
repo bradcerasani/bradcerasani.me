@@ -4,8 +4,8 @@ import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { color } from 'src/components/theme';
+import { Button, FootnoteStyles, PrismThemeStyles } from 'src/components/atoms';
 import { Head, Layout } from 'src/components/templates';
-import { Button } from 'src/components/atoms';
 
 function PostDetailTemplate(props) {
   const post = props.data.mdx;
@@ -26,6 +26,9 @@ function PostDetailTemplate(props) {
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.image}
       />
+
+      <FootnoteStyles />
+      <PrismThemeStyles />
 
       <style>
         {css`

@@ -1,9 +1,8 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
-import { GlobalStyle } from 'src/components/_global';
-import { Footer, Header } from 'src/components/organisms';
 import { Container, Note } from 'src/components/atoms';
+import { Footer, Header } from 'src/components/organisms';
 import {
   Annot,
   Image,
@@ -28,7 +27,6 @@ const components = {
 export const Layout = ({ children, ...props }) => {
   return (
     <>
-      <GlobalStyle />
       <Container>
         <Header {...props} />
         <MDXProvider components={components}>{children}</MDXProvider>

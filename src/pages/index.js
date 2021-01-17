@@ -12,7 +12,10 @@ function Home(props) {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <Head title="Design & Engineering" />
+      <Head
+        title="Design & Engineering"
+        description="The personal site of designer & developer Brad Cerasani."
+      />
 
       <style>{css`
         :root {

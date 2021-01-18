@@ -171,5 +171,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-root-import',
     },
+    {
+      resolve: 'gatsby-plugin-react-axe',
+      options: {
+        showInProduction: false,
+        axeOptions: {},
+      },
+    },
   ],
 };

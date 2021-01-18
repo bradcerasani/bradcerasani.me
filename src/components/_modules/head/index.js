@@ -32,6 +32,7 @@ export const Head = ({ title, description, image, url, children }) => {
   return (
     <Helmet
       title={title.replace(/<[^>]*>?/gm, '')}
+      description={metaDescription}
       titleTemplate={`%s – ${site.siteMetadata.title}`}
       htmlAttributes={{
         lang: 'en',

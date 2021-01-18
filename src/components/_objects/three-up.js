@@ -7,6 +7,8 @@ import { Figure, Caption, LayoutObject, LayoutItem } from 'src/components';
 
 const Img = styled(Imgix)`
   display: block;
+  height: 100%;
+  object-fit: cover;
 `;
 
 // See https://github.com/styled-components/styled-components/issues/1449
@@ -37,46 +39,62 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
           {/* TODO: DRY */}
           {image1.includes('.mp4') ? (
             <video
-              playsInline
-              autoPlay
-              muted
+              className="lazyload"
+              preload="none"
               loop
+              muted
+              data-autoplay
+              playsInline
+              src={image1}
               style={{
                 width: '100%',
                 marginBottom: '0',
               }}
-            >
-              <source src={image1} />
-            </video>
+            />
           ) : (
             <Img
-              src={urlify(image1)}
               sizes="400px"
+              src={urlify(image1)}
+              attributeConfig={{
+                src: 'data-src',
+                srcSet: 'data-srcset',
+                sizes: 'data-sizes',
+              }}
               htmlAttributes={{
-                loading: 'lazy',
                 alt: caption || 'Photo',
+                src: `${urlify(image1)}?blur=100&w=200&auto=format`,
               }}
             />
           )}
         </StyledLayoutItem>
         <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
           <Img
-            src={urlify(image2)}
             sizes="400px"
+            src={urlify(image2)}
+            attributeConfig={{
+              src: 'data-src',
+              srcSet: 'data-srcset',
+              sizes: 'data-sizes',
+            }}
             htmlAttributes={{
-              loading: 'lazy',
               alt: caption || 'Photo',
+              src: `${urlify(image2)}?blur=100&w=200&auto=format`,
             }}
           />
         </StyledLayoutItem>
 
         <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
           <Img
-            src={urlify(image3)}
             sizes="400px"
+            src={urlify(image3)}
+            attributeConfig={{
+              src: 'data-src',
+              srcSet: 'data-srcset',
+              sizes: 'data-sizes',
+            }}
             htmlAttributes={{
-              loading: 'lazy',
               alt: caption || 'Photo',
+              src: `${urlify(image3)}?blur=100&w=200&auto=format`,
             }}
           />
         </StyledLayoutItem>

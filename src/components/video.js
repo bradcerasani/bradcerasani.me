@@ -7,10 +7,13 @@ export const Video = ({ caption, size, src, ...props }) => {
     <Figure size={size}>
       <FluidWrapper>
         <video
-          playsInline
-          autoPlay
-          muted
+          className="lazyload"
+          data-autoplay
           loop
+          muted
+          playsInline
+          preload="none"
+          src={src}
           style={{
             position: 'absolute',
             top: 0,
@@ -19,9 +22,7 @@ export const Video = ({ caption, size, src, ...props }) => {
             width: '100%',
           }}
           {...props}
-        >
-          <source src={src} />
-        </video>
+        />
       </FluidWrapper>
 
       <Caption dangerouslySetInnerHTML={{ __html: caption }} />

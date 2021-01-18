@@ -53,6 +53,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
             />
           ) : (
             <Img
+              className="lazyload"
               sizes="400px"
               src={urlify(image1)}
               attributeConfig={{
@@ -69,6 +70,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
         </StyledLayoutItem>
         <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
           <Img
+            className="lazyload"
             sizes="400px"
             src={urlify(image2)}
             attributeConfig={{
@@ -85,6 +87,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
 
         <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
           <Img
+            className="lazyload"
             sizes="400px"
             src={urlify(image3)}
             attributeConfig={{

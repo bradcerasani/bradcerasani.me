@@ -16,7 +16,7 @@ const ButtonLinkIcon = styled.span`
 const StyledButton = styled(Link)`
   background-color: var(--colorGreyDarker);
   border-radius: 1rem;
-  color: var(--colorLinenDefault);
+  color: var(--colorLinenLight);
   font-size: 0.7rem;
   line-height: 1.5;
   padding: 0.5rem 1.25rem;
@@ -31,7 +31,7 @@ const StyledButton = styled(Link)`
       transform: translateX(0.5rem);
     }
 
-    color: var(--colorLinenDefault);
+    color: var(--colorGreyLightest);
   }
 
   @media (prefers-color-scheme: dark) {

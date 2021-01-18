@@ -65,10 +65,6 @@ export const Header = (props) => {
               data-visibility={overlayTransitioned.toString()}
               key={to}
               onAnimationStart={() => setShowSocial(index === links.length - 1)}
-              partiallyActive={
-                typeof window === 'object' &&
-                window.location.pathname.includes(label.toLowerCase())
-              }
               style={{ animationDelay: `calc(${150 * index}ms)` }}
               to={to}
             >
@@ -124,16 +120,7 @@ export const Header = (props) => {
                   : `https://bradcerasani.imgix.net/images/${imageSrc}`;
 
               return (
-                <NavItem
-                  activeClassName="is-active"
-                  key={to}
-                  partiallyActive={
-                    // TODO: Tidy
-                    typeof window === 'object' &&
-                    window.location.pathname.includes(label.toLowerCase())
-                  }
-                  to={to}
-                >
+                <NavItem activeClassName="is-active" key={to} to={to}>
                   {label}
                   {imageSrc && (
                     <NavImage

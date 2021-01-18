@@ -31,11 +31,11 @@ Working in 3D allowed me to more carefully consider the spaces and sightlines th
 
 The design attempts to blend old with new, and mixes modern lines with natural materials. I’ve never designed a space before, but found the principles familiar to what I knew in software, and learned a lot about the process along the way.
 
-<PostImage size="full" src="/projects/home-renovation/0S7A7686.jpg" caption="Transition from dining room to kitchen" />
-
-<PostImage size="large" src="/projects/home-renovation/0S7A7698.jpg" />
+<PostImage size="full" src="/projects/home-renovation/0S7A7686.jpg" />
 
 <PostImage size="full" src="/projects/home-renovation/0S7A7712.jpg" />
+
+<PostImage size="full" src="/projects/home-renovation/0S7A7658.jpg" />
 
 <br />
 
@@ -43,13 +43,11 @@ The design attempts to blend old with new, and mixes modern lines with natural m
 
 In continuing the mix of old and new, I integrated Danish lighting from the 1950s in the dining room, and custom-made modern linear lighting in the kitchen.
 
-<PostImage size="full" src="/projects/home-renovation/0S7A7658.jpg" />
-
 <PostImage size="large" src="/projects/home-renovation/0S7A7555.jpg" />
 
 The linear lights consist of flush-mount aluminum channels with diffusers, [five-channel LED strips](https://sowilodesign.com/) colour-matched to Philips Hue, dual PWM amplifiers (RGB and tunable white), Philips Hue LS+ controllers, and commercial power supplies.
 
-In order to achieve perfectly linear light, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW diode clusters. In testing several methods of mounting and diffusion, I found this approach to be the best balance of heat dissipation and output.
+In order to achieve even linear light, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW diode clusters. In testing several methods of mounting and diffusion, I found this approach to be the best balance of heat dissipation and output.
 
 <ThreeUp
   image1="/video/projects/home-renovation/light-assembly.mp4"

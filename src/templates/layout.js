@@ -34,7 +34,9 @@ function Layout({ children, ...props }) {
     <>
       <Container>
         <Header {...props} />
-        <MDXProvider components={components}>{children}</MDXProvider>
+        <MDXProvider>
+          <MDXProvider components={components}>{children}</MDXProvider>
+        </MDXProvider>
       </Container>
       <Footer />
     </>

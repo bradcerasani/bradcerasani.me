@@ -120,23 +120,25 @@ module.exports = {
               });
             },
             query: `
-              allMdx(
-                filter: { fields: { slug: { ne: "/about/" } } }
-                sort: { fields: frontmatter___date, order: DESC }
-              ) {
-                edges {
-                  node {
-                    html
-                    fields {
-                      slug
-                      type
-                    }
-                    frontmatter {
-                      date(formatString: "YYYY")
-                      daterange
-                      description
-                      image
-                      title
+              {
+                allMdx(
+                  filter: { fields: { slug: { ne: "/about/" } } }
+                  sort: { fields: frontmatter___date, order: DESC }
+                ) {
+                  edges {
+                    node {
+                      html
+                      fields {
+                        slug
+                        type
+                      }
+                      frontmatter {
+                        date(formatString: "YYYY")
+                        daterange
+                        description
+                        image
+                        title
+                      }
                     }
                   }
                 }

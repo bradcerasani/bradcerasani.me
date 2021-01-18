@@ -24,6 +24,7 @@ function AboutPage(props) {
         <Head
           title="About"
           description="About Brad Cerasani; Design & Engineering."
+          slug={post.slug}
         />
 
         <style>
@@ -102,15 +103,14 @@ export const pageQuery = graphql`
         title
       }
     }
-    # TODO: add dynamic filename-based(?) content lookup
     mdx(fields: { slug: { eq: "/about/" } }) {
       id
       body
       frontmatter {
         excerpt
       }
+      slug
     }
-
     allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 10) {
       edges {
         node {

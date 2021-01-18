@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const Head = ({ title, description, image, url, children }) => {
+export const Head = ({ title, description, image, children, slug }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,21 +24,21 @@ export const Head = ({ title, description, image, url, children }) => {
 
   const metaDescription = description || site.siteMetadata.description;
   const metaImage = image || site.siteMetadata.image;
-  const metaImageUrl = `${site.siteMetadata.siteUrl}${metaImage}`;
+  const metaImageUrl = `https://bradcerasani.imgix.net/images${metaImage}?w=1600`;
   const metaAuthor = site.siteMetadata.author;
-  const metaUrl = url || site.siteMetadata.siteUrl;
+  const metaUrl = `${site.siteMetadata.siteUrl}/${slug}`;
   const metaTwitter = site.siteMetadata.social.twitter;
 
   return (
     <Helmet
-      title={title.replace(/<[^>]*>?/gm, '')}
-      description={metaDescription}
+      title={title && title.replace(/<[^>]*>?/gm, '')}
       titleTemplate={`%s – ${site.siteMetadata.title}`}
       htmlAttributes={{
         lang: 'en',
       }}
     >
-      <link rel="canonical" href="https://bradcerasani.me" />
+      <meta name="description" content={metaDescription} />
+      <link rel="canonical" href={metaUrl} />
 
       <meta property="og:title" content={metaAuthor} />
       <meta property="og:type" content="website" />

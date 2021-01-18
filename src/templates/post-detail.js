@@ -26,6 +26,7 @@ function PostDetailTemplate(props) {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.image}
+        slug={post.slug}
       />
 
       <style>
@@ -99,6 +100,7 @@ export const pageQuery = graphql`
         description
         image
       }
+      slug
     }
     sitePage(context: { slug: { eq: $slug } }) {
       context {

@@ -40,7 +40,7 @@ function PageNotFound(props) {
       title="Brad Cerasani"
       headline="Page Not Found"
     >
-      <Head title="404: Page not found" />
+      <Head title="404: Page Not Found" />
 
       <Loading style={{ opacity: isLoaded ? 0 : 1 }} />
 

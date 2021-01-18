@@ -50,6 +50,7 @@ function ProjectDetailTemplate(props) {
         title={post.frontmatter.title}
         description={description}
         image={post.frontmatter.image}
+        slug={post.slug}
       />
 
       <style>
@@ -133,6 +134,7 @@ export const pageQuery = graphql`
         description
         image
       }
+      slug
     }
     sitePage(context: { slug: { eq: $slug } }) {
       context {

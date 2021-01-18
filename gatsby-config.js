@@ -111,6 +111,7 @@ module.exports = {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
+                  title: edge.node.frontmatter.title.replace(/<[^>]*>?/gm, ''),
                   description: edge.node.frontmatter.description,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,

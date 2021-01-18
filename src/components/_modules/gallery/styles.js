@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 
-export const StyledGallery = styled.div`
+export const StyledGallery = styled.aside`
   display: contents;
   height: 100%;
   left: 0;

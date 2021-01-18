@@ -54,6 +54,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
               sizes="400px"
               htmlAttributes={{
                 loading: 'lazy',
+                alt: caption || 'Photo',
               }}
             />
           )}
@@ -64,6 +65,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
             sizes="400px"
             htmlAttributes={{
               loading: 'lazy',
+              alt: caption || 'Photo',
             }}
           />
         </StyledLayoutItem>
@@ -74,6 +76,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
             sizes="400px"
             htmlAttributes={{
               loading: 'lazy',
+              alt: caption || 'Photo',
             }}
           />
         </StyledLayoutItem>

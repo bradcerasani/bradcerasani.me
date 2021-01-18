@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.header`
   margin-bottom: 1.5rem;
   padding-top: 0.75rem;
   position: relative;

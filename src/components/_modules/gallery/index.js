@@ -38,7 +38,10 @@ export const Gallery = ({ images }) => {
       {images.map((image, index) => (
         <Draggable key={index} onStart={(e) => e.preventDefault()}>
           <StyledGalleryImage data-image={index}>
-            <img src={image.node.preview} alt={image.node.caption} />
+            <img
+              src={image.node.preview}
+              alt={image.node.caption || '@bradcerasani on Instagram'}
+            />
           </StyledGalleryImage>
         </Draggable>
       ))}
@@ -62,6 +65,7 @@ export const GalleryController = ({ images }) => {
 
   return (
     <StyledGalleryController
+      aria-label="Show/hide photos"
       onMouseUp={() => {
         trackCustomEvent({
           category: 'Interactive Elements',

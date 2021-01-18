@@ -42,7 +42,7 @@ export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
           sizes: 'data-sizes',
         }}
         htmlAttributes={{
-          alt: alt || caption,
+          alt: alt || caption || 'Photo',
           src: `${url}?blur=100&w=400&auto=format`,
         }}
       />

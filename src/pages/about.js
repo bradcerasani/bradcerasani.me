@@ -32,54 +32,58 @@ function AboutPage(props) {
             --computedBackgroundColor: hsl(35, 26%, 82%, 1);
           }
         `}</style>
-        <section id="js-mdx-body">
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </section>
 
-        <Grid>
-          <GridItem width={{ base: '50%', sm: '30%' }}>
-            <h6>Elsewhere</h6>
-            <ul style={{ marginBottom: '0' }}>
-              {/* TODO: Pull from site settings? */}
-              {['Instagram', 'Twitter', 'GitHub'].map((link) => (
-                <li key={link}>
-                  <OutboundLink
-                    href={`https://${link.toLowerCase()}.com/bradcerasani`}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    style={{ textDecoration: 'none' }}
-                  >
-                    {link}
-                  </OutboundLink>
-                </li>
-              ))}
-            </ul>
-          </GridItem>
+        <main>
+          <section id="js-mdx-body">
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </section>
 
-          <GridItem width={{ base: '50%', sm: '30%' }}>
-            <h6>Site Archives</h6>
-            <ul style={{ marginBottom: '0' }}>
-              {['2014', '2013', '2012', '2011', '2010'].map((year) => (
-                <li key={year}>
-                  <OutboundLink
-                    href={`https://${year}.bradcerasani.me`}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    style={{ textDecoration: 'none' }}
-                  >
-                    {year}
-                  </OutboundLink>
-                </li>
-              ))}
-            </ul>
-          </GridItem>
+          <Grid>
+            <GridItem width={{ base: '50%', sm: '30%' }}>
+              <h6>Elsewhere</h6>
+              <ul style={{ marginBottom: '0' }}>
+                {/* TODO: Pull from site settings? */}
+                {['Instagram', 'Twitter', 'GitHub'].map((link) => (
+                  <li key={link}>
+                    <OutboundLink
+                      href={`https://${link.toLowerCase()}.com/bradcerasani`}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      {link}
+                    </OutboundLink>
+                  </li>
+                ))}
+              </ul>
+            </GridItem>
 
-          <GridItem width={{ sm: '40%' }}>
-            <h6>Photos</h6>
-            <GalleryController images={images} />
-          </GridItem>
-        </Grid>
+            <GridItem width={{ base: '50%', sm: '30%' }}>
+              <h6>Site Archives</h6>
+              <ul style={{ marginBottom: '0' }}>
+                {['2014', '2013', '2012', '2011', '2010'].map((year) => (
+                  <li key={year}>
+                    <OutboundLink
+                      href={`https://${year}.bradcerasani.me`}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      {year}
+                    </OutboundLink>
+                  </li>
+                ))}
+              </ul>
+            </GridItem>
+
+            <GridItem width={{ sm: '40%' }}>
+              <h6>Photos</h6>
+              <GalleryController images={images} />
+            </GridItem>
+          </Grid>
+        </main>
       </Layout>
+
       <Gallery images={images} />
     </>
   );

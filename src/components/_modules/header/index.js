@@ -98,7 +98,10 @@ export const Header = (props) => {
         </MobileNavWrapper>
       </MobileNavOverlay>
 
-      <StyledHeader>
+      <StyledHeader
+        itemscope="itemscope"
+        itemtype="https://schema.org/SiteNavigationElement"
+      >
         <MobileNavMenuWrapper>
           <Logo to={`/`}>{title}</Logo>
           <MobileNavMenu
@@ -114,7 +117,7 @@ export const Header = (props) => {
           </h1>
 
           <Nav>
-            {links.map(({ to, label, imageSrc }) => {
+            {links.map(({ to, label, imageSrc, alt }) => {
               const url =
                 process.env.NODE_ENV === 'development'
                   ? `/images/${imageSrc}`
@@ -137,7 +140,7 @@ export const Header = (props) => {
                       src={url}
                       sizes="200px"
                       htmlAttributes={{
-                        alt: label,
+                        alt: alt,
                       }}
                     />
                   )}

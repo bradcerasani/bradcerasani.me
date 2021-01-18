@@ -42,7 +42,7 @@ const ImageSliderWrapper = styled.div`
 `;
 
 export const ImageCompare = ({
-  alt,
+  alt = 'Photo',
   caption,
   image1,
   image2,

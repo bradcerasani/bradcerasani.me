@@ -36,14 +36,18 @@ function PostDetailTemplate(props) {
         `}
       </style>
 
-      <article>
-        <section>
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </section>
-      </article>
+      <main>
+        <article>
+          <section>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </section>
+        </article>
+      </main>
 
       {/* TODO: Abstract and style like DF? Create util for stripping HTML or look to store at build time? */}
       <section
+        role="navigation"
+        aria-label="Pagination Navigation"
         style={{
           display: 'flex',
           justifyContent: 'space-between',

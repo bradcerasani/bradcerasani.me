@@ -34,6 +34,7 @@ function ProjectDetailTemplate(props) {
   const image = post.frontmatter.image;
   const previous = props.data.sitePage.context.previous;
   const next = props.data.sitePage.context.next;
+  const description = post.frontmatter.description || post.excerpt;
 
   return (
     <Layout
@@ -41,13 +42,13 @@ function ProjectDetailTemplate(props) {
       title={siteTitle}
       headline={post.frontmatter.title}
     >
-      <Hero>
-        <Image src={image} />
+      <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
+        <Image src={image} alt="Hero image" />
       </Hero>
 
       <Head
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        description={description}
         image={post.frontmatter.image}
       />
 
@@ -70,14 +71,18 @@ function ProjectDetailTemplate(props) {
         `}
       </style>
 
-      <article>
-        <section>
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </section>
-      </article>
+      <main>
+        <article>
+          <section>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </section>
+        </article>
+      </main>
 
       {/* TODO: Abstract and style like DF? Create util for stripping HTML or look to store at build time? */}
       <section
+        role="navigation"
+        aria-label="Pagination Navigation"
         style={{
           display: 'flex',
           justifyContent: 'space-between',

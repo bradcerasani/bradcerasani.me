@@ -48,7 +48,7 @@ export const TimelineItemImageWrapper = styled.div`
     `}
 `;
 
-export const TimelineItemDetailsWrapper = styled.div`
+export const TimelineItemDetailsWrapper = styled.article`
   position: relative;
 
   h5:hover {

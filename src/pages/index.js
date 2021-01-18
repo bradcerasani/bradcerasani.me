@@ -24,32 +24,34 @@ function Home(props) {
         }
       `}</style>
 
-      <section>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: data.mdx.frontmatter.excerpt,
-          }}
-          style={{ marginBottom: '1rem' }}
-        />
+      <main>
+        <section>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.mdx.frontmatter.excerpt,
+            }}
+            style={{ marginBottom: '1rem' }}
+          />
 
-        <Button to={'/about/'} variant="link">
-          More about me
-        </Button>
-      </section>
+          <Button to={'/about/'} variant="link">
+            More about me
+          </Button>
+        </section>
 
-      <section>
-        <h2>Side Projects &amp; Writing</h2>
-        <p>Variations on themes of design, technology, and making things.</p>
-        <Timeline>
-          {contents.map(({ node }) => (
-            <TimelineItem
-              fields={node.fields}
-              frontmatter={node.frontmatter}
-              key={node.fields.slug}
-            />
-          ))}
-        </Timeline>
-      </section>
+        <section>
+          <h2>Side Projects &amp; Writing</h2>
+          <p>Variations on themes of design, technology, and making things.</p>
+          <Timeline>
+            {contents.map(({ node }) => (
+              <TimelineItem
+                fields={node.fields}
+                frontmatter={node.frontmatter}
+                key={node.fields.slug}
+              />
+            ))}
+          </Timeline>
+        </section>
+      </main>
     </Layout>
   );
 }
@@ -80,7 +82,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             cta
-            ctaUrl
             date(formatString: "YYYY")
             daterange
             description

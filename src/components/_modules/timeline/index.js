@@ -16,6 +16,7 @@ export const Timeline = styled.div`
 `;
 
 export const TimelineItem = ({ fields, frontmatter }) => {
+  const url = fields.slug;
   const title = frontmatter.title.replace(/<[^>]*>?/gm, '');
   const description = frontmatter.description;
   const image = frontmatter.image;
@@ -23,7 +24,6 @@ export const TimelineItem = ({ fields, frontmatter }) => {
   const cta =
     frontmatter.cta ||
     (fields.type === 'WRITING' ? 'Read Post' : 'View Project');
-  const url = frontmatter.ctaUrl || fields.slug;
 
   return (
     <StyledTimelineItem>
@@ -53,9 +53,9 @@ export const TimelineItem = ({ fields, frontmatter }) => {
         <TimelineItemNode>{date}</TimelineItemNode>
 
         <TimelineItemTitle to={url}>
-          <h5 style={{ paddingTop: '0.75rem', display: 'inline-block' }}>
+          <h3 style={{ paddingTop: '0.75rem', display: 'inline-block' }}>
             {title}
-          </h5>
+          </h3>
         </TimelineItemTitle>
 
         <p
@@ -65,11 +65,7 @@ export const TimelineItem = ({ fields, frontmatter }) => {
           }}
         />
 
-        {!frontmatter.skipPage && (
-          <Button to={url} target={frontmatter.ctaUrl ? '_blank' : '_self'}>
-            {cta}
-          </Button>
-        )}
+        {!frontmatter.skipPage && <Button to={url}>{cta}</Button>}
       </TimelineItemDetailsWrapper>
     </StyledTimelineItem>
   );

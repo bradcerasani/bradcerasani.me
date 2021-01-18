@@ -30,8 +30,10 @@ function PostDetailTemplate(props) {
 
       <style>
         {css`
-          :root {
-            --backgroundColor: var(--colorWhite);
+          @media (prefers-color-scheme: light) {
+            :root {
+              --backgroundColor: var(--colorWhite);
+            }
           }
         `}
       </style>

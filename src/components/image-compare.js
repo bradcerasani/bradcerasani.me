@@ -8,15 +8,16 @@ import { Intrinsic, Figure, Caption } from 'src/components';
 const ImageSliderHandle = styled.div`
   --strokeWidth: 2px;
   --handleWidth: 1.5rem;
+  --color: var(--colorBlack);
 
-  background-color: currentColor;
+  background-color: var(--color);
   cursor: ew-resize;
   height: 100%;
   position: relative;
   width: var(--strokeWidth);
 
   &::after {
-    background-color: currentColor;
+    background-color: var(--color);
     border-radius: var(--handleWidth);
     content: '';
     height: var(--handleWidth);

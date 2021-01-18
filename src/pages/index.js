@@ -17,12 +17,16 @@ function Home(props) {
         description="The personal site of designer & developer Brad Cerasani."
       />
 
-      <style>{css`
-        :root {
-          --backgroundColor: hsl(30, 32%, 40%, 0.5);
-          --computedBackgroundColor: hsl(32, 18%, 82%, 1);
-        }
-      `}</style>
+      <style>
+        {css`
+          @media (prefers-color-scheme: light) {
+            :root {
+              --backgroundColor: hsl(30, 32%, 40%, 0.5);
+              --computedBackgroundColor: hsl(32, 18%, 82%, 1);
+            }
+          }
+        `}
+      </style>
 
       <main>
         <section>

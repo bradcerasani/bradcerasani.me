@@ -5,6 +5,7 @@ import { breakpoint } from 'src/settings';
 export const Note = styled.div`
   background-color: var(--colorHighlight);
   border-color: currentColor;
+  border-radius: 0.5rem;
   border-style: double;
   border-width: 6px;
   font-size: 0.9rem;
@@ -23,5 +24,9 @@ export const Note = styled.div`
     font-size: 0.8rem;
     margin-bottom: 3rem;
     margin-top: 3rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: transparent;
   }
 `;

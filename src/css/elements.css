@@ -20,7 +20,8 @@ html {
 }
 
 body {
-  background-color: rgb(255, 255, 255, 0.4);
+  background-color: var(--backgroundOverlayColor);
+  color: var(--textColor);
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   transition-duration: 600ms;
@@ -134,7 +135,6 @@ h6 {
 }
 
 section {
-  color: var(--colorBlack);
   margin-bottom: 1.5rem;
 }
 
@@ -177,11 +177,20 @@ li {
 a {
   color: inherit;
   text-decoration-color: var(--colorGreyDark);
+  transition-duration: var(--transitionSpeedFast);
+  transition-property: color;
+  transition-timing-function: ease-in-out;
 }
 
 a:hover {
-  color: var(--colorBlack);
   text-decoration-color: var(--colorBlack);
+}
+
+@media (prefers-color-scheme: dark) {
+  a:hover {
+    color: var(--colorGreyLightest);
+    text-decoration-color: currentColor;
+  }
 }
 
 a[target='_blank'] {

@@ -54,9 +54,11 @@ function ProjectDetailTemplate(props) {
 
       <style>
         {css`
-          :root {
-            --backgroundColor: hsl(39, 14%, 40%, 0.5);
-            --computedBackgroundColor: hsl(43, 8%, 82%, 1);
+          @media (prefers-color-scheme: light) {
+            :root {
+              --backgroundColor: hsl(39, 14%, 40%, 0.5);
+              --computedBackgroundColor: hsl(43, 8%, 82%, 1);
+            }
           }
 
           article section {

@@ -7,7 +7,7 @@ const ButtonLinkIcon = styled.span`
   height: 1.25rem;
   left: 0.5rem;
   position: relative;
-  transition-duration: 200ms;
+  transition-duration: var(--transitionSpeedFast);
   transition-property: transform;
   transition-timing-function: ease-in;
   width: 1.25rem;
@@ -20,6 +20,9 @@ const StyledButton = styled(Link)`
   font-size: 0.7rem;
   line-height: 1.5;
   padding: 0.5rem 1.25rem;
+  transition-duration: var(--transitionSpeedFast);
+  transition-property: background-color, color;
+  transition-timing-function: ease-in;
   text-decoration: none;
   text-transform: capitalize;
 
@@ -31,12 +34,22 @@ const StyledButton = styled(Link)`
     color: var(--colorLinenDefault);
   }
 
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--colorLinenDark);
+    color: var(--colorBlack);
+
+    &:hover {
+      background-color: var(--colorLinenLight);
+      color: var(--colorBlack);
+    }
+  }
+
   /* TODO: Create proper variant lookup */
   ${({ variant }) =>
     variant === 'link' &&
     css`
-      background-color: transparent;
-      color: inherit;
+      background-color: transparent !important;
+      color: inherit !important;
       font-size: 1rem;
       text-decoration: underline;
       text-transform: none;

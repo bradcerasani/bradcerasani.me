@@ -4,8 +4,6 @@
   --lg: 1280px;
   --xl: 1440px;
 
-  --backgroundColor: hsl(35, 10%, 85%);
-
   --colorBlack: hsl(0, 0%, 10%);
   --colorWhite: hsl(0, 0%, 98%);
   --colorHighlight: hsl(48, 24%, 94%);
@@ -27,6 +25,10 @@
   --colorCyanDefault: hsl(186, 100%, 73%);
   --colorCyanTranslucent: hsl(186, 100%, 73%, 0.25);
 
+  --backgroundColor: var(--colorLinen);
+  --backgroundOverlayColor: hsl(0, 0%, 100%, 0.4);
+  --textColor: var(--colorBlack);
+
   --fontFamilySerif: CNW, Georgia, 'Times New Roman', Times, serif;
   --fontFamilySansSerif: USW, -apple-system, sans-serif;
   --fontFamilySystem: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -37,4 +39,13 @@
   --transitionSpeedSlow: 500ms;
 
   --maxWidth: 700px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --backgroundColor: var(--colorBlack);
+    --backgroundOverlayColor: hsl(0, 0%, 100%, 0.05);
+    --textColor: var(--colorLinenLight);
+    --computedBackgroundColor: hsl(0, 0%, 15%);
+  }
 }

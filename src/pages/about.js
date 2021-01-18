@@ -26,12 +26,16 @@ function AboutPage(props) {
           description="About Brad Cerasani; Design & Engineering."
         />
 
-        <style>{css`
-          :root {
-            --backgroundColor: hsl(33, 44%, 41%, 0.5);
-            --computedBackgroundColor: hsl(35, 26%, 82%, 1);
-          }
-        `}</style>
+        <style>
+          {css`
+            @media (prefers-color-scheme: light) {
+              :root {
+                --backgroundColor: hsl(33, 44%, 41%, 0.5);
+                --computedBackgroundColor: hsl(35, 26%, 82%, 1);
+              }
+            }
+          `}
+        </style>
 
         <main>
           <section id="js-mdx-body">

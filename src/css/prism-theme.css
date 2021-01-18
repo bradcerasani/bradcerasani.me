@@ -82,6 +82,12 @@ pre *::selection {
   white-space: normal;
 }
 
+@media (prefers-color-scheme: dark) {
+  :not(pre) > code[class*='language-'] {
+    background-color: var(--codeBackgroundColor);
+  }
+}
+
 .token.italic {
   font-style: italic;
 }

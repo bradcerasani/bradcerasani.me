@@ -10,6 +10,10 @@ export const Caption = styled.figcaption`
   padding-right: 1rem;
   text-align: center;
 
+  @media (prefers-color-scheme: dark) {
+    color: var(--colorLinenDark);
+  }
+
   /* Hack for larger emoji in video captions */
   span {
     bottom: -0.25rem;

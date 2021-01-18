@@ -40,6 +40,12 @@ sup {
   position: relative;
 }
 
+@media (prefers-color-scheme: dark) {
+  .footnotes ol li {
+    color: var(--colorLinenDark);
+  }
+}
+
 .footnotes ol li:last-of-type {
   margin-bottom: 0;
 }
@@ -66,6 +72,12 @@ sup {
   transition-timing-function: ease-in-out;
   visibility: visible;
   width: calc(var(--height) / var(--aspectRatio));
+}
+
+@media (prefers-color-scheme: dark) {
+  .footnote-backref::before {
+    filter: invert();
+  }
 }
 
 .footnote-backref {

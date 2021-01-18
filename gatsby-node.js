@@ -11,6 +11,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /lazysizes/,
             use: loaders.null(),
           },
+          {
+            test: /vimeo/,
+            use: loaders.null(),
+          },
         ],
       },
     });

@@ -220,7 +220,7 @@ a[target='_blank']::after {
   content: '↯';
   display: inline-block;
   opacity: 0.4;
-  position: relative;
+  position: absolute;
   transform: rotate(225deg) translateY(0.2rem) translateX(-0.2rem);
 }
 

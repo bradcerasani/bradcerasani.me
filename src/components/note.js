@@ -5,7 +5,6 @@ import { breakpoint } from 'src/settings';
 export const Note = styled.div`
   background-color: var(--colorHighlight);
   border-color: currentColor;
-  border-radius: 0.5rem;
   border-style: double;
   border-width: 6px;
   font-size: 0.9rem;

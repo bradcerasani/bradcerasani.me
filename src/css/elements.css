@@ -1,7 +1,7 @@
 html,
 body {
   font-family: USW, -apple-system, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   min-height: 100%;
 }
 
@@ -196,7 +196,7 @@ li {
 a {
   color: inherit;
   text-decoration-color: var(--colorGreyDark);
-  transition-duration: var(--transitionSpeedFast);
+  transition-duration: var(--transitionFast);
   transition-property: color;
   transition-timing-function: ease-in-out;
 }

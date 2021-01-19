@@ -6,7 +6,6 @@ export * from './image-compare';
 export * from './image';
 export * from './loading';
 export * from './logo';
-export * from './noise';
 export * from './note';
 export * from './video';
 export * from './vimeo';

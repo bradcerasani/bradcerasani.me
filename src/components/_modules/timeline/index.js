@@ -32,7 +32,8 @@ export const TimelineItem = ({ fields, frontmatter }) => {
           size={fields.type === 'WRITING' ? 'default' : 'large'}
         >
           <Intrinsic aspect="16 / 9">
-            {image.includes('.jpg') || image.includes('.png') ? (
+            {/* TODO: Create util */}
+            {/\.(gif|jpe?g|png|webp)$/i.test(image) ? (
               <Image
                 src={image}
                 sizes="1040px"

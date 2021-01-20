@@ -43,7 +43,10 @@ function ProjectDetailTemplate(props) {
       headline={post.frontmatter.title}
     >
       <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
-        <Image src={image} alt="Hero image" />
+        {/* TODO: Create util */}
+        {/\.(gif|jpe?g|png|webp)$/i.test(image) && (
+          <Image src={image} alt="Hero image" />
+        )}
       </Hero>
 
       <Head

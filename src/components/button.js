@@ -4,22 +4,22 @@ import styled, { css } from 'styled-components';
 
 const ButtonLinkIcon = styled.span`
   display: inline-block;
-  height: 1.25rem;
-  left: 0.5rem;
+  height: 0.75rem;
+  left: 0.75rem;
   position: relative;
   transition-duration: var(--transitionFast);
   transition-property: transform;
   transition-timing-function: ease-in;
-  width: 1.25rem;
+  width: 0.75rem;
 `;
 
 const StyledButton = styled(Link)`
   background-color: var(--colorGreyDarker);
-  border-radius: 1rem;
+  border-radius: var(--spaceDefault);
   color: var(--colorLinenLight);
   font-size: 0.7rem;
   line-height: 1.5;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem var(--spaceDefault);
   transition-duration: var(--transitionFast);
   transition-property: background-color, color;
   transition-timing-function: ease-in;
@@ -34,6 +34,23 @@ const StyledButton = styled(Link)`
     color: var(--colorGreyLightest);
   }
 
+  /* TODO: Create proper variant lookup */
+  ${({ variant }) =>
+    variant === 'link' &&
+    css`
+      background-color: transparent !important;
+      color: inherit !important;
+      text-decoration: underline;
+      text-transform: none;
+      font-size: inherit;
+      padding: 0;
+      line-height: inherit;
+
+      &:hover {
+        color: currentColor;
+      }
+    `}
+
   @media (prefers-color-scheme: dark) {
     background-color: var(--colorLinenDark);
     color: var(--colorBlack);
@@ -43,23 +60,6 @@ const StyledButton = styled(Link)`
       color: var(--colorBlack);
     }
   }
-
-  /* TODO: Create proper variant lookup */
-  ${({ variant }) =>
-    variant === 'link' &&
-    css`
-      background-color: transparent !important;
-      color: inherit !important;
-      font-size: 1rem;
-      text-decoration: underline;
-      text-transform: none;
-      padding: 0;
-      line-height: inherit;
-
-      &:hover {
-        color: currentColor;
-      }
-    `}
 `;
 
 export const Button = ({ children, ...props }) => {

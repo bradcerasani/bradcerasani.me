@@ -7,7 +7,7 @@ import { Intrinsic, Figure, Caption } from 'src/components';
 
 const ImageSliderHandle = styled.div`
   --strokeWidth: 2px;
-  --handleWidth: 1.5rem;
+  --handleWidth: 1rem;
   --color: var(--colorBlack);
 
   background-color: var(--color);
@@ -18,7 +18,7 @@ const ImageSliderHandle = styled.div`
 
   &::after {
     background-color: var(--color);
-    border-radius: var(--handleWidth);
+    border-radius: 50%;
     content: '';
     height: var(--handleWidth);
     left: 0;
@@ -37,7 +37,7 @@ const ImageSliderHandle = styled.div`
 const ImageSliderWrapper = styled.div`
   &:hover {
     ${ImageSliderHandle}::after {
-      transform: scale(1.2);
+      transform: scale(1.5);
     }
   }
 `;
@@ -74,7 +74,7 @@ export const ImageCompare = ({
   }
   return (
     <Figure size={size}>
-      <Intrinsic aspect="3 / 2" style={{ marginBottom: '0.75rem' }}>
+      <Intrinsic aspect="3 / 2">
         <ImageSliderWrapper>
           <ReactCompareSlider
             handle={<ImageSliderHandle />}

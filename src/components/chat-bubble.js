@@ -3,20 +3,27 @@ import styled from 'styled-components';
 import { breakpoint } from 'src/settings';
 
 export const ChatBubble = styled.div`
-  animation-duration: 400ms;
+  --size: 0.875rem;
+
+  /* Note: em units used for sizing relative to  */
+  animation-duration: var(--transitionSlow);
   animation-fill-mode: both;
   animation-name: fadeInUp;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   background-color: var(--colorGreyLightest);
-  border-radius: 1em;
+  border-radius: calc(2 * var(--size));
   color: var(--colorGreyDarker);
   display: inline-block;
   font-family: var(--fontFamilySystem);
-  font-size: 0.875rem;
+  font-size: var(--size);
   line-height: 1;
-  margin-left: 0.5rem;
-  padding: 0.4em 0.8em 0.4em 0.7em;
+  margin-left: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  padding-top: 0.5em;
   position: absolute;
+  text-align: center;
   white-space: nowrap;
 
   &::before,
@@ -45,8 +52,6 @@ export const ChatBubble = styled.div`
   }
 
   @media (min-width: ${breakpoint.md}) {
-    font-size: 0.7rem;
-    margin-left: 0.75rem;
-    margin-top: 0.2rem;
+    --size: 0.75rem;
   }
 `;

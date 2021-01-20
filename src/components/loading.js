@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoint } from 'src/settings';
-
 const StyledVideo = styled.video`
-  --size: 150px;
+  --size: var(--spaceLarge);
 
   display: block;
   left: 50%;
@@ -18,10 +16,6 @@ const StyledVideo = styled.video`
   width: var(--size);
   will-change: opacity;
   z-index: 0;
-
-  @media (min-width: ${breakpoint.md}) {
-    --size: 250px;
-  }
 `;
 
 export const Loading = ({ ...props }) => {

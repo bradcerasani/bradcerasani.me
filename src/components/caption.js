@@ -4,10 +4,10 @@ export const Caption = styled.figcaption`
   color: var(--colorGreyDefault);
   font-size: 0.8rem;
   font-style: italic;
-  margin-bottom: 1.5rem;
-  min-height: 1.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-bottom: var(--spaceDefault);
+  min-height: var(--spaceDefault);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   text-align: center;
 
   @media (prefers-color-scheme: dark) {
@@ -16,11 +16,11 @@ export const Caption = styled.figcaption`
 
   /* Hack for larger emoji in video captions */
   span {
-    bottom: -0.25rem;
+    bottom: calc(0.25rem * -1);
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-style: normal;
-    line-height: 1rem;
+    line-height: 0.75rem;
     padding-right: 0.25rem;
     position: relative;
   }

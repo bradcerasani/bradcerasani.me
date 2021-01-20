@@ -18,11 +18,11 @@ const VideoCaption = styled(Caption)`
   ${({ isPlaying }) =>
     isPlaying &&
     css`
-      min-height: 3rem;
+      min-height: calc(2 * var(--spaceDefault));
     `}
 
   @media (min-width: ${breakpoint.md}) {
-    min-height: 1.5rem;
+    min-height: var(--spaceDefault);
   }
 `;
 

@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: USW, -apple-system, sans-serif;
+  font-family: var(--fontFamilySansSerif);
   font-size: 20px;
   min-height: 100%;
 }
@@ -62,6 +62,22 @@ body::after {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: var(--spaceSmaller);
+  padding-top: var(--spaceSmaller);
+}
+
+ul,
+ol {
+  margin-top: 0;
+}
+
 h1 {
   align-self: flex-end;
   font-family: var(--fontFamilySerif);
@@ -96,18 +112,9 @@ h1 br {
 
 h2 {
   font-family: var(--fontFamilySerif);
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-  padding-top: 1rem;
-}
-
-@media (min-width: 768px) {
-  h2 {
-    font-size: 2.25;
-  }
 }
 
 h3 {
@@ -115,17 +122,11 @@ h3 {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.25;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-  padding-top: 0.5rem;
 }
 
 h4 {
   font-size: 1.25rem;
   font-weight: 500;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-  padding-top: 0.5rem;
 }
 
 h5 {
@@ -133,18 +134,12 @@ h5 {
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.25;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-  padding-top: 0.5rem;
 }
 
 h6 {
   font-family: var(--fontFamilySerif);
   font-size: 1.5rem;
   font-weight: 500;
-  letter-spacing: 0;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
 }
 
 @media (min-width: 480px) {
@@ -154,25 +149,25 @@ h6 {
 }
 
 section {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spaceDefault);
 }
 
 @media (min-width: 768px) {
   section {
-    margin-bottom: 3rem;
+    margin-bottom: var(--spaceMedium);
   }
 }
 
 p {
-  margin-bottom: 1.5rem;
   margin-top: 0;
+  margin-bottom: var(--spaceDefault);
+  color: var(--colorGreyDarker);
 }
 
 ol,
 ul {
   list-style-position: inside;
   margin-left: 0;
-  margin-top: 0;
   padding-left: 0;
 }
 
@@ -186,7 +181,6 @@ ul {
 ul {
   list-style-type: none;
   margin-bottom: 1rem;
-  margin-top: 0;
 }
 
 li {
@@ -246,7 +240,7 @@ blockquote {
   margin-left: 0;
   padding-bottom: 0.5rem;
   padding-left: 2.5rem;
-  padding-top: 0.5rem;
+  padding-top: var(--spaceSmaller);
   position: relative;
   width: 80%;
 }

@@ -1,13 +1,7 @@
 import React from 'react';
 import Imgix from 'react-imgix';
-import styled from 'styled-components';
 
 import { Figure, Caption } from 'src/components';
-
-const Img = styled(Imgix)`
-  display: block;
-  margin-bottom: 0.75rem;
-`;
 
 export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
   const url =
@@ -32,7 +26,7 @@ export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
 
   return (
     <Figure size={size} {...props}>
-      <Img
+      <Imgix
         className="lazyload"
         sizes={sizes || sizesFallback}
         src={url}

@@ -31,6 +31,7 @@ export const NavImage = styled(Imgix)`
   opacity: 0;
   position: absolute;
   right: -10rem;
+  transition: opacity var(--transitionFast);
   width: 10rem;
   z-index: -2;
 

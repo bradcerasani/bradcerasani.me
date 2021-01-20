@@ -71,8 +71,8 @@ h4,
 h5,
 h6 {
   margin: 0;
-  margin-bottom: var(--spaceSmaller);
-  padding-top: var(--spaceSmaller);
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 ul,
@@ -248,7 +248,7 @@ blockquote {
   margin-left: 0;
   padding-bottom: 0.5rem;
   padding-left: 2.5rem;
-  padding-top: var(--spaceSmaller);
+  padding-top: 0.5rem;
   position: relative;
   width: 80%;
 }

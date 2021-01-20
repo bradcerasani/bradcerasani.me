@@ -62,10 +62,6 @@ function ProjectDetailTemplate(props) {
             }
           }
 
-          article section {
-            margin-top: 12rem;
-          }
-
           p:first-of-type {
             font-size: 1.25rem;
             font-family: 'CNW';
@@ -89,7 +85,7 @@ function ProjectDetailTemplate(props) {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          marginTop: '6rem',
+          marginTop: 'var(--spaceLarge)',
         }}
       >
         <div>

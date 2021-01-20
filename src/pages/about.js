@@ -20,7 +20,7 @@ function AboutPage(props) {
 
   return (
     <>
-      <Layout location={props.location} title={siteTitle}>
+      <Layout title={siteTitle}>
         <Head
           title="About"
           description="About Brad Cerasani; Design & Engineering."
@@ -45,10 +45,9 @@ function AboutPage(props) {
 
           <Grid>
             <GridItem width={{ base: '50%', sm: '30%' }}>
-              <h6>Elsewhere</h6>
-              <ul style={{ marginBottom: '0' }}>
-                {/* TODO: Pull from site settings? */}
-                {['Instagram', 'Twitter', 'GitHub'].map((link) => (
+              <h6 style={{ paddingTop: 0 }}>Elsewhere</h6>
+              <ul>
+                {['Twitter', 'Instagram', 'GitHub'].map((link) => (
                   <li key={link}>
                     <OutboundLink
                       href={`https://${link.toLowerCase()}.com/bradcerasani`}
@@ -64,8 +63,8 @@ function AboutPage(props) {
             </GridItem>
 
             <GridItem width={{ base: '50%', sm: '30%' }}>
-              <h6>Site Archives</h6>
-              <ul style={{ marginBottom: '0' }}>
+              <h6 style={{ paddingTop: 0 }}>Site Archives</h6>
+              <ul>
                 {['2014', '2013', '2012', '2011', '2010'].map((year) => (
                   <li key={year}>
                     <OutboundLink
@@ -82,7 +81,7 @@ function AboutPage(props) {
             </GridItem>
 
             <GridItem width={{ sm: '40%' }}>
-              <h6>Photos</h6>
+              <h6 style={{ paddingTop: 0 }}>Photos</h6>
               <GalleryController images={images} />
             </GridItem>
           </Grid>

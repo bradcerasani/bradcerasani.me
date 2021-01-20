@@ -54,7 +54,7 @@ function PostDetailTemplate(props) {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          marginTop: '6rem',
+          marginTop: 'var(--spaceLarge)',
         }}
       >
         <div>

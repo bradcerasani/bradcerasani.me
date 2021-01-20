@@ -29,22 +29,25 @@ function Home(props) {
       </style>
 
       <main>
-        <section>
-          <div
+        <section style={{ marginBottom: 'var(--spaceMedium)' }}>
+          <p
             dangerouslySetInnerHTML={{
               __html: data.mdx.frontmatter.excerpt,
             }}
-            style={{ marginBottom: '1rem' }}
+            style={{ marginBottom: 'calc(var(--spaceDefault) / 2)' }}
           />
 
-          <Button to={'/about/'} variant="link">
+          <Button
+            to={'/about/'}
+            variant="link"
+            style={{ textUnderlinePosition: 'under' }}
+          >
             More about me
           </Button>
         </section>
 
         <section>
-          <h2>Side Projects &amp; Writing</h2>
-          <p>Variations on themes of design, technology, and making things.</p>
+          <h2 style={{ paddingTop: '0' }}>Side Projects &amp; Writing</h2>
           <Timeline>
             {contents.map(({ node }) => (
               <TimelineItem
@@ -91,7 +94,6 @@ export const pageQuery = graphql`
             description
             image
             skipPage
-            tags
             title
           }
         }

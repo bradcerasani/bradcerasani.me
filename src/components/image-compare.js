@@ -27,7 +27,7 @@ const ImageSliderHandle = styled.div`
     position: absolute;
     top: 50%;
     transform-origin: center;
-    transition: transform var(--transitionFast);
+    transition: transform var(--transitionDefault);
     width: var(--handleWidth);
   }
 `;

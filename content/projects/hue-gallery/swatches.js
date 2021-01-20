@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { breakpoint } from 'src/settings';
 import { Caption } from 'src/components';
 
 export const SwatchContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
-  margin-top: -0.5rem;
+  margin-bottom: var(--spaceDefault);
 `;
 
 export const Swatch = styled.div`
-  --diameter: 1.5rem;
-  --margin: 0.25rem;
+  --diameter: 2rem;
+  --margin: 0.5rem;
 
   border-radius: var(--diameter);
   flex-grow: 0;
@@ -22,11 +20,6 @@ export const Swatch = styled.div`
   margin-left: var(--margin);
   margin-right: var(--margin);
   width: var(--diameter);
-
-  @media (min-width: ${breakpoint.md}) {
-    --diameter: 2rem;
-    --margin: 0.5rem;
-  }
 `;
 
 export const Swatches = ({ colors, caption }) => {
@@ -41,9 +34,7 @@ export const Swatches = ({ colors, caption }) => {
           <Swatch key={index} style={{ backgroundColor: color }} />
         ))}
       </SwatchContainer>
-      {caption && (
-        <Caption style={{ marginTop: '-0.75rem' }}>{caption}</Caption>
-      )}
+      {caption && <Caption>{caption}</Caption>}
     </>
   );
 };

@@ -7,9 +7,7 @@ const ButtonLinkIcon = styled.span`
   height: 0.75rem;
   left: 0.75rem;
   position: relative;
-  transition-duration: var(--transitionFast);
-  transition-property: transform;
-  transition-timing-function: ease-in;
+  transition: transform var(--transitionFast);
   width: 0.75rem;
 `;
 
@@ -20,9 +18,7 @@ const StyledButton = styled(Link)`
   font-size: 0.7rem;
   line-height: 1.5;
   padding: 0.5rem var(--spaceDefault);
-  transition-duration: var(--transitionFast);
-  transition-property: background-color, color;
-  transition-timing-function: ease-in;
+  transition: background-color, color var(--transitionDefault);
   text-decoration: none;
   text-transform: capitalize;
 

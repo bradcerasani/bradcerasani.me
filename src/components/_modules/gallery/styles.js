@@ -24,7 +24,7 @@ export const StyledGalleryImage = styled.div`
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  transition-duration: 90ms;
+  transition-duration: var(--transitionFaster);
   transition-property: opacity;
   transition-timing-function: ease-in-out;
   z-index: 5;
@@ -128,7 +128,7 @@ export const StyledGalleryImage = styled.div`
 `;
 
 export const StyledGalleryController = styled.input`
-  --height: 1.75rem;
+  --handleSize: 1.5rem;
   --trackHeight: 3px;
   --trackColor: var(--colorLinenDark);
 
@@ -136,9 +136,9 @@ export const StyledGalleryController = styled.input`
   background-color: transparent;
   color: inherit;
   cursor: pointer;
-  height: var(--height);
-  padding-left: 0;
-  padding-right: 0;
+  height: var(--handleSize);
+  margin-top: var(--trackHeight);
+  padding: 0;
   position: relative;
   width: 100%;
 
@@ -156,10 +156,10 @@ export const StyledGalleryController = styled.input`
     appearance: none;
     background-color: currentColor;
     border-radius: 50%;
-    height: var(--height);
+    height: var(--handleSize);
     margin-top: calc(var(--trackHeight) / 2);
     transform: translateY(-50%);
-    width: var(--height);
+    width: var(--handleSize);
   }
 
   &::-ms-fill-lower,
@@ -168,6 +168,6 @@ export const StyledGalleryController = styled.input`
   }
 
   @media (min-width: ${breakpoint.md}) {
-    --height: 0.8rem;
+    --handleSize: 1rem;
   }
 `;

@@ -42,9 +42,10 @@ exports.createPages = async ({ graphql, actions }) => {
                 slug
               }
               frontmatter {
-                title
                 image
                 skipPage
+                status
+                title
               }
             }
           }

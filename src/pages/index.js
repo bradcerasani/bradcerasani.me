@@ -94,6 +94,7 @@ export const pageQuery = graphql`
             description
             image
             skipPage
+            status
             title
           }
         }

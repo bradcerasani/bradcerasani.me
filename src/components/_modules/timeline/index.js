@@ -24,12 +24,14 @@ export const TimelineItem = ({ fields, frontmatter }) => {
   const cta =
     frontmatter.cta ||
     (fields.type === 'WRITING' ? 'Read Post' : 'View Project');
+  const isDraft = frontmatter.status && frontmatter.status.includes('draft');
 
+  // TODO: Tidy
   return (
     <StyledTimelineItem>
       {image && (
         <TimelineItemImageWrapper
-          size={fields.type === 'WRITING' ? 'default' : 'large'}
+          size={fields.type === 'WRITING' || isDraft ? 'default' : 'large'}
         >
           <Intrinsic aspect="16 / 9">
             {/* TODO: Create util */}
@@ -58,7 +60,7 @@ export const TimelineItem = ({ fields, frontmatter }) => {
       <TimelineItemDetailsWrapper>
         <TimelineItemNode>{date}</TimelineItemNode>
 
-        <Link to={url}>
+        <Link to={url} style={{ pointerEvents: isDraft ? 'none' : null }}>
           <h3>{title}</h3>
         </Link>
 
@@ -68,7 +70,17 @@ export const TimelineItem = ({ fields, frontmatter }) => {
           }}
         />
 
-        {!frontmatter.skipPage && <Button to={url}>{cta}</Button>}
+        {!frontmatter.skipPage && (
+          <Button
+            to={url}
+            style={{
+              pointerEvents: isDraft ? 'none' : null,
+              opacity: isDraft ? '0.5' : '1',
+            }}
+          >
+            {cta}
+          </Button>
+        )}
       </TimelineItemDetailsWrapper>
     </StyledTimelineItem>
   );

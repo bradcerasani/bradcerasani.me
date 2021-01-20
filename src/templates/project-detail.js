@@ -97,17 +97,16 @@ function ProjectDetailTemplate(props) {
         }}
       >
         <div>
-          {next && (
+          {next && next.frontmatter.status !== 'draft' && (
             <>
               <h6>Newer</h6>
-
               <Button to={next.fields.slug} variant="link">
                 {next.frontmatter.title.replace(/<[^>]*>?/gm, '')}
               </Button>
             </>
           )}
         </div>
-        {previous && (
+        {previous && previous.frontmatter.status !== 'draft' && (
           <div>
             <h6>Older</h6>
             <Button to={previous.fields.slug} variant="link">
@@ -148,6 +147,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            status
           }
         }
         previous {
@@ -156,6 +156,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            status
           }
         }
       }

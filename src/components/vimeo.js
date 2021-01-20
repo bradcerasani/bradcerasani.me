@@ -3,7 +3,6 @@ import ReactDOMServer from 'react-dom/server';
 import Player from '@vimeo/player';
 import styled, { css } from 'styled-components';
 
-import { breakpoint } from 'src/settings';
 import { Caption, Figure, FluidWrapper, Loading } from 'src/components';
 
 // On mobile some captions wrap to 2 lines, so we need an

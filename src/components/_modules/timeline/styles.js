@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'gatsby';
 
 import { breakpoint } from 'src/settings';
 

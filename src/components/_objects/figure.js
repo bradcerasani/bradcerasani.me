@@ -36,7 +36,6 @@ export const Figure = styled.figure`
           return css`
             margin-left: calc(-1 * var(--spaceLarge));
             margin-right: calc(-1 * var(--spaceLarge));
-            width: calc(100% + var(--spaceLarge) * 2);
           `;
       }
     }}

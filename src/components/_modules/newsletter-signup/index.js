@@ -32,9 +32,7 @@ const StyledForm = styled.form`
     flex-shrink: 0;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    transition-duration: 200ms;
-    transition-property: background-color, border-color, color;
-    transition-timing-function: ease-in-out;
+    transition: background-color, border-color, color var(--transitionDefault);
 
     /* Default state */
     &:not(:valid) {
@@ -45,9 +43,7 @@ const StyledForm = styled.form`
     &::placeholder {
       color: var(--colorGreyDark);
       font-style: italic;
-      transition-duration: 200ms;
-      transition-property: color;
-      transition-timing-function: ease-in-out;
+      transition: color var(--transitionDefault);
     }
 
     /* stylelint-disable */

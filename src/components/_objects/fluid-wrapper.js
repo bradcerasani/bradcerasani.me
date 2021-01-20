@@ -13,10 +13,8 @@ export const FluidWrapper = styled.div`
     opacity: 0;
     position: absolute;
     top: 0;
-    transition-delay: 100ms;
-    transition-duration: 400ms;
-    transition-property: opacity;
-    transition-timing-function: ease-in-out;
+    transition: opacity var(--transitionDefault);
+    transition-delay: 200ms;
     width: 100%;
     will-change: opacity;
     z-index: 1;

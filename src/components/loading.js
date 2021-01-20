@@ -10,9 +10,7 @@ const StyledVideo = styled.video`
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition-duration: 200ms;
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
+  transition: opacity var(--transitionDefault);
   width: var(--size);
   will-change: opacity;
   z-index: 0;

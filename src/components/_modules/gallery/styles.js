@@ -24,9 +24,7 @@ export const StyledGalleryImage = styled.div`
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  transition-duration: var(--transitionFaster);
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
+  transition: opacity var(--transitionFast);
   z-index: 5;
 
   @media (min-width: ${breakpoint.md}) {

@@ -10,9 +10,7 @@ import { Caption, Figure, FluidWrapper, Loading } from 'src/components';
 // explicit min-height to prevent reflow on caption change
 
 const VideoCaption = styled(Caption)`
-  transition-duration: 400ms;
-  transition-property: height, min-height;
-  transition-timing-function: ease-in-out;
+  transition: height, min-height var(--transitionDefault);
 
   /* stylelint-disable-next-line */
   ${({ isPlaying }) =>
@@ -20,10 +18,6 @@ const VideoCaption = styled(Caption)`
     css`
       min-height: calc(2 * var(--spaceDefault));
     `}
-
-  @media (min-width: ${breakpoint.md}) {
-    min-height: var(--spaceDefault);
-  }
 `;
 
 function addCuePoints(player, annotations) {

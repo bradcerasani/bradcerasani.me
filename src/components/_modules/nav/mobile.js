@@ -17,9 +17,7 @@ export const MobileNavMenuWrapper = styled.div`
 
 export const MobileNavWrapper = styled.div`
   opacity: 0;
-  transition-duration: 200ms;
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
+  transition: opacity var(--transitionDefault);
   width: 100%;
   z-index: 1;
 
@@ -54,15 +52,13 @@ export const MobileNavOverlay = styled.div`
   height: 100%;
   left: 0;
   opacity: 0;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: var(--spaceDefault);
+  padding-right: var(--spaceDefault);
   pointer-events: none;
   position: fixed;
   top: 0;
+  transition: opacity var(--transitionDefault);
   transition-delay: 200ms;
-  transition-duration: 200ms;
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
   width: 100%;
   will-change: opacity;
   z-index: 5;
@@ -124,10 +120,10 @@ export const MobileNavItem = styled(Link)`
 `;
 
 export const MobileNavMenu = styled.div`
-  --size: 1.5rem;
+  --size: var(--spaceDefault);
   --thickness: 2px;
   --spacing: 0.5rem;
-  --scaler: 0.9;
+  --scalar: 0.9;
 
   align-items: center;
   cursor: pointer;
@@ -176,10 +172,10 @@ export const MobileNavMenu = styled.div`
       }
 
       &::before {
-        transform: rotate(-45deg) scaleX(var(--scaler));
+        transform: rotate(-45deg) scaleX(var(--scalar));
       }
       &::after {
-        transform: rotate(45deg) scaleX(var(--scaler));
+        transform: rotate(45deg) scaleX(var(--scalar));
       }
     `}
 `;

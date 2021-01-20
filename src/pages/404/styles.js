@@ -46,10 +46,8 @@ export const Loading = styled.div`
   pointer-events: none;
   position: fixed;
   top: 0;
+  transition: opacity var(--transitionSlow);
   transition-delay: 200ms;
-  transition-duration: 600ms;
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
   width: 100%;
   z-index: 10;
 `;

@@ -32,11 +32,9 @@
   --spaceMedium: 4rem;
   --spaceLarge: 8rem;
 
-  --transitionFaster: 50ms;
-  --transitionFast: 200ms;
-  --transitionDefault: 300ms;
-  --transitionSlow: 500ms;
-  --transitionSlower: 800ms;
+  --transitionSlow: 600ms ease-out;
+  --transitionDefault: 300ms ease-out;
+  --transitionFast: 50ms ease-out;
 
   --gutter: var(--spaceDefault);
   --maxWidth: 700px;

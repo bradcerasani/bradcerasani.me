@@ -27,9 +27,7 @@ const ImageSliderHandle = styled.div`
     position: absolute;
     top: 50%;
     transform-origin: center;
-    transition-duration: 200ms;
-    transition-property: transform;
-    transition-timing-function: ease-in-out;
+    transition: transform var(--transitionFast);
     width: var(--handleWidth);
   }
 `;

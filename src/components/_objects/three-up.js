@@ -13,7 +13,7 @@ const Img = styled(Imgix)`
 
 // See https://github.com/styled-components/styled-components/issues/1449
 const StyledLayoutItem = styled((props) => <LayoutItem {...props} />)`
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spaceDefault);
 
   @media (min-width: ${breakpoint.sm}) {
     margin-bottom: 0;
@@ -30,11 +30,8 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
   }
 
   return (
-    <Figure
-      size="large"
-      style={{ marginBottom: '0.75rem', marginTop: '0.75rem' }}
-    >
-      <LayoutObject gutterWidth="0.75rem" {...props}>
+    <Figure size="large">
+      <LayoutObject gutterWidth="calc(var(--spaceDefault) / 2)" {...props}>
         <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
           {/* TODO: DRY */}
           {image1.includes('.mp4') ? (
@@ -102,7 +99,7 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
           />
         </StyledLayoutItem>
       </LayoutObject>
-      {caption && <Caption style={{ marginTop: '0.75rem' }}>{caption}</Caption>}
+      {caption && <Caption>{caption}</Caption>}
     </Figure>
   );
 };

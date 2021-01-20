@@ -25,7 +25,6 @@ function getResponsiveWidth(width) {
 }
 
 export const GridItem = styled.div`
-  margin-bottom: 1.5rem;
   width: 100%;
 
   /* stylelint-disable-next-line */

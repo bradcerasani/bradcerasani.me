@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const StyledIntrinsic = styled.div`
-  background-color: var(--colorLinenDefault);
   position: relative;
   width: 100%;
 

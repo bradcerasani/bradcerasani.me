@@ -108,7 +108,7 @@ export const Header = (props) => {
 
         <HeroContainer>
           <h1>
-            {date && <Date orientation="vertical">{date}</Date>}
+            {date && <Date>{date}</Date>}
             <span dangerouslySetInnerHTML={{ __html: headline }} />
           </h1>
 

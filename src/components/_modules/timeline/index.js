@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 import { Button, Intrinsic, Image } from 'src/components';
 
@@ -8,11 +9,10 @@ import {
   TimelineItemDetailsWrapper,
   TimelineItemImageWrapper,
   TimelineItemNode,
-  TimelineItemTitle,
 } from './styles';
 
 export const Timeline = styled.div`
-  margin-top: 2rem;
+  margin-top: var(--spaceDefault);
 `;
 
 export const TimelineItem = ({ fields, frontmatter }) => {
@@ -33,7 +33,12 @@ export const TimelineItem = ({ fields, frontmatter }) => {
         >
           <Intrinsic aspect="16 / 9">
             {image.includes('.jpg') || image.includes('.png') ? (
-              <Image src={image} sizes="1040px" alt={title} />
+              <Image
+                src={image}
+                sizes="1040px"
+                alt={title}
+                style={{ margin: 0 }}
+              />
             ) : (
               <video
                 className="lazyload"
@@ -52,14 +57,11 @@ export const TimelineItem = ({ fields, frontmatter }) => {
       <TimelineItemDetailsWrapper>
         <TimelineItemNode>{date}</TimelineItemNode>
 
-        <TimelineItemTitle to={url}>
-          <h3 style={{ paddingTop: '0.75rem', display: 'inline-block' }}>
-            {title}
-          </h3>
-        </TimelineItemTitle>
+        <Link to={url}>
+          <h3>{title}</h3>
+        </Link>
 
         <p
-          style={{ fontSize: '0.8rem', marginBottom: '1.25rem' }}
           dangerouslySetInnerHTML={{
             __html: description,
           }}

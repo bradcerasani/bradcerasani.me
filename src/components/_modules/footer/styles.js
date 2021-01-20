@@ -2,6 +2,28 @@ import styled from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 
+export const StyledFooter = styled.footer`
+  border-top: 2px solid currentColor;
+  font-family: var(--fontFamilySerif);
+  font-size: 1.125rem;
+  margin-top: var(--spaceMedium);
+  padding-bottom: var(--spaceMedium);
+  padding-top: var(--spaceMedium);
+
+  a {
+    display: inline-block;
+    fill: currentColor;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    user-select: none;
+
+    /* Hide external link glyph */
+    &::after {
+      display: none;
+    }
+  }
+`;
+
 export const ChatBubble = styled.div`
   --size: 0.875rem;
 

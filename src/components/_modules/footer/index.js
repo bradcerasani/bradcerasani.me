@@ -1,30 +1,8 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
-import { ChatBubble, Container } from 'src/components';
-
-const StyledFooter = styled.footer`
-  border-top: 2px solid currentColor;
-  font-family: var(--fontFamilySerif);
-  font-size: 1.125rem;
-  margin-top: var(--spaceMedium);
-  padding-bottom: var(--spaceMedium);
-  padding-top: var(--spaceMedium);
-
-  a {
-    display: inline-block;
-    fill: currentColor;
-    -webkit-tap-highlight-color: transparent;
-    text-decoration: none;
-    user-select: none;
-
-    /* Hide external link glyph */
-    &::after {
-      display: none;
-    }
-  }
-`;
+import { Container } from 'src/components';
+import { StyledFooter, ChatBubble } from './styles';
 
 export const Footer = () => {
   const [showContact, setShowContact] = useState(false);

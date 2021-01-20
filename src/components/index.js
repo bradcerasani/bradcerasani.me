@@ -1,6 +1,5 @@
 export * from './button';
 export * from './caption';
-export * from './chat-bubble';
 export * from './date';
 export * from './image-compare';
 export * from './image';

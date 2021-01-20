@@ -42,7 +42,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --backgroundColor: var(--colorBlack);
+    --backgroundColor: hsl(0, 0%, 10%);
     --backgroundOverlayColor: hsl(0, 0%, 100%, 0.05);
     --textColor: var(--colorLinenLight);
     --computedBackgroundColor: hsl(0, 0%, 15%);

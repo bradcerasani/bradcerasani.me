@@ -1,3 +1,5 @@
+/* TODO: Tidy, annotate, and consolidate */
+
 html,
 body {
   font-family: var(--fontFamilySansSerif);
@@ -162,6 +164,12 @@ p {
   margin-top: 0;
   margin-bottom: var(--spaceDefault);
   color: var(--colorGreyDarker);
+}
+
+@media (prefers-color-scheme: dark) {
+  p {
+    color: inherit;
+  }
 }
 
 ol,

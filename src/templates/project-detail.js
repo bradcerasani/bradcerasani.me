@@ -70,6 +70,11 @@ function ProjectDetailTemplate(props) {
             font-family: 'CNW';
             font-weight: 500;
           }
+
+          section > p:first-of-type {
+            margin-bottom: var(--spaceLarge);
+            margin-top: var(--spaceLarge);
+          }
         `}
       </style>
 

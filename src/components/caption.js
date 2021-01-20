@@ -6,7 +6,6 @@ export const Caption = styled.figcaption`
   font-style: italic;
   margin-bottom: var(--spaceDefault);
   margin-top: 0.75rem;
-  min-height: var(--spaceDefault);
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   text-align: center;

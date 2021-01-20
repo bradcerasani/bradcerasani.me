@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
 import MutedIconSVG from 'src/icons/muted.inline.svg';
 import UnmutedIconSVG from 'src/icons/unmuted.inline.svg';
-import { breakpoint } from 'src/settings';
 
 import Layout from 'src/templates/layout';
 
@@ -18,13 +16,6 @@ import {
   VideoOverlay,
   VideoOverlayIcon,
 } from './styles';
-
-const StyledGrid = styled(Grid)`
-  @media (min-width: ${breakpoint.md}) {
-    margin-bottom: 5rem;
-    margin-top: 5rem;
-  }
-`;
 
 function PageNotFound(props) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -47,7 +38,13 @@ function PageNotFound(props) {
       <Theme />
       <TigerBackground />
 
-      <StyledGrid style={{}} gutter="5rem">
+      <Grid
+        style={{
+          marginBottom: 'var(--spaceLarge)',
+          marginTop: 'var(--spaceLarge)',
+        }}
+        gutter="6rem"
+      >
         <GridItem width={{ md: '50%' }}>
           <VideoContainer>
             <Video
@@ -70,11 +67,14 @@ function PageNotFound(props) {
         </GridItem>
 
         <GridItem width={{ md: '50%' }}>
-          <h5 style={{ paddingTop: '1.5rem', marginBottom: '1rem' }}>
-            Error 404
-          </h5>
+          <h5 style={{ paddingTop: 'var(--spaceDefault)' }}>Error 404</h5>
 
-          <p style={{ marginBottom: '1rem' }}>
+          <p
+            style={{
+              color: 'currentcolor',
+              marginBottom: 'calc(var(--spaceDefault) / 2)',
+            }}
+          >
             The page you requested was not found. It could be in Carole Baskin's
             septic tank.
           </p>
@@ -83,7 +83,7 @@ function PageNotFound(props) {
             Sound {muted ? 'off' : 'on'}
           </MuteButton>
         </GridItem>
-      </StyledGrid>
+      </Grid>
     </Layout>
   );
 }

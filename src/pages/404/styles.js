@@ -28,6 +28,10 @@ export const Theme = createGlobalStyle`
       width: 100%;
       z-index: -2;
     }
+
+    &::after {
+      display: none;
+    }
   }
 
   a:hover {
@@ -80,8 +84,6 @@ export const Video = styled.video`
   box-shadow: 0 4px 24px hsl(0, 0%, 0%, 0.2), 0 4px 64px hsl(0, 0%, 0%, 0.4);
   height: 100%;
   left: 0;
-  margin-bottom: 8rem;
-  margin-left: 0;
   object-fit: cover;
   position: absolute;
   top: 0;

@@ -21,9 +21,34 @@ export const HeroContainer = styled.div`
   display: flex;
   margin-top: var(--spaceLarge);
 
+  h1 br {
+    display: none;
+  }
+
+  @media (min-width: ${breakpoint.sm}) {
+    h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+    }
+  }
+
   @media (min-width: ${breakpoint.md}) {
     margin-top: var(--spaceDefault);
     min-height: 10.625rem; /* Maintain equal distance above/below logo */
+
+    h1 {
+      margin-left: -3rem;
+    }
+  }
+
+  @media (min-width: ${breakpoint.lg}) {
+    h1 {
+      margin-left: -4rem;
+    }
+
+    h1 br {
+      display: block;
+    }
   }
 `;
 

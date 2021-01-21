@@ -15,7 +15,7 @@ const StyledButton = styled(Link)`
   background-color: var(--colorGreyDarker);
   border-radius: var(--spaceDefault);
   color: var(--colorLinenLight);
-  font-size: 0.7rem;
+  font-size: var(--fontSizeSmaller);
   line-height: 1.5;
   padding: 0.5rem var(--spaceDefault);
   transition: background-color, color var(--transitionDefault);

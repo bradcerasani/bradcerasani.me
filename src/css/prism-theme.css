@@ -38,7 +38,7 @@ pre[class*='language-'] {
   background: none;
   font-family: JBM, Consolas, Menlo, Monaco, source-code-pro, 'Courier New',
     monospace;
-  font-size: 0.8rem;
+  font-size: var(--fontSizeSmall);
   font-weight: 400;
   hyphens: none;
   line-height: 1.5;

@@ -1,5 +1,5 @@
 .footnotes {
-  font-size: 0.8rem;
+  font-size: var(--fontSizeSmall);
 }
 
 @media (min-width: 768px) {
@@ -13,7 +13,7 @@ sup {
 }
 
 .footnote-ref {
-  font-size: 0.6rem;
+  font-size: var(--fontSizeSmallest);
   text-decoration: none;
 }
 

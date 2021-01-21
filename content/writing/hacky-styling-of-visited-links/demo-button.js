@@ -30,7 +30,6 @@ export const DemoButton = styled.a`
         right: 1rem;
         width: 1rem;
         top: 0.75rem;
-        font-size: 20px;
       }
     `};
 

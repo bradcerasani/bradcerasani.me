@@ -128,7 +128,7 @@ export const MuteButton = styled.button`
   border: none;
   color: inherit;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: var(--fontSizeSmall);
   font-weight: 500;
   opacity: 0.5;
   outline: none;

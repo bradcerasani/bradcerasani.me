@@ -27,7 +27,7 @@ export const MobileNavWrapper = styled.div`
     position: relative;
 
     li {
-      font-size: 1.25rem;
+      font-size: var(--fontSizeMedium);
       opacity: 0;
 
       &[data-visibility='true'] {
@@ -95,7 +95,7 @@ export const MobileNavOverlay = styled.div`
 export const MobileNavItem = styled(Link)`
   display: block;
   font-family: var(--fontFamilySerif);
-  font-size: 2.5rem;
+  font-size: var(--fontSizeLarger);
   font-weight: 700;
   line-height: 1.375;
   -webkit-tap-highlight-color: transparent;

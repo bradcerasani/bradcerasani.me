@@ -67,7 +67,7 @@ function ProjectDetailTemplate(props) {
           }
 
           p:first-of-type {
-            font-size: 1.25rem;
+            font-size: var(--fontSizeMedium);
             font-family: 'CNW';
             font-weight: 500;
           }

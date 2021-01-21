@@ -70,7 +70,7 @@ export const TimelineItemDetailsWrapper = styled.article`
   }
 
   p {
-    font-size: 0.8rem;
+    font-size: var(--fontSizeSmall);
     margin-bottom: 1.25rem;
   }
 
@@ -102,7 +102,7 @@ export const TimelineItemNode = styled.div`
     border-radius: 50%;
     border: var(--strokeWidth) solid currentColor;
     display: flex;
-    font-size: 0.6rem;
+    font-size: var(--fontSizeSmallest);
     font-variant-numeric: tabular-nums;
     height: var(--nodeDiameter);
     justify-content: center;

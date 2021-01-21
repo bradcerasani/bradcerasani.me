@@ -7,7 +7,7 @@ export const Note = styled.div`
   border-color: currentColor;
   border-style: double;
   border-width: 6px;
-  font-size: 0.9rem;
+  font-size: var(--fontSizeSmall);
   font-style: italic;
   line-height: 1.5;
   margin-bottom: var(--spaceDefault);
@@ -20,7 +20,6 @@ export const Note = styled.div`
   }
 
   @media (min-width: ${breakpoint.md}) {
-    font-size: 0.8rem;
     margin-bottom: var(--spaceMedium);
   }
 

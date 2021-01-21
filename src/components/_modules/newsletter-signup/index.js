@@ -16,7 +16,7 @@ const StyledForm = styled.form`
     border: none;
     border-radius: 0;
     display: block;
-    font-size: 0.75rem;
+    font-size: var(--fontSizeSmall);
     height: var(--size);
     line-height: 1.25;
     margin-top: 0.25rem;

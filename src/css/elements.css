@@ -83,7 +83,7 @@ ol {
 h1 {
   align-self: flex-end;
   font-family: var(--fontFamilySerif);
-  font-size: 2.75rem;
+  font-size: var(--fontSizeLargest);
   font-weight: 700;
   line-height: 1.05;
   margin: 0;
@@ -93,39 +93,39 @@ h1 {
 
 h2 {
   font-family: var(--fontFamilySerif);
-  font-size: 2rem;
+  font-size: var(--fontSizeLarger);
   font-weight: 700;
   line-height: 1.1;
 }
 
 h3 {
   font-family: var(--fontFamilySerif);
-  font-size: 1.5rem;
+  font-size: var(--fontSizeLarge);
   font-weight: 500;
   line-height: 1.25;
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: var(--fontSizeMedium);
   font-weight: 500;
 }
 
 h5 {
   font-family: var(--fontFamilySerif);
-  font-size: 1.25rem;
+  font-size: var(--fontSizeMedium);
   font-weight: 500;
   line-height: 1.25;
 }
 
 h6 {
   font-family: var(--fontFamilySerif);
-  font-size: 1.5rem;
+  font-size: var(--fontSizeLarge);
   font-weight: 500;
 }
 
 @media (min-width: 480px) {
   h6 {
-    font-size: 1.25rem;
+    font-size: var(--fontSizeMedium);
   }
 }
 
@@ -251,7 +251,7 @@ blockquote::before {
 blockquote p {
   display: inline;
   font-family: var(--fontFamilySerif);
-  font-size: 1.5rem;
+  font-size: var(--fontSizeLarge);
   line-height: 1.25;
 }
 

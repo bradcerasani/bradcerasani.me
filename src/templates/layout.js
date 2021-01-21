@@ -32,7 +32,7 @@ const components = {
 };
 
 function Layout({ children, ...props }) {
-  const [setShowLog, showLog] = useState(true);
+  const [showLog, setShowLog] = useState(true);
 
   if (showLog) {
     console.log(

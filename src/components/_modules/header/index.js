@@ -2,20 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { breakpoint } from 'src/settings';
+import { Date, Logo } from 'src/components';
+import { links } from './links';
+import { StyledHeader, HeroContainer, Nav, NavImage, NavItem } from './styles';
 import {
-  Date,
-  Logo,
   MobileNavItem,
   MobileNavMenu,
   MobileNavMenuWrapper,
   MobileNavOverlay,
   MobileNavWrapper,
-  Nav,
-  NavImage,
-  NavItem,
-} from 'src/components';
-import { links } from './links';
-import { StyledHeader, HeroContainer } from './styles';
+} from './mobile-overlay';
 
 export const Header = (props) => {
   const { title, date, headline = 'Design & Engineering' } = props;

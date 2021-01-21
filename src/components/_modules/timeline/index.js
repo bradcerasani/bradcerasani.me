@@ -26,41 +26,43 @@ export const TimelineItem = ({ fields, frontmatter }) => {
     (fields.type === 'WRITING' ? 'Read Post' : 'View Project');
   const isDraft = frontmatter.status && frontmatter.status.includes('draft');
 
-  // TODO: Tidy
+  // TODO: Tidy & DRY
   return (
-    <StyledTimelineItem>
+    <StyledTimelineItem style={{ pointerEvents: isDraft ? 'none' : null }}>
       {image && (
-        <TimelineItemImageWrapper
-          size={fields.type === 'WRITING' || isDraft ? 'default' : 'large'}
-        >
-          <Intrinsic aspect="16 / 9">
-            {/* TODO: Create util */}
-            {/\.(gif|jpe?g|png|webp)$/i.test(image) ? (
-              <Image
-                src={image}
-                sizes="1040px"
-                alt={title}
-                style={{ margin: 0 }}
-              />
-            ) : (
-              <video
-                className="lazyload"
-                preload="none"
-                loop
-                muted
-                data-autoplay
-                playsInline
-                src={image}
-              />
-            )}
-          </Intrinsic>
-        </TimelineItemImageWrapper>
+        <Link to={url}>
+          <TimelineItemImageWrapper
+            size={fields.type === 'WRITING' || isDraft ? 'default' : 'large'}
+          >
+            <Intrinsic aspect="16 / 9">
+              {/* TODO: Create util */}
+              {/\.(gif|jpe?g|png|webp)$/i.test(image) ? (
+                <Image
+                  src={image}
+                  sizes="1040px"
+                  alt={title}
+                  style={{ margin: 0 }}
+                />
+              ) : (
+                <video
+                  className="lazyload"
+                  preload="none"
+                  loop
+                  muted
+                  data-autoplay
+                  playsInline
+                  src={image}
+                />
+              )}
+            </Intrinsic>
+          </TimelineItemImageWrapper>
+        </Link>
       )}
 
       <TimelineItemDetailsWrapper>
         <TimelineItemNode>{date}</TimelineItemNode>
 
-        <Link to={url} style={{ pointerEvents: isDraft ? 'none' : null }}>
+        <Link to={url}>
           <h3>{title}</h3>
         </Link>
 
@@ -74,7 +76,6 @@ export const TimelineItem = ({ fields, frontmatter }) => {
           <Button
             to={url}
             style={{
-              pointerEvents: isDraft ? 'none' : null,
               opacity: isDraft ? '0.5' : '1',
             }}
           >

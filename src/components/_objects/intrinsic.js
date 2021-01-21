@@ -5,22 +5,16 @@ const StyledIntrinsic = styled.div`
   position: relative;
   width: 100%;
 
-  /* stylelint-disable-next-line */
-  ${({ aspect }) => {
-    let paddingBottom = '100%';
-
-    if (aspect && aspect.includes('/')) {
-      const ratioArray = aspect.split('/');
-
-      paddingBottom = `calc(${ratioArray[1]} / ${ratioArray[0]} * 100%)`;
-    }
+  ${({ aspect = '1 / 1' }) => {
+    const ratioArray = aspect.split('/');
 
     return css`
-      padding-bottom: ${paddingBottom};
+      padding-bottom: calc(${ratioArray[1]} / ${ratioArray[0]} * 100%);
     `;
   }}
 
-  > * {
+  > *,
+  iframe {
     height: 100%;
     left: 0;
     position: absolute;

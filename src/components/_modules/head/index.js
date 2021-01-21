@@ -8,7 +8,7 @@ export const Head = ({
   image,
   children,
   slug,
-  favicon,
+  favicon = '⚗️',
 }) => {
   const { site } = useStaticQuery(
     graphql`

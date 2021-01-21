@@ -25,7 +25,7 @@ export const StyledFooter = styled.footer`
 `;
 
 export const ChatBubble = styled.div`
-  --size: 0.75rem;
+  --size: 0.7rem;
 
   /* Note: em units used for sizing relative to text */
   animation-duration: 400ms;
@@ -71,9 +71,5 @@ export const ChatBubble = styled.div`
     left: -0.6em;
     width: 0.6em;
     z-index: 0;
-  }
-
-  @media (min-width: ${breakpoint.md}) {
-    --size: 0.75rem;
   }
 `;

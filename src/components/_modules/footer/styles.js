@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { breakpoint } from 'src/settings';
-
 export const StyledFooter = styled.footer`
   border-top: 2px solid currentColor;
   font-family: var(--fontFamilySerif);

@@ -50,33 +50,53 @@ The linear lights consist of flush-mount aluminum channels with diffusers, [five
 
 In order to achieve even linear light, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW diode clusters. In testing several methods of mounting and diffusion, I found this approach to be the best balance of heat dissipation and output.
 
-<ThreeUp
-  image1="/video/projects/home-renovation/light-assembly.mp4"
-  image2="/projects/home-renovation/IMG_0164x.jpg"
-  image3="/projects/home-renovation/IMG_0140.jpg"
-  caption="Test assembly and dry fitting placement"
-/>
+<Figure size="large">
+  <Grid gutter="calc(var(--spaceDefault) / 2)">
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Video src="/video/projects/home-renovation/light-assembly.mp4" />
+    </GridItem>
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/home-renovation/IMG_0164x.jpg" sizes="400px"/>
+    </GridItem>
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/home-renovation/IMG_0140.jpg" sizes="400px"/>
+    </GridItem>
+  </Grid>
+</Figure>
 
 For each fixture, I had an electrician run a standard line-voltage light switch to a junction box near the electrical panel in the basement, and low voltage wire from there back up to its respective installation location. Downstairs, I connected each switched line to a 24V power supply that feeds a Philips Hue LS+ controller and two PWM amplifiers that power the fixture.
 
-<ThreeUp
-image1="/projects/home-renovation/IMG_0039.jpg"
-image2="/projects/home-renovation/IMG_0164.jpg"
-image3="/projects/home-renovation/IMG_0591.jpg"
-caption="Installation and initial power-up"
-/>
+<Figure size="large">
+  <Grid gutter="calc(var(--spaceDefault) / 2)">
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/home-renovation/IMG_0039.jpg" sizes="400px"/>
+    </GridItem>
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/home-renovation/IMG_0164.jpg" sizes="400px"/>
+    </GridItem>
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/home-renovation/IMG_0591.jpg" sizes="400px"/>
+    </GridItem>
+  </Grid>
+</Figure>
 
 In total I built five discrete lights; each addressable individually or by group from the Philips Hue app or any voice assistant. They work seamlessly with standard in-wall switches to match the rest of the house.
 
 In terms of brightness, at peak output the three fixtures in the kitchen are capable of roughly 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78 Philips Hue GU10s.
 
-<ThreeUp
-image1="/video/projects/home-renovation/controller-2.mp4"
-image2="/projects/home-renovation/IMG_9681.jpg"
-image3="/projects/home-renovation/corner.jpg"
-style={{flexDirection: 'row-reverse'}}
-caption="Corner detail and ZigBee controller prototype"
-/>
+<Figure size="large">
+  <Grid gutter="calc(var(--spaceDefault) / 2)">
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/home-renovation/corner.jpg" sizes="400px"/>
+    </GridItem>
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/home-renovation/IMG_9681.jpg" sizes="400px"/>
+    </GridItem>
+    <GridItem width={{ sm: '1/3 * 100%' }}>
+      <Video src="/video/projects/home-renovation/controller-2.mp4" />
+    </GridItem>
+  </Grid>
+</Figure>
 
 ## Hide and Seek
 
@@ -92,4 +112,4 @@ I had a friend sandblast the chrome bathroom fixtures to reveal the raw brass un
 
 When the powder room door opens, a ZigBee-enabled reed switch communicates with Home Assistant running on a Raspberry Pi to turn the lights on. If we're entertaining, the linear fixture outside the door can turn into an airplane-style occupancy indicator, turning red when occupied and green when available.
 
-<Video size="large" src="/video/projects/home-renovation/occupancy-demo-color-corrected.mp4" caption="Big stretch" />
+<PostVideo size="large" src="/video/projects/home-renovation/occupancy-demo-color-corrected.mp4" caption="Big stretch" />

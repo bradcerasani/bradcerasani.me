@@ -7,26 +7,30 @@ import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import {
   Annot,
   Container,
+  Figure,
   Footer,
   Grid,
   GridItem,
   Header,
   Image,
   ImageCompare,
+  Img,
   Note,
-  ThreeUp,
   Video,
+  PostVideo,
   Vimeo,
 } from 'src/components';
 
 const components = {
   Annot,
+  Figure,
   Grid,
   GridItem,
   ImageCompare,
+  Img,
   Note,
   PostImage: Image, // Image appears to be a reserved word
-  ThreeUp,
+  PostVideo,
   Video,
   Vimeo,
 };

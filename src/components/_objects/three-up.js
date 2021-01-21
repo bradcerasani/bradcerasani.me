@@ -3,7 +3,7 @@ import Imgix from 'react-imgix';
 import styled from 'styled-components';
 
 import { breakpoint } from 'src/settings';
-import { Figure, Caption, LayoutObject, LayoutItem } from 'src/components';
+import { Figure, Caption, Grid, GridItem } from 'src/components';
 
 const Img = styled(Imgix)`
   display: block;
@@ -12,7 +12,7 @@ const Img = styled(Imgix)`
 `;
 
 // See https://github.com/styled-components/styled-components/issues/1449
-const StyledLayoutItem = styled((props) => <LayoutItem {...props} />)`
+const StyledGridItem = styled((props) => <GridItem {...props} />)`
   margin-bottom: var(--spaceDefault);
 
   @media (min-width: ${breakpoint.sm}) {
@@ -31,8 +31,8 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
 
   return (
     <Figure size="large">
-      <LayoutObject gutterWidth="calc(var(--spaceDefault) / 2)" {...props}>
-        <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
+      <Grid gutter="calc(var(--spaceDefault) / 2)" {...props}>
+        <StyledGridItem width={{ sm: '1/3 * 100%' }}>
           {/* TODO: DRY */}
           {image1.includes('.mp4') ? (
             <video
@@ -64,8 +64,8 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
               }}
             />
           )}
-        </StyledLayoutItem>
-        <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
+        </StyledGridItem>
+        <StyledGridItem width={{ sm: '1/3 * 100%' }}>
           <Img
             className="lazyload"
             sizes="400px"
@@ -80,9 +80,9 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
               src: `${urlify(image2)}?blur=100&w=200&auto=format`,
             }}
           />
-        </StyledLayoutItem>
+        </StyledGridItem>
 
-        <StyledLayoutItem width={{ sm: '1/3 * 100%' }}>
+        <StyledGridItem width={{ sm: '1/3 * 100%' }}>
           <Img
             className="lazyload"
             sizes="400px"
@@ -97,8 +97,8 @@ export const ThreeUp = ({ image1, image2, image3, caption, ...props }) => {
               src: `${urlify(image3)}?blur=100&w=200&auto=format`,
             }}
           />
-        </StyledLayoutItem>
-      </LayoutObject>
+        </StyledGridItem>
+      </Grid>
       {caption && <Caption>{caption}</Caption>}
     </Figure>
   );

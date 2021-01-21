@@ -8,10 +8,11 @@ import {
   Annot,
   Container,
   Footer,
+  Grid,
+  GridItem,
   Header,
   Image,
   ImageCompare,
-  LayoutObject,
   Note,
   ThreeUp,
   Video,
@@ -20,8 +21,9 @@ import {
 
 const components = {
   Annot,
+  Grid,
+  GridItem,
   ImageCompare,
-  LayoutObject,
   Note,
   PostImage: Image, // Image appears to be a reserved word
   ThreeUp,

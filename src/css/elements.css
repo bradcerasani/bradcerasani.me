@@ -224,6 +224,13 @@ a[target='_blank']::after {
   opacity: 0.4;
   position: absolute;
   transform: rotate(225deg) translateY(0.2rem) translateX(-0.2rem);
+  transition: opacity var(--transitionSlow);
+  will-change: opacity;
+}
+
+a[target='_blank']:hover::after {
+  opacity: 0.8;
+  transition: opacity var(--transitionFast);
 }
 
 img,

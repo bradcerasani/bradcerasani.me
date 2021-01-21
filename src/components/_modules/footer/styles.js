@@ -25,10 +25,10 @@ export const StyledFooter = styled.footer`
 `;
 
 export const ChatBubble = styled.div`
-  --size: 0.875rem;
+  --size: 0.75rem;
 
-  /* Note: em units used for sizing relative to  */
-  animation-duration: var(--transitionSlow);
+  /* Note: em units used for sizing relative to text */
+  animation-duration: 400ms;
   animation-fill-mode: both;
   animation-name: fadeInUp;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);

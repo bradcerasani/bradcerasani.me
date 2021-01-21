@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
 import 'lazysizes';
@@ -32,10 +32,16 @@ const components = {
 };
 
 function Layout({ children, ...props }) {
-  console.log(
-    '%c Would you like to play a game?  https://bradcerasani.me/play',
-    'color: white; background-color: hsl(0, 0%, 10%); padding: 1rem;'
-  );
+  const [setShowLog, showLog] = useState(true);
+
+  if (showLog) {
+    console.log(
+      '%c Would you like to play a game?  https://bradcerasani.me/play',
+      'color: white; background-color: hsl(0, 0%, 10%); padding: 1rem;'
+    );
+    setShowLog(false);
+  }
+
   return (
     <>
       <Container>

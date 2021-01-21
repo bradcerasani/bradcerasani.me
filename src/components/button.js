@@ -7,7 +7,7 @@ const ButtonLinkIcon = styled.span`
   height: 0.75rem;
   left: 0.75rem;
   position: relative;
-  transition: transform var(--transitionFast);
+  transition: transform var(--transitionDefault);
   width: 0.75rem;
 `;
 

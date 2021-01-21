@@ -53,9 +53,9 @@ pre[class*='language-'] {
 /* Code blocks */
 pre[class*='language-'] {
   background-color: var(--codeBackgroundColor);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   color: var(--codeColor);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spaceDefault);
   overflow: auto;
   padding: 0.625rem 0.75rem;
 }
@@ -75,7 +75,7 @@ pre *::selection {
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  background-color: var(--codeColor);
+  background-color: hsl(0, 0%, 100%, 0.25);
   border-radius: 2px;
   font-size: 0.8375rem;
   padding: 4px 4px 2px;

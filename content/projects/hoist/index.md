@@ -4,6 +4,7 @@ description: Fond memories of an intro to design and creative work.
 date: '2010-01-01'
 daterange: 2005–2010
 image: /projects/hoist/hero.jpg
+favicon: 🎶
 ---
 
 Towards the end of high school and in the few years that followed, I played in a rock/funk/whatever trio called Hoist.

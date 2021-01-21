@@ -3,6 +3,7 @@ title: Hue Gallery
 description: An article I wrote for the December 2016 issue of net magazine, detailing how to create an immersive media experience a few years before Hue Sync.
 date: '2016-01-01'
 image: /video/projects/hue-gallery/hue-gallery.mp4
+favicon: 🌄
 ---
 
 <!-- I wrote an article for the December 2016 issue of net magazine detailing how to create an immersive photo browsing experience with Philips Hue.

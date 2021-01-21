@@ -3,6 +3,7 @@ title: AnnaAkana.com
 description: The design and build of a new website for multihyphenate Anna Akana, including a custom Node.js service that pipes realtime statistics to the UI via websockets.
 date: '2014-01-01'
 image: /video/projects/anna-akana/anna-akana-website.mp4
+favicon: 🎬
 ---
 
 I worked with actor, writer, and director Anna Akana to build a new online home for a series of short films she released in 2014. The site holds details about the films, their cast and crew, and behind-the-scenes content.

@@ -4,6 +4,7 @@ description: Blending the old with the new in the renovation of our 1920s home, 
 date: '2018-01-01'
 daterange: 2017–2018
 image: /projects/home-renovation/hero.jpg
+favicon: 🏠
 ---
 
 From 2017-2018, we had our home renovated.

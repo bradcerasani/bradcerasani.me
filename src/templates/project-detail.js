@@ -52,8 +52,9 @@ function ProjectDetailTemplate(props) {
       <Head
         title={post.frontmatter.title}
         description={description}
-        image={post.frontmatter.image}
+        image={image}
         slug={post.slug}
+        favicon={post.frontmatter.favicon}
       />
 
       <style>
@@ -136,6 +137,7 @@ export const pageQuery = graphql`
         date(formatString: "MMM YYYY")
         description
         image
+        favicon
       }
       slug
     }

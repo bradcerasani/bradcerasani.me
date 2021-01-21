@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Caption, Figure, FluidWrapper } from 'src/components';
+import { Caption, Figure, Intrinsic } from 'src/components';
 
 export const Video = ({ caption, size, src, ...props }) => {
   return (
     <Figure size={size}>
-      <FluidWrapper>
+      <Intrinsic aspect="16 / 9">
         <video
           className="lazyload"
           data-autoplay
@@ -23,7 +23,7 @@ export const Video = ({ caption, size, src, ...props }) => {
           }}
           {...props}
         />
-      </FluidWrapper>
+      </Intrinsic>
 
       <Caption dangerouslySetInnerHTML={{ __html: caption }} />
     </Figure>

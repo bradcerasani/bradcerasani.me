@@ -3,7 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 import Player from '@vimeo/player';
 import styled, { css } from 'styled-components';
 
-import { Caption, Figure, FluidWrapper, Loading } from 'src/components';
+import { Caption, Figure, Intrinsic } from 'src/components';
 
 // On mobile some captions wrap to 2 lines, so we need an
 // explicit min-height to prevent reflow on caption change
@@ -31,7 +31,6 @@ function addCuePoints(player, annotations) {
 export const Annot = () => null;
 
 export const Vimeo = ({ vimeoId, caption, size, children }) => {
-  const [isLoaded, setLoaded] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
   const [captionText, setCaption] = useState(caption);
   const targetElementId = `js-${vimeoId}`;
@@ -66,7 +65,6 @@ export const Vimeo = ({ vimeoId, caption, size, children }) => {
     }
 
     // Set up event listeners
-    player.on('loaded', () => setLoaded(true));
     player.on('playing', () => setPlaying(true));
     player.on('cuepoint', (event) => setCaption(event.data.annotation));
 
@@ -77,11 +75,9 @@ export const Vimeo = ({ vimeoId, caption, size, children }) => {
 
   return (
     <Figure size={size}>
-      <FluidWrapper isLoaded={isLoaded}>
-        <Loading style={{ opacity: isLoaded ? '0' : 1 }} />
-
+      <Intrinsic aspect="16 / 9">
         <div id={targetElementId} />
-      </FluidWrapper>
+      </Intrinsic>
 
       <VideoCaption
         dangerouslySetInnerHTML={{ __html: captionText }}

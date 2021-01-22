@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Imgix from 'react-imgix';
 import { ReactCompareSlider } from 'react-compare-slider';
 
-import { Intrinsic, Figure, Caption } from 'src/components';
+import { Img, Intrinsic, Figure, Caption } from 'src/components';
 
 const ImageSliderHandle = styled.div`
   --strokeWidth: 2px;
@@ -48,54 +47,14 @@ export const ImageCompare = ({
   size,
   ...props
 }) => {
-  // TODO: abstract
-  function urlify(src) {
-    const path =
-      process.env.NODE_ENV === 'development'
-        ? `/images/${src}`
-        : `https://bradcerasani.imgix.net/images/${src}`;
-    return path;
-  }
-
-  let sizes = '';
-
-  switch (size) {
-    case 'large':
-      sizes = '1040px';
-      break;
-    case 'full':
-      sizes = '100vw';
-      break;
-    default:
-      // TODO: Swap with container width
-      sizes = '700px';
-  }
   return (
     <Figure size={size}>
       <Intrinsic aspect="3 / 2">
         <ImageSliderWrapper>
           <ReactCompareSlider
             handle={<ImageSliderHandle />}
-            itemOne={
-              <Imgix
-                sizes={sizes}
-                src={urlify(image1)}
-                htmlAttributes={{
-                  alt,
-                  loading: 'lazy',
-                }}
-              />
-            }
-            itemTwo={
-              <Imgix
-                sizes={sizes}
-                src={urlify(image2)}
-                htmlAttributes={{
-                  alt,
-                  loading: 'lazy',
-                }}
-              />
-            }
+            itemOne={<Img sizes="1040px" src={image1} />}
+            itemTwo={<Img sizes="1040px" src={image2} />}
             {...props}
           />
         </ImageSliderWrapper>

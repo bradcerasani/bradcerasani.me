@@ -109,24 +109,11 @@ export const Header = (props) => {
           </h1>
 
           <Nav>
-            {links.map(({ to, label, imageSrc, alt }) => {
-              const url =
-                process.env.NODE_ENV === 'development'
-                  ? `/images/${imageSrc}`
-                  : `https://bradcerasani.imgix.net/images/${imageSrc}`;
-
+            {links.map(({ to, label, src, alt }) => {
               return (
                 <NavItem activeClassName="is-active" key={to} to={to}>
                   {label}
-                  {imageSrc && (
-                    <NavImage
-                      src={url}
-                      sizes="200px"
-                      htmlAttributes={{
-                        alt: alt,
-                      }}
-                    />
-                  )}
+                  <NavImage src={src} alt={alt} />
                 </NavItem>
               );
             })}

@@ -19,7 +19,7 @@ export const StyledHeader = styled.header`
 
 export const HeroContainer = styled.div`
   display: flex;
-  margin-top: var(--spaceLarge);
+  margin-top: var(--spaceMedium);
 
   h1 br {
     display: none;

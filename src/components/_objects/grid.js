@@ -29,6 +29,12 @@ export const GridItem = styled.div`
 
   /* stylelint-disable-next-line */
   ${({ width }) => getResponsiveWidth(width)}
+
+  /* Ensure height consistent with inline video */
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 export const Grid = styled.div`

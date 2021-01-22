@@ -32,11 +32,13 @@ export const Figure = styled.figure`
           `;
 
         case 'large':
-        default:
           return css`
             margin-left: calc(-1 * var(--spaceLarge));
             margin-right: calc(-1 * var(--spaceLarge));
           `;
+
+        default:
+          return;
       }
     }}
   }

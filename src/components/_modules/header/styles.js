@@ -73,6 +73,7 @@ export const Nav = styled.div`
 
 export const NavImage = styled(Img).attrs({
   sizes: '10rem',
+  class: 'lazyload',
 })`
   bottom: 0;
   display: none;

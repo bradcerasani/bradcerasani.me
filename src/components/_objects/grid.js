@@ -48,6 +48,10 @@ export const Grid = styled.div`
 
     ${GridItem} {
       padding-left: calc(${gutter});
+
+      @media (max-width: ${breakpoint.sm}) {
+        margin-bottom: calc(var(--spaceDefault) / 2);
+      }
     }
   `}
 `;

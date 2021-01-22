@@ -60,7 +60,7 @@ pre[class*='language-'] {
   padding: 0.625rem 0.75rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   pre[class*='language-'] {
     padding: 1.5rem;
     margin-left: -1.5rem;

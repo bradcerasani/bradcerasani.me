@@ -2,7 +2,7 @@
   font-size: var(--fontSizeSmall);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .footnotes {
     margin-bottom: 3rem;
   }
@@ -22,7 +22,7 @@ sup {
   margin-top: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .footnotes hr {
     margin-bottom: 3rem;
     margin-top: 3rem;

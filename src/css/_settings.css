@@ -1,9 +1,4 @@
 :root {
-  --sm: 480px;
-  --md: 768px;
-  --lg: 1280px;
-  --xl: 1440px;
-
   --colorBlack: hsl(0, 0%, 16%);
   --colorWhite: hsl(0, 0%, 98%);
   --colorHighlight: hsl(48, 24%, 94%);

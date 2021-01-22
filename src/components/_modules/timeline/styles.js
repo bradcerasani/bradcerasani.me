@@ -4,13 +4,17 @@ import { breakpoint } from 'src/settings';
 
 // Exported StyledTimelineItem at bottom due to no-use-before-define
 const TimelineItem = styled.div`
-  --marginBottom: var(--spaceLarge);
+  --marginBottom: var(--spaceMedium);
   --nodeDiameter: 3rem;
   --nodeOffset: 1rem;
   --strokeWidth: 1px;
 
   margin-bottom: var(--marginBottom);
   position: relative;
+
+  @media (min-width: ${breakpoint.md}) {
+    --marginBottom: var(--spaceLarge);
+  }
 `;
 
 const TimelineStroke = css`
@@ -25,40 +29,24 @@ const TimelineStroke = css`
 `;
 
 export const TimelineItemImageWrapper = styled.div`
-  margin-bottom: var(--spaceDefault);
   position: relative;
+  z-index: 1;
 
   figure {
-    overflow: hidden;
-    margin: 0 !important;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 5;
   }
 
   @media (min-width: ${breakpoint.md}) {
     &::before {
       ${TimelineStroke};
 
+      z-index: 0;
       height: 100%;
       top: 0;
     }
   }
-
-  ${({ size }) =>
-    size === 'large' &&
-    css`
-      @media (min-width: ${breakpoint.md}) {
-        margin-left: -4rem;
-        margin-right: -4rem;
-      }
-
-      @media (min-width: ${breakpoint.lg}) {
-        margin-left: -10rem;
-        margin-right: -10rem;
-      }
-
-      &::before {
-        display: none;
-      }
-    `}
 `;
 
 export const TimelineItemDetailsWrapper = styled.article`
@@ -97,6 +85,8 @@ export const TimelineItemDetailsWrapper = styled.article`
 `;
 
 export const TimelineItemNode = styled.div`
+  font-size: var(--fontSizeSmaller);
+
   @media (min-width: ${breakpoint.md}) {
     align-items: center;
     border-radius: 50%;
@@ -120,27 +110,29 @@ export const TimelineItemNode = styled.div`
 
 export const StyledTimelineItem = styled(TimelineItem)`
   /* TODO: Harden timeline start styles */
+  @media (min-width: ${breakpoint.md}) {
+    &:first-of-type {
+      ${TimelineItemImageWrapper}::before {
+        height: calc(3rem + 100%);
+        top: -3rem;
+      }
 
-  &:first-of-type {
-    ${TimelineItemImageWrapper}::before {
-      height: calc(3rem + 100%);
-      top: -3rem;
+      ${TimelineItemImageWrapper}::after {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        background-color: currentColor;
+        position: absolute;
+        top: -3rem;
+        left: -2.875rem;
+        content: '';
+      }
     }
 
-    ${TimelineItemImageWrapper}::after {
-      width: 0.75rem;
-      height: 0.75rem;
-      border-radius: 50%;
-      background-color: currentColor;
-      position: absolute;
-      top: -3rem;
-      left: -2.875rem;
-      content: '';
-    }
-  }
-  &:last-of-type {
-    ${TimelineItemDetailsWrapper}::after {
-      display: none;
+    &:last-of-type {
+      ${TimelineItemDetailsWrapper}::after {
+        display: none;
+      }
     }
   }
 `;

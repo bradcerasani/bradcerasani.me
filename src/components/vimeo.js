@@ -75,7 +75,7 @@ export const Vimeo = ({ vimeoId, caption, size, children }) => {
 
   return (
     <Figure size={size}>
-      <Intrinsic aspect="16 / 9">
+      <Intrinsic aspectRatio={{ base: '16 / 9' }}>
         <div id={targetElementId} />
       </Intrinsic>
 

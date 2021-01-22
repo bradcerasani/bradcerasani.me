@@ -27,7 +27,7 @@ export const HeroContainer = styled.div`
 
   @media (min-width: ${breakpoint.sm}) {
     h1 {
-      font-size: 4rem;
+      font-size: var(--fontSizeLargest);
       line-height: 1.1;
     }
   }
@@ -37,6 +37,7 @@ export const HeroContainer = styled.div`
     min-height: 10.625rem; /* Maintain equal distance above/below logo */
 
     h1 {
+      font-size: 4rem;
       margin-left: -3rem;
     }
   }

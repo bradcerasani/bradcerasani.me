@@ -4,8 +4,9 @@ import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
+import { breakpoint } from 'src/settings';
 import Layout from 'src/templates/layout';
-import { Button, Head, Image } from 'src/components';
+import { Button, Head, Img, Intrinsic } from 'src/components';
 import 'src/css/footnotes.css';
 import 'src/css/prism-theme.css';
 
@@ -23,8 +24,8 @@ const Hero = styled.div`
   width: 100%;
   z-index: -1;
 
-  figure {
-    margin: 0;
+  img {
+    object-fit: cover;
   }
 `;
 
@@ -43,10 +44,12 @@ function ProjectDetailTemplate(props) {
       headline={post.frontmatter.title}
     >
       <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
-        {/* TODO: Create util */}
-        {/\.(gif|jpe?g|png|webp)$/i.test(image) && (
-          <Image src={image} alt="Hero image" />
-        )}
+        <Intrinsic aspectRatio={{ base: '1 / 1', md: '3 / 2', lg: '16 / 9' }}>
+          {/* TODO: Create util */}
+          {/\.(gif|jpe?g|png|webp)$/i.test(image) && (
+            <Img src={image} alt="Hero image" style={{ objectFit: 'cover' }} />
+          )}
+        </Intrinsic>
       </Hero>
 
       <Head
@@ -72,9 +75,18 @@ function ProjectDetailTemplate(props) {
             font-weight: 500;
           }
 
-          section > p:first-of-type {
-            margin-bottom: var(--spaceLarge);
-            margin-top: var(--spaceLarge);
+          @media (min-width: ${breakpoint.md}) {
+            section > p:first-of-type {
+              margin-bottom: var(--spaceMedium);
+              margin-top: var(--spaceMedium);
+            }
+          }
+
+          @media (min-width: ${breakpoint.lg}) {
+            section > p:first-of-type {
+              margin-bottom: var(--spaceLarge);
+              margin-top: var(--spaceLarge);
+            }
           }
         `}
       </style>

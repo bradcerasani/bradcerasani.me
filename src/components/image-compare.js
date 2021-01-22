@@ -49,7 +49,7 @@ export const ImageCompare = ({
 }) => {
   return (
     <Figure size={size}>
-      <Intrinsic aspect="3 / 2">
+      <Intrinsic aspectRatio={{ base: '3 / 2' }}>
         <ImageSliderWrapper>
           <ReactCompareSlider
             handle={<ImageSliderHandle />}

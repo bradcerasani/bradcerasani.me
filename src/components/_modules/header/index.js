@@ -20,13 +20,6 @@ export const Header = (props) => {
   const [showSocial, setShowSocial] = useState(false);
 
   useEffect(() => {
-    const isClient = typeof window === 'object';
-
-    // SSR will throw errors if attempting to access global window or document
-    if (!isClient) {
-      return false;
-    }
-
     // Lock scroll when Nav overlay is visible
     document.body.style.overflow = isVisible ? 'hidden' : 'scroll';
 

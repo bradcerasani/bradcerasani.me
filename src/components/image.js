@@ -29,7 +29,7 @@ export const Img = ({ alt, src, sizes, ...props }) => {
 };
 
 export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
-  // TODO: improve and add media queries
+  // TODO: Add media queries
   let sizesFallback = '';
 
   switch (size) {
@@ -40,8 +40,7 @@ export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
       sizesFallback = '100vw';
       break;
     default:
-      // TODO: Swap with container width
-      sizesFallback = '700px';
+      sizesFallback = 'var(--maxWidth)';
   }
 
   return (

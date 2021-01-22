@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
 import 'lazysizes';
@@ -28,6 +29,7 @@ const components = {
   GridItem,
   ImageCompare,
   Img,
+  Link,
   Note,
   PostImage: Image, // Image appears to be a reserved word
   PostVideo,

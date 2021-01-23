@@ -20,18 +20,6 @@
   }
 }
 
-@keyframes fadeInUpSkew {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0) skewY(10deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 @keyframes grain {
   0%,
   100% {
@@ -63,5 +51,20 @@
   }
   90% {
     transform: translate(-10%, 10%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4);
   }
 }

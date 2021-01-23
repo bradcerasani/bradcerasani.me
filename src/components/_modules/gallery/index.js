@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
@@ -50,6 +50,8 @@ export const Gallery = ({ images }) => {
 };
 
 export const GalleryController = ({ images }) => {
+  const [isDiscovered, setIsDiscovered] = useState(false);
+
   function handleChange(event) {
     const value = event.currentTarget.value;
     const imageIndex = Math.floor(value / images.length);
@@ -73,9 +75,11 @@ export const GalleryController = ({ images }) => {
           action: 'Click',
         });
       }}
+      onMouseDown={() => setIsDiscovered(true)}
       type="range"
       onChange={(e) => handleChange(e)}
       defaultValue="0"
+      isDiscovered={isDiscovered}
     />
   );
 };

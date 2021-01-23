@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 
@@ -126,7 +126,7 @@ export const StyledGalleryImage = styled.div`
 `;
 
 export const StyledGalleryController = styled.input`
-  --handleSize: 1.5rem;
+  --handleSize: 1rem;
   --trackHeight: 3px;
   --trackColor: var(--colorLinenDark);
 
@@ -139,6 +139,24 @@ export const StyledGalleryController = styled.input`
   padding: 0;
   position: relative;
   width: 100%;
+
+  ${({ isDiscovered }) =>
+    !isDiscovered &&
+    css`
+      &::before {
+        animation: pulse 2s ease 0s infinite;
+        background-color: white;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: var(--handleSize);
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: var(--handleSize);
+        will-change: opacity, scale;
+      }
+    `}
 
   &:focus {
     outline: none;
@@ -163,9 +181,5 @@ export const StyledGalleryController = styled.input`
   &::-ms-fill-lower,
   &::-ms-fill-upper {
     background-color: var(--trackColor);
-  }
-
-  @media (min-width: ${breakpoint.md}) {
-    --handleSize: 1rem;
   }
 `;

@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 import { ReactCompareSlider } from 'react-compare-slider';
 
 import { Img, Intrinsic, Figure, Caption } from 'src/components';
 
-const ImageSliderHandle = styled.div`
+const StyledHandle = styled.div`
   --strokeWidth: 2px;
-  --handleWidth: 1rem;
+  --handleSize: 1rem;
   --color: var(--colorBlack);
 
   background-color: var(--color);
@@ -15,29 +15,44 @@ const ImageSliderHandle = styled.div`
   position: relative;
   width: var(--strokeWidth);
 
+  &::before,
   &::after {
     background-color: var(--color);
     border-radius: 50%;
     content: '';
-    height: var(--handleWidth);
+    height: var(--handleSize);
     left: 0;
-    margin-left: calc(var(--handleWidth) / -2 + var(--strokeWidth) / 2);
-    margin-top: calc(var(--handleWidth) / -2);
+    margin-left: calc(var(--handleSize) / -2 + var(--strokeWidth) / 2);
+    margin-top: calc(var(--handleSize) / -2);
     position: absolute;
     top: 50%;
+    width: var(--handleSize);
+  }
+
+  &::after {
     transform-origin: center;
     transition: transform var(--transitionDefault);
-    width: var(--handleWidth);
   }
+
+  ${({ isDiscovered }) =>
+    !isDiscovered &&
+    css`
+      &::before {
+        background-color: white;
+        animation: pulse 2s ease 0s infinite;
+      }
+    `}
 `;
 
-const ImageSliderWrapper = styled.div`
-  &:hover {
-    ${ImageSliderHandle}::after {
-      transform: scale(1.5);
-    }
-  }
-`;
+const Handle = () => {
+  const [isDiscovered, setIsDiscovered] = useState(false);
+  return (
+    <StyledHandle
+      onMouseDown={() => setIsDiscovered(true)}
+      isDiscovered={isDiscovered}
+    />
+  );
+};
 
 export const ImageCompare = ({
   alt = 'Photo',
@@ -50,14 +65,14 @@ export const ImageCompare = ({
   return (
     <Figure size={size}>
       <Intrinsic aspectRatio={{ base: '3 / 2' }}>
-        <ImageSliderWrapper>
+        <div>
           <ReactCompareSlider
-            handle={<ImageSliderHandle />}
+            handle={<Handle />}
             itemOne={<Img sizes="1040px" src={image1} />}
             itemTwo={<Img sizes="1040px" src={image2} />}
             {...props}
           />
-        </ImageSliderWrapper>
+        </div>
       </Intrinsic>
       {caption && <Caption>{caption}</Caption>}
     </Figure>

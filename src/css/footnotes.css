@@ -4,7 +4,7 @@
 
 @media (min-width: 800px) {
   .footnotes {
-    margin-bottom: 3rem;
+    margin-bottom: var(--spaceMedium);
   }
 }
 
@@ -24,8 +24,8 @@ sup {
 
 @media (min-width: 800px) {
   .footnotes hr {
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    margin-bottom: var(--spaceMedium);
+    margin-top: var(--spaceMedium);
   }
 }
 

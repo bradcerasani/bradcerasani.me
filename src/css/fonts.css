@@ -1,43 +1,9 @@
 @font-face {
   font-display: block;
-  font-family: 'USW';
-  font-style: italic;
-  font-weight: 400;
-  src: url('/fonts/USW-RegularItalic.woff2') format('woff2'),
-    url('/fonts/USW-RegularItalic.woff') format('woff');
-}
-
-@font-face {
-  font-display: block;
-  font-family: 'USW';
-  font-weight: 400;
-  src: url('/fonts/USW-Regular.woff2') format('woff2'),
-    url('/fonts/USW-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-display: block;
-  font-family: 'USW';
-  font-style: italic;
-  font-weight: 500;
-  src: url('/fonts/USW-MediumItalic.woff2') format('woff2'),
-    url('/fonts/USW-MediumItalic.woff') format('woff');
-}
-
-@font-face {
-  font-display: block;
-  font-family: 'USW';
-  font-weight: 500;
-  src: url('/fonts/USW-Medium.woff2') format('woff2'),
-    url('/fonts/USW-Medium.woff') format('woff');
-}
-
-@font-face {
-  font-display: block;
   font-family: 'CNW';
-  font-weight: 400;
-  src: url('/fonts/CNW-Regular.woff2') format('woff2'),
-    url('/fonts/CNW-Regular.woff2') format('woff2');
+  font-weight: 700;
+  src: url('/fonts/CNW-Bold.woff2') format('woff2'),
+    url('/fonts/CNW-Bold.woff') format('woff');
 }
 
 @font-face {
@@ -51,7 +17,41 @@
 @font-face {
   font-display: block;
   font-family: 'CNW';
-  font-weight: 700;
-  src: url('/fonts/CNW-Bold.woff2') format('woff2'),
-    url('/fonts/CNW-Bold.woff') format('woff');
+  font-weight: 400;
+  src: url('/fonts/CNW-Regular.woff2') format('woff2'),
+    url('/fonts/CNW-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'USW';
+  font-weight: 400;
+  src: url('/fonts/USW-Regular.woff2') format('woff2'),
+    url('/fonts/USW-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'USW';
+  font-weight: 500;
+  src: url('/fonts/USW-Medium.woff2') format('woff2'),
+    url('/fonts/USW-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'USW';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/USW-RegularItalic.woff2') format('woff2'),
+    url('/fonts/USW-RegularItalic.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'USW';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/fonts/USW-MediumItalic.woff2') format('woff2'),
+    url('/fonts/USW-MediumItalic.woff') format('woff');
 }

@@ -43,7 +43,7 @@ body::after {
   display: block;
   height: 300vh;
   left: -100vw;
-  opacity: 0.2;
+  opacity: 0.25;
   pointer-events: none;
   position: fixed;
   top: -100vh;
@@ -70,8 +70,9 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+  color: var(--colorGreyDarker);
   margin-bottom: 0.5rem;
+  margin-top: 0;
   padding-top: 0.5rem;
 }
 
@@ -106,7 +107,7 @@ h3 {
 }
 
 h4 {
-  font-size: var(--fontSizeMedium);
+  font-size: var(--fontSizeLarge);
   font-weight: 500;
 }
 
@@ -118,15 +119,12 @@ h5 {
 }
 
 h6 {
-  font-family: var(--fontFamilySerif);
-  font-size: var(--fontSizeLarge);
+  color: var(--colorGreyLight);
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSizeSmaller);
   font-weight: 500;
-}
-
-@media (min-width: 480px) {
-  h6 {
-    font-size: var(--fontSizeMedium);
-  }
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 section {
@@ -177,9 +175,7 @@ li {
 a {
   color: inherit;
   text-decoration-color: var(--colorGreyDark);
-  transition-duration: var(--transitionFast);
-  transition-property: color;
-  transition-timing-function: ease-in-out;
+  transition: color, text-decoration-color var(--transitionFast);
 }
 
 a:hover {
@@ -220,13 +216,13 @@ video {
 
 hr {
   background-color: transparent;
-  border-bottom: 2px solid currentColor;
+  border-bottom: 1px solid var(--colorFaded);
   border-left: none;
   border-right: none;
-  border-top: 2px solid currentColor;
-  height: 6px;
-  margin-bottom: 2.5rem;
-  margin-top: 2.5rem;
+  border-top: 1px solid var(--colorFaded);
+  height: 4px;
+  margin-bottom: var(--spaceMedium);
+  margin-top: var(--spaceMedium);
 }
 
 blockquote {
@@ -236,10 +232,10 @@ blockquote {
   padding-left: 2.5rem;
   padding-top: 0.5rem;
   position: relative;
-  width: 80%;
 }
 
 blockquote::before {
+  color: var(--colorLinenDark);
   content: '“';
   font-family: var(--fontFamilySerif);
   font-size: 4rem;

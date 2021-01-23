@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { breakpoint } from 'src/settings';
@@ -14,6 +15,33 @@ import {
 } from './mobile-overlay';
 
 export const Header = (props) => {
+  const { allMdx } = useStaticQuery(
+    graphql`
+      query {
+        allMdx(
+          filter: {
+            fields: { slug: { ne: "/about/" } }
+            frontmatter: { status: { ne: "draft" } }
+          }
+          sort: { fields: frontmatter___date, order: DESC }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                date(formatString: "YYYY")
+                status
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+
   const { title, date, headline = 'Design & Engineering' } = props;
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
@@ -62,13 +90,31 @@ export const Header = (props) => {
           ))}
 
           <ul>
+            {allMdx.edges.map(({ node }, index) => (
+              <li
+                key={node.fields.slug}
+                data-visibility={showSocial.toString()}
+                style={{ animationDelay: `calc(${150 * (index + 1)}ms)` }}
+              >
+                <Link key={node.frontmatter.title} to={node.fields.slug}>
+                  -&nbsp; {node.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <ul>
             {/* TODO: Pull from site settings? */}
-            {['Instagram', 'Twitter', 'GitHub'].map((link, index) => (
+            {['Twitter', 'Instagram', 'GitHub'].map((link, index) => (
               <li
                 // See above re: data-visibility
                 data-visibility={showSocial.toString()}
                 key={link}
-                style={{ animationDelay: `calc(${150 * (index + 1)}ms)` }}
+                style={{
+                  animationDelay: `calc(${
+                    150 * (allMdx.edges.length + index + 1)
+                  }ms)`,
+                }}
               >
                 <OutboundLink
                   href={`https://${link.toLowerCase()}.com/bradcerasani`}

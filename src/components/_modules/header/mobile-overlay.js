@@ -22,7 +22,7 @@ export const MobileNavWrapper = styled.div`
   z-index: 1;
 
   ul {
-    bottom: -3rem;
+    margin-top: var(--spaceDefault);
     display: block;
     position: relative;
 

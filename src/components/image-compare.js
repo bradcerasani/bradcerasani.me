@@ -49,6 +49,7 @@ const Handle = () => {
   return (
     <StyledHandle
       onMouseDown={() => setIsDiscovered(true)}
+      onTouchStart={() => setIsDiscovered(true)}
       isDiscovered={isDiscovered}
     />
   );

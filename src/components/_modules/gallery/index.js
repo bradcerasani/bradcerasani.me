@@ -75,6 +75,14 @@ export const GalleryController = ({ images }) => {
           action: 'Click',
         });
       }}
+      onTouchEnd={() => {
+        trackCustomEvent({
+          category: 'Interactive Elements',
+          label: 'Photos Slider',
+          action: 'Click',
+        });
+      }}
+      onTouchStart={() => setIsDiscovered(true)}
       onMouseDown={() => setIsDiscovered(true)}
       type="range"
       onChange={(e) => handleChange(e)}

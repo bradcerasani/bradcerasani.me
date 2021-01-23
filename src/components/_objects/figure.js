@@ -5,13 +5,14 @@ import { Caption } from 'src/components';
 
 export const Figure = styled.figure`
   margin-bottom: var(--spaceDefault);
-  margin-left: calc(-1 * var(--spaceDefault));
-  margin-right: calc(-1 * var(--spaceDefault));
-  margin-top: 0;
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
+  margin-top: calc(2 * var(--spaceDefault));
 
   @media (min-width: ${breakpoint.md}) {
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
 
     ${({ size }) => {
       switch (size) {

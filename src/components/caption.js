@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { breakpoint } from 'src/settings';
+
 export const Caption = styled.figcaption`
   color: var(--colorGreyLight);
   font-size: var(--fontSizeSmall);
@@ -9,6 +11,10 @@ export const Caption = styled.figcaption`
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   text-align: center;
+
+  @media (min-width: ${breakpoint.md}) {
+    margin-bottom: var(--spaceMedium);
+  }
 
   @media (prefers-color-scheme: dark) {
     color: var(--colorLinenDark);

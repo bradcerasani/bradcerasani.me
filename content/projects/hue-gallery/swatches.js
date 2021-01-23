@@ -8,12 +8,16 @@ export const SwatchContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: var(--spaceDefault);
-  margin-top: calc(-1 * var(--spaceMedium));
+  margin-top: calc(-1 * var(--spaceDefault));
   padding-top: var(--spaceDefault);
+
+  @media (min-width: ${breakpoint.md}) {
+    margin-top: calc(-1 * var(--spaceMedium));
+  }
 `;
 
 export const Swatch = styled.div`
-  --diameter: 1rem;
+  --diameter: 1.25rem;
   --margin: 0.25rem;
 
   border-radius: var(--diameter);
@@ -25,8 +29,7 @@ export const Swatch = styled.div`
   width: var(--diameter);
 
   @media (min-width: ${breakpoint.md}) {
-    --diameter: var(--spaceDefault);
-    --margin: 0.5rem;
+    --diameter: 2rem;
   } ;
 `;
 
@@ -42,11 +45,7 @@ export const Swatches = ({ colors, caption }) => {
           <Swatch key={index} style={{ backgroundColor: color }} />
         ))}
       </SwatchContainer>
-      {caption && (
-        <Caption style={{ marginBottom: 'var(--spaceMedium)' }}>
-          {caption}
-        </Caption>
-      )}
+      {caption && <Caption>{caption}</Caption>}
     </>
   );
 };

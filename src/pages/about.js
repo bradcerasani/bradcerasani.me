@@ -45,7 +45,7 @@ function AboutPage(props) {
 
           <Grid>
             <GridItem width={{ base: '50%', sm: '30%' }}>
-              <h6 style={{ paddingTop: 0 }}>Elsewhere</h6>
+              <h5 style={{ paddingTop: 0 }}>Elsewhere</h5>
               <ul>
                 {['Twitter', 'Instagram', 'GitHub'].map((link) => (
                   <li key={link}>
@@ -63,7 +63,7 @@ function AboutPage(props) {
             </GridItem>
 
             <GridItem width={{ base: '50%', sm: '30%' }}>
-              <h6 style={{ paddingTop: 0 }}>Site Archives</h6>
+              <h5 style={{ paddingTop: 0 }}>Site Archives</h5>
               <ul>
                 {['2014', '2013', '2012', '2011', '2010'].map((year) => (
                   <li key={year}>
@@ -81,7 +81,7 @@ function AboutPage(props) {
             </GridItem>
 
             <GridItem width={{ sm: '40%' }}>
-              <h6 style={{ paddingTop: 0 }}>Photos</h6>
+              <h5 style={{ paddingTop: 0 }}>Photos</h5>
               <GalleryController images={images} />
             </GridItem>
           </Grid>

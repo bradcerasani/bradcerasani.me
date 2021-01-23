@@ -1,12 +1,12 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 import Layout from 'src/templates/layout';
-import { Button, Head, Img, Intrinsic } from 'src/components';
+import { Head, Img, Intrinsic } from 'src/components';
 import 'src/css/footnotes.css';
 import 'src/css/prism-theme.css';
 
@@ -104,27 +104,38 @@ function ProjectDetailTemplate(props) {
         role="navigation"
         aria-label="Pagination Navigation"
         style={{
+          marginTop: 'var(--spaceMedium)',
+          paddingTop: 'var(--spaceMedium)',
+          borderTop: '1px solid var(--colorFaded)',
           display: 'flex',
+          color: 'var(--colorGreyLight)',
+          fontSize: '0.9rem',
           justifyContent: 'space-between',
-          marginTop: 'var(--spaceLarge)',
         }}
       >
         <div>
-          {next && next.frontmatter.status !== 'draft' && (
+          {next && (
             <>
-              <h6>Newer</h6>
-              <Button to={next.fields.slug} variant="link">
+              <h6 style={{ paddingTop: '0' }}>Newer</h6>
+
+              <Link
+                to={next.fields.slug}
+                style={{ textDecorationColor: 'inherit' }}
+              >
                 {next.frontmatter.title.replace(/<[^>]*>?/gm, '')}
-              </Button>
+              </Link>
             </>
           )}
         </div>
-        {previous && previous.frontmatter.status !== 'draft' && (
+        {previous && (
           <div>
-            <h6>Older</h6>
-            <Button to={previous.fields.slug} variant="link">
+            <h6 style={{ paddingTop: '0' }}>Older</h6>
+            <Link
+              to={previous.fields.slug}
+              style={{ textDecorationColor: 'inherit' }}
+            >
               {previous.frontmatter.title.replace(/<[^>]*>?/gm, '')}
-            </Button>
+            </Link>
           </div>
         )}
       </section>

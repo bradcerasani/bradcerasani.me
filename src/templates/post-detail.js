@@ -1,10 +1,10 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from 'src/templates/layout';
-import { Button, Head } from 'src/components';
+import { Head } from 'src/components';
 import 'src/css/footnotes.css';
 import 'src/css/prism-theme.css';
 
@@ -33,7 +33,8 @@ function PostDetailTemplate(props) {
         {css`
           @media (prefers-color-scheme: light) {
             :root {
-              --backgroundColor: var(--colorWhite);
+              --backgroundColor: hsl(39, 14%, 40%, 0.5);
+              --computedBackgroundColor: hsl(43, 8%, 82%, 1);
             }
           }
         `}
@@ -52,28 +53,38 @@ function PostDetailTemplate(props) {
         role="navigation"
         aria-label="Pagination Navigation"
         style={{
+          marginTop: 'var(--spaceMedium)',
+          paddingTop: 'var(--spaceMedium)',
+          borderTop: '1px solid var(--colorFaded)',
           display: 'flex',
+          color: 'var(--colorGreyLight)',
+          fontSize: '0.9rem',
           justifyContent: 'space-between',
-          marginTop: 'var(--spaceLarge)',
         }}
       >
         <div>
           {next && (
             <>
-              <h6>Newer</h6>
+              <h6 style={{ paddingTop: '0' }}>Newer</h6>
 
-              <Button to={next.fields.slug} variant="link">
+              <Link
+                to={next.fields.slug}
+                style={{ textDecorationColor: 'inherit' }}
+              >
                 {next.frontmatter.title.replace(/<[^>]*>?/gm, '')}
-              </Button>
+              </Link>
             </>
           )}
         </div>
         {previous && (
           <div>
-            <h6>Older</h6>
-            <Button to={previous.fields.slug} variant="link">
+            <h6 style={{ paddingTop: '0' }}>Older</h6>
+            <Link
+              to={previous.fields.slug}
+              style={{ textDecorationColor: 'inherit' }}
+            >
               {previous.frontmatter.title.replace(/<[^>]*>?/gm, '')}
-            </Button>
+            </Link>
           </div>
         )}
       </section>

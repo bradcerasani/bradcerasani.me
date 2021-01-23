@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
 import {
-  Annot,
   Figure,
   Grid,
   GridItem,
@@ -17,7 +16,6 @@ import {
 } from 'src/components';
 
 const components = {
-  Annot,
   Figure,
   Grid,
   GridItem,

@@ -18,15 +18,8 @@ sup {
 }
 
 .footnotes hr {
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 800px) {
-  .footnotes hr {
-    margin-bottom: var(--spaceMedium);
-    margin-top: var(--spaceMedium);
-  }
+  margin-bottom: var(--spaceMedium);
+  margin-top: var(--spaceMedium);
 }
 
 .footnotes ol {

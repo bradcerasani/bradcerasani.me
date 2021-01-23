@@ -57,8 +57,6 @@ function PostDetailTemplate(props) {
           paddingTop: 'var(--spaceMedium)',
           borderTop: '1px solid var(--colorFaded)',
           display: 'flex',
-          color: 'var(--colorGreyLight)',
-          fontSize: '0.9rem',
           justifyContent: 'space-between',
         }}
       >

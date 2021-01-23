@@ -1,41 +1,9 @@
 import React, { useEffect } from 'react';
-import { Link } from 'gatsby';
-import { MDXProvider } from '@mdx-js/react';
 
 import 'lazysizes';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 
-import {
-  Annot,
-  Container,
-  Figure,
-  Footer,
-  Grid,
-  GridItem,
-  Header,
-  Image,
-  ImageCompare,
-  Img,
-  Note,
-  Video,
-  PostVideo,
-  Vimeo,
-} from 'src/components';
-
-const components = {
-  Annot,
-  Figure,
-  Grid,
-  GridItem,
-  ImageCompare,
-  Img,
-  Link,
-  Note,
-  PostImage: Image, // Image appears to be a reserved word
-  PostVideo,
-  Video,
-  Vimeo,
-};
+import { Container, Footer, Header } from 'src/components';
 
 function Layout({ children, ...props }) {
   useEffect(() => {
@@ -52,7 +20,7 @@ function Layout({ children, ...props }) {
     <>
       <Container>
         <Header {...props} />
-        <MDXProvider components={{ ...components }}>{children}</MDXProvider>
+        {children}
       </Container>
       <Footer />
     </>

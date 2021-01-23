@@ -154,7 +154,7 @@ function printSwatches(colors, img) {
 
 <PostImage src="/projects/hue-gallery/limes.jpg" size="large" />
 
-<Swatches colors={['#334c15', '#bdbb56', '#87ad46']} />
+<Swatches colors={['#334c15', '#bdbb56', '#87ad46']} caption="Dominant colour extraction" />
 
 ## Improving colour quality
 

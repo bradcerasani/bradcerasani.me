@@ -7,7 +7,7 @@ const ButtonLinkIcon = styled.span`
   height: 0.75rem;
   left: 0.75rem;
   position: relative;
-  transition: transform var(--transitionDefault);
+  transition: transform var(--transitionSlow);
   width: 0.75rem;
 `;
 
@@ -25,6 +25,7 @@ const StyledButton = styled(Link)`
   &:hover {
     ${ButtonLinkIcon} {
       transform: translateX(0.5rem);
+      transition: transform var(--transitionFast);
     }
 
     color: var(--colorGreyLightest);

@@ -52,7 +52,7 @@ function Layout({ children, ...props }) {
     <>
       <Container>
         <Header {...props} />
-        <MDXProvider components={components}>{children}</MDXProvider>
+        <MDXProvider components={{ ...components }}>{children}</MDXProvider>
       </Container>
       <Footer />
     </>

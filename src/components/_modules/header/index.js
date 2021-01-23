@@ -21,7 +21,7 @@ export const Header = (props) => {
         allMdx(
           filter: {
             fields: { slug: { ne: "/about/" } }
-            frontmatter: { status: { ne: "draft" } }
+            frontmatter: { status: { ne: "draft" }, skipPage: { ne: true } }
           }
           sort: { fields: frontmatter___date, order: DESC }
         ) {
@@ -82,7 +82,7 @@ export const Header = (props) => {
               data-visibility={overlayTransitioned.toString()}
               key={to}
               onAnimationStart={() => setShowSocial(index === links.length - 1)}
-              style={{ animationDelay: `calc(${150 * index}ms)` }}
+              style={{ animationDelay: `calc(${100 * index}ms)` }}
               to={to}
             >
               {label}
@@ -94,10 +94,13 @@ export const Header = (props) => {
               <li
                 key={node.fields.slug}
                 data-visibility={showSocial.toString()}
-                style={{ animationDelay: `calc(${150 * (index + 1)}ms)` }}
+                style={{
+                  animationDelay: `calc(${100 * (index + 1)}ms)`,
+                  textDecoration: 'underline',
+                }}
               >
                 <Link key={node.frontmatter.title} to={node.fields.slug}>
-                  -&nbsp; {node.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+                  {node.frontmatter.title.replace(/<[^>]*>?/gm, '')}
                 </Link>
               </li>
             ))}
@@ -112,7 +115,7 @@ export const Header = (props) => {
                 key={link}
                 style={{
                   animationDelay: `calc(${
-                    150 * (allMdx.edges.length + index + 1)
+                    100 * (allMdx.edges.length + index + 1)
                   }ms)`,
                 }}
               >

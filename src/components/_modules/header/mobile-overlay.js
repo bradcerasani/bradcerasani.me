@@ -46,19 +46,19 @@ export const MobileNavWrapper = styled.div`
 `;
 
 export const MobileNavOverlay = styled.div`
-  align-items: center;
   background-color: white;
-  display: flex;
-  height: 100%;
+  min-height: 100%;
   left: 0;
   opacity: 0;
+  overflow: scroll;
   padding-left: var(--spaceDefault);
   padding-right: var(--spaceDefault);
+  padding-top: 5rem;
   pointer-events: none;
   position: fixed;
   top: 0;
-  transition: opacity var(--transitionDefault);
   transition-delay: 200ms;
+  transition: opacity var(--transitionDefault);
   width: 100%;
   will-change: opacity;
   z-index: 5;
@@ -66,7 +66,7 @@ export const MobileNavOverlay = styled.div`
   &::before {
     background-color: var(--backgroundColor);
     content: '';
-    height: 100%;
+    min-height: 100%;
     left: 0;
     pointer-events: none;
     position: absolute;

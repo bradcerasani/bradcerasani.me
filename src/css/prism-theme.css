@@ -53,16 +53,16 @@ pre[class*='language-'] {
 /* Code blocks */
 pre[class*='language-'] {
   background-color: var(--codeBackgroundColor);
-  border-radius: 1rem;
   color: var(--codeColor);
   margin-bottom: var(--spaceDefault);
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
   overflow: auto;
-  padding: 0.625rem 0.75rem;
+  padding: var(--spaceDefault);
 }
 
 @media (min-width: 800px) {
   pre[class*='language-'] {
-    padding: 1.5rem;
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }

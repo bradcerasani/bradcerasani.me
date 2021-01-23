@@ -1,29 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Player from '@vimeo/player';
-import styled, { css } from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 import { Caption, Figure, Intrinsic } from 'src/components';
 
-const VideoCaption = styled(Caption)`
-  transition: height var(--transitionDefault);
-
-  @media (max-width: ${breakpoint.sm}) {
-    /*
-    On mobile some captions wrap to 2 lines, so we need an
-    explicit min-height to prevent reflow on caption change
-  */
-
-    ${({ isPlaying }) =>
-      isPlaying &&
-      css`
-        min-height: calc(2 * var(--spaceDefault));
-      `}
-  }
-`;
-
 export const Vimeo = ({ vimeoId, caption, size, commentary }) => {
-  const [isPlaying, setPlaying] = useState(false);
   const [captionText, setCaptionText] = useState(caption);
   const targetElementId = `js-${vimeoId}`;
 
@@ -49,7 +30,6 @@ export const Vimeo = ({ vimeoId, caption, size, commentary }) => {
     }
 
     // Set up event listeners
-    player.on('playing', () => setPlaying(true));
     player.on('cuepoint', ({ data }) => setCaptionText(data.value));
 
     return () => {
@@ -63,9 +43,13 @@ export const Vimeo = ({ vimeoId, caption, size, commentary }) => {
         <div id={targetElementId} />
       </Intrinsic>
 
-      <VideoCaption
-        dangerouslySetInnerHTML={{ __html: captionText }}
-        isPlaying={isPlaying}
+      <Caption
+        dangerouslySetInnerHTML={{ __html: captionText || '&nbsp;' }}
+        css={`
+          @media (max-width: ${breakpoint.sm}) {
+            min-height: 3em;
+          }
+        `}
       />
     </Figure>
   );

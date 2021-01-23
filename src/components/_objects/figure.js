@@ -17,6 +17,7 @@ export const Figure = styled.figure`
       switch (size) {
         case 'full':
           return css`
+            margin-top: var(--spaceMedium);
             margin-left: calc(
               (100vw - var(--maxWidth) + var(--gutter) * 2) / -2
             );
@@ -27,12 +28,14 @@ export const Figure = styled.figure`
             min-width: 100%;
 
             ${Caption} {
-              margin-bottom: var(--spaceDefault);
+              margin-bottom: var(--spaceMedium);
             }
           `;
 
         case 'large':
           return css`
+            margin-bottom: var(--spaceMedium);
+            margin-top: var(--spaceMedium);
             margin-left: calc(-1 * var(--spaceLarge));
             margin-right: calc(-1 * var(--spaceLarge));
           `;

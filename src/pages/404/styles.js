@@ -37,6 +37,11 @@ export const Theme = createGlobalStyle`
   a:hover {
     color: inherit;
   }
+
+  h1,
+  h5 {
+    color: inherit
+  }
 `;
 
 export const Loading = styled.div`

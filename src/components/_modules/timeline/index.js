@@ -29,7 +29,9 @@ export const TimelineItem = ({ fields, frontmatter }) => {
 
   // TODO: Tidy & DRY
   return (
-    <StyledTimelineItem style={{ pointerEvents: isDraft ? 'none' : null }}>
+    <StyledTimelineItem
+      style={{ pointerEvents: isDraft || frontmatter.skipPage ? 'none' : null }}
+    >
       {image && (
         <Link to={url}>
           <TimelineItemImageWrapper>

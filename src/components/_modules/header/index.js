@@ -163,12 +163,6 @@ export const Header = (props) => {
                   key={to}
                   to={to}
                   showreturn={showReturn}
-                  onClick={(e) => {
-                    if (showReturn) {
-                      e.preventDefault();
-                      window.history.back();
-                    }
-                  }}
                 >
                   {label}
                   <NavImage src={src} alt={alt} />

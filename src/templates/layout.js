@@ -3,9 +3,11 @@ import React, { useEffect } from 'react';
 import lazySizes from 'lazysizes';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 
-lazySizes.cfg.preloadAfterLoad = true;
-
 import { Container, Footer, Header } from 'src/components';
+
+if ('cfg' in lazySizes) {
+  lazySizes.cfg.preloadAfterLoad = true;
+}
 
 function Layout({ children, ...props }) {
   useEffect(() => {

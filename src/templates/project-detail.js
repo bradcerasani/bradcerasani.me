@@ -112,7 +112,7 @@ function ProjectDetailTemplate(props) {
         }}
       >
         <div>
-          {next && (
+          {next && next.frontmatter.status !== 'draft' && (
             <>
               <h6 style={{ paddingTop: '0' }}>Newer</h6>
 

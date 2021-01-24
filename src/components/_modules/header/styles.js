@@ -94,7 +94,6 @@ export const NavItem = styled(Link)`
   display: block;
   padding-right: 0.5rem;
   text-decoration: none;
-  position: relative;
 
   &.is-active {
     &::after {
@@ -120,7 +119,12 @@ export const NavItem = styled(Link)`
         position: absolute;
         width: calc(var(--height) / var(--aspectRatio));
         margin-left: 7px;
-        top: 9px;
+        margin-top: 9px;
+
+        @media (prefers-color-scheme: dark) {
+          filter: invert();
+          opacity: 0.8;
+        }
       }
     `}
   }

@@ -4,15 +4,20 @@ import Player from '@vimeo/player';
 import { breakpoint } from 'src/settings';
 import { Caption, Figure, Intrinsic } from 'src/components';
 
-export const Vimeo = ({ vimeoId, caption, $size, commentary }) => {
+export const Vimeo = ({
+  vimeoId,
+  caption,
+  $size,
+  commentary,
+  color = 'ddd9d5',
+}) => {
   const [captionText, setCaptionText] = useState(caption);
   const targetElementId = `js-${vimeoId}`;
 
   useEffect(() => {
-    // TODO: pull color from settings or prop?
     const embedOptions = {
       byline: 0,
-      color: '978eae',
+      color,
       id: vimeoId,
       portrait: 0,
       title: 0,
@@ -35,7 +40,7 @@ export const Vimeo = ({ vimeoId, caption, $size, commentary }) => {
     return () => {
       player.destroy();
     };
-  }, [targetElementId, vimeoId, commentary]);
+  }, [targetElementId, vimeoId, commentary, color]);
 
   return (
     <Figure $size={$size}>

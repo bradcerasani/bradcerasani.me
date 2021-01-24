@@ -123,7 +123,7 @@ module.exports = {
             query: `
               {
                 allMdx(
-                  filter: { fields: { slug: { ne: "/about/" } } }
+                  frontmatter: { status: { ne: "draft" }, skipPage: { ne: true } }
                   sort: { fields: frontmatter___date, order: DESC }
                 ) {
                   edges {

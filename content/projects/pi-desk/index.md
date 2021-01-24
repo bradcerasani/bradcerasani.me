@@ -4,6 +4,7 @@ description: Hacking Ikea's sit-stand desk with a Raspberry Pi to support progra
 date: '2015-01-01'
 image: '/projects/pi-desk/hero.jpg'
 favicon: 🔩
+status: live
 ---
 
 In 2015 Ikea’s Bekant series sit/stand desk came to Canada.

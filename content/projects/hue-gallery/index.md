@@ -4,6 +4,7 @@ description: An article I wrote for the December 2016 issue of net magazine, det
 date: '2016-01-01'
 image: /video/projects/hue-gallery/hue-gallery.mp4
 favicon: 🌄
+status: live
 ---
 
 <!-- I wrote an article for the December 2016 issue of net magazine detailing how to create an immersive photo browsing experience with Philips Hue.

@@ -5,6 +5,7 @@ date: '2010-01-01'
 daterange: 2005–2010
 image: /projects/hoist/hero.jpg
 favicon: 🎶
+status: live
 ---
 
 Towards the end of high school and in the few years that followed, I played in a rock/funk/whatever trio called Hoist.

@@ -4,6 +4,7 @@ description: The design and build of a new website for multihyphenate Anna Akana
 date: '2014-01-01'
 image: /video/projects/anna-akana/anna-akana-website.mp4
 favicon: 🎬
+status: live
 ---
 
 I worked with actor, writer, and director Anna Akana to build a new online home for a series of short films she released in 2014. The site holds details about the films, their cast and crew, and behind-the-scenes content.

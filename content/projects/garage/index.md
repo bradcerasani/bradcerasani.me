@@ -4,7 +4,7 @@ description: I spent several hundred hours on evenings and weekends designing an
 date: '2019-01-01'
 image: /video/projects/garage/garage-animation-slow-optimized.mp4
 status: draft
-cta: Work in Progress
+cta: Draft
 ---
 
 <!-- In the summer of 2019, I designed and built a garage.

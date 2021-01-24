@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import 'lazysizes';
+import lazySizes from 'lazysizes';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 
 lazySizes.cfg.preloadAfterLoad = true;

@@ -46,7 +46,7 @@ export const Header = (props) => {
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
   const [showSocial, setShowSocial] = useState(false);
-  const [isDetailPage, setIsDetailpage] = useState(false);
+  const [isDetailPage, setIsDetailPage] = useState(false);
 
   useEffect(() => {
     // TODO: Infer from props

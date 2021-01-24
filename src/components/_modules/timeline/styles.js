@@ -113,15 +113,15 @@ export const StyledTimelineItem = styled(TimelineItem)`
   @media (min-width: ${breakpoint.md}) {
     &:first-of-type {
       ${TimelineItemImageWrapper}::before {
-        height: calc(3rem + 100%);
-        top: -3rem;
+        height: calc(2rem + 100%);
+        top: -2rem;
       }
 
       ${TimelineItemImageWrapper}::after {
         width: 0.75rem;
         height: 0.75rem;
         border-radius: 50%;
-        background-color: currentColor;
+        border: 1px solid currentColor;
         position: absolute;
         top: -3rem;
         left: -2.875rem;

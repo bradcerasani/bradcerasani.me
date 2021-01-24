@@ -127,7 +127,6 @@ export const NavItem = styled(Link)`
         }
       }
     `}
-  }
 
   &:hover {
     ${NavImage} {

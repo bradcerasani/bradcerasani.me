@@ -47,7 +47,7 @@ function Home(props) {
         </section>
 
         <section>
-          <h2 style={{ paddingTop: '0' }}>Side Projects &amp; Writing</h2>
+          <h2 style={{ paddingTop: '0' }}>Side Projects</h2>
           <Timeline>
             {contents.map(({ node }) => (
               <TimelineItem

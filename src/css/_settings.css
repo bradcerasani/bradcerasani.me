@@ -13,6 +13,7 @@
   --colorLinenDark: hsl(35, 10%, 60%);
   --colorLinenDefault: hsl(35, 10%, 85%);
   --colorLinenLight: hsl(35, 30%, 86%);
+  --colorLinenLighter: hsl(35, 50%, 92%);
 
   --backgroundColor: var(--colorLinen);
   --backgroundOverlayColor: hsl(0, 0%, 100%, 0.4);

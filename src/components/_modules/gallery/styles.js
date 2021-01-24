@@ -145,7 +145,7 @@ export const StyledGalleryController = styled.input`
     css`
       &::before {
         animation: pulse 2s ease 0s infinite;
-        background-color: white;
+        background-color: var(--colorLinenLighter);
         border-radius: 50%;
         content: '';
         display: block;

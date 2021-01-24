@@ -31,7 +31,15 @@ const StyledButton = styled(Link)`
     color: var(--colorGreyLightest);
   }
 
-  /* TODO: Create proper variant lookup */
+  /* Pseudo disabled styles */
+  &:not([href]) {
+    background-color: var(--colorLinenDark);
+
+    @media (prefers-color-scheme: dark) {
+      opacity: 0.5;
+    }
+  }
+
   ${({ $variant }) =>
     $variant === 'link' &&
     css`

@@ -60,11 +60,11 @@ export const ImageCompare = ({
   caption,
   image1,
   image2,
-  size,
+  $size,
   ...props
 }) => {
   return (
-    <Figure size={size}>
+    <Figure $size={$size}>
       <Intrinsic aspectRatio={{ base: '3 / 2' }}>
         <div>
           <ReactCompareSlider

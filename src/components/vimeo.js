@@ -4,7 +4,7 @@ import Player from '@vimeo/player';
 import { breakpoint } from 'src/settings';
 import { Caption, Figure, Intrinsic } from 'src/components';
 
-export const Vimeo = ({ vimeoId, caption, size, commentary }) => {
+export const Vimeo = ({ vimeoId, caption, $size, commentary }) => {
   const [captionText, setCaptionText] = useState(caption);
   const targetElementId = `js-${vimeoId}`;
 
@@ -38,7 +38,7 @@ export const Vimeo = ({ vimeoId, caption, size, commentary }) => {
   }, [targetElementId, vimeoId, commentary]);
 
   return (
-    <Figure size={size}>
+    <Figure $size={$size}>
       <Intrinsic aspectRatio={{ base: '16 / 9' }}>
         <div id={targetElementId} />
       </Intrinsic>

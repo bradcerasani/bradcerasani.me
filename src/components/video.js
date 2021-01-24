@@ -17,9 +17,9 @@ export const Video = ({ src, ...props }) => {
   );
 };
 
-export const PostVideo = ({ caption, size, src, ...props }) => {
+export const PostVideo = ({ caption, src, ...props }) => {
   return (
-    <Figure size={size} {...props}>
+    <Figure {...props}>
       <Intrinsic aspectRatio={{ base: '16 / 9' }}>
         <Video src={src} />
       </Intrinsic>

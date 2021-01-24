@@ -19,7 +19,7 @@ I thought, having never before framed or built any structure of consequence.
 
 [Is how it felt.](https://twitter.com/bradcerasani/status/1327043753593417735) -->
 
-<PostImage src="/projects/garage/hero.jpg" size="large" />
+<PostImage src="/projects/garage/hero.jpg" $size="large" />
 
 <p></p>
 
@@ -33,6 +33,6 @@ A traditional soffit wasn't possible due to the lack of roof overhang, so on the
 
 For the garage door, I imported one-piece door hardware from California and designed an aluminum subframe that I sent to a local fabricator. I had to rent a 22' U-Haul to pick it up.
 
-<PostImage src="projects/garage/0S7A8334.jpg" size="large" caption="All corners mitred and glued. Door handle and deadbolt (barely) visible to the lower right third of the frame" />
+<PostImage src="projects/garage/0S7A8334.jpg" $size="large" caption="All corners mitred and glued. Door handle and deadbolt (barely) visible to the lower right third of the frame" />
 
 Every corner is mitred -->

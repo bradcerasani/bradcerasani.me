@@ -28,11 +28,11 @@ export const Img = ({ alt, src, sizes, ...props }) => {
   );
 };
 
-export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
+export const Image = ({ src, caption, alt, sizes, ...props }) => {
   // TODO: Add media queries
   let sizesFallback = '';
 
-  switch (size) {
+  switch (props.$size) {
     case 'large':
       sizesFallback = '1040px';
       break;
@@ -44,7 +44,7 @@ export const Image = ({ src, caption, size, alt, sizes, ...props }) => {
   }
 
   return (
-    <Figure size={size} {...props}>
+    <Figure {...props}>
       <Img sizes={sizes || sizesFallback} src={src} alt={alt || caption} />
       {caption && <Caption>{caption}</Caption>}
     </Figure>

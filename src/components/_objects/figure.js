@@ -14,8 +14,8 @@ export const Figure = styled.figure`
     margin-right: 0;
     margin-top: 0;
 
-    ${({ size }) => {
-      switch (size) {
+    ${({ $size }) => {
+      switch ($size) {
         case 'full':
           return css`
             margin-top: var(--spaceMedium);

@@ -15,7 +15,7 @@ I assumed the Ikea legs had some sort of sync unit and limit switches within the
 
 To interface with this PCB as non-destructively as possible, I made a replacement for the original button’s ribbon wire out of plastic, flexible adhesive, and wires that I attached to a screw terminal. The screw terminal is connected to a bank of two relays for software control, and a 3.5mm headphone jack for pluggable hardware control in the event that the software isn’t working.
 
-<PostImage size="large" src="/projects/pi-desk/hero.jpg" />
+<PostImage $size="large" src="/projects/pi-desk/hero.jpg" />
 
 The relays are connected to a Raspberry Pi running a basic controller software I wrote in Python and Node.js. It uses feedback from an ultrasonic sensor to measure the desk’s height. For software control, I made a series of Alfred shortcuts on my Mac that sent requests to the desk’s API. For hardware control, I wired up a SPDT on-off-on toggle switch.
 

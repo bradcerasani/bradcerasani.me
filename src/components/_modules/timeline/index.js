@@ -37,9 +37,9 @@ export const TimelineItem = ({ fields, frontmatter }) => {
           <TimelineItemImageWrapper>
             {/* TODO: Create util */}
             {/\.(gif|jpe?g|png|webp)$/i.test(image) ? (
-              <Image src={image} sizes="1040px" alt={title} size={size} />
+              <Image src={image} sizes="1040px" alt={title} $size={size} />
             ) : (
-              <PostVideo src={image} size={size} />
+              <PostVideo src={image} $size={size} />
             )}
           </TimelineItemImageWrapper>
         </Link>

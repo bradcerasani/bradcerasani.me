@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import 'lazysizes';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 
+lazySizes.cfg.preloadAfterLoad = true;
+
 import { Container, Footer, Header } from 'src/components';
 
 function Layout({ children, ...props }) {
@@ -10,9 +12,6 @@ function Layout({ children, ...props }) {
     if (typeof window === 'undefined') {
       return;
     }
-
-    window.lazySizesConfig = window.lazySizesConfig || {};
-    lazySizesConfig.preloadAfterLoad = true;
 
     if (!window.sessionStorage.getItem('logged')) {
       console.log(

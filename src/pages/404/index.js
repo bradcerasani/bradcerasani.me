@@ -17,7 +17,7 @@ import {
   VideoOverlayIcon,
 } from './styles';
 
-function PageNotFound(props) {
+function PageNotFound() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [muted, setMuted] = useState(true);
 
@@ -26,11 +26,7 @@ function PageNotFound(props) {
   }, [isLoaded]);
 
   return (
-    <Layout
-      location={props.location}
-      title="Brad Cerasani"
-      headline="Page Not Found"
-    >
+    <Layout headline="Page Not Found">
       <Head title="404: Page Not Found" />
 
       <Loading style={{ opacity: isLoaded ? 0 : 1 }} />

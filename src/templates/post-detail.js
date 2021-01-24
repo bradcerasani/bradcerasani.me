@@ -28,22 +28,14 @@ const Hero = styled.div`
   }
 `;
 
-function ProjectDetailTemplate(props) {
+function PostDetailTemplate(props) {
+  console.log('the props are', props);
   const post = props.data.mdx;
-  const siteTitle = props.data.site.siteMetadata.title;
-  const image = post.frontmatter.image;
-  const date = post.frontmatter.date;
-  const previous = props.data.sitePage.context.previous;
-  const next = props.data.sitePage.context.next;
-  const description = post.frontmatter.description || post.excerpt;
+  const { date, description, image } = post.frontmatter;
+  const { previous, next } = props.data.sitePage.context;
 
   return (
-    <Layout
-      location={props.location}
-      title={siteTitle}
-      headline={post.frontmatter.title}
-      date={date}
-    >
+    <Layout headline={post.frontmatter.title} date={date}>
       <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
         <Intrinsic aspectRatio={{ base: '1 / 1', md: '3 / 2', lg: '16 / 9' }}>
           {/* TODO: Create util */}
@@ -127,15 +119,10 @@ function ProjectDetailTemplate(props) {
   );
 }
 
-export default ProjectDetailTemplate;
+export default PostDetailTemplate;
 
 export const pageQuery = graphql`
   query ProjectDetailBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 240)

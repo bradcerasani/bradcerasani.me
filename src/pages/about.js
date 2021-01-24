@@ -13,14 +13,13 @@ import {
   Head,
 } from 'src/components';
 
-function AboutPage(props) {
+function About(props) {
   const post = props.data.mdx;
-  const siteTitle = props.data.site.siteMetadata.title;
   const images = props.data.allInstaNode.edges.reverse();
 
   return (
     <>
-      <Layout title={siteTitle}>
+      <Layout>
         <Head
           title="About"
           description="About Brad Cerasani; Design & Engineering."
@@ -93,15 +92,10 @@ function AboutPage(props) {
   );
 }
 
-export default AboutPage;
+export default About;
 
 export const pageQuery = graphql`
   query ContentBySlug {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     mdx(fields: { slug: { eq: "/about/" } }) {
       id
       body

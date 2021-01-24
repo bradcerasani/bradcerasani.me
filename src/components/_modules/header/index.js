@@ -20,7 +20,6 @@ export const Header = (props) => {
       query {
         allMdx(
           filter: {
-            fields: { slug: { ne: "/about/" } }
             frontmatter: { status: { ne: "draft" }, skipPage: { ne: true } }
           }
           sort: { fields: frontmatter___date, order: DESC }
@@ -42,7 +41,7 @@ export const Header = (props) => {
     `
   );
 
-  const { title, date, headline = 'Design & Engineering' } = props;
+  const { date, headline = 'Design & Engineering' } = props;
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
   const [showSocial, setShowSocial] = useState(false);
@@ -141,7 +140,7 @@ export const Header = (props) => {
         itemtype="https://schema.org/SiteNavigationElement"
       >
         <MobileNavMenuWrapper>
-          <Logo to={`/`}>{title}</Logo>
+          <Logo to={`/`}>Brad Cerasani</Logo>
           <MobileNavMenu
             onClick={() => setVisibility(!isVisible)}
             isActive={isVisible}

@@ -6,12 +6,10 @@ import Layout from 'src/templates/layout';
 import { Button, Head, Timeline, TimelineItem } from 'src/components';
 
 function Home(props) {
-  const { data } = props;
-  const siteTitle = data.site.siteMetadata.title;
-  const contents = data.allMdx.edges;
+  const contents = props.data.allMdx.edges;
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout>
       <Head
         title="Design & Engineering"
         description="The personal site of designer & developer Brad Cerasani."
@@ -32,7 +30,7 @@ function Home(props) {
         <section style={{ marginBottom: 'var(--spaceMedium)' }}>
           <p
             dangerouslySetInnerHTML={{
-              __html: data.mdx.frontmatter.excerpt,
+              __html: props.data.mdx.frontmatter.excerpt,
             }}
             style={{ marginBottom: 'calc(var(--spaceDefault) / 2)' }}
           />
@@ -67,11 +65,6 @@ export default Home;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     mdx(fields: { slug: { eq: "/about/" } }) {
       frontmatter {
         excerpt

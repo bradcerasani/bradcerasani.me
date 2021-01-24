@@ -1,16 +1,12 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import { css } from 'styled-components';
 
 import Layout from 'src/templates/layout';
 import { Head } from 'src/components';
 
-function StyleGuide(props) {
-  const { data } = props;
-  const siteTitle = data.site.siteMetadata.title;
-
+function StyleGuide() {
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout>
       <Head
         title="Design & Engineering"
         description="The personal site of designer & developer Brad Cerasani."
@@ -120,13 +116,3 @@ function StyleGuide(props) {
 }
 
 export default StyleGuide;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;

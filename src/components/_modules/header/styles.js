@@ -2,7 +2,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { breakpoint } from 'src/settings';
-import { Img } from 'src/components';
 
 export const StyledHeader = styled.header`
   margin-bottom: var(--spaceMedium);
@@ -72,8 +71,7 @@ export const Nav = styled.div`
   }
 `;
 
-export const NavImage = styled(Img).attrs({
-  sizes: '10rem',
+export const NavImage = styled.img.attrs({
   className: 'lazyload',
 })`
   bottom: 0;

@@ -65,7 +65,7 @@ export const Header = (props) => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [isVisible, isDetailPage]);
+  }, [isVisible]);
 
   return (
     <>
@@ -162,7 +162,7 @@ export const Header = (props) => {
                   activeClassName="is-active"
                   key={to}
                   to={to}
-                  showreturn={showReturn}
+                  $showReturn={showReturn}
                 >
                   {label}
                   <NavImage src={src} alt={alt} />

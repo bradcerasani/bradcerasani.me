@@ -104,8 +104,8 @@ export const NavItem = styled(Link)`
     }
   }
 
-  ${({ showreturn }) =>
-    showreturn &&
+  ${({ $showReturn }) =>
+    $showReturn &&
     css`
       &::after {
         --aspectRatio: (4 / 5);

@@ -48,6 +48,9 @@ export const Header = (props) => {
   const [showSocial, setShowSocial] = useState(false);
 
   useEffect(() => {
+    // TODO: Infer from props
+    const isDetailPage = window.location.pathname.match(/(writing|projects)/g);
+
     // Lock scroll when Nav overlay is visible
     document.body.style.overflow = isVisible ? 'hidden' : 'scroll';
 
@@ -152,12 +155,7 @@ export const Header = (props) => {
 
           <Nav>
             {links.map(({ to, label, src, alt }, index) => {
-              const showReturn =
-                (index === 0 &&
-                  window &&
-                  window.location.pathname.match(/(writing|projects)/g)) ||
-                undefined;
-
+              const showReturn = (isDetailPage && index === 0) || undefined;
               return (
                 <NavItem
                   activeClassName="is-active"

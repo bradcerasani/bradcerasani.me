@@ -80,6 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+  const mediaType = node.internal.mediaType;
 
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
@@ -99,13 +100,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   // Move post and project media into /public for consumption by Imgix
   if (
-    node.internal.mediaType &&
-    (node.internal.mediaType.includes('image') ||
-      node.internal.mediaType.includes('video'))
+    mediaType &&
+    (mediaType.includes('image') || mediaType.includes('video'))
   ) {
     let directoryName = '';
 
-    switch (node.internal.mediaType) {
+    switch (mediaType) {
       case 'image/gif':
       case 'image/jpeg':
       case 'image/jpg':
@@ -117,7 +117,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         directoryName = 'video';
         break;
       default:
-        console.warn(`${node.internal.mediaType} is unknown`);
+        console.warn(`${mediaType} is unknown`);
     }
 
     const destination = path.join(

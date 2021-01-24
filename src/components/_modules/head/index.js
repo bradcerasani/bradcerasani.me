@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import { stripTags } from 'src/util';
 
 export const Head = ({
   title,
@@ -38,7 +39,7 @@ export const Head = ({
 
   return (
     <Helmet
-      title={title && title.replace(/<[^>]*>?/gm, '')}
+      title={stripTags(title)}
       titleTemplate={`%s – ${site.siteMetadata.title}`}
       htmlAttributes={{
         lang: 'en',

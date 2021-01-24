@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { breakpoint } from 'src/settings';
+import { stripTags } from 'src/util';
 import { Date, Logo } from 'src/components';
 import { links } from './links';
 import { StyledHeader, HeroContainer, Nav, NavImage, NavItem } from './styles';
@@ -46,12 +47,8 @@ export const Header = (props) => {
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
   const [showSocial, setShowSocial] = useState(false);
-  const [isDetailPage, setIsDetailPage] = useState(false);
 
   useEffect(() => {
-    // TODO: Infer from props
-    setIsDetailPage(window.location.pathname.match(/(writing|projects)/g));
-
     // Lock scroll when Nav overlay is visible
     document.body.style.overflow = isVisible ? 'hidden' : 'scroll';
 
@@ -101,7 +98,7 @@ export const Header = (props) => {
                 }}
               >
                 <Link key={node.frontmatter.title} to={node.fields.slug}>
-                  {node.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+                  {stripTags(node.frontmatter.title)}
                 </Link>
               </MobileNavListItem>
             ))}
@@ -152,13 +149,12 @@ export const Header = (props) => {
 
           <Nav>
             {links.map(({ to, label, src, alt }, index) => {
-              const showReturn = (isDetailPage && index === 0) || undefined;
               return (
                 <NavItem
                   activeClassName="is-active"
                   key={to}
                   to={to}
-                  $showReturn={showReturn}
+                  $showReturn={index === 0 && props.showReturn}
                 >
                   {label}
                   <NavImage src={src} alt={alt} />

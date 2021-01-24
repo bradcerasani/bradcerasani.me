@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+import { isImage, stripTags } from 'src/util';
 import { Button, Image, PostVideo } from 'src/components';
 
 import {
@@ -16,28 +17,33 @@ export const Timeline = styled.div`
 `;
 
 export const TimelineItem = ({ fields, frontmatter }) => {
-  const url = fields.slug;
-  const title = frontmatter.title.replace(/<[^>]*>?/gm, '');
-  const description = frontmatter.description;
-  const image = frontmatter.image;
-  const date = frontmatter.daterange || frontmatter.date;
-  const cta =
-    frontmatter.cta ||
-    (fields.type === 'WRITING' ? 'Read Post' : 'View Project');
-  const isDraft = frontmatter.status && frontmatter.status.includes('draft');
-  const size = fields.type === 'WRITING' || isDraft ? 'default' : 'large';
+  const { slug, type } = fields;
+  const {
+    title,
+    description,
+    image,
+    date,
+    daterange,
+    cta,
+    status,
+  } = frontmatter;
 
-  // TODO: Tidy & DRY
+  const buttonText = cta || (type === 'WRITING' ? 'Read Post' : 'View Project');
+  const isDraft = status === 'draft';
+  const size = type === 'WRITING' || isDraft ? 'default' : 'large';
+
   return (
-    <StyledTimelineItem
-      style={{ pointerEvents: isDraft || frontmatter.skipPage ? 'none' : null }}
-    >
+    <StyledTimelineItem $status={status}>
       {image && (
-        <Link to={url}>
+        <Link to={slug}>
           <TimelineItemImageWrapper>
-            {/* TODO: Create util */}
-            {/\.(gif|jpe?g|png|webp)$/i.test(image) ? (
-              <Image src={image} sizes="1040px" alt={title} $size={size} />
+            {isImage(image) ? (
+              <Image
+                src={image}
+                sizes="1040px"
+                alt={stripTags(title)}
+                $size={size}
+              />
             ) : (
               <PostVideo src={image} $size={size} />
             )}
@@ -46,10 +52,10 @@ export const TimelineItem = ({ fields, frontmatter }) => {
       )}
 
       <TimelineItemDetailsWrapper>
-        <TimelineItemNode>{date}</TimelineItemNode>
+        <TimelineItemNode>{daterange || date}</TimelineItemNode>
 
-        <Link to={url}>
-          <h3>{title}</h3>
+        <Link to={slug}>
+          <h3>{stripTags(title)}</h3>
         </Link>
 
         <p
@@ -59,14 +65,7 @@ export const TimelineItem = ({ fields, frontmatter }) => {
         />
 
         {!frontmatter.skipPage && (
-          <Button
-            to={url}
-            style={{
-              opacity: isDraft ? '0.5' : '1',
-            }}
-          >
-            {cta}
-          </Button>
+          <Button to={!isDraft ? slug : null}>{buttonText}</Button>
         )}
       </TimelineItemDetailsWrapper>
     </StyledTimelineItem>

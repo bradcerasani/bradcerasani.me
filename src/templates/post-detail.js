@@ -5,6 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
 import Layout from 'src/templates/layout';
+import { isImage, stripTags } from 'src/util';
 import { Head, Img, Intrinsic } from 'src/components';
 import 'src/css/footnotes.css';
 import 'src/css/prism-theme.css';
@@ -34,20 +35,19 @@ function PostDetailTemplate(props) {
   const { previous, next } = props.data.sitePage.context;
 
   return (
-    <Layout headline={post.frontmatter.title} date={date}>
-      <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
-        <Intrinsic aspectRatio={{ base: '1 / 1', md: '3 / 2', lg: '16 / 9' }}>
-          {/* TODO: Create util */}
-          {/\.(gif|jpe?g|png|webp)$/i.test(image) && (
+    <Layout headline={post.frontmatter.title} date={date} showReturn>
+      {isImage(image) && (
+        <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
+          <Intrinsic aspectRatio={{ base: '1 / 1', md: '3 / 2', lg: '16 / 9' }}>
             <Img
               src={image}
               alt="Hero image"
               style={{ objectFit: 'cover' }}
               sizes="100vw"
             />
-          )}
-        </Intrinsic>
-      </Hero>
+          </Intrinsic>
+        </Hero>
+      )}
 
       <Head
         title={post.frontmatter.title}
@@ -76,7 +76,7 @@ function PostDetailTemplate(props) {
         </article>
       </main>
 
-      {/* TODO: Abstract and style like DF? Create util for stripping HTML or look to store at build time? */}
+      {/* TODO: Abstract and style like DF? */}
       <section
         role="navigation"
         aria-label="Pagination Navigation"
@@ -97,7 +97,7 @@ function PostDetailTemplate(props) {
                 to={next.fields.slug}
                 style={{ textDecorationColor: 'inherit' }}
               >
-                {next.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+                {stripTags(next.frontmatter.title)}
               </Link>
             </>
           )}
@@ -109,7 +109,7 @@ function PostDetailTemplate(props) {
               to={previous.fields.slug}
               style={{ textDecorationColor: 'inherit' }}
             >
-              {previous.frontmatter.title.replace(/<[^>]*>?/gm, '')}
+              {stripTags(previous.frontmatter.title)}
             </Link>
           </div>
         )}

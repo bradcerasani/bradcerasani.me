@@ -109,6 +109,12 @@ export const TimelineItemNode = styled.div`
 `;
 
 export const StyledTimelineItem = styled(TimelineItem)`
+  ${({ $status }) =>
+    $status === 'draft' &&
+    css`
+      pointer-events: none;
+    `};
+
   /* TODO: Harden timeline start styles */
   @media (min-width: ${breakpoint.md}) {
     &:first-of-type {

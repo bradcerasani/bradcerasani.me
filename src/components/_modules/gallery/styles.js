@@ -140,8 +140,8 @@ export const StyledGalleryController = styled.input`
   position: relative;
   width: 100%;
 
-  ${({ isDiscovered }) =>
-    !isDiscovered &&
+  ${({ $isDiscovered }) =>
+    !$isDiscovered &&
     css`
       &::before {
         animation: pulse 2s ease 0s infinite;

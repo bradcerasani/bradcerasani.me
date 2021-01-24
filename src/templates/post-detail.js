@@ -29,7 +29,6 @@ const Hero = styled.div`
 `;
 
 function PostDetailTemplate(props) {
-  console.log('the props are', props);
   const post = props.data.mdx;
   const { date, description, image } = post.frontmatter;
   const { previous, next } = props.data.sitePage.context;

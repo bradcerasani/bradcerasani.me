@@ -37,7 +37,7 @@ function Home(props) {
 
           <Button
             to={'/about/'}
-            variant="link"
+            $variant="link"
             style={{ textUnderlinePosition: 'under' }}
           >
             More about me

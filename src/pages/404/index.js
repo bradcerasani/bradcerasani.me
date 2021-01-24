@@ -39,9 +39,9 @@ function PageNotFound() {
           marginBottom: 'var(--spaceLarge)',
           marginTop: 'var(--spaceLarge)',
         }}
-        gutter="6rem"
+        $gutter="6rem"
       >
-        <GridItem width={{ md: '50%' }}>
+        <GridItem $width={{ md: '50%' }}>
           <VideoContainer>
             <Video
               id="js-video"
@@ -62,7 +62,7 @@ function PageNotFound() {
           </VideoContainer>
         </GridItem>
 
-        <GridItem width={{ md: '50%' }}>
+        <GridItem $width={{ md: '50%' }}>
           <h5 style={{ paddingTop: 'var(--spaceDefault)' }}>Error 404</h5>
 
           <p

@@ -52,14 +52,14 @@ The linear lights consist of flush-mount aluminum channels with diffusers, [five
 In order to achieve even linear light, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW diode clusters. In testing several methods of mounting and diffusion, I found this approach to be the best balance of heat dissipation and output.
 
 <Figure size="large">
-  <Grid gutter="calc(var(--spaceDefault) / 2)">
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+  <Grid $gutter="calc(var(--spaceDefault) / 2)">
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Video src="/video/projects/home-renovation/light-assembly.mp4" />
     </GridItem>
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Img src="/projects/home-renovation/IMG_0164x.jpg" sizes="400px"/>
     </GridItem>
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Img src="/projects/home-renovation/IMG_0140.jpg" sizes="400px"/>
     </GridItem>
   </Grid>
@@ -68,14 +68,14 @@ In order to achieve even linear light, I ran two light strips along the side wal
 For each fixture, I had an electrician run a standard line-voltage light switch to a junction box near the electrical panel in the basement, and low voltage wire from there back up to its respective installation location. Downstairs, I connected each switched line to a 24V power supply that feeds a Philips Hue LS+ controller and two PWM amplifiers that power the fixture.
 
 <Figure size="large">
-  <Grid gutter="calc(var(--spaceDefault) / 2)">
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+  <Grid $gutter="calc(var(--spaceDefault) / 2)">
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Img src="/projects/home-renovation/IMG_0039.jpg" sizes="400px"/>
     </GridItem>
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Img src="/projects/home-renovation/IMG_0164.jpg" sizes="400px"/>
     </GridItem>
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Img src="/projects/home-renovation/IMG_0591.jpg" sizes="400px"/>
     </GridItem>
   </Grid>
@@ -86,14 +86,14 @@ In total I built five discrete lights; each addressable individually or by group
 In terms of brightness, at peak output the three fixtures in the kitchen are capable of roughly 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78 Philips Hue GU10s.
 
 <Figure size="large">
-  <Grid gutter="calc(var(--spaceDefault) / 2)">
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+  <Grid $gutter="calc(var(--spaceDefault) / 2)">
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Img src="/projects/home-renovation/corner.jpg" sizes="400px"/>
     </GridItem>
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Img src="/projects/home-renovation/IMG_9681.jpg" sizes="400px"/>
     </GridItem>
-    <GridItem width={{ sm: '1/3 * 100%' }}>
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
       <Video src="/video/projects/home-renovation/controller-2.mp4" />
     </GridItem>
   </Grid>

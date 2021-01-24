@@ -34,8 +34,8 @@ const StyledHandle = styled.div`
     transition: transform var(--transitionDefault);
   }
 
-  ${({ isDiscovered }) =>
-    !isDiscovered &&
+  ${({ $isDiscovered }) =>
+    !$isDiscovered &&
     css`
       &::before {
         background-color: white;
@@ -50,7 +50,7 @@ const Handle = () => {
     <StyledHandle
       onMouseDown={() => setIsDiscovered(true)}
       onTouchStart={() => setIsDiscovered(true)}
-      isDiscovered={isDiscovered}
+      $isDiscovered={isDiscovered}
     />
   );
 };

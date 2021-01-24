@@ -12,6 +12,7 @@ import {
   MobileNavMenuWrapper,
   MobileNavOverlay,
   MobileNavWrapper,
+  MobileNavListItem,
 } from './mobile-overlay';
 
 export const Header = (props) => {
@@ -69,7 +70,7 @@ export const Header = (props) => {
   return (
     <>
       <MobileNavOverlay
-        isVisible={isVisible}
+        $isVisible={isVisible}
         onTransitionEnd={() => {
           setOverlayTransitioned(isVisible ? true : false);
           setShowSocial(false);
@@ -78,11 +79,8 @@ export const Header = (props) => {
         <MobileNavWrapper>
           {links.map(({ to, label }, index) => (
             <MobileNavItem
-              // TODO: data-visibility => isVisible now that the latest
-              // version of styled-components supports shouldForwardProp
-              // https://github.com/styled-components/styled-components/pull/3006
               activeClassName="is-active"
-              data-visibility={overlayTransitioned.toString()}
+              $isVisible={overlayTransitioned}
               key={to}
               onAnimationStart={() => setShowSocial(index === links.length - 1)}
               style={{ animationDelay: `calc(${100 * index}ms)` }}
@@ -94,9 +92,9 @@ export const Header = (props) => {
 
           <ul>
             {allMdx.edges.map(({ node }, index) => (
-              <li
+              <MobileNavListItem
                 key={node.fields.slug}
-                data-visibility={showSocial.toString()}
+                $isVisible={showSocial}
                 style={{
                   animationDelay: `calc(${100 * (index + 1)}ms)`,
                   textDecoration: 'underline',
@@ -105,16 +103,15 @@ export const Header = (props) => {
                 <Link key={node.frontmatter.title} to={node.fields.slug}>
                   {node.frontmatter.title.replace(/<[^>]*>?/gm, '')}
                 </Link>
-              </li>
+              </MobileNavListItem>
             ))}
           </ul>
 
           <ul>
             {/* TODO: Pull from site settings? */}
             {['Twitter', 'Instagram', 'GitHub'].map((link, index) => (
-              <li
-                // See above re: data-visibility
-                data-visibility={showSocial.toString()}
+              <MobileNavListItem
+                $isVisible={showSocial}
                 key={link}
                 style={{
                   animationDelay: `calc(${
@@ -129,7 +126,7 @@ export const Header = (props) => {
                 >
                   {link}
                 </OutboundLink>
-              </li>
+              </MobileNavListItem>
             ))}
           </ul>
         </MobileNavWrapper>
@@ -143,7 +140,7 @@ export const Header = (props) => {
           <Logo to={`/`}>Brad Cerasani</Logo>
           <MobileNavMenu
             onClick={() => setVisibility(!isVisible)}
-            isActive={isVisible}
+            $isActive={isVisible}
           />
         </MobileNavMenuWrapper>
 

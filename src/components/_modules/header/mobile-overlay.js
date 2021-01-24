@@ -22,27 +22,29 @@ export const MobileNavWrapper = styled.div`
   z-index: 1;
 
   ul {
-    margin-top: var(--spaceDefault);
     display: block;
+    margin-top: var(--spaceDefault);
     position: relative;
-
-    li {
-      font-size: var(--fontSizeMedium);
-      opacity: 0;
-
-      &[data-visibility='true'] {
-        animation-duration: 800ms;
-        animation-fill-mode: both;
-        animation-name: fadeInUp;
-        animation-timing-function: ease;
-        visibility: visible;
-      }
-    }
 
     a {
       text-decoration: none;
     }
   }
+`;
+
+export const MobileNavListItem = styled.li`
+  font-size: var(--fontSizeMedium);
+  opacity: 0;
+
+  ${({ $isVisible }) =>
+    $isVisible &&
+    css`
+      animation-duration: 800ms;
+      animation-fill-mode: both;
+      animation-name: fadeInUp;
+      animation-timing-function: ease;
+      visibility: visible;
+    `};
 `;
 
 export const MobileNavOverlay = styled.div`
@@ -75,8 +77,8 @@ export const MobileNavOverlay = styled.div`
   }
 
   /* stylelint-disable-next-line */
-  ${({ isVisible }) =>
-    isVisible &&
+  ${({ $isVisible }) =>
+    $isVisible &&
     css`
       transition-delay: 0ms;
       opacity: 1;
@@ -110,13 +112,15 @@ export const MobileNavItem = styled(Link)`
     }
   }
 
-  &[data-visibility='true'] {
-    animation-duration: 800ms;
-    animation-fill-mode: both;
-    animation-name: fadeInUp;
-    animation-timing-function: ease;
-    visibility: visible;
-  }
+  ${({ $isVisible }) =>
+    $isVisible &&
+    css`
+      animation-duration: 800ms;
+      animation-fill-mode: both;
+      animation-name: fadeInUp;
+      animation-timing-function: ease;
+      visibility: visible;
+    `}
 `;
 
 export const MobileNavMenu = styled.div`
@@ -163,8 +167,8 @@ export const MobileNavMenu = styled.div`
     transform: translateY(calc(var(--spacing) / 2));
   }
 
-  ${({ isActive }) =>
-    isActive &&
+  ${({ $isActive }) =>
+    $isActive &&
     css`
       &::before,
       &::after {

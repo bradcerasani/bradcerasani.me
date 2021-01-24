@@ -87,7 +87,7 @@ export const GalleryController = ({ images }) => {
       type="range"
       onChange={(e) => handleChange(e)}
       defaultValue="0"
-      isDiscovered={isDiscovered}
+      $isDiscovered={isDiscovered}
     />
   );
 };

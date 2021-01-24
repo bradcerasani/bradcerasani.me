@@ -43,7 +43,7 @@ function About(props) {
           </section>
 
           <Grid>
-            <GridItem width={{ base: '50%', sm: '30%' }}>
+            <GridItem $width={{ base: '50%', sm: '30%' }}>
               <h5 style={{ paddingTop: 0 }}>Elsewhere</h5>
               <ul>
                 {['Twitter', 'Instagram', 'GitHub'].map((link) => (
@@ -61,7 +61,7 @@ function About(props) {
               </ul>
             </GridItem>
 
-            <GridItem width={{ base: '50%', sm: '30%' }}>
+            <GridItem $width={{ base: '50%', sm: '30%' }}>
               <h5 style={{ paddingTop: 0 }}>Site Archives</h5>
               <ul>
                 {['2014', '2013', '2012', '2011', '2010'].map((year) => (
@@ -79,7 +79,7 @@ function About(props) {
               </ul>
             </GridItem>
 
-            <GridItem width={{ sm: '40%' }}>
+            <GridItem $width={{ sm: '40%' }}>
               <h5 style={{ paddingTop: 0 }}>Photos</h5>
               <GalleryController images={images} />
             </GridItem>

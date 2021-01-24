@@ -32,8 +32,8 @@ const StyledButton = styled(Link)`
   }
 
   /* TODO: Create proper variant lookup */
-  ${({ variant }) =>
-    variant === 'link' &&
+  ${({ $variant }) =>
+    $variant === 'link' &&
     css`
       background-color: transparent !important;
       color: inherit !important;
@@ -63,7 +63,7 @@ export const Button = ({ children, ...props }) => {
   return (
     <StyledButton {...props}>
       {children}
-      {props.variant === 'link' && <ButtonLinkIcon>»</ButtonLinkIcon>}
+      {props.$variant === 'link' && <ButtonLinkIcon>»</ButtonLinkIcon>}
     </StyledButton>
   );
 };

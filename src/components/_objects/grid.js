@@ -28,7 +28,7 @@ export const GridItem = styled.div`
   width: 100%;
 
   /* stylelint-disable-next-line */
-  ${({ width }) => getResponsiveWidth(width)}
+  ${({ $width }) => getResponsiveWidth($width)}
 
   /* Ensure height consistent with inline video */
   > img {
@@ -43,11 +43,11 @@ export const Grid = styled.div`
   position: relative;
 
   /* stylelint-disable-next-line */
-  ${({ gutter }) => css`
-    margin-left: calc(${gutter} * -1);
+  ${({ $gutter }) => css`
+    margin-left: calc(${$gutter} * -1);
 
     ${GridItem} {
-      padding-left: calc(${gutter});
+      padding-left: calc(${$gutter});
 
       @media (max-width: ${breakpoint.sm}) {
         margin-bottom: calc(var(--spaceDefault) / 2);

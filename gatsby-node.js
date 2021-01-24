@@ -29,9 +29,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-
   const postDetail = path.resolve(`./src/templates/post-detail.js`);
-  const projectDetail = path.resolve(`./src/templates/project-detail.js`);
   const result = await graphql(
     `
       {
@@ -69,7 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const next = index === 0 ? null : pages[index - 1].node;
 
     createPage({
-      component: slug.includes('/projects') ? projectDetail : postDetail,
+      component: postDetail,
       path: slug,
       context: {
         slug,

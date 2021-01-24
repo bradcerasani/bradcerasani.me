@@ -2,18 +2,40 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { css } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import styled from 'styled-components';
 
 import Layout from 'src/templates/layout';
-import { Head } from 'src/components';
+import { Head, Img, Intrinsic } from 'src/components';
 import 'src/css/footnotes.css';
 import 'src/css/prism-theme.css';
 
-function PostDetailTemplate(props) {
+const Hero = styled.div`
+  animation-delay: 400ms;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  animation-timing-function: ease-out;
+  filter: grayscale() brightness(0.6);
+  left: 0;
+  mask-image: linear-gradient(black 65%, transparent 95%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  img {
+    object-fit: cover;
+  }
+`;
+
+function ProjectDetailTemplate(props) {
   const post = props.data.mdx;
   const siteTitle = props.data.site.siteMetadata.title;
+  const image = post.frontmatter.image;
   const date = post.frontmatter.date;
   const previous = props.data.sitePage.context.previous;
   const next = props.data.sitePage.context.next;
+  const description = post.frontmatter.description || post.excerpt;
 
   return (
     <Layout
@@ -22,11 +44,26 @@ function PostDetailTemplate(props) {
       headline={post.frontmatter.title}
       date={date}
     >
+      <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
+        <Intrinsic aspectRatio={{ base: '1 / 1', md: '3 / 2', lg: '16 / 9' }}>
+          {/* TODO: Create util */}
+          {/\.(gif|jpe?g|png|webp)$/i.test(image) && (
+            <Img
+              src={image}
+              alt="Hero image"
+              style={{ objectFit: 'cover' }}
+              sizes="100vw"
+            />
+          )}
+        </Intrinsic>
+      </Hero>
+
       <Head
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-        image={post.frontmatter.image}
+        description={description}
+        image={image}
         slug={post.slug}
+        favicon={post.frontmatter.favicon}
       />
 
       <style>
@@ -61,7 +98,7 @@ function PostDetailTemplate(props) {
         }}
       >
         <div>
-          {next && (
+          {next && next.frontmatter.status !== 'draft' && (
             <>
               <h6 style={{ paddingTop: '0' }}>Newer</h6>
 
@@ -90,10 +127,10 @@ function PostDetailTemplate(props) {
   );
 }
 
-export default PostDetailTemplate;
+export default ProjectDetailTemplate;
 
 export const pageQuery = graphql`
-  query PostDetailBySlug($slug: String!) {
+  query ProjectDetailBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -108,6 +145,7 @@ export const pageQuery = graphql`
         date(formatString: "MMM YYYY")
         description
         image
+        favicon
       }
       slug
     }
@@ -119,6 +157,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            status
           }
         }
         previous {
@@ -127,6 +166,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            status
           }
         }
       }

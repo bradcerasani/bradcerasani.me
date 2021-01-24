@@ -151,9 +151,26 @@ export const Header = (props) => {
           </h1>
 
           <Nav>
-            {links.map(({ to, label, src, alt }) => {
+            {links.map(({ to, label, src, alt }, index) => {
+              const showReturn =
+                (index === 0 &&
+                  window &&
+                  window.location.pathname.match(/(writing|projects)/g)) ||
+                undefined;
+
               return (
-                <NavItem activeClassName="is-active" key={to} to={to}>
+                <NavItem
+                  activeClassName="is-active"
+                  key={to}
+                  to={to}
+                  showreturn={showReturn}
+                  onClick={(e) => {
+                    if (showReturn) {
+                      e.preventDefault();
+                      window.history.back();
+                    }
+                  }}
+                >
                   {label}
                   <NavImage src={src} alt={alt} />
                 </NavItem>

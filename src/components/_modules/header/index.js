@@ -46,10 +46,11 @@ export const Header = (props) => {
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
   const [showSocial, setShowSocial] = useState(false);
+  const [isDetailPage, setIsDetailpage] = useState(false);
 
   useEffect(() => {
     // TODO: Infer from props
-    const isDetailPage = window.location.pathname.match(/(writing|projects)/g);
+    setIsDetailPage(window.location.pathname.match(/(writing|projects)/g));
 
     // Lock scroll when Nav overlay is visible
     document.body.style.overflow = isVisible ? 'hidden' : 'scroll';
@@ -64,7 +65,7 @@ export const Header = (props) => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [isVisible]);
+  }, [isVisible, isDetailPage]);
 
   return (
     <>

@@ -18,26 +18,26 @@ A friend had introduced me to SketchUp, and helped with some initial models of t
 
 <PostImage src="/projects/home-renovation/IMG_0343.jpg" caption="One such surprise: 4-6 inches of concrete under the kitchen floor. The house is not slab-on-grade; there's another layer of structural concrete and a basement under there. Thankfuly concrete doesn't bond well to concrete and it came up easily." $size="large"/>
 
-Working in 3D allowed me to more carefully consider the spaces and sightlines than a typical plan or one-off render. Using a friend’s VR rig, I could walk through the models to better understand flow and utility. Many of the fixtures and appliances considered had 3D models available, so I was able to audition them in the space before making a commitment. When options were presented during the construction, I was able to model each permutation to better understand it in context, rather than rush a decision or leave it solely to the builder. It also helped immensely that the builder was comfortable with SketchUp, so I could send ideas over for them to assess feasibility.
-
-The final design attempts to blend old with new, and mixes modern lines with natural materials. This was the first space I've designed, but I found the principles familiar to what I knew in software, and learned a lot about the process along the way.
-
-<ImageCompare
-$size="large"
-image1="/projects/home-renovation/0S7A7604-before.jpg"
-image2="/projects/home-renovation/0S7A7604.jpg"
-caption="Comparison between mid-demoliton and final"
-/>
-
-<PostImage $size="full" src="/projects/home-renovation/0S7A7712.jpg" />
+Working in 3D allowed me to more carefully consider the spaces and sightlines than a typical plan or one-off render. Using a friend’s VR rig, I walked through the models to better understand flow and utility. Many of the fixtures and appliances considered had 3D models available, so I was able to audition them in the space before making a commitment. When options were presented during the construction, I was able to model each permutation to better understand it in context, rather than rush a decision or leave it solely to the builder. It also helped immensely that the builder was comfortable with SketchUp, so I could send ideas over for them to assess feasibility. In the end, the build came remarkably close to the model.
 
 <ImageCompare
 $size="large"
 image1="/projects/home-renovation/0S7A7533-sketchup.jpg"
 image2="/projects/home-renovation/0S7A7533.jpg"  
-caption="Comparison between SketchUp model and finished space"
+caption="Comparison of SketchUp model and finished space"
 position="33"
 />
+
+The final design attempts to blend old with new, and mixes modern lines with natural materials. This was the first space I've designed, but I found the principles familiar to what I knew in other disciplines, and learned a lot about the process along the way. I go into more detail about a few of my favourite features below.
+
+<ImageCompare
+$size="large"
+image1="/projects/home-renovation/0S7A7604-before.jpg"
+image2="/projects/home-renovation/0S7A7604.jpg"
+caption="Comparison of mid-demoliton and final"
+/>
+
+<PostImage $size="full" src="/projects/home-renovation/0S7A7712.jpg" />
 
 <PostImage $size="full" src="/projects/home-renovation/0S7A7686.jpg" />
 
@@ -87,7 +87,7 @@ For each fixture, I had an electrician run a standard line-voltage light switch 
 
 In total I built five discrete lights; each addressable individually or by group from the Philips Hue app or any voice assistant. They work seamlessly with standard in-wall switches to match the rest of the house.
 
-In terms of brightness, at peak output the three fixtures in the kitchen are capable of roughly 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78 Philips Hue GU10s – i.e _crazy_ bright.
+In terms of brightness, at peak output the three fixtures in the kitchen are capable of roughly 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78(!) Philips Hue GU10s. In a pinch, it could probably be used as an operating room.
 
 <Figure $size="large">
   <Grid $gutter="calc(var(--spaceDefault) / 2)">
@@ -109,7 +109,7 @@ Towards the back of the house, there is a bank of three full-height cabinets on 
 
 <PostImage $size="large" src="/projects/home-renovation/0S7A7645.jpg" caption="The second handle on the left is a powder room. This lower level was previously an attached garage"/>
 
-The powder room is painted a deep navy, in contrast to the otherwise bright house. A feature wall has floor-to-ceiling period appropriate wallpaper by William Morris, in a pattern called Golden Lily.
+I painted the powder room in a deep navy, in contrast to the otherwise bright house. A feature wall has floor-to-ceiling period appropriate wallpaper by William Morris, in a pattern called Golden Lily.
 
 I had a friend sandblast chrome bathroom fixtures to reveal the raw brass underneath, and treated them with an acid mixture to accelerate patina into cohesion with original fixtures in the house.
 
@@ -117,4 +117,4 @@ I had a friend sandblast chrome bathroom fixtures to reveal the raw brass undern
 
 When the powder room door opens, a ZigBee-enabled reed switch communicates with Home Assistant running on a Raspberry Pi to turn the lights on. If we're entertaining, the linear fixture outside the door can turn into an airplane-style occupancy indicator, turning red when occupied and green when available.
 
-<PostVideo $size="large" src="/video/projects/home-renovation/occupancy-demo-color-corrected.mp4" caption="Door to main floor powder room w/occupancy automation enabled. Mostly a joke but we've used it once or twice." />
+<PostVideo $size="large" src="/video/projects/home-renovation/occupancy-demo-color-corrected.mp4" caption="Door to main floor powder room with occupancy automation enabled" />

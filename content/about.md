@@ -11,4 +11,4 @@ In 2014 I joined the design team at Black Pixel; a mobile-focused digital produc
 
 Black Pixel was acquired by Hypergiant in late 2018, where I am presently Director of Web Development.
 
-Offline, I play hockey and soccer, collect twentieth-century [furniture](https://twitter.com/bradcerasani/status/1214300670901141504) and [objects](https://www.instagram.com/p/CEm_0otAZo1/?utm_source=ig_web_copy_link), and bury myself in <Link to="/#side-projects">side projects</Link> that generally follow themes of design, technology, and making things.
+Offline, I play hockey and soccer, collect twentieth-century [furniture](https://twitter.com/bradcerasani/status/1214300670901141504) and [objects](https://www.instagram.com/p/CEm_0otAZo1/?utm_source=ig_web_copy_link), and bury myself in <Link to="/#side-projects">side projects</Link> that follow themes of design, technology, and making things.

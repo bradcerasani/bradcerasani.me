@@ -12,7 +12,7 @@ export const Figure = styled.figure`
   @media (min-width: ${breakpoint.md}) {
     margin-left: 0;
     margin-right: 0;
-    margin-top: 0;
+    margin-top: 2rem;
 
     ${({ $size }) => {
       switch ($size) {
@@ -42,8 +42,12 @@ export const Figure = styled.figure`
           `;
 
         default:
-          return;
+          return css`
+            ${Caption} {
+              margin-bottom: 2rem;
+            }
+          `;
       }
-    }}
+    }};
   }
 `;

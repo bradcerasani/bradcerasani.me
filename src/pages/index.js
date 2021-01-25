@@ -27,7 +27,7 @@ function Home(props) {
       </style>
 
       <main>
-        <section style={{ marginBottom: 'var(--spaceMedium)' }}>
+        <section style={{ marginBottom: 'calc(var(--spaceMedium) / 2)' }}>
           <p
             dangerouslySetInnerHTML={{
               __html: props.data.mdx.frontmatter.excerpt,
@@ -45,7 +45,12 @@ function Home(props) {
         </section>
 
         <section>
-          <h2 style={{ paddingTop: '0' }}>Side Projects</h2>
+          <h2
+            style={{ paddingTop: 'calc(var(--spaceMedium) / 2)' }}
+            id="side-projects"
+          >
+            Side Projects
+          </h2>
           <Timeline>
             {contents.map(({ node }) => (
               <TimelineItem

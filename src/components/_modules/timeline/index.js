@@ -65,7 +65,9 @@ export const TimelineItem = ({ fields, frontmatter }) => {
         />
 
         {!frontmatter.skipPage && (
-          <Button to={!isDraft ? slug : null}>{buttonText}</Button>
+          <Button to={!isDraft ? slug : null} as={!isDraft ? null : 'a'}>
+            {buttonText}
+          </Button>
         )}
       </TimelineItemDetailsWrapper>
     </StyledTimelineItem>

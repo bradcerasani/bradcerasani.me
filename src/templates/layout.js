@@ -17,7 +17,7 @@ function Layout({ children, ...props }) {
 
     if (!window.sessionStorage.getItem('logged')) {
       console.log(
-        '%c Would you like to play a game?  https://bradcerasani.me/play',
+        '%c Are you looking for this?  https://bradcerasani.me/play',
         'color: white; background-color: hsl(0, 0%, 10%); padding: 1rem;'
       );
       sessionStorage.setItem('logged', true);

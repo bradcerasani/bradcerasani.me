@@ -1,6 +1,6 @@
 ---
 title: The Black Pixel Web Stack
-description: A post written shortly after the formalization of Black Pixel's Web Services team, evangelizing our preferred tools and technologies.
+description: Written shortly after the formalization of Black Pixel's Web Services team, this post features our go-to tools and technologies for developing great experiences.
 date: '2016-06-08'
 ---
 

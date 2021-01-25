@@ -1,24 +1,18 @@
 ---
 title: Hue Gallery
-description: An article I wrote for the December 2016 issue of net magazine, detailing how to create an immersive media experience a few years before Hue Sync.
+description: Originally authored for net magazine, this article details how to create an immersive media experience with the Philips Hue API.
 date: '2016-01-01'
 image: /video/projects/hue-gallery/hue-gallery.mp4
 favicon: 🌄
 status: live
 ---
 
-<!-- I wrote an article for the December 2016 issue of net magazine detailing how to create an immersive photo browsing experience with Philips Hue.
-
-My [coworker](https://brandonjpierce.com/) and I created a project that extracts an image’s colour palette, refines the selection by filtering dark and less saturated values, and sends the resulting values to the Philips Hue API when an image is scrolled into view. Philips Hue Sync (released 2018) is a better, realtime way of achieving the same effect at the OS level, and Philips Hue Play HDMI Sync Box (2019) is a standalone device that achieves this effect with existing media players.
-
-The original article is available in full [here](/projects/hue-gallery/), as well as an accompanying video my partner and I made of the effect in action. -->
-
 import { Swatches } from './swatches';
 import commentary from './commentary';
 
 <Note>
 
-This article was originally published in the December 2016 issue of [net magazine](https://www.creativebloq.com/net-magazine). Philips released the [Hue Sync App](https://www.theverge.com/2018/5/31/17412314/philips-hue-sync-windows-mac-review) a few years later, which is an official way of achieving a similar effect to that described below.
+This article was originally published in the December 2016 issue of [net magazine](https://www.creativebloq.com/net-magazine). Philips released [Hue Sync](https://www.theverge.com/2018/5/31/17412314/philips-hue-sync-windows-mac-review) a few years later, which is a better, official way of achieving a similar effect to that described below.
 
 </Note>
 
@@ -248,6 +242,8 @@ function setLightColor(id, xy) {
   });
 }
 ```
+
+<PostImage src="/projects/hue-gallery/hero.jpg" $size="large" />
 
 [^1]: [ZigBee](https://en.wikipedia.org/wiki/Zigbee) is a wireless protocol commonly used for mesh networks with simple data requirements. In a mesh network, nodes are interconnected and each acts as a wireless transceiver and repeater. ZigBee supports tens of thousands of nodes per network and consumes very little power, but it can only transfer simple packets of data.
 [^2]: Thank you [Brandon Pierce](https://twitter.com/BrandonJPierce), [Rebekah Wolf](https://twitter.com/rebekahwolf), and Tim Hetland for their help.

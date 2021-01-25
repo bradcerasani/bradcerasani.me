@@ -1,6 +1,6 @@
 ---
 title: AnnaAkana.com
-description: The design and build of a new website for multihyphenate Anna Akana, including a custom Node.js service that pipes realtime statistics to the UI via websockets.
+description: Designing and building a new website for multihyphenate Anna Akana, including a custom Node.js service that pipes realtime social statistics to the UI over websockets.
 date: '2014-01-01'
 image: /video/projects/anna-akana/anna-akana-website.mp4
 favicon: 🎬

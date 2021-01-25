@@ -1,6 +1,6 @@
 ---
 title: Hacky Styling of :visited Links
-description: Using CSS pseudo elements to add a checkmark to visited links.
+description: Using CSS pseudo elements to expand on what's possible when styling visited links.
 date: '2013-10-18'
 ---
 

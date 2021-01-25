@@ -1,6 +1,6 @@
 ---
 title: Liftoff
-description: Blog post accompanying a portfolio update that details adding future-looking support for 5k displays 2 years before they were commercially available.
+description: Blog post accompanying a portfolio update that included future-looking support for 5k displays 2 years before they existed.
 date: '2012-12-06'
 ---
 
@@ -10,7 +10,7 @@ This post coincided with the launch of an updated portfolio site in 2012. The si
 
 </Note>
 
-Shedbot 2.0 reflects a sharper focus on building for the web. The old website has been refined into a single page responsive layout with a small, select portfolio of web projects. The new site is lightweight, and progressively enhances for high pixel density "retina" displays with resolutions up to an absurd 5120 x 2880[^1].
+Shedbot 2.0 reflects a sharper focus on building for the web. The old website has been refined into a single page responsive layout with a small, select portfolio of web projects. The new site is lightweight, and progressively enhances for high pixel density "retina" displays with resolutions up to an absurd[^1] 5120 x 2880.
 
 <PostImage src="/writing/liftoff/moon.jpg" alt="Alt text" caption="Moon over Kenora, Ontario – 10&quot; f4.7 Newtonian telescope, Canon 7D" $size="large" />
 

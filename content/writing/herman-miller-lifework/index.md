@@ -1,6 +1,6 @@
 ---
 title: Herman Miller Lifework
-description: Herman Miller interviewed me for their Lifework blog.
+description: An interview with Herman Miller for their Lifework blog.
 date: '2013-05-08'
 image: /writing/herman-miller-lifework/lifework-cover.jpg
 cta: Read Interview

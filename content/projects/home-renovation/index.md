@@ -1,6 +1,6 @@
 ---
 title: Designing <br /> a Home
-description: Blending the old with the new in the renovation of our 1920s home, adventures in custom lighting, and learning how to design in 3D.
+description: Blending the old with the new in the renovation of our 1920s home, adventures in custom lighting fabrication, and learning how to model in 3D.
 date: '2018-01-01'
 daterange: 2017–2018
 image: /projects/home-renovation/hero.jpg
@@ -8,9 +8,9 @@ favicon: 🏠
 status: live
 ---
 
-From 2017-2018, we had our home renovated.
+From 2017-2018, my wife and I had our home renovated. I designed the spaces, and we had a design-minded builder execute the work.
 
-A friend introduced me to SketchUp, and helped with some initial models of the space. Using these files as a starting point, I spent several months iterating on the design with increasing fidelity, repeating the process as constraints emerged through demolition. Our house is close to 100 years old, and any renovation—especially in an old house⁠—is bound for surprises.
+A friend had introduced me to SketchUp, and helped with some initial models of the space. Using these files as a starting point, I spent several months iterating on the design with increasing fidelity, revisiting the process as constraints emerged through demolition. Our house is close to 100 years old, and any renovation—especially in an old house⁠—is bound for surprises.
 
 <!-- <PostImage src="/projects/home-renovation/IMG_0148.jpg" caption="Kitchen before"/> -->
 

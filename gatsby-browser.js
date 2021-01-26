@@ -11,6 +11,7 @@ import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
 import {
+  Caption,
   Figure,
   Grid,
   GridItem,
@@ -24,6 +25,7 @@ import {
 } from 'src/components';
 
 const components = {
+  Caption,
   Figure,
   Grid,
   GridItem,

@@ -51,9 +51,9 @@ In continuing the mix of old and new, I integrated Danish lighting from the 1950
 
 <PostImage $size="large" src="/projects/home-renovation/0S7A7555.jpg" caption="One of three custom-made linear lights in the kitchen"/>
 
-The linear lights consist of flush-mount aluminum channels with diffusers, [five-channel LED strips](https://sowilodesign.com/) colour-matched to Philips Hue, dual PWM amplifiers (RGB and tunable white), Philips Hue LS+ controllers, and commercial power supplies.
+The linear lights consist of flush-mount aluminum channels with diffusers, five-channel LED strips[^1] colour-matched to Philips Hue, dual PWM[^2] amplifiers (RGB and tunable white), Philips Hue LS+ controllers, and commercial power supplies.
 
-In order to eliminate hotspots, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW diode clusters. In testing several methods of mounting and diffusion, I found this approach to be the best balance of heat dissipation and output.
+In order to eliminate hotspots, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW[^3] diode clusters. In testing several methods of mounting and diffusion, I found this approach to be the best balance of heat dissipation and output.
 
 <Figure $size="large">
   <Grid $gutter="calc(var(--spaceDefault) / 2)">
@@ -85,9 +85,9 @@ For each fixture, I had an electrician run a standard line-voltage light switch 
   </Grid>
 </Figure>
 
-In total I built five discrete lights; each addressable individually or by group from the Philips Hue app or any voice assistant. They work seamlessly with standard in-wall switches to match the rest of the house.
+In total I built five discrete lights; each addressable individually or by group from the Philips Hue app or any voice assistant. All of them work seamlessly with standard in-wall switches to match the rest of the house.
 
-In terms of brightness, at peak output the three fixtures in the kitchen are capable of roughly 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78(!) Philips Hue GU10s. In a pinch, it could probably be used as an operating room.
+In terms of brightness, at peak output the three fixtures in the kitchen are capable of roughly 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78(!) Philips Hue GU10s. A (desired) side effect of having this much available light is that in practice, the fixtures are rarely over 50% power, which should extend the lifespan of the LEDs considerably.
 
 <Figure $size="large">
   <Grid $gutter="calc(var(--spaceDefault) / 2)">
@@ -109,12 +109,17 @@ Towards the back of the house, there is a bank of three full-height cabinets on 
 
 <PostImage $size="large" src="/projects/home-renovation/0S7A7645.jpg" caption="The second handle on the left is a powder room. This lower level was previously an attached garage"/>
 
-I painted the powder room in a deep navy, in contrast to the otherwise bright house. A feature wall has floor-to-ceiling period appropriate wallpaper by William Morris, in a pattern called Golden Lily.
+I painted the powder room a deep navy, in contrast to the otherwise bright house. A feature wall has floor-to-ceiling period appropriate wallpaper by William Morris, in a pattern called Golden Lily[^4].
 
-I had a friend sandblast chrome bathroom fixtures to reveal the raw brass underneath, and treated them with an acid mixture to accelerate patina into cohesion with original fixtures in the house.
+I had a friend sandblast chrome bathroom fixtures to reveal the raw brass underneath, and treated them with an acid mixture to accelerate patina into cohesion with other original fixtures in the house.
 
 <PostImage $size="full" src="/projects/home-renovation/0S7A8615.jpg" caption="Main floor powder room"/>
 
 When the powder room door opens, a ZigBee-enabled reed switch communicates with Home Assistant running on a Raspberry Pi to turn the lights on. If we're entertaining, the linear fixture outside the door can turn into an airplane-style occupancy indicator, turning red when occupied and green when available.
 
 <PostVideo $size="large" src="/video/projects/home-renovation/occupancy-demo-color-corrected.mp4" caption="Door to main floor powder room with occupancy automation enabled" />
+
+[^1]: The lightstrips are called [Bifröst](https://sowilodesign.com/collections/bifrost/products/bifrost-147-pro-led-strip) and made by a company called [Sowilo DS](https://sowilodesign.com/). I was one of their first customers, and Mike from Sowilo was immensely helpful throughout this process.
+[^2]: PWM stands for [Pulse Width Modulation](https://en.wikipedia.org/wiki/Pulse-width_modulation).
+[^3]: CW•RGB•WW stands for Cool White, Red, Green, Blue, and Warm White. With the strips I used, the cool white diode is 6500k, and the warm white is 2200k.
+[^4]: If you've watched [Sex Education](https://www.netflix.com/title/80197526) on Netflix, Dr. Jean Milburn (Otis' mum) has this same wallpaper along with other [William Morris](https://en.wikipedia.org/wiki/William_Morris) patterns throughout her house. William Morris was a pioneer of the [Arts and Crafts movement](https://en.wikipedia.org/wiki/Arts_and_Crafts_movement).

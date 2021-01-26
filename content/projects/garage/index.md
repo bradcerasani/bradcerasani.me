@@ -2,7 +2,7 @@
 title: Garage Design/Build
 description: For several months I spent evenings and weekends building a garage, learning framing and finishing carpentry as I went. The structure is clad in continuous vertical planks of western red cedar, and features a concealed flush-mount door that is automated with HomeKit.
 date: '2019-01-01'
-image: /video/projects/garage/garage-animation-slow-optimized.mp4
+video: /video/projects/garage/garage-animation-slow-optimized.mp4
 status: draft
 cta: Draft
 ---

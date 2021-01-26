@@ -124,14 +124,15 @@ export const StyledTimelineItem = styled(TimelineItem)`
       }
 
       ${TimelineItemImageWrapper}::after {
-        width: 0.75rem;
-        height: 0.75rem;
         border-radius: 50%;
         border: 1px solid currentColor;
+        content: '';
+        height: 0.75rem;
+        left: -2.875rem;
+        margin-left: 1px; /* nudge to centre */
         position: absolute;
         top: -3.5rem;
-        left: -2.875rem;
-        content: '';
+        width: 0.75rem;
       }
     }
 

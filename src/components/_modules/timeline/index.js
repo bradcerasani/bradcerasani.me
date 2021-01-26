@@ -19,33 +19,35 @@ export const Timeline = styled.div`
 export const TimelineItem = ({ fields, frontmatter }) => {
   const { slug, type } = fields;
   const {
-    title,
-    description,
-    image,
+    cta,
     date,
     daterange,
-    cta,
+    description,
+    image,
     status,
+    title,
+    video,
   } = frontmatter;
 
   const buttonText = cta || (type === 'WRITING' ? 'Read Post' : 'View Project');
   const isDraft = status === 'draft';
   const size = type === 'WRITING' || isDraft ? 'default' : 'large';
+  const showMedia = video || image;
 
   return (
     <StyledTimelineItem $status={status}>
-      {image && (
+      {showMedia && (
         <Link to={slug}>
           <TimelineItemImageWrapper>
-            {isImage(image) ? (
+            {video ? (
+              <PostVideo src={video} $size={size} />
+            ) : (
               <Image
                 src={image}
                 sizes="1040px"
                 alt={stripTags(title)}
                 $size={size}
               />
-            ) : (
-              <PostVideo src={image} $size={size} />
             )}
           </TimelineItemImageWrapper>
         </Link>

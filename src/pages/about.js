@@ -22,7 +22,7 @@ function About(props) {
       <Layout>
         <Head
           title="About Brad Cerasani"
-          description={post.frontmatter.excerpt}
+          description={post.frontmatter.description}
           slug={post.slug}
         />
 
@@ -100,7 +100,7 @@ export const pageQuery = graphql`
       id
       body
       frontmatter {
-        excerpt
+        description
       }
       slug
     }

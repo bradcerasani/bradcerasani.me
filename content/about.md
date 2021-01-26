@@ -1,5 +1,5 @@
 ---
-excerpt: I’ve been designing and implementing software for over a decade, with clients and collaborators that include Apple, Twitter, and the American Music Awards.
+description: I’ve been designing and implementing software for over a decade, with clients and collaborators that include Apple, Twitter, and the American Music Awards.
 skipPage: true
 ---
 

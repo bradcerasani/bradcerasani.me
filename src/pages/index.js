@@ -7,11 +7,14 @@ import { Button, Head, Timeline, TimelineItem } from 'src/components';
 
 function Home(props) {
   const contents = props.data.allMdx.edges;
-  const excerpt = props.data.mdx.frontmatter.excerpt;
+  const description = props.data.mdx.frontmatter.description;
 
   return (
     <Layout>
-      <Head title="Brad Cerasani" description={`Hi, I'm Brad. ${excerpt}`} />
+      <Head
+        title="Brad Cerasani"
+        description={`Hi, I'm Brad. ${description}`}
+      />
 
       <style>
         {css`
@@ -28,7 +31,7 @@ function Home(props) {
         <section style={{ marginBottom: 'calc(var(--spaceMedium) / 2)' }}>
           <p
             dangerouslySetInnerHTML={{
-              __html: excerpt,
+              __html: description,
             }}
             style={{ marginBottom: 'calc(var(--spaceDefault) / 2)' }}
           />
@@ -70,7 +73,7 @@ export const pageQuery = graphql`
   query {
     mdx(fields: { slug: { eq: "/about/" } }) {
       frontmatter {
-        excerpt
+        description
       }
     }
     allMdx(
@@ -92,6 +95,7 @@ export const pageQuery = graphql`
             skipPage
             status
             title
+            video
           }
         }
       }

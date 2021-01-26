@@ -124,7 +124,6 @@ export const pageQuery = graphql`
   query ProjectDetailBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 240)
       body
       frontmatter {
         title

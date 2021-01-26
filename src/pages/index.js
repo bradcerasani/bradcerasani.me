@@ -7,13 +7,11 @@ import { Button, Head, Timeline, TimelineItem } from 'src/components';
 
 function Home(props) {
   const contents = props.data.allMdx.edges;
+  const excerpt = props.data.mdx.frontmatter.excerpt;
 
   return (
     <Layout>
-      <Head
-        title="Design & Engineering"
-        description="The personal site of designer & developer Brad Cerasani."
-      />
+      <Head title="Brad Cerasani" description={`Hi, I'm Brad. ${excerpt}`} />
 
       <style>
         {css`
@@ -30,7 +28,7 @@ function Home(props) {
         <section style={{ marginBottom: 'calc(var(--spaceMedium) / 2)' }}>
           <p
             dangerouslySetInnerHTML={{
-              __html: props.data.mdx.frontmatter.excerpt,
+              __html: excerpt,
             }}
             style={{ marginBottom: 'calc(var(--spaceDefault) / 2)' }}
           />

@@ -5,6 +5,7 @@ body {
   font-family: var(--fontFamilySansSerif);
   font-size: 16px;
   min-height: 100%;
+  transition: background-color, color var(--transitionSlow);
 }
 
 @media (min-width: 800px) {
@@ -16,20 +17,14 @@ body {
 
 html {
   background-color: var(--backgroundColor);
-  transition-duration: 600ms;
-  transition-property: background-color, color;
-  transition-timing-function: ease-in-out;
 }
 
 body {
   background-color: var(--backgroundOverlayColor);
   color: var(--textColor);
   line-height: 1.5;
-  text-rendering: optimizeLegibility;
-  transition-duration: 600ms;
-  transition-property: background-color, color;
-  transition-timing-function: ease-in-out;
   min-height: 100vh;
+  text-rendering: optimizeLegibility;
 }
 
 body::after {

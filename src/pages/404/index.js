@@ -27,7 +27,11 @@ function PageNotFound() {
 
   return (
     <Layout headline="Page Not Found">
-      <Head title="404: Page Not Found" />
+      <Head
+        title="404: Page Not Found"
+        description="404: Page Not Found"
+        index={false}
+      />
 
       <Loading style={{ opacity: isLoaded ? 0 : 1 }} />
 
@@ -63,7 +67,9 @@ function PageNotFound() {
         </GridItem>
 
         <GridItem $width={{ md: '50%' }}>
-          <h5 style={{ paddingTop: 'var(--spaceDefault)' }}>Error 404</h5>
+          <h3 style={{ paddingTop: 'var(--spaceDefault)', color: 'inherit' }}>
+            Error 404
+          </h3>
 
           <p
             style={{
@@ -71,8 +77,7 @@ function PageNotFound() {
               marginBottom: 'calc(var(--spaceDefault) / 2)',
             }}
           >
-            The page you requested was not found. It could be in Carole Baskin's
-            septic tank.
+            Sorry we couldn't find the page you requested.
           </p>
 
           <MuteButton onClick={() => setMuted(!muted)}>

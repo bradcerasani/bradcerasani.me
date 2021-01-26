@@ -10,6 +10,7 @@ export const Head = ({
   children,
   slug,
   favicon = '⚗️',
+  index = true,
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -18,36 +19,27 @@ export const Head = ({
           siteMetadata {
             title
             description
-            author
             siteUrl
             image
-            social {
-              twitter
-            }
           }
         }
       }
     `
   );
 
+  const metaTitle = stripTags(title);
   const metaDescription = description || site.siteMetadata.description;
   const metaImage = image || site.siteMetadata.image;
   const metaImageUrl = `https://bradcerasani.imgix.net/images${metaImage}?w=1600`;
-  const metaAuthor = site.siteMetadata.author;
-  const metaUrl = `${site.siteMetadata.siteUrl}/${slug}`;
-  const metaTwitter = site.siteMetadata.social.twitter;
+  const metaUrl = `${site.siteMetadata.siteUrl}/${slug ? slug : ''}`;
 
   return (
     <Helmet
-      title={stripTags(title)}
-      titleTemplate={`%s – ${site.siteMetadata.title}`}
+      title={metaTitle}
       htmlAttributes={{
         lang: 'en',
       }}
     >
-      <meta name="description" content={metaDescription} />
-      <link rel="canonical" href={metaUrl} />
-
       {favicon && (
         <link
           rel="icon"
@@ -55,18 +47,26 @@ export const Head = ({
         />
       )}
 
-      <meta property="og:title" content={metaAuthor} />
+      <meta name="robots" content={index ? 'index,follow' : 'noindex'} />
+      <meta name="googlebot" content={index ? 'index,follow' : 'noindex'} />
+
+      <link rel="canonical" href={metaUrl} />
+      <meta name="description" content={metaDescription} />
+
       <meta property="og:type" content="website" />
+      <meta property="og:title" content={metaTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:url" content={metaUrl} />
       <meta property="og:image" content={metaImageUrl} />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content={metaTwitter} />
-      <meta name="twitter:title" content={metaAuthor} />
+      <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:url" content={metaUrl} />
       <meta name="twitter:image" content={metaImageUrl} />
+      <meta name="twitter:site:id" content="@bradcerasani" />
+      <meta name="twitter:creator" content="@bradcerasani" />
+
       {children}
     </Helmet>
   );

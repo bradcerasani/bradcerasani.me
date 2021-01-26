@@ -1,12 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Brad Cerasani`,
+    title: `Hey, I'm Brad`,
     author: `Brad Cerasani`,
     description: `Brad Cerasani: Design & Engineering`,
     siteUrl: `https://bradcerasani.me`,
-    image: `/images/brad-cerasani-office-wide.jpg`,
+    image: `/brad-cerasani-office-wide.jpg`,
     social: {
       twitter: `bradcerasani`,
+      instagram: `bradcerasani`,
+      github: `bradcerasani`,
     },
   },
   plugins: [

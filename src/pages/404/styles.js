@@ -38,8 +38,7 @@ export const Theme = createGlobalStyle`
     color: inherit;
   }
 
-  h1,
-  h5 {
+  h1 {
     color: inherit
   }
 `;

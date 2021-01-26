@@ -7,10 +7,7 @@ import { Head } from 'src/components';
 function StyleGuide() {
   return (
     <Layout>
-      <Head
-        title="Design & Engineering"
-        description="The personal site of designer & developer Brad Cerasani."
-      />
+      <Head title="Brad Cerasani" index={false} />
 
       <style>
         {css`

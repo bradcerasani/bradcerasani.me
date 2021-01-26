@@ -21,8 +21,8 @@ function About(props) {
     <>
       <Layout>
         <Head
-          title="About"
-          description="About Brad Cerasani; Design & Engineering."
+          title="About Brad Cerasani"
+          description={post.frontmatter.excerpt}
           slug={post.slug}
         />
 

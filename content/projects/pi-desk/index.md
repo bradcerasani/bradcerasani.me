@@ -11,12 +11,39 @@ In 2015 Ikea’s Bekant series sit/stand desk came to Canada.
 
 I wrote a scraper that polled Ikea’s website for stock at my local store, and picked one up as soon as they were available. The desk worked fine, but the controller was very basic and didn’t have height presets, so I decided to make my own.
 
-I assumed the Ikea legs had some sort of sync unit and limit switches within them, and that I could just short the three-conductor controller wire in order to make the desk go up or down. This did not end up being the case, so I opened up the Ikea controller module and found a small PCB within it.
+I assumed the Ikea legs had some sort of sync unit and limit switches within them, and that I could just either side of the three-conductor controller wire in order to make the desk go up or down. This did not end up being the case, so I opened up the Ikea controller module and found a small PCB within it.
+
+<PostImage src="/projects/pi-desk/IMG_0809.jpg" caption="Surprise PCB" />
 
 To interface with this PCB as non-destructively as possible, I made a replacement for the original button’s ribbon wire out of plastic, flexible adhesive, and wires that I attached to a screw terminal. The screw terminal is connected to a bank of two relays for software control, and a 3.5mm headphone jack for pluggable hardware control in the event that the software isn’t working.
 
-<PostImage $size="large" src="/projects/pi-desk/hero.jpg" />
+<Figure $size="large">
+  <Grid $gutter="calc(var(--spaceDefault) / 2)">
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/pi-desk/IMG_0814.jpg" sizes="400px"/>
+    </GridItem>
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/pi-desk/IMG_0824.jpg" sizes="400px"/>
+    </GridItem>
+    <GridItem $width={{ sm: '1/3 * 100%' }}>
+      <Img src="/projects/pi-desk/IMG_0877.jpg" sizes="400px"/>
+    </GridItem>
+  </Grid>
+  <Caption>Making a hacky ribbon cable replacement</Caption>
+</Figure>
 
-The relays are connected to a Raspberry Pi running a basic controller software I wrote in Python and Node.js. It uses feedback from an ultrasonic sensor to measure the desk’s height. For software control, I made a series of Alfred shortcuts on my Mac that sent requests to the desk’s API. For hardware control, I wired up a SPDT on-off-on toggle switch.
+The relays are connected to a Raspberry Pi running basic controller software I wrote in Python and Node.js. Feedback from an ultrasonic sensor reports the desk's height, and the relays make it go up or down. Both the Pi and controller assembly are attached to the desk with neodymium magnets[^1] so they're easy to remove and debug whenever the need arises.
+
+For software control, I made a series of Alfred[^2] shortcuts on my Mac that send requests to the desk’s API. For hardware control, I wired up a SPDT[^3] on-off-on toggle switch. The first relay is wired so that the NC side closes the common wire of the toggle switch, meaning when the relay is off, the hardware control is enabled. When the first relay is on, the hardware control is disabled, and power is passed to the second relay, where the NC[^4] state makes the desk go up, and closing NO[^5] makes it go down. This configuration ensures that no combination of simulatneous hardware and software input will result in both up and down commands being sent to the motor controller at the same time, which could cause a short.
+
+<PostVideo $size="large" src="/video/projects/pi-desk/pi-desk-cooler.mp4" caption="Raising the desk with the hardware override" />
 
 At one point I wrote a wrapper for the desk’s API and opened it up to the internet during a meeting with my team at Black Pixel. This allowed my coworkers to control the desk’s height using slash commands in Slack. This was not one of my better ideas, but made for a memorable meeting (for me anyway).
+
+<PostImage $size="large" src="/projects/pi-desk/IMG_0900.jpg" />
+
+[^1]: Ironically one of the first magnets I attached was interfering the relays (which are electromagnetic). Using smaller magnets and more careful positioning remedied this but it took some debugging to figure out why it was happening.
+[^2]: [Alfred](https://www.alfredapp.com/) is a supercharged replacement for Spotlight on MacOS.
+[^3]: SPDT stands for Single Pole Double Throw.
+[^4]: NC stands for Normally Closed (circuit).
+[^5]: NO stands Normally Open (i.e. the opposite of NC).

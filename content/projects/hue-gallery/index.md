@@ -2,7 +2,8 @@
 title: Hue Gallery
 description: Originally authored for net magazine, this article details how to create an immersive media experience with the Philips Hue API.
 date: '2016-01-01'
-image: /video/projects/hue-gallery/hue-gallery.mp4
+image: /projects/hue-gallery/IMG_0367.jpg
+video: /video/projects/hue-gallery/hue-gallery.mp4
 favicon: 🌄
 status: live
 ---

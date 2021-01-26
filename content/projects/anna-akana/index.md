@@ -1,15 +1,16 @@
 ---
 title: AnnaAkana.com
-description: Designing and building a new website for multihyphenate Anna Akana, including a custom Node.js service that pipes realtime social statistics to the UI over websockets.
+description: Designing and building a new website for multihyphenate Anna Akana, including a custom Node.js service that pipes realtime social statistics to the UI over WebSocket.
 date: '2014-01-01'
-image: /video/projects/anna-akana/anna-akana-website.mp4
+video: /video/projects/anna-akana/anna-akana-website.mp4
+image: /projects/anna-akana/afflicted-inc.jpg
 favicon: 🎬
 status: live
 ---
 
 I worked with actor, writer, and director Anna Akana to build a new online home for a series of short films she released in 2014. The site holds details about the films, their cast and crew, and behind-the-scenes content.
 
-The site is managed with a PHP-based CMS and Node.js service I wrote that interacts with a handful of third-party APIs. When a new short film is added to the CMS, the Node process fetches metadata about the film from YouTube, caches it in Redis, and transports it to the front-end via WebSocket. A cron job polls the view and like counts for each short film, and the socket connection allows these changes to be reflected in the UI in real-time.
+The site is managed with a PHP-based CMS and Node.js service I wrote that interacts with social APIs. When a new short film is added to the CMS, the Node process fetches metadata about the film from YouTube, caches it in Redis, and transports it to the front-end via WebSocket. A cron job polls the view and like counts for each short film, and the socket connection allows these changes to be reflected in the UI in real-time.
 
 Each short film added to the CMS has an accompanying hashtag on Instagram for behind-the-scenes content that the Node process also queries and caches for display. The same flow is utilized to surface real-time subscriber/follower counts from YouTube, Facebook, Instagram, and Twitter.
 
@@ -19,4 +20,4 @@ The design of the short-film list utilizes cinematic 2.4:1 video previews that l
 
 <PostVideo src="/video/projects/anna-akana/anna-akana-website.mp4" $size="large" />
 
-Anna has since gone on to appear in TV and film for Marvel/Disney, Netflix, Lionsgate, ABC, Comedy Central, YouTube Red, and others.
+Anna has appeared in TV and film for Marvel/Disney, Netflix, Lionsgate, ABC, Comedy Central, YouTube Red, and others.

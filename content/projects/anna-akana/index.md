@@ -20,4 +20,4 @@ The design of the short-film list utilizes cinematic 2.4:1 video previews that l
 
 <PostVideo src="/video/projects/anna-akana/anna-akana-website.mp4" $size="large" />
 
-Anna has appeared in TV and film for Marvel/Disney, Netflix, Lionsgate, ABC, Comedy Central, YouTube Red, and others.
+Anna has appeared in TV and film for Marvel/Disney, Netflix, Lionsgate, ABC, Comedy Central, YouTube Red, and others. Check out the site here: [annaakana.com](https://annaakana.com/).

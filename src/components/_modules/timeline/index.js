@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { isImage, stripTags } from 'src/util';
-import { Button, Image, PostVideo } from 'src/components';
+import { stripTags } from 'src/util';
+import { Button, Image, PostVideo, VisuallyHidden } from 'src/components';
 
 import {
   StyledTimelineItem,
@@ -33,6 +33,7 @@ export const TimelineItem = ({ fields, frontmatter }) => {
   const isDraft = status === 'draft';
   const size = type === 'WRITING' || isDraft ? 'default' : 'large';
   const showMedia = video || image;
+  const displayTitle = stripTags(title);
 
   return (
     <StyledTimelineItem $status={status}>
@@ -45,11 +46,13 @@ export const TimelineItem = ({ fields, frontmatter }) => {
               <Image
                 src={image}
                 sizes="1040px"
-                alt={stripTags(title)}
+                alt={description}
                 $size={size}
               />
             )}
           </TimelineItemImageWrapper>
+
+          <VisuallyHidden>{displayTitle}</VisuallyHidden>
         </Link>
       )}
 
@@ -57,7 +60,7 @@ export const TimelineItem = ({ fields, frontmatter }) => {
         <TimelineItemNode>{daterange || date}</TimelineItemNode>
 
         <Link to={slug}>
-          <h3>{stripTags(title)}</h3>
+          <h3>{displayTitle}</h3>
         </Link>
 
         <p
@@ -67,7 +70,7 @@ export const TimelineItem = ({ fields, frontmatter }) => {
         />
 
         {!frontmatter.skipPage && (
-          <Button to={!isDraft ? slug : null} as={!isDraft ? null : 'a'}>
+          <Button to={!isDraft ? slug : null} as={isDraft ? 'a' : null}>
             {buttonText}
           </Button>
         )}

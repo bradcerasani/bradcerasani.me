@@ -7,6 +7,7 @@ export * from './logo';
 export * from './note';
 export * from './video';
 export * from './vimeo';
+export * from './visually-hidden';
 
 export * from './_modules';
 export * from './_objects';

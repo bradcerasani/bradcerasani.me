@@ -21,6 +21,10 @@
       "destination": "/"
     },
     {
+      "source": "/projects/home-renovation",
+      "destination": "/projects/designing-a-home"
+    },
+    {
       "source": "/play",
       "destination": "https://www.youtube.com/embed/o-kOE0Uev74?autoplay=1"
     }

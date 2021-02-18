@@ -52,7 +52,6 @@ export const MobileNavOverlay = styled.div`
   min-height: 100%;
   left: 0;
   opacity: 0;
-  overflow: scroll;
   padding-left: var(--spaceDefault);
   padding-right: var(--spaceDefault);
   padding-top: 5rem;

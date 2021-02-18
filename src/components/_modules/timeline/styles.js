@@ -115,12 +115,18 @@ export const StyledTimelineItem = styled(TimelineItem)`
       pointer-events: none;
     `};
 
+  &:first-of-type {
+    figure {
+      margin-top: 0;
+    }
+  }
+
   /* TODO: Harden timeline start styles */
   @media (min-width: ${breakpoint.md}) {
     &:first-of-type {
       ${TimelineItemImageWrapper}::before {
-        height: calc(2.5rem + 100%);
-        top: -2.5rem;
+        height: calc(2rem + 100%);
+        top: -2rem;
       }
 
       ${TimelineItemImageWrapper}::after {
@@ -131,7 +137,7 @@ export const StyledTimelineItem = styled(TimelineItem)`
         left: -2.875rem;
         margin-left: 1px; /* nudge to centre */
         position: absolute;
-        top: -3.5rem;
+        top: -3rem;
         width: 0.75rem;
       }
     }

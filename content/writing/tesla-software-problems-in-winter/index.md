@@ -1,6 +1,6 @@
 ---
 title: Tesla software problems in winter
-description: Range estimates not adjusted for temperature, regenerative braking-induced traction loss, and other shortcomings of California-designed software in cold climates.
+description: When a car designed in California meets -40°.
 date: '2021-03-29'
 video: /video/writing/tesla-software-problems-in-winter/energy-contrast-compressed.mp4
 favicon: ❄️

@@ -50,7 +50,7 @@ function PostDetailTemplate(props) {
       )}
 
       <Head
-        title={`${post.frontmatter.title} | Brad Cerasani`}
+        title={`${post.frontmatter.title} ● Brad Cerasani`}
         description={description}
         image={image}
         slug={post.slug}

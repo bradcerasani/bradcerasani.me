@@ -3,6 +3,7 @@ title: Tesla software problems in winter
 description: Range estimates not adjusted for temperature, regenerative braking-induced traction loss, and other shortcomings of California-designed software in cold climates.
 date: '2021-03-29'
 video: /video/writing/tesla-software-problems-in-winter/energy-contrast-compressed.mp4
+favicon: ❄️
 ---
 
 I've driven a Model 3 for two winters now, and generally speaking it's a good cold weather car. I live in the [coldest major city in Canada](https://www.tourismwinnipeg.com/winter-experiences), and I do _not_ miss pumping gas in -40°. The ability to preheat the car in a closed garage without worrying about fumes is also really nice.

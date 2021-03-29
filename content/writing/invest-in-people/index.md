@@ -1,5 +1,5 @@
 ---
-title: Invest in People
+title: Invest in people
 description: Thoughts on inspiring people and recreating sketch notes on the web.
 date: '2013-11-20'
 ---

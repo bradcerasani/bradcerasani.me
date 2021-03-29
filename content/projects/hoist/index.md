@@ -1,5 +1,5 @@
 ---
-title: Hoist; <br /> The Band Years
+title: Hoist; <br /> the band years
 description: Fond memories of an intro to design and creative work.
 date: '2010-01-01'
 daterange: 2005–2010

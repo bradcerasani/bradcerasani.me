@@ -1,5 +1,5 @@
 ---
-title: Hacky Styling of :visited Links
+title: Hacky styling of :visited links
 description: Using CSS pseudo elements to expand on what's possible when styling visited links.
 date: '2013-10-18'
 ---

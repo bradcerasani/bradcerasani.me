@@ -1,5 +1,5 @@
 ---
-title: Garage Design/Build
+title: Garage design/build
 description: Over summer I spent evenings and weekends building a garage, learning framing and finishing carpentry as I went. The structure is clad in continuous vertical planks of western red cedar, and features a concealed flush-mount door that is automated with HomeKit.
 date: '2019-01-01'
 video: /video/projects/garage/garage-animation-slow-optimized.mp4
@@ -23,7 +23,7 @@ I thought, having never before framed or built any structure of consequence.
 
 <p></p>
 
-More soon...
+Write-up in progress...
 
 <!-- The garage is clad in full-length vertical cedar planks, fastened to a rain screen I made with fluted coroplast. The rain screen allows ventilation on the back side of the cedar, and reduces surface contact by ~90%. This helps prevent moisture from becoming trapped between it and the building wrap, which should increase its life considerably.
 

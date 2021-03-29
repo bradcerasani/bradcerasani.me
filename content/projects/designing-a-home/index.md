@@ -1,5 +1,5 @@
 ---
-title: Designing <br /> a Home
+title: Designing <br /> a home
 description: Blending the old with the new in the renovation of our 1920s home, adventures in custom lighting fabrication, and learning how to model in 3D.
 date: '2018-01-01'
 daterange: 2017–2018

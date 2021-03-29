@@ -1,5 +1,5 @@
 ---
-title: The Black Pixel Web Stack
+title: The Black Pixel web stack
 description: Written shortly after the formalization of Black Pixel's Web Services team, this post features our go-to tools and technologies for developing great experiences.
 date: '2016-06-08'
 ---

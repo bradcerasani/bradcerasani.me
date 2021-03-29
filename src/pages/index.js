@@ -50,7 +50,7 @@ function Home(props) {
             style={{ paddingTop: 'calc(var(--spaceMedium) / 2)' }}
             id="side-projects"
           >
-            Side Projects
+            Side projects &amp; writing
           </h2>
           <Timeline>
             {contents.map(({ node }) => (

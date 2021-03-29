@@ -133,10 +133,15 @@ section {
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: var(--spaceDefault);
   color: var(--colorGreyDarker);
-  font-size: 0.95rem;
+  margin-bottom: var(--spaceDefault);
+  margin-top: 0;
+}
+
+@media (min-width: 800px) {
+  p {
+    font-size: 0.95rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

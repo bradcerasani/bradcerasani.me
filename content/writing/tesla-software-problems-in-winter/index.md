@@ -2,7 +2,7 @@
 title: Tesla software problems in winter
 description: When Designed in California™ meets -40°.
 date: '2021-03-29'
-image: /writing/tesla-software-problems-in-winter/share.jpg
+image: /writing/tesla-software-problems-in-winter/share-bright.jpg
 video: /video/writing/tesla-software-problems-in-winter/energy-contrast-compressed.mp4
 favicon: ❄️
 skipHero: true

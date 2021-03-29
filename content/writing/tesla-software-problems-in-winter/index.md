@@ -8,7 +8,7 @@ favicon: ❄️
 
 I've driven a Model 3 for two winters now, and generally speaking it's a good cold weather car. I live in the [coldest major city in Canada](https://www.tourismwinnipeg.com/winter-experiences), and I do _not_ miss pumping gas in -40°. The ability to preheat the car in a closed garage without worrying about fumes is also really nice.
 
-Tesla has received criticism for frozen door handles and related hardware design that doesn't perform optimally in winter, but in my experience, they have the most room for improvement in software.
+Tesla has received criticism for frozen door handles and other hardware features that don't perform optimally in winter, but in my experience, the area with the most room for improvement is software.
 
 ## Inaccuracy of range estimates
 
@@ -24,7 +24,7 @@ I collected data from all of my drives in temperatures below 0°C (32°F) over t
 
 With a few taps it is possible to view a graph of the car's efficiency over the last 50, 25, or 10 kilometres driven, and a weighted prediction of remaining range based on these values and current charge level. While this prediction is generally more accurate than the primary range indicator, the assumption that efficiency of the previous `n` kilometres driven is indicative of the next `m` kilometres driven is still often wrong, and exposes an interesting bias in its design.
 
-<PostVideo $size="large" src="/video/writing/tesla-software-problems-in-winter/energy-contrast-compressed.mp4" caption="In winter a Tesla's energy graph can display a significantly different range projection than the primary range indicator" />
+<PostVideo $size="large" src="/video/writing/tesla-software-problems-in-winter/energy-contrast-compressed.mp4" caption="The energy graph can show a very different range projection than the primary indicator, and neither are consistently accurate" />
 
 In much of the world—especially cold climates—weather conditions can change considerably overnight, and low temperatures have a greater impact on range than even the most extreme driving patterns. **In Winnipeg, we can see more temperature fluctuation in a single day than San Francisco experiences in an entire year.** Even Tesla's concealed range prediction appears to be modeled after a use case wherein the driver has a regular ~50km commute in an area with limited temperature variation—which in all likelihood, it was.
 
@@ -82,15 +82,15 @@ Because of this, I can only assume the snowflake's drop shadow is a bug, and, si
 
 ## Closing
 
-Despite its cold weather shortcomings, I really like my car. 2020 was the first full year Tesla's Supercharger network spanned coast-to-coast in Canada, and their cars are becoming much more common in here.
+Despite its current shortcomings in cold weather, I'm optimistic my car will continue to improve over time. The one area I have noticed better winter performance year-over-year is Autopilot; in my first winter with the car, Autopilot was seldom available—unless road markings were clearly visible. This past winter it was available much more frequently and seemed to work well.
 
-Hopefully by next winter they're even better.
+Hopefully by next winter it's even better.
 
 ---
 
 Questions, comments, or corrections? Let me know on [Twitter](https://twitter.com/bradcerasani).
 
 [^1]: I also queried drives greater than 5 km in temperatures resembling that of San Francisco (8°C to 21°C), and found the accuracy of range estimation to be 90%.
-[^2]: To reiterate, reduced range in cold weather is generally not an issue—failing to provide an accurate range estimate is.
+[^2]: Again, reduced range in cold weather is usually not an issue, however failing to provide an accurate range estimate is.
 [^3]: In time, I suspect the accuracy of range estimates in EVs to be regulated within a reasonable margin of error the same way speedometers are.
 [^4]: See [Wikipedia](https://en.wikipedia.org/wiki/Twilight) for more on civil, nautical, and astronomical twilight.

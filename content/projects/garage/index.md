@@ -5,6 +5,7 @@ date: '2019-01-01'
 video: /video/projects/garage/garage-animation-slow-optimized.mp4
 status: draft
 cta: Draft
+skipPage: true
 ---
 
 <!-- In the summer of 2019, I designed and built a garage.

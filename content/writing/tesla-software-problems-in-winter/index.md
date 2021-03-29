@@ -82,13 +82,13 @@ The characteristics of the shadow are unlike any other in the UI; it's short, ha
 
 Because of this, I can only assume the snowflake's drop shadow is a bug, and, since it only appears in cold weather, it's plausible that few designers at Tesla have ever seen it.
 
-## Closing
+## Wrap up
 
-Despite its current shortcomings in winter, I don't hesitate to recommend a Tesla to people in cold climates—as long as they live somewhere they can plug it in. While I can usually go days without charging my car in summer, in winter it needs to be plugged in more often than not.
+Despite its current shortcomings in winter, I don't hesitate to recommend a Tesla to people in cold climates—as long as they usually park somewhere with power. While I can go days without charging my car in summer, in winter it really should be plugged in more often than not.
 
 The one area I have noticed better winter performance year-over-year is Autopilot. In my first winter with the car, Autopilot was seldom available unless road markings were clearly visible. This past winter it was available much more frequently and seemed to work well.
 
-2020 was the first full year Tesla had Supercharger infrastructure coast-to-coast in Canada, and the cars are becoming much more popular here. Hopefully they will prioritize more cold weather improvements, and make for a better driver experience next winter.
+2020 was the first full year Tesla had Supercharger infrastructure coast-to-coast in Canada, and their cars are becoming much more popular here. Hopefully they'll prioritize more cold weather improvements soon, and make for a better driver experience next winter.
 
 ---
 

@@ -31,12 +31,12 @@ const Hero = styled.div`
 
 function PostDetailTemplate(props) {
   const post = props.data.mdx;
-  const { date, description, image } = post.frontmatter;
+  const { date, description, image, skipHero } = post.frontmatter;
   const { previous, next } = props.data.sitePage.context;
 
   return (
     <Layout headline={post.frontmatter.title} date={date} showReturn>
-      {isImage(image) && (
+      {isImage(image) && !skipHero && (
         <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
           <Intrinsic aspectRatio={{ base: '1 / 1', md: '3 / 2', lg: '16 / 9' }}>
             <Img
@@ -131,6 +131,7 @@ export const pageQuery = graphql`
         description
         image
         favicon
+        skipHero
       }
       slug
     }

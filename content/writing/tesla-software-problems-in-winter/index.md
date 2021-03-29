@@ -37,7 +37,7 @@ Regenerative braking (regen) uses an electric vehicle's kinetic energy to charge
 
 In cold weather, a Tesla's ability to regeneratively brake is lessened due to a cold battery's reduced ability to accept charge. This makes it drive more like a regular car until the battery heats up and regen improves. When the battery _is_ sufficiently warm and regen is working, driving it sometimes reminds me of being a teenager again—riding in my friend's Honda Civic as he'd e-brake drift every snowy corner on our way home from school.
 
-**With regen working, coming off the accelerator too quickly can cause more regen-induced resistance in the car's drivetrain than there is between the tires and winter roads, so the car slides.** Because the amount of regen applied is relative to battery temperature and changes over the course of a drive, the driving experience changes too, and can catch you by surprise.
+With regen working, coming off the accelerator too quickly can cause more regen-induced resistance in the car's drivetrain than there is between the tires and winter roads, so the car slides. Because the amount of regen applied is relative to battery temperature and changes over the course of a drive, the driving experience changes too, and can catch you by surprise.
 
 Unlike Anti-lock Braking Systems (ABS), there does not appear to be any stutter or cadence in a Tesla's application of regen. To regain control and unlock the wheels from a regen-induced slide, one must counterintuitively resume pressure on the accelerator. A Tesla does not seem to recognize when it's experiencing regen-induced traction loss, or presumably it would stutter or reduce the amount of regen applied and compensate with the brakes.
 
@@ -81,7 +81,9 @@ Because of this, I can only assume the snowflake's drop shadow is a bug, and, si
 
 ## Closing
 
-Despite its cold weather shortcomings, I really like my car. 2020 was the first full year Tesla's Supercharger network spanned coast-to-coast in Canada, and their cars are becoming much more common in here. Thankfully software is easier to iterate than hardware, and hopefully by next winter they're even better.
+Despite its cold weather shortcomings, I really like my car. 2020 was the first full year Tesla's Supercharger network spanned coast-to-coast in Canada, and their cars are becoming much more common in here.
+
+Hopefully by next winter they're even better.
 
 ---
 

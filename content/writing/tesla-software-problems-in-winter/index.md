@@ -46,13 +46,13 @@ In some Teslas there is an option in the UI to globally reduce the amount of reg
 
 ## Climate control, humidity, and windshield defrost
 
-In cold climates, snow or ice on boots and jackets melts in the warmth of a car's interior and increases humidity, which then accumulates on cold glass in the form of fog or ice. This is intensified when breathing heavily after a workout, or carpooling with friends after a team sport.
+In cold climates, snow or ice on boots and jackets melts in the warmth of a car's interior and increases humidity, which then accumulates on cold glass in the form of fog or ice. This is especially common when breathing heavily after a workout, or carpooling with friends after a team sport.
 
 In auto mode of the Model 3's climate control, it is not possible to enable the windshield vents. Enabling them while in auto mode switches climate control to manual mode, but returning to auto mode disables them again. Auto mode may turn the windshield vents on periodically, but in my experience it is often not enough to maintain clear visibility.
 
 <PostVideo $size="large" src="/video/writing/tesla-software-problems-in-winter/climate-control-compressed.mp4" caption="In a Model 3's climate control, the windshield vents turn themselves off when in auto mode" />
 
-The windshield defrost mode works well and is extremely powerful, but it requires the driver to turn it on and off manually. Using it for light fog is like a farmer trying to fix a mouse problem by adopting a lion.
+The windshield defrost mode works well and is extremely powerful, but it requires the driver to turn it on and off manually. Using it for light fog is like a farmer addressing a mouse problem by adopting a lion.
 
 Further, when windshield defrost _is_ actually needed, the first tap of the control always blows cold air—even when ambient temperatures are -40°. A second tap is required for hot air. It would be nice if Tesla acknowledged that when temperatures are below a certain threshold, blowing more cold air into the cabin probably not the best default.
 
@@ -62,19 +62,19 @@ Tesla screens automatically switch to night (dark) mode at sunset, which is esse
 
 Switching to night mode before it is dark out can introduce glare that makes the screen difficult to see. The screen's ambient light sensor still works but it only adjusts backlight brightness, and no amount of backlight behind a dark UI will come close to legibility of a light UI when it's still light out.
 
-Using astronomical dusk or an AI-centric approach to make a better determination of when/when not to enable night mode would improve driver experience.
+Using astronomical dusk or an AI-centric approach to make a better determination of when or when not to enable night mode would improve driver experience.
 
 <PostImage src="/writing/tesla-software-problems-in-winter/IMG_0425.jpg" $size="large" caption="Night mode is automatically enabled at sunset, but at some latitudes sunset is a poor indicator of ambient light level" />
 
 ## Snowflake icon drop shadow
 
-Lastly... and I recognize this is especially pedantic... the Model 3 UI displays a snowflake icon when the battery is cold, indicating a reduction in available capacity. In cold climates this icon is a fixture for months—except perhaps for a short period after supercharging or hours of consecutive driving.
+Lastly... and I recognize this is especially pedantic... the Tesla UI displays a snowflake icon when the battery is cold, indicating a reduction in available capacity. In cold climates this icon is a fixture for months—except perhaps for a short period after supercharging or hours of consecutive driving.
 
 Presence of the indicator is fine, but the snowflake icon itself has an inexplicable drop shadow that exists nowhere else in the UI.
 
 <PostImage src="/writing/tesla-software-problems-in-winter/0S7A3613.jpg" $size="large" caption="Snowflake icon with inexplicable drop shadow" />
 
-The characteristics of the shadow are unlike any other in the UI; it's short, harsh, and opaque, rather than large, soft, and diffused. The shadow isn't used to visually separate the snowflake from background elements, because nothing is ever rendered behind it. The negative vertical positioning of the shadow doesn't make sense in our reality because it implies being lit from below, rather than above. I can't make sense of the shadow from an accessibility standpoint either because in context, the snowflake's blue colour alone as a higher contrast ratio than other elements of the UI that are more important.
+The characteristics of the shadow are unlike any other in the UI; it's short, harsh, and opaque, rather than large, soft, and diffused. The shadow isn't used to visually separate the snowflake from background elements, because nothing is ever rendered behind it. The negative vertical positioning of the shadow doesn't make sense in our reality because it implies being lit from below, rather than above. I can't make sense of the shadow from an accessibility standpoint either because in context, the snowflake's blue colour alone has better contrast than other elements of the UI that are objectively more important.
 
 <PostImage src="/writing/tesla-software-problems-in-winter/0S7A3592.jpg" $size="large" caption="Snowflake icon with inexplicable drop shadow in broader context" />
 
@@ -82,9 +82,11 @@ Because of this, I can only assume the snowflake's drop shadow is a bug, and, si
 
 ## Closing
 
-Despite its current shortcomings in cold weather, I'm optimistic my car will continue to improve over time. The one area I have noticed better winter performance year-over-year is Autopilot; in my first winter with the car, Autopilot was seldom available—unless road markings were clearly visible. This past winter it was available much more frequently and seemed to work well.
+Despite its current shortcomings in winter, I don't hesitate to recommend a Tesla to people in cold climates—as long as they live somewhere they can plug it in. While I can usually go days without charging my car in summer, in winter it needs to be plugged in more often than not.
 
-Hopefully by next winter it's even better.
+The one area I have noticed better winter performance year-over-year is Autopilot. In my first winter with the car, Autopilot was seldom available unless road markings were clearly visible. This past winter it was available much more frequently and seemed to work well.
+
+2020 was the first full year Tesla had Supercharger infrastructure coast-to-coast in Canada, and the cars are becoming much more popular here. Hopefully they will prioritize more cold weather improvements, and make for a better driver experience next winter.
 
 ---
 

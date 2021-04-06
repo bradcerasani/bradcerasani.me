@@ -24,6 +24,10 @@
       "destination": "/"
     },
     {
+      "source": "/tesla",
+      "destination": "/writing/tesla-software-problems-in-winter"
+    },
+    {
       "source": "/projects/home-renovation",
       "destination": "/projects/designing-a-home"
     },

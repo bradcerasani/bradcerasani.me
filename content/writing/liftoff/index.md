@@ -18,7 +18,7 @@ Load weight on mobile is 316K, 375K for mobile retina, 960K at largest non-retin
 
 The blog features responsive, full width images that are dynamically downloaded in 1 of 5 sizes depending on the user's screen resolution. Type is FF Tisa Web Pro and Proxima Nova, served by Typekit.
 
-## A Retina Web
+## A retina web
 
 There's no silver bullet approach to support a retina web, but as high pixel density displays become increasingly popular their support should be prioritized. Whenever the project allows, resources are better spent enhancing the user experience for those at the cutting edge of technology over patching fixes for non-compliant legacy browsers.
 

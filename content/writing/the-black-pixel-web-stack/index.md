@@ -34,7 +34,7 @@ Today, modern browsers and the latest version of Node are [nearing 100-percent c
 
 However, the rising popularity of JavaScript also brings a certain amount of “[JavaScript fatigue](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4),” especially when six years of language development land in a single release as happened with ES2015 last year. Fortunately steps are being taken to ensure [future releases of ECMAScript/JS](http://www.2ality.com/2015/11/tc39-process.html) are smaller and more frequent, and there are many [roundup-style newsletters](http://javascriptweekly.com/) and [websites](http://www.echojs.com/) that help filter signal through the noise of the bustling ecosystem that is modern-day JS development.
 
-## Frameworks and Libraries
+## Frameworks and libraries
 
 #### React
 
@@ -52,7 +52,7 @@ As mentioned above, Node marries an event-based, asynchronous API with Chrome’
 
 [PostCSS](http://postcss.org/) takes CSS source files and creates an abstract syntax tree (AST) of the contents it exposes via API. The rich plugin ecosystem of PostCSS allows developers to do almost anything imaginable to a CSS file’s contents. One of the most common uses for PostCSS is transpiling future CSS syntax to current-day syntax, so browsers can reliably interpret features like custom properties and the `var()` function for variable support. PostCSS is often referred to as some lofty technology that is _more_ proprietary than popular preprocessors like Sass, but this is far from the truth. PostCSS allows developers to write _less_ proprietary syntax. Bypassing Sass removes an enormous amount of abstraction between style input and output, resulting in better code. PostCSS forces you to think about what plugins you’d like to use to manipulate your code, instead of giving you more than you need.
 
-## Linting and Best Practices
+## Linting and best practices
 
 ![6ix-lint.gif](./6ix-lint.gif)
 
@@ -68,7 +68,7 @@ When writing CSS we use [atomic, immutable classes](http://csswizardry.com/2015/
 
 To lint our CSS, we use [Stylelint](http://stylelint.io/) and [postcss-bem-linter](https://github.com/postcss/postcss-bem-linter) with a [custom config for UsonianCSS](https://github.com/bradcerasani/stylelint-config-usoniancss). Stylelint is ESlint for CSS. It helps us maintain an alphabetical order of CSS properties, consistent block formatting, and naming conventions.
 
-## Future Tech
+## Future tech
 
 ![future-tech.gif](./future-tech.gif)
 

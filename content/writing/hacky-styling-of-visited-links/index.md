@@ -29,7 +29,7 @@ a:visited {
 
 Boring, eh? Not to worry, we can work with this.
 
-## Basic Link Styling
+## Basic link styling
 
 First, we'll create a link and give it some styling. Note: I'm using Sass here instead of vanilla CSS[^1].
 
@@ -62,7 +62,7 @@ Result:
 
 Cool! Let's design a `:visited` style.
 
-## CSS Pseudo Elements
+## CSS pseudo elements
 
 Pseudo elements in CSS are great. [Chris Coyier](http://css-tricks.com/pseudo-element-roundup/) describes them well:
 
@@ -102,7 +102,7 @@ Result:
 
 <DemoButton stepTwo>Link</DemoButton>
 
-## Completing Functionality
+## Completing functionality
 
 While we can't technically 'add' the check mark strictly to `:visited` links, we can hide it in the link's default state by changing it to the same colour as the background.
 
@@ -156,7 +156,7 @@ stepThree>
 Click Me
 </DemoButton>
 
-## Wrap-Up
+## Wrap-up
 
 With pure CSS we've created an interesting visual style for visited links without sacrificing user privacy.
 

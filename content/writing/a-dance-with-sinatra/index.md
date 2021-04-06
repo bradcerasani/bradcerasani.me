@@ -15,9 +15,9 @@ I've never been great at keeping a blog[^1]. Any space I've made for writing in 
 
 I've been wanting to write my own blogging app since seeing [this post](http://sam.roon.io/new-blog) by [Sam Soffes'](http://twitter.com/soffes) about one of his many blog iterations earlier this year. He wrote a Sinatra app that uses a GitHub repo of markdown files as posts and caches them in Redis. I really liked the idea of using static markdown files as a post archive; no messy databases or clunky web interface to get in the way of actually writing. I built something similar.
 
-## The Build
+## The build
 
-This was my first adventure in server-side programming, so the build took a while. Though I had studied some Ruby previously, there's no substitute for diving in and getting your hands dirty. I found a handful of repos on Github that performed similar actions, so I cloned a handful locally and referenced them throughout the build. While Sam's blog was the original inspiration, his Redis integration was an added level of complexity that I wasn't ready for. Here's a quick overview of my my app, starting with a sample markdown file:
+This was my first trial in server-side programming, so the build took a while. Though I had studied some Ruby previously, there's no substitute for diving in and getting your hands dirty. I found a handful of repos on Github that performed similar actions, so I cloned a handful locally and referenced them throughout the build. While Sam's blog was the original inspiration, his Redis integration was an added level of complexity that I wasn't ready for. Here's a quick overview of my my app, starting with a sample markdown file:
 
 ```yaml
 # A-Dance-With-Sinatra.md
@@ -104,7 +104,7 @@ def redcarpet(text)
 end
 ```
 
-## Design & Typography
+## Design & typography
 
 The sans-serif body type is [Whitney](http://www.typography.com/fonts/whitney/overview/) and the headline slab [Sentinel](http://www.typography.com/fonts/sentinel/overview). Both typefaces are designed by HF&J and served by Cloud.typography. Typesetting follows the [modular scale](http://modularscale.com/scale/?px1=20&px2=&ra1=1.333&ra2=0).
 
@@ -112,7 +112,7 @@ I designed a custom pygments stylesheet to ensure code highlighting in the brows
 
 The accent colour, #3BA7BB is the colour of Cartman's hat from South Park.
 
-## Hosting & Deployment
+## Hosting & deployment
 
 The app is hosted on [Heroku](https://www.heroku.com/) and deployed via Git.
 

@@ -12,11 +12,9 @@ From 2017-2018, my wife and I had our home renovated. I designed the space, and 
 
 A friend had introduced me to SketchUp, and helped with some initial models of the space. Using these files as a starting point, I spent several months iterating on the design with increasing fidelity, revisiting the process as constraints emerged through demolition. Our house is close to 100 years old, and any renovation—especially in an old house⁠—is bound for surprises.
 
-<PostImage src="/projects/designing-a-home/IMG_0148.jpg" caption="Kitchen pre-demolition" $size="large"/>
+<PostImage src="/projects/designing-a-home/IMG_0148.jpg" caption="Kitchen before" $size="large"/>
 
-<PostImage src="/projects/designing-a-home/IMG_0144.jpg" caption="Kitchen pre-demolition (opposite angle)" $size="large"/>
-
-<PostImage src="/projects/designing-a-home/IMG_0343.jpg" caption="One such surprise: 4-6 inches of concrete under the kitchen floor. The house is not slab-on-grade; there's another layer of structural concrete and a basement under there. Thankfuly concrete doesn't bond well to concrete and it came up easily." $size="large"/>
+<PostImage src="/projects/designing-a-home/IMG_0343.jpg" caption="One such surprise: 6 inches of concrete under the previous kitchen floor" $size="large"/>
 
 Working in 3D allowed me to more carefully consider the spaces and sightlines than a typical plan or one-off render. Using a friend’s VR rig, I walked through the models to better understand flow and utility. Many of the fixtures and appliances considered had 3D models available, so I was able to audition them in the space before making a commitment. When options were presented during the construction, I was able to model each permutation to better understand it in context, rather than rush a decision or leave it solely to the builder. It also helped immensely that the builder was comfortable with SketchUp, so I could send ideas over for them to assess feasibility. In the end, the build came remarkably close to the model.
 
@@ -24,7 +22,7 @@ Working in 3D allowed me to more carefully consider the spaces and sightlines th
 $size="large"
 image1="/projects/designing-a-home/0S7A7533-sketchup.jpg"
 image2="/projects/designing-a-home/0S7A7533.jpg"  
-caption="Comparison of SketchUp model and finished space"
+caption="Comparison of SketchUp model and kitchen after"
 position="33"
 />
 
@@ -103,7 +101,7 @@ In terms of brightness, at peak output the three fixtures in the kitchen are cap
   </Grid>
 </Figure>
 
-## Hide and Seek
+## Hide and seek
 
 Towards the back of the house, there is a bank of three full-height cabinets on the north wall. Behind the first door is a pantry, framed in baltic birch with adjustable shelves. The third door is more storage, mostly for cleaning and dog supplies. The centre door opens to a T-shaped powder room hidden behind the other cabinets.
 

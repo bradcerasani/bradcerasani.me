@@ -32,7 +32,7 @@ For immersive photo browsing, we built a client-side web app that extracts an im
 In this tutorial, we’ll show you how to create the client-side app, work with
 the Philips Hue API, and build a web-based IoT experience.
 
-## Getting Started
+## Getting started
 
 1. Let’s start by kicking off a new project. At Black Pixel, we have an open-source [web starter kit](https://github.com/bpxl-labs/hue-gallery) that provides a solid foundation for building modern websites. That’s what we’ll use here.
 

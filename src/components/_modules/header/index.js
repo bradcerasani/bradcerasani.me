@@ -70,7 +70,7 @@ export const Header = (props) => {
         $isVisible={isVisible}
         onTransitionEnd={() => {
           setOverlayTransitioned(isVisible ? true : false);
-          setShowSocial(false);
+          setShowSocial(isVisible);
         }}
       >
         <MobileNavWrapper>

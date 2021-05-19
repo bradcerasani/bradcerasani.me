@@ -8,11 +8,13 @@ import {
   StyledGalleryController,
 } from './styles';
 
-export const Gallery = ({ images }) => {
+import instagramPosts from '../../../../content/social/instagram.json';
+
+export const Gallery = () => {
   useEffect(() => {
     const properties = ['top', 'right', 'bottom', 'left'];
 
-    for (let index = 0; index < images.length; index++) {
+    for (let index = 0; index < instagramPosts.length; index++) {
       // TODO: Refactor to use refs
       const element = document.querySelector(`[data-image='${index}']`);
       const elementStyles = window.getComputedStyle(element);
@@ -31,30 +33,37 @@ export const Gallery = ({ images }) => {
         }
       });
     }
-  }, [images]);
+  });
 
   return (
     <StyledGallery>
-      {images.map((image, index) => (
-        <Draggable key={index} onStart={(e) => e.preventDefault()}>
-          <StyledGalleryImage data-image={index}>
-            <img
-              src={image.node.preview}
-              alt={image.node.caption || '@bradcerasani on Instagram'}
-            />
-          </StyledGalleryImage>
-        </Draggable>
-      ))}
+      {instagramPosts.map((image, index) => {
+        const caption = image?.edge_media_to_caption?.edges[0]?.node?.text;
+        const tag = '@bradcerasani on Instagram';
+
+        return (
+          <Draggable key={index} onStart={(e) => e.preventDefault()}>
+            <StyledGalleryImage data-image={index}>
+              <img
+                src={`/images/instagram/${image.id}.jpg`}
+                alt={caption !== undefined ? `${caption} — ${tag}` : tag}
+              />
+            </StyledGalleryImage>
+          </Draggable>
+        );
+      })}
     </StyledGallery>
   );
 };
 
-export const GalleryController = ({ images }) => {
+export const GalleryController = () => {
   const [isDiscovered, setIsDiscovered] = useState(false);
+  const interval = Math.min(100 / instagramPosts.length);
 
   function handleChange(event) {
     const value = event.currentTarget.value;
-    const imageIndex = Math.floor(value / images.length);
+    const imageIndex = Math.round(value / interval);
+
     const elements = document.querySelectorAll(`[data-image]`);
 
     elements.forEach((element, index) => {

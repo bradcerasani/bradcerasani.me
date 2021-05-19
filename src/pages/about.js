@@ -15,7 +15,6 @@ import {
 
 function About(props) {
   const post = props.data.mdx;
-  const images = props.data.allInstaNode.edges.reverse();
 
   return (
     <>
@@ -81,13 +80,13 @@ function About(props) {
 
             <GridItem $width={{ sm: '40%' }}>
               <h5 style={{ paddingTop: 0 }}>Photos</h5>
-              <GalleryController images={images} />
+              <GalleryController />
             </GridItem>
           </Grid>
         </main>
       </Layout>
 
-      <Gallery images={images} />
+      <Gallery />
     </>
   );
 }
@@ -103,17 +102,6 @@ export const pageQuery = graphql`
         description
       }
       slug
-    }
-    allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 10) {
-      edges {
-        node {
-          timestamp
-          id
-          mediaType
-          preview
-          caption
-        }
-      }
     }
   }
 `;

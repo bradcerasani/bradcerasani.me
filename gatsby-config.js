@@ -86,7 +86,7 @@ module.exports = {
         short_name: `Brad Cerasani`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#74ccbc`,
+        theme_color: `hsl(0, 0%, 16%)`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
       },

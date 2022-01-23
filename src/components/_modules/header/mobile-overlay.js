@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 
 import { breakpoint } from 'src/settings';
@@ -93,7 +92,7 @@ export const MobileNavOverlay = styled.div`
   }
 `;
 
-export const MobileNavItem = styled(Link)`
+export const MobileNavItem = styled.a`
   display: block;
   font-family: var(--fontFamilySerif);
   font-size: var(--fontSizeLarger);
@@ -103,13 +102,15 @@ export const MobileNavItem = styled(Link)`
   text-decoration: none;
   visibility: hidden;
 
-  &.is-active {
-    &::after {
-      content: '~';
-      margin-left: 1rem;
-      position: absolute;
-    }
-  }
+  ${({ $isActive }) =>
+    $isActive &&
+    css`
+      &::after {
+        content: '~';
+        margin-left: 1rem;
+        position: absolute;
+      }
+    `}
 
   ${({ $isVisible }) =>
     $isVisible &&

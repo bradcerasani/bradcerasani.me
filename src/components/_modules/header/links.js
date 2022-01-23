@@ -6,7 +6,7 @@ export const links = [
     alt: 'Homepage',
   },
   {
-    to: '/about/',
+    to: '/about',
     label: 'About',
     src: '/images/nav/about-80s.jpg',
     alt: 'About Brad Cerasani',

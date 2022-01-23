@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
 import { breakpoint } from 'src/settings';
@@ -90,19 +90,21 @@ export const NavImage = styled.img.attrs({
   }
 `;
 
-export const NavItem = styled(Link)`
+export const NavItem = styled.a`
   display: block;
   padding-right: 0.5rem;
   text-decoration: none;
 
-  &.is-active {
-    &::after {
-      content: '~';
-      margin-left: 8px;
-      position: absolute;
-      background-repeat: no-repeat;
-    }
-  }
+  ${({ $isActive }) =>
+    $isActive &&
+    css`
+      &::after {
+        content: '~';
+        margin-left: 8px;
+        position: absolute;
+        background-repeat: no-repeat;
+      }
+    `}
 
   ${({ $showReturn }) =>
     $showReturn &&

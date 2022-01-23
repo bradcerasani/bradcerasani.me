@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 
 const ButtonLinkIcon = styled.span`
@@ -11,7 +10,7 @@ const ButtonLinkIcon = styled.span`
   width: 0.75rem;
 `;
 
-const StyledButton = styled(Link)`
+const StyledButton = styled.a`
   background-color: var(--colorGreyDarker);
   border-radius: var(--spaceDefault);
   color: var(--colorLinenLight);
@@ -32,13 +31,15 @@ const StyledButton = styled(Link)`
   }
 
   /* Pseudo disabled styles */
-  &:not([href]) {
-    background-color: var(--colorLinenDark);
+  ${({ $isDisabled }) =>
+    $isDisabled &&
+    css`
+      background-color: var(--colorLinenDark);
 
-    @media (prefers-color-scheme: dark) {
-      opacity: 0.5;
-    }
-  }
+      @media (prefers-color-scheme: dark) {
+        opacity: 0.5;
+      }
+    `}
 
   ${({ $variant }) =>
     $variant === 'link' &&
@@ -67,11 +68,11 @@ const StyledButton = styled(Link)`
   }
 `;
 
-export const Button = ({ children, ...props }) => {
+export const Button = React.forwardRef(({ children, ...props }, ref) => {
   return (
-    <StyledButton {...props}>
+    <StyledButton ref={ref} {...props}>
       {children}
       {props.$variant === 'link' && <ButtonLinkIcon>»</ButtonLinkIcon>}
     </StyledButton>
   );
-};
+});

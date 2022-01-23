@@ -1,14 +1,13 @@
-// These files are concatenated and inlined by Gatsby in the document <head>
+import Link from 'next/link';
+import { MDXProvider } from '@mdx-js/react';
 
 import 'src/css/modern-normalize.css';
 import 'src/css/_settings.css';
 import 'src/css/animations.css';
 import 'src/css/elements.css';
 import 'src/css/fonts.css';
-
-import React from 'react';
-import { Link } from 'gatsby';
-import { MDXProvider } from '@mdx-js/react';
+import 'src/css/footnotes.css';
+import 'src/css/prism-theme.css';
 
 import {
   Caption,
@@ -39,6 +38,12 @@ const components = {
   Vimeo,
 };
 
-export const wrapRootElement = ({ element }) => (
-  <MDXProvider components={components}>{element}</MDXProvider>
-);
+function MyApp({ Component, pageProps }) {
+  return (
+    <MDXProvider components={components}>
+      <Component {...pageProps} />
+    </MDXProvider>
+  );
+}
+
+export default MyApp;

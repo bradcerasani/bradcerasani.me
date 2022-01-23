@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-
+import Script from 'next/script';
 import lazySizes from 'lazysizes';
-import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 
 import { Container, Footer, Header } from 'src/components';
 
@@ -26,6 +25,12 @@ function Layout({ children, ...props }) {
 
   return (
     <>
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/plugins/unveilhooks/ls.unveilhooks.min.js"
+        crossOrigin="anonymous"
+        referrerPolicy="no-referrer"
+        strategy="beforeInteractive"
+      />
       <Container>
         <Header {...props} />
         {children}

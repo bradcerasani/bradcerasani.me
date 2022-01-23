@@ -1,4 +1,4 @@
-export default [
+const commentary = [
   {
     time: 0.01,
     value: '<span>🎹</span>',
@@ -116,3 +116,5 @@ export default [
     value: `<a href="https://github.com/bpxl-labs/hue-gallery" target="_blank" rel="noopener noreferrer">github.com/bpxl-labs/hue-gallery</a>`,
   },
 ];
+
+export default commentary;

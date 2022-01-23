@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
-export const Logo = styled(Link)`
+export const Logo = styled.a`
   display: inline-block;
   line-height: 1;
   margin: 0;

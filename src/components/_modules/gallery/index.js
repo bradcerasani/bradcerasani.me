@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import {
   StyledGallery,
@@ -77,20 +76,6 @@ export const GalleryController = () => {
   return (
     <StyledGalleryController
       aria-label="Show/hide photos"
-      onMouseUp={() => {
-        trackCustomEvent({
-          category: 'Interactive Elements',
-          label: 'Photos Slider',
-          action: 'Click',
-        });
-      }}
-      onTouchEnd={() => {
-        trackCustomEvent({
-          category: 'Interactive Elements',
-          label: 'Photos Slider',
-          action: 'Click',
-        });
-      }}
       onTouchStart={() => setIsDiscovered(true)}
       onMouseDown={() => setIsDiscovered(true)}
       type="range"

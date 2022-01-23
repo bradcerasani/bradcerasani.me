@@ -1,9 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 import { stripTags } from 'src/util';
-import { Button, Image, PostVideo, VisuallyHidden } from 'src/components';
+import { Button, Image, PostVideo } from 'src/components';
 
 import {
   StyledTimelineItem,
@@ -16,8 +16,7 @@ export const Timeline = styled.div`
   margin-top: var(--spaceDefault);
 `;
 
-export const TimelineItem = ({ fields, frontmatter }) => {
-  const { slug, type } = fields;
+export const TimelineItem = ({ slug, type, frontmatter }) => {
   const {
     cta,
     date,
@@ -29,38 +28,41 @@ export const TimelineItem = ({ fields, frontmatter }) => {
     video,
   } = frontmatter;
 
-  const buttonText = cta || (type === 'WRITING' ? 'Read Post' : 'View Project');
+  const buttonText = cta || (type === 'POST' ? 'Read Post' : 'View Project');
   const isDraft = status === 'draft';
-  const size = type === 'WRITING' || isDraft ? 'default' : 'large';
+  const size = type === 'POST' || isDraft ? 'default' : 'large';
   const showMedia = video || image;
   const displayTitle = stripTags(title);
+  const href = !isDraft ? slug : '#';
 
   return (
     <StyledTimelineItem $status={status}>
       {showMedia && (
-        <Link to={slug}>
-          <TimelineItemImageWrapper>
-            {video ? (
-              <PostVideo src={video} $size={size} />
-            ) : (
-              <Image
-                src={image}
-                sizes="1040px"
-                alt={description}
-                $size={size}
-              />
-            )}
-          </TimelineItemImageWrapper>
-
-          <VisuallyHidden>{displayTitle}</VisuallyHidden>
+        <Link href={href} passHref>
+          <a>
+            <TimelineItemImageWrapper>
+              {video ? (
+                <PostVideo src={video} $size={size} />
+              ) : (
+                <Image
+                  src={image}
+                  sizes="1040px"
+                  alt={description}
+                  $size={size}
+                />
+              )}
+            </TimelineItemImageWrapper>
+          </a>
         </Link>
       )}
 
       <TimelineItemDetailsWrapper>
-        <TimelineItemNode>{daterange || date}</TimelineItemNode>
+        <TimelineItemNode>{daterange || date.substring(0, 4)}</TimelineItemNode>
 
-        <Link to={slug}>
-          <h3>{displayTitle}</h3>
+        <Link href={href} passHref>
+          <a>
+            <h3>{displayTitle}</h3>
+          </a>
         </Link>
 
         <p
@@ -70,9 +72,9 @@ export const TimelineItem = ({ fields, frontmatter }) => {
         />
 
         {(!frontmatter.skipPage || isDraft) && (
-          <Button to={!isDraft ? slug : null} as={isDraft ? 'a' : null}>
-            {buttonText}
-          </Button>
+          <Link href={href} passHref>
+            <Button $isDisabled={isDraft}>{buttonText}</Button>
+          </Link>
         )}
       </TimelineItemDetailsWrapper>
     </StyledTimelineItem>

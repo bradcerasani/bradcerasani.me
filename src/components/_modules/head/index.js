@@ -1,45 +1,25 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import NextHead from 'next/head';
 import { stripTags } from 'src/util';
 
 export const Head = ({
-  title,
-  description,
-  image,
   children,
-  slug,
+  description,
   favicon = '⚗️',
-  index = true,
+  image,
+  slug,
+  title,
 }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            siteUrl
-            image
-          }
-        }
-      }
-    `
-  );
-
   const metaTitle = stripTags(title);
-  const metaDescription = description || site.siteMetadata.description;
-  const metaImage = image || site.siteMetadata.image;
+  const metaDescription = description || 'Designer, engineer, etc.';
+  const metaImage = image || 'brad-cerasani-office-wide.jpg';
   const metaImageUrl = `https://bradcerasani.imgix.net/images${metaImage}?w=1600`;
-  const metaUrl = `${site.siteMetadata.siteUrl}/${slug ? slug : ''}`;
+  const metaUrl = `https://bradcerasani.me${slug}`;
 
   return (
-    <Helmet
-      title={metaTitle}
-      htmlAttributes={{
-        lang: 'en',
-      }}
-    >
+    <NextHead>
+      <title>{metaTitle}</title>
+
       {favicon && (
         <link
           rel="icon"
@@ -47,8 +27,8 @@ export const Head = ({
         />
       )}
 
-      <meta name="robots" content={index ? 'index,follow' : 'noindex'} />
-      <meta name="googlebot" content={index ? 'index,follow' : 'noindex'} />
+      <meta name="robots" content="index,follow" />
+      <meta name="googlebot" content="index,follow" />
 
       <link rel="canonical" href={metaUrl} />
       <meta name="description" content={metaDescription} />
@@ -68,6 +48,6 @@ export const Head = ({
       <meta name="twitter:creator" content="@bradcerasani" />
 
       {children}
-    </Helmet>
+    </NextHead>
   );
 };

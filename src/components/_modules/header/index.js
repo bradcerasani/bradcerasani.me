@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { breakpoint } from 'src/settings';
 import { stripTags } from 'src/util';
-import { Date, Logo } from 'src/components';
+import { Date as DateComponent, Logo } from 'src/components';
 import { links } from './links';
 import { StyledHeader, HeroContainer, Nav, NavImage, NavItem } from './styles';
 import {
@@ -17,36 +17,24 @@ import {
 } from './mobile-overlay';
 
 export const Header = (props) => {
-  const { allMdx } = useStaticQuery(
-    graphql`
-      query {
-        allMdx(
-          filter: {
-            frontmatter: { status: { ne: "draft" }, skipPage: { ne: true } }
-          }
-          sort: { fields: frontmatter___date, order: DESC }
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                date(formatString: "YYYY")
-                status
-                title
-              }
-            }
-          }
-        }
-      }
-    `
-  );
+  // TODO: Query posts for full article index on mobile
+  const allMdx = null;
 
   const { date, headline = 'Design & Engineering' } = props;
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
   const [showSocial, setShowSocial] = useState(false);
+  const router = useRouter();
+
+  // TODO: Create util
+  const formattedDate = date
+    ? new Date(date.replace(/-/g, '/'))
+        .toLocaleString('en-CA', {
+          year: 'numeric',
+          month: 'short',
+        })
+        .replace('.', '')
+    : null;
 
   useEffect(() => {
     // Lock scroll when Nav overlay is visible
@@ -75,54 +63,54 @@ export const Header = (props) => {
       >
         <MobileNavWrapper>
           {links.map(({ to, label }, index) => (
-            <MobileNavItem
-              activeClassName="is-active"
-              $isVisible={overlayTransitioned}
-              key={to}
-              onAnimationStart={() => setShowSocial(index === links.length - 1)}
-              style={{ animationDelay: `calc(${100 * index}ms)` }}
-              to={to}
-            >
-              {label}
-            </MobileNavItem>
+            <Link href={to} key={to} passHref>
+              <MobileNavItem
+                $isActive={router.pathname === to ? 'is-active' : ''}
+                $isVisible={overlayTransitioned}
+                onAnimationStart={() =>
+                  setShowSocial(index === links.length - 1)
+                }
+                style={{ animationDelay: `calc(${100 * index}ms)` }}
+              >
+                {label}
+              </MobileNavItem>
+            </Link>
           ))}
 
           <ul>
-            {allMdx.edges.map(({ node }, index) => (
-              <MobileNavListItem
-                key={node.fields.slug}
-                $isVisible={showSocial}
-                style={{
-                  animationDelay: `calc(${100 * (index + 1)}ms)`,
-                  textDecoration: 'underline',
-                }}
-              >
-                <Link key={node.frontmatter.title} to={node.fields.slug}>
-                  {stripTags(node.frontmatter.title)}
-                </Link>
-              </MobileNavListItem>
-            ))}
+            {allMdx &&
+              allMdx.edges.map(({ node }, index) => (
+                <MobileNavListItem
+                  key={node.fields.slug}
+                  $isVisible={showSocial}
+                  style={{
+                    animationDelay: `calc(${100 * (index + 1)}ms)`,
+                    textDecoration: 'underline',
+                  }}
+                >
+                  <Link key={node.frontmatter.title} href={node.fields.slug}>
+                    {stripTags(node.frontmatter.title)}
+                  </Link>
+                </MobileNavListItem>
+              ))}
           </ul>
 
           <ul>
-            {/* TODO: Pull from site settings? */}
             {['Twitter', 'Instagram', 'GitHub'].map((link, index) => (
               <MobileNavListItem
                 $isVisible={showSocial}
                 key={link}
                 style={{
-                  animationDelay: `calc(${
-                    100 * (allMdx.edges.length + index + 1)
-                  }ms)`,
+                  animationDelay: `calc(${100 * (index + 1)}ms)`,
                 }}
               >
-                <OutboundLink
+                <a
                   href={`https://${link.toLowerCase()}.com/bradcerasani`}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   {link}
-                </OutboundLink>
+                </a>
               </MobileNavListItem>
             ))}
           </ul>
@@ -134,7 +122,9 @@ export const Header = (props) => {
         itemtype="https://schema.org/SiteNavigationElement"
       >
         <MobileNavMenuWrapper>
-          <Logo to={`/`}>Brad Cerasani</Logo>
+          <Link href="/" passHref>
+            <Logo>Brad Cerasani</Logo>
+          </Link>
           <MobileNavMenu
             onClick={() => setVisibility(!isVisible)}
             $isActive={isVisible}
@@ -143,22 +133,22 @@ export const Header = (props) => {
 
         <HeroContainer>
           <h1>
-            {date && <Date>{date}</Date>}
+            {date && <DateComponent>{formattedDate}</DateComponent>}
             <span dangerouslySetInnerHTML={{ __html: headline }} />
           </h1>
 
           <Nav>
             {links.map(({ to, label, src, alt }, index) => {
               return (
-                <NavItem
-                  activeClassName="is-active"
-                  key={to}
-                  to={to}
-                  $showReturn={index === 0 && props.showReturn}
-                >
-                  {label}
-                  <NavImage src={src} alt={alt} />
-                </NavItem>
+                <Link href={to} key={to} passHref>
+                  <NavItem
+                    $isActive={router.pathname === to ? 'is-active' : ''}
+                    $showReturn={index === 0 && props.showReturn}
+                  >
+                    {label}
+                    <NavImage src={src} alt={alt} />
+                  </NavItem>
+                </Link>
               );
             })}
           </Nav>

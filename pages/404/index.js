@@ -27,11 +27,7 @@ function PageNotFound() {
 
   return (
     <Layout headline="Page Not Found">
-      <Head
-        title="404: Page Not Found"
-        description="404: Page Not Found"
-        index={false}
-      />
+      <Head title="404: Page Not Found" description="404: Page Not Found" />
 
       <Loading style={{ opacity: isLoaded ? 0 : 1 }} />
 

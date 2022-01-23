@@ -8,5 +8,5 @@ export const POSTS_PATH = path.join(process.cwd(), contentDirectory);
 export const postFilePaths = glob.sync(`${POSTS_PATH}/**/*.md`);
 
 export const postFileSlugs = postFilePaths.map((filePath) =>
-  filePath.split(contentDirectory)[1].replace('index.md', '')
+  filePath.split(contentDirectory)[1].replace('/index.md', '')
 );

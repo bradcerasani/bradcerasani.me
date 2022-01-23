@@ -15,8 +15,25 @@ export default function PostPage(props) {
 }
 
 export const getStaticProps = async ({ params }) => {
+  const notFound = { notFound: true };
+  const basePath = params?.slug[0] || '';
+
+  // Before looking for the associated markdown file, verify basePath is one of
+  // two supported variants. If not, return early.
+  //
+  // Having a catch-all route at base is probably a bad idea, but avoids
+  // duplicating [slug].js in /projects and /writing directories as initially
+  // implemented upon migration away from Gatsby.
+  //
+  // Deprecating basePath altogether instead of bifurcating posts and projects
+  // is something to consider, but in the interim, this works.
+
+  if (basePath !== 'writing' && basePath !== 'projects') {
+    return notFound;
+  }
+
   try {
-    const slug = `/writing/${params.slug}`;
+    const slug = `/${params.slug[0]}/${params.slug[1]}`;
     const postFilePath = path.join(POSTS_PATH, `${slug}/index.md`);
     const source = fs.readFileSync(postFilePath);
     const { content, data } = matter(source);
@@ -38,14 +55,12 @@ export const getStaticProps = async ({ params }) => {
       },
     };
   } catch (error) {
-    return {
-      notFound: true,
-    };
+    return notFound;
   }
 };
 
-export const getStaticPaths = async () => {
-  const paths = postFileSlugs.map((slug) => ({ params: { slug } }));
+export const getStaticPaths = async (props) => {
+  const paths = postFileSlugs.map((slug) => ({ params: { slug: [...slug] } }));
 
   return {
     paths,

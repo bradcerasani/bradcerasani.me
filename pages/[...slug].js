@@ -59,8 +59,10 @@ export const getStaticProps = async ({ params }) => {
   }
 };
 
-export const getStaticPaths = async (props) => {
-  const paths = postFileSlugs.map((slug) => ({ params: { slug: [...slug] } }));
+export const getStaticPaths = async () => {
+  const paths = postFileSlugs
+    .filter((slug) => !slug.includes('misc'))
+    .map((slug) => ({ params: { slug: [slug] } }));
 
   return {
     paths,

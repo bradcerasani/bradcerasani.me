@@ -5,7 +5,7 @@ import { Figure, Caption } from 'src/components';
 
 export const Img = ({ alt, src, sizes, ...props }) => {
   const url =
-    process.env.NODE_ENV !== 'development'
+    process.env.NODE_ENV === 'development'
       ? `/images${src}`
       : `https://bradcerasani.imgix.net/images${src}`;
 

@@ -7,7 +7,7 @@ import {
   StyledGalleryController,
 } from './styles';
 
-import instagramPosts from '../../../../content/social/instagram.json';
+import instagramPosts from 'content/social/instagram.json';
 
 export const Gallery = () => {
   useEffect(() => {

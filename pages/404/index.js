@@ -73,7 +73,7 @@ function PageNotFound() {
               marginBottom: 'calc(var(--spaceDefault) / 2)',
             }}
           >
-            Sorry we couldn't find the page you requested.
+            Sorry we couldn&apos;t find the page you requested.
           </p>
 
           <MuteButton onClick={() => setMuted(!muted)}>

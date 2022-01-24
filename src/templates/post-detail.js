@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 import styled from 'styled-components';
 
 import Layout from 'src/templates/layout';
-import { isImage, stripTags } from 'src/util';
+import { isImage, stripTags } from 'src/utils/strings';
 import { Head, Img, Intrinsic } from 'src/components';
 
 const Hero = styled.div`
@@ -28,7 +28,7 @@ const Hero = styled.div`
 `;
 
 function PostDetailTemplate({ slug, source, frontMatter }) {
-  const { date, description, image, skipHero, title, favicon } = frontMatter;
+  const { date, description, favicon, image, skipHero, title } = frontMatter;
 
   // TODO: Wire up prev/next
   const previous = null;

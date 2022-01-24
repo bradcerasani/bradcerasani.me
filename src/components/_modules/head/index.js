@@ -1,6 +1,7 @@
 import React from 'react';
 import NextHead from 'next/head';
-import { stripTags } from 'src/util';
+
+import { stripTags } from 'src/utils/strings';
 
 export const Head = ({
   children,

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import { breakpoint } from 'src/settings';
-import { stripTags } from 'src/util';
+import { stripTags } from 'src/utils/strings';
 import { Date as DateComponent, Logo } from 'src/components';
 import { links } from './links';
 import { StyledHeader, HeroContainer, Nav, NavImage, NavItem } from './styles';

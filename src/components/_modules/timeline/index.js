@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { stripTags } from 'src/util';
+import { stripTags } from 'src/utils/strings';
 import { Button, Image, PostVideo } from 'src/components';
 
 import {

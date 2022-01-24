@@ -4,7 +4,7 @@ import { css } from 'styled-components';
 
 import fs from 'fs';
 import matter from 'gray-matter';
-import { postFilePaths } from 'utils/posts';
+import { postFilePaths } from 'src/utils/posts';
 
 import Layout from 'src/templates/layout';
 import { Button, Head, Timeline, TimelineItem } from 'src/components';

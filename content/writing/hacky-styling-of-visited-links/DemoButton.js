@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const DemoButton = styled.a`
+const DemoButton = styled.a`
   background: #3ba7bb;
   border: 2px solid #3ba7bb;
   border-radius: 4px;
@@ -19,8 +19,8 @@ export const DemoButton = styled.a`
     color: white;
   }
 
-  ${(props) =>
-    props.stepTwo &&
+  ${({ $step }) =>
+    $step >= '2' &&
     css`
       &::after {
         content: '✓';
@@ -33,8 +33,8 @@ export const DemoButton = styled.a`
       }
     `};
 
-  ${(props) =>
-    props.stepThree &&
+  ${({ $step }) =>
+    $step >= '3' &&
     css`
       cursor: pointer !important;
 
@@ -53,3 +53,5 @@ export const DemoButton = styled.a`
       }
     `}
 `;
+
+export default DemoButton;

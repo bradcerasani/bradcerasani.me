@@ -9,6 +9,12 @@ import 'src/css/fonts.css';
 import 'src/css/footnotes.css';
 import 'src/css/prism-theme.css';
 
+// Project- and post-specific components must be included at the provider level
+// ref: https://github.com/hashicorp/next-mdx-remote/issues/143
+// Consider swapping next-mdx-remote for mdx-bundler
+import Swatches from 'content/projects/hue-gallery/Swatches';
+import DemoButton from 'content/writing/hacky-styling-of-visited-links/DemoButton';
+
 import {
   Caption,
   Figure,
@@ -25,6 +31,7 @@ import {
 
 const components = {
   Caption,
+  DemoButton,
   Figure,
   Grid,
   GridItem,
@@ -34,6 +41,7 @@ const components = {
   Note,
   PostImage: Image, // Image appears to be a reserved word
   PostVideo,
+  Swatches,
   Video,
   Vimeo,
 };

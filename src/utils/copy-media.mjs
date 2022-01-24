@@ -21,3 +21,5 @@ mediaFiles.forEach((file) => {
     if (err) throw err;
   });
 });
+
+console.log(`Media copied to 'public' directory.`);

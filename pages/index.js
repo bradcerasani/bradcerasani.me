@@ -83,7 +83,7 @@ export function getStaticProps() {
       const source = fs.readFileSync(filePath);
       const { content, data } = matter(source);
       const type = filePath.includes('/writing/') ? 'POST' : 'PROJECT';
-      const slug = filePath.split('/content')[1].replace('index.md', '');
+      const slug = filePath.split('/content')[1].replace('/index.md', '');
 
       return {
         type,

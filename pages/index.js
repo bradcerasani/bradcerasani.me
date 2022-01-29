@@ -2,10 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { css } from 'styled-components';
 
-import fs from 'fs';
-import matter from 'gray-matter';
-import { postFilePaths } from 'src/utils/posts';
-
+import { posts } from 'src/utils/posts';
 import Layout from 'src/templates/layout';
 import { Button, Head, Timeline, TimelineItem } from 'src/components';
 
@@ -78,24 +75,5 @@ function Home({ posts }) {
 export default Home;
 
 export function getStaticProps() {
-  const posts = postFilePaths
-    .map((filePath) => {
-      const source = fs.readFileSync(filePath);
-      const { content, data } = matter(source);
-      const type = filePath.includes('/writing/') ? 'POST' : 'PROJECT';
-      const slug = filePath.split('/content')[1].replace('/index.md', '');
-
-      return {
-        type,
-        slug,
-        content,
-        frontmatter: data,
-        filePath,
-      };
-    })
-    .sort((a, b) => {
-      return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
-    });
-
   return { props: { posts } };
 }

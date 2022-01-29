@@ -27,12 +27,9 @@ const Hero = styled.div`
   }
 `;
 
-function PostDetailTemplate({ slug, source, frontMatter }) {
+function PostDetailTemplate({ frontMatter, pagination, slug, source }) {
   const { date, description, favicon, image, skipHero, title } = frontMatter;
-
-  // TODO: Wire up prev/next
-  const previous = null;
-  const next = null;
+  const { next, prev } = pagination;
 
   return (
     <Layout headline={title} date={date} showReturn>
@@ -89,27 +86,21 @@ function PostDetailTemplate({ slug, source, frontMatter }) {
         }}
       >
         <div>
-          {next && next.frontmatter.status !== 'draft' && (
+          {next && (
             <>
               <h6 style={{ paddingTop: '0' }}>Newer</h6>
 
-              <Link
-                href={next.fields.slug}
-                style={{ textDecorationColor: 'inherit' }}
-              >
-                {stripTags(next.frontmatter.title)}
+              <Link href={next.slug} style={{ textDecorationColor: 'inherit' }}>
+                {stripTags(next.title)}
               </Link>
             </>
           )}
         </div>
-        {previous && (
+        {prev && (
           <div>
             <h6 style={{ paddingTop: '0' }}>Older</h6>
-            <Link
-              href={previous.fields.slug}
-              style={{ textDecorationColor: 'inherit' }}
-            >
-              {stripTags(previous.frontmatter.title)}
+            <Link href={prev.slug} style={{ textDecorationColor: 'inherit' }}>
+              {stripTags(prev.title)}
             </Link>
           </div>
         )}

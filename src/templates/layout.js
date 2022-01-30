@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
-import Script from 'next/script';
 import lazySizes from 'lazysizes';
 
 import { Container, Footer, Header } from 'src/components';
 
 if ('cfg' in lazySizes) {
-  lazySizes.cfg.preloadAfterLoad = true;
+  lazySizes.cfg.init = false;
 }
 
 function Layout({ children, ...props }) {
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
+    require('lazysizes/plugins/unveilhooks/ls.unveilhooks.min');
+
+    lazySizes.init();
 
     if (!window.sessionStorage.getItem('logged')) {
       console.log(
@@ -25,12 +24,6 @@ function Layout({ children, ...props }) {
 
   return (
     <>
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/plugins/unveilhooks/ls.unveilhooks.min.js"
-        crossOrigin="anonymous"
-        referrerPolicy="no-referrer"
-        strategy="beforeInteractive"
-      />
       <Container>
         <Header {...props} />
         {children}

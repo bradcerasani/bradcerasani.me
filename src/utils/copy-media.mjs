@@ -14,7 +14,9 @@ const mediaFiles = await glob(`${source}/**/*`, {
 });
 
 mediaFiles.forEach((file) => {
-  const subDirectory = file.includes('.mp4') ? 'public/video' : 'public/images';
+  const subDirectory = /\.(webm|mp4)$/i.test(file)
+    ? 'public/video'
+    : 'public/images';
   const destination = file.replace('content', subDirectory);
 
   fs.copy(file, destination, (err) => {

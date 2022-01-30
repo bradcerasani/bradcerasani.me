@@ -19,7 +19,7 @@ mediaFiles.forEach((file) => {
     : 'public/images';
   const destination = file.replace('content', subDirectory);
 
-  fs.copy(file, destination, (err) => {
+  fs.copySync(file, destination, (err) => {
     if (err) throw err;
   });
 });

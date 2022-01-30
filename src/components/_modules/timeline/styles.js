@@ -33,6 +33,7 @@ export const TimelineItemImageWrapper = styled.div`
   z-index: 1;
 
   figure {
+    aspect-ratio: 16/9;
     margin-bottom: 1rem;
     position: relative;
     z-index: 5;

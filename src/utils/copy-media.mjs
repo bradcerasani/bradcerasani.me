@@ -10,7 +10,7 @@ import glob from 'fast-glob';
 const source = path.join(process.cwd(), 'content');
 
 const mediaFiles = await glob(`${source}/**/*`, {
-  ignore: ['**/*.md', '**/*.js', '**/*.json'],
+  ignore: ['**/*.mdx', '**/*.js', '**/*.json'],
 });
 
 mediaFiles.forEach((file) => {

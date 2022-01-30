@@ -9,10 +9,6 @@ export const allMarkdown = glob.sync(`${POSTS_PATH}/**/*.mdx`);
 
 export const stripIndex = (filepath) => filepath.replace(/\/index\.[^.]+$/, '');
 
-export const postFileSlugs = allMarkdown.map((filePath) =>
-  stripIndex(filePath)
-);
-
 export const posts = allMarkdown
   .map((filePath) => {
     const { content, data } = matter(fs.readFileSync(filePath));

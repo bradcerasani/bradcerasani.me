@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 import { stripTags } from 'src/utils/strings';
-import { Button, Image, PostVideo } from 'src/components';
+import { Button, Image, PostVideo, VisuallyHidden } from 'src/components';
 
 import {
   StyledTimelineItem,
@@ -17,16 +17,8 @@ export const Timeline = styled.div`
 `;
 
 export const TimelineItem = ({ slug, type, frontmatter }) => {
-  const {
-    cta,
-    date,
-    daterange,
-    description,
-    image,
-    status,
-    title,
-    video,
-  } = frontmatter;
+  const { cta, date, daterange, description, image, status, title, video } =
+    frontmatter;
 
   const buttonText = cta || (type === 'POST' ? 'Read Post' : 'View Project');
   const isDraft = status === 'draft';
@@ -52,6 +44,8 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
                 />
               )}
             </TimelineItemImageWrapper>
+
+            <VisuallyHidden>Link to {displayTitle}</VisuallyHidden>
           </a>
         </Link>
       )}

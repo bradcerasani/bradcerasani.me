@@ -21,6 +21,7 @@ function copyMedia(mediaFiles) {
 
     try {
       fs.copySync(file, file.replace('content', subDirectory));
+      console.log('Copied', file);
     } catch (err) {
       console.error(err);
     }

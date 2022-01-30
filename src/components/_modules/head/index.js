@@ -8,7 +8,7 @@ export const Head = ({
   description,
   favicon = '⚗️',
   image,
-  slug,
+  slug = '',
   title,
 }) => {
   const metaTitle = stripTags(title);

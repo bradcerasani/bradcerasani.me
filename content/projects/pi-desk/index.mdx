@@ -20,13 +20,13 @@ To interface with this PCB as non-destructively as possible, I made a replacemen
 <Figure $size="large">
   <Grid $gutter="calc(var(--spaceDefault) / 2)">
     <GridItem $width={{ sm: '1/3 * 100%' }}>
-      <Img src="/projects/pi-desk/IMG_0814.jpg" sizes="400px"/>
+      <Img src="/projects/pi-desk/IMG_0814.jpg" sizes="400px" />
     </GridItem>
     <GridItem $width={{ sm: '1/3 * 100%' }}>
-      <Img src="/projects/pi-desk/IMG_0824.jpg" sizes="400px"/>
+      <Img src="/projects/pi-desk/IMG_0824.jpg" sizes="400px" />
     </GridItem>
     <GridItem $width={{ sm: '1/3 * 100%' }}>
-      <Img src="/projects/pi-desk/IMG_0877.jpg" sizes="400px"/>
+      <Img src="/projects/pi-desk/IMG_0877.jpg" sizes="400px" />
     </GridItem>
   </Grid>
   <Caption>Making a hacky ribbon cable replacement</Caption>
@@ -36,7 +36,11 @@ The relays are connected to a Raspberry Pi running basic controller software I w
 
 For software control, I made a series of Alfred[^2] shortcuts on my Mac that send requests to the desk’s API. For hardware control, I wired up a SPDT[^3] on-off-on toggle switch. The first relay is wired so that the NC side closes the common wire of the toggle switch, meaning when the relay is off, the hardware control is enabled. When the first relay is on, the hardware control is disabled, and power is passed to the second relay, where the NC[^4] state makes the desk go up, and closing NO[^5] makes it go down. This configuration ensures that no combination of simulatneous hardware and software input will result in both up and down commands being sent to the motor controller at the same time, which could cause a short.
 
-<PostVideo $size="large" src="/video/projects/pi-desk/pi-desk-cooler.mp4" caption="Raising the desk with the hardware override" />
+<PostVideo
+  $size="large"
+  src="/video/projects/pi-desk/pi-desk-cooler.mp4"
+  caption="Raising the desk with the hardware override"
+/>
 
 At one point I wrote a wrapper for the desk’s API and opened it up to the internet during a meeting with my team at Black Pixel. This allowed my coworkers to control the desk’s height using slash commands in Slack. This was not one of my better ideas, but made for a memorable meeting (for me anyway).
 

@@ -20,17 +20,40 @@ As the programming language of the web browser, JavaScript has always been popul
 
 In 2009, Ryan Dahl coerced Chrome’s V8 JavaScript engine to run on Linux with an event loop and low-level I/O, calling it [Node.js](https://nodejs.org/). In 2010, Backbone.js and Angular.js were introduced. These two client-side MV\* frameworks pushed the limits of what was possible in JavaScript applications. In 2013, Facebook released [React.js](https://facebook.github.io/react/), a lightweight and super performant view library that powers user interfaces used by billions of people all over the world. [ES2015](http://www.ecma-international.org/ecma-262/6.0/) arrived last year as the next generation of JavaScript, which added a slew of new features in development since its last major release in 2009.
 
-![dam-break.gif](/images/writing/the-black-pixel-web-stack/dam-break.gif)
+<PostVideo src="/video/writing/the-black-pixel-web-stack/dam-break.mp4" />
 
 Suddenly the programming language once treated as a toy had proper module support, destructuring, template strings, a spread operator, arrow functions, and even classes ([but don’t use those](https://github.com/joshburgess/not-awesome-es6-classes)).
 
 Today, modern browsers and the latest version of Node are [nearing 100-percent compatibility](http://kangax.github.io/compat-table/es6/) with this latest version of JavaScript. The language is more ubiquitous than ever before, and new use cases for it emerge every day.
 
 <!-- Copied from Twitter embed w/o script -->
-<blockquote><p lang="en" dir="ltr"><a href="https://twitter.com/CollinEstes">@CollinEstes</a> I heard a rumor that NASA uses Node.js for space-suits. I&#39;m curious, do you use the npm ecosystem to develop these apps?</p> &mdash; Benjamin Coe (<a href="https://twitter.com/BenjaminCoe/status/738764829746286592">@BenjaminCoe</a>) </blockquote>
+
+<blockquote>
+  <p lang="en" dir="ltr">
+    <a href="https://twitter.com/CollinEstes">@CollinEstes</a> I heard a rumor
+    that NASA uses Node.js for space-suits. I&#39;m curious, do you use the npm
+    ecosystem to develop these apps?
+  </p>{' '}
+  &mdash; Benjamin Coe (
+  <a href="https://twitter.com/BenjaminCoe/status/738764829746286592">
+    @BenjaminCoe
+  </a>
+  ){' '}
+</blockquote>
 
 <!-- Copied from Twitter embed w/o script -->
-<blockquote><p lang="en" dir="ltr"><a href="https://twitter.com/BenjaminCoe">@BenjaminCoe</a> You heard correctly, and yes we do.</p> &mdash; Collin Estes (<a href="https://twitter.com/collinestes/status/738765249407504384">@CollinEstes</a>)</blockquote>
+
+<blockquote>
+  <p lang="en" dir="ltr">
+    <a href="https://twitter.com/BenjaminCoe">@BenjaminCoe</a> You heard
+    correctly, and yes we do.
+  </p>{' '}
+  &mdash; Collin Estes (
+  <a href="https://twitter.com/collinestes/status/738765249407504384">
+    @CollinEstes
+  </a>
+  )
+</blockquote>
 
 However, the rising popularity of JavaScript also brings a certain amount of “[JavaScript fatigue](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4),” especially when six years of language development land in a single release as happened with ES2015 last year. Fortunately steps are being taken to ensure [future releases of ECMAScript/JS](http://www.2ality.com/2015/11/tc39-process.html) are smaller and more frequent, and there are many [roundup-style newsletters](http://javascriptweekly.com/) and [websites](http://www.echojs.com/) that help filter signal through the noise of the bustling ecosystem that is modern-day JS development.
 
@@ -54,7 +77,7 @@ As mentioned above, Node marries an event-based, asynchronous API with Chrome’
 
 ## Linting and best practices
 
-![6ix-lint.gif](/images/writing/the-black-pixel-web-stack/6ix-lint.gif)
+<PostVideo src="/video/writing/the-black-pixel-web-stack/6ix-lint.mp4" />
 
 #### JavaScript
 
@@ -70,7 +93,7 @@ To lint our CSS, we use [Stylelint](http://stylelint.io/) and [postcss-bem-linte
 
 ## Future tech
 
-![future-tech.gif](/images/writing/the-black-pixel-web-stack/future-tech.gif)
+<PostVideo src="/video/writing/the-black-pixel-web-stack/future-tech.mp4" />
 
 Facebook’s [GraphQL](http://graphql.org/docs/getting-started/) is a new way to facilitate client-server communication. It could be really interesting to use on a project where we’re building server-side support for a mobile client. Instead of having individual RESTful API endpoints, GraphQL gives you a single endpoint for specifying what data you’d like in a [syntax that resembles JSON but without property values](https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html#what-is-graphql). You request the keys you’d like, and GraphQL returns the key-value pairs.
 

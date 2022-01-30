@@ -2,7 +2,7 @@ export const links = [
   {
     to: '/',
     label: 'Index',
-    src: '/images/nav/index.webp',
+    src: '/images/nav/index@2x.webp',
     alt: 'Homepage',
   },
   {

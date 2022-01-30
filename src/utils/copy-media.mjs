@@ -13,15 +13,20 @@ const mediaFiles = await glob(`${source}/**/*`, {
   ignore: ['**/*.mdx', '**/*.js', '**/*.json'],
 });
 
-mediaFiles.forEach((file) => {
-  const subDirectory = /\.(webm|mp4)$/i.test(file)
-    ? 'public/video'
-    : 'public/images';
-  const destination = file.replace('content', subDirectory);
+function copyMedia(mediaFiles) {
+  mediaFiles.forEach((file) => {
+    const subDirectory = /\.(webm|mp4)$/i.test(file)
+      ? 'public/video'
+      : 'public/images';
 
-  fs.copySync(file, destination, (err) => {
-    if (err) throw err;
+    try {
+      fs.copySync(file, file.replace('content', subDirectory));
+    } catch (err) {
+      console.error(err);
+    }
   });
-});
+}
+
+copyMedia(mediaFiles);
 
 console.log(`Media copied to 'public' directory.`);

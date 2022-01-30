@@ -3,22 +3,21 @@ import glob from 'fast-glob';
 import matter from 'gray-matter';
 import path from 'path';
 
-export const contentDirectory = 'content';
+export const CONTENT_DIRECTORY = 'content';
+export const POSTS_PATH = path.join(process.cwd(), CONTENT_DIRECTORY);
+export const allMarkdown = glob.sync(`${POSTS_PATH}/**/*.mdx`);
 
-export const POSTS_PATH = path.join(process.cwd(), contentDirectory);
+export const stripIndex = (filepath) => filepath.replace(/\/index\.[^.]+$/, '');
 
-export const postFilePaths = glob.sync(`${POSTS_PATH}/**/*.mdx`);
-
-export const postFileSlugs = postFilePaths.map((filePath) =>
-  filePath.split(contentDirectory)[1].replace('/index.mdx', '')
+export const postFileSlugs = allMarkdown.map((filePath) =>
+  stripIndex(filePath)
 );
 
-export const posts = postFilePaths
+export const posts = allMarkdown
   .map((filePath) => {
-    const source = fs.readFileSync(filePath);
-    const { content, data } = matter(source);
-    const type = filePath.includes('/writing/') ? 'POST' : 'PROJECT';
-    const slug = filePath.split('/content')[1].replace('/index.mdx', '');
+    const { content, data } = matter(fs.readFileSync(filePath));
+    const slug = stripIndex(filePath.split(CONTENT_DIRECTORY)[1]);
+    const type = slug.includes('/projects/') ? 'PROJECT' : 'POST';
 
     return {
       type,

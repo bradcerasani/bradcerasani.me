@@ -27,8 +27,8 @@ const Hero = styled.div`
   }
 `;
 
-function PostDetailTemplate({ frontMatter, pagination, slug, source }) {
-  const { date, description, favicon, image, skipHero, title } = frontMatter;
+function PostDetailTemplate({ frontmatter, pagination, slug, source }) {
+  const { date, description, favicon, image, skipHero, title } = frontmatter;
   const { next, prev } = pagination;
 
   return (

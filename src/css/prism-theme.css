@@ -162,7 +162,7 @@ pre *::selection {
   color: var(--codeBlue);
 }
 
-/* Custom rules (see gatsby-config.js) */
+/* Custom rules */
 
 .token.js_keyword {
   color: var(--codeYellow);

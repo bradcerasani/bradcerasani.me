@@ -7,10 +7,10 @@ export const contentDirectory = 'content';
 
 export const POSTS_PATH = path.join(process.cwd(), contentDirectory);
 
-export const postFilePaths = glob.sync(`${POSTS_PATH}/**/*.md`);
+export const postFilePaths = glob.sync(`${POSTS_PATH}/**/*.mdx`);
 
 export const postFileSlugs = postFilePaths.map((filePath) =>
-  filePath.split(contentDirectory)[1].replace('/index.md', '')
+  filePath.split(contentDirectory)[1].replace('/index.mdx', '')
 );
 
 export const posts = postFilePaths
@@ -18,7 +18,7 @@ export const posts = postFilePaths
     const source = fs.readFileSync(filePath);
     const { content, data } = matter(source);
     const type = filePath.includes('/writing/') ? 'POST' : 'PROJECT';
-    const slug = filePath.split('/content')[1].replace('/index.md', '');
+    const slug = filePath.split('/content')[1].replace('/index.mdx', '');
 
     return {
       type,

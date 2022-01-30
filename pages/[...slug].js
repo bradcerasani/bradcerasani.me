@@ -34,7 +34,7 @@ export const getStaticProps = async ({ params }) => {
 
   try {
     const slug = `/${params.slug[0]}/${params.slug[1]}`;
-    const postFilePath = path.join(POSTS_PATH, `${slug}/index.md`);
+    const postFilePath = path.join(POSTS_PATH, `${slug}/index.mdx`);
     const source = fs.readFileSync(postFilePath);
     const { content, data } = matter(source);
     const mdxSource = await serialize(content, {

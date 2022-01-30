@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 
-import { pagination, postFileSlugs, POSTS_PATH } from 'src/utils/posts';
+import { pagination, postFileSlugs, POSTS_PATH } from 'src/utils/posts.mjs';
 import PostDetailTemplate from 'src/templates/post-detail';
 
 export default function PostPage(props) {

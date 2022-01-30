@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { css } from 'styled-components';
 
-import { posts } from 'src/utils/posts';
+import { posts } from 'src/utils/posts.mjs';
 import Layout from 'src/templates/layout';
 import { Button, Head, Timeline, TimelineItem } from 'src/components';
 

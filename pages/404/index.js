@@ -27,11 +27,7 @@ function PageNotFound() {
 
   return (
     <Layout headline="Page Not Found">
-      <Head
-        title="404: Page Not Found"
-        description="404: Page Not Found"
-        index={false}
-      />
+      <Head title="404: Page Not Found" description="404: Page Not Found" />
 
       <Loading style={{ opacity: isLoaded ? 0 : 1 }} />
 
@@ -77,7 +73,7 @@ function PageNotFound() {
               marginBottom: 'calc(var(--spaceDefault) / 2)',
             }}
           >
-            Sorry we couldn't find the page you requested.
+            Sorry we couldn&apos;t find the page you requested.
           </p>
 
           <MuteButton onClick={() => setMuted(!muted)}>

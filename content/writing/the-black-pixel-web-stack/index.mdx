@@ -20,7 +20,7 @@ As the programming language of the web browser, JavaScript has always been popul
 
 In 2009, Ryan Dahl coerced Chrome’s V8 JavaScript engine to run on Linux with an event loop and low-level I/O, calling it [Node.js](https://nodejs.org/). In 2010, Backbone.js and Angular.js were introduced. These two client-side MV\* frameworks pushed the limits of what was possible in JavaScript applications. In 2013, Facebook released [React.js](https://facebook.github.io/react/), a lightweight and super performant view library that powers user interfaces used by billions of people all over the world. [ES2015](http://www.ecma-international.org/ecma-262/6.0/) arrived last year as the next generation of JavaScript, which added a slew of new features in development since its last major release in 2009.
 
-![dam-break.gif](./dam-break.gif)
+![dam-break.gif](/images/writing/the-black-pixel-web-stack/dam-break.gif)
 
 Suddenly the programming language once treated as a toy had proper module support, destructuring, template strings, a spread operator, arrow functions, and even classes ([but don’t use those](https://github.com/joshburgess/not-awesome-es6-classes)).
 
@@ -54,7 +54,7 @@ As mentioned above, Node marries an event-based, asynchronous API with Chrome’
 
 ## Linting and best practices
 
-![6ix-lint.gif](./6ix-lint.gif)
+![6ix-lint.gif](/images/writing/the-black-pixel-web-stack/6ix-lint.gif)
 
 #### JavaScript
 
@@ -70,7 +70,7 @@ To lint our CSS, we use [Stylelint](http://stylelint.io/) and [postcss-bem-linte
 
 ## Future tech
 
-![future-tech.gif](./future-tech.gif)
+![future-tech.gif](/images/writing/the-black-pixel-web-stack/future-tech.gif)
 
 Facebook’s [GraphQL](http://graphql.org/docs/getting-started/) is a new way to facilitate client-server communication. It could be really interesting to use on a project where we’re building server-side support for a mobile client. Instead of having individual RESTful API endpoints, GraphQL gives you a single endpoint for specifying what data you’d like in a [syntax that resembles JSON but without property values](https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html#what-is-graphql). You request the keys you’d like, and GraphQL returns the key-value pairs.
 

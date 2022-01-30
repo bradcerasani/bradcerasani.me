@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import { Container, VisuallyHidden } from 'src/components';
 import { StyledFooter, ChatBubble } from './styles';
@@ -11,24 +10,17 @@ export const Footer = () => {
     <StyledFooter>
       <Container style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div>
-          <a href="/rss.xml">RSS</a>
-          &nbsp;•&nbsp;
           <a
             href="#show-email"
             onClick={(e) => {
               e.preventDefault();
               if (!showContact) {
                 setShowContact(true);
-                trackCustomEvent({
-                  category: 'Interactive Elements',
-                  label: 'Footer Contact - Say Hey',
-                  action: 'Click',
-                });
               }
             }}
             style={{ cursor: showContact ? 'auto' : 'pointer' }}
           >
-            Say hey
+            Contact
           </a>
           {showContact && (
             <ChatBubble>

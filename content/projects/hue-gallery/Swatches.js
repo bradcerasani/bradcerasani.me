@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { breakpoint } from 'src/settings';
 import { Caption } from 'src/components';
 
-export const SwatchContainer = styled.div`
+const SwatchContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: var(--spaceDefault);
@@ -16,7 +16,7 @@ export const SwatchContainer = styled.div`
   }
 `;
 
-export const Swatch = styled.div`
+const Swatch = styled.div`
   --diameter: 1.25rem;
   --margin: 0.25rem;
 
@@ -33,7 +33,7 @@ export const Swatch = styled.div`
   } ;
 `;
 
-export const Swatches = ({ colors, caption }) => {
+const Swatches = ({ colors, caption }) => {
   if (!Array.isArray(colors)) {
     return;
   }
@@ -49,3 +49,5 @@ export const Swatches = ({ colors, caption }) => {
     </>
   );
 };
+
+export default Swatches;

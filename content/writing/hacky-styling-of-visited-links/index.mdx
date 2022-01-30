@@ -4,8 +4,6 @@ description: Using CSS pseudo elements to expand on what's possible when styling
 date: '2013-10-18'
 ---
 
-import { DemoButton } from './demo-button';
-
 <Note>
 
 This post outlines a method to 'hide' a glyph on an anchor tag using a pseudo-element in order to expand the boundaries of what :visited styles typically allow.
@@ -100,7 +98,7 @@ a.demo {
 
 Result:
 
-<DemoButton stepTwo>Link</DemoButton>
+<DemoButton $step="2">Link</DemoButton>
 
 ## Completing functionality
 
@@ -151,8 +149,7 @@ Give it a try:
 href="http://bit.ly/16m376q"
 target="\_blank"
 rel="noopener noreferrer"
-stepTwo
-stepThree>
+$step="3">
 Click Me
 </DemoButton>
 

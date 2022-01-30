@@ -3,7 +3,7 @@ title: Tesla software problems in winter
 description: When Designed in California™ meets -40°.
 date: '2021-03-29'
 image: /writing/tesla-software-problems-in-winter/share-bright.jpg
-video: /video/writing/tesla-software-problems-in-winter/energy-contrast-compressed.mp4
+video: /video/writing/tesla-software-problems-in-winter/climate-control-compressed.mp4
 favicon: ❄️
 skipHero: true
 ---
@@ -26,7 +26,11 @@ I collected data from all of my drives in temperatures below 0°C (32°F) over t
 
 With a few taps it is possible to view a graph of the car's efficiency over the last 50, 25, or 10 kilometres driven, and a weighted prediction of remaining range based on these values and current charge level. While this prediction is generally more accurate than the primary range indicator, the assumption that efficiency of the previous `n` kilometres driven is indicative of the next `m` kilometres driven is still often wrong, and exposes an interesting bias in its design.
 
-<PostVideo $size="large" src="/video/writing/tesla-software-problems-in-winter/energy-contrast-compressed.mp4" caption="The energy graph can show a very different range projection than the primary indicator, and neither are consistently accurate" />
+<PostVideo
+  $size="large"
+  src="/video/writing/tesla-software-problems-in-winter/energy-contrast-compressed.mp4"
+  caption="The energy graph can show a very different range projection than the primary indicator, and neither are consistently accurate"
+/>
 
 In much of the world—especially cold climates—weather conditions can change considerably overnight, and low temperatures have a greater impact on range than even the most extreme driving patterns. **In Winnipeg, we can see more temperature fluctuation in a single day than the Bay Area experiences in an entire year.** Even Tesla's concealed range prediction appears to be modeled after a use case wherein the driver has a regular ~50km commute in an area with limited temperature variation—which in all likelihood, it was.
 
@@ -52,7 +56,11 @@ In cold climates, snow or ice on boots and jackets melts in the warmth of a car'
 
 In auto mode of the Model 3's climate control, it is not possible to enable the windshield vents. Enabling them while in auto mode switches climate control to manual mode, but returning to auto mode disables them again. Auto mode may turn the windshield vents on periodically, but in my experience it is often not enough to maintain clear visibility.
 
-<PostVideo $size="large" src="/video/writing/tesla-software-problems-in-winter/climate-control-compressed.mp4" caption="In a Model 3's climate control, the windshield vents turn themselves off when in auto mode" />
+<PostVideo
+  $size="large"
+  src="/video/writing/tesla-software-problems-in-winter/climate-control-compressed.mp4"
+  caption="In a Model 3's climate control, the windshield vents turn themselves off when in auto mode"
+/>
 
 The windshield defrost mode works well and is extremely powerful, but it requires the driver to turn it on and off manually. Using it for light fog is like a farmer addressing a mouse problem by adopting a lion.
 
@@ -66,7 +74,11 @@ Switching to night mode before it is dark out can introduce glare that makes the
 
 Using astronomical dusk or an AI-centric approach to make a better determination of when or when not to enable night mode would improve driver experience.
 
-<PostImage src="/writing/tesla-software-problems-in-winter/IMG_0425.jpg" $size="large" caption="Night mode is automatically enabled at sunset, but at some latitudes sunset is a poor indicator of ambient light level" />
+<PostImage
+  src="/writing/tesla-software-problems-in-winter/IMG_0425.jpg"
+  $size="large"
+  caption="Night mode is automatically enabled at sunset, but at some latitudes sunset is a poor indicator of ambient light level"
+/>
 
 ## Snowflake icon drop shadow
 
@@ -74,11 +86,19 @@ Lastly... and I recognize this is especially pedantic... the Tesla UI displays a
 
 Presence of the indicator is fine, but the snowflake icon itself has an inexplicable drop shadow that exists nowhere else in the UI.
 
-<PostImage src="/writing/tesla-software-problems-in-winter/0S7A3613.jpg" $size="large" caption="Snowflake icon with inexplicable drop shadow" />
+<PostImage
+  src="/writing/tesla-software-problems-in-winter/0S7A3613.jpg"
+  $size="large"
+  caption="Snowflake icon with inexplicable drop shadow"
+/>
 
 The characteristics of the shadow are unlike any other in the UI; it's short, harsh, and opaque, rather than large, soft, and diffused. The shadow isn't used to visually separate the snowflake from background elements, because nothing is ever rendered behind it. The negative vertical positioning of the shadow doesn't make sense in our reality because it implies being lit from below, rather than above. I can't make sense of the shadow from an accessibility standpoint either because in context, the snowflake's blue colour alone has better contrast than other elements of the UI that are objectively more important.
 
-<PostImage src="/writing/tesla-software-problems-in-winter/0S7A3592.jpg" $size="large" caption="Snowflake icon with inexplicable drop shadow in broader context" />
+<PostImage
+  src="/writing/tesla-software-problems-in-winter/0S7A3592.jpg"
+  $size="large"
+  caption="Snowflake icon with inexplicable drop shadow in broader context"
+/>
 
 Because of this, I can only assume the snowflake's drop shadow is a bug, and, since it only appears in cold weather, it's plausible that few designers at Tesla have ever seen it.
 

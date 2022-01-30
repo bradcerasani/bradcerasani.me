@@ -1,9 +1,9 @@
-const { createWriteStream } = require('fs');
-const { pipeline } = require('stream');
-const { promisify } = require('util');
-const fetch = require('node-fetch');
+import { createWriteStream } from 'fs';
+import { pipeline } from 'stream';
+import { promisify } from 'util';
+import fetch from 'node-fetch';
 
-module.exports = async (url, filename, destination) => {
+async function download(url, filename, destination) {
   const streamPipeline = promisify(pipeline);
   const response = await fetch(url);
 
@@ -14,4 +14,6 @@ module.exports = async (url, filename, destination) => {
     response.body,
     createWriteStream(destination + filename)
   );
-};
+}
+
+export default download;

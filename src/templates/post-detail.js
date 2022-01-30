@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import Link from 'next/link';
+import { MDXRemote } from 'next-mdx-remote';
 import { css } from 'styled-components';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 
 import Layout from 'src/templates/layout';
-import { isImage, stripTags } from 'src/util';
+import { isImage, stripTags } from 'src/utils/strings';
 import { Head, Img, Intrinsic } from 'src/components';
-import 'src/css/footnotes.css';
-import 'src/css/prism-theme.css';
 
 const Hero = styled.div`
   animation-delay: 400ms;
@@ -29,13 +27,12 @@ const Hero = styled.div`
   }
 `;
 
-function PostDetailTemplate(props) {
-  const post = props.data.mdx;
-  const { date, description, image, skipHero } = post.frontmatter;
-  const { previous, next } = props.data.sitePage.context;
+function PostDetailTemplate({ frontmatter, pagination, slug, source }) {
+  const { date, description, favicon, image, skipHero, title } = frontmatter;
+  const { next, prev } = pagination;
 
   return (
-    <Layout headline={post.frontmatter.title} date={date} showReturn>
+    <Layout headline={title} date={date} showReturn>
       {isImage(image) && !skipHero && (
         <Hero role="complementary" aria-label={`Hero photo: ${description}`}>
           <Intrinsic aspectRatio={{ base: '1 / 1', md: '3 / 2', lg: '16 / 9' }}>
@@ -50,11 +47,11 @@ function PostDetailTemplate(props) {
       )}
 
       <Head
-        title={`${post.frontmatter.title} ● Brad Cerasani`}
+        title={`${title} • Brad Cerasani`}
         description={description}
         image={image}
-        slug={post.slug}
-        favicon={post.frontmatter.favicon}
+        slug={slug}
+        favicon={favicon}
       />
 
       <style>
@@ -71,7 +68,7 @@ function PostDetailTemplate(props) {
       <main>
         <article>
           <section>
-            <MDXRenderer>{post.body}</MDXRenderer>
+            <MDXRemote {...source} />
           </section>
         </article>
       </main>
@@ -89,27 +86,21 @@ function PostDetailTemplate(props) {
         }}
       >
         <div>
-          {next && next.frontmatter.status !== 'draft' && (
+          {next && (
             <>
               <h6 style={{ paddingTop: '0' }}>Newer</h6>
 
-              <Link
-                to={next.fields.slug}
-                style={{ textDecorationColor: 'inherit' }}
-              >
-                {stripTags(next.frontmatter.title)}
+              <Link href={next.slug} style={{ textDecorationColor: 'inherit' }}>
+                {stripTags(next.title)}
               </Link>
             </>
           )}
         </div>
-        {previous && (
+        {prev && (
           <div>
             <h6 style={{ paddingTop: '0' }}>Older</h6>
-            <Link
-              to={previous.fields.slug}
-              style={{ textDecorationColor: 'inherit' }}
-            >
-              {stripTags(previous.frontmatter.title)}
+            <Link href={prev.slug} style={{ textDecorationColor: 'inherit' }}>
+              {stripTags(prev.title)}
             </Link>
           </div>
         )}
@@ -119,43 +110,3 @@ function PostDetailTemplate(props) {
 }
 
 export default PostDetailTemplate;
-
-export const pageQuery = graphql`
-  query ProjectDetailBySlug($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
-      id
-      body
-      frontmatter {
-        title
-        date(formatString: "MMM YYYY")
-        description
-        image
-        favicon
-        skipHero
-      }
-      slug
-    }
-    sitePage(context: { slug: { eq: $slug } }) {
-      context {
-        next {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            status
-          }
-        }
-        previous {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            status
-          }
-        }
-      }
-    }
-  }
-`;

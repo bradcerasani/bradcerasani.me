@@ -17,7 +17,7 @@ const StyledButton = styled.a`
   font-size: var(--fontSizeSmaller);
   line-height: 1.5;
   padding: 0.5rem var(--spaceDefault);
-  transition: background-color, color var(--transitionDefault);
+  transition: background-color, color, var(--transitionDefault);
   text-decoration: none;
   text-transform: capitalize;
 

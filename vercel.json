@@ -13,27 +13,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/writing",
-      "destination": "/"
-    },
-    {
-      "source": "/projects",
-      "destination": "/"
-    },
-    {
-      "source": "/tesla",
-      "destination": "/writing/tesla-software-problems-in-winter"
-    },
-    {
-      "source": "/projects/home-renovation",
-      "destination": "/projects/designing-a-home"
-    },
-    {
-      "source": "/play",
-      "destination": "https://www.youtube.com/embed/o-kOE0Uev74?autoplay=1"
-    }
   ]
 }

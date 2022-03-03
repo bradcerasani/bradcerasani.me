@@ -18,4 +18,33 @@ module.exports = {
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: '/writing',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/projects',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/tesla',
+        destination: '/writing/tesla-software-problems-in-winter',
+        permanent: true,
+      },
+      {
+        source: '/projects/home-renovation',
+        destination: '/projects/designing-a-home',
+        permanent: true,
+      },
+      {
+        source: '/play',
+        destination: 'https://www.youtube.com/embed/o-kOE0Uev74?autoplay=1',
+        permanent: false,
+      },
+    ];
+  },
 };

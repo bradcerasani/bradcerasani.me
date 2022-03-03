@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import 'src/css/modern-normalize.css';
 import 'src/css/_settings.css';
 import 'src/css/animations.css';
@@ -5,7 +7,6 @@ import 'src/css/elements.css';
 import 'src/css/fonts.css';
 import 'src/css/footnotes.css';
 import 'src/css/prism-theme.css';
-import { useEffect } from 'react';
 
 function App({ Component, pageProps }) {
   useEffect(() => {

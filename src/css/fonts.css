@@ -1,5 +1,5 @@
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: 'CNW';
   font-weight: 700;
   src: url('/fonts/CNW-Bold.woff2') format('woff2'),
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: 'CNW';
   font-weight: 500;
   src: url('/fonts/CNW-Medium.woff2') format('woff2'),
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: 'CNW';
   font-weight: 400;
   src: url('/fonts/CNW-Regular.woff2') format('woff2'),
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: 'USW';
   font-weight: 400;
   src: url('/fonts/USW-Regular.woff2') format('woff2'),
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: 'USW';
   font-weight: 500;
   src: url('/fonts/USW-Medium.woff2') format('woff2'),
@@ -39,7 +39,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: 'USW';
   font-style: italic;
   font-weight: 400;
@@ -48,7 +48,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: 'USW';
   font-style: italic;
   font-weight: 500;

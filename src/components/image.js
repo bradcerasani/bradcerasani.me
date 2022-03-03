@@ -28,24 +28,42 @@ export const Img = ({ alt, src, sizes, ...props }) => {
   );
 };
 
-export const Image = ({ src, caption, alt, sizes, ...props }) => {
-  // TODO: Add media queries
-  let sizesFallback = '';
+export const Image = ({
+  alt,
+  caption,
+  height,
+  sizes,
+  src,
+  width,
+  ...props
+}) => {
+  const config = {
+    width,
+    height,
+  };
 
   switch (props.$size) {
+    case 'default':
+      config.sizes = '640px';
+      break;
     case 'large':
-      sizesFallback = '1040px';
+      config.sizes = '960px';
       break;
     case 'full':
-      sizesFallback = '100vw';
+      config.sizes = '100vw';
       break;
     default:
-      sizesFallback = 'var(--maxWidth)';
+      config.sizes = 'var(--maxWidth)';
   }
 
   return (
     <Figure {...props}>
-      <Img sizes={sizes || sizesFallback} src={src} alt={alt || caption} />
+      <Img
+        {...config}
+        sizes={sizes || config.sizes}
+        src={src}
+        alt={alt || caption}
+      />
       {caption && <Caption>{caption}</Caption>}
     </Figure>
   );

@@ -37,6 +37,8 @@ export const Header = (props) => {
     : null;
 
   useEffect(() => {
+    console.log('mounted');
+
     // Lock scroll when Nav overlay is visible
     document.body.style.overflow = isVisible ? 'hidden' : 'scroll';
 

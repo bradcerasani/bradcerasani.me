@@ -223,6 +223,7 @@ a[target='_blank']:hover::after {
 img,
 video {
   display: block;
+  height: auto;
   width: 100%;
 }
 

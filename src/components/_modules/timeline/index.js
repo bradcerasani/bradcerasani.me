@@ -38,9 +38,11 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
               ) : (
                 <Image
                   src={image}
-                  sizes="1040px"
+                  sizes="960px"
                   alt={description}
                   $size={size}
+                  width={size === 'default' ? 640 : 960}
+                  height={size === 'default' ? 360 : 540}
                 />
               )}
             </TimelineItemImageWrapper>

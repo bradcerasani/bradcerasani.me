@@ -14,7 +14,7 @@ export const Img = ({ alt, src, sizes, ...props }) => {
       className="lazyload"
       htmlAttributes={{
         alt: alt || 'Photo',
-        src: `${url}?blur=100&w=400&auto=format`,
+        src: `${url}?blur=100&w=100&auto=format`,
       }}
       sizes={sizes}
       src={url}

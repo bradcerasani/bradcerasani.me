@@ -126,9 +126,9 @@ export const StyledGalleryImage = styled.div`
 `;
 
 export const StyledGalleryController = styled.input`
-  --handleSize: 1rem;
+  --handleSize: 0.875rem;
   --trackHeight: 3px;
-  --trackColor: var(--colorLinenDark);
+  --trackColor: var(--colorGreyLighter);
 
   appearance: none;
   background-color: transparent;
@@ -145,7 +145,7 @@ export const StyledGalleryController = styled.input`
     css`
       &::before {
         animation: pulse 2s ease 0s infinite;
-        background-color: var(--colorLinenLighter);
+        background-color: white;
         border-radius: 50%;
         content: '';
         display: block;

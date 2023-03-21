@@ -7,9 +7,11 @@ import { Button, Image, PostVideo, VisuallyHidden } from 'src/components';
 
 import {
   StyledTimelineItem,
+  TimelineDate,
   TimelineItemDetailsWrapper,
   TimelineItemImageWrapper,
   TimelineItemNode,
+  TimelineLink,
 } from './styles';
 
 export const Timeline = styled.div`
@@ -22,7 +24,7 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
 
   const buttonText = cta || (type === 'POST' ? 'Read Post' : 'View Project');
   const isDraft = status === 'draft';
-  const size = type === 'POST' || isDraft ? 'default' : 'large';
+  const size = 'default';
   const showMedia = video || image;
   const displayTitle = stripTags(title);
   const href = !isDraft ? slug : '#';
@@ -53,7 +55,9 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
       )}
 
       <TimelineItemDetailsWrapper>
-        <TimelineItemNode>{daterange || date.substring(0, 4)}</TimelineItemNode>
+        <TimelineItemNode />
+
+        <TimelineDate>{daterange || date.substring(0, 4)}</TimelineDate>
 
         <Link href={href} passHref>
           <a>
@@ -69,7 +73,9 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
 
         {(!frontmatter.skipPage || isDraft) && (
           <Link href={href} passHref>
-            <Button $isDisabled={isDraft}>{buttonText}</Button>
+            <TimelineLink>
+              {buttonText} {!isDraft && '→'}
+            </TimelineLink>
           </Link>
         )}
       </TimelineItemDetailsWrapper>

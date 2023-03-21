@@ -2,30 +2,28 @@ import styled, { css } from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 
-// Exported StyledTimelineItem at bottom due to no-use-before-define
 const TimelineItem = styled.div`
   --marginBottom: var(--spaceMedium);
-  --nodeDiameter: 3rem;
-  --nodeOffset: 1rem;
+  --nodeDiameter: 0.75rem;
+  --nodeOffset: 2rem;
   --strokeWidth: 1px;
+  --timelineColor: var(--colorGreyLighter);
+  --timelineNodeColor: var(--colorGreyLight);
 
+  font-family: var(--fontFamilySansSerif);
   margin-bottom: var(--marginBottom);
   position: relative;
-
-  @media (min-width: ${breakpoint.md}) {
-    --marginBottom: var(--spaceLarge);
-  }
 `;
 
 const TimelineStroke = css`
-  background-color: var(--colorGreyLight);
+  background-color: var(--timelineColor);
   content: '';
+  height: 100%;
   left: 0;
   margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2);
   position: absolute;
   width: var(--strokeWidth);
   z-index: 0;
-  height: 100%;
 `;
 
 export const TimelineItemImageWrapper = styled.div`
@@ -34,6 +32,7 @@ export const TimelineItemImageWrapper = styled.div`
 
   figure {
     aspect-ratio: 16/9;
+    box-shadow: var(--boxShadow);
     margin-bottom: 1rem;
     position: relative;
     z-index: 5;
@@ -44,7 +43,7 @@ export const TimelineItemImageWrapper = styled.div`
       ${TimelineStroke};
 
       z-index: 0;
-      height: 100%;
+      height: calc(100% + 2.75rem);
       top: 0;
     }
   }
@@ -55,32 +54,28 @@ export const TimelineItemDetailsWrapper = styled.article`
 
   h3 {
     display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
     padding-top: 0.75rem;
+    margin-bottom: 0.25rem;
   }
 
   p {
     font-size: var(--fontSizeSmall);
-    margin-bottom: 1.25rem;
-  }
-
-  h3:hover {
-    text-decoration: underline;
+    margin-bottom: 0;
+    color: var(--colorGreyLight);
   }
 
   @media (min-width: ${breakpoint.md}) {
-    &::before,
     &::after {
       ${TimelineStroke};
     }
 
     &::after {
       bottom: calc(-1 * var(--marginBottom));
-      height: calc(100% - var(--nodeDiameter) + var(--marginBottom));
-    }
-
-    &::before {
-      height: var(--spaceDefault);
-      top: calc(-1 * var(--spaceDefault));
+      height: calc(
+        100% - var(--nodeDiameter) + var(--marginBottom) + var(--nodeDiameter)
+      );
     }
   }
 `;
@@ -90,11 +85,15 @@ export const TimelineItemNode = styled.div`
 
   @media (min-width: ${breakpoint.md}) {
     align-items: center;
+    background-color: var(--colorWhite);
     border-radius: 50%;
-    border: var(--strokeWidth) solid currentColor;
+    border: var(--strokeWidth) solid var(--timelineNodeColor);
+    box-shadow: 0 0 0 0.25rem var(--computedBackgroundColor);
     display: flex;
+    font-size: 10px;
     font-size: var(--fontSizeSmallest);
     font-variant-numeric: tabular-nums;
+    font-weight: 600;
     height: var(--nodeDiameter);
     justify-content: center;
     left: 0;
@@ -102,9 +101,8 @@ export const TimelineItemNode = styled.div`
     margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter));
     position: absolute;
     text-align: center;
-    top: 0;
+    top: 1rem;
     width: var(--nodeDiameter);
-    box-shadow: 0 0 0 0.25rem var(--computedBackgroundColor);
     z-index: 1;
   }
 `;
@@ -126,20 +124,11 @@ export const StyledTimelineItem = styled(TimelineItem)`
   @media (min-width: ${breakpoint.md}) {
     &:first-of-type {
       ${TimelineItemImageWrapper}::before {
-        height: calc(2rem + 100%);
-        top: -2rem;
+        display: none;
       }
 
-      ${TimelineItemImageWrapper}::after {
-        border-radius: 50%;
-        border: 1px solid currentColor;
-        content: '';
-        height: 0.75rem;
-        left: -2.875rem;
-        margin-left: 1px; /* nudge to centre */
-        position: absolute;
-        top: -3rem;
-        width: 0.75rem;
+      ${TimelineItemDetailsWrapper}::after {
+        top: 1rem;
       }
     }
 
@@ -149,4 +138,33 @@ export const StyledTimelineItem = styled(TimelineItem)`
       }
     }
   }
+`;
+
+export const TimelineDate = styled.div`
+  color: var(--colorGreyLight);
+  font-size: var(--fontSizeSmaller);
+
+  @media (min-width: ${breakpoint.md}) {
+    padding-top: calc(var(--nodeDiameter) + 2px);
+  }
+
+  @media (min-width: ${breakpoint.lg}) {
+    display: block;
+    left: -8.75rem;
+    line-height: 1;
+    height: var(--nodeDiameter);
+    padding-top: 0;
+    position: absolute;
+    text-align: right;
+    top: calc(1rem + 1px);
+    white-space: nowrap;
+    width: 4rem;
+  }
+`;
+
+export const TimelineLink = styled.a`
+  color: var(--colorGreyDefault);
+  font-size: var(--fontSizeSmaller);
+  line-height: 1;
+  text-decoration: none;
 `;

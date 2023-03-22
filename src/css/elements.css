@@ -21,6 +21,7 @@ html {
 
 body {
   color: var(--textColor);
+  font-feature-settings: 'clig', 'kern', 'liga', 'onum', 'pnum', 'ss01';
   line-height: 1.5;
   min-height: 100vh;
   text-rendering: optimizeLegibility;

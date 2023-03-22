@@ -14,7 +14,7 @@ const Hero = styled.div`
   animation-fill-mode: both;
   animation-name: fadeIn;
   animation-timing-function: ease-out;
-  filter: grayscale() brightness(0.6);
+  filter: grayscale() brightness(0.6) opacity(0.2);
   left: 0;
   mask-image: linear-gradient(black 65%, transparent 95%);
   position: absolute;
@@ -53,17 +53,6 @@ function PostDetailTemplate({ frontmatter, pagination, slug, source }) {
         slug={slug}
         favicon={favicon}
       />
-
-      <style>
-        {css`
-          @media (prefers-color-scheme: light) {
-            :root {
-              --backgroundColor: hsl(39, 14%, 40%, 0.5);
-              --computedBackgroundColor: hsl(43, 8%, 82%, 1);
-            }
-          }
-        `}
-      </style>
 
       <main>
         <article>

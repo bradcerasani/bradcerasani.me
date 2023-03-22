@@ -1,15 +1,19 @@
 import React from 'react';
-import Link from 'next/link';
-import { css } from 'styled-components';
 
 import { posts } from 'src/utils/posts.mjs';
 import Layout from 'src/templates/layout';
-import { Button, Head, Timeline, TimelineItem } from 'src/components';
+import {
+  Head,
+  Timeline,
+  TimelineItem,
+  Gallery,
+  GalleryController,
+  Grid,
+  GridItem,
+} from 'src/components';
 
 function Home({ posts }) {
-  const description = `I’ve been designing and implementing software for over a decade,
-  with clients and collaborators that include Apple, Twitter, and
-  the American Music Awards.`;
+  const description = `I've been building on the web for 15 years, helping companies like Apple, Google, Twitter, and the American Music Awards create beautiful and useful experiences for their users.`;
 
   return (
     <Layout>
@@ -18,56 +22,84 @@ function Home({ posts }) {
         description={`Hi, I'm Brad. ${description}`}
       />
 
-      <style>
-        {css`
-          @media (prefers-color-scheme: light) {
-            :root {
-              --backgroundColor: hsl(30, 32%, 40%, 0.5);
-              --computedBackgroundColor: hsl(32, 18%, 82%, 1);
-            }
-          }
-        `}
-      </style>
-
       <main>
-        <section style={{ marginBottom: 'calc(var(--spaceMedium) / 2)' }}>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: description,
-            }}
-            style={{ marginBottom: 'calc(var(--spaceDefault) / 2)' }}
-          />
+        <section>
+          <p>
+            I&apos;ve been building on the web for 15 years, helping companies
+            like Apple, Google, Twitter, and the American Music Awards create
+            beautiful and useful experiences for their users.
+          </p>
 
-          <Link href="/about" passHref>
-            <Button $variant="link" style={{ textUnderlinePosition: 'under' }}>
-              More about me
-            </Button>
-          </Link>
+          <p>
+            I specialize in a mix of visual/interaction design and front-end
+            engineering — which allows me to translate ideas into functional
+            prototypes and production-ready code with the full fidelity of the
+            web.
+          </p>
+
+          <p>
+            Here you&apos;ll find a medly of writing and side projects that
+            explore software, design, architecture, and the internet of things.{' '}
+          </p>
         </section>
 
         <section>
-          <h2
-            style={{ paddingTop: 'calc(var(--spaceMedium) / 2)' }}
-            id="side-projects"
-          >
-            Side projects &amp; writing
-          </h2>
-          <Timeline>
-            {posts.map((datum, index) => {
-              const { type, slug, frontmatter } = datum;
+          <Grid $gutter="4rem">
+            <GridItem $width={{ sm: '50%' }}>
+              <h6>Elsewhere</h6>
 
+              <ul
+                style={{
+                  fontFamily: 'var(--fontFamilySansSerif)',
+                  fontSize: 'var(--fontSizeSmall)',
+                  color: 'var(--colorGreyDefault)',
+                }}
+              >
+                {elsewhere.map(({ title, url }) => (
+                  <li key={url}>
+                    <a
+                      href={url}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      {title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </GridItem>
+
+            <GridItem $width={{ sm: '50%' }}>
+              <h6>Photos</h6>
+              <GalleryController />
+            </GridItem>
+          </Grid>
+        </section>
+
+        <section
+          style={{
+            marginTop: 'var(--spaceMedium)',
+            marginBottom: 'var(--spaceLarge)',
+          }}
+        >
+          <h6>Posts &amp; Projects</h6>
+          <Timeline>
+            {posts.map(({ type, slug, frontmatter }) => {
               return (
                 <TimelineItem
                   slug={slug}
                   type={type}
                   frontmatter={frontmatter}
-                  key={index}
+                  key={slug}
                 />
               );
             })}
           </Timeline>
         </section>
       </main>
+
+      <Gallery />
     </Layout>
   );
 }
@@ -77,3 +109,26 @@ export default Home;
 export function getStaticProps() {
   return { props: { posts } };
 }
+
+const elsewhere = [
+  {
+    title: 'Twitter',
+    url: 'https://twitter.com/bradcerasani',
+  },
+  {
+    title: 'Instagram',
+    url: 'https://instagram.com/bradcerasani',
+  },
+  {
+    title: 'GitHub',
+    url: 'https://github.com/bradcerasani',
+  },
+  {
+    title: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/bradcerasani/',
+  },
+  {
+    title: 'read.cv',
+    url: 'https://read.cv/bradcerasani',
+  },
+];

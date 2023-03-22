@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 import { stripTags } from 'src/utils/strings';
-import { Date as DateComponent, Logo } from 'src/components';
+import { Date as DateComponent } from 'src/components';
 import { links } from './links';
 import { StyledHeader, HeroContainer, Nav, NavImage, NavItem } from './styles';
 import {
@@ -16,11 +17,23 @@ import {
   MobileNavListItem,
 } from './mobile-overlay';
 
+const Glow = styled.div`
+  --size: 1200px;
+
+  background-image: radial-gradient(white 0%, rgba(255, 255, 255, 0) 50%);
+  height: var(--size);
+  left: calc(var(--size) / -2);
+  position: absolute;
+  top: calc(var(--size) / -2);
+  width: var(--size);
+  z-index: -1;
+`;
+
 export const Header = (props) => {
   // TODO: Query posts for full article index on mobile
   const allMdx = null;
 
-  const { date, headline = 'Design & Engineering' } = props;
+  const { date, headline = null } = props;
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
   const [showSocial, setShowSocial] = useState(false);
@@ -123,7 +136,33 @@ export const Header = (props) => {
       >
         <MobileNavMenuWrapper>
           <Link href="/" passHref>
-            <Logo>Brad Cerasani</Logo>
+            <div
+              style={{
+                marginBottom: 'var(--spaceMedium)',
+                position: 'relative',
+              }}
+            >
+              <Glow />
+              <h1
+                style={{
+                  lineHeight: '1.5',
+                  fontFamily: 'var(--fontFamilySansSerif)',
+                  fontSize: 'var(--fontSizeSmall)',
+                  fontWeight: 500,
+                }}
+              >
+                Brad Cerasani
+                <span
+                  style={{
+                    color: 'var(--colorGreyLight)',
+                    display: 'block',
+                    fontWeight: 400,
+                  }}
+                >
+                  Design &amp; Engineering
+                </span>
+              </h1>
+            </div>
           </Link>
           <MobileNavMenu
             onClick={() => setVisibility(!isVisible)}
@@ -131,28 +170,14 @@ export const Header = (props) => {
           />
         </MobileNavMenuWrapper>
 
-        <HeroContainer>
-          <h1>
-            {date && <DateComponent>{formattedDate}</DateComponent>}
-            <span dangerouslySetInnerHTML={{ __html: headline }} />
-          </h1>
-
-          <Nav>
-            {links.map(({ to, label, src, alt }, index) => {
-              return (
-                <Link href={to} key={to} passHref>
-                  <NavItem
-                    $isActive={router.pathname === to ? 'is-active' : ''}
-                    $showReturn={index === 0 && props.showReturn}
-                  >
-                    {label}
-                    <NavImage src={src} alt={alt} />
-                  </NavItem>
-                </Link>
-              );
-            })}
-          </Nav>
-        </HeroContainer>
+        {headline && (
+          <HeroContainer>
+            <h1>
+              {date && <DateComponent>{formattedDate}</DateComponent>}
+              <span dangerouslySetInnerHTML={{ __html: headline }} />
+            </h1>
+          </HeroContainer>
+        )}
       </StyledHeader>
     </>
   );

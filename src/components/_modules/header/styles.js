@@ -20,30 +20,40 @@ export const HeroContainer = styled.div`
   display: flex;
   margin-top: var(--spaceMedium);
 
+  h1 {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin-bottom: var(--spaceMedium);
+  }
+
   h1 br {
     display: none;
   }
 
   @media (min-width: ${breakpoint.sm}) {
     h1 {
-      font-size: var(--fontSizeLargest);
+      /* font-size: var(--fontSizeLargest); */
       line-height: 1.1;
     }
   }
 
   @media (min-width: ${breakpoint.md}) {
     margin-top: var(--spaceDefault);
-    min-height: 10.625rem; /* Maintain equal distance above/below logo */
+    /* min-height: 10.625rem;  */
+    /* Maintain equal distance above/below logo */
 
     h1 {
-      font-size: 4rem;
-      margin-left: -3rem;
+      /* font-size: 4rem; */
+      /* margin-left: -3rem; */
     }
   }
 
   @media (min-width: ${breakpoint.lg}) {
     h1 {
-      margin-left: -4rem;
+      /* margin-left: -4rem; */
     }
 
     h1 br {

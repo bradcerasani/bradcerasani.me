@@ -88,7 +88,7 @@ export const MobileNavOverlay = styled.div`
     `}
 
   @media (min-width: ${breakpoint.md}) {
-    display: none;
+    /* display: none; */
   }
 `;
 
@@ -136,11 +136,13 @@ export const MobileNavMenu = styled.div`
   justify-content: center;
   margin-right: -1.25rem;
   position: relative;
-  -webkit-tap-highlight-color: transparent;
   width: 4rem;
+  z-index: 10;
+
+  -webkit-tap-highlight-color: transparent;
 
   @media (min-width: ${breakpoint.md}) {
-    display: none;
+    /* display: none; */
   }
 
   &::before,
@@ -157,6 +159,7 @@ export const MobileNavMenu = styled.div`
     transition-timing-function: cubic-bezier(0, 0.85, 0, 1);
     width: var(--size);
     will-change: transform;
+    background-color: red;
   }
 
   &::before {
@@ -172,6 +175,7 @@ export const MobileNavMenu = styled.div`
     css`
       &::before,
       &::after {
+        background-color: green;
         transition-duration: 1000ms;
       }
 

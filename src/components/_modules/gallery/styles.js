@@ -119,7 +119,9 @@ export const StyledGalleryImage = styled.div`
 
   img {
     display: block;
+    height: 100%;
     margin-bottom: 0;
+    object-fit: cover;
     user-select: none;
     width: 100%;
   }
@@ -176,6 +178,11 @@ export const StyledGalleryController = styled.input`
     margin-top: calc(var(--trackHeight) / 2);
     transform: translateY(-50%);
     width: var(--handleSize);
+    transition: transform var(--transitionFast);
+
+    &:active {
+      transform: scale(0.95) translateY(-50%);
+    }
   }
 
   &::-ms-fill-lower,

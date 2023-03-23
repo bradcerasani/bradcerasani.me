@@ -1,20 +1,17 @@
 import React from 'react';
 import lazySizes from 'lazysizes';
 
-import { Container, Footer, Header } from 'src/components';
+import { Container, Footer } from 'src/components';
 
 if (typeof window !== 'undefined') {
   require('lazysizes/plugins/unveilhooks/ls.unveilhooks');
   lazySizes.cfg.preloadAfterLoad = true;
 }
 
-function Layout({ children, ...props }) {
+function Layout({ children }) {
   return (
     <>
-      <Container>
-        <Header {...props} />
-        {children}
-      </Container>
+      <Container>{children}</Container>
       <Footer />
     </>
   );

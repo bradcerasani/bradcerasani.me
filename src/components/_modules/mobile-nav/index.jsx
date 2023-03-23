@@ -30,7 +30,7 @@ const links = [
 ];
 
 export const MobileNav = (props) => {
-  const { allMdx } = props;
+  const { posts } = props;
   const [isVisible, setVisibility] = useState(false);
   const [overlayTransitioned, setOverlayTransitioned] = useState(false);
   const [showSocial, setShowSocial] = useState(false);
@@ -83,22 +83,24 @@ export const MobileNav = (props) => {
               </Link>
             ))}
 
-            <ul>
-              {allMdx &&
-                allMdx.edges.map(({ node }, index) => (
-                  <MobileNavListItem
-                    key={node.fields.slug}
-                    $isVisible={showSocial}
-                    style={{
-                      animationDelay: `calc(${100 * (index + 1)}ms)`,
-                      textDecoration: 'underline',
-                    }}
-                  >
-                    <Link key={node.frontmatter.title} href={node.fields.slug}>
-                      {stripTags(node.frontmatter.title)}
-                    </Link>
-                  </MobileNavListItem>
-                ))}
+            <ul style={{ textAlign: 'center' }}>
+              {posts &&
+                posts.map(({ slug, frontmatter }, index) => {
+                  return (
+                    <MobileNavListItem
+                      key={slug}
+                      $isVisible={showSocial}
+                      style={{
+                        animationDelay: `calc(${100 * (index + 1)}ms)`,
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      <Link key={frontmatter.title} href={slug}>
+                        {stripTags(frontmatter.title)}
+                      </Link>
+                    </MobileNavListItem>
+                  );
+                })}
             </ul>
 
             <ul>

@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
 import { Date as DateComponent } from 'src/components';
 
-import { StyledHeader, HeroContainer, Nav, NavImage, NavItem } from './styles';
-import {
-  MobileNav,
-  MobileNavItem,
-  MobileNavMenu,
-  MobileNavMenuWrapper,
-  MobileNavOverlay,
-  MobileNavWrapper,
-  MobileNavListItem,
-} from '../mobile-nav';
+import { StyledHeader, HeroContainer } from './styles';
+import { MobileNav } from '../mobile-nav';
 
 const Glow = styled.div`
   --size: 1200px;
@@ -29,10 +20,7 @@ const Glow = styled.div`
 `;
 
 export const Header = (props) => {
-  // TODO: Query posts for full article index on mobile
-  const allMdx = null;
-
-  const { date, headline = null } = props;
+  const { date, headline = null, posts = [] } = props;
   const [isVisible, setVisibility] = useState(false);
 
   // TODO: Create util
@@ -82,8 +70,9 @@ export const Header = (props) => {
         </Link>
 
         <MobileNav
-          onClick={() => setVisibility(!isVisible)}
           $isActive={isVisible}
+          onClick={() => setVisibility(!isVisible)}
+          posts={posts}
         />
 
         {headline && (

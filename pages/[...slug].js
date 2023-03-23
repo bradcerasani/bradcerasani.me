@@ -71,6 +71,7 @@ export const getStaticProps = async ({ params }) => {
       props: {
         frontmatter,
         pagination: pagination[slug],
+        posts,
         slug,
         source,
       },

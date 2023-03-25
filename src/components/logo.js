@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 const StyledLogo = styled.h2`
-  line-height: 1.5;
   font-family: var(--fontFamilySansSerif);
   font-size: var(--fontSizeSmall);
   font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding-top: 0;
   position: relative;
   z-index: 10;
 `;

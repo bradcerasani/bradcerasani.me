@@ -66,7 +66,16 @@ function PageNotFound({ posts }) {
           </GridItem>
 
           <GridItem $width={{ md: '50%' }}>
-            <h3 style={{ paddingTop: 'var(--spaceDefault)', color: 'inherit' }}>
+            <h3
+              style={{
+                paddingTop: 'var(--spaceDefault)',
+                color: 'inherit',
+                fontFamily: 'var(--fontFamilySansSerif)',
+                textTransform: 'uppercase',
+                fontSize: 'var(--fontSizeDefault)',
+                fontWeight: '500',
+              }}
+            >
               Error 404
             </h3>
 

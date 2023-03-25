@@ -48,6 +48,8 @@
 
   --gutter: var(--spaceDefault);
   --maxWidth: 700px;
+
+  --glowSize: 1200px;
 }
 
 @media (min-width: 480px) {

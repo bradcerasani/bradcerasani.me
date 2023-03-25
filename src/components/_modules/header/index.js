@@ -29,7 +29,7 @@ export const Header = (props) => {
       >
         <MobileNavMenuWrapper>
           <Link href="/" passHref>
-            <a style={{ textDecoration: 'none' }}>
+            <a style={{ textDecoration: 'none', display: 'inline-block' }}>
               <Logo />
             </a>
           </Link>

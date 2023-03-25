@@ -14,12 +14,13 @@ const StyledButton = styled.a`
   background-color: var(--colorGreyDarker);
   border-radius: var(--spaceDefault);
   color: var(--colorLinenLight);
+  font-family: var(--fontFamilySansSerif);
   font-size: var(--fontSizeSmaller);
   line-height: 1.5;
   padding: 0.5rem var(--spaceDefault);
-  transition: background-color, color, var(--transitionDefault);
   text-decoration: none;
   text-transform: capitalize;
+  transition: background-color, color, var(--transitionDefault);
 
   &:hover {
     ${ButtonLinkIcon} {

@@ -46,6 +46,7 @@ export const Gallery = () => {
               <img
                 src={`/images/instagram/${image.id}.jpg`}
                 alt={caption !== undefined ? `${caption} — ${tag}` : tag}
+                loading="lazy"
               />
             </StyledGalleryImage>
           </Draggable>

@@ -1,9 +1,17 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 import { stripTags } from 'src/utils/strings';
 import { breakpoint } from 'src/settings';
+import linkList from 'content/social/link-list.js';
+
+const Dots = styled.div`
+  border-bottom: 1px dotted var(--colorGreyLighter);
+  flex-grow: 1;
+  margin: 0 6px 6px;
+`;
 
 import {
   MobileNavItem,
@@ -54,77 +62,73 @@ export const MobileNav = (props) => {
 
   return (
     <>
-      <MobileNavMenuWrapper>
-        <MobileNavMenu
-          $isActive={isVisible}
-          onClick={() => setVisibility(!isVisible)}
-        />
+      <MobileNavMenu
+        $isActive={isVisible}
+        onClick={() => setVisibility(!isVisible)}
+      />
 
-        <MobileNavOverlay
-          $isVisible={isVisible}
-          onTransitionEnd={() => {
-            setOverlayTransitioned(isVisible ? true : false);
-            setShowSocial(isVisible);
-          }}
-        >
-          <MobileNavWrapper>
-            {links.map(({ to, label }, index) => (
-              <Link href={to} key={to} passHref>
-                <MobileNavItem
-                  $isActive={router.pathname === to ? 'is-active' : ''}
-                  $isVisible={overlayTransitioned}
-                  onAnimationStart={() =>
-                    setShowSocial(index === links.length - 1)
-                  }
-                  style={{ animationDelay: `calc(${100 * index}ms)` }}
-                >
-                  {label}
-                </MobileNavItem>
-              </Link>
-            ))}
-
-            <ul style={{ textAlign: 'center' }}>
-              {posts &&
-                posts.map(({ slug, frontmatter }, index) => {
-                  return (
-                    <MobileNavListItem
-                      key={slug}
-                      $isVisible={showSocial}
-                      style={{
-                        animationDelay: `calc(${100 * (index + 1)}ms)`,
-                        textDecoration: 'underline',
-                      }}
-                    >
-                      <Link key={frontmatter.title} href={slug}>
-                        {stripTags(frontmatter.title)}
-                      </Link>
-                    </MobileNavListItem>
-                  );
-                })}
-            </ul>
-
-            <ul>
-              {['Twitter', 'Instagram', 'GitHub'].map((link, index) => (
+      <MobileNavOverlay
+        $isVisible={isVisible}
+        onTransitionEnd={() => {
+          setOverlayTransitioned(isVisible ? true : false);
+          setShowSocial(isVisible);
+        }}
+      >
+        <MobileNavWrapper>
+          <ul>
+            {posts.map(({ slug, frontmatter }, index) => {
+              return (
                 <MobileNavListItem
+                  key={slug}
                   $isVisible={showSocial}
-                  key={link}
                   style={{
                     animationDelay: `calc(${100 * (index + 1)}ms)`,
                   }}
                 >
-                  <a
-                    href={`https://${link.toLowerCase()}.com/bradcerasani`}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {link}
-                  </a>
+                  <Link key={frontmatter.title} href={slug} passHref>
+                    <a>
+                      {stripTags(frontmatter.title)}
+                      <Dots />
+                      <span>{new Date(frontmatter.date).getFullYear()}</span>
+                    </a>
+                  </Link>
                 </MobileNavListItem>
-              ))}
-            </ul>
-          </MobileNavWrapper>
-        </MobileNavOverlay>
-      </MobileNavMenuWrapper>
+              );
+            })}
+          </ul>
+
+          <ul
+            style={{
+              fontFamily: 'var(--fontFamilySansSerif)',
+              fontSize: 'var(--fontSizeSmall)',
+              color: 'var(--colorGreyDefault)',
+            }}
+          >
+            {linkList.map(({ title, url }, index) => (
+              <MobileNavListItem
+                $isVisible={showSocial}
+                key={title}
+                style={{
+                  animationDelay: `calc(${
+                    posts.length * 100 + 100 * (index + 1)
+                  }ms)`,
+                }}
+              >
+                <a
+                  href={url}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  style={{ display: 'block' }}
+                >
+                  {title}
+                </a>
+              </MobileNavListItem>
+            ))}
+          </ul>
+        </MobileNavWrapper>
+      </MobileNavOverlay>
     </>
   );
 };
+
+export { MobileNavMenuWrapper };

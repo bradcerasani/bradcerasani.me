@@ -1,10 +1,9 @@
-import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
 import { breakpoint } from 'src/settings';
 
 export const StyledHeader = styled.header`
-  margin-bottom: var(--spaceMedium);
+  margin-bottom: var(--spaceDefault);
   padding-top: 0.75rem;
   position: relative;
 

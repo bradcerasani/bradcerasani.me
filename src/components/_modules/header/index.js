@@ -1,23 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
 
-import { Date as DateComponent } from 'src/components';
+import { Date as DateComponent, Glow, Logo } from 'src/components';
 
 import { StyledHeader, HeroContainer } from './styles';
-import { MobileNav } from '../mobile-nav';
-
-const Glow = styled.div`
-  --size: 1200px;
-
-  background-image: radial-gradient(white 0%, rgba(255, 255, 255, 0) 50%);
-  height: var(--size);
-  left: calc(var(--size) / -2);
-  position: absolute;
-  top: calc(var(--size) / -2);
-  width: var(--size);
-  z-index: -1;
-`;
+import { MobileNav, MobileNavMenuWrapper } from '../mobile-nav';
 
 export const Header = (props) => {
   const { date, headline = null, posts = [] } = props;
@@ -35,45 +22,24 @@ export const Header = (props) => {
 
   return (
     <>
+      <Glow />
       <StyledHeader
         itemscope="itemscope"
         itemtype="https://schema.org/SiteNavigationElement"
       >
-        <Link href="/" passHref>
-          <div
-            style={{
-              marginBottom: 'var(--spaceMedium)',
-              position: 'relative',
-            }}
-          >
-            <Glow />
-            <h1
-              style={{
-                lineHeight: '1.5',
-                fontFamily: 'var(--fontFamilySansSerif)',
-                fontSize: 'var(--fontSizeSmall)',
-                fontWeight: 500,
-              }}
-            >
-              Brad Cerasani
-              <span
-                style={{
-                  color: 'var(--colorGreyLight)',
-                  display: 'block',
-                  fontWeight: 400,
-                }}
-              >
-                Design &amp; Engineering
-              </span>
-            </h1>
-          </div>
-        </Link>
+        <MobileNavMenuWrapper>
+          <Link href="/" passHref>
+            <a style={{ textDecoration: 'none' }}>
+              <Logo />
+            </a>
+          </Link>
 
-        <MobileNav
-          $isActive={isVisible}
-          onClick={() => setVisibility(!isVisible)}
-          posts={posts}
-        />
+          <MobileNav
+            $isActive={isVisible}
+            onClick={() => setVisibility(!isVisible)}
+            posts={posts}
+          />
+        </MobileNavMenuWrapper>
 
         {headline && (
           <HeroContainer>

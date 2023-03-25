@@ -73,7 +73,7 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
 
         {(!frontmatter.skipPage || isDraft) && (
           <Link href={href} passHref>
-            <TimelineLink>
+            <TimelineLink style={{ opacity: isDraft ? 0.5 : 1 }}>
               {buttonText} {!isDraft && '→'}
             </TimelineLink>
           </Link>

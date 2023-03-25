@@ -61,6 +61,8 @@ export const MobileNav = (props) => {
         <MobileNavWrapper>
           <ul>
             {posts.map(({ slug, frontmatter }, index) => {
+              if (frontmatter.status === 'draft') return null;
+
               return (
                 <MobileNavListItem
                   key={slug}

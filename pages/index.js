@@ -57,6 +57,7 @@ function Home({ posts }) {
                     fontFamily: 'var(--fontFamilySansSerif)',
                     fontSize: 'var(--fontSizeSmall)',
                     color: 'var(--colorGreyDefault)',
+                    marginBottom: '0',
                   }}
                 >
                   {linkList.map(({ title, url }) => (
@@ -75,7 +76,7 @@ function Home({ posts }) {
               </GridItem>
 
               <GridItem $width={{ sm: '50%' }}>
-                <h6>Photos</h6>
+                <h6 style={{ paddingTop: 0 }}>Photos</h6>
                 <GalleryController />
               </GridItem>
             </Grid>
@@ -87,7 +88,7 @@ function Home({ posts }) {
               marginBottom: 'var(--spaceLarge)',
             }}
           >
-            <h6>Posts &amp; Projects</h6>
+            <h6 style={{ paddingTop: 0 }}>Posts &amp; Projects</h6>
             <Timeline>
               {posts.map(({ type, slug, frontmatter }) => {
                 return (

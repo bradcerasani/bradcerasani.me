@@ -1,25 +1,35 @@
 @font-face {
   font-display: block;
-  font-family: 'CNW';
-  font-weight: 700;
-  src: url('/fonts/CNW-Bold.woff2') format('woff2'),
-    url('/fonts/CNW-Bold.woff') format('woff');
-}
-
-@font-face {
-  font-display: block;
-  font-family: 'CNW';
-  font-weight: 500;
-  src: url('/fonts/CNW-Medium.woff2') format('woff2'),
-    url('/fonts/CNW-Medium.woff') format('woff');
-}
-
-@font-face {
-  font-display: block;
-  font-family: 'CNW';
+  font-family: 'SNF';
   font-weight: 400;
-  src: url('/fonts/CNW-Regular.woff2') format('woff2'),
-    url('/fonts/CNW-Regular.woff2') format('woff2');
+  src: url('/fonts/SNF-Regular.woff2') format('woff2'),
+    url('/fonts/SNF-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
+  font-weight: 500;
+  src: url('/fonts/SNF-Medium.woff2') format('woff2'),
+    url('/fonts/SNF-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/SNF-RegularItalic.woff2') format('woff2'),
+    url('/fonts/SNF-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/fonts/SNF-MediumItalic.woff2') format('woff2'),
+    url('/fonts/SNF-MediumItalic.woff') format('woff');
 }
 
 @font-face {

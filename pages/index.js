@@ -1,5 +1,6 @@
 import React from 'react';
 
+import linkList from 'content/social/link-list';
 import { posts } from 'src/utils/posts.mjs';
 import Layout from 'src/templates/layout';
 import {
@@ -58,7 +59,7 @@ function Home({ posts }) {
                     color: 'var(--colorGreyDefault)',
                   }}
                 >
-                  {elsewhere.map(({ title, url }) => (
+                  {linkList.map(({ title, url }) => (
                     <li key={url}>
                       <a
                         href={url}
@@ -113,26 +114,3 @@ export default Home;
 export function getStaticProps() {
   return { props: { posts } };
 }
-
-const elsewhere = [
-  {
-    title: 'Twitter',
-    url: 'https://twitter.com/bradcerasani',
-  },
-  {
-    title: 'Instagram',
-    url: 'https://instagram.com/bradcerasani',
-  },
-  {
-    title: 'GitHub',
-    url: 'https://github.com/bradcerasani',
-  },
-  {
-    title: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/bradcerasani/',
-  },
-  {
-    title: 'read.cv',
-    url: 'https://read.cv/bradcerasani',
-  },
-];

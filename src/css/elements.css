@@ -2,7 +2,7 @@
 
 html,
 body {
-  font-family: var(--fontFamilySansSerif);
+  font-family: var(--fontFamilySerif);
   font-size: 16px;
   min-height: 100%;
   transition: background-color, color var(--transitionSlow);
@@ -20,32 +20,11 @@ html {
 }
 
 body {
-  background-color: var(--backgroundOverlayColor);
   color: var(--textColor);
+  font-feature-settings: 'clig', 'kern', 'liga', 'onum', 'pnum', 'ss01';
   line-height: 1.5;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
-}
-
-body::after {
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-  animation-name: grain;
-  animation-timing-function: steps(10);
-  background-image: url('/images/textures/noise.png');
-  background-repeat: repeat;
-  background-size: 100px;
-  content: '';
-  display: block;
-  height: 300vh;
-  left: -100vw;
-  opacity: 0.25;
-  opacity: 0.5;
-  pointer-events: none;
-  position: fixed;
-  top: -100vh;
-  width: 300vw;
-  z-index: -1;
 }
 
 @media (min-width: 480px) {
@@ -92,14 +71,15 @@ h1 {
 h2 {
   font-family: var(--fontFamilySerif);
   font-size: var(--fontSizeLarger);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
 }
 
 h3 {
   font-family: var(--fontFamilySerif);
   font-size: var(--fontSizeLarge);
-  font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 400;
   line-height: 1.25;
 }
 
@@ -116,12 +96,10 @@ h5 {
 }
 
 h6 {
-  color: var(--colorGreyLight);
+  color: var(--colorGreyDark);
   font-family: var(--fontFamilySansSerif);
-  font-size: var(--fontSizeSmaller);
+  font-size: var(--fontSizeSmall);
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 section {
@@ -136,13 +114,15 @@ section {
 
 p {
   color: var(--colorGreyDarker);
-  margin-bottom: var(--spaceDefault);
+  margin-bottom: 1rem;
   margin-top: 0;
 }
 
 @media (min-width: 800px) {
   p {
     font-size: 0.95rem;
+    color: var(--colorGreyDark);
+    font-variant-ligatures: common-ligatures;
   }
 }
 
@@ -181,7 +161,7 @@ ul {
 }
 
 li {
-  margin-bottom: 0;
+  margin-bottom: 0.25rem;
 }
 
 a {
@@ -203,6 +183,8 @@ a:hover {
 
 a[target='_blank'] {
   font-variant-numeric: tabular-nums;
+  transition: color, opacity var(--transitionFast);
+  will-change: color, opacity;
 }
 
 a[target='_blank']::after {
@@ -211,13 +193,33 @@ a[target='_blank']::after {
   opacity: 0.4;
   position: absolute;
   transform: rotate(225deg) translateY(0.2rem) translateX(-0.2rem);
-  transition: opacity var(--transitionSlow);
-  will-change: opacity;
+  transition: color, opacity var(--transitionSlow);
+  will-change: color, opacity;
+}
+
+a[target='_blank']:hover {
+  color: var(--colorGreyDarker);
 }
 
 a[target='_blank']:hover::after {
-  opacity: 0.8;
-  transition: opacity var(--transitionFast);
+  opacity: 1;
+  transition: color, opacity var(--transitionFast);
+}
+
+a[href*='instagram']:hover::after {
+  color: #833ab4;
+}
+
+a[href*='twitter']:hover::after {
+  color: #1da1f2;
+}
+
+a[href*='github']:hover::after {
+  color: #4ac26b;
+}
+
+a[href*='linkedin']:hover::after {
+  color: #0077b5;
 }
 
 img,
@@ -248,10 +250,11 @@ blockquote {
 }
 
 blockquote::before {
-  color: var(--colorLinenDark);
+  color: var(--colorGreyLighter);
   content: '“';
   font-family: var(--fontFamilySerif);
-  font-size: 4rem;
+  font-size: 3rem;
+  font-weight: 400;
   left: 0;
   position: absolute;
   top: -1rem;
@@ -276,4 +279,8 @@ blockquote p {
 
 mark {
   background-color: var(--colorHighlight);
+}
+
+strong {
+  font-weight: 500;
 }

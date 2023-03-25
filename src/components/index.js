@@ -1,6 +1,7 @@
 export * from './button';
 export * from './caption';
 export * from './date';
+export * from './glow';
 export * from './image-compare';
 export * from './image';
 export * from './logo';

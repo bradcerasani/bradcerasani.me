@@ -30,7 +30,7 @@ export const ChatBubble = styled.div`
   animation-fill-mode: both;
   animation-name: fadeInUp;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  background-color: var(--colorGreyLightest);
+  background-color: white;
   border-radius: calc(2 * var(--size));
   color: var(--colorGreyDarker);
   display: inline-block;
@@ -54,7 +54,7 @@ export const ChatBubble = styled.div`
   }
 
   &::before {
-    background-color: var(--colorGreyLightest);
+    background-color: white;
     border-bottom-right-radius: 1em;
     height: 1em;
     left: -0.4em;

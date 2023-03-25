@@ -4,7 +4,8 @@ import { breakpoint } from 'src/settings';
 
 export const Caption = styled.figcaption`
   color: var(--colorGreyLight);
-  font-size: var(--fontSizeSmall);
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSizeSmaller);
   font-style: italic;
   margin-bottom: var(--spaceDefault);
   margin-top: 0.75rem;

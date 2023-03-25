@@ -119,16 +119,18 @@ export const StyledGalleryImage = styled.div`
 
   img {
     display: block;
+    height: 100%;
     margin-bottom: 0;
+    object-fit: cover;
     user-select: none;
     width: 100%;
   }
 `;
 
 export const StyledGalleryController = styled.input`
-  --handleSize: 1rem;
+  --handleSize: 0.875rem;
   --trackHeight: 3px;
-  --trackColor: var(--colorLinenDark);
+  --trackColor: var(--colorGreyLighter);
 
   appearance: none;
   background-color: transparent;
@@ -145,7 +147,7 @@ export const StyledGalleryController = styled.input`
     css`
       &::before {
         animation: pulse 2s ease 0s infinite;
-        background-color: var(--colorLinenLighter);
+        background-color: white;
         border-radius: 50%;
         content: '';
         display: block;
@@ -176,6 +178,11 @@ export const StyledGalleryController = styled.input`
     margin-top: calc(var(--trackHeight) / 2);
     transform: translateY(-50%);
     width: var(--handleSize);
+    transition: transform var(--transitionFast);
+
+    &:active {
+      transform: scale(0.95) translateY(-50%);
+    }
   }
 
   &::-ms-fill-lower,

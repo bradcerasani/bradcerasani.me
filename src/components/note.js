@@ -5,15 +5,17 @@ import { breakpoint } from 'src/settings';
 export const Note = styled.div`
   --borderWidth: 6px;
 
-  background-color: var(--colorHighlight);
-  border-color: currentColor;
+  background-color: var(--colorGreyLightest);
+  border-color: var(--colorGreyDark);
+  border-radius: 1.5rem;
   border-style: double;
   border-width: var(--borderWidth);
-  font-size: var(--fontSizeSmall);
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSizeSmaller);
   font-style: italic;
   line-height: 1.5;
   margin-bottom: calc(var(--spaceDefault) + var(--borderWidth));
-  padding: var(--spaceDefault);
+  padding: 1rem var(--spaceDefault);
   position: relative;
   top: var(--borderWidth);
 

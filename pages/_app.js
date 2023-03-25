@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 
+import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
+
 import 'src/css/modern-normalize.css';
 import 'src/css/_settings.css';
 import 'src/css/animations.css';
@@ -20,7 +23,25 @@ function App({ Component, pageProps }) {
   }),
     [];
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-KQNCYGFSDH"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-KQNCYGFSDH');
+        `}
+      </Script>
+    </>
+  );
 }
 
 export default App;

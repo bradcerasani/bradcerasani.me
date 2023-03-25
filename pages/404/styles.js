@@ -6,6 +6,8 @@ export const Theme = createGlobalStyle`
   :root {
     --backgroundColor: hsl(48, 47%, 7%);
     --computedBackgroundColor: hsl(50, 32%, 7%);
+
+    --glowSize: 0;
   }
 
   body {
@@ -38,8 +40,13 @@ export const Theme = createGlobalStyle`
     color: inherit;
   }
 
-  h1 {
-    color: inherit
+  h1, h2 {
+    color: inherit    
+  }
+
+  h2 span {
+    color: inherit !important;
+    opacity: 0.5;
   }
 `;
 
@@ -132,6 +139,7 @@ export const MuteButton = styled.button`
   border: none;
   color: inherit;
   cursor: pointer;
+  font-family: var(--fontFamilySansSerif);
   font-size: var(--fontSizeSmall);
   font-weight: 500;
   opacity: 0.5;

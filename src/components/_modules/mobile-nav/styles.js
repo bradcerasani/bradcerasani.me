@@ -7,7 +7,6 @@ export const MobileNavMenuWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
-  z-index: 5;
 
   @media (min-width: ${breakpoint.md}) {
     display: contents;
@@ -26,13 +25,26 @@ export const MobileNavWrapper = styled.div`
     position: relative;
 
     a {
+      align-items: flex-end;
+      display: flex;
+      justify-content: space-between;
       text-decoration: none;
+    }
+
+    span {
+      align-self: center;
+      color: var(--colorGreyLight);
+      display: block;
+      font-family: var(--fontFamilySansSerif);
+      font-size: var(--fontSizeSmaller);
+      font-variant-numeric: tabular-nums;
+      margin-top: 2px;
     }
   }
 `;
 
 export const MobileNavListItem = styled.li`
-  font-size: var(--fontSizeMedium);
+  margin-bottom: 0.5rem;
   opacity: 0;
 
   ${({ $isVisible }) =>
@@ -61,7 +73,7 @@ export const MobileNavOverlay = styled.div`
   transition: opacity var(--transitionDefault);
   width: 100%;
   will-change: opacity;
-  z-index: 5;
+  z-index: 6;
 
   &::before {
     background-color: var(--backgroundColor);
@@ -136,8 +148,10 @@ export const MobileNavMenu = styled.div`
   justify-content: center;
   margin-right: -1.25rem;
   position: relative;
-  -webkit-tap-highlight-color: transparent;
   width: 4rem;
+  z-index: 10;
+
+  -webkit-tap-highlight-color: transparent;
 
   @media (min-width: ${breakpoint.md}) {
     display: none;

@@ -6,6 +6,7 @@ import download from './download.mjs';
 const INSTAGRAM_ID = '18888862';
 const destination = 'public/images/instagram/';
 const metadataFile = 'content/social/instagram.json';
+const limit = 16;
 
 async function scrapeInstagramPosts({ userId = INSTAGRAM_ID, limit = 100 }) {
   console.log('Scraping Instagram...');
@@ -39,4 +40,4 @@ async function scrapeInstagramPosts({ userId = INSTAGRAM_ID, limit = 100 }) {
   }
 }
 
-scrapeInstagramPosts({ userId: INSTAGRAM_ID, limit: 12 });
+scrapeInstagramPosts({ userId: INSTAGRAM_ID, limit });

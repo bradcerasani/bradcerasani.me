@@ -71,7 +71,7 @@ h1 {
 h2 {
   font-family: var(--fontFamilySerif);
   font-size: var(--fontSizeLarger);
-  font-weight: 900;
+  font-weight: 500;
   line-height: 1.1;
 }
 
@@ -250,10 +250,11 @@ blockquote {
 }
 
 blockquote::before {
-  color: var(--colorLinenDark);
+  color: var(--colorGreyLighter);
   content: '“';
   font-family: var(--fontFamilySerif);
-  font-size: 4rem;
+  font-size: 3rem;
+  font-weight: 400;
   left: 0;
   position: absolute;
   top: -1rem;
@@ -278,4 +279,8 @@ blockquote p {
 
 mark {
   background-color: var(--colorHighlight);
+}
+
+strong {
+  font-weight: 500;
 }

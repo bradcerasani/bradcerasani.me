@@ -15,7 +15,7 @@ export const Header = (props) => {
     ? new Date(date.replace(/-/g, '/'))
         .toLocaleString('en-CA', {
           year: 'numeric',
-          month: 'short',
+          month: 'long',
         })
         .replace('.', '')
     : null;
@@ -44,8 +44,8 @@ export const Header = (props) => {
         {headline && (
           <HeroContainer>
             <h1>
-              {date && <DateComponent>{formattedDate}</DateComponent>}
               <span dangerouslySetInnerHTML={{ __html: headline }} />
+              {date && <DateComponent>{formattedDate}</DateComponent>}
             </h1>
           </HeroContainer>
         )}

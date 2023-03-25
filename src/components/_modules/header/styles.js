@@ -9,9 +9,7 @@ export const StyledHeader = styled.header`
 
   @media (min-width: ${breakpoint.md}) {
     padding-top: var(--spaceMedium);
-    margin-bottom: calc(
-      var(--spaceMedium) - 1.25rem
-    ); /* Compensate for descenders */
+    margin-bottom: var(--spaceMedium);
   }
 `;
 
@@ -25,7 +23,7 @@ export const HeroContainer = styled.div`
     text-align: center;
     font-weight: 400;
     font-size: 2.5rem;
-    margin-bottom: var(--spaceMedium);
+    /* margin-bottom: var(--spaceMedium); */
   }
 
   h1 br {
@@ -34,30 +32,14 @@ export const HeroContainer = styled.div`
 
   @media (min-width: ${breakpoint.sm}) {
     h1 {
-      /* font-size: var(--fontSizeLargest); */
       line-height: 1.1;
     }
   }
 
   @media (min-width: ${breakpoint.md}) {
-    margin-top: var(--spaceDefault);
-    /* min-height: 10.625rem;  */
-    /* Maintain equal distance above/below logo */
-
-    h1 {
-      /* font-size: 4rem; */
-      /* margin-left: -3rem; */
-    }
-  }
-
-  @media (min-width: ${breakpoint.lg}) {
-    h1 {
-      /* margin-left: -4rem; */
-    }
-
-    h1 br {
-      display: block;
-    }
+    margin-top: var(--spaceMedium);
+    margin-left: -4rem;
+    margin-right: -4rem;
   }
 `;
 

@@ -72,11 +72,9 @@ export const MobileNav = (props) => {
                   }}
                 >
                   <Link key={frontmatter.title} href={slug} passHref>
-                    <a>
-                      {stripTags(frontmatter.title)}
-                      <Dots />
-                      <span>{new Date(frontmatter.date).getFullYear()}</span>
-                    </a>
+                    {stripTags(frontmatter.title)}
+                    <Dots />
+                    <span>{new Date(frontmatter.date).getFullYear()}</span>
                   </Link>
                 </MobileNavListItem>
               );

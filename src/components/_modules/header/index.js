@@ -28,10 +28,12 @@ export const Header = (props) => {
         itemtype="https://schema.org/SiteNavigationElement"
       >
         <MobileNavMenuWrapper>
-          <Link href="/" passHref>
-            <a style={{ textDecoration: 'none', display: 'inline-block' }}>
-              <Logo />
-            </a>
+          <Link
+            href="/"
+            passHref
+            style={{ textDecoration: 'none', display: 'inline-block' }}
+          >
+            <Logo />
           </Link>
 
           <MobileNav

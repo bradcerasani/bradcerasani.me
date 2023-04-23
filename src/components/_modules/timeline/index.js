@@ -33,24 +33,22 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
     <StyledTimelineItem $status={status}>
       {showMedia && (
         <Link href={href} passHref>
-          <a>
-            <TimelineItemImageWrapper>
-              {video ? (
-                <PostVideo src={video} $size={size} />
-              ) : (
-                <Image
-                  src={image}
-                  sizes="960px"
-                  alt={description}
-                  $size={size}
-                  width={size === 'default' ? 640 : 960}
-                  height={size === 'default' ? 360 : 540}
-                />
-              )}
-            </TimelineItemImageWrapper>
+          <TimelineItemImageWrapper>
+            {video ? (
+              <PostVideo src={video} $size={size} />
+            ) : (
+              <Image
+                src={image}
+                sizes="960px"
+                alt={description}
+                $size={size}
+                width={size === 'default' ? 640 : 960}
+                height={size === 'default' ? 360 : 540}
+              />
+            )}
+          </TimelineItemImageWrapper>
 
-            <VisuallyHidden>Link to {displayTitle}</VisuallyHidden>
-          </a>
+          <VisuallyHidden>Link to {displayTitle}</VisuallyHidden>
         </Link>
       )}
 
@@ -60,9 +58,7 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
         <TimelineDate>{daterange || date.substring(0, 4)}</TimelineDate>
 
         <Link href={href} passHref>
-          <a>
-            <h3>{displayTitle}</h3>
-          </a>
+          <h3>{displayTitle}</h3>
         </Link>
 
         <p
@@ -72,7 +68,7 @@ export const TimelineItem = ({ slug, type, frontmatter }) => {
         />
 
         {(!frontmatter.skipPage || isDraft) && (
-          <Link href={href} passHref>
+          <Link href={href} passHref legacyBehavior>
             <TimelineLink style={{ opacity: isDraft ? 0.5 : 1 }}>
               {buttonText} {!isDraft && '→'}
             </TimelineLink>

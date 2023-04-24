@@ -124,6 +124,32 @@ export const StyledTimelineItem = styled(TimelineItem)`
   @media (min-width: ${breakpoint.md}) {
     &:first-of-type {
       ${TimelineItemImageWrapper}::before {
+        --offset: 2rem;
+
+        /* top: calc(-1 * var(--offset)); */
+        /* height: calc(100% + 2.75rem + var(--offset)); */
+        background-image: linear-gradient(
+          0deg,
+          var(--timelineColor) 0%,
+          var(--computedBackgroundColor) 100%
+        );
+      }
+
+      ${TimelineItemImageWrapper}::after {
+        --diameter: 6px;
+
+        background-color: var(--timelineNodeColor);
+        border-radius: 50%;
+        content: '';
+        height: var(--diameter);
+        left: 0;
+        margin-left: calc(-1 * var(--nodeOffset) - var(--diameter) - 4px);
+        margin-top: -2.25rem;
+        position: absolute;
+        top: 0;
+        width: var(--diameter);
+        z-index: 2;
+
         display: none;
       }
 

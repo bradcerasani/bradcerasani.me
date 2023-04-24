@@ -17,6 +17,14 @@
 @font-face {
   font-display: block;
   font-family: 'SNF';
+  font-weight: 700;
+  src: url('/fonts/SNF-Bold.woff2') format('woff2'),
+    url('/fonts/SNF-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
   font-style: italic;
   font-weight: 400;
   src: url('/fonts/SNF-RegularItalic.woff2') format('woff2'),
@@ -30,6 +38,15 @@
   font-weight: 500;
   src: url('/fonts/SNF-MediumItalic.woff2') format('woff2'),
     url('/fonts/SNF-MediumItalic.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/SNF-BoldItalic.woff2') format('woff2'),
+    url('/fonts/SNF-BoldItalic.woff') format('woff');
 }
 
 @font-face {

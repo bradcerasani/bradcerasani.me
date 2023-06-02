@@ -138,7 +138,7 @@ export const StyledGalleryController = styled.input`
   cursor: pointer;
   height: var(--handleSize);
   margin-top: var(--trackHeight);
-  padding: 0;
+  padding: 0 0 1px 0;
   position: relative;
   width: 100%;
 
@@ -170,6 +170,12 @@ export const StyledGalleryController = styled.input`
     height: var(--trackHeight);
   }
 
+  &::-moz-range-track {
+    background-color: var(--trackColor);
+    border-radius: calc(var(--trackHeight) / 2);
+    height: var(--trackHeight);
+  }
+
   &::-webkit-slider-thumb {
     appearance: none;
     background-color: currentColor;
@@ -182,6 +188,21 @@ export const StyledGalleryController = styled.input`
 
     &:active {
       transform: scale(0.95) translateY(-50%);
+    }
+  }
+
+  &::-moz-range-thumb {
+    appearance: none;
+    border: none;
+    background-color: currentColor;
+    border-radius: 50%;
+    height: var(--handleSize);
+    margin-top: 1rem calc(var(--trackHeight) / 2);
+    width: var(--handleSize);
+    transition: transform var(--transitionFast);
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 

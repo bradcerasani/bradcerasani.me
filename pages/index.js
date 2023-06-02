@@ -41,7 +41,7 @@ function Home({ posts }) {
             </p>
 
             <p>
-              Here you&apos;ll find a medly of writing and side projects that
+              Here you&apos;ll find a medley of writing and side projects that
               explore software, design, architecture, and the internet of
               things.{' '}
             </p>
@@ -49,7 +49,7 @@ function Home({ posts }) {
 
           <section>
             <Grid $gutter="4rem">
-              <GridItem $width={{ sm: '50%' }}>
+              <GridItem $width={{ base: '50%' }}>
                 <h6>Elsewhere</h6>
 
                 <ul
@@ -75,7 +75,7 @@ function Home({ posts }) {
                 </ul>
               </GridItem>
 
-              <GridItem $width={{ sm: '50%' }}>
+              <GridItem $width={{ base: '50%' }}>
                 <h6 style={{ paddingTop: 0 }}>Photos</h6>
                 <GalleryController />
               </GridItem>

@@ -14,7 +14,7 @@ const StyledButton = styled.a`
   background-color: var(--colorGreyDarker);
   border-radius: var(--spaceDefault);
   color: var(--colorLinenLight);
-  font-family: var(--fontFamilySansSerif);
+  font-family: var(--fontFamilySansSerif), sans-serif;
   font-size: var(--fontSizeSmaller);
   line-height: 1.5;
   padding: 0.5rem var(--spaceDefault);

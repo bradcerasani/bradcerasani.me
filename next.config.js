@@ -50,6 +50,11 @@ module.exports = {
         destination: 'https://www.youtube.com/embed/o-kOE0Uev74?autoplay=1',
         permanent: false,
       },
+      {
+        source: '/workspace',
+        destination: 'https://www.workspaces.xyz/p/335-brad-cerasani',
+        permanent: false,
+      },
     ];
   },
 };

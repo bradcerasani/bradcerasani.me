@@ -11,10 +11,9 @@
 
 .footnotes {
   font-family: var(--fontFamilySansSerif);
-  font-size: var(--fontSizeSmaller);
+  font-size: var(--fontSizeSmallest);
+  margin-bottom: var(--spaceMedium);
   margin-top: var(--spaceMedium);
-  padding-left: var(--spaceDefault);
-  padding-right: var(--spaceDefault);
   padding-top: var(--spaceMedium);
   position: relative;
 
@@ -35,14 +34,15 @@
 @media (min-width: 800px) {
   .footnotes {
     margin-bottom: 0;
+    padding-left: var(--spaceDefault);
+    padding-right: var(--spaceDefault);
   }
 }
 
 sup {
   top: -0.7em;
 }
-
-.footnote-ref {
+[data-footnote-ref] {
   font-size: var(--fontSizeSmallest);
   text-decoration: none;
 }
@@ -53,6 +53,7 @@ sup {
 }
 
 .footnotes ol {
+  font-size: var(--fontSizeSmaller);
   margin-bottom: 0;
 }
 
@@ -86,6 +87,7 @@ sup {
   background-repeat: no-repeat;
   background-size: contain;
   content: '';
+  cursor: pointer;
   display: inline-block;
   height: var(--height);
   margin-left: 0.25rem;
@@ -99,19 +101,18 @@ sup {
 }
 
 @media (prefers-color-scheme: dark) {
-  .footnote-backref::before {
+  .data-footnote-backref::before {
     filter: invert(100%);
   }
 }
 
-.footnote-backref {
-  visibility: hidden;
-}
-
-.footnotes-backref:hover::before {
-  opacity: 1;
-}
-
 .data-footnote-backref {
+  position: absolute;
   text-decoration: none;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.data-footnote-backref:hover::before {
+  opacity: 1;
 }

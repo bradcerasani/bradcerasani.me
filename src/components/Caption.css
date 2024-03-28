@@ -1,0 +1,36 @@
+@import 'src/styles/_breakpoints.css';
+
+.Caption {
+  color: var(--colorGreyLight);
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSizeSmaller);
+  font-style: italic;
+  margin-bottom: var(--spaceDefault);
+  margin-top: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  text-align: center;
+}
+
+@media (--md) {
+  .Caption {
+    margin-bottom: var(--spaceMedium);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Caption {
+    color: var(--colorLinenDark);
+  }
+}
+
+/* Hack for larger emoji in video captions */
+.Caption span {
+  bottom: calc(0.25rem * -1);
+  display: inline-block;
+  font-size: 1.5em;
+  font-style: normal;
+  line-height: 0.75rem;
+  padding-right: 0.25rem;
+  position: relative;
+}

@@ -1,0 +1,18 @@
+.Vimeo-player {
+  opacity: 0;
+  transition-delay: 200ms;
+  transition-duration: 500ms;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  will-change: opacity;
+}
+
+.Vimeo-player[data-vimeo-initialized] {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .Vimeo .Caption {
+    min-height: 3em;
+  }
+}

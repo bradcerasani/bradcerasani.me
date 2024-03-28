@@ -1,0 +1,37 @@
+.Handle {
+  --strokeWidth: 2px;
+  --handleSize: 1rem;
+  --color: var(--colorBlack);
+
+  background-color: var(--color);
+  cursor: ew-resize;
+  height: 100%;
+  position: relative;
+  width: var(--strokeWidth);
+
+  &::before,
+  &::after {
+    background-color: var(--color);
+    border-radius: 50%;
+    content: '';
+    height: var(--handleSize);
+    left: 0;
+    margin-left: calc(var(--handleSize) / -2 + var(--strokeWidth) / 2);
+    margin-top: calc(var(--handleSize) / -2);
+    position: absolute;
+    top: 50%;
+    width: var(--handleSize);
+  }
+
+  &::after {
+    transform-origin: center;
+    transition: transform var(--transitionDefault);
+  }
+}
+
+.Handle--isUndiscovered {
+  &::before {
+    animation: pulse 2s ease 0s infinite;
+    background-color: white;
+  }
+}

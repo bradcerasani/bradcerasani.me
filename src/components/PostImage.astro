@@ -1,0 +1,39 @@
+---
+import { Caption, Figure } from 'src/components';
+import Image from './RawImage.astro';
+
+const {
+  src,
+  caption,
+  size,
+  alt,
+  sizes: initialSizes = '',
+  widths: initialWidths = [],
+} = Astro.props;
+
+let sizes = initialSizes;
+let widths = initialWidths;
+
+// Only set default sizes and widths if they are not provided through props
+if (!sizes || widths.length === 0) {
+  switch (size) {
+    case 'default':
+      sizes = '(max-width: 400px) 400px, (max-width: 700px) 100vw, (min-width: 701px) 640px';
+      widths = [400, 640, 720, 800, 900, 1024, 1280];
+      break;
+    case 'large':
+      sizes = '(max-width: 960px) 100vw, (min-width: 961px) 960px';
+      widths = [400, 640, 720, 800, 900, 1024, 1280, 1920];
+      break;
+    case 'full':
+      sizes = '(max-width: 2560px) 100vw, (min-width: 2561px) 2560px';
+      widths = [320, 480, 768, 1024, 1280, 1600, 1920, 2560, 3840, 5120];
+      break;
+  }
+}
+---
+
+<Figure size={size}>
+  <Image src={src} alt={alt || caption} sizes={sizes} widths={widths} />
+  {caption && <Caption>{caption}</Caption>}
+</Figure>

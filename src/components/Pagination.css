@@ -1,0 +1,27 @@
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+  padding-top: calc(var(--spaceMedium) + 4px);
+  position: relative;
+}
+
+.Pagination::before {
+  border-bottom: 1px solid var(--colorFaded);
+  border-top: 1px solid var(--colorFaded);
+  content: ' ';
+  display: block;
+  height: 4px;
+  left: 0;
+  margin-top: -4px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.Pagination h6 {
+  padding-top: 0;
+}
+
+.Pagination a {
+  text-decoration-color: inherit;
+}

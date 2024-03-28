@@ -1,0 +1,42 @@
+@import url('src/styles/_breakpoints.css');
+
+.Intrinsic {
+  --ratio: var(--ratio-base, 1 / 1);
+
+  aspect-ratio: var(--ratio);
+  position: relative;
+  width: 100%;
+}
+
+@media (--sm) {
+  .Intrinsic {
+    aspect-ratio: var(--ratio-sm, var(--ratio));
+  }
+}
+
+@media (--md) {
+  .Intrinsic {
+    aspect-ratio: var(--ratio-md, var(--ratio-sm, var(--ratio)));
+  }
+}
+
+@media (--lg) {
+  .Intrinsic {
+    aspect-ratio: var(--ratio-lg, var(--ratio-md, var(--ratio-sm, var(--ratio))));
+  }
+}
+
+@media (--xl) {
+  .Intrinsic {
+    aspect-ratio: var(--ratio-xl, var(--ratio-lg, var(--ratio-md, var(--ratio-sm, var(--ratio)))));
+  }
+}
+
+.Intrinsic > *,
+.Intrinsic iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

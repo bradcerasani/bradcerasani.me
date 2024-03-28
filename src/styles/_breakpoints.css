@@ -1,0 +1,5 @@
+/* Maintain consistency with src/constants */
+@custom-media --sm (min-width: 480px);
+@custom-media --md (min-width: 700px);
+@custom-media --lg (min-width: 1000px);
+@custom-media --xl (min-width: 1440px);

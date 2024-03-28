@@ -1,0 +1,65 @@
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
+  font-weight: 400;
+  src: url('/fonts/SNF-Regular.woff2') format('woff2'),
+    url('/fonts/SNF-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
+  font-weight: 500;
+  src: url('/fonts/SNF-Medium.woff2') format('woff2'), url('/fonts/SNF-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/SNF-RegularItalic.woff2') format('woff2'),
+    url('/fonts/SNF-RegularItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'SNF';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/fonts/SNF-MediumItalic.woff2') format('woff2'),
+    url('/fonts/SNF-MediumItalic.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'USW';
+  font-weight: 400;
+  src: url('/fonts/USW-Regular.woff2') format('woff2'),
+    url('/fonts/USW-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'USW';
+  font-weight: 500;
+  src: url('/fonts/USW-Medium.woff2') format('woff2'), url('/fonts/USW-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'USW';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/USW-RegularItalic.woff2') format('woff2'),
+    url('/fonts/USW-RegularItalic.woff') format('woff');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'USW';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/fonts/USW-MediumItalic.woff2') format('woff2'),
+    url('/fonts/USW-MediumItalic.woff') format('woff');
+}

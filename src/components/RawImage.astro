@@ -1,0 +1,20 @@
+---
+import { Image as AstroImage } from 'astro:assets';
+
+const images = import.meta.glob('../content/**/*.{png,jpg,jpeg,gif,svg}');
+
+const { src, alt, sizes, widths, style } = Astro.props;
+
+const fullSrc = Object.keys(images).find((key) => key.includes(src.replace('./', '')));
+
+if (!fullSrc) {
+  throw new Error(`Image not found for ${src}`);
+}
+
+const currentImage = images[fullSrc]();
+---
+
+<>
+  <!-- @ts-ignore -->
+  <AstroImage src={currentImage} alt={alt} sizes={sizes} widths={widths} style={style} />
+</>

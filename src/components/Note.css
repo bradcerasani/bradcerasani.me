@@ -1,0 +1,40 @@
+@import url('src/styles/_breakpoints.css');
+
+.Note {
+  --borderWidth: 4px;
+
+  background-color: var(--colorGreyLightest);
+  border-color: var(--colorGreyDark);
+  border-radius: 1rem;
+  border-style: double;
+  border-width: var(--borderWidth);
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSizeSmaller);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: calc(var(--spaceDefault) + var(--borderWidth));
+  padding: 1rem var(--spaceDefault);
+  position: relative;
+  top: var(--borderWidth);
+}
+
+.Note p {
+  font: inherit !important;
+  margin-bottom: 0;
+}
+
+.Note + p {
+  margin-top: -6px;
+}
+
+@media (--md) {
+  .Note {
+    margin-bottom: calc(var(--spaceMedium) + var(--borderWidth));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Note {
+    background-color: transparent;
+  }
+}

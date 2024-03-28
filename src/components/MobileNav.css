@@ -1,0 +1,186 @@
+@import 'src/styles/_breakpoints.css';
+
+.MobileNavWrapper {
+  height: calc(100% - 5rem);
+  left: 0;
+  opacity: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  position: absolute;
+  top: 5rem;
+  transition: opacity var(--transitionDefault);
+  width: 100%;
+  z-index: 1;
+
+  ul {
+    display: block;
+    margin-bottom: 1.75rem;
+    margin-top: 1rem;
+    position: relative;
+  }
+}
+
+.MobileNavListItem {
+  margin-bottom: 0.5rem;
+  opacity: 0;
+
+  a {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+
+  span {
+    align-self: center;
+    color: var(--colorGreyLight);
+    display: block;
+    font-family: var(--fontFamilySansSerif);
+    font-size: var(--fontSizeSmaller);
+    font-variant-numeric: tabular-nums;
+    margin-top: 2px;
+  }
+}
+
+.MobileNavListItem--isVisible {
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+  animation-timing-function: ease;
+  visibility: visible;
+}
+
+.MobileNavOverlay {
+  background-color: white;
+  left: 0;
+  min-height: 100%;
+  opacity: 0;
+  padding-left: var(--spaceDefault);
+  padding-right: var(--spaceDefault);
+  padding-top: 5rem;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition-delay: 150ms;
+  transition-duration: 500ms;
+  transition-property: opacity;
+  transition-timing-function: ease;
+  width: 100%;
+  will-change: opacity;
+  z-index: 6;
+
+  &::before {
+    background-color: var(--backgroundColor);
+    content: '';
+    left: 0;
+    min-height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.MobileNavOverlay--isVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0ms;
+
+  .MobileNavWrapper {
+    opacity: 1;
+  }
+}
+
+@media (--md) {
+  .MobileNavOverlay {
+    display: none;
+  }
+}
+
+.MobileNavItem {
+  display: block;
+  font-family: var(--fontFamilySerif);
+  font-size: var(--fontSizeLarger);
+  font-weight: 700;
+  line-height: 1.375;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  visibility: hidden;
+}
+
+.MobileNavItem--isActive::after {
+  content: '~';
+  margin-left: 1rem;
+  position: absolute;
+}
+
+.MobileNavItem--isVisible {
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+  animation-timing-function: ease;
+  visibility: visible;
+}
+
+.MobileNavMenu {
+  --size: var(--spaceDefault);
+  --thickness: 2px;
+  --spacing: 0.5rem;
+  --scalar: 0.9;
+
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  margin-right: -1.25rem;
+  position: relative;
+
+  -webkit-tap-highlight-color: transparent;
+  width: 4rem;
+  z-index: 10;
+
+  @media (--md) {
+    display: none;
+  }
+
+  &::before,
+  &::after {
+    background-color: currentColor;
+    content: '';
+    height: var(--thickness);
+    left: 50%;
+    margin-left: calc(var(--size) / -2);
+    position: absolute;
+    transform-origin: center;
+    transition-duration: 600ms;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0, 0.85, 0, 1);
+    width: var(--size);
+    will-change: transform;
+  }
+
+  &::before {
+    transform: translateY(calc(var(--spacing) / -2));
+  }
+
+  &::after {
+    transform: translateY(calc(var(--spacing) / 2));
+  }
+}
+
+.MobileNavMenu--isVisible {
+  &::before,
+  &::after {
+    transition-duration: 1000ms;
+  }
+
+  &::before {
+    transform: rotate(-45deg) scaleX(var(--scalar));
+  }
+  &::after {
+    transform: rotate(45deg) scaleX(var(--scalar));
+  }
+}

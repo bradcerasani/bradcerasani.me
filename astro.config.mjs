@@ -16,7 +16,7 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'prism'
   },
-  output: "server",
+  output: "hybrid",
   adapter: vercel(
     {webAnalytics:{
       enabled:true,

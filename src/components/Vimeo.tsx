@@ -32,11 +32,10 @@ export function Vimeo({ vimeoId, caption, size, commentary, color = '#f1f1ee' }:
 
     player.setColor(color);
 
-    // Set up video commentary
-    if (commentary && commentary.length) {
-      commentary?.forEach(({ time, value }) => {
-        player.addCuePoint(time, { value }).catch((error: any) => console.error(error));
-      });
+    if (commentary) {
+      for (const { time, value } of commentary) {
+        player.addCuePoint(time, { value }).catch((error: Error) => console.error(error));
+      }
     }
 
     // Set up event listeners
@@ -45,7 +44,7 @@ export function Vimeo({ vimeoId, caption, size, commentary, color = '#f1f1ee' }:
     return () => {
       player.destroy();
     };
-  }, [targetElementId, vimeoId, commentary, color, setCaptionText]);
+  }, [targetElementId, vimeoId, commentary, color]);
 
   return (
     <div className="Vimeo">

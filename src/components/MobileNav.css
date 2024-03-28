@@ -1,5 +1,68 @@
 @import 'src/styles/_breakpoints.css';
 
+.MobileNavMenu {
+  --size: var(--spaceDefault);
+  --thickness: 2px;
+  --spacing: 0.5rem;
+  --scalar: 0.9;
+
+  align-items: center;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  margin-right: -1.25rem;
+  outline: none;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  width: 4rem;
+  z-index: 10;
+
+  @media (--md) {
+    display: none;
+  }
+
+  &::before,
+  &::after {
+    background-color: currentColor;
+    content: '';
+    height: var(--thickness);
+    left: 50%;
+    margin-left: calc(var(--size) / -2);
+    position: absolute;
+    transform-origin: center;
+    transition-duration: 600ms;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0, 0.85, 0, 1);
+    width: var(--size);
+    will-change: transform;
+  }
+
+  &::before {
+    transform: translateY(calc(var(--spacing) / -2));
+  }
+
+  &::after {
+    transform: translateY(calc(var(--spacing) / 2));
+  }
+}
+
+.MobileNavMenu--isVisible {
+  &::before,
+  &::after {
+    transition-duration: 1000ms;
+  }
+
+  &::before {
+    transform: rotate(-45deg) scaleX(var(--scalar));
+  }
+  &::after {
+    transform: rotate(45deg) scaleX(var(--scalar));
+  }
+}
+
 .MobileNavWrapper {
   height: calc(100% - 5rem);
   left: 0;
@@ -122,65 +185,4 @@
   animation-name: fadeInUp;
   animation-timing-function: ease;
   visibility: visible;
-}
-
-.MobileNavMenu {
-  --size: var(--spaceDefault);
-  --thickness: 2px;
-  --spacing: 0.5rem;
-  --scalar: 0.9;
-
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  height: 4rem;
-  justify-content: center;
-  margin-right: -1.25rem;
-  position: relative;
-
-  -webkit-tap-highlight-color: transparent;
-  width: 4rem;
-  z-index: 10;
-
-  @media (--md) {
-    display: none;
-  }
-
-  &::before,
-  &::after {
-    background-color: currentColor;
-    content: '';
-    height: var(--thickness);
-    left: 50%;
-    margin-left: calc(var(--size) / -2);
-    position: absolute;
-    transform-origin: center;
-    transition-duration: 600ms;
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0, 0.85, 0, 1);
-    width: var(--size);
-    will-change: transform;
-  }
-
-  &::before {
-    transform: translateY(calc(var(--spacing) / -2));
-  }
-
-  &::after {
-    transform: translateY(calc(var(--spacing) / 2));
-  }
-}
-
-.MobileNavMenu--isVisible {
-  &::before,
-  &::after {
-    transition-duration: 1000ms;
-  }
-
-  &::before {
-    transform: rotate(-45deg) scaleX(var(--scalar));
-  }
-  &::after {
-    transform: rotate(45deg) scaleX(var(--scalar));
-  }
 }

@@ -10,3 +10,12 @@ export type EntryEssential = {
   id: string;
   slug: string;
 };
+
+export type AstroImage = {
+  alt: string;
+  decoding: 'async' | 'lazy' | 'sync';
+  format: 'webp' | 'jpeg' | 'png' | 'avif';
+  height: number;
+  src: string;
+  width: number;
+};

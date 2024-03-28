@@ -19,15 +19,15 @@ export function ChaosGallery() {
       const maxDeviation = elementStyles.getPropertyValue('--maxDeviation');
       const delta = Number.parseInt(maxDeviation) - Number.parseInt(minDeviation);
 
-      properties.forEach((property) => {
+      for (const property of properties) {
         const value = elementStyles.getPropertyValue(property);
 
         if (Number.parseInt(value) === 0) {
           const deviation = Math.floor(Math.random() * delta) + Number.parseInt(minDeviation);
 
-          element.style[property as any] = `${deviation}%`;
+          element.style.setProperty(property, `${deviation}%`);
         }
-      });
+      }
     }
   });
 
@@ -40,7 +40,7 @@ export function ChaosGallery() {
 
     if (!classList.contains('is-discovered')) classList.add('is-discovered');
 
-    const elements = document.querySelectorAll(`[data-image]`);
+    const elements = document.querySelectorAll('[data-image]');
 
     elements.forEach((element, index) => {
       const isVisible = index <= imageIndex && Number.parseInt(value) > 1;
@@ -56,9 +56,10 @@ export function ChaosGallery() {
         className="ChaosController"
         aria-label="Show/hide photos"
         type="range"
-        onChange={(e: any) => handleChange(e)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
         defaultValue="0"
         onMouseOver={() => setPrefetch(true)}
+        onFocus={() => setPrefetch(true)}
       />
 
       <div className="ChaosGallery">
@@ -67,7 +68,7 @@ export function ChaosGallery() {
           const tag = '@bradcerasani on Instagram';
 
           return (
-            <Draggable key={index} onStart={(e) => e.preventDefault()}>
+            <Draggable key={image.id} onStart={(e) => e.preventDefault()}>
               <div className="ChaosImage" data-image={index}>
                 {prefetch && (
                   <img

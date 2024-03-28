@@ -8,11 +8,7 @@ interface HeaderProps {
   headline?: string;
 }
 
-export function Header({
-  date,
-  entries,
-  headline,
-}: HeaderProps) {
+export function Header({ date, entries, headline }: HeaderProps) {
   const formattedDate = date ? formatDate(date) : null;
 
   return (
@@ -33,6 +29,7 @@ export function Header({
         {headline && (
           <div className="HeroContainer">
             <h1>
+              {/* biome-ignore lint: headline src is controlled */}
               <span dangerouslySetInnerHTML={{ __html: headline }} />
               {date && <span className="HeroContainer-Date">{formattedDate}</span>}
             </h1>

@@ -39,11 +39,7 @@ export function TimelineItem({ entry, children }: TimelineItemProps) {
           <h3>{displayTitle}</h3>
         </a>
 
-        <p
-          dangerouslySetInnerHTML={{
-            __html: description,
-          }}
-        />
+        <p>{description}</p>
 
         <a href={href} className="Timeline-link" style={{ opacity: isDraft ? 0.5 : 1 }}>
           {isDraft ? 'Draft' : buttonText} {!isDraft && '→'}

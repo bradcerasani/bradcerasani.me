@@ -1,8 +1,7 @@
 import type React from 'react';
+import type { Breakpoint } from 'src/types';
 import { createResponsiveProperties } from 'src/utils/createResponsiveProperties';
 import './Intrinsic.css';
-
-import type { Breakpoint } from 'src/types';
 
 interface IntrinsicProps {
   aspectRatio: { [key in Breakpoint]?: string };

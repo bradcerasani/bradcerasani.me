@@ -44,9 +44,10 @@ export function MobileNav({ entries }: MobileNavProps) {
 
   return (
     <>
-      <div
+      <button
         className={`MobileNavMenu ${isVisible ? 'MobileNavMenu--isVisible' : ''}`}
         onClick={() => setVisibility(!isVisible)}
+        type="button"
       />
 
       <div className={`MobileNavOverlay ${isVisible ? 'MobileNavOverlay--isVisible' : ''}`}>

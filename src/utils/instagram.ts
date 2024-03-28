@@ -30,7 +30,7 @@ async function scrapeInstagramPosts({ userId = INSTAGRAM_ID, limit = 10 }) {
       }));
 
       if (posts.length) {
-        posts.forEach(({ display_url, id }: InstagramPost) => {
+        for (const { display_url, id } of posts) {
           downloadFile(display_url, `${id}.jpg`, destinationDirectory)
             .then(() => {
               console.log('Downloaded', `${id}.jpg`);
@@ -38,7 +38,7 @@ async function scrapeInstagramPosts({ userId = INSTAGRAM_ID, limit = 10 }) {
             .catch((err) => {
               console.error('Error downloading file:', err);
             });
-        });
+        }
 
         fs.writeFileSync(metadataFile, JSON.stringify(posts.reverse()));
 

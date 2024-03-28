@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ReactCompareSlider } from 'react-compare-slider';
 import { Caption, Figure, Intrinsic } from 'src/components';
+import type { AstroImage } from 'src/types';
 import './ImageCompare.css';
 
 export function ImageCompare({
@@ -11,8 +12,8 @@ export function ImageCompare({
   size,
 }: {
   caption?: string;
-  itemOne: any;
-  itemTwo: any;
+  itemOne: AstroImage;
+  itemTwo: AstroImage;
   position: number;
   size: 'default' | 'large' | 'full';
 }) {

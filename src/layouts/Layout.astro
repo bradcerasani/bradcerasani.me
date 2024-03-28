@@ -1,0 +1,66 @@
+---
+import { Container, Footer } from 'src/components';
+import { stripTags } from 'src/utils/stripTags';
+
+import 'src/styles/_settings.css';
+import 'src/styles/animations.css';
+import 'src/styles/elements.css';
+import 'src/styles/fonts.css';
+import 'src/styles/footnotes.css';
+import 'src/styles/prism-theme.css';
+
+const { metaTitle, metaDescription, metaImage, metaSlug } = Astro.props;
+
+const title = stripTags(metaTitle ?? 'Brad Cerasani');
+const description = metaDescription || 'Designer, engineer, etc.';
+const image = metaImage || 'brad-cerasani-office-wide.jpg';
+const imageUrl = `https://bradcerasani.me/images${image}?w=1600`;
+const url = `https://bradcerasani.me${metaSlug}`;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+
+    <link rel="canonical" href={url} />
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={imageUrl} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:url" content={url} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:site:id" content="@bradcerasani" />
+    <meta name="twitter:creator" content="@bradcerasani" />
+  </head>
+  <body>
+    <Container>
+      <slot />
+    </Container>
+
+    <Footer client:idle />
+  </body>
+</html>
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-KQNCYGFSDH"></script>
+<script id="google-analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-KQNCYGFSDH');
+</script>

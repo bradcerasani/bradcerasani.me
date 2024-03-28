@@ -1,0 +1,118 @@
+.sr-only,
+.u-visuallyHidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.footnotes {
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSizeSmallest);
+  margin-bottom: var(--spaceMedium);
+  margin-top: var(--spaceMedium);
+  padding-top: var(--spaceMedium);
+  position: relative;
+
+  &:before {
+    border-bottom: 1px solid var(--colorFaded);
+    border-top: 1px solid var(--colorFaded);
+    content: ' ';
+    display: block;
+    height: 4px;
+    left: 0;
+    margin-top: -4px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 800px) {
+  .footnotes {
+    margin-bottom: 0;
+    padding-left: var(--spaceDefault);
+    padding-right: var(--spaceDefault);
+  }
+}
+
+sup {
+  top: -0.7em;
+}
+[data-footnote-ref] {
+  font-size: var(--fontSizeSmallest);
+  text-decoration: none;
+}
+
+.footnotes hr {
+  margin-bottom: var(--spaceMedium);
+  margin-top: var(--spaceMedium);
+}
+
+.footnotes ol {
+  font-size: var(--fontSizeSmaller);
+  margin-bottom: 0;
+}
+
+.footnotes ol li {
+  color: var(--colorGreyDefault);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footnotes ol li {
+    color: var(--colorLinenDark);
+  }
+}
+
+.footnotes ol li:last-of-type {
+  margin-bottom: 0;
+}
+
+.footnotes p {
+  display: inline;
+  font-size: var(--fontSizeSmaller);
+}
+
+.data-footnote-backref::before {
+  --aspectRatio: (4 / 5);
+  --height: 0.6rem;
+
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUuMzcxIDE1LjM5di00LjE5NWg4LjgxM2MxLjUyMyAwIDIuODItLjUzNyAzLjg5LTEuNjExIDEuMDctMS4wNzQgMS42MDYtMi4zNyAxLjYwNi0zLjg4NSAwLTEuNTE1LS41MzUtMi44MS0xLjYwNi0zLjg4NS0xLjA3LTEuMDc0LTIuMzY3LTEuNjEtMy44OS0xLjYxaC0uMjgydjEuNzM0aC4yODJjMS4wNDYgMCAxLjkzNS4zNjcgMi42NjYgMS4xMDFhMy42MzQgMy42MzQgMCAwIDEgMS4wOTUgMi42NmMwIDEuMDQtLjM2NSAxLjkyNi0xLjA5NSAyLjY2LS43My43MzUtMS42MiAxLjEwMi0yLjY2NiAxLjEwMkg1LjM3VjUuMjY2TC4zMSAxMC4zMjhsNS4wNjIgNS4wNjN6IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4K');
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  cursor: pointer;
+  display: inline-block;
+  height: var(--height);
+  margin-left: 0.25rem;
+  opacity: 0.5;
+  -webkit-tap-highlight-color: transparent;
+  transition-duration: 200ms;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  visibility: visible;
+  width: calc(var(--height) / var(--aspectRatio));
+}
+
+@media (prefers-color-scheme: dark) {
+  .data-footnote-backref::before {
+    filter: invert(100%);
+  }
+}
+
+.data-footnote-backref {
+  position: absolute;
+  text-decoration: none;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.data-footnote-backref:hover::before {
+  opacity: 1;
+}

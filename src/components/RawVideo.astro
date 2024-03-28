@@ -1,0 +1,22 @@
+---
+const video = import.meta.glob('../content/**/*.{mp4,webm}');
+
+const { src } = Astro.props;
+
+const videoSrc = src.replace('./', '');
+
+const mp4Src = Object.keys(video).find((key) => key.includes(videoSrc));
+const webmSrc = Object.keys(video).find((key) => key.includes(videoSrc.replace('mp4', 'webm')));
+
+if (!mp4Src || !webmSrc) {
+  throw new Error(`Video not found for ${src}`);
+}
+
+const mp4 = (await video[mp4Src]()) as { default: string };
+const webm = (await video[webmSrc]()) as { default: string };
+---
+
+<video autoplay loop muted playsinline>
+  {webm && <source src={webm?.default} type="video/webm" />}
+  {mp4 && <source src={mp4?.default} type="video/mp4" />}
+</video>

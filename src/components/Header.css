@@ -1,0 +1,101 @@
+@import url('src/styles/_breakpoints.css');
+
+.Glow {
+  display: none;
+}
+
+@media (--md) {
+  .Glow {
+    background-image: radial-gradient(white 0%, rgba(255, 255, 255, 0) 50%);
+    display: block;
+    height: var(--glowSize);
+    left: calc(var(--glowSize) / -2);
+    position: fixed;
+    top: calc(var(--glowSize) / -2);
+    width: var(--glowSize);
+    z-index: -1;
+  }
+}
+
+.Header {
+  margin-bottom: var(--spaceDefault);
+  padding-top: 0.75rem;
+  position: relative;
+}
+
+.Header-logo {
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSizeSmall);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding-top: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.Header-logo span {
+  color: var(--colorGreyLight);
+  display: block;
+  font-weight: 400;
+}
+
+@media (--md) {
+  .Header {
+    margin-bottom: calc(var(--spaceMedium) - 0.5rem);
+    padding-top: calc(var(--spaceMedium) + 4px);
+  }
+}
+
+.NavWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+@media (--md) {
+  .NavWrapper {
+    display: contents;
+  }
+}
+
+.HeroContainer {
+  display: flex;
+  margin-top: var(--spaceMedium);
+}
+
+.HeroContainer-Date {
+  color: var(--colorGreyLight);
+  display: block;
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSizeSmaller);
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+.HeroContainer h1 {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+}
+
+.HeroContainer h1 br {
+  display: none;
+}
+
+@media (--sm) {
+  .HeroContainer h1 {
+    line-height: 1.1;
+  }
+}
+
+@media (--md) {
+  .HeroContainer {
+    margin-left: -4rem;
+    margin-right: -4rem;
+    margin-top: var(--spaceMedium);
+  }
+}

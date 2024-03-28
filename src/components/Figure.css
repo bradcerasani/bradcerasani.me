@@ -1,0 +1,39 @@
+@import 'src/styles/_breakpoints.css';
+
+.Figure {
+  margin-bottom: var(--spaceDefault);
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
+  margin-top: calc(2 * var(--spaceDefault));
+}
+
+.Figure .Caption {
+  margin-bottom: 2rem;
+}
+
+@media (--md) {
+  .Figure {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+
+  .Figure--full {
+    margin-left: calc((100vw - var(--maxWidth) + var(--gutter) * 2) / -2);
+    margin-right: calc((100vw - var(--maxWidth) + var(--gutter) * 2) / -2);
+    margin-top: var(--spaceMedium);
+    min-width: 100%;
+    width: 100vw;
+  }
+
+  .Figure--full .Caption {
+    margin-bottom: var(--spaceMedium);
+  }
+
+  .Figure--large {
+    margin-bottom: var(--spaceMedium);
+    margin-left: calc(-1 * var(--spaceLarge));
+    margin-right: calc(-1 * var(--spaceLarge));
+    margin-top: var(--spaceMedium);
+  }
+}

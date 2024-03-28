@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+import { ChaosGallery, Grid, GridItem, Header, TimelineItem } from 'src/components';
+import PostImage from 'src/components/PostImage.astro';
+import PostVideo from 'src/components/PostVideo.astro';
+import { linkList } from 'src/content/social/linkList';
+import Layout from 'src/layouts/Layout.astro';
+import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
+import { sortEntriesByDate } from 'src/utils/sortEntriesByDate';
+
+const writing = await getCollection('writing');
+const projects = await getCollection('projects');
+const sortedEntries = sortEntriesByDate([...writing, ...projects]);
+const entries = mapEntryEssentials(sortedEntries);
+
+const description = `I've been building on the web for 15 years, helping companies like Apple, Google, Twitter, and the American Music Awards create beautiful and useful experiences for their users.`;
+---
+
+<Layout metaTitle="Brad Cerasani" metaDescription={`Hi, I'm Brad. ${description}`}>
+  <Header entries={entries} client:idle />
+  <main>
+    <section>
+      <p>
+        I&apos;ve been building on the web for 15 years, helping companies like Apple, Google,
+        Twitter, and the American Music Awards create beautiful and useful experiences for their
+        users.
+      </p>
+
+      <p>
+        I specialize in a mix of visual/interaction design and front-end engineering — which allows
+        me to translate ideas into functional prototypes and production-ready code with the full
+        fidelity of the web.
+      </p>
+
+      <p>
+        Here you&apos;ll find a medley of writing and side projects that explore software, design,
+        architecture, and the internet of things.{' '}
+      </p>
+    </section>
+
+    <section>
+      <Grid gutter="var(--spaceDefault)">
+        <GridItem width={{ base: '50%' }}>
+          <h6 style={{ paddingTop: 0 }}>Elsewhere</h6>
+
+          <ul class="LinkList">
+            {
+              linkList.map(({ title, url }) => (
+                <li>
+                  <a href={url} rel="noopener noreferrer" target="_blank">
+                    {title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </GridItem>
+
+        <GridItem width={{ base: '50%' }}>
+          <h6 style={{ paddingTop: 0 }}>Photos</h6>
+          <ChaosGallery client:idle />
+        </GridItem>
+      </Grid>
+    </section>
+
+    <section class="Entries">
+      <h6>Posts &amp; Projects</h6>
+      <div>
+        {
+          sortedEntries.map((entry) => {
+            const { video, image, description } = entry.data;
+
+            return (
+              <TimelineItem entry={entry}>
+                {video && <PostVideo src={video} size="default" />}
+                {image && !video && <PostImage src={image} size="default" alt={description} />}
+              </TimelineItem>
+            );
+          })
+        }
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .LinkList {
+    color: var(--colorGreyDefault);
+    font-family: var(--fontFamilySansSerif);
+    font-size: var(--fontSizeSmall);
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .Entries {
+    margin-bottom: var(--spaceLarge);
+    margin-top: var(--spaceMedium);
+
+    h6 {
+      margin-bottom: var(--spaceDefault);
+      padding-top: 0;
+    }
+  }
+</style>

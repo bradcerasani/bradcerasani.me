@@ -1,0 +1,18 @@
+.Hero {
+  animation-delay: 400ms;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  animation-timing-function: ease-out;
+  filter: grayscale(100%) brightness(60%) opacity(20%);
+  left: 0;
+  mask-image: linear-gradient(black 65%, transparent 95%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.Hero img {
+  object-fit: cover;
+}

@@ -1,0 +1,46 @@
+@import 'src/styles/_breakpoints.css';
+
+.Grid {
+  --gridGutter: 10rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--gridGutter) * -1);
+  position: relative;
+}
+
+.Grid-item {
+  --width: var(--width-base, 100%);
+
+  padding-left: var(--gridGutter);
+  width: var(--width);
+}
+
+.Grid-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (--sm) {
+  .Grid-item {
+    width: var(--width-sm, var(--width));
+  }
+}
+
+@media (--md) {
+  .Grid-item {
+    width: var(--width-md, var(--width-sm, var(--width)));
+  }
+}
+
+@media (--lg) {
+  .Grid-item {
+    width: var(--width-lg, var(--width-md, var(--width-sm, var(--width))));
+  }
+}
+
+@media (--xl) {
+  .Grid-item {
+    width: var(--width-xl, var(--width-lg, var(--width-md, var(--width-sm, var(--width)))));
+  }
+}

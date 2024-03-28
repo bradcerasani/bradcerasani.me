@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+
+import { Header, PageNotFound } from 'src/components';
+import Layout from 'src/layouts/Layout.astro';
+import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
+import { sortEntriesByDate } from 'src/utils/sortEntriesByDate';
+
+const writing = await getCollection('writing');
+const projects = await getCollection('projects');
+const sortedEntries = sortEntriesByDate([...writing, ...projects]);
+const entries = mapEntryEssentials(sortedEntries);
+---
+
+<Layout metaTitle="404: Page Not Found" metaDescription="404: Page Not Found">
+  <Header headline="Page Not Found" entries={entries} client:idle />
+
+  <PageNotFound client:idle />
+</Layout>
+
+<style is:global>
+  :root {
+    --backgroundColor: hsl(48, 47%, 7%);
+    --computedBackgroundColor: hsl(50, 32%, 7%);
+
+    --glowSize: 0;
+  }
+
+  body {
+    background-color: transparent;
+    color: hsl(29, 30%, 41%);
+    min-height: 100vh;
+    position: relative;
+
+    &::before {
+      background-image: url('/images/textures/tiger-pattern.jpg');
+      background-repeat: repeat;
+      background-size: 400px 400px;
+      content: '';
+      filter: contrast(50%);
+      height: 100%;
+      left: 0;
+      opacity: 0.05;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -2;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  a:hover {
+    color: inherit;
+  }
+
+  h1,
+  h2 {
+    color: inherit;
+  }
+
+  h2 span {
+    color: inherit !important;
+    opacity: 0.5;
+  }
+</style>

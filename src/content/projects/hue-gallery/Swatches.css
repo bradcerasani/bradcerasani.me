@@ -1,0 +1,34 @@
+@import 'src/styles/_breakpoints.css';
+
+.SwatchContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spaceDefault);
+  margin-top: calc(-1 * var(--spaceDefault));
+  padding-top: var(--spaceDefault);
+}
+
+@media (--md) {
+  .SwatchContainer {
+    margin-top: calc(-1 * var(--spaceMedium));
+  }
+}
+
+.Swatch {
+  --diameter: 1.25rem;
+  --margin: 0.25rem;
+
+  border-radius: var(--diameter);
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: var(--diameter);
+  margin-left: var(--margin);
+  margin-right: var(--margin);
+  width: var(--diameter);
+}
+
+@media (--md) {
+  .Swatch {
+    --diameter: 2rem;
+  }
+}

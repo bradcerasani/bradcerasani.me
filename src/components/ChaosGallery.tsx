@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 
 import './ChaosGallery.css';
@@ -6,6 +6,7 @@ import './ChaosGallery.css';
 import instagramPosts from 'src/content/social/instagram.json';
 
 export function ChaosGallery() {
+  const [prefetch, setPrefetch] = useState(false);
   const interval = Math.min(100 / instagramPosts.length);
 
   useEffect(() => {
@@ -35,6 +36,8 @@ export function ChaosGallery() {
     const imageIndex = Math.round(Number.parseInt(value) / interval);
     const classList = event.target.classList;
 
+    setPrefetch(true);
+
     if (!classList.contains('is-discovered')) classList.add('is-discovered');
 
     const elements = document.querySelectorAll(`[data-image]`);
@@ -55,6 +58,7 @@ export function ChaosGallery() {
         type="range"
         onChange={(e: any) => handleChange(e)}
         defaultValue="0"
+        onMouseOver={() => setPrefetch(true)}
       />
 
       <div className="ChaosGallery">
@@ -65,11 +69,13 @@ export function ChaosGallery() {
           return (
             <Draggable key={index} onStart={(e) => e.preventDefault()}>
               <div className="ChaosImage" data-image={index}>
-                <img
-                  src={`/images/instagram/${image.id}.jpg`}
-                  alt={caption !== undefined ? `${caption} — ${tag}` : tag}
-                  loading="lazy"
-                />
+                {prefetch && (
+                  <img
+                    src={`/images/instagram/${image.id}.jpg`}
+                    alt={caption !== undefined ? `${caption} — ${tag}` : tag}
+                    loading="lazy"
+                  />
+                )}
               </div>
             </Draggable>
           );

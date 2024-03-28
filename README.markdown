@@ -1,13 +1,12 @@
 # bradcerasani.me 2022
 
-Built with [Next.js](https://nextjs.org/) and hosted on [Vercel](https://vercel.com/).
+Built with [Astro](https://astro.build/)
 
 ## Local development
 
 Prerequisites:
 
-- [Node.js](https://nodejs.org/) 14.x
-- [Yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/) 20.x
 
 Getting started:
 

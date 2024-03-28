@@ -27,6 +27,7 @@ export function TimelineItem({ entry, children }: TimelineItemProps) {
       {showMedia && (
         <a href={href}>
           <div className="TimelineItemImageWrapper">{children}</div>
+          <span className="u-visuallyHidden">{displayTitle}</span>
         </a>
       )}
 

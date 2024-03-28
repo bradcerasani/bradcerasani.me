@@ -71,7 +71,7 @@ export function MobileNav({ entries }: MobileNavProps) {
                       style={{
                         display: 'block',
                         alignSelf: 'end',
-                        borderBottom: '1px dotted var(--colorGreyLighter)',
+                        borderBottom: '1px dotted currentColor',
                         flexGrow: 1,
                         margin: '0 6px 6px',
                       }}

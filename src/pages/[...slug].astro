@@ -13,24 +13,22 @@ export async function getStaticPaths() {
   const sortedEntries = sortEntriesByDate([...writing, ...projects]);
   const entries = mapEntryEssentials(sortedEntries);
 
-  return sortedEntries.map((entry, index) => {
-    const prev = sortedEntries[index + 1] || null;
-    const next = sortedEntries[index - 1] || null;
+  return sortedEntries
+    .filter((entry) => entry.data.status === 'live')
+    .map((entry, index) => {
+      const prev = sortedEntries[index + 1] || null;
+      const next = sortedEntries[index - 1] || null;
 
-    return {
-      params: { slug: `${entry.collection}/${entry.slug}` },
-      props: { entry, prev, next, entries },
-    };
-  });
+      return {
+        params: { slug: `${entry.collection}/${entry.slug}` },
+        props: { entry, prev, next, entries },
+      };
+    });
 }
 
 const { entry, prev, next, entries } = Astro.props;
-const { image, description, date, title, status, skipHero } = entry.data;
-
-if (status !== 'live') return Astro.redirect('/404');
-
+const { image, description, date, title, skipHero } = entry.data;
 const showHero: boolean = isImage(image ?? '') && !skipHero;
-
 const { Content } = await entry.render();
 ---
 

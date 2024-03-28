@@ -4,12 +4,14 @@ import { Header, Hero, Pagination } from 'src/components';
 import Image from 'src/components/RawImage.astro';
 import Layout from 'src/layouts/Layout.astro';
 import { isImage } from 'src/utils/isImage';
+import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
 import { sortEntriesByDate } from 'src/utils/sortEntriesByDate';
 
 export async function getStaticPaths() {
   const writing = await getCollection('writing');
   const projects = await getCollection('projects');
   const sortedEntries = sortEntriesByDate([...writing, ...projects]);
+  const entries = mapEntryEssentials(sortedEntries);
 
   return sortedEntries.map((entry, index) => {
     const prev = sortedEntries[index + 1] || null;
@@ -17,12 +19,12 @@ export async function getStaticPaths() {
 
     return {
       params: { slug: `${entry.collection}/${entry.slug}` },
-      props: { entry, prev, next, posts: sortedEntries },
+      props: { entry, prev, next, entries },
     };
   });
 }
 
-const { entry, prev, next, posts } = Astro.props;
+const { entry, prev, next, entries } = Astro.props;
 const { image, description, date, title, status, skipHero } = entry.data;
 
 if (status !== 'live') return Astro.redirect('/404');
@@ -38,7 +40,7 @@ const { Content } = await entry.render();
   metaImage={image}
   metaSlug={`/${entry.collection}/${entry.slug}`}
 >
-  <Header headline={title} date={date} posts={posts} client:idle />
+  <Header headline={title} date={date} entries={entries} client:idle />
 
   {
     showHero && (

@@ -5,17 +5,19 @@ import PostImage from 'src/components/PostImage.astro';
 import PostVideo from 'src/components/PostVideo.astro';
 import { linkList } from 'src/content/social/linkList';
 import Layout from 'src/layouts/Layout.astro';
+import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
 import { sortEntriesByDate } from 'src/utils/sortEntriesByDate';
 
 const writing = await getCollection('writing');
 const projects = await getCollection('projects');
 const sortedEntries = sortEntriesByDate([...writing, ...projects]);
+const entries = mapEntryEssentials(sortedEntries);
 
 const description = `I've been building on the web for 15 years, helping companies like Apple, Google, Twitter, and the American Music Awards create beautiful and useful experiences for their users.`;
 ---
 
 <Layout metaTitle="Brad Cerasani" metaDescription={`Hi, I'm Brad. ${description}`}>
-  <Header posts={sortedEntries} client:idle />
+  <Header entries={entries} client:idle />
   <main>
     <section>
       <p>

@@ -1,13 +1,16 @@
-import type { CollectionEntry } from 'astro:content';
 import { useEffect, useState } from 'react';
-
 import { BREAKPOINTS } from 'src/constants';
 import { linkList } from 'src/content/social/linkList';
+import type { EntryEssential } from 'src/types';
 import { formatYear } from 'src/utils/formatYear';
 import { stripTags } from 'src/utils/stripTags';
 import './MobileNav.css';
 
-export function MobileNav({ posts }: { posts: CollectionEntry<'projects' | 'writing'>[] }) {
+interface MobileNavProps {
+  entries: EntryEssential[];
+}
+
+export function MobileNav({ entries }: MobileNavProps) {
   const [isVisible, setVisibility] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
@@ -49,7 +52,7 @@ export function MobileNav({ posts }: { posts: CollectionEntry<'projects' | 'writ
       <div className={`MobileNavOverlay ${isVisible ? 'MobileNavOverlay--isVisible' : ''}`}>
         <div className="MobileNavWrapper">
           <ul>
-            {posts.map(({ data, collection, slug }, index) => {
+            {entries.map(({ data, collection, slug }, index) => {
               if (data.status === 'draft') return null;
 
               const year = formatYear(data.date);
@@ -90,7 +93,7 @@ export function MobileNav({ posts }: { posts: CollectionEntry<'projects' | 'writ
               <li
                 className={`MobileNavListItem ${isVisible ? 'MobileNavListItem--isVisible' : ''}`}
                 key={title}
-                style={{ animationDelay: `calc(${posts.length * 50 + 50 * (index + 1)}ms)` }}
+                style={{ animationDelay: `calc(${entries.length * 50 + 50 * (index + 1)}ms)` }}
               >
                 <a
                   href={url}

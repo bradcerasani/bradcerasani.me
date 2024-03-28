@@ -3,15 +3,17 @@ import { getCollection } from 'astro:content';
 
 import { Header, PageNotFound } from 'src/components';
 import Layout from 'src/layouts/Layout.astro';
+import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
 import { sortEntriesByDate } from 'src/utils/sortEntriesByDate';
 
 const writing = await getCollection('writing');
 const projects = await getCollection('projects');
 const sortedEntries = sortEntriesByDate([...writing, ...projects]);
+const entries = mapEntryEssentials(sortedEntries);
 ---
 
 <Layout metaTitle="404: Page Not Found" metaDescription="404: Page Not Found">
-  <Header headline="Page Not Found" posts={sortedEntries} client:idle />
+  <Header headline="Page Not Found" entries={entries} client:idle />
 
   <PageNotFound client:idle />
 </Layout>

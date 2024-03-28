@@ -1,1 +1,3 @@
-export const isImage = (fileUrl: string): boolean => /\.(gif|jpe?g|png|webp)$/i.test(fileUrl);
+export function isImage(fileUrl: string): boolean {
+  return /\.(gif|jpe?g|png|webp)$/i.test(fileUrl);
+}

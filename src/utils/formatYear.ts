@@ -1,5 +1,6 @@
-export const formatYear = (date: Date) =>
-  date.toLocaleDateString('en-CA', {
+export function formatYear(date: Date) {
+  return date.toLocaleDateString('en-CA', {
     timeZone: 'UTC',
     year: 'numeric',
   });
+}

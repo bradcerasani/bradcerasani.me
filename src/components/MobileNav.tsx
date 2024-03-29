@@ -54,8 +54,6 @@ export function MobileNav({ entries }: MobileNavProps) {
         <div className="MobileNavWrapper">
           <ul>
             {entries.map(({ data, collection, slug }, index) => {
-              if (data.status === 'draft') return null;
-
               const year = formatYear(data.date);
               const title = stripTags(data.title);
 

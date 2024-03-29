@@ -21,13 +21,10 @@ interface PaginationProps {
 }
 
 export function Pagination({ prev, next }: PaginationProps) {
-  const showNext = next && next.data.status === 'live';
-  const showPrev = prev && prev.data.status === 'live';
-
   return (
     <section className="Pagination" role="navigation" aria-label="Pagination Navigation">
       <div>
-        {showNext && (
+        {next && (
           <>
             <h6>Newer</h6>
             <a href={`/${next.collection}/${next.slug}`}>{stripTags(next.data.title)}</a>
@@ -36,7 +33,7 @@ export function Pagination({ prev, next }: PaginationProps) {
       </div>
 
       <div>
-        {showPrev && (
+        {prev && (
           <>
             <h6>Older</h6>
             <a href={`/${prev.collection}/${prev.slug}`}>{stripTags(prev.data.title)}</a>

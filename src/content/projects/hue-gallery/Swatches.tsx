@@ -6,7 +6,7 @@ interface SwatchesProps {
   caption?: string;
 }
 
-export const Swatches = ({ colors, caption }: SwatchesProps) => {
+export const Swatches = ({ colors }: SwatchesProps) => {
   if (!Array.isArray(colors)) {
     return;
   }
@@ -15,10 +15,9 @@ export const Swatches = ({ colors, caption }: SwatchesProps) => {
     <>
       <div className="SwatchContainer">
         {colors.map((color, index) => (
-          <div className="Swatch" key={index} style={{ backgroundColor: color }} />
+          <div className="Swatch" key={color} style={{ backgroundColor: color }} />
         ))}
       </div>
-      {caption && <Caption>{caption}</Caption>}
     </>
   );
 };

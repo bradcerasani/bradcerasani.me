@@ -22,7 +22,7 @@ export function ImageCompare({
   const handlePositionChange = (newPosition: number) => {
     if (isDiscovered) return;
 
-    if (newPosition !== position) {
+    if (Math.round(newPosition) !== position) {
       setIsDiscovered(true);
     }
   };

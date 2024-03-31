@@ -2,23 +2,23 @@
 
 .Note {
   --borderWidth: 4px;
-
-  background-color: var(--colorGreyLightest);
+  backdrop-filter: blur(5px);
+  background-color: hsla(0, 0%, 98%, 0.2);
   border-color: var(--colorGreyDark);
-  border-radius: 1rem;
+  border-radius: 1rem;;
   border-style: double;
   border-width: var(--borderWidth);
-  font-family: var(--fontFamilySansSerif);
-  font-size: var(--fontSizeSmaller);
+  box-shadow: var(--boxShadow);  
+  font-size: 0.875rem;
   font-style: italic;
-  line-height: 1.5;
   margin-bottom: calc(var(--spaceDefault) + var(--borderWidth));
-  padding: 1rem var(--spaceDefault);
+  padding: 1rem var(--spaceDefault) 1rem;
   position: relative;
   top: var(--borderWidth);
 }
 
 .Note p {
+  color: var(--colorGreyDark);
   font: inherit !important;
   margin-bottom: 0;
 }
@@ -29,7 +29,7 @@
 
 @media (--md) {
   .Note {
-    margin-bottom: calc(var(--spaceMedium) + var(--borderWidth));
+    margin-bottom: calc(var(--spaceMedium) + var(--borderWidth) + var(--spaceDefault));
   }
 }
 

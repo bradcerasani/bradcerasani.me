@@ -32,6 +32,7 @@
 
   .Figure--large {
     margin-bottom: var(--spaceMedium);
+    margin-bottom: 3rem;
     margin-left: calc(-1 * var(--spaceLarge));
     margin-right: calc(-1 * var(--spaceLarge));
     margin-top: var(--spaceMedium);

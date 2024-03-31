@@ -1,25 +1,14 @@
-.sr-only,
-.u-visuallyHidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
+@import url('src/styles/_breakpoints.css');
 
 .footnotes {
-  font-family: var(--fontFamilySansSerif);
-  font-size: var(--fontSizeSmallest);
   margin-bottom: var(--spaceMedium);
-  margin-top: var(--spaceMedium);
+  margin-top: calc(var(--spaceMedium) + 4px);
   padding-top: var(--spaceMedium);
   position: relative;
 
   &:before {
-    border-bottom: 1px solid var(--colorFaded);
-    border-top: 1px solid var(--colorFaded);
+    border-bottom: 1px solid var(--colorBlack);
+    border-top: 1px solid var(--colorBlack);
     content: ' ';
     display: block;
     height: 4px;
@@ -31,7 +20,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (--md) {
   .footnotes {
     margin-bottom: 0;
     padding-left: var(--spaceDefault);
@@ -42,8 +31,9 @@
 sup {
   top: -0.7em;
 }
+
 [data-footnote-ref] {
-  font-size: var(--fontSizeSmallest);
+  font-size: 0.625rem;
   text-decoration: none;
 }
 
@@ -76,7 +66,7 @@ sup {
 
 .footnotes p {
   display: inline;
-  font-size: var(--fontSizeSmaller);
+  font-size: inherit;
 }
 
 .data-footnote-backref::before {

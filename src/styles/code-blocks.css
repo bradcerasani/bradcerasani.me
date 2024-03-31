@@ -1,0 +1,70 @@
+@import url('./_breakpoints.css');
+
+code[class*='astro-code'],
+pre[class*='astro-code'] {
+  background: none;
+  font-family: var(--fontFamilyMono);
+  font-weight: 400;
+  hyphens: none;
+  line-height: 1.5;
+  tab-size: 4;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+
+/* Code blocks */
+pre[class*='astro-code'] {
+  background-color: var(--codeBackgroundColor);
+  color: var(--codeColor);
+  margin-bottom: var(--spaceDefault);
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
+  overflow: auto;
+  padding: var(--spaceDefault);
+  padding-bottom: var(--spaceDefault);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.25rem;
+}
+
+@media (--md) {
+  pre[class*='astro-code'] {
+    border-radius: 0.75rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+pre *::selection {
+  background-color: rgb(255, 255, 255, 0.05);
+  text-shadow: 0 0 3px hsla(0, 0%, 0%, 0.5), 0 0 6px currentColor;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background-color: var(--colorGreyLightest);
+  border-radius: 3px;
+  color: var(--colorGreyDarker);
+  font-size: inherit;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
+  line-height: 1rem;  
+  padding: 1px 4px 2px 4px;
+  white-space: normal;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :not(pre) > code[class*='astro-code'] {
+    background-color: var(--codeBackgroundColor);
+  }
+}
+
+/* Hide last span in code */
+code > span:last-of-type:empty {
+  display: block;
+}

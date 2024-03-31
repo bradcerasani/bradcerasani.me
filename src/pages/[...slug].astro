@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import { Header, Hero, Pagination } from 'src/components';
 import Image from 'src/components/RawImage.astro';
 import Layout from 'src/layouts/Layout.astro';
+import 'src/styles/code-blocks.css';
+import 'src/styles/footnotes.css';
 import { filterEntriesByStatus } from 'src/utils/filterEntriesByStatus';
 import { isImage } from 'src/utils/isImage';
 import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
@@ -56,9 +58,7 @@ const { Content } = await entry.render();
   <main>
     <article>
       <h2 class="u-visuallyHidden">{title}</h2>
-      <section>
-        <Content />
-      </section>
+      <Content />
     </article>
   </main>
 

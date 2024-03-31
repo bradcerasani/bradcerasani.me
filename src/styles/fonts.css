@@ -1,65 +1,63 @@
+/* Sans Normal */
 @font-face {
   font-display: block;
-  font-family: 'SNF';
+  font-family: 'Söhne';
+  font-style: normal;
   font-weight: 400;
-  src: url('/fonts/SNF-Regular.woff2') format('woff2'),
-    url('/fonts/SNF-Regular.woff2') format('woff2');
+  src: url(/fonts/sohne-buch.woff2) format('woff2');
 }
 
+/* Sans Normal Italic */
 @font-face {
   font-display: block;
-  font-family: 'SNF';
-  font-weight: 500;
-  src: url('/fonts/SNF-Medium.woff2') format('woff2'), url('/fonts/SNF-Medium.woff') format('woff');
-}
-
-@font-face {
-  font-display: block;
-  font-family: 'SNF';
+  font-family: 'Söhne';
   font-style: italic;
   font-weight: 400;
-  src: url('/fonts/SNF-RegularItalic.woff2') format('woff2'),
-    url('/fonts/SNF-RegularItalic.woff2') format('woff2');
+  src: url(/fonts/sohne-buch-kursiv.woff2) format('woff2');
 }
 
+/* Sans Medium */
 @font-face {
   font-display: block;
-  font-family: 'SNF';
-  font-style: italic;
+  font-family: 'Söhne';
+  font-style: normal;
   font-weight: 500;
-  src: url('/fonts/SNF-MediumItalic.woff2') format('woff2'),
-    url('/fonts/SNF-MediumItalic.woff') format('woff');
+  src: url(/fonts/sohne-kraftig.woff2) format('woff2');
 }
 
+/* Sans Demi */
 @font-face {
   font-display: block;
-  font-family: 'USW';
+  font-family: 'Söhne';
+  font-style: normal;
+  font-weight: 600;
+  src: url(/fonts/sohne-halbfett.woff2) format('woff2');
+}
+
+/* Mono */
+@font-face {
+  font-display: block;
+  font-family: 'Söhne Mono';
+  font-style: normal;
   font-weight: 400;
-  src: url('/fonts/USW-Regular.woff2') format('woff2'),
-    url('/fonts/USW-Regular.woff') format('woff');
+  src: url(/fonts/sohne-mono-buch.woff2) format('woff2');
 }
 
+/* Mono Italic */
 @font-face {
   font-display: block;
-  font-family: 'USW';
-  font-weight: 500;
-  src: url('/fonts/USW-Medium.woff2') format('woff2'), url('/fonts/USW-Medium.woff') format('woff');
-}
-
-@font-face {
-  font-display: block;
-  font-family: 'USW';
+  font-family: 'Söhne Mono';
   font-style: italic;
   font-weight: 400;
-  src: url('/fonts/USW-RegularItalic.woff2') format('woff2'),
-    url('/fonts/USW-RegularItalic.woff') format('woff');
+  src: url(/fonts/sohne-mono-buch-kursiv.woff2) format('woff2');
 }
 
+/* Serif Bold */
 @font-face {
   font-display: block;
-  font-family: 'USW';
-  font-style: italic;
-  font-weight: 500;
-  src: url('/fonts/USW-MediumItalic.woff2') format('woff2'),
-    url('/fonts/USW-MediumItalic.woff') format('woff');
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/eb-garamond-bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

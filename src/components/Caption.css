@@ -2,8 +2,7 @@
 
 .Caption {
   color: var(--colorGreyLight);
-  font-family: var(--fontFamilySansSerif);
-  font-size: var(--fontSizeSmaller);
+  font-size: 0.875rem;
   font-style: italic;
   margin-bottom: var(--spaceDefault);
   margin-top: 0.75rem;

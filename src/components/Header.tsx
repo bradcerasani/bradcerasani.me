@@ -28,10 +28,9 @@ export function Header({ date, entries, headline }: HeaderProps) {
 
         {headline && (
           <div className="HeroContainer">
-            <h1>
+            <h1 style={{ marginBottom: '1.5rem' }}>
               {/* biome-ignore lint: headline src is controlled */}
               <span dangerouslySetInnerHTML={{ __html: headline }} />
-              {date && <span className="HeroContainer-Date">{formattedDate}</span>}
             </h1>
           </div>
         )}

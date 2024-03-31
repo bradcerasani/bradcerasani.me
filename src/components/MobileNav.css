@@ -102,7 +102,6 @@
     align-self: center;
     color: var(--colorGreyLight);
     display: block;
-    font-family: var(--fontFamilySansSerif);
     font-size: var(--fontSizeSmaller);
     font-variant-numeric: tabular-nums;
     margin-top: 2px;

@@ -1,6 +1,6 @@
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
-import vercel from "@astrojs/vercel/serverless";
+import vercel from '@astrojs/vercel/serverless';
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
@@ -11,15 +11,18 @@ export default defineConfig({
     '/writing': '/',
     '/projects': '/',
     '/tesla': '/writing/tesla-software-problems-in-winter',
-    '/projects/home-renovation': '/projects/designing-a-home'
+    '/projects/home-renovation': '/projects/designing-a-home',
   },
   markdown: {
-    syntaxHighlight: 'prism'
+    shikiConfig: {
+      theme: 'dracula',
+      transformers: ['transformerRemoveLineBreak'],
+    },
   },
-  output: "hybrid",
-  adapter: vercel(
-    {webAnalytics:{
-      enabled:true,
-    }}
-  )
+  output: 'hybrid',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });

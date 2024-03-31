@@ -86,9 +86,8 @@
   border: none;
   color: inherit;
   cursor: pointer;
-  font-family: var(--fontFamilySansSerif);
   font-size: var(--fontSizeSmall);
-  font-weight: 500;
+  font-weight: 600;
   opacity: 0.5;
   outline: none;
   padding: 0;

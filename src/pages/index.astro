@@ -42,7 +42,7 @@ const description = `I've been building on the web for 15 years, helping compani
     <section>
       <Grid gutter="var(--spaceDefault)">
         <GridItem width={{ base: '50%' }}>
-          <h6 style={{ paddingTop: 0 }}>Elsewhere</h6>
+          <h6 class="u-pt-0">Elsewhere</h6>
 
           <ul class="LinkList">
             {
@@ -58,14 +58,14 @@ const description = `I've been building on the web for 15 years, helping compani
         </GridItem>
 
         <GridItem width={{ base: '50%' }}>
-          <h6 style={{ paddingTop: 0 }}>Photos</h6>
+          <h6 class="u-pt-0">Photos</h6>
           <ChaosGallery client:idle />
         </GridItem>
       </Grid>
     </section>
 
     <section class="Entries">
-      <h6>Posts &amp; Projects</h6>
+      <h6>Side Projects</h6>
       <div>
         {
           sortedEntries.map((entry) => {
@@ -81,16 +81,22 @@ const description = `I've been building on the web for 15 years, helping compani
         }
       </div>
     </section>
-  </main>
-</Layout>
+  </main></Layout
+>
 
 <style>
   .LinkList {
     color: var(--colorGreyDefault);
-    font-family: var(--fontFamilySansSerif);
     font-size: var(--fontSizeSmall);
+    line-height: 1.75;
     margin-bottom: 0;
 
+    li {
+      margin-bottom: 0;
+    }
+    li:first-of-type {
+      margin-top: -0.25rem;
+    }
     a {
       text-decoration: none;
     }
@@ -104,5 +110,52 @@ const description = `I've been building on the web for 15 years, helping compani
       margin-bottom: var(--spaceDefault);
       padding-top: 0;
     }
+  }
+
+  a[target='_blank'] {
+    font-variant-numeric: tabular-nums;
+    transition:
+      color,
+      opacity var(--transitionFast);
+    will-change: color, opacity;
+  }
+
+  a[target='_blank']::after {
+    content: '↯';
+    display: inline-block;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(225deg) translateY(0.2rem) translateX(-0.2rem);
+    transition-duration: var(--transitionSlow);
+    transition-property: color, opacity;
+    transition-timing-function: ease-in-out;
+    will-change: color, opacity;
+  }
+
+  a[target='_blank']:hover {
+    color: var(--colorGreyDarker);
+  }
+
+  a[target='_blank']:hover::after {
+    opacity: 1;
+    transition-duration: var(--transitionFast);
+    transition-property: color, opacity;
+    transition-timing-function: ease-in-out;
+  }
+
+  a[href*='instagram']:hover::after {
+    color: #833ab4;
+  }
+
+  a[href*='twitter']:hover::after {
+    color: #1da1f2;
+  }
+
+  a[href*='github']:hover::after {
+    color: #4ac26b;
+  }
+
+  a[href*='linkedin']:hover::after {
+    color: #0077b5;
   }
 </style>

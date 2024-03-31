@@ -1,13 +1,14 @@
 .Pagination {
   display: flex;
   justify-content: space-between;
-  padding-top: calc(var(--spaceMedium) + 4px);
+  margin-top: calc(var(--spaceMedium) + 4px);
+  padding-top: var(--spaceMedium);
   position: relative;
 }
 
 .Pagination::before {
-  border-bottom: 1px solid var(--colorFaded);
-  border-top: 1px solid var(--colorFaded);
+  border-bottom: 1px solid var(--colorBlack);
+  border-top: 1px solid var(--colorBlack);
   content: ' ';
   display: block;
   height: 4px;
@@ -19,9 +20,16 @@
 }
 
 .Pagination h6 {
+  color: var(--colorGreyDefault);
+  font-size: var(--fontSizeSmaller);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
   padding-top: 0;
 }
 
 .Pagination a {
+  display:block;
+  font-size: var(--fontSizeLarge);
+  font-weight: 600;
   text-decoration-color: inherit;
 }

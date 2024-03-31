@@ -63,7 +63,6 @@ export function PageNotFound() {
             style={{
               paddingTop: 'var(--spaceDefault)',
               color: 'inherit',
-              fontFamily: 'var(--fontFamilySansSerif)',
               textTransform: 'uppercase',
               fontSize: 'var(--fontSizeDefault)',
               fontWeight: '500',

@@ -1,21 +1,20 @@
 @import url('src/styles/_breakpoints.css');
 
 .TimelineItem {
-  --marginBottom: var(--spaceMedium);
+  --marginBottom: var(--spaceLarge);
   --nodeDiameter: 0.75rem;
   --nodeOffset: 2rem;
-  --strokeWidth: 1px;
-  --timelineColor: var(--colorGreyLighter);
-  --timelineNodeColor: var(--colorGreyLight);
+  --strokeWidth: 2px;
+  --timelineColor: var(--colorGreyLightest);
+  --timelineNodeColor: var(--colorGreyDarker);
 
-  font-family: var(--fontFamilySansSerif);
-  margin-bottom: var(--marginBottom);
+  margin-bottom: var(--marginBottom);  
   position: relative;
 
   figure {
     aspect-ratio: 16/9;
     box-shadow: var(--boxShadow);
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     position: relative;
     z-index: 5;
   }
@@ -84,7 +83,7 @@
       height: 100%;
       height: calc(100% + 2.75rem);
       left: 0;
-      margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2);
+      margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2 - 0.5px);
       position: absolute;
       top: 0;
       width: var(--strokeWidth);
@@ -98,10 +97,13 @@
   position: relative;
 
   h3 {
+    /* color: color(display-p3 1 0 0.331); */
     display: inline-block;
     font-size: 1rem;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 0.25rem;
+    margin-top: -2px;
     padding-top: 0.75rem;
   }
 
@@ -118,7 +120,7 @@
       content: '';
       height: calc(100% - var(--nodeDiameter) + var(--marginBottom) + var(--nodeDiameter));
       left: 0;
-      margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2);
+      margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2 - 0.5px);
       position: absolute;
       width: var(--strokeWidth);
       z-index: 0;
@@ -131,13 +133,10 @@
 
   @media (--md) {
     align-items: center;
-    background-color: var(--colorWhite);
-    border: var(--strokeWidth) solid var(--timelineNodeColor);
+    background-color: var(--colorBlack);
     border-radius: 50%;
-    box-shadow: 0 0 0 0.25rem var(--computedBackgroundColor);
+    box-shadow: 0 0 0 8px var(--computedBackgroundColor);
     display: flex;
-    font-size: 10px;
-    font-size: var(--fontSizeSmallest);
     font-variant-numeric: tabular-nums;
     font-weight: 600;
     height: var(--nodeDiameter);
@@ -154,8 +153,9 @@
 }
 
 .Timeline-date {
-  color: var(--colorGreyLight);
+  color: var(--colorGreyDarker);
   font-size: var(--fontSizeSmaller);
+  font-weight: 500;
 
   @media (--md) {
     padding-top: calc(var(--nodeDiameter) + 2px);
@@ -169,15 +169,16 @@
     padding-top: 0;
     position: absolute;
     text-align: right;
-    top: calc(1rem + 1px);
+    top: calc(1rem - 1px);
     white-space: nowrap;
     width: 4rem;
   }
 }
 
 .Timeline-link {
-  color: var(--colorGreyDefault);
+  color: var(--colorBlack);
   font-size: var(--fontSizeSmaller);
+  font-weight: 500;
   line-height: 1;
   text-decoration: none;
 }

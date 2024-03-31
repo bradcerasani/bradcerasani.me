@@ -1,4 +1,4 @@
-@import 'src/styles/_breakpoints.css';
+@import url('src/styles/_breakpoints.css');
 
 .SwatchContainer {
   display: flex;
@@ -10,7 +10,8 @@
 
 @media (--md) {
   .SwatchContainer {
-    margin-top: calc(-1 * var(--spaceMedium));
+    margin-bottom: var(--spaceMedium);
+    margin-top: -3rem;
   }
 }
 

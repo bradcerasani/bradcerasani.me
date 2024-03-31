@@ -24,7 +24,7 @@ export function Footer() {
           )}
         </div>
 
-        <div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <a href="https://twitter.com/bradcerasani" target="_blank" rel="noreferrer noopener">
             <svg
               style={{

@@ -163,7 +163,7 @@
   }
 
   @media (--lg) {
-    --handleSize: 0.875rem;
+    --handleSize: 1rem;
   }
 }
 

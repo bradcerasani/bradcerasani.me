@@ -15,7 +15,7 @@ export function TimelineItem({ entry, children }: TimelineItemProps) {
   const slug = `/${entry.collection}/${entry.slug}`;
 
   const buttonText =
-    entry.data.cta || (entry.collection === 'writing' ? 'Read Post' : 'View Project');
+    entry.data.cta || (entry.collection === 'writing' ? 'Read post' : 'View project');
   const isDraft = status !== 'live';
   const showMedia = video || image;
   const displayTitle = stripTags(title);

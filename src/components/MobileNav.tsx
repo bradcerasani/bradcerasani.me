@@ -83,7 +83,6 @@ export function MobileNav({ entries }: MobileNavProps) {
 
           <ul
             style={{
-              fontFamily: 'var(--fontFamilySansSerif)',
               fontSize: 'var(--fontSizeSmall)',
               color: 'var(--colorGreyDefault)',
             }}

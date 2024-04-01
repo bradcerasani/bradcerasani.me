@@ -22,3 +22,6 @@ pnpm-debug.log*
 .vercel
 
 .vscode
+
+# draft assets
+src/content/**/draft

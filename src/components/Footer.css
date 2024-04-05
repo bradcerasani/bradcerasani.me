@@ -6,6 +6,13 @@
   padding-top: var(--spaceMedium);
 }
 
+.Footer .Container {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
 .Footer button {
   appearance: none;
   background-color: transparent;
@@ -14,7 +21,9 @@
   font-size: var(--fontSizeLarge);
   font-weight: 600;
   letter-spacing: 0;
-  outline: none
+  outline: none;
+  padding-left: 0;
+  padding-right: 0.25rem;
 }
 
 .Footer a {

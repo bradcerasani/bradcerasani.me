@@ -23,7 +23,7 @@
   pointer-events: none;
   position: fixed;
   transition: opacity var(--transitionFast);
-  z-index: 5;
+  z-index: 10;
 
   @media (--md) {
     --minDeviation: 0;
@@ -126,10 +126,9 @@
 }
 
 .ChaosController {
-  --handleSize: 1.5rem;
+  --handleSize: 1.25rem;
   --trackHeight: 3px;
-  --trackColor: var(--colorGreyLighter);
-
+  --trackColor: hsl(0, 0%, 85%);
   appearance: none;
   background-color: transparent;
   color: inherit;

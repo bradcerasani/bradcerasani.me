@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { BREAKPOINTS } from 'src/constants';
-import { linkList } from 'src/content/social/linkList';
 import type { EntryEssential } from 'src/types';
 import { formatYear } from 'src/utils/formatYear';
 import { stripTags } from 'src/utils/stripTags';
@@ -79,30 +78,6 @@ export function MobileNav({ entries }: MobileNavProps) {
                 </li>
               );
             })}
-          </ul>
-
-          <ul
-            style={{
-              fontSize: 'var(--fontSizeSmall)',
-              color: 'var(--colorGreyDefault)',
-            }}
-          >
-            {linkList.map(({ title, url }, index) => (
-              <li
-                className={`MobileNavListItem ${isVisible ? 'MobileNavListItem--isVisible' : ''}`}
-                key={title}
-                style={{ animationDelay: `calc(${entries.length * 50 + 50 * (index + 1)}ms)` }}
-              >
-                <a
-                  href={url}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  style={{ display: 'block' }}
-                >
-                  {title}
-                </a>
-              </li>
-            ))}
           </ul>
         </div>
       </div>

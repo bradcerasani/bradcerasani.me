@@ -1,9 +1,16 @@
+@import url('src/styles/_breakpoints.css');
+
 .Pagination {
-  display: flex;
-  justify-content: space-between;
   margin-top: calc(var(--spaceMedium) + 4px);
   padding-top: var(--spaceMedium);
   position: relative;
+  text-align: center;
+
+  @media (--md) {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
 }
 
 .Pagination::before {
@@ -20,16 +27,17 @@
 }
 
 .Pagination h6 {
-  color: var(--colorGreyDefault);
-  font-size: var(--fontSizeSmaller);
+  color: var(--colorGreyLight);
+  font-size: var(--fontSizeSmall);
   font-weight: 400;
   margin-bottom: 0.5rem;
   padding-top: 0;
 }
 
 .Pagination a {
-  display:block;
+  display: block;
   font-size: var(--fontSizeLarge);
-  font-weight: 600;
+  font-weight: 500;
+  margin-bottom: var(--spaceMedium);
   text-decoration-color: inherit;
 }

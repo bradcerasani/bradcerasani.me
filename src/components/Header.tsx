@@ -13,7 +13,6 @@ export function Header({ date, entries, headline }: HeaderProps) {
 
   return (
     <>
-      <div className="Glow" />
       <header className="Header" itemScope itemType="https://schema.org/SiteNavigationElement">
         <div className="NavWrapper">
           <a href="/" style={{ textDecoration: 'none', display: 'inline-block' }}>

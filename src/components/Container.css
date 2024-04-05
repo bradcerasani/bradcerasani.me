@@ -1,3 +1,5 @@
+@import url('src/styles/_breakpoints.css');
+
 .Container {
   margin-left: auto;
   margin-right: auto;
@@ -5,3 +7,10 @@
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
+
+@media (--md) {
+  .Container {
+    padding: 0;
+  }
+}
+

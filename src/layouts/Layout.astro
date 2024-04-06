@@ -11,9 +11,9 @@ const { metaTitle, metaDescription, metaImage, metaSlug } = Astro.props;
 
 const title = stripTags(metaTitle ?? 'Brad Cerasani');
 const description = metaDescription || 'Designer, engineer, etc.';
-const image = metaImage || 'brad-cerasani-office-wide.jpg';
+const image = metaImage ? metaImage.replace('./', '/') : 'brad-cerasani-office-wide.jpg';
 const imageUrl = `https://bradcerasani.me/images${image}?w=1600`;
-const url = `https://bradcerasani.me${metaSlug}`;
+const url = `https://bradcerasani.me${metaSlug ?? ''}`;
 ---
 
 <html lang="en">

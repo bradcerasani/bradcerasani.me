@@ -250,6 +250,10 @@ video {
   width: 100%;
 }
 
+img:-moz-loading {
+  visibility: hidden;
+}
+
 /* 
 ===============================
 Form elements

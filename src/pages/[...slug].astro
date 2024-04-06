@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 }
 
 const { entry, prev, next, entries } = Astro.props;
-const { image, description, date, title, skipHero } = entry.data;
+const { image, description, title, skipHero } = entry.data;
 const showHero: boolean = isImage(image ?? '') && !skipHero;
 const { Content } = await entry.render();
 ---
@@ -40,7 +40,7 @@ const { Content } = await entry.render();
   metaImage={image}
   metaSlug={`/${entry.collection}/${entry.slug}`}
 >
-  <Header headline={title} date={date} entries={entries} client:idle />
+  <Header headline={title} entries={entries} client:idle />
 
   {
     showHero && (

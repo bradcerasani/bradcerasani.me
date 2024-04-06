@@ -1,16 +1,12 @@
 import { MobileNav } from 'src/components';
 import type { EntryEssential } from 'src/types';
-import { formatDate } from 'src/utils/formatDate';
 import './Header.css';
 interface HeaderProps {
-  date?: Date;
   entries: EntryEssential[];
   headline?: string;
 }
 
-export function Header({ date, entries, headline }: HeaderProps) {
-  const formattedDate = date ? formatDate(date) : null;
-
+export function Header({ entries, headline }: HeaderProps) {
   return (
     <>
       <header className="Header" itemScope itemType="https://schema.org/SiteNavigationElement">

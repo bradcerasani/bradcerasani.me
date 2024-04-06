@@ -1,4 +1,4 @@
-@import 'src/styles/_breakpoints.css';
+@import url('src/styles/_breakpoints.css');
 
 .Grid {
   --gridGutter: 10rem;

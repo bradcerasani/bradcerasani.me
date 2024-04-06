@@ -12,5 +12,6 @@ export { MobileNav } from './MobileNav';
 export { Note } from './Note';
 export { PageNotFound } from './404';
 export { Pagination } from './Pagination';
+export { SocialLinks } from './SocialLinks';
 export { TimelineItem } from './Timeline';
 export { Vimeo } from './Vimeo';

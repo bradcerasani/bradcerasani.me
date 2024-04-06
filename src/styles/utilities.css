@@ -1,3 +1,5 @@
+@import url('src/styles/_breakpoints.css');
+
 /* Accessibility */
 .sr-only,
 .u-visuallyHidden {
@@ -25,4 +27,16 @@
 
 .u-mb-0 {
   margin-bottom: 0;
+}
+
+/* Display */
+
+.u-none {
+  display: none;
+}
+
+@media (--md) {
+  .u-block\@md {
+    display: block;
+  }
 }

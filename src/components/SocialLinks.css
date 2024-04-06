@@ -1,0 +1,73 @@
+@import url('src/styles/_breakpoints.css');
+
+.Links {
+  display: none;
+}
+
+@media (--md) {
+  .Links {
+    display: block;
+  }
+}
+.SocialLinks {
+  color: var(--colorGreyDarker);
+  font-size: var(--fontSizeSmaller);
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 0;
+  padding-left: 0.75rem;
+
+  li {
+    margin-bottom: 1rem;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+a[target='_blank'] {
+  font-variant-numeric: tabular-nums;
+  transition:
+    color,
+    opacity var(--transitionFast);
+  will-change: color, opacity;
+}
+
+a[target='_blank']::after {
+  color: var(--colorGreyLighter);
+  content: '↯';
+  display: inline-block;
+  opacity: 1;
+  position: absolute;
+  transform: rotate(225deg) translateY(0.2rem) translateX(-0.2rem);
+  transition-duration: 300ms;
+  transition-property: color, opacity;
+  transition-timing-function: ease-in-out;
+  will-change: color, opacity;
+}
+
+a[target='_blank']:hover {
+  color: var(--colorGreyDarker);
+}
+
+a[target='_blank']:hover::after {
+  transition-duration: var(--transitionFast);
+  transition-property: color, opacity;
+  transition-timing-function: ease-in-out;
+}
+
+a[href*='instagram']:hover::after {
+  color: #833ab4;
+}
+
+a[href*='twitter']:hover::after {
+  color: #1da1f2;
+}
+
+a[href*='github']:hover::after {
+  color: #4ac26b;
+}
+
+a[href*='linkedin']:hover::after {
+  color: #0077b5;
+}

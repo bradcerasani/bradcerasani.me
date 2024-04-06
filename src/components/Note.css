@@ -8,33 +8,31 @@
   border-radius: 1rem;;
   border-style: double;
   border-width: var(--borderWidth);
-  box-shadow: var(--boxShadow);  
+  box-shadow: var(--boxShadow);
+  display: none;  
   font-size: 0.875rem;
   font-style: italic;
   margin-bottom: calc(var(--spaceDefault) + var(--borderWidth));
   padding: 1rem var(--spaceDefault) 1rem;
   position: relative;
   top: var(--borderWidth);
-}
+  
+  p {
+    color: var(--colorGreyDark);
+    font: inherit !important;
+    margin-bottom: 0;
+  }
 
-.Note p {
-  color: var(--colorGreyDark);
-  font: inherit !important;
-  margin-bottom: 0;
-}
+  & + p {
+    margin-top: -6px;
+  }
 
-.Note + p {
-  margin-top: -6px;
-}
-
-@media (--md) {
-  .Note {
+  @media (--md) {
+    display: block;
     margin-bottom: calc(var(--spaceMedium) + var(--borderWidth) + var(--spaceDefault));
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  .Note {
+  @media (prefers-color-scheme: dark) {
     background-color: transparent;
   }
 }

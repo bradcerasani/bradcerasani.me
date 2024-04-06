@@ -1,19 +1,14 @@
 import { MobileNav } from 'src/components';
 import type { EntryEssential } from 'src/types';
-import { formatDate } from 'src/utils/formatDate';
 import './Header.css';
 interface HeaderProps {
-  date?: Date;
   entries: EntryEssential[];
   headline?: string;
 }
 
-export function Header({ date, entries, headline }: HeaderProps) {
-  const formattedDate = date ? formatDate(date) : null;
-
+export function Header({ entries, headline }: HeaderProps) {
   return (
     <>
-      <div className="Glow" />
       <header className="Header" itemScope itemType="https://schema.org/SiteNavigationElement">
         <div className="NavWrapper">
           <a href="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
@@ -28,7 +23,7 @@ export function Header({ date, entries, headline }: HeaderProps) {
 
         {headline && (
           <div className="HeroContainer">
-            <h1 style={{ marginBottom: '1.5rem' }}>
+            <h1>
               {/* biome-ignore lint: headline src is controlled */}
               <span dangerouslySetInnerHTML={{ __html: headline }} />
             </h1>

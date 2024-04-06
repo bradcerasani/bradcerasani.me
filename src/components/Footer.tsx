@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="Footer">
-      <Container style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Container>
         <div>
           <button
             type="button"

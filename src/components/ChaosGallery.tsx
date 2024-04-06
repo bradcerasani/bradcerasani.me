@@ -36,6 +36,12 @@ export function ChaosGallery() {
     const imageIndex = Math.round(Number.parseInt(value) / interval);
     const classList = event.target.classList;
 
+    if (Number.parseInt(value) > 1) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
     setPrefetch(true);
 
     if (!classList.contains('is-discovered')) classList.add('is-discovered');

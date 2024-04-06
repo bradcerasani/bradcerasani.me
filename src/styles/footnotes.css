@@ -49,7 +49,7 @@ sup {
 
 .footnotes ol li {
   color: var(--colorGreyDefault);
-  line-height: 1.5;
+  line-height: 1.75;
   margin-bottom: 1rem;
   position: relative;
 }

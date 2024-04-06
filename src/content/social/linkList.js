@@ -14,9 +14,5 @@ export const linkList = [
   {
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/bradcerasani/',
-  },
-  {
-    title: 'read.cv',
-    url: 'https://read.cv/bradcerasani',
-  },
+  },  
 ];

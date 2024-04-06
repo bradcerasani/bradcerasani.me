@@ -1,4 +1,4 @@
-@import 'src/styles/_breakpoints.css';
+@import url('src/styles/_breakpoints.css');
 
 .Caption {
   color: var(--colorGreyLight);
@@ -9,6 +9,7 @@
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   text-align: center;
+  text-wrap: balance;
 }
 
 @media (--md) {

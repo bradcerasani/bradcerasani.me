@@ -1,12 +1,14 @@
-@import url('./_breakpoints.css');
+@import url('src/styles/_breakpoints.css');
 
 code[class*='astro-code'],
 pre[class*='astro-code'] {
   background: none;
   font-family: var(--fontFamilyMono);
+  font-size: 14px;
+  -webkit-font-smoothing: subpixel-antialiased;
   font-weight: 400;
   hyphens: none;
-  line-height: 1.5;
+  line-height: 1.25rem;
   tab-size: 4;
   text-align: left;
   white-space: pre;

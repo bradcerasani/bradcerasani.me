@@ -19,6 +19,10 @@
     z-index: 5;
   }
 
+  @media (prefers-color-scheme: dark) {
+    --timelineColor: hsl(0, 0%, 24%);
+  }
+
   &:first-of-type {
     figure {
       margin-top: 0;
@@ -97,18 +101,18 @@
   position: relative;
 
   h3 {
-    /* color: color(display-p3 1 0 0.331); */
+    color: var(--colorBlack);
     display: inline-block;
     font-size: 1rem;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.25rem;
     margin-top: -2px;
     padding-top: 0.75rem;
   }
 
   p {
-    color: var(--colorGreyLight);
+    color: var(--colorGreyDefault);
     font-size: var(--fontSizeSmall);
     margin-bottom: 0;
   }
@@ -138,7 +142,7 @@
     box-shadow: 0 0 0 8px var(--computedBackgroundColor);
     display: flex;
     font-variant-numeric: tabular-nums;
-    font-weight: 600;
+    font-weight: 500;
     height: var(--nodeDiameter);
     justify-content: center;
     left: 0;
@@ -153,8 +157,9 @@
 }
 
 .Timeline-date {
-  color: var(--colorGreyDarker);
-  font-size: var(--fontSizeSmaller);
+  color: var(--colorGreyDefault);  
+  font-size: var(--fontSizeSmallest);
+  font-size: 12px;
   font-weight: 500;
 
   @media (--md) {
@@ -177,8 +182,8 @@
 
 .Timeline-link {
   color: var(--colorBlack);
-  font-size: var(--fontSizeSmaller);
-  font-weight: 500;
+  font-size: var(--fontSizeSmall);
+  font-weight: 400;
   line-height: 1;
   text-decoration: none;
 }

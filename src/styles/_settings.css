@@ -5,7 +5,7 @@
 
   --colorGreyDarker: hsl(0, 0%, 22.35%);
   --colorGreyDark: hsl(0, 0%, 30%);
-  --colorGreyDefault: hsl(0, 0%, 35%);
+  --colorGreyDefault: hsl(0, 0%, 44%);
   --colorGreyLight: hsl(0, 0%, 50%);
   --colorGreyLighter: hsl(0, 0%, 80%);
   --colorGreyLightest: hsl(60, 8%, 94%);
@@ -55,5 +55,15 @@
     --backgroundColor: hsl(0, 0%, 10%);
     --textColor: var(--colorLinenLight);
     --computedBackgroundColor: hsl(0, 0%, 15%);
+
+    --colorBlack: hsl(0, 0%, 95%);
+    --colorWhite: hsl(0, 0%, 3%);
+
+    --colorGreyDarker: var(--colorGreyLighter);
+    --colorGreyDark: var(--colorGreyLight);
+    --colorGreyDefault: var(--colorGreyLight);
+    --colorGreyLight: var(--colorGreyLighter);
+    --colorGreyLighter: var(--colorGreyLightest);
+    --colorGreyLightest: var(--colorGreyLighter);
   }
 }

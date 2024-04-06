@@ -26,7 +26,7 @@ export function Pagination({ prev, next }: PaginationProps) {
       <div className="Pagination-next">
         {next && (
           <>
-            <h6>Next</h6>
+            <h4>Next</h4>
             <a href={`/${next.collection}/${next.slug}`}>{stripTags(next.data.title)}</a>
           </>
         )}
@@ -35,7 +35,7 @@ export function Pagination({ prev, next }: PaginationProps) {
       <div className="Pagination-prev">
         {prev && (
           <>
-            <h6>Previous</h6>
+            <h4>Previous</h4>
             <a href={`/${prev.collection}/${prev.slug}`}>{stripTags(prev.data.title)}</a>
           </>
         )}

@@ -1,6 +1,13 @@
-@import url('./_breakpoints.css');
+@import url('src/styles/_breakpoints.css');
 
-/* Reset and base styles */
+/* Long file, so we'll use a larger comment style for ease of scanning */
+
+/* 
+===============================
+Base styles
+===============================
+*/
+
 *,
 *::before,
 *::after {
@@ -8,7 +15,7 @@
 }
 
 html,
-body {  
+body {
   margin: 0;
   min-height: 100%;
   transition: background-color, color var(--transitionSlow);
@@ -18,15 +25,16 @@ html {
   background-color: var(--backgroundColor);
   color: var(--textColor);
   font-family: var(--fontFamilySans);
-  font-feature-settings: "kern" 1;
+  font-feature-settings: 'kern' 1;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
 }
 
-body {  
+body {
   min-height: 100vh;
 }
 
@@ -44,167 +52,65 @@ body {
   }
 }
 
-/* Typography */
+/* 
+===============================
+Typography
+===============================
+*/
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: var(--colorGreyDarker);
-  margin-bottom: 0.5rem;
+  color: var(--colorBlack);
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
   margin-top: 0;
-  padding-top: 0.5rem;
 }
 
 h1 {
-  align-self: flex-end;
-  color: black;
+  color: var(--colorBlack);
+  display: block;
   font-family: var(--fontFamilySerif);
-  font-feature-settings: 'clig', 'kern', 'liga', 'onum', 'pnum';
-  font-size: var(--fontSizeLargest);
-  font-size: 64px !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
-  line-height: 1.0 !important;
-  margin: 0;
-  margin: auto;
-  position: relative;
-  text-shadow: none;
-  text-transform: none;
-  width: 80% !important;
+  font-size: 54px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (--md) {
+    font-size: 64px;
+  }
 }
 
 h2 {
-  color: hsl(0, 0%, 10%);
   font-size: var(--fontSizeLarge);
   font-weight: 600;
-  line-height: 1.5;
   margin-bottom: 1.125rem;
   padding-top: 1.875rem;
 }
 
 h3 {
-  color: hsl(0, 0%, 10%);
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1.25;
 }
 
 h4 {
-  font-size: var(--fontSizeLarge);
-  font-weight: 500;
-}
-
-h5 {
-  font-size: var(--fontSizeMedium);
-  font-weight: 500;
-  line-height: 1.25;
-}
-
-h6 {
+  background-color: var(--colorGreyLightest);
+  border-radius: 0.25rem;
   color: var(--colorGreyDarker);
-  font-size: var(--fontSizeSmall);
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
-/* Links */
-a {
-  color: inherit;
-  text-decoration-color: var(--colorGreyDark);
-  transition: color, text-decoration-color var(--transitionFast);
-}
-
-a:hover {
-  text-decoration-color: var(--colorBlack);
-}
-
-@media (prefers-color-scheme: dark) {
-  a:hover {
-    color: var(--colorGreyLightest);
-    text-decoration-color: currentColor;
-  }
-}
-
-
-
-/* Sections */
-section {
-  margin-bottom: var(--spaceDefault);
-}
-
-@media (min-width: 800px) {
-  section {
-    margin-bottom: var(--spaceMedium);
-  }
-}
-
-/* Paragraphs and lists */
-p,
-ol {
-  color: var(--colorGreyDarker);
-  margin-bottom: 1rem;
-  margin-top: 0;
-}
-
-@media (min-width: 800px) {
-  p,
-  ol {
-    color: var(--colorGreyDarker);
-    font-size: 16px;
-    /* font-size: 0.95rem; */
-    font-variant-ligatures: common-ligatures;
-    line-height: 1.75;
-    margin-bottom: 1rem;
-  }
-
-  code {
-    /* background-color: oklch(84.71% 0.3596 144.81); */
-    font-family: var(--fontFamilyMono);
-    font-size: 14px;
-    -webkit-font-smoothing: subpixel-antialiased;
-    /* padding-left: 0.25em; */
-    /* padding-right: 0.25em; */
-  }
-
-  pre {
-    line-height: 20.5px !important;
-  }
-}
-
-ol,
-ul {
-  list-style-position: inside;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-@media (min-width: 800px) {
-  ol,
-  ul {
-    list-style-position: outside;
-  }
-}
-
-ul {
-  list-style-type: none;
-  margin-bottom: 1rem;
-  margin-top: 0;
-}
-
-li {
-  margin-bottom: 0.25rem;
-}
-
-
-
-img,
-video {
-  display: block;
-  height: auto;
-  width: 100%;
+  display: inline-block;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  height: 1.5rem;
+  line-height: calc(1.5rem - 1px);
+  margin-bottom: 2rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 hr {
@@ -218,64 +124,137 @@ hr {
   margin-top: var(--spaceMedium);
 }
 
-blockquote {
-  display: block;
-  margin-left: 0;
-  padding-bottom: 0.5rem;
-  padding-left: 2.5rem;
-  padding-top: 0.5rem;
-  position: relative;
-}
-
-blockquote::before {
-  color: var(--colorGreyLighter);
-  color: black;
-  content: '“';
-  font-family: var(--fontFamilySerif);
-  font-size:  2.5rem;
-  font-weight: 700;
-  left: 0;
-  margin-left: 2rem;
-  position: absolute;
-  top: 0.75rem;
-}
-
-blockquote p {
-  color: black;
-  display: inline;
-  display: block;
-  font-family: var(--fontFamilySerif);
-  font-size: var(--fontSizeLarge);
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.25;
-  margin: auto;
-  margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  text-align: center;
-}
-
-@media (--md) {
-  blockquote {
-    padding-bottom: 1rem;
-    padding-left: 0;
-    padding-top: var(--spaceDefault);
-  }
-
-  blockquote::before {
-    left: -2.75rem;
-  }
-}
-
 mark {
   background-color: var(--colorHighlight);
 }
 
 strong {
-  font-weight: 500;
+  background-color: var(--colorGreyLightest);
+  font-weight: 400;
+  padding: 2px 6px;  
 }
+
+/* 
+===============================
+Links
+===============================
+*/
+
+a {
+  color: inherit;
+  text-decoration-color: var(--colorGreyDark);
+  transition-duration: var(--transitionFast);
+  transition-property: color, text-decoration-color;
+  transition-timing-function: ease-in-out;
+}
+
+a:hover {
+  text-decoration-color: var(--colorBlack);
+}
+
+/* 
+===============================
+Paragraphs & lists
+===============================
+*/
+
+p,
+ol,
+ul {
+  color: var(--colorGreyDarker);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+ol,
+ul {
+  list-style-position: inside;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  @media (--md) {
+    list-style-position: outside;
+  }
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* 
+===============================
+Blockquotes
+===============================
+*/
+
+blockquote {
+  display: block;
+  font-family: var(--fontFamilySerif);
+  margin-left: 0;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  position: relative;
+
+  &::before {
+    color: var(--colorBlack);
+    content: '“';  
+    font-size: 2.5rem;
+    font-weight: 700;
+    left: 0;
+    margin-left: 0;
+    position: absolute;
+    top: -0.5rem;
+  }
+
+  @media (--md) {
+    padding-left: 0;
+    padding-top: var(--spaceDefault);
+
+    &::before {
+      left: 0;
+      margin-left: 0;
+      top: 0;
+    }
+  }
+}
+
+blockquote p {
+  color: var(--colorBlack);
+  display: inline;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  text-wrap: balance;
+
+  @media (--md) {  
+    font-size: 28px;
+    padding-left: 2rem;
+  }
+}
+
+/* 
+===============================
+Media
+===============================
+*/
+
+img,
+video {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+/* 
+===============================
+Form elements
+===============================
+*/
 
 button,
 input,
@@ -288,18 +267,16 @@ textarea {
   margin: 0;
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--colorLinenDefault);
-  }
+/* 
+===============================
+Sections
+===============================
+*/
 
-  p {
-    color: inherit;
+section {
+  margin-bottom: var(--spaceDefault);
+
+  @media (--md) {
+    margin-bottom: var(--spaceMedium);
   }
 }

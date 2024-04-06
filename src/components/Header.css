@@ -46,36 +46,8 @@
 
 .HeroContainer {
   display: flex;
-  margin-top: var(--spaceMedium);
-}
-
-.HeroContainer-Date {
-  color: var(--colorGreyLight);
-  display: block;
-  display: none;
-  font-size: var(--fontSizeSmaller);
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  margin-top: 1.5rem;
-  text-transform: uppercase;
-}
-
-.HeroContainer h1 {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-align: center;
-  width: 100%;
-}
-
-.HeroContainer h1 br {
-  /* display: none; */
-}
-
-@media (--sm) {
-  .HeroContainer h1 {
-    line-height: 1.1;
-  }
+  margin-top: var(--spaceMedium);  
+  padding-bottom: var(--spaceDefault); 
 }
 
 @media (--md) {

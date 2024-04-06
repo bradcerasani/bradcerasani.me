@@ -41,19 +41,19 @@ const description = `I've been building on the web for 15 years, helping compani
     <section class="u-none u-block@md">
       <Grid gutter="0">
         <GridItem width={{ base: '50%' }}>
-          <h6 class="u-pt-0">Elsewhere</h6>
+          <h4>Elsewhere</h4>
           <SocialLinks client:idle />
         </GridItem>
 
         <GridItem width={{ base: '50%', md: '50% - var(--spaceMedium)' }}>
-          <h6 class="u-pt-0">Photos</h6>
+          <h4>Photos</h4>
           <ChaosGallery client:idle />
         </GridItem>
       </Grid>
     </section>
 
     <section class="Entries">
-      <h6 class="u-pt-0" style={{ marginBottom: '2rem' }}>Side Projects</h6>
+      <h4 style={{ marginBottom: '2rem' }}>Side Projects</h4>
       <div>
         {
           sortedEntries.map((entry) => {
@@ -70,6 +70,15 @@ const description = `I've been building on the web for 15 years, helping compani
     </section>
 
     <style>
+      .Links {
+        display: none;
+      }
+
+      @media (--md) {
+        .Links {
+          display: block;
+        }
+      }
       .Entries {
         margin-bottom: var(--spaceLarge);
         margin-top: var(--spaceMedium);

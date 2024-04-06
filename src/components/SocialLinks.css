@@ -1,14 +1,5 @@
 @import url('src/styles/_breakpoints.css');
 
-.Links {
-  display: none;
-}
-
-@media (--md) {
-  .Links {
-    display: block;
-  }
-}
 .SocialLinks {
   color: var(--colorGreyDarker);
   font-size: var(--fontSizeSmaller);
@@ -20,20 +11,18 @@
   li {
     margin-bottom: 1rem;
   }
+
   a {
+    font-variant-numeric: tabular-nums;
     text-decoration: none;
+    transition-duration: var(--transitionFast);
+    transition-property: color, opacity;
+    transition-timing-function: ease-in-out;
+    will-change: color, opacity;
   }
 }
 
-a[target='_blank'] {
-  font-variant-numeric: tabular-nums;
-  transition:
-    color,
-    opacity var(--transitionFast);
-  will-change: color, opacity;
-}
-
-a[target='_blank']::after {
+.SocialLinks a::after {
   color: var(--colorGreyLighter);
   content: '↯';
   display: inline-block;
@@ -46,11 +35,11 @@ a[target='_blank']::after {
   will-change: color, opacity;
 }
 
-a[target='_blank']:hover {
+.SocialLinks a:hover {
   color: var(--colorGreyDarker);
 }
 
-a[target='_blank']:hover::after {
+.SocialLinks a:hover::after {
   transition-duration: var(--transitionFast);
   transition-property: color, opacity;
   transition-timing-function: ease-in-out;

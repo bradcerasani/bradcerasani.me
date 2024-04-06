@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { MobileNav } from 'src/components';
 import type { EntryEssential } from 'src/types';
 import './Header.css';
@@ -8,15 +7,6 @@ interface HeaderProps {
 }
 
 export function Header({ entries, headline }: HeaderProps) {
-  useEffect(() => {
-    const font = new FontFace('EB Garamond', 'url(/fonts/EB-Garamond-Bold.woff2)', {
-      style: 'normal',
-      weight: '700',
-    });
-
-    font.load().then((font) => document.fonts.add(font));
-  }, []);
-
   return (
     <>
       <header className="Header" itemScope itemType="https://schema.org/SiteNavigationElement">

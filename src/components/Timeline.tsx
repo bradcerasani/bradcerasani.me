@@ -1,8 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
-
-import { formatYear } from 'src/utils/formatYear';
-import { stripTags } from 'src/utils/stripTags';
-
+import { formatYear, stripTags } from 'src/utils';
 import './Timeline.css';
 
 interface TimelineItemProps {

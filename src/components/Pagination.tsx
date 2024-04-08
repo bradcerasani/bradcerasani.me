@@ -1,4 +1,4 @@
-import { stripTags } from 'src/utils/stripTags';
+import { stripTags } from 'src/utils';
 import './Pagination.css';
 
 interface PaginationProps {

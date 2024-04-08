@@ -1,6 +1,6 @@
 import type React from 'react';
 import type { Breakpoint } from 'src/types';
-import { createResponsiveProperties } from 'src/utils/createResponsiveProperties';
+import { createResponsiveProperties } from 'src/utils';
 import './Intrinsic.css';
 
 interface IntrinsicProps {

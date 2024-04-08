@@ -3,9 +3,7 @@ import { getCollection } from 'astro:content';
 
 import { Header, PageNotFound } from 'src/components';
 import Layout from 'src/layouts/Layout.astro';
-import { filterEntriesByStatus } from 'src/utils/filterEntriesByStatus';
-import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
-import { sortEntriesByDate } from 'src/utils/sortEntriesByDate';
+import { filterEntriesByStatus, mapEntryEssentials, sortEntriesByDate } from 'src/utils';
 
 const writing = await getCollection('writing');
 const projects = await getCollection('projects');

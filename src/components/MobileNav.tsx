@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BREAKPOINTS } from 'src/constants';
 import type { EntryEssential } from 'src/types';
-import { formatYear } from 'src/utils/formatYear';
-import { stripTags } from 'src/utils/stripTags';
+import { formatYear, stripTags } from 'src/utils';
 import './MobileNav.css';
 
 interface MobileNavProps {

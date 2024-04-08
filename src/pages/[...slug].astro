@@ -5,10 +5,7 @@ import Image from 'src/components/RawImage.astro';
 import Layout from 'src/layouts/Layout.astro';
 import 'src/styles/code-blocks.css';
 import 'src/styles/footnotes.css';
-import { filterEntriesByStatus } from 'src/utils/filterEntriesByStatus';
-import { isImage } from 'src/utils/isImage';
-import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
-import { sortEntriesByDate } from 'src/utils/sortEntriesByDate';
+import { filterEntriesByStatus, isImage, mapEntryEssentials, sortEntriesByDate } from 'src/utils';
 
 export async function getStaticPaths() {
   const writing = await getCollection('writing');

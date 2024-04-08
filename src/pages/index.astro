@@ -4,9 +4,7 @@ import { ChaosGallery, Grid, GridItem, Header, SocialLinks, TimelineItem } from 
 import PostImage from 'src/components/PostImage.astro';
 import PostVideo from 'src/components/PostVideo.astro';
 import Layout from 'src/layouts/Layout.astro';
-import { filterEntriesByStatus } from 'src/utils/filterEntriesByStatus';
-import { mapEntryEssentials } from 'src/utils/mapEntryEssentials';
-import { sortEntriesByDate } from 'src/utils/sortEntriesByDate';
+import { filterEntriesByStatus, mapEntryEssentials, sortEntriesByDate } from 'src/utils';
 
 const writing = await getCollection('writing');
 const projects = await getCollection('projects');

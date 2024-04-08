@@ -1,5 +1,5 @@
 import type React from 'react';
-import { createResponsiveProperties } from 'src/utils/createResponsiveProperties';
+import { createResponsiveProperties } from 'src/utils';
 import './Grid.css';
 
 import type { Breakpoint } from 'src/types';

@@ -135,8 +135,6 @@
   color: inherit;
   cursor: pointer;
   height: var(--handleSize);
-  margin-top: var(--trackHeight);
-  padding: 0 0 1px 0;
   position: relative;
   width: 100%;
 
@@ -176,10 +174,6 @@
     will-change: opacity, scale, border-color;
   }
 
-  &:hover::before {
-    border-color: var(--colorGreyDark);
-  }
-
   &.is-discovered::before,
   &.is-discovered::after {
     display: none;
@@ -203,7 +197,7 @@
 .ChaosController::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  background-color: currentColor;
+  background-color: var(--colorGreyDark);
   border-radius: 50%;
   height: var(--handleSize);
   margin-top: calc(var(--trackHeight) / 2);

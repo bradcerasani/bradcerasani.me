@@ -6,7 +6,7 @@
   --nodeOffset: 2rem;
   --strokeWidth: 2px;
   --timelineColor: var(--colorGreyLightest);
-  --timelineNodeColor: var(--colorGreyDarker);
+  --timelineNodeColor: var(--colorGreyDark);
 
   margin-bottom: var(--marginBottom);  
   position: relative;
@@ -137,7 +137,7 @@
 
   @media (--md) {
     align-items: center;
-    background-color: var(--colorBlack);
+    background-color: var(--timelineNodeColor);
     border-radius: 50%;
     box-shadow: 0 0 0 8px var(--computedBackgroundColor);
     display: flex;

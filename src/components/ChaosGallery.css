@@ -144,24 +144,35 @@
     outline: none;
   }
 
+  &::after {
+    border-radius: 50%;
+    box-shadow: 0 0 1.5rem 0 hsla(0, 0%, 0%, 0.2);
+    content: '';
+    height: 1rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1rem;
+    z-index: -1;
+  }
+
   &::before {
-    animation-duration: 16s;
+    animation-duration: 2.4s;
     animation-iteration-count: infinite;
-    animation-name: spin;
+    animation-name: pulse;
     animation-timing-function: linear;
-    background-color: hsla(0, 0%, 100%, 0.5);    
-    border: 1px dashed var(--colorGreyLighter);
+    background-color: white;
     border-radius: 50%;
     content: '';
     display: block;
-    height: 3rem;
-    left: -1rem;
+    height: 1rem;
+    left: 0rem;
     position: absolute;
-    top:-1rem;
+    top: -0.5px;
     transition-duration: 150ms;
     transition-property: opacity, scale, border-color;
     transition-timing-function: ease-in-out;
-    width: 3rem;
+    width: 1rem;
     will-change: opacity, scale, border-color;
   }
 

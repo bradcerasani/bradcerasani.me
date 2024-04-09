@@ -31,7 +31,10 @@
 
 .Handle--isUndiscovered {
   &::before {
-    animation: pulse 2s ease 0s infinite;
+    animation-duration: 2.4s;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+    animation-timing-function: linear;
     background-color: white;
   }
 }

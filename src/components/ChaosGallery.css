@@ -128,7 +128,8 @@
 .ChaosController {
   --handleSize: 1.25rem;
   --trackHeight: 3px;
-  --trackColor: hsl(0, 0%, 85%);
+  --trackColor: var(--colorGreyLighter);
+
   appearance: none;
   background-color: transparent;
   color: inherit;
@@ -144,17 +145,28 @@
   }
 
   &::before {
-    animation: pulse 2s ease 0s infinite;
-    background-color: white;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-name: spin;
+    animation-timing-function: linear;
+    background-color: hsla(0, 0%, 100%, 0.5);    
+    border: 1px dashed var(--colorGreyLighter);
     border-radius: 50%;
     content: '';
     display: block;
-    height: var(--handleSize);
-    left: 0;
+    height: 3rem;
+    left: -1rem;
     position: absolute;
-    top: 0;
-    width: var(--handleSize);
-    will-change: opacity, scale;
+    top:-1rem;
+    transition-duration: 150ms;
+    transition-property: opacity, scale, border-color;
+    transition-timing-function: ease-in-out;
+    width: 3rem;
+    will-change: opacity, scale, border-color;
+  }
+
+  &:hover::before {
+    border-color: var(--colorGreyDark);
   }
 
   &.is-discovered::before {
@@ -186,10 +198,6 @@
   transform: translateY(-50%);
   transition: transform var(--transitionFast);
   width: var(--handleSize);
-
-  &:active {
-    transform: scale(0.95) translateY(-50%);
-  }
 }
 
 /* Mozilla */

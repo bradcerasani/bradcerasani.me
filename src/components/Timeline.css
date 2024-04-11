@@ -8,11 +8,11 @@
   --timelineColor: var(--colorGreyLightest);
   --timelineNodeColor: var(--colorGreyDark);
 
-  margin-bottom: var(--marginBottom);  
+  margin-bottom: var(--marginBottom);
   position: relative;
 
   figure {
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
     box-shadow: var(--boxShadow);
     margin-bottom: 1.25rem;
     position: relative;
@@ -157,7 +157,7 @@
 }
 
 .Timeline-date {
-  color: var(--colorGreyDefault);  
+  color: var(--colorGreyDefault);
   font-size: var(--fontSizeSmallest);
   font-size: 12px;
   font-weight: 500;
@@ -167,16 +167,17 @@
   }
 
   @media (--lg) {
-    display: block;
-    height: var(--nodeDiameter);
-    left: -8.75rem;
-    line-height: 1;
+    background-color: var(--colorGreyLightest);
+    border-radius: 0.25rem;
+    height: 1.25rem;
+    left: -4.75rem;
+    line-height: 1.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     padding-top: 0;
     position: absolute;
-    text-align: right;
-    top: calc(1rem - 1px);
-    white-space: nowrap;
-    width: 4rem;
+    top: calc(1rem - 1px - 0.25rem);
+    transform: translateX(-100%);
   }
 }
 

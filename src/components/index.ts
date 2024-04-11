@@ -8,6 +8,7 @@ export { Header } from './Header';
 export { Hero } from './Hero';
 export { ImageCompare } from './ImageCompare';
 export { Intrinsic } from './Intrinsic';
+export { MediaWrapper } from './MediaWrapper';
 export { MobileNav } from './MobileNav';
 export { Note } from './Note';
 export { PageNotFound } from './404';

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { ChaosGallery, Grid, GridItem, Header, SocialLinks, TimelineItem } from 'src/components';
 import PostImage from 'src/components/PostImage.astro';
 import PostVideo from 'src/components/PostVideo.astro';
+import Preloader from 'src/components/Preloader.astro';
 import Layout from 'src/layouts/Layout.astro';
 import { filterEntriesByStatus, mapEntryEssentials, sortEntriesByDate } from 'src/utils';
 
@@ -68,15 +69,6 @@ const description = `I've been building on the web for 15 years, helping compani
     </section>
 
     <style>
-      .Links {
-        display: none;
-      }
-
-      @media (--md) {
-        .Links {
-          display: block;
-        }
-      }
       .Entries {
         margin-bottom: var(--spaceLarge);
         margin-top: var(--spaceMedium);
@@ -85,4 +77,4 @@ const description = `I've been building on the web for 15 years, helping compani
   </main>
 </Layout>
 
-<span style={{ fontFamily: 'var(--fontFamilySerif)' }}></span>
+<Preloader />

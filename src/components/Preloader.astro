@@ -1,0 +1,66 @@
+<div class="Preloader-wrapper">
+  <div id="js-preloader" class="Preloader"></div>
+</div>
+
+<style>
+  .Preloader-wrapper {
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    animation-name: hide;
+    display: contents;
+  }
+
+  .Preloader {
+    background-color: var(--backgroundColor);
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    &.is-hidden {
+      display: none;
+      visibility: hidden;
+    }
+
+    &.fade-out {
+      animation-duration: 150ms;
+      animation-fill-mode: forwards;
+      animation-name: fadeOut;
+      animation-timing-function: linear;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const loadingOverlay = document.getElementById('js-preloader');
+    const initialLoadComplete = sessionStorage.getItem('hasLoaded');
+
+    if (!loadingOverlay) return;
+
+    if (initialLoadComplete) {
+      loadingOverlay.classList.add('is-hidden');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadingOverlay.classList.add('fade-out');
+      sessionStorage.setItem('hasLoaded', 'true');
+    });
+
+    window.addEventListener('load', () => {
+      const span = document.createElement('span');
+
+      span.textContent = '&';
+      span.style.position = 'fixed';
+      span.style.bottom = '0';
+      span.style.right = '0';
+      span.style.transform = 'translate(100%, 100%)';
+      span.style.fontFamily = 'var(--fontFamilySerif)';
+
+      document.body.appendChild(span);
+    });
+  })();
+</script>

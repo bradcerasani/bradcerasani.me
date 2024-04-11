@@ -6,8 +6,8 @@
   font-style: italic;
   margin-bottom: var(--spaceDefault);
   margin-top: 0.75rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
   text-align: center;
   text-wrap: balance;
 }

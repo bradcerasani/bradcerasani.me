@@ -155,7 +155,7 @@
   }
 
   &::before {
-    animation-duration: 2.4s;
+    animation-duration: 1.5s;
     animation-iteration-count: infinite;
     animation-name: pulse;
     animation-timing-function: linear;

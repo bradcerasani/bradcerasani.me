@@ -1,7 +1,7 @@
 @import url('src/styles/_breakpoints.css');
 
 .TimelineItem {
-  --marginBottom: var(--spaceLarge);
+  --marginBottom: var(--spaceMedium);
   --nodeDiameter: 0.75rem;
   --nodeOffset: 2rem;
   --strokeWidth: 2px;
@@ -11,29 +11,16 @@
   margin-bottom: var(--marginBottom);
   position: relative;
 
-  figure {
-    aspect-ratio: 16 / 9;
-    box-shadow: var(--boxShadow);
-    margin-bottom: 1.25rem;
-    position: relative;
-    z-index: 5;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    --timelineColor: hsl(0, 0%, 24%);
-  }
-
-  &:first-of-type {
-    figure {
-      margin-top: 0;
-    }
+  &.is-draft {
+    pointer-events: none;
   }
 
   @media (--md) {
-    &:first-of-type {
-      .TimelineItemImageWrapper::before {
-        --offset: 2rem;
+    --marginBottom: var(--spaceLarge);
 
+    &:first-of-type {
+      /* Fade timeline in */
+      .TimelineItem-media::before {
         background-image: linear-gradient(
           0deg,
           var(--timelineColor) 0%,
@@ -41,122 +28,42 @@
         );
       }
     }
-
-    .TimelineItemImageWrapper::after {
-      --diameter: 6px;
-
-      background-color: var(--timelineNodeColor);
-      border-radius: 50%;
-      content: '';
-
-      display: none;
-      height: var(--diameter);
-      left: 0;
-      margin-left: calc(-1 * var(--nodeOffset) - var(--diameter) - 4px);
-      margin-top: -2.25rem;
-      position: absolute;
-      top: 0;
-      width: var(--diameter);
-      z-index: 2;
-    }
-
-    .TimelineItemDetailsWrapper::after {
-      top: 1rem;
-    }
   }
 
   &:last-of-type {
-    .TimelineItemDetailsWrapper::after {
+    /* Hide last timeline segment */
+    .TimelineItem-details::after {
       display: none;
     }
   }
 }
 
-.TimelineItem.is-draft {
-  pointer-events: none;
-}
+.TimelineItem-media {
+  --figureMarginBottom: calc(1.25rem + 2px);
 
-.TimelineItemImageWrapper {
-  position: relative;
-  z-index: 1;
+  & figure {
+    box-shadow: var(--boxShadow);
+    margin-bottom: var(--figureMarginBottom);
+  }
 
   @media (--md) {
+    /* Timeline segment adjacent to image */
     &::before {
       background-color: var(--timelineColor);
       content: '';
       height: 100%;
-      height: calc(100% + 2.75rem);
+      height: calc(100% + var(--figureMarginBottom));
       left: 0;
       margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2 - 0.5px);
       position: absolute;
       top: 0;
       width: var(--strokeWidth);
-
       z-index: 0;
     }
   }
 }
 
-.TimelineItemDetailsWrapper {
-  position: relative;
-
-  h3 {
-    color: var(--colorBlack);
-    display: inline-block;
-    font-size: 1rem;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    margin-top: -2px;
-    padding-top: 0.75rem;
-  }
-
-  p {
-    color: var(--colorGreyDefault);
-    font-size: var(--fontSizeSmall);
-    margin-bottom: 0;
-  }
-
-  @media (--md) {
-    &::after {
-      background-color: var(--timelineColor);
-      bottom: calc(-1 * var(--marginBottom));
-      content: '';
-      height: calc(100% - var(--nodeDiameter) + var(--marginBottom) + var(--nodeDiameter));
-      left: 0;
-      margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2 - 0.5px);
-      position: absolute;
-      width: var(--strokeWidth);
-      z-index: 0;
-    }
-  }
-}
-
-.TimelineItemNode {
-  font-size: var(--fontSizeSmaller);
-
-  @media (--md) {
-    align-items: center;
-    background-color: var(--timelineNodeColor);
-    border-radius: 50%;
-    box-shadow: 0 0 0 8px var(--computedBackgroundColor);
-    display: flex;
-    font-variant-numeric: tabular-nums;
-    font-weight: 500;
-    height: var(--nodeDiameter);
-    justify-content: center;
-    left: 0;
-    line-height: 1.2;
-    margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter));
-    position: absolute;
-    text-align: center;
-    top: 1rem;
-    width: var(--nodeDiameter);
-    z-index: 1;
-  }
-}
-
-.Timeline-date {
+.TimelineItem-date {
   color: var(--colorGreyDefault);
   font-size: var(--fontSizeSmallest);
   font-size: 12px;
@@ -176,15 +83,59 @@
     padding-right: 0.5rem;
     padding-top: 0;
     position: absolute;
-    top: calc(1rem - 1px - 0.25rem);
+    top: calc(1rem - 0.25rem);
     transform: translateX(-100%);
   }
 }
 
-.Timeline-link {
-  color: var(--colorBlack);
+.TimelineItem-node {
+  font-size: var(--fontSizeSmaller);
+
+  @media (--md) {
+    background-color: var(--timelineNodeColor);
+    border-radius: calc(var(--nodeDiameter) / 2);
+    box-shadow: 0 0 0 0.5rem var(--computedBackgroundColor);
+    height: var(--nodeDiameter);
+    left: 0;
+    margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter));
+    position: absolute;
+    top: 1rem;
+    width: var(--nodeDiameter);
+    z-index: 1;
+  }
+}
+
+.TimelineItem-details {
+  position: relative;
+
+  @media (--md) {
+    &::after {
+      background-color: var(--timelineColor);
+      bottom: calc(-1 * var(--marginBottom));
+      content: '';
+      height: calc(100% - var(--nodeDiameter) + var(--marginBottom) + var(--nodeDiameter));
+      left: 0;
+      margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2 - 0.5px);
+      position: absolute;
+      width: var(--strokeWidth);
+      z-index: 0;
+    }
+  }
+}
+
+.TimelineItem-details h2 {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  padding-top: 0.5rem;
+}
+
+.TimelineItem-details p {
+  color: var(--colorGreyDefault);
   font-size: var(--fontSizeSmall);
-  font-weight: 400;
-  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.TimelineItem-link {
+  font-size: var(--fontSizeSmall);
   text-decoration: none;
 }

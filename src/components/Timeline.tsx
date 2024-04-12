@@ -23,22 +23,22 @@ export function TimelineItem({ entry, children }: TimelineItemProps) {
     <div className={`TimelineItem ${isDraft ? 'is-draft' : ''}`}>
       {showMedia && (
         <a href={href}>
-          <div className="TimelineItemImageWrapper">{children}</div>
+          <div className="TimelineItem-media">{children}</div>
           <span className="u-visuallyHidden">{displayTitle}</span>
         </a>
       )}
 
-      <article className="TimelineItemDetailsWrapper">
-        <div className="TimelineItemNode" />
-        <div className="Timeline-date">{dateRange || year}</div>
+      <article className="TimelineItem-details">
+        <div className="TimelineItem-node" />
+        <div className="TimelineItem-date">{dateRange || year}</div>
 
         <a href={href}>
-          <h3>{displayTitle}</h3>
+          <h2>{displayTitle}</h2>
         </a>
 
         <p>{description}</p>
 
-        <a href={href} className="Timeline-link" style={{ opacity: isDraft ? 0.5 : 1 }}>
+        <a href={href} className="TimelineItem-link" style={{ opacity: isDraft ? 0.5 : 1 }}>
           {isDraft ? 'Draft' : buttonText} {!isDraft && '→'}
         </a>
       </article>

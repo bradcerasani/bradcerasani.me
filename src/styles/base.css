@@ -71,7 +71,6 @@ h6 {
 }
 
 h1 {
-  color: var(--colorBlack);
   display: block;
   font-family: var(--fontFamilySerif);
   font-size: 54px;

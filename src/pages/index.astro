@@ -52,7 +52,7 @@ const description = `I've been building on the web for 15 years, helping compani
     </section>
 
     <section class="Entries">
-      <h4 style={{ marginBottom: '2rem' }}>Side Projects</h4>
+      <h4>Side Projects</h4>
       <div>
         {
           sortedEntries.map((entry) => {
@@ -72,6 +72,10 @@ const description = `I've been building on the web for 15 years, helping compani
       .Entries {
         margin-bottom: var(--spaceLarge);
         margin-top: var(--spaceMedium);
+      }
+
+      .Entries h4 {
+        margin-bottom: 0;
       }
     </style>
   </main>

@@ -17,7 +17,7 @@ I wrote a scraper that polled Ikea’s website for stock at my local store, and 
 
 I assumed the Ikea legs had some sort of sync unit and limit switches within them, and that I could just either side of the three-conductor controller wire in order to make the desk go up or down. This did not end up being the case, so I opened up the Ikea controller module and found a small PCB within it.
 
-<PostImage src="./IMG_0809.jpg" caption="Surprise PCB" size="default" />
+<PostImage src="./IMG_0809.jpg" caption="Surprise PCB" size="default" loading="eager" />
 
 To interface with this PCB as non-destructively as possible, I made a replacement for the original button’s ribbon wire out of plastic, flexible adhesive, and wires that I attached to a screw terminal. The screw terminal is connected to a bank of two relays for software control, and a 3.5mm headphone jack for pluggable hardware control in the event that the software isn’t working.
 

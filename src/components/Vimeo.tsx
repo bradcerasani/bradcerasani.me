@@ -1,6 +1,6 @@
 import Player from '@vimeo/player';
 import { useEffect, useState } from 'react';
-import { Caption, Figure, Intrinsic } from 'src/components';
+import { Caption, Figure, Intrinsic, MediaWrapper } from 'src/components';
 import './Vimeo.css';
 
 type Commentary = {
@@ -49,12 +49,11 @@ export function Vimeo({ vimeoId, caption, size, commentary, color = '#f1f1ee' }:
   return (
     <div className="Vimeo">
       <Figure size={size}>
-        <Intrinsic
-          aspectRatio={{ base: '16 / 9' }}
-          style={{ backgroundColor: 'var(--colorBlack)' }}
-        >
-          <div id={targetElementId} className="Vimeo-player" />
-        </Intrinsic>
+        <MediaWrapper>
+          <Intrinsic aspectRatio={{ base: '16 / 9' }}>
+            <div id={targetElementId} className="Vimeo-player" />
+          </Intrinsic>
+        </MediaWrapper>
         <Caption htmlContent={captionText || '&nbsp;'} />
       </Figure>
     </div>

@@ -9,6 +9,7 @@ const {
   alt,
   sizes: initialSizes = '',
   widths: initialWidths = [],
+  loading = 'lazy',
 } = Astro.props;
 
 let sizes = initialSizes;
@@ -35,7 +36,7 @@ if (!sizes || widths.length === 0) {
 
 <Figure size={size}>
   <MediaWrapper>
-    <Image src={src} alt={alt || caption} sizes={sizes} widths={widths} />
+    <Image src={src} alt={alt || caption} sizes={sizes} widths={widths} loading={loading} />
   </MediaWrapper>
   {caption && <Caption>{caption}</Caption>}
 </Figure>

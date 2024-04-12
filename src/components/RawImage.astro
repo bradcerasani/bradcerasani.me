@@ -3,7 +3,7 @@ import { Image as AstroImage } from 'astro:assets';
 
 const images = import.meta.glob('../content/**/*.{png,jpg,jpeg,gif,svg}');
 
-const { src, alt, sizes, widths, style } = Astro.props;
+const { src, alt, sizes, widths, style, loading } = Astro.props;
 
 const fullSrc = Object.keys(images).find((key) => key.includes(src.replace('./', '')));
 
@@ -16,5 +16,12 @@ const currentImage = images[fullSrc]();
 
 <>
   <!-- @ts-ignore -->
-  <AstroImage src={currentImage} alt={alt} sizes={sizes} widths={widths} style={style} />
+  <AstroImage
+    src={currentImage}
+    alt={alt}
+    sizes={sizes}
+    widths={widths}
+    style={style}
+    loading={loading}
+  />
 </>

@@ -55,12 +55,19 @@ const description = `I've been building on the web for 15 years, helping compani
       <h4>Side Projects</h4>
       <div>
         {
-          sortedEntries.map((entry) => {
+          sortedEntries.map((entry, index) => {
             const { video, image, description } = entry.data;
             return (
               <TimelineItem entry={entry}>
                 {video && <PostVideo src={video} size="default" />}
-                {image && !video && <PostImage src={image} size="default" alt={description} />}
+                {image && !video && (
+                  <PostImage
+                    src={image}
+                    size="default"
+                    alt={description}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                )}
               </TimelineItem>
             );
           })

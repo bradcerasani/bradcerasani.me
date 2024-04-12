@@ -26,10 +26,10 @@
     }
 
     &.fade-out {
-      animation-duration: 150ms;
+      animation-duration: 300ms;
       animation-fill-mode: forwards;
       animation-name: fadeOut;
-      animation-timing-function: linear;
+      animation-timing-function: cubic-bezier(0.24, 1, 0.36, 1);
     }
   }
 </style>
@@ -51,16 +51,14 @@
     });
 
     window.addEventListener('load', () => {
-      const span = document.createElement('span');
+      const serif = new FontFace('EB Garamond', 'url(/fonts/EB-Garamond-Bold.woff2)', {
+        style: 'normal',
+        weight: '700',
+      });
 
-      span.textContent = '&';
-      span.style.position = 'fixed';
-      span.style.bottom = '0';
-      span.style.right = '0';
-      span.style.transform = 'translate(100%, 100%)';
-      span.style.fontFamily = 'var(--fontFamilySerif)';
-
-      document.body.appendChild(span);
+      serif.load().then((font) => {
+        document.fonts.add(font);
+      });
     });
   })();
 </script>

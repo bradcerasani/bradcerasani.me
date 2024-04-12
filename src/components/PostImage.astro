@@ -19,16 +19,16 @@ let widths = initialWidths;
 if (!sizes || widths.length === 0) {
   switch (size) {
     case 'default':
-      sizes = '(max-width: 400px) 400px, (max-width: 700px) 100vw, (min-width: 701px) 640px';
+      sizes = '(max-width: 639px) 100vw, (min-width: 640px) 640px';
       widths = [400, 640, 720, 800, 900, 1024, 1280];
       break;
     case 'large':
-      sizes = '(max-width: 960px) 100vw, (min-width: 961px) 960px';
-      widths = [400, 640, 720, 800, 900, 1024, 1280, 1920];
+      sizes = '(max-width: 960px) 100vw, (min-width: 700px) 720px, (min-width: 1000px) 900px';
+      widths = [400, 640, 720, 800, 900, 1024, 1280, 1800, 1920];
       break;
     case 'full':
       sizes = '(max-width: 2560px) 100vw, (min-width: 2561px) 2560px';
-      widths = [320, 480, 768, 1024, 1280, 1600, 1920, 2560, 3840, 5120];
+      widths = [320, 480, 640, 768, 1024, 1280, 1600, 1920, 2560, 3840, 5120];
       break;
   }
 }

@@ -24,12 +24,12 @@ From 2017-2018, my wife and I had our home renovated. I designed the space, and 
 A friend had introduced me to SketchUp, and helped with some initial models of the space. Using these files as a starting point, I spent several months iterating on the design with increasing fidelity, revisiting the process as constraints emerged through demolition. Our house is close to 100 years old, and any renovation—especially in an old house⁠—is bound for surprises.
 
 <Figure size="large">
-  <Grid gutter="calc(var(--spaceDefault) / 2)">
+  <Grid gutter="0.5rem">
     <GridItem width={{ base: '50%' }}>
       <Image
         src="./IMG_0148.jpg"
-        sizes="(max-width: 960px) 50vw, (min-width: 961px) 500px"
-        widths={[250, 500, 750, 1000]}
+        sizes="(max-width: 700px) 50vw, (max-width: 999px) 356px, (min-width: 1000px) 446px"
+        widths={[250, 356, 446, 712, 892, 1000]}
         alt="Kitchen before"
         loading="eager"
       />
@@ -37,8 +37,8 @@ A friend had introduced me to SketchUp, and helped with some initial models of t
     <GridItem width={{ base: '50%' }}>
       <Image
         src="./IMG_0343.jpg"
-        sizes="(max-width: 960px) 50vw, (min-width: 961px) 500px"
-        widths={[250, 500, 750, 1000]}
+        sizes="(max-width: 700px) 50vw, (max-width: 999px) 356px, (min-width: 1000px) 446px"
+        widths={[250, 356, 446, 712, 892, 1000]}
         alt="Jackhammering concrete out of kitchen"
         loading="eager"
       />
@@ -92,23 +92,23 @@ The linear lights consist of flush-mount aluminum channels with diffusers, five-
 In order to eliminate hotspots, I ran two light strips along the side walls of the aluminium channels, and created an offset for consistent spacing between CW•RGB•WW[^3] diode clusters. In testing several methods of mounting and diffusion, I found this approach to be the best balance of heat dissipation and output.
 
 <Figure size="large">
-  <Grid gutter="calc(var(--spaceDefault) / 2)">
+  <Grid gutter="0.5rem">
     <GridItem width={{ sm: '1/3 * 100%' }}>
       <Video src="./light-assembly.mp4" />
     </GridItem>
     <GridItem width={{ sm: '1/3 * 100%' }}>
       <Image
         src="./IMG_0164x.jpg"
-        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (min-width: 701px) 310px"
-        widths={[250, 470, 620]}
+        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (max-width: 999px) 235px, (min-width: 1000px) 295px"
+        widths={[235, 295, 470, 590, 720, 960]}
         alt="Aluminum channel with LED strips on sides"
       />
     </GridItem>
     <GridItem width={{ sm: '1/3 * 100%' }}>
       <Image
         src="./IMG_0140.jpg"
-        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (min-width: 701px) 310px"
-        widths={[250, 470, 620]}
+        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (max-width: 999px) 235px, (min-width: 1000px) 295px"
+        widths={[235, 295, 470, 590, 720, 960]}
         alt="Dry-fitting aluminum channel assemblies with tension rods"
       />
     </GridItem>
@@ -118,28 +118,28 @@ In order to eliminate hotspots, I ran two light strips along the side walls of t
 For each fixture, I had an electrician run a standard line-voltage light switch to a junction box near the electrical panel in the basement, and low voltage wire from there back up to its respective installation location. Downstairs, I connected each switched line to a 24V power supply that feeds a Philips Hue LS+ controller and two PWM amplifiers that power the fixture.
 
 <Figure size="large">
-  <Grid gutter="calc(var(--spaceDefault) / 2)">
+  <Grid gutter="0.5rem">
     <GridItem width={{ sm: '1/3 * 100%' }}>
       <Image
         src="./IMG_0039.jpg"
-        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (min-width: 701px) 310px"
-        widths={[250, 470, 620]}
+        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (max-width: 999px) 235px, (min-width: 1000px) 295px"
+        widths={[235, 295, 470, 590, 720, 960]}
         alt="LED drivers and controllers"
       />
     </GridItem>
     <GridItem width={{ sm: '1/3 * 100%' }}>
       <Image
         src="./IMG_0164.jpg"
-        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (min-width: 701px) 310px"
-        widths={[250, 470, 620]}
+        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (max-width: 999px) 235px, (min-width: 1000px) 295px"
+        widths={[235, 295, 470, 590, 720, 960]}
         alt="Aluminum channel installation"
       />
     </GridItem>
     <GridItem width={{ sm: '1/3 * 100%' }}>
       <Image
         src="./IMG_0591.jpg"
-        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (min-width: 701px) 310px"
-        widths={[250, 470, 620]}
+        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (max-width: 999px) 235px, (min-width: 1000px) 295px"
+        widths={[235, 295, 470, 590, 720, 960]}
         alt="Testing independent fixture control"
       />
     </GridItem>
@@ -151,20 +151,20 @@ In total I built five discrete lights; each addressable individually or by group
 In terms of brightness, at peak output the three fixtures in the kitchen are capable of roughly 23,400 lm at 4200k, with a CRI of 95+. This equates to approximately 29 standard 60W light bulbs or 78(!) Philips Hue GU10s. A (desired) side effect of having this much available light is that in practice, the fixtures are rarely over 50% power, which should extend the lifespan of the LEDs considerably.
 
 <Figure size="large">
-  <Grid gutter="calc(var(--spaceDefault) / 2)">
+  <Grid gutter="0.5rem">
     <GridItem width={{ sm: '1/3 * 100%' }}>
       <Image
         src="./corner.jpg"
-        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (min-width: 701px) 310px"
-        widths={[250, 470, 620]}
+        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (max-width: 999px) 235px, (min-width: 1000px) 295px"
+        widths={[235, 295, 470, 590, 720, 960]}
         alt="Installed LED channel corner with blue light on"
       />
     </GridItem>
     <GridItem width={{ sm: '1/3 * 100%' }}>
       <Image
         src="./IMG_9681.jpg"
-        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (min-width: 701px) 310px"
-        widths={[250, 470, 620]}
+        sizes="(max-width: 480px) 100vw, (max-width: 700px) 33vw, (max-width: 999px) 235px, (min-width: 1000px) 295px"
+        widths={[235, 295, 470, 590, 720, 960]}
         alt="Installed LED channel corner with light off"
       />
     </GridItem>

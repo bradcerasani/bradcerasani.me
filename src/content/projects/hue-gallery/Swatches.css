@@ -6,10 +6,8 @@
   margin-bottom: var(--spaceDefault);
   margin-top: calc(-1 * var(--spaceDefault));
   padding-top: var(--spaceDefault);
-}
 
-@media (--md) {
-  .SwatchContainer {
+  @media (--lg) {
     margin-bottom: var(--spaceMedium);
     margin-top: -3rem;
   }
@@ -26,10 +24,8 @@
   margin-left: var(--margin);
   margin-right: var(--margin);
   width: var(--diameter);
-}
 
-@media (--md) {
-  .Swatch {
+  @media (--md) {
     --diameter: 2rem;
   }
 }

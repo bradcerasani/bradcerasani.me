@@ -2,17 +2,17 @@
 
 .Header {
   margin-bottom: var(--spaceMedium);
-  padding-top: 0.75rem;
+  padding-top: var(--spaceDefault);
   position: relative;
 
   @media (--md) {
-      margin-bottom: var(--spaceMedium);
-      padding-top: calc(var(--spaceMedium) + 4px);
+    margin-bottom: var(--spaceMedium);
+    padding-top: calc(var(--spaceMedium) + 4px);
   }
 }
 
 .Header-logo {
-  font-size: 16px;  
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: 0;
@@ -46,8 +46,8 @@
 
 .HeroContainer {
   display: flex;
-  margin-top: var(--spaceMedium);  
-  padding-bottom: var(--spaceDefault); 
+  margin-top: var(--spaceMedium);
+  padding-bottom: var(--spaceDefault);
 }
 
 @media (--md) {

@@ -2,8 +2,8 @@ import fs from 'fs-extra';
 import { downloadFile } from './downloadFile';
 
 const INSTAGRAM_ID = '18888862';
-const destinationDirectory = './public/images/instagram/';
-const metadataFile = './src/content/social/instagram.json';
+const destinationDirectory = './src/content/social/instagram/';
+const metadataFile = `${destinationDirectory}posts.json`;
 const limit = 16;
 
 interface InstagramPost {

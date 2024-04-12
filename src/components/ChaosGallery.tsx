@@ -1,93 +1,91 @@
-import { useEffect, useState } from 'react';
+import type React from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Draggable from 'react-draggable';
+import { Intrinsic } from 'src/components';
 
 import './ChaosGallery.css';
 
-import instagramPosts from 'src/content/social/instagram.json';
+type AstroImage = {
+  src: string;
+  alt: string;
+};
 
-export function ChaosGallery() {
+type Post = {
+  id: string;
+};
+
+type Image = {
+  astroImage: AstroImage;
+  post: Post;
+};
+
+export function ChaosGallery({ images }: { images: Image[] }) {
+  const [value, setValue] = useState(0);
+  const [isDiscovered, setIsDiscovered] = useState(false);
   const [prefetch, setPrefetch] = useState(false);
-  const interval = Math.min(100 / instagramPosts.length);
+  const [isClient, setIsClient] = useState(false);
+  const randomPositions = useMemo(
+    () =>
+      images.map(() => ({
+        left: Math.floor(Math.random() * (70 - 30 + 1)) + 30,
+        top: Math.floor(Math.random() * (60 - 40 + 1)) + 40,
+      })),
+    [images],
+  );
 
   useEffect(() => {
-    const properties = ['top', 'right', 'bottom', 'left'];
-
-    for (let index = 0; index < instagramPosts.length; index++) {
-      const element = document.querySelector(`[data-image='${index}']`) as HTMLElement;
-      const elementStyles = window.getComputedStyle(element);
-      const minDeviation = elementStyles.getPropertyValue('--minDeviation');
-      const maxDeviation = elementStyles.getPropertyValue('--maxDeviation');
-      const delta = Number.parseInt(maxDeviation) - Number.parseInt(minDeviation);
-
-      for (const property of properties) {
-        const value = elementStyles.getPropertyValue(property);
-
-        if (Number.parseInt(value) === 0) {
-          const deviation = Math.floor(Math.random() * delta) + Number.parseInt(minDeviation);
-
-          element.style.setProperty(property, `${deviation}%`);
-        }
-      }
-    }
-  });
-
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const value = event.currentTarget.value;
-    const imageIndex = Math.round(Number.parseInt(value) / interval);
-    const classList = event.target.classList;
-
-    if (Number.parseInt(value) > 1) {
+    setIsClient(true);
+    if (value > 1) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
+  }, [value]);
 
-    setPrefetch(true);
-
-    if (!classList.contains('is-discovered')) classList.add('is-discovered');
-
-    const elements = document.querySelectorAll('[data-image]');
-
-    elements.forEach((element, index) => {
-      const isVisible = index <= imageIndex && Number.parseInt(value) > 1;
-
-      (element as HTMLElement).style.opacity = isVisible ? '1' : '0';
-      (element as HTMLElement).style.pointerEvents = isVisible ? 'auto' : 'none';
-    });
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setValue(Number.parseInt(event.currentTarget.value));
+    setIsDiscovered(true);
   }
 
   return (
     <>
       <input
-        className="ChaosController"
         aria-label="Show/hide photos"
-        type="range"
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
-        defaultValue="0"
-        onMouseOver={() => setPrefetch(true)}
+        className={`ChaosController ${isDiscovered ? 'is-discovered' : ''}`}
+        max={100}
+        onChange={handleChange}
         onFocus={() => setPrefetch(true)}
+        onMouseOver={() => setPrefetch(true)}
+        type="range"
+        value={value}
       />
 
-      <div className="ChaosGallery">
-        {instagramPosts.map((image, index) => {
-          const caption = image?.edge_media_to_caption?.edges[0]?.node?.text;
-          const tag = '@bradcerasani on Instagram';
+      {isClient && (
+        <div className="ChaosGallery">
+          {images.map((image, index) => {
+            const position = randomPositions[index];
+            const showImage = Math.round((index / images.length) * 100) < value;
 
-          return (
-            <Draggable key={image.id} onStart={(e) => e.preventDefault()}>
-              <div className="ChaosImage" data-image={index}>
-                {prefetch && (
-                  <img
-                    src={`/images/instagram/${image.id}.jpg`}
-                    alt={caption !== undefined ? `${caption} — ${tag}` : tag}
-                    loading="lazy"
-                  />
-                )}
-              </div>
-            </Draggable>
-          );
-        })}
-      </div>
+            return (
+              <Draggable key={image.post.id}>
+                <div
+                  className={`NewChaosImage ${showImage ? 'is-visible' : ''}`}
+                  style={{
+                    left: `${position.left}%`,
+                    top: `${position.top}%`,
+                  }}
+                >
+                  <Intrinsic aspectRatio={{ base: '1 / 1' }}>
+                    {prefetch ? (
+                      <img src={image.astroImage.src} alt={image.astroImage.alt} />
+                    ) : null}
+                  </Intrinsic>
+                </div>
+              </Draggable>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }

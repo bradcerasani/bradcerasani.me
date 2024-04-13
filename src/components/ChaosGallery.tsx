@@ -36,15 +36,15 @@ export function ChaosGallery({ images }: { images: Image[] }) {
 
     const handleWheel = (event: WheelEvent) => {
       if (value > 0) {
-        const friction = 4;
+        const friction = 5;
         const change = Math.floor(Math.abs(event.deltaY) / friction);
         setValue(value - change);
       }
     };
 
-    window.addEventListener('wheel', handleWheel, { passive: false });
-
-    if (value <= 0) {
+    if (value > 0) {
+      window.addEventListener('wheel', handleWheel, { passive: false });
+    } else {
       window.removeEventListener('wheel', handleWheel);
     }
 

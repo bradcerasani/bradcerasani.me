@@ -54,12 +54,6 @@ sup {
   position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
-  .footnotes ol li {
-    color: var(--colorLinenDark);
-  }
-}
-
 .footnotes ol li:last-of-type {
   margin-bottom: 0;
 }

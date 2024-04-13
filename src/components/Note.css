@@ -5,18 +5,22 @@
   backdrop-filter: blur(5px);
   background-color: hsla(0, 0%, 98%, 0.2);
   border-color: var(--colorGreyDark);
-  border-radius: 1rem;;
+  border-radius: 0.75rem;
   border-style: double;
   border-width: var(--borderWidth);
   box-shadow: var(--boxShadow);
-  display: none;  
+  display: none;
   font-size: 0.875rem;
   font-style: italic;
   margin-bottom: calc(var(--spaceDefault) + var(--borderWidth));
   padding: 1rem var(--spaceDefault) 1rem;
   position: relative;
   top: var(--borderWidth);
-  
+
+  @media (prefers-color-scheme: dark) {
+    background-color: hsla(0, 0%, 100%, 0.05);
+  }
+
   p {
     color: var(--colorGreyDark);
     font: inherit !important;
@@ -30,9 +34,5 @@
   @media (--md) {
     display: block;
     margin-bottom: calc(var(--spaceMedium) + var(--borderWidth) + var(--spaceDefault));
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: transparent;
   }
 }

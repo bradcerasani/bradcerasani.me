@@ -2,11 +2,11 @@
 import { Caption, Figure, Intrinsic, MediaWrapper } from 'src/components';
 import RawVideo from './RawVideo.astro';
 
-const { src, caption, size } = Astro.props;
+const { src, caption, size, aspectRatio } = Astro.props;
 ---
 
 <Figure size={size}>
-  <Intrinsic aspectRatio={{ base: '16 / 9' }}>
+  <Intrinsic aspectRatio={{ base: aspectRatio || '16 / 9' }}>
     <MediaWrapper>
       <RawVideo src={src} />
     </MediaWrapper>

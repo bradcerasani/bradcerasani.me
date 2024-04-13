@@ -30,7 +30,7 @@ export function Footer() {
               style={{
                 display: 'block',
                 width: '1em',
-                marginLeft: '1rem',
+                marginLeft: '1.5rem',
               }}
               viewBox="0 0 24 24"
             >
@@ -44,7 +44,7 @@ export function Footer() {
               style={{
                 display: 'block',
                 width: '1em',
-                marginLeft: '1rem',
+                marginLeft: '1.5rem',
               }}
               viewBox="0 0 24 24"
             >

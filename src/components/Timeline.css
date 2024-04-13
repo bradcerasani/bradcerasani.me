@@ -51,8 +51,7 @@
     &::before {
       background-color: var(--timelineColor);
       content: '';
-      height: 100%;
-      height: calc(100% + var(--figureMarginBottom));
+      height: calc(100% - 5rem);
       left: 0;
       margin-left: calc(-1 * var(--nodeOffset) - var(--nodeDiameter) / 2 - 0.5px);
       position: absolute;

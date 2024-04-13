@@ -16,6 +16,11 @@
   width: var(--width);
 }
 
+.Grid img {
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (--sm) {
   .Grid-item {
     width: var(--width-sm, var(--width));

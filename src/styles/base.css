@@ -39,7 +39,7 @@ body {
 }
 
 /* Add top border to body */
-@media (--sm) {
+@media (--sm) and (prefers-color-scheme: light) {
   body::before {
     background-color: currentColor;
     content: '';
@@ -79,6 +79,7 @@ h1 {
   line-height: 1;
   margin: 0 auto;
   text-align: center;
+  text-wrap: balance;
 
   @media (--md) {
     font-size: 64px;

@@ -113,19 +113,25 @@
     animation-iteration-count: infinite;
     animation-name: pulse;
     animation-timing-function: linear;
-    background-color: white;
+    background-color: var(--colorWhite);
     border-radius: 50%;
     content: '';
     display: block;
     height: var(--handleSize);
-    left: 0rem;
+    left: 0;
     position: absolute;
-    top: -0.5px;
+    transform-origin: center;
     transition-duration: 150ms;
     transition-property: opacity;
     transition-timing-function: ease-in-out;
     width: var(--handleSize);
     will-change: opacity, scale, border-color;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &::before {
+      background-color: var(--colorGreyLighter);
+    }
   }
 
   &.is-discovered::before,

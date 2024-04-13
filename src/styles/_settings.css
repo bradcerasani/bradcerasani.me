@@ -49,13 +49,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --backgroundColor: hsl(0, 0%, 8%);
-    --textColor: hsl(0, 0%, 90%);
+    --textColor: hsl(0, 0%, 50%);
     --computedBackgroundColor: hsl(0, 0%, 8%);
 
     --colorBlack: hsl(0, 0%, 95%);
     --colorWhite: hsl(0, 0%, 3%);
 
-    --colorGreyDarker: hsl(0, 0%, 80%);
+    --colorGreyDarker: hsl(0, 0%, 66%);
     --colorGreyDark: hsl(0, 0%, 50%);
     --colorGreyDefault: hsl(0, 0%, 44%);
     --colorGreyLight: hsl(0, 0%, 38%);

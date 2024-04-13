@@ -64,8 +64,6 @@ export function PageNotFound() {
               paddingTop: 'var(--spaceDefault)',
               color: 'inherit',
               textTransform: 'uppercase',
-              fontSize: 'var(--fontSizeDefault)',
-              fontWeight: '500',
             }}
           >
             Error 404

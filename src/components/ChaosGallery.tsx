@@ -44,6 +44,10 @@ export function ChaosGallery({ images }: { images: Image[] }) {
 
     window.addEventListener('wheel', handleWheel, { passive: false });
 
+    if (value <= 0) {
+      window.removeEventListener('wheel', handleWheel);
+    }
+
     return () => {
       window.removeEventListener('wheel', handleWheel);
     };

@@ -9,7 +9,7 @@ import instagramPosts from 'src/content/social/instagram/posts.json';
 import Layout from 'src/layouts/Layout.astro';
 import { filterEntriesByStatus, mapEntryEssentials, sortEntriesByDate } from 'src/utils';
 
-const instaImages = import.meta.glob('src/content/social/instagram/*.{png,jpg,jpeg}');
+const instaImages = import.meta.glob('../content/social/instagram/*.{png,jpg,jpeg}');
 
 const images = [];
 
@@ -23,7 +23,10 @@ for (const post of instagramPosts) {
 
   const image = {
     astroImage,
-    post,
+    id: post.id,
+    isVideo: post.is_video,
+    takenAt: post.taken_at_timestamp,
+    caption: post.edge_media_to_caption.edges.map((edge) => edge.node.text).join(' '),
   };
 
   images.push(image);

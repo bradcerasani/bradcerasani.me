@@ -1,22 +1,16 @@
+import type { GetImageResult } from 'astro';
 import type React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import Draggable from 'react-draggable';
 import { Intrinsic } from 'src/components';
-
 import './ChaosGallery.css';
 
-type AstroImage = {
-  src: string;
-  alt: string;
-};
-
-type Post = {
-  id: string;
-};
-
 type Image = {
-  astroImage: AstroImage;
-  post: Post;
+  astroImage: GetImageResult;
+  caption: string;
+  id: string;
+  isVideo: boolean;
+  takenAt: number;
 };
 
 export function ChaosGallery({ images }: { images: Image[] }) {
@@ -67,7 +61,7 @@ export function ChaosGallery({ images }: { images: Image[] }) {
             const showImage = Math.round((index / images.length) * 100) < value;
 
             return (
-              <Draggable key={image.post.id}>
+              <Draggable key={image.id}>
                 <div
                   className={`NewChaosImage ${showImage ? 'is-visible' : ''}`}
                   style={{
@@ -77,7 +71,7 @@ export function ChaosGallery({ images }: { images: Image[] }) {
                 >
                   <Intrinsic aspectRatio={{ base: '1 / 1' }}>
                     {prefetch ? (
-                      <img src={image.astroImage.src} alt={image.astroImage.alt} />
+                      <img src={image.astroImage.src} alt={image?.caption ?? ''} />
                     ) : null}
                   </Intrinsic>
                 </div>

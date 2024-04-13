@@ -10,10 +10,11 @@
 }
 
 .NewChaosImage {
-  --size: 500px;
+  --size: 400px;
+  --multiplier: 1;
 
   cursor: grab;
-  height: var(--size);
+  height: calc(var(--size) * var(--multiplier));
   left: 50%;
   opacity: 0;
   pointer-events: none;
@@ -22,8 +23,16 @@
   transition-duration: 50ms;
   transition-property: opacity;
   transition-timing-function: ease-in-out;
-  width: var(--size);
+  width: calc(var(--size) * var(--multiplier));
   z-index: 10;
+
+  @media (--lg) {
+    --size: 480px;
+  }
+
+  @media (--xl) {
+    --size: 540px;
+  }
 
   img {
     object-fit: cover;
@@ -49,10 +58,10 @@
   }
 
   &:nth-of-type(4n + 1) {
-    --size: 440px;
+    --multiplier: 0.9;
 
-    margin-left: calc(var(--size) * -1);
-    margin-top: calc(var(--size) * -1);
+    margin-left: calc(var(--size) * var(--multiplier) * -1);
+    margin-top: calc(var(--size) * var(--multiplier) * -1);
   }
 
   &:nth-of-type(4n + 2) {
@@ -60,9 +69,9 @@
   }
 
   &:nth-of-type(4n + 3) {
-    --size: 360px;
+    --multiplier: 0.8;
 
-    margin-top: calc(var(--size) * -1);
+    margin-top: calc(var(--size) * var(--multiplier) * -1);
   }
 
   &:nth-of-type(4n + 4) {

@@ -29,11 +29,24 @@ export function ChaosGallery({ images }: { images: Image[] }) {
 
   useEffect(() => {
     setIsClient(true);
-    if (value > 1) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = value > 1 ? 'hidden' : 'auto';
+
+    const handleWheel = (event: WheelEvent) => {
+      if (value > 0) {
+        const friction = 4;
+        const change = Math.floor(Math.abs(event.deltaY) / friction);
+        setValue(value - change);
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
   }, [value]);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {

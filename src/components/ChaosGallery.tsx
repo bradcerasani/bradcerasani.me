@@ -1,8 +1,7 @@
 import type { GetImageResult } from 'astro';
 import type React from 'react';
 import { useEffect, useMemo, useState } from 'react';
-import Draggable from 'react-draggable';
-import { Intrinsic } from 'src/components';
+import { Draggable, Intrinsic } from 'src/components';
 import './ChaosGallery.css';
 
 type Image = {

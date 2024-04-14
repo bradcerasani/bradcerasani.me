@@ -1,6 +1,7 @@
 export { Caption } from './Caption';
 export { ChaosGallery } from './ChaosGallery';
 export { Container } from './Container';
+export { Draggable } from './Draggable';
 export { Figure } from './Figure';
 export { Footer } from './Footer';
 export { Grid, GridItem } from './Grid';

@@ -12,7 +12,7 @@ export function Draggable({ children }: DraggableProps): ReactElement {
   const elementRef = useRef<HTMLElement | null>(null);
 
   const onMouseDown = (e: React.MouseEvent<HTMLElement>) => {
-    if (!elementRef.current) return;
+    if (e.button !== 0 || !elementRef.current) return;
 
     draggingRef.current = true;
     relRef.current = {

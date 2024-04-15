@@ -1,7 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import { ChaosGallery, Grid, GridItem, Header, SocialLinks, TimelineItem } from 'src/components';
+import { Grid, GridItem, Header, MessyGallery, SocialLinks, TimelineItem } from 'src/components';
 import PostImage from 'src/components/PostImage.astro';
 import PostVideo from 'src/components/PostVideo.astro';
 import Preloader from 'src/components/Preloader.astro';
@@ -71,7 +71,7 @@ const description = `I've been building on the web for 15 years, helping compani
 
         <GridItem width={{ base: '50%', md: '50% - var(--spaceMedium)' }}>
           <h4>Photos</h4>
-          <ChaosGallery images={images} client:idle />
+          <MessyGallery images={images} client:idle />
         </GridItem>
       </Grid>
     </section>

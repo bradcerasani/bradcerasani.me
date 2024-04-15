@@ -2,7 +2,7 @@ import type { GetImageResult } from 'astro';
 import type React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { Draggable, Intrinsic } from 'src/components';
-import './ChaosGallery.css';
+import './MessyGallery.css';
 
 type Image = {
   astroImage: GetImageResult;
@@ -12,7 +12,7 @@ type Image = {
   takenAt: number;
 };
 
-export function ChaosGallery({ images }: { images: Image[] }) {
+export function MessyGallery({ images }: { images: Image[] }) {
   const [value, setValue] = useState(0);
   const [isDiscovered, setIsDiscovered] = useState(false);
   const [prefetch, setPrefetch] = useState(false);
@@ -61,7 +61,7 @@ export function ChaosGallery({ images }: { images: Image[] }) {
     <>
       <input
         aria-label="Show/hide photos"
-        className={`ChaosController ${isDiscovered ? 'is-discovered' : ''}`}
+        className={`MessyController ${isDiscovered ? 'is-discovered' : ''}`}
         max={100}
         onChange={handleChange}
         onFocus={() => setPrefetch(true)}
@@ -71,7 +71,7 @@ export function ChaosGallery({ images }: { images: Image[] }) {
       />
 
       {isClient && (
-        <div className="ChaosGallery">
+        <div className="MessyGallery">
           {images.map((image, index) => {
             const position = randomPositions[index];
             const showImage = Math.round((index / images.length) * 100) < value;
@@ -79,7 +79,7 @@ export function ChaosGallery({ images }: { images: Image[] }) {
             return (
               <Draggable key={image.id}>
                 <div
-                  className={`NewChaosImage ${showImage ? 'is-visible' : ''}`}
+                  className={`MessyImage ${showImage ? 'is-visible' : ''}`}
                   style={{
                     left: `${position.left}%`,
                     top: `${position.top}%`,

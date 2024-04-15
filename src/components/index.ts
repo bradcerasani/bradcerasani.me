@@ -1,5 +1,4 @@
 export { Caption } from './Caption';
-export { ChaosGallery } from './ChaosGallery';
 export { Container } from './Container';
 export { Draggable } from './Draggable';
 export { Figure } from './Figure';
@@ -10,6 +9,7 @@ export { Hero } from './Hero';
 export { ImageCompare } from './ImageCompare';
 export { Intrinsic } from './Intrinsic';
 export { MediaWrapper } from './MediaWrapper';
+export { MessyGallery } from './MessyGallery';
 export { MobileNav } from './MobileNav';
 export { Note } from './Note';
 export { PageNotFound } from './404';

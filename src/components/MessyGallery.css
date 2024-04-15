@@ -1,6 +1,6 @@
 @import url('src/styles/_breakpoints.css');
 
-.ChaosGallery {
+.MessyGallery {
   display: contents;
   height: 100%;
   left: 0;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.NewChaosImage {
+.MessyImage {
   --size: 400px;
   --multiplier: 1;
 
@@ -79,7 +79,7 @@
   }
 }
 
-.ChaosController {
+.MessyController {
   --handleSize: 1.5rem;
   --trackHeight: 3px;
   --trackColor: var(--colorGreyLighter);
@@ -146,7 +146,7 @@
 
 /* Webkit */
 
-.ChaosController::-webkit-slider-runnable-track {
+.MessyController::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--trackColor);
@@ -154,7 +154,7 @@
   height: var(--trackHeight);
 }
 
-.ChaosController::-webkit-slider-thumb {
+.MessyController::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--colorGreyDark);
@@ -167,7 +167,7 @@
 
 /* Mozilla */
 
-.ChaosController::-moz-range-track {
+.MessyController::-moz-range-track {
   -moz-appearance: none;
   appearance: none;
   background-color: var(--trackColor);
@@ -175,7 +175,7 @@
   height: var(--trackHeight);
 }
 
-.ChaosController::-moz-range-thumb {
+.MessyController::-moz-range-thumb {
   appearance: none;
   background-color: currentColor;
   border: none;
@@ -186,7 +186,7 @@
 }
 
 /* Microsoft */
-.ChaosController::-ms-fill-lower,
-.ChaosController::-ms-fill-upper {
+.MessyController::-ms-fill-lower,
+.MessyController::-ms-fill-upper {
   background-color: var(--trackColor);
 }

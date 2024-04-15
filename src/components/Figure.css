@@ -38,8 +38,6 @@
 
 @media (--lg) {
   .Figure--large {
-    margin-bottom: var(--spaceMedium);
-    margin-bottom: 3rem;
     margin-left: -8.125rem;
     margin-right: -8.125rem;
     margin-top: var(--spaceMedium);

@@ -115,10 +115,10 @@ h4 {
 
 hr {
   background-color: transparent;
-  border-bottom: 1px solid var(--colorGreyLighter);
+  border-bottom: 1px solid var(--colorBlack);
   border-left: none;
   border-right: none;
-  border-top: 1px solid var(--colorGreyLighter);
+  border-top: 1px solid var(--colorBlack);
   height: 4px;
   margin-bottom: var(--spaceMedium);
   margin-top: var(--spaceMedium);

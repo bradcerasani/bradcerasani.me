@@ -9,7 +9,6 @@
 
   @media (--lg) {
     margin-bottom: var(--spaceMedium);
-    margin-top: -3rem;
   }
 }
 

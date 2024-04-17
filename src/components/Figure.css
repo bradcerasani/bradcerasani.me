@@ -29,6 +29,17 @@
     margin-top: var(--spaceMedium);
     min-width: 100%;
     width: 100vw;
+
+    img {
+      transition-duration: 2s !important;
+    }
+  }
+
+  .js-browser-arc .Figure--full {
+    margin-left: calc((100vw - var(--maxWidth)) / -2 - var(--arcBorderWidth));
+    margin-right: calc((100vw - var(--maxWidth)) / -2 - var(--arcBorderWidth));
+    min-width: calc(100% + var(--arcBorderWidth) * 2);
+    width: calc(100vw + var(--arcBorderWidth) * 2);
   }
 
   .Figure--full .Caption {

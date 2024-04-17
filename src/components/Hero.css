@@ -13,6 +13,11 @@
   z-index: -1;
 }
 
+.js-browser-arc .Hero {
+  left: calc(var(--arcBorderWidth) * -1);
+  width: calc(100% + var(--arcBorderWidth) * 2);
+}
+
 .Hero img {
   object-fit: cover;
 }

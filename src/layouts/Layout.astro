@@ -16,6 +16,65 @@ const imageUrl = `https://bradcerasani.me/images${image}?w=1600`;
 const url = `https://bradcerasani.me${metaSlug ?? ''}`;
 ---
 
+<script>
+  const images = document.querySelectorAll('img');
+
+  images.forEach((img) => {
+    img.classList.add('js-is-loading');
+
+    const handleLoad = () => {
+      img.classList.remove('js-is-loading');
+    };
+
+    if (img.complete) {
+      handleLoad();
+    } else {
+      img.onload = handleLoad;
+    }
+  });
+
+  if (localStorage.getItem('BROWSER') === 'ARC') {
+    addArcClassToBody();
+  } else {
+    attemptToDetectArcTheme();
+  }
+
+  function addArcClassToBody() {
+    document.body?.classList.add('js-browser-arc');
+  }
+
+  function attemptToDetectArcTheme() {
+    let attempt = 0;
+    let interval = 50;
+    const maxAttempts = 3;
+    const properties = [
+      '--arc-palette-title',
+      '--arc-palette-subtitle',
+      '--arc-palette-background',
+    ];
+
+    function tryDetect() {
+      const isArc = properties.some((property) => {
+        return window.getComputedStyle(document.documentElement).getPropertyValue(property) !== '';
+      });
+
+      if (isArc) {
+        localStorage.setItem('BROWSER', 'ARC');
+        addArcClassToBody();
+        return;
+      } else if (attempt >= maxAttempts) {
+        return;
+      }
+
+      attempt++;
+      interval *= attempt;
+      setTimeout(tryDetect, interval);
+    }
+
+    tryDetect();
+  }
+</script>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />

@@ -44,6 +44,8 @@
 
   --gutter: var(--spaceDefault);
   --maxWidth: 640px;
+
+  --arcBorderWidth: 10px;
 }
 
 @media (prefers-color-scheme: dark) {

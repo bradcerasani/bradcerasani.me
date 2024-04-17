@@ -1,23 +1,4 @@
 .MediaWrapper {
   background-color: var(--colorGreyLightest);
   position: relative;
-
-  &::before {
-    --size: 20px;
-
-    animation: spin 500ms linear infinite;
-    background-color: hsla(0, 0%, 100%, 0.2);
-    background-image: linear-gradient(0deg, transparent 33%, hsla(0, 0%, 100%, 0.6) 100%);
-    border-radius: 50%;
-    box-sizing: border-box;
-    content: '';
-    display: inline-block;
-    height: var(--size);
-    left: 50%;
-    margin-left: calc(-1 * var(--size) / 2);
-    margin-top: calc(-1 * var(--size) / 2);
-    position: absolute;
-    top: 50%;
-    width: var(--size);
-  }
 }

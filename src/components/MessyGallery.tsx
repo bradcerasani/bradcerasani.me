@@ -87,7 +87,12 @@ export function MessyGallery({ images }: { images: Image[] }) {
                 >
                   <Intrinsic aspectRatio={{ base: '1 / 1' }}>
                     {prefetch ? (
-                      <img src={image.astroImage.src} alt={image?.caption ?? ''} />
+                      <img
+                        src={image.astroImage.src}
+                        srcSet={image.astroImage.srcSet.attribute}
+                        sizes={image.astroImage.rawOptions.sizes}
+                        alt={image?.caption ?? ''}
+                      />
                     ) : null}
                   </Intrinsic>
                 </div>

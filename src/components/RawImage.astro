@@ -1,27 +1,79 @@
 ---
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import { Image as AstroImage } from 'astro:assets';
+import sharp from 'sharp';
 
-const images = import.meta.glob('../content/**/*.{png,jpg,jpeg,gif,svg}');
-
-const { src, alt, sizes, widths, style, loading } = Astro.props;
-
-const fullSrc = Object.keys(images).find((key) => key.includes(src.replace('./', '')));
+const { src, ...rest } = Astro.props;
+const images = import.meta.glob('../content/**/*.{png,jpg,jpeg,gif}');
+const imagePath = path.join(Astro.params.slug ?? '', src);
+const fullSrc = Object.keys(images).find((key) => key.includes(imagePath));
 
 if (!fullSrc) {
   throw new Error(`Image not found for ${src}`);
 }
 
+let base64 = '';
+
+try {
+  const buffer = await fs.readFile(path.resolve(process.cwd(), 'src/content', imagePath));
+  base64 = await sharp(buffer)
+    .resize({ width: 80 })
+    .modulate({ brightness: 0.8, saturation: 0.8 })
+    .blur(5)
+    .toBuffer()
+    .then((buffer) => buffer.toString('base64'));
+} catch (error) {
+  console.error(`Failed to generate preview for image ${imagePath}:`, error);
+}
+
+const style = {
+  backgroundImage: base64 ? `url("data:image/jpg;base64,${base64}")` : null,
+};
+
 const currentImage = images[fullSrc]();
 ---
 
-<>
-  <!-- @ts-ignore -->
-  <AstroImage
-    src={currentImage}
-    alt={alt}
-    sizes={sizes}
-    widths={widths}
-    style={style}
-    loading={loading}
-  />
-</>
+<div class="Image" style={style}>
+  <!-- @ts-ignore; this resolves fine -->
+  <AstroImage src={currentImage} {...rest} />
+</div>
+
+<style>
+  .Image {
+    background-color: var(--colorGreyLightest);
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      transition-duration: 600ms;
+      transition-property: opacity, transform;
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+
+      &.js-is-loading {
+        opacity: 0;
+      }
+    }
+
+    &::before {
+      animation-duration: 6s;
+      animation-iteration-count: infinite;
+      animation-name: grain;
+      animation-timing-function: steps(10);
+      background-image: url('/images/textures/noise.png');
+      background-repeat: repeat;
+      background-size: 860px;
+      content: '';
+      display: block;
+      height: 300%;
+      left: -100%;
+      opacity: 0.8;
+      pointer-events: none;
+      position: absolute;
+      top: -100%;
+      width: 300%;
+      z-index: 0;
+    }
+  }
+</style>

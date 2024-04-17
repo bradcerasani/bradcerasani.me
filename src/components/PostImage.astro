@@ -1,5 +1,5 @@
 ---
-import { Caption, Figure, MediaWrapper } from 'src/components';
+import { Caption, Figure } from 'src/components';
 import Image from './RawImage.astro';
 
 const {
@@ -28,15 +28,20 @@ if (!sizes || widths.length === 0) {
       break;
     case 'full':
       sizes = '(max-width: 2560px) 100vw, (min-width: 2561px) 2560px';
-      widths = [320, 480, 640, 768, 1024, 1280, 1600, 1920, 2560, 3840, 5120];
+      widths = [320, 480, 640, 768, 1024, 1280, 1600, 1920, 2560, 3456, 3840, 5120];
       break;
   }
 }
 ---
 
 <Figure size={size}>
-  <MediaWrapper>
-    <Image src={src} alt={alt || caption} sizes={sizes} widths={widths} loading={loading} />
-  </MediaWrapper>
+  <Image
+    src={src}
+    alt={alt || caption}
+    sizes={sizes}
+    widths={widths}
+    loading={loading}
+    decoding={loading === 'lazy' ? 'async' : 'sync'}
+  />
   {caption && <Caption>{caption}</Caption>}
 </Figure>

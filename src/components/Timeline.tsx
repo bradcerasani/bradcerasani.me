@@ -32,7 +32,7 @@ export function TimelineItem({ entry, children }: TimelineItemProps) {
         <div className="TimelineItem-node" />
         <div className="TimelineItem-date">{dateRange || year}</div>
 
-        <a href={href}>
+        <a href={href} data-astro-prefetch="viewport">
           <h2>{displayTitle}</h2>
         </a>
 

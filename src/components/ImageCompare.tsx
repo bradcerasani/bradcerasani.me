@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import { ReactCompareSlider } from 'react-compare-slider';
 import { Caption, Figure, Intrinsic } from 'src/components';
+import { useSessionStorage } from 'src/hooks';
 import type { AstroImage } from 'src/types';
 import './ImageCompare.css';
 
@@ -10,14 +10,19 @@ export function ImageCompare({
   itemTwo,
   position,
   size,
+  name,
 }: {
+  name: string;
   caption?: string;
   itemOne: AstroImage;
   itemTwo: AstroImage;
   position: number;
   size: 'default' | 'large' | 'full';
 }) {
-  const [isDiscovered, setIsDiscovered] = useState(false);
+  const [isDiscovered, setIsDiscovered] = useSessionStorage(
+    `isDiscovered:ImageCompare-${name}`,
+    false,
+  );
 
   const handlePositionChange = (newPosition: number) => {
     if (isDiscovered) return;

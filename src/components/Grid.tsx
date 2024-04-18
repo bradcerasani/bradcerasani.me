@@ -7,6 +7,7 @@ import type { Breakpoint } from 'src/types';
 interface GridItemProps {
   width: { [key in Breakpoint]?: string };
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 interface GridProps {
@@ -15,11 +16,11 @@ interface GridProps {
   style?: React.CSSProperties;
 }
 
-export function GridItem({ width, children }: GridItemProps) {
+export function GridItem({ width, children, style: itemStyle }: GridItemProps) {
   const style = createResponsiveProperties('--width', width);
 
   return (
-    <div className="Grid-item" style={style}>
+    <div className="Grid-item" style={{ ...style, ...itemStyle }}>
       {children}
     </div>
   );

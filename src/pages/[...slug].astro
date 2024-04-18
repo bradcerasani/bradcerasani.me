@@ -1,5 +1,8 @@
 ---
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import { getCollection } from 'astro:content';
+import sharp from 'sharp';
 import { Header, Hero, Pagination } from 'src/components';
 import Image from 'src/components/RawImage.astro';
 import Layout from 'src/layouts/Layout.astro';
@@ -14,15 +17,42 @@ export async function getStaticPaths() {
   const liveEntries = filterEntriesByStatus(sortedEntries, 'live');
   const entries = mapEntryEssentials(liveEntries);
 
-  return liveEntries.map((entry, index) => {
-    const prev = liveEntries[index + 1] || null;
-    const next = liveEntries[index - 1] || null;
+  const paths = await Promise.all(
+    liveEntries.map(async (entry, index) => {
+      const prev = liveEntries[index + 1] || null;
+      const next = liveEntries[index - 1] || null;
+      const slug = `${entry.collection}/${entry.slug}`;
+      const image = entry.data?.image;
 
-    return {
-      params: { slug: `${entry.collection}/${entry.slug}` },
-      props: { entry, prev, next, entries },
-    };
-  });
+      if (image) {
+        try {
+          const imagePath = path.resolve(process.cwd(), 'src/content', slug, image);
+          const pathWithoutExtension = imagePath.slice(0, imagePath.lastIndexOf('.'));
+          const extension = imagePath.slice(imagePath.lastIndexOf('.'));
+          const newFilePath = `${pathWithoutExtension}-bw${extension}`;
+
+          if (
+            !(await fs
+              .stat(newFilePath)
+              .then(() => true)
+              .catch(() => false))
+          ) {
+            const buffer = await fs.readFile(imagePath);
+            await sharp(buffer).modulate({ brightness: 0.6 }).grayscale().toFile(newFilePath);
+          }
+        } catch (error) {
+          console.error(`Failed to generate hero image for ${slug}:`, error);
+        }
+      }
+
+      return {
+        params: { slug },
+        props: { entry, prev, next, entries },
+      };
+    })
+  );
+
+  return paths;
 }
 
 const { entry, prev, next, entries } = Astro.props;
@@ -43,9 +73,10 @@ const { Content } = await entry.render();
     showHero && (
       <Hero description={description}>
         <Image
-          src={image}
+          src={image?.replace('.jpg', '-bw.jpg')}
           alt={description}
           sizes="100vw"
+          quality="60"
           widths={[320, 480, 768, 1024, 1280, 1600, 1920, 2560, 3840, 5120]}
         />
       </Hero>

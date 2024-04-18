@@ -1,12 +1,11 @@
 .Hero {
-  animation-delay: 400ms;
-  animation-duration: 1000ms;
-  animation-fill-mode: both;
-  animation-name: fadeIn;
-  animation-timing-function: ease-out;
-  filter: grayscale(100%) brightness(60%) opacity(20%);
+  animation-delay: 600ms;
+  animation-duration: 1200ms;
+  animation-fill-mode: forwards;
+  animation-name: reveal;
   left: 0;
   mask-image: linear-gradient(black 65%, transparent 95%);
+  opacity: 0;
   position: absolute;
   top: 0;
   width: 100%;
@@ -19,5 +18,13 @@
 }
 
 .Hero img {
+  height: 100%;
   object-fit: cover;
+  /* Slow down transition for subtle effect */
+  transition-duration: 6s !important;
+}
+
+.Hero .Image {
+  /* Hide blurred LQIP */
+  background-image: none !important;
 }

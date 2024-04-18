@@ -42,6 +42,7 @@ if (!sizes || widths.length === 0) {
     widths={widths}
     loading={loading}
     decoding={loading === 'lazy' ? 'async' : 'sync'}
+    quality={size === 'full' ? 70 : 80}
   />
   {caption && <Caption>{caption}</Caption>}
 </Figure>

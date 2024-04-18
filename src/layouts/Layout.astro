@@ -20,16 +20,11 @@ const url = `https://bradcerasani.me${metaSlug ?? ''}`;
   const images = document.querySelectorAll('img');
 
   images.forEach((img) => {
-    img.classList.add('js-is-loading');
-
-    const handleLoad = () => {
-      img.classList.remove('js-is-loading');
-    };
-
-    if (img.complete) {
-      handleLoad();
-    } else {
-      img.onload = handleLoad;
+    if (!img.complete) {
+      img.classList.add('js-is-loading');
+      img.onload = () => {
+        img.classList.remove('js-is-loading');
+      };
     }
   });
 

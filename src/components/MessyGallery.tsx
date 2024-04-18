@@ -2,6 +2,7 @@ import type { GetImageResult } from 'astro';
 import type React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { Draggable, Intrinsic } from 'src/components';
+import { useSessionStorage } from 'src/hooks';
 import './MessyGallery.css';
 
 type Image = {
@@ -14,7 +15,7 @@ type Image = {
 
 export function MessyGallery({ images }: { images: Image[] }) {
   const [value, setValue] = useState(0);
-  const [isDiscovered, setIsDiscovered] = useState(false);
+  const [isDiscovered, setIsDiscovered] = useSessionStorage('isDiscovered:MessyGallery', false);
   const [prefetch, setPrefetch] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const randomPositions = useMemo(
@@ -61,7 +62,7 @@ export function MessyGallery({ images }: { images: Image[] }) {
     <>
       <input
         aria-label="Show/hide photos"
-        className={`MessyController ${isDiscovered ? 'is-discovered' : ''}`}
+        className={`MessyController ${isClient && isDiscovered ? 'is-discovered' : ''}`}
         max={100}
         onChange={handleChange}
         onFocus={() => setPrefetch(true)}

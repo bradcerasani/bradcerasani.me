@@ -48,7 +48,7 @@ const currentImage = images[fullSrc]();
 
     img {
       transition-duration: 600ms;
-      transition-property: opacity, transform;
+      transition-property: opacity;
       transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 
       &.js-is-loading {
@@ -74,6 +74,12 @@ const currentImage = images[fullSrc]();
       top: -100%;
       width: 300%;
       z-index: 0;
+    }
+
+    &:has(img:not(.js-is-loading))::before {
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      animation-name: grain-out;
     }
   }
 </style>

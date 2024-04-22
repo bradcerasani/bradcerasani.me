@@ -2,6 +2,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel/serverless';
 import { defineConfig } from 'astro/config';
+import svgr from 'vite-plugin-svgr';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,4 +26,7 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  vite: {
+    plugins: [svgr()],
+  },
 });

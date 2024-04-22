@@ -6,6 +6,7 @@ export { Footer } from './Footer';
 export { Grid, GridItem } from './Grid';
 export { Header } from './Header';
 export { Hero } from './Hero';
+export { Icon } from './Icon';
 export { ImageCompare } from './ImageCompare';
 export { Intrinsic } from './Intrinsic';
 export { MediaWrapper } from './MediaWrapper';

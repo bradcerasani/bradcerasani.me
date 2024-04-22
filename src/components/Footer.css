@@ -26,12 +26,22 @@
   padding-right: 0.25rem;
 }
 
+.Footer-linkList {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
 .Footer a {
-  display: inline-block;
-  fill: currentColor;
+  display: contents;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   user-select: none;
+
+  svg {
+    fill: currentColor;
+    height: 1.125rem;
+  }
 }
 
 .ChatBubble {

@@ -28,7 +28,7 @@ export function Footer() {
 
         <div className="Footer-linkList">
           {linkList.map((link) => (
-            <a href={link.url} target="_blank" rel="noreferrer noopener">
+            <a key={link.title} href={link.url} target="_blank" rel="noreferrer noopener">
               <Icon name={link.title.toLowerCase() as IconName} />
             </a>
           ))}

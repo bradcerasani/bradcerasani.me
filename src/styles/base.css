@@ -134,6 +134,10 @@ strong {
   padding: 2px 6px;
 }
 
+sup {
+  line-height: 1;
+}
+
 /* 
 ===============================
 Links

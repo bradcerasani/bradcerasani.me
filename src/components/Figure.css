@@ -28,6 +28,7 @@
     margin-right: calc((100vw - var(--maxWidth)) / -2);
     margin-top: var(--spaceMedium);
     min-width: 100%;
+    overflow: hidden;
     width: 100vw;
 
     img {
@@ -35,11 +36,11 @@
     }
   }
 
-  .js-browser-arc .Figure--full {
-    margin-left: calc((100vw - var(--maxWidth)) / -2 - var(--arcBorderWidth));
-    margin-right: calc((100vw - var(--maxWidth)) / -2 - var(--arcBorderWidth));
-    min-width: calc(100% + var(--arcBorderWidth) * 2);
-    width: calc(100vw + var(--arcBorderWidth) * 2);
+  @media not (display-mode: fullscreen) {
+    .js-browser-arc .Figure--full .Image {
+      margin-left: calc(-1 * var(--arcBorderWidth));
+      width: calc(100vw + var(--arcBorderWidth) * 2);
+    }
   }
 
   .Figure--full .Caption {

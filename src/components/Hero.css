@@ -6,15 +6,11 @@
   left: 0;
   mask-image: linear-gradient(black 65%, transparent 95%);
   opacity: 0;
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: -1;
-}
-
-.js-browser-arc .Hero {
-  left: calc(var(--arcBorderWidth) * -1);
-  width: calc(100% + var(--arcBorderWidth) * 2);
 }
 
 .Hero img {
@@ -27,4 +23,12 @@
 .Hero .Image {
   /* Hide blurred LQIP */
   background-image: none !important;
+}
+
+@media not (display-mode: fullscreen) {
+  .js-browser-arc .Hero > div {
+    left: calc(-1 * var(--arcBorderWidth));
+    position: relative;
+    width: calc(100% + var(--arcBorderWidth) * 2);
+  }
 }

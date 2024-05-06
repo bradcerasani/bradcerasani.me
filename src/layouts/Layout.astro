@@ -28,45 +28,58 @@ const url = `https://bradcerasani.me${metaSlug ?? ''}`;
     }
   });
 
-  if (localStorage.getItem('BROWSER') === 'ARC') {
-    addArcClassToBody();
-  } else {
-    attemptToDetectArcTheme();
-  }
-
   function addArcClassToBody() {
-    document.body?.classList.add('js-browser-arc');
+    document.body.classList.add('js-browser-arc');
   }
 
   function attemptToDetectArcTheme() {
-    let attempt = 0;
-    let interval = 50;
-    const maxAttempts = 3;
-    const properties = [
+    const MAX_ATTEMPTS = 3;
+    let INTERVAL = 50;
+
+    // Some of the CSS custom properties Arc adds to :root
+    const PROPERTIES = [
       '--arc-palette-title',
       '--arc-palette-subtitle',
       '--arc-palette-background',
     ];
 
+    // Counter
+    let attempt = 0;
+
     function tryDetect() {
-      const isArc = properties.some((property) => {
+      const isArc = PROPERTIES.some((property) => {
+        // getPropertyValue returns an empty string if the property is not set
         return window.getComputedStyle(document.documentElement).getPropertyValue(property) !== '';
       });
 
       if (isArc) {
-        localStorage.setItem('BROWSER', 'ARC');
         addArcClassToBody();
+        localStorage.setItem('BROWSER', 'ARC');
         return;
-      } else if (attempt >= maxAttempts) {
+      } else if (attempt >= MAX_ATTEMPTS) {
+        // Storing nonsense string helps prevent redundant future checks
+        localStorage.setItem('BROWSER', 'OTHER');
         return;
       }
 
       attempt++;
-      interval *= attempt;
-      setTimeout(tryDetect, interval);
+
+      // Increase interval after each attempt (50ms, 100ms, 300ms)
+      INTERVAL *= attempt;
+      setTimeout(tryDetect, INTERVAL);
     }
 
     tryDetect();
+  }
+
+  const browser = localStorage.getItem('BROWSER');
+
+  // Note: if `browser` already exists, but is not 'ARC': do nothing
+
+  if (browser === 'ARC') {
+    addArcClassToBody();
+  } else if (!browser) {
+    attemptToDetectArcTheme();
   }
 </script>
 

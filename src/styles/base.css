@@ -174,12 +174,12 @@ ul {
 ol,
 ul {
   list-style-position: inside;
-  list-style-type: none;
   margin-left: 0;
   padding-left: 0;
 
   @media (--md) {
     list-style-position: outside;
+    margin-left: 2rem;
   }
 }
 
